@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on </title>
+    <link>https://example.com/zh-cn/tags/hugo/</link>
+    <description>Recent content in hugo on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Nov 2018 00:26:15 +1300</lastBuildDate>
+    
+	<atom:link href="https://example.com/zh-cn/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo W3 Simple主题快捷方式演示</title>
+      <link>https://example.com/hugo-w3-simple-shortcodes-demo/</link>
+      <pubDate>Sat, 24 Nov 2018 00:26:15 +1300</pubDate>
+      
+      <guid>https://example.com/hugo-w3-simple-shortcodes-demo/</guid>
+      <description>关于这个模板 Hugo W3-Simple Theme我是先做了个英文版的快捷方式演示，因为考虑到可能英文用户会稍微多点，今天有空又更新了一个快捷方式，同时写一个中文版</description>
+    </item>
+    
+    <item>
+      <title>Eighth</title>
+      <link>https://example.com/zh-cn/posts/eighth/</link>
+      <pubDate>Sun, 07 Oct 2018 11:40:11 +0200</pubDate>
+      
+      <guid>https://example.com/zh-cn/posts/eighth/</guid>
+      <description>王一贴 当下王一贴进来，宝玉正歪在炕上，看见王一贴进来，便笑道：“来的好，我听见说你极会说笑话儿的，说一个给我们大家听听。”王一贴笑道：“正是</description>
+    </item>
+    
+  </channel>
+</rss>
