@@ -3,327 +3,508 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/docs/backup/example/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%B9%E0%B8%A5/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/example/table-of-contents/with-toc/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/example/table-of-contents/with-toc/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/1/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-1/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/review/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/1/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-1/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/example/table-of-contents/without-toc/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/review/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/2/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%AA%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%95/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%9B%E0%B8%A5%E0%B8%B5%E0%B8%81%E0%B9%81%E0%B8%99%E0%B8%B0%E0%B8%99%E0%B8%B3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-2/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%93%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-3/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/3/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/example/table-of-contents/without-toc/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-4/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/4/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%A1%E0%B8%B2%E0%B8%95%E0%B8%A3%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%81%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%95%E0%B8%AD%E0%B8%9A%E0%B9%82%E0%B8%95%E0%B9%89%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B9%89%E0%B8%B2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/downloads/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%AA%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%95/%E0%B8%AA%E0%B8%B7%E0%B8%9A%E0%B8%84%E0%B9%89%E0%B8%99%E0%B8%A3%E0%B8%AB%E0%B8%B1%E0%B8%AA%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%95/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-5/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/5/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%AA%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%95/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%93%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AA%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%95/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-6/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/6/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-7/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/7/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-8/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A0%E0%B8%97%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/8/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-4/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-9/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/4/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/9/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%A1%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/posts/creating-a-new-theme/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-6/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/6/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%AA%E0%B8%A3%E0%B8%A3%E0%B8%9E%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%95/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%83%E0%B8%9A%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%AA%E0%B9%88%E0%B8%87/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%94%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-8/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/8/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/shipping-marks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-9/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/9/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/posts/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/migrate-from-jekyll/</loc>
+    <loc>https://dragon-library.github.io/library/book/posts/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/example/table-of-contents/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/example/table-of-contents/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-10/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/10/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/%E0%B8%BAbond/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-1/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-10/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-11/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/10/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/11/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-1/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-2/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%82%E0%B8%AD%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-12/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-11/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/12/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/11/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-3/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/%E0%B8%A1%E0%B8%B2%E0%B8%95%E0%B8%A3%E0%B8%B229/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/bill-gates/test/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A3%E0%B8%AB%E0%B8%B1%E0%B8%AA%E0%B8%AA%E0%B8%81%E0%B8%B8%E0%B8%A5%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AD%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%81%E0%B8%A5%E0%B8%81%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%99/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-13/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-2/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-4/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-12/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-14/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/12/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-5/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/boi/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-15/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-6/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-16/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/bill-gates/test/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-7/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-13/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-17/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/freezone/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-8/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-18/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-4/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-9/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-14/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-19/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/i-eat/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/example/2nd/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/incoterms/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-10/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-5/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/sapiens-20/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-15/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-11/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A0%E0%B8%B2%E0%B8%84-4-%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%A2%E0%B8%81%E0%B9%80%E0%B8%A7%E0%B9%89%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/intro-1/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-6/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-deus/homo-deus-12/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-16/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/homo-sapiens/conclude-sapiens/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-17/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%82%E0%B8%95%E0%B9%89%E0%B9%81%E0%B8%A2%E0%B9%89%E0%B8%87%E0%B8%9E%E0%B8%B4%E0%B8%81%E0%B8%B1%E0%B8%94/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-8/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-18/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%82%E0%B8%AD%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-9/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-19/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/example/2nd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-10/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%AD%E0%B8%9A%E0%B9%82%E0%B8%95%E0%B9%89%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B8%E0%B9%88%E0%B8%A1%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/sapiens-20/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-11/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/intro-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-deus/homo-deus-12/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/payment-method/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/homo-sapiens/conclude-sapiens/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A3%E0%B8%AB%E0%B8%B1%E0%B8%AA%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B8%9C%E0%B8%A5%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%95%E0%B9%89%E0%B9%81%E0%B8%A2%E0%B9%89%E0%B8%87/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A0%E0%B8%97%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B9%83%E0%B8%9A%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%8D%E0%B8%B2%E0%B8%95/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%81%E0%B8%B1%E0%B8%9A_manifest/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2/%E0%B8%A3%E0%B8%AB%E0%B8%B1%E0%B8%AA%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9E%E0%B8%B4%E0%B9%80%E0%B8%A8%E0%B8%A9/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/example/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/tax-incentive/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/transit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/</loc>
+    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/functions/</loc>
+    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/functions/newfunction/</loc>
+    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/book/posts/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/posts/goisforlovers/</loc>
+    <loc>https://dragon-library.github.io/library/book/posts/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/hugoisforlovers/</loc>
+    <loc>https://dragon-library.github.io/library/book/posts/hugoisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/example/2nd/3rd/4th/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/example/2nd/3rd/4th/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/example/2nd/3rd/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/example/2nd/3rd/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/example/hidden/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/example/hidden/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/shortcodes/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/shortcodes/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/shortcodes/buttons/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/shortcodes/buttons/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/shortcodes/columns/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/shortcodes/columns/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/shortcodes/expand/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/shortcodes/expand/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/shortcodes/hints/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/shortcodes/hints/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/shortcodes/katex/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/shortcodes/katex/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/shortcodes/mermaid/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/shortcodes/mermaid/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/docs/backup/shortcodes/tabs/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/backup/shortcodes/tabs/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/menu/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://example.com/docs/</loc>
+    <loc>https://dragon-library.github.io/library/book/docs/</loc>
   </url>
   
 </urlset>
