@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络开发 on </title>
+    <link>https://yosarawut.github.io/knowledge-base/articles/us/categories/%E7%BD%91%E7%BB%9C%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 网络开发 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Nov 2018 00:26:15 +1300</lastBuildDate>
+    
+	<atom:link href="https://yosarawut.github.io/knowledge-base/articles/us/categories/%E7%BD%91%E7%BB%9C%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo W3 Simple主题快捷方式演示</title>
+      <link>https://yosarawut.github.io/knowledge-base/articles/hugo-w3-simple-shortcodes-demo/</link>
+      <pubDate>Sat, 24 Nov 2018 00:26:15 +1300</pubDate>
+      
+      <guid>https://yosarawut.github.io/knowledge-base/articles/hugo-w3-simple-shortcodes-demo/</guid>
+      <description>关于这个模板 Hugo W3-Simple Theme我是先做了个英文版的快捷方式演示，因为考虑到可能英文用户会稍微多点，今天有空又更新了一个快捷方式，同时写一个中文版</description>
+    </item>
+    
+  </channel>
+</rss>

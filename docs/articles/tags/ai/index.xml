@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on </title>
+    <link>https://little-dragons.github.io/web/articles/tags/ai/</link>
+    <description>Recent content in AI on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Nov 2019 13:40:11 +0700</lastBuildDate>
+    
+	<atom:link href="https://little-dragons.github.io/web/articles/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AlphaGo Documentary สุดยอดสารคดีที่อยากบอกต่อ</title>
+      <link>https://little-dragons.github.io/web/articles/posts/alphago-documentary/</link>
+      <pubDate>Sun, 24 Nov 2019 13:40:11 +0700</pubDate>
+      
+      <guid>https://little-dragons.github.io/web/articles/posts/alphago-documentary/</guid>
+      <description>Source : finnomena.com. ( 01/09/18 )
+ ปีนี้ผมดู Documentary ไปแล้ว 15 เรื่องจากบน Netflix บอกเลยว่าเรื่องที่ชอบมากที่สุดคือ Alpha Go Documentary เพราะสารคดีนำเสนอด้านที่เรามองไม่เห็น ไม่ได้ปรากฏบนหน้าสื่อในช่วงเกิดการแข่งขัน แน่นอนว่าเหตุการณ์ประวัติศาสตร์วันนั้นที่ AI เอาชนะเซียน Go ระดับโลก ผมเองได้ติดตามและได้อ่านข่าวอ่านบทความจำนวนมาก แต่สารคดีนี้ถ่ายทอดหลายประเด็นเหลือเกินที่ทำให้เราได้เรียนรู้จาก AlphaGo บทความนี้จะขอมาสรุปประเด็นที่น่าสนใจให้พวกเราอ่านกัน
+1. Fan Hui ผู้แพ้ที่ไม่ธรรมดา สารคดีนี้ดูเหมือนจะโฟกัสไปที่การแข่งขันระหว่าง alpha Go กับ Lee Sedol แต่บุคคลที่อยู่เบื้องหลังและมีบทบาทสำคัญมากอีกคนคือ Fan Hui เป็นลูกครึ่งจีน-ฝรั่งเศส เป็นนักเล่นโก๊ะมืออาชีพ แชมป์โกะยุโรป 3 สมัยที่เคยพ่ายแพ้ให้กับ AlphaGo ไปขาดลอย 5-0 ในปีก่อนหน้า
+Fan Hui มองข้ามความพ่ายแพ้ที่เกิดว่ามันไม่ใช่ความล้มเหลวแต่เขามองเห็นความสวยงาม ความอัศจรรย์ในเกมส์ที่เกิดจากการได้แข่งขันกับ AlphaGo ดังนั้นเมื่อ DeepMind ติดต่อไปช่วงก่อนการแข่งขันใหญ่ Fan Hui จึงตอบรับมาเป็นที่ปรึกษา
+ตัวเขาได้เล่นกับ AlphaGo อีกหลายร้อยกระดาน จน 1 วันก่อนแข่งเขาหาจุดอ่อนของ AlphaGo จนเจอแล้วได้แจ้งให้ ทีมพัฒนาทราบ แต่ในเวลาที่มีทีมพัฒนาของ Deep Mind ไม่สามารถแก้หรือปรับปรุงอะไรได้แล้ว สารคดีแสดงให้เห็นภาพจากความเชื่อมั่น กลายเป็นความเครียด ความกังวลขึ้นมาทันที Demis Hassabis หัวหน้าทีพัฒนาถึงกับเอ่ยปากขอให้ Lee Sedol หาจุดอ่อนนั้นไม่พบ แล้วทุกคนก็ต้องเก็บกระเป๋าเดินหน้าไปแข่งขันที่เกาหลีใต้</description>
+    </item>
+    
+  </channel>
+</rss>

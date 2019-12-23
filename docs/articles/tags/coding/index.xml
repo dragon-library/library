@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coding on </title>
+    <link>https://little-dragons.github.io/web/articles/tags/coding/</link>
+    <description>Recent content in Coding on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Nov 2019 07:20:11 +0700</lastBuildDate>
+    
+	<atom:link href="https://little-dragons.github.io/web/articles/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CODING คืออะไร ครูไทยพร้อมไหม ทำไมหนูต้องเรียน</title>
+      <link>https://little-dragons.github.io/web/articles/posts/what-coding/</link>
+      <pubDate>Sun, 24 Nov 2019 07:20:11 +0700</pubDate>
+      
+      <guid>https://little-dragons.github.io/web/articles/posts/what-coding/</guid>
+      <description>กระทรวงศึกษาธิการประกาศให้ Coding เป็นหลักสูตรที่นักเรียนทั่วประเทศต้องเรียนอย่างเป็นทางการ (National Standards) ภายในเดือนพฤศจิกายน 2562 โดยเริ่มตั้งแต่ชั้น ป.1
+ Coding คือ ส่วนหนึ่งของหลักสูตรวิทยาการคำนวณที่บรรจุอยู่ในกลุ่มสาระเทคโนโลยี
+ เป้าหมายโดยรวมของหลักสูตรวิทยาการคำนวณ มุ่งเน้นให้นักเรียนฝึกคิดอย่างเป็นระบบ ค้นเจอปัญหาและเงื่อนไข รู้เหตุและผล เข้าใจกระบวนการทำงานเพื่อแก้ไขปัญหา ซึ่งเป็นทักษะสำคัญและจำเป็นสำหรับเด็กในศตวรรษใหม่
+ ตัวอย่างการเรียน Coding ในเด็กเล็กคล้ายกับการเล่นเกม เช่น เกมบันไดงู โดยให้ฝึกคิดหาทางออกทีละขั้น ผ่านการคิดและออกคำสั่งลูกศร ซ้าย-ขวา-หน้า-หลัง
+   พฤศจิกายนนี้เด็กๆ ป.1 ป.2 ป.4 ป.5 ม.1 ม.2 ม.4 และ ม.5 จะได้เรียน Coding พร้อมกันทั่วประเทศ ในฐานะหลักสูตร National Standards
+คำถามพื้นฐานอย่าง Coding คืออะไร เรียนไปทำไม มีประโยชน์อย่างไร อาจสำคัญเท่าๆ กับ เรา-ในที่นี้คือเด็กในฐานะผู้เรียน และครูในฐานะผู้สอน พร้อมแล้วหรือยัง สำหรับการเรียนรู้ครั้งนี้
+The Potential สนทนาอย่างจริงๆ จังๆ กับ ดร.เขมวดี พงศานนท์ ผู้อำนวยการฝ่ายบริหารเครือข่ายและพัฒนาครู สถาบันส่งเสริมการสอน วิทยาศาสตร์และเทคโนโลยี (สสวท.</description>
+    </item>
+    
+  </channel>
+</rss>
