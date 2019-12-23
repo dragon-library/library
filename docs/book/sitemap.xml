@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://example.com/docs/backup/example/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/example/table-of-contents/with-toc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/review/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/example/table-of-contents/without-toc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-4/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/4/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/downloads/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-6/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/6/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-8/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/8/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-9/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/9/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/example/table-of-contents/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-10/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/10/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-11/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/11/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-12/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/12/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/bill-gates/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-13/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-4/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-14/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-15/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-6/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-16/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-17/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-8/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-18/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-9/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-19/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/example/2nd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-10/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/sapiens-20/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-11/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/intro-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-deus/homo-deus-12/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/homo-sapiens/conclude-sapiens/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/goisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/hugoisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/example/2nd/3rd/4th/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/example/2nd/3rd/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/example/hidden/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/shortcodes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/shortcodes/buttons/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/shortcodes/columns/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/shortcodes/expand/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/shortcodes/hints/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/shortcodes/katex/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/shortcodes/mermaid/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/backup/shortcodes/tabs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/menu/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/docs/</loc>
+  </url>
+  
+</urlset>
