@@ -2,84 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>https://little-dragons.github.io/web/articles/categories/</link>
+    <link>https://dragon-library.github.io/library/articles/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 Dec 2019 13:55:11 +0700</lastBuildDate>
     
-	<atom:link href="https://little-dragons.github.io/web/articles/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dragon-library.github.io/library/articles/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>People</title>
-      <link>https://little-dragons.github.io/web/articles/categories/people/</link>
+      <link>https://dragon-library.github.io/library/articles/categories/people/</link>
       <pubDate>Fri, 06 Dec 2019 13:55:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/categories/people/</guid>
+      <guid>https://dragon-library.github.io/library/articles/categories/people/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Finance</title>
-      <link>https://little-dragons.github.io/web/articles/categories/finance/</link>
+      <link>https://dragon-library.github.io/library/articles/categories/finance/</link>
       <pubDate>Mon, 02 Dec 2019 19:40:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/categories/finance/</guid>
+      <guid>https://dragon-library.github.io/library/articles/categories/finance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Industry</title>
-      <link>https://little-dragons.github.io/web/articles/categories/industry/</link>
+      <link>https://dragon-library.github.io/library/articles/categories/industry/</link>
       <pubDate>Sun, 01 Dec 2019 08:40:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/categories/industry/</guid>
+      <guid>https://dragon-library.github.io/library/articles/categories/industry/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lift</title>
-      <link>https://little-dragons.github.io/web/articles/categories/lift/</link>
+      <link>https://dragon-library.github.io/library/articles/categories/lift/</link>
       <pubDate>Sun, 24 Nov 2019 22:40:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/categories/lift/</guid>
+      <guid>https://dragon-library.github.io/library/articles/categories/lift/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tech</title>
-      <link>https://little-dragons.github.io/web/articles/categories/tech/</link>
+      <link>https://dragon-library.github.io/library/articles/categories/tech/</link>
       <pubDate>Sun, 24 Nov 2019 13:45:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/categories/tech/</guid>
+      <guid>https://dragon-library.github.io/library/articles/categories/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Parent</title>
-      <link>https://little-dragons.github.io/web/articles/categories/parent/</link>
+      <link>https://dragon-library.github.io/library/articles/categories/parent/</link>
       <pubDate>Sun, 24 Nov 2019 09:40:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/categories/parent/</guid>
+      <guid>https://dragon-library.github.io/library/articles/categories/parent/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Series</title>
-      <link>https://little-dragons.github.io/web/articles/categories/series/</link>
+      <link>https://dragon-library.github.io/library/articles/categories/series/</link>
       <pubDate>Sat, 23 Nov 2019 11:40:11 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/categories/series/</guid>
+      <guid>https://dragon-library.github.io/library/articles/categories/series/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Website Programming</title>
-      <link>https://little-dragons.github.io/web/articles/categories/website-programming/</link>
+      <link>https://dragon-library.github.io/library/articles/categories/website-programming/</link>
       <pubDate>Fri, 09 Nov 2018 07:26:15 +1300</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/categories/website-programming/</guid>
+      <guid>https://dragon-library.github.io/library/articles/categories/website-programming/</guid>
       <description></description>
     </item>
     

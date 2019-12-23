@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quantum Computer on </title>
-    <link>https://little-dragons.github.io/web/articles/tags/quantum-computer/</link>
+    <link>https://dragon-library.github.io/library/articles/tags/quantum-computer/</link>
     <description>Recent content in Quantum Computer on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Nov 2019 13:45:11 +0700</lastBuildDate>
     
-	<atom:link href="https://little-dragons.github.io/web/articles/tags/quantum-computer/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dragon-library.github.io/library/articles/tags/quantum-computer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Google เปิดตัว “Sycamore Processor”</title>
-      <link>https://little-dragons.github.io/web/articles/posts/google-quantum-computer/</link>
+      <link>https://dragon-library.github.io/library/articles/posts/google-quantum-computer/</link>
       <pubDate>Sun, 24 Nov 2019 13:45:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/posts/google-quantum-computer/</guid>
+      <guid>https://dragon-library.github.io/library/articles/posts/google-quantum-computer/</guid>
       <description>Quantum Computer คืออะไร? จะส่งผลอย่างไร? หลังจาก Google เปิดตัว “Sycamore Processor”  Source : Beartai.com : 25/10/2019.
  ก่อนอื่นอยากให้ทุกท่านที่ยังไม่เข้าใจเทคโนโลยีคอมพิวเตอร์ควอนตัมได้เข้าใจตัวเทคโนโลยีนี้กันก่อนนะครับ ก่อนจะเข้าสู่เนื้อหาว่า Google ประกาศว่าประสบความสำเร็จอะไร ด้านไหนในเทคโนโลยีคอมพิวเตอร์ควอนตัม และเทคโนโลยีนี้จะส่งผลอย่างไรต่อทุกคนบนโลก
 เทคโนโลยี Quantum Computer คืออะไร ? หากจะพูดถึงคอมพิวเตอร์ควอนตัมคงจะต้องเริ่มจาก Qubit หรือ Quantum Bit กันก่อน เทคโนโลยีของคอมพิวเตอร์ควอนตัมนั้นเริ่มมาจากสิ่งที่เรียกว่า “Superposition” ใน Quantum Physics เมื่ออนุภาคขนาดเล็กสามารถมีตัวตนอยู่ได้หลายที่ในขณะเดียวกัน ซึ่งคอมพิวเตอร์ในปัจจุบัน ฐานที่เล็กที่สุดของการคำนวณคือ Bit หรือ Binary Digits ที่มีสถานะเป็น “0” และ “1” แต่กับคอมพิวเตอร์ควอนตัมเราจะไม่รู้ค่าของมันเลย มันอาจจะเป็น “0” หรือเป็น “1” หรือทั้งคู่ จนกว่าเราจะทำการวัดค่าของมัน ซึ่งก็คือสถานะ Superposition นั่นเอง Qubit จะยังไม่ตัดสินใจแสดงเป็นค่าใดค่าหนึ่ง ถึงแม้มีโอกาสที่ค่านั้นจะถูกกำหนดไว้แล้วก็ตาม

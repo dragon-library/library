@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>clock on </title>
-    <link>https://little-dragons.github.io/web/articles/tags/clock/</link>
+    <link>https://dragon-library.github.io/library/articles/tags/clock/</link>
     <description>Recent content in clock on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Nov 2019 11:40:11 +0200</lastBuildDate>
     
-	<atom:link href="https://little-dragons.github.io/web/articles/tags/clock/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dragon-library.github.io/library/articles/tags/clock/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ต้นกำเนิดของนาฬิกา</title>
-      <link>https://little-dragons.github.io/web/articles/posts/origin-time/</link>
+      <link>https://dragon-library.github.io/library/articles/posts/origin-time/</link>
       <pubDate>Thu, 14 Nov 2019 11:40:11 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/posts/origin-time/</guid>
+      <guid>https://dragon-library.github.io/library/articles/posts/origin-time/</guid>
       <description>เดิมทีการบอกเวลาอาศัยปรากฏการณ์จากธรรมชาติ ดังเช่นระยะเวลาหนึ่งวันกำหนดจากการที่โลกหมุนรอบตัวเองครบหนึ่งรอบ โดยสังเกตจากดวงอาทิตย์โผล่ขึ้นจากขอบฟ้าด้านตะวันออก เคลื่อนตัวสูงขึ้นสู่ท้องฟ้าเรื่อยๆ จนเลยลับขอบฟ้าด้านกำเนิดตะวันตก แล้วจึงโผล่ขึ้นมาใหม่ เป็นอันครบรอบนับเวลาได้หนึ่งวัน คนสมัยก่อนจึงรู้เวลาด้วยการสังเกตตำแหน่งต่างๆ ของดวงอาทิตย์บนท้องฟ้า ซึ่งบอกเวลาเช้า สาย เที่ยง บ่าย เย็น ต่อมามนุษย์เริ่มรู้จักประดิษฐ์นาฬิกาขึ้นใช้ เชื่อกันว่านาฬิกาแดดเป็นวิธีจับเวลายุคแรกสุดของโลกแบบหนึ่ง มีใช้มานานกว่า 5,000 ปีแล้วในอียิปต์ เงาของแสงแดดที่ส่องต้องแผ่นโลหะบนหน้าปัด จะเคลื่อนตัวไปอย่างช้าๆ รอบหน้าปัดตัวเลขแต่ละชั่วโมง เวลาจะเปลี่ยนไปตามเงาแดดซึ่งเคลื่อนที่นั้น
 นาฬิกาแดดเป็นนาฬิกาที่ใช้บอกเวลารุ่นแรกสุด ชาวสุเมเรียนเป็นชนเผ่าหนึ่งที่ใช้นาฬิกาชนิดนี้ โดยจะแบ่งช่วงเวลาออกเป็น 12 ช่วงในหนึ่งวัน ซึ่งแต่ละช่วงจะกินเวลาประมาณ 2 ชั่วโมง โดยใช้วิธีวัดความยาวแสงเงาเป็นมาตรฐานในการวัดระยะเวลา
 ด้านชาวอียิปต์แบ่งเวลาออกเป็น 12 ช่วงเช่นกัน โดยดูเวลาจากเสาหินแกรนิตที่เรียกว่า “Cleopratra Needles” การดูเวลาจะสังเกตจากความยาวและตำแหน่งเงาที่แสงอาทิตย์ตกกระทบบนพื้นทำกับขีดทั้ง 12 ช่วงเวลาที่แบ่งไว้ เพื่อจะได้ดูว่าช่วงกลางวันเหลือเวลาที่เท่าไร

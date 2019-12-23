@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://little-dragons.github.io/web/articles/zh-cn/</link>
+    <link>https://dragon-library.github.io/library/articles/zh-cn/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Nov 2019 12:40:11 +0200</lastBuildDate>
     
-	<atom:link href="https://little-dragons.github.io/web/articles/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dragon-library.github.io/library/articles/zh-cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>นายกฯ สิงคโปร์ชี้กระบวนการคิดเชิงออกแบบ (Design Thinking) จำเป็นต่อการเปลี่ยนแปลงของประเทศ</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/posts/eighth/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/posts/eighth/</link>
       <pubDate>Sat, 23 Nov 2019 12:40:11 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/posts/eighth/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/posts/eighth/</guid>
       <description>ที่มาบทความ : techsauce.co เมษายน 7, 2018
  “กระบวนการคิดเชิงออกแบบ” หรือ “Design Thinking” เริ่มกลายเป็นเรื่องใกล้ตัวมากขึ้นเมื่อ &amp;lsquo;ลี เซียน ลุง&amp;rsquo; นายกรัฐมนตรีสิงคโปร์ (ลูกชาย &amp;lsquo;ลี กวน ยู&amp;rsquo;) ระบุว่าเป็นเรื่องที่ต้องให้ความสำคัญ เพราะเป็นสิ่งที่ผลักดันให้สิงคโปร์ที่เริ่มจากศูนย์กลายเป็นประเทศแถวหน้าของโลก ฝากคนรุ่นใหม่นำ Design Thinking มาใช้กับทุกกระบวนการในการทำงาน
 ลี เซียน ลุง (Lee Hsien Loong) นายกรัฐมนตรีประเทศสิงคโปร์ / Photo: ChannelNewsAsia
@@ -27,91 +27,91 @@
     
     <item>
       <title>Hugo W3 Simple主题快捷方式演示</title>
-      <link>https://little-dragons.github.io/web/articles/hugo-w3-simple-shortcodes-demo/</link>
+      <link>https://dragon-library.github.io/library/articles/hugo-w3-simple-shortcodes-demo/</link>
       <pubDate>Sat, 24 Nov 2018 00:26:15 +1300</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/hugo-w3-simple-shortcodes-demo/</guid>
+      <guid>https://dragon-library.github.io/library/articles/hugo-w3-simple-shortcodes-demo/</guid>
       <description>关于这个模板 Hugo W3-Simple Theme我是先做了个英文版的快捷方式演示，因为考虑到可能英文用户会稍微多点，今天有空又更新了一个快捷方式，同时写一个中文版</description>
     </item>
     
     <item>
       <title>About W3 Simple</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/about/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/about/</link>
       <pubDate>Sat, 10 Nov 2018 00:28:38 +0000</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/about/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/about/</guid>
       <description>Hugo W3 Simple是由Jesse Lau根据W3 CSS框架设计的HUGO主题模板</description>
     </item>
     
     <item>
       <title>Ninth</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/posts/ninth/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/posts/ninth/</link>
       <pubDate>Sun, 07 Oct 2018 11:40:14 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/posts/ninth/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/posts/ninth/</guid>
       <description>王一贴 当下王一贴进来，宝玉正歪在炕上，看见王一贴进来，便笑道：“来的好，我听见说你极会说笑话儿的，说一个给我们大家听听。”王一贴笑道：“正是</description>
     </item>
     
     <item>
       <title>Seventh</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/posts/seventh/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/posts/seventh/</link>
       <pubDate>Sun, 07 Oct 2018 11:39:29 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/posts/seventh/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/posts/seventh/</guid>
       <description>王一贴 当下王一贴进来，宝玉正歪在炕上，看见王一贴进来，便笑道：“来的好，我听见说你极会说笑话儿的，说一个给我们大家听听。”王一贴笑道：“正是</description>
     </item>
     
     <item>
       <title>Sixth</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/posts/sixth/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/posts/sixth/</link>
       <pubDate>Sun, 07 Oct 2018 11:39:25 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/posts/sixth/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/posts/sixth/</guid>
       <description>王一贴 当下王一贴进来，宝玉正歪在炕上，看见王一贴进来，便笑道：“来的好，我听见说你极会说笑话儿的，说一个给我们大家听听。”王一贴笑道：“正是</description>
     </item>
     
     <item>
       <title>Fourth</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/posts/fourth/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/posts/fourth/</link>
       <pubDate>Sun, 07 Oct 2018 11:39:16 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/posts/fourth/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/posts/fourth/</guid>
       <description>王一贴 当下王一贴进来，宝玉正歪在炕上，看见王一贴进来，便笑道：“来的好，我听见说你极会说笑话儿的，说一个给我们大家听听。”王一贴笑道：“正是</description>
     </item>
     
     <item>
       <title>Third</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/posts/third/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/posts/third/</link>
       <pubDate>Sun, 07 Oct 2018 11:39:13 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/posts/third/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/posts/third/</guid>
       <description>王一贴 当下王一贴进来，宝玉正歪在炕上，看见王一贴进来，便笑道：“来的好，我听见说你极会说笑话儿的，说一个给我们大家听听。”王一贴笑道：“正是</description>
     </item>
     
     <item>
       <title>Second</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/posts/second/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/posts/second/</link>
       <pubDate>Sun, 07 Oct 2018 11:39:10 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/posts/second/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/posts/second/</guid>
       <description>王一贴 当下王一贴进来，宝玉正歪在炕上，看见王一贴进来，便笑道：“来的好，我听见说你极会说笑话儿的，说一个给我们大家听听。”王一贴笑道：“正是</description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/posts/my-first-post/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/posts/my-first-post/</link>
       <pubDate>Sun, 07 Oct 2018 11:17:14 +0200</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/posts/my-first-post/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/posts/my-first-post/</guid>
       <description>王一贴 当下王一贴进来，宝玉正歪在炕上，看见王一贴进来，便笑道：“来的好，我听见说你极会说笑话儿的，说一个给我们大家听听。”王一贴笑道：“正是</description>
     </item>
     
     <item>
       <title>Search</title>
-      <link>https://little-dragons.github.io/web/articles/zh-cn/search/</link>
+      <link>https://dragon-library.github.io/library/articles/zh-cn/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/zh-cn/search/</guid>
+      <guid>https://dragon-library.github.io/library/articles/zh-cn/search/</guid>
       <description> Manticore Search </description>
     </item>
     

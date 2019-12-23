@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>เวลา on </title>
-    <link>https://little-dragons.github.io/web/articles/tags/%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2/</link>
+    <link>https://dragon-library.github.io/library/articles/tags/%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2/</link>
     <description>Recent content in เวลา on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Nov 2019 15:15:05 +0700</lastBuildDate>
     
-	<atom:link href="https://little-dragons.github.io/web/articles/tags/%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dragon-library.github.io/library/articles/tags/%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>การบอกเวลา</title>
-      <link>https://little-dragons.github.io/web/articles/posts/time-component/</link>
+      <link>https://dragon-library.github.io/library/articles/posts/time-component/</link>
       <pubDate>Fri, 15 Nov 2019 15:15:05 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/posts/time-component/</guid>
+      <guid>https://dragon-library.github.io/library/articles/posts/time-component/</guid>
       <description>นาฬิกาเป็นเครื่องมือที่ใช้บอกเวลา บนหน้าปักนาฬิกาจะมีตัวเลข12ตัวคือ1,2,3…12 เข็มยาว เข็มสั้น และเข็มวินาที เพื่อใช้บอกเวลา
 การบอกเวลาเป็นนาฬิกาและนาที
 การบอกเวลาในแต่ละวันจะเริ่มที่0นาฬิกา และสิ้นสุดที่ 24 นาฬิกา โดยแบ่งออกเป็น2ช่วงคือ ช่วงเวลากลางวันจะเริ่มตั้งแต่ 6 นาฬิกา ถึง12นาฬิกา และช่วงเวลากลางคืนจะเริ่มตั้งแต่ 18นาฬิกาถึง 6 นาฬิกา

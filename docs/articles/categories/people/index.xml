@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>People on </title>
-    <link>https://little-dragons.github.io/web/articles/categories/people/</link>
+    <link>https://dragon-library.github.io/library/articles/categories/people/</link>
     <description>Recent content in People on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 Dec 2019 13:55:11 +0700</lastBuildDate>
     
-	<atom:link href="https://little-dragons.github.io/web/articles/categories/people/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dragon-library.github.io/library/articles/categories/people/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python Web Applications with Flask – Part I</title>
-      <link>https://little-dragons.github.io/web/articles/posts/test/</link>
+      <link>https://dragon-library.github.io/library/articles/posts/test/</link>
       <pubDate>Fri, 06 Dec 2019 13:55:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/posts/test/</guid>
+      <guid>https://dragon-library.github.io/library/articles/posts/test/</guid>
       <description>Python Web Applications with Flask – Part I Table of Contents
  Articles in this series: What we are building Starting off  First principles A note on the repository structure  Starting the project  Dependencies  Outgrowing small A place for everything  Domain models Data translation layer Views Application setup Configuration and command line runner  And everything in its place Wrapping Up  Please note: This is a collaboration piece between Michael Herman, from Real Python, and Sean Vieira, a Python developer from De Deo Designs.</description>
     </item>
     
     <item>
       <title>สุพจน์ ธีระวัฒนชัย เมื่อความจนหมักบ่มเกิดเป็นโรงเบียร์เยอรมันตะวันแดง”</title>
-      <link>https://little-dragons.github.io/web/articles/posts/tawandang-german-brewery/</link>
+      <link>https://dragon-library.github.io/library/articles/posts/tawandang-german-brewery/</link>
       <pubDate>Sun, 24 Nov 2019 13:55:11 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/posts/tawandang-german-brewery/</guid>
+      <guid>https://dragon-library.github.io/library/articles/posts/tawandang-german-brewery/</guid>
       <description>Source : thepeople.co : 05/10/2019.
  “ผมไม่อยากยากจนอีกต่อไป” ประโยคแรกในหนังสือ&amp;ldquo;เมื่อความจนเฆี่ยนตีผม&amp;rdquo;ที่ถ่ายทอดประสบการณ์ชีวิตและการทำธุรกิจของ สุพจน์ ธีระวัฒนชัย จากชีวิตที่ยากลำบากในวัยเด็ก ถูกความจนและความล้มเหลวเฆี่ยนตีซ้ำแล้วซ้ำเล่า หมักบ่มบาดแผลจากความพ่ายแพ้ สะสมจนกลายเป็นหัวหอกผู้บุกเบิกวงการเบียร์ไมโครบริวเวอรี่ สร้างอาณาจักรโรงเบียร์เยอรมันตะวันแดงขึ้นในช่วงภาวะเศรษฐกิจฟองสบู่แตก และยืนหยัดฝ่าฟันยาวนานได้ถึง 20 ปี
 ด้วยความที่สุพจน์ชื่นชอบนิยายกำลังภายใน โดยเฉพาะสำนวนการประพันธ์ของมังกรโบราณโกวเล้ง ไม่แปลกที่เขาร่ายกวีเปรียบเทียบชีวิตของเขาว่า ความจนเหมือนแส้บาง ๆ ที่คอยเฆี่ยนตีเรา โดยแส้แรกที่เฆี่ยนตีเขา หวดลงมาตั้งแต่เขาเพิ่งจำความได้
@@ -38,10 +38,10 @@
     
     <item>
       <title>โค้ชเช ชเว ยอง ซอก ผู้ชายที่ทุ่มเททั้งชีวิตให้เทควันโดไทย</title>
-      <link>https://little-dragons.github.io/web/articles/posts/coch-choi-young-seok/</link>
+      <link>https://dragon-library.github.io/library/articles/posts/coch-choi-young-seok/</link>
       <pubDate>Wed, 20 Nov 2019 11:15:05 +0700</pubDate>
       
-      <guid>https://little-dragons.github.io/web/articles/posts/coch-choi-young-seok/</guid>
+      <guid>https://dragon-library.github.io/library/articles/posts/coch-choi-young-seok/</guid>
       <description>บ่ายวันนี้ท้องฟ้าแจ่มใสกว่าทุกวัน…ในทันทีที่รถบีเอ็มดับเบิลยูสีขาวป้ายแดงแล่นเข้ามาจอดที่ลานจอดรถของสมาคมเทควันโดแห่งประเทศไทย ชายหนุ่มที่เรารอคอยก็เดินลงจากรถ พร้อมกับทักทายทุกคนด้วยใบหน้ายิ้มแย้มไม่ต่างจากที่เห็นในจอโทรทัศน์ เขาคือ โค้ชเช
 นาทีนี้คาดว่าชื่อของชเว ยอง ซอก (Choi Young Seok) ในฐานะโค้ชชาวเกาหลี ผู้ทำหน้าที่หัวหน้าผู้ฝึกสอนนักกีฬาเทควันโดทีมชาติไทย คงเป็นที่รู้จักของคนทั้งประเทศแล้ว บรรดาสาวน้อยสาวใหญ่อาจนิยมชมชอบหน้าตาที่หล่อเหลาไม่แพ้นักร้อง K – Pop ของเขา แต่สำหรับคนในแวดวงกีฬาต่างรู้ดีว่า โค้ชชเวคนนี้คือคนที่มุ่งมั่นทุ่มเทอย่างสุดหัวใจ เพื่อที่จะพานักกีฬาเทควันโดทีมชาติไทยไปคว้าเหรียญทองโอลิมปิกให้จงได้
 ในอดีต โค้ชหนุ่มชาวเกาหลีวัย 41 ปีคนนี้ สามารถสร้างฮีโร่นักกีฬาเทควันโดในการแข่งขันระดับโอลิมปิกให้กับประเทศไทยถึง 3 คน คือ วิว – เยาวภา บุรพลชัย สอง – บุตรี เผือดผ่อง และ เล็ก – ชนาธิป ซ้อนขำ
