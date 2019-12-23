@@ -10,7 +10,7 @@
     
     
     <item>
-      <title>Learning Flask Ep. 1</title>
+      <title>Ep.1 Your first Flask app</title>
       <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -21,7 +21,7 @@ Creating a project directory and virtual environment First of all, we need to cr
     </item>
     
     <item>
-      <title>Learning Flask Ep. 2</title>
+      <title>Ep.2 Flask application structure</title>
       <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -32,7 +32,7 @@ Flask is a very flexible framework and doesn&amp;rsquo;t enforce that you follow
     </item>
     
     <item>
-      <title>Learning Flask Ep. 3</title>
+      <title>Ep.3 Serving HTML files</title>
       <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -44,7 +44,7 @@ We&amp;rsquo;re going to pick up the same application we created in the last epi
     </item>
     
     <item>
-      <title>Learning Flask Ep. 4</title>
+      <title>Ep.4 Serving static files</title>
       <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -53,6 +53,28 @@ We&amp;rsquo;re going to pick up the same application we created in the last epi
 In this episode of the Learning Flask series, we&amp;rsquo;ll be making our HTML look prettier with some images, CSS and JavaScript, along with a few extra tips on working with static files.
 Flask provides a few useful ways for working with static files so let&amp;rsquo;s get started.
 Creating stylesheets If you&amp;rsquo;ve worked with HTML and CSS before, you&amp;rsquo;ll know that we have to import a stylesheet in the &amp;lt;head&amp;gt; tag of our HTML.</description>
+    </item>
+    
+    <item>
+      <title>Ep.5 Jinja template inheritance</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-5/</guid>
+      <description>Jinja template inheritance | Learning Flask Ep. 5 Creating reusable base HTML templates and extending them throughout your Flask app
+In this firth part of the Learning Flask series, you&amp;rsquo;ll learn how to use the powerful Jinja templating engine to make working with our HTML files much more efficient.
+Template inheritance works by creating a series of &amp;ldquo;base templates&amp;rdquo; and importing them into &amp;ldquo;child templates&amp;rdquo;, minimising the amount of repetitive code we need to write and allowing us to reuse elements effectively and reliably.</description>
+    </item>
+    
+    <item>
+      <title>Ep.6 Jinja template design</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-6/</guid>
+      <description>Jinja template design | Learning Flask Ep. 6 An brief introduction to the power of the Jinja templating engine
+In this part of the Learning Flask series, we&amp;rsquo;re going to dive deeper into the Jinja templating engine and you&amp;rsquo;ll learn more of the advanced features of this powerful library!
+In the last part of this series, you learned how to create base templates, child templates and how to extend them.</description>
     </item>
     
   </channel>

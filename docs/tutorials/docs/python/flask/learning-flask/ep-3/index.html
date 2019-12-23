@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Learning Flask Ep. 3"><meta property="og:title" content="Learning Flask Ep. 3" />
+<meta name="description" content="Ep.3 Serving HTML files"><meta property="og:title" content="Ep.3 Serving HTML files" />
 <meta property="og:description" content="Serving HTML files | Learning Flask Ep. 3 How to render HTML files and structure template directories with Flask
 In this part of the Learning Flask series, you&rsquo;ll learn how to work with and serve HTML files.
 Flask provides a fast and easy way for us to serve static files! So building a simple website is a breeze.
@@ -12,14 +12,14 @@ We&rsquo;re going to pick up the same application we created in the last episode
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-3/" />
 
-<title>Learning Flask Ep. 3 | e-Library</title>
+<title>Ep.3 Serving HTML files | e-Library</title>
 <link rel="icon" href="/library/book/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/book/book.min.670118b70dcd1798b9facf3eb746088ede4e7d8e8c5b07594950174a4d46cc5d.css" integrity="sha256-ZwEYtw3NF5i5&#43;s8&#43;t0YIjt5OfY6MWwdZSVAXSk1GzF0=">
+<link rel="stylesheet" href="/library/book/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
 
 
-<script defer src="/library/book/en.search.min.fb9c0c407253733de21a04ac1d0608bd70b774d20af0dfd72071321891c00ff9.js" integrity="sha256-&#43;5wMQHJTcz3iGgSsHQYIvXC3dNIK8N/XIHEyGJHAD/k="></script>
+<script defer src="/library/book/en.search.min.ad2d487d7fe0a47d6c04b5dc4be0a45bf5155cc06b86c0ee7a4606ede1526480.js" integrity="sha256-rS1IfX/gpH1sBLXcS&#43;CkW/UVXMBrhsDuekYG7eFSZIA="></script>
 
 <!--
 Made with Book Theme
@@ -140,7 +140,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   <a href="/library/book/docs/python/flask/learning-flask/ep-1/" >
-      Learning Flask Ep. 1
+      Ep.1 Your first Flask app
   </a>
 
 </li>
@@ -150,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   <a href="/library/book/docs/python/flask/learning-flask/ep-2/" >
-      Learning Flask Ep. 2
+      Ep.2 Flask application structure
   </a>
 
 </li>
@@ -160,7 +160,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   <a href="/library/book/docs/python/flask/learning-flask/ep-3/"  class="active">
-      Learning Flask Ep. 3
+      Ep.3 Serving HTML files
   </a>
 
 </li>
@@ -170,7 +170,27 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   <a href="/library/book/docs/python/flask/learning-flask/ep-4/" >
-      Learning Flask Ep. 4
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
   </a>
 
 </li>
@@ -211,6 +231,26 @@ https://github.com/alex-shpak/hugo-book
 
   <a href="/library/book/docs/python/cheat-sheet/" >
       Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/modules-list/" >
+      Modules List
   </a>
 
 </li>
@@ -289,7 +329,7 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/library/book/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Learning Flask Ep. 3</strong>
+  <strong>Ep.3 Serving HTML files</strong>
 </header>
 
       
@@ -305,15 +345,13 @@ https://github.com/alex-shpak/hugo-book
 
 <p>We&rsquo;re going to pick up the same application we created in the last episode and build upon it. If you haven&rsquo;t read the last part of this series, I&rsquo;d suggest doing so. If not, this is how our current application structure looks:</p>
 
-<pre><code>├── app
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">├── app
 │   ├── __init__.py
 │   ├── admin_views.py
 │   └── views.py
 ├── requirements.txt
-└── run.py` 
-</code></pre>
-
-<p>Ready to code? Fire up a new terminal and browser windows and let&rsquo;s get started.</p>
+└── run.py` </code></pre></div>
+Ready to code? Fire up a new terminal and browser windows and let&rsquo;s get started.</p>
 
 <h3 id="launch-your-app">Launch your app</h3>
 
@@ -329,56 +367,45 @@ https://github.com/alex-shpak/hugo-book
 
 <p>Go ahead and open up  <code>views.py</code>  in your favourite editor. You should see the following:</p>
 
-<p><strong>app/app/views.py</strong></p>
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> app <span style="color:#f92672">import</span> app
 
-<pre><code class="language-py">from app import app
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello world&#34;</span>
 
-@app.route(&quot;/&quot;)
-def index():
-    return &quot;Hello world&quot;
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/about&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">about</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;All about Flask&#34;</span><span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+Let&rsquo;s modify the  <code>about</code>  route to return some HTML by simple passing an HTML string to  <code>return</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#f92672">from</span> app <span style="color:#f92672">import</span> app
 
-@app.route(&quot;/about&quot;)
-def about():
-    return &quot;All about Flask&quot;` 
-</code></pre>
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello world&#34;</span>
 
-<p>Let&rsquo;s modify the  <code>about</code>  route to return some HTML by simple passing an HTML string to  <code>return</code></p>
-
-<pre><code class="language-py">`from app import app
-
-@app.route(&quot;/&quot;)
-def index():
-    return &quot;Hello world&quot;
-
-@app.route(&quot;/about&quot;)
-def about():
-    return &quot;&lt;h1 style='color: red;'&gt;I'm a red H1 heading!&lt;/h1&gt;&quot;` 
-</code></pre>
-
-<blockquote>
-<p>Tip - Flask will automatically reload when we make changes to any of the Python files assosiated with our app!</p>
-</blockquote>
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/about&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">about</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;h1 style=&#39;color: red;&#39;&gt;I&#39;m a red H1 heading!&lt;/h1&gt;&#34;</span><span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+&gt; Tip - Flask will automatically reload when we make changes to any of the Python files assosiated with our app!</p>
 
 <p>Go to  <code>/about</code>  in your browser to see the changes. You&rsquo;ll see a big red H1 heading at the top of the page!</p>
 
-<p>We can also pass a multi line string of HTML to  <code>return</code>, let&rsquo;s do that now:</p>
+<p>We can also pass a multi line string of HTML to  <code>return</code>, let&rsquo;s do that now:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#f92672">from</span> app <span style="color:#f92672">import</span> app
 
-<pre><code class="language-py">`from app import app
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello world&#34;</span>
 
-@app.route(&quot;/&quot;)
-def index():
-    return &quot;Hello world&quot;
-
-@app.route(&quot;/about&quot;)
-def about():
-    return &quot;&quot;&quot;
- &lt;h1 style='color: red;'&gt;I'm a red H1 heading!&lt;/h1&gt;
- &lt;p&gt;This is a lovely little paragraph&lt;/p&gt;
- &lt;code&gt;Flask is &lt;em&gt;awesome&lt;/em&gt;&lt;/code&gt;
- &quot;&quot;&quot;` 
-</code></pre>
-
-<p>Cool right? But not very practical.</p>
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/about&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">about</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74"> &lt;h1 style=&#39;color: red;&#39;&gt;I&#39;m a red H1 heading!&lt;/h1&gt;
+</span><span style="color:#e6db74"> &lt;p&gt;This is a lovely little paragraph&lt;/p&gt;
+</span><span style="color:#e6db74"> &lt;code&gt;Flask is &lt;em&gt;awesome&lt;/em&gt;&lt;/code&gt;
+</span><span style="color:#e6db74"> &#34;&#34;&#34;</span> </code></pre></div>
+Cool right? But not very practical.</p>
 
 <p>To make things a bit more fun, let&rsquo;s learn how to serve HTML files with Flask.</p>
 
@@ -396,53 +423,45 @@ def about():
 
 <p><code>cd app</code></p>
 
-<p>Create the  <code>templates</code>  directory and move into it:</p>
-
-<pre><code>mkdir templates
-cd templates
-</code></pre>
-
-<p>Let&rsquo;s create a template called  <code>index.html</code>:</p>
+<p>Create the  <code>templates</code>  directory and move into it:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">mkdir templates
+cd templates</code></pre></div>
+Let&rsquo;s create a template called  <code>index.html</code>:</p>
 
 <p><code>touch index.html</code></p>
 
-<p>Open up  <code>index.html</code>  in your editor and add the following:</p>
+<p>Open up  <code>index.html</code>  in your editor and add the following:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
 
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+  &lt;<span style="color:#f92672">title</span>&gt;Index&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
 
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-  &lt;title&gt;Index&lt;/title&gt;
-&lt;/head&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: blue&#34;</span>&gt;Index&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;This is an HTML file served up by Flask&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
 
-&lt;body&gt;
-  &lt;h1 style=&quot;color: blue&quot;&gt;Index&lt;/h1&gt;
-  &lt;p&gt;This is an HTML file served up by Flask&lt;/p&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-
-<p>It&rsquo;s not going to win any design awards but will illustrate how to render HTML files!</p>
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+It&rsquo;s not going to win any design awards but will illustrate how to render HTML files!</p>
 
 <p>Save and close the file.</p>
 
 <p>Your project file structure should now look like the following:</p>
 
-<pre><code>├── app
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">├── app
 │   ├── __init__.py
 │   ├── admin_views.py
 │   ├── templates
 │   │   └── index.html
 │   └── views.py
 ├── requirements.txt
-└── run.py
-</code></pre>
-
-<p>In your terminal, navigate back to the root  <code>app</code>  directory containing  <code>run.py</code>  and run the  <code>flask run</code>  command to restart the app.</p>
+└── run.py</code></pre></div>
+In your terminal, navigate back to the root  <code>app</code>  directory containing  <code>run.py</code>  and run the  <code>flask run</code>  command to restart the app.</p>
 
 <p>Before we can start serving up any HTML files, we need to import  <code>render_template</code>  from Flask. Go ahead and add the following import to the top of  <code>views.py</code></p>
 
@@ -462,26 +481,23 @@ cd templates
 
 <p>Flask will look in the  <code>templates</code>  directory we&rsquo;ve just created for  <code>index.html</code>  (It&rsquo;s the default place Flask will go to look for HTML files when the  <code>render_template</code>  function is called)</p>
 
-<p>Your  <code>views.py</code>  file should now look like this:</p>
+<p>Your  <code>views.py</code>  file should now look like this:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> app <span style="color:#f92672">import</span> app
 
-<pre><code class="language-py">from app import app
+<span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> render_template
 
-from flask import render_template
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;index.html&#34;</span>)
 
-@app.route(&quot;/&quot;)
-def index():
-    return render_template(&quot;index.html&quot;)
-
-@app.route(&quot;/about&quot;)
-def about():
-    return &quot;&quot;&quot;
- &lt;h1 style='color: red;'&gt;I'm a red H1 heading!&lt;/h1&gt;
- &lt;p&gt;This is a lovely little paragraph&lt;/p&gt;
- &lt;code&gt;Flask is &lt;em&gt;awesome&lt;/em&gt;&lt;/code&gt;
- &quot;&quot;&quot;` 
-</code></pre>
-
-<p>Go to  <code>/index</code>  in your browser at  <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>  to see your HTML masterpiece.</p>
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/about&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">about</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74"> &lt;h1 style=&#39;color: red;&#39;&gt;I&#39;m a red H1 heading!&lt;/h1&gt;
+</span><span style="color:#e6db74"> &lt;p&gt;This is a lovely little paragraph&lt;/p&gt;
+</span><span style="color:#e6db74"> &lt;code&gt;Flask is &lt;em&gt;awesome&lt;/em&gt;&lt;/code&gt;
+</span><span style="color:#e6db74"> &#34;&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+Go to  <code>/index</code>  in your browser at  <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>  to see your HTML masterpiece.</p>
 
 <p>Nice work. You&rsquo;ve rendered your first HTML page with Flask!</p>
 
@@ -495,7 +511,7 @@ def about():
 
 <p>Our new file structure is going to look like the following:</p>
 
-<pre><code>├── app
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">├── app
 │   ├── __init__.py
 │   ├── admin_views.py
 │   ├── templates
@@ -505,10 +521,8 @@ def about():
 │   │       └── index.html
 │   └── views.py
 ├── requirements.txt
-└── run.py` 
-</code></pre>
-
-<p>We&rsquo;re going to create 2 new directories within our  <code>templates</code>  directory:</p>
+└── run.py` </code></pre></div>
+We&rsquo;re going to create 2 new directories within our  <code>templates</code>  directory:</p>
 
 <ul>
 <li>public - Will contain all of the HTML files we want to serve from  <code>views.py</code></li>
@@ -536,7 +550,7 @@ touch dashboard.html</code></p>
 
 <p>Once again, your app structure should now look like this:</p>
 
-<pre><code>├── app
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">├── app
 │   ├── __init__.py
 │   ├── admin_views.py
 │   ├── templates
@@ -546,32 +560,24 @@ touch dashboard.html</code></p>
 │   │       └── index.html
 │   └── views.py
 ├── requirements.txt
-└── run.py` 
-</code></pre>
-
-<p>Before we add any HTML to  <code>dashboard.html</code>. Let&rsquo;s refactor our view in  <code>views.py</code>  to serve  <code>index.html</code>  from the newly created directory.</p>
+└── run.py` </code></pre></div>
+Before we add any HTML to  <code>dashboard.html</code>. Let&rsquo;s refactor our view in  <code>views.py</code>  to serve  <code>index.html</code>  from the newly created directory.</p>
 
 <p>Open up  <code>views.py</code>. We&rsquo;re going to change the path to the file we want to serve in  <code>render_template</code>.</p>
 
 <p>Change this:</p>
 
-<p><strong>app/app/views.py</strong></p>
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;index.html&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+To this:</p>
 
-<pre><code class="language-py">`@app.route(&quot;/&quot;)
-def index():
-    return render_template(&quot;index.html&quot;)` 
-</code></pre>
-
-<p>To this:</p>
-
-<p><strong>app/app/views.py</strong></p>
-
-<pre><code class="language-py">`@app.route(&quot;/&quot;)
-def index():
-    return render_template(&quot;public/index.html&quot;)` 
-</code></pre>
-
-<p>We&rsquo;ve changed  <code>&quot;index.html&quot;</code>  to  <code>&quot;public/index.html&quot;</code>  to reflect our new directory structure.</p>
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/index.html&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+We&rsquo;ve changed  <code>&quot;index.html&quot;</code>  to  <code>&quot;public/index.html&quot;</code>  to reflect our new directory structure.</p>
 
 <p>Start up your app and reload your browser to test everything works.</p>
 
@@ -581,27 +587,24 @@ def index():
 
 <p>Open up  <code>dashboard.html</code>  and add the following:</p>
 
-<p><strong>app/app/templates/admin/dashboard.html</strong></p>
+<p><strong>app/app/templates/admin/dashboard.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
 
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+  &lt;<span style="color:#f92672">title</span>&gt;Dashboard&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
 
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-  &lt;title&gt;Dashboard&lt;/title&gt;
-&lt;/head&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: green&#34;</span>&gt;Admin dashboard&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;This HTML file is served from the admin templates directory&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
 
-&lt;body&gt;
-  &lt;h1 style=&quot;color: green&quot;&gt;Admin dashboard&lt;/h1&gt;
-  &lt;p&gt;This HTML file is served from the admin templates directory&lt;/p&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-
-<p>Save and close the file.</p>
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+Save and close the file.</p>
 
 <p>We now need to refactor the route in  <code>admin_views.py</code>. Open the file and make the following changes.</p>
 
@@ -613,21 +616,15 @@ def index():
 
 <p>We then need to change our file path in the  <code>render_template</code>  function.</p>
 
-<p>From this:</p>
-
-<pre><code class="language-py">@app.route(&quot;/admin/dashboard&quot;)
-def admin_dashboard():
-    return render_template(&quot;dashboard.html&quot;)
-</code></pre>
-
-<p>To this:</p>
-
-<pre><code class="language-py">@app.route(&quot;/admin/dashboard&quot;)
-def admin_dashboard():
-    return render_template(&quot;admin/dashboard.html&quot;) 
-</code></pre>
-
-<p>Save the file and go to  <code>admin/dashboard</code>  in your browser to see the changes.</p>
+<p>From this:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/admin/dashboard&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">admin_dashboard</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;dashboard.html&#34;</span>)</code></pre></div>
+To this:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/admin/dashboard&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">admin_dashboard</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;admin/dashboard.html&#34;</span>) </code></pre></div>
+Save the file and go to  <code>admin/dashboard</code>  in your browser to see the changes.</p>
 
 <p>And we&rsquo;re done! We&rsquo;ve split up our app and created a logical file structure within our app.</p>
 
@@ -656,7 +653,7 @@ def admin_dashboard():
 <p>Last modified  ·  28 Feb 2019</p>
 
 <blockquote>
-<p>Written with <a href="https://pythonise.com/series/learning-flask/rendering-html-files-with-flask">StackEdit</a>.</p>
+<p>Source : <a href="https://pythonise.com/series/learning-flask/rendering-html-files-with-flask">pythonise.com</a>.</p>
 </blockquote>
 </article>
 

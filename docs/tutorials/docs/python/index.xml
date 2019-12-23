@@ -29,5 +29,54 @@ Inspired by awesome-php.
       <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit()# For 1 statement on multiple lines,  # use line continuation character (\). # Good for blog post. def __str__(self):return &amp;#34;Name={}, Title={}, Hourly rate={}.&amp;#34;\.format( self.name, self.title, self.__hourly_rate ) String # Concatenation s1 = &amp;#39;Open&amp;#39;s2 = &amp;#39;Writings.net&amp;#39;print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetimenow_str = &amp;#34;Today is &amp;#34; + str(datetime.</description>
     </item>
     
+    <item>
+      <title>List for Tutorial</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/list-python-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/list-python-basics/</guid>
+      <description>List Python Tutorial Python is one of the most popular programming languages. In the last few years, it has gained a lot of popularity due to the increasing interest in Data Science, Deep Learning, Machine Learning, and Artificial Intelligence.
+Just have a look at the Google Trends chart for interest in Python programming language. It’s increasing continuously and it will keep on increasing over time.
+Python Interest Over Time</description>
+    </item>
+    
+    <item>
+      <title>Modules List</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/modules-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/modules-list/</guid>
+      <description>Python Modules List Python os module
+Python sys module
+Python time
+Python MySQL
+Python CSV
+Python multiprocessing
+Python pickle
+Python time sleep
+Python queue
+Python unittest
+Python socket
+Python SimpleHTTPServer
+Python json
+Python signal
+Python random
+Python System Command
+Python Daemon Thread
+Python Copy
+Python threading module
+Python struct
+Python logging
+Python subprocess
+Python argparse
+Python functools
+Python itertools
+Python getopt
+Python ftp
+Python tarfile
+Python lxml
+Python ConfigParser</description>
+    </item>
+    
   </channel>
 </rss>
