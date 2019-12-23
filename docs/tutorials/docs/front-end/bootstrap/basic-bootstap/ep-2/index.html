@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bootstrap 4 แบบพื้นฐาน ตอนที่ 2"><meta property="og:title" content="Bootstrap 4 แบบพื้นฐาน ตอนที่ 2" />
+<meta property="og:description" content="สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 2 Table สร้างไฟล์ใหม่ชื่อ portal.html
+ใส่โค้ดพื้นฐาน html ลงไปแล้วก็เพิ่ม bootstrap.css ด้วย
+&lt;!DOCTYPE html&gt;&lt;html lang=&#34;en&#34;&gt;&lt;head&gt;&lt;meta charset=&#34;UTF-8&#34;&gt;&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;ie=edge&#34;&gt;&lt;title&gt;Portal&lt;/title&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;css/bootstrap.min.css&#34; /&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&#34;container&#34;&gt;&lt;div class=&#34;row&#34;&gt;&lt;div class=&#34;col&#34;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; ใส่ตารางลงไปใน container
+&lt;!DOCTYPE html&gt;&lt;html lang=&#34;en&#34;&gt;&lt;head&gt;&lt;meta charset=&#34;UTF-8&#34;&gt;&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;ie=edge&#34;&gt;&lt;title&gt;Portal&lt;/title&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;css/bootstrap.min.css&#34; /&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&#34;container&#34;&gt;&lt;div class=&#34;row&#34;&gt;&lt;div class=&#34;col&#34;&gt;&lt;h1&gt;Portal&lt;/h1&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;No." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/book/docs/front-end/bootstrap/basic-bootstap/ep-2/" />
+
+<title>Bootstrap 4 แบบพื้นฐาน ตอนที่ 2 | e-Library</title>
+<link rel="icon" href="/library/book/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/book/book.min.670118b70dcd1798b9facf3eb746088ede4e7d8e8c5b07594950174a4d46cc5d.css" integrity="sha256-ZwEYtw3NF5i5&#43;s8&#43;t0YIjt5OfY6MWwdZSVAXSk1GzF0=">
+
+
+<script defer src="/library/book/en.search.min.fb9c0c407253733de21a04ac1d0608bd70b774d20af0dfd72071321891c00ff9.js" integrity="sha256-&#43;5wMQHJTcz3iGgSsHQYIvXC3dNIK8N/XIHEyGJHAD/k="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/book/"><span>e-Library</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/book/docs/front-end/bootstrap/basic-bootstap/ep-1/" >
+      Bootstrap 4 แบบพื้นฐาน ตอนที่ 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/front-end/bootstrap/basic-bootstap/ep-2/"  class="active">
+      Bootstrap 4 แบบพื้นฐาน ตอนที่ 2
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/book/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Bootstrap 4 แบบพื้นฐาน ตอนที่ 2</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="สร-ปการใช-งาน-bootstrap-4-แบบพ-นฐาน-ตอนท-2">สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 2</h1>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/cover2-1.png" alt="enter image description here" /></p>
+
+<h2 id="table">Table</h2>
+
+<p>สร้างไฟล์ใหม่ชื่อ portal.html<br />
+ใส่โค้ดพื้นฐาน html ลงไปแล้วก็เพิ่ม bootstrap.css ด้วย</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;Portal&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/bootstrap.min.css&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+
+<p>ใส่ตารางลงไปใน container</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;Portal&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/bootstrap.min.css&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;Portal&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">table</span>&gt;
+&lt;<span style="color:#f92672">thead</span>&gt;
+&lt;<span style="color:#f92672">tr</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;No...&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;Name&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;Status&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;Age&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;Address&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;Department&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">thead</span>&gt;
+
+&lt;<span style="color:#f92672">tbody</span>&gt;
+&lt;<span style="color:#f92672">tr</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;1&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;Benz&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;Normal&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;35&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;Bangkok  10000&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;IT&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
+
+&lt;<span style="color:#f92672">tr</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;2&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;Namnueng&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;NA&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;35&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;Bangkok  10000&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;IT&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
+
+&lt;<span style="color:#f92672">tr</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;3&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;Pare&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;NA&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;35&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;Bangkok  10000&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;IT&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
+
+&lt;/<span style="color:#f92672">tbody</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+
+<p>จะได้แบบนี้</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/40.png" alt="40" /></p>
+
+<p>Bootstrap มี class ชื่อว่า table ทำให้ตารางสวยขึ้น</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;</code></pre></div>
+<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/41.png" alt="41" /></p>
+
+<p>ปรับแต่งหัวตารางโดยใช้ utility class คือ bg- และ text-</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
+&lt;<span style="color:#f92672">thead</span>&gt;
+&lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-primary text-white&#34;</span>&gt;
+...</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/42.png" alt="42" /></p>
+
+<p>ทำให้ตารางสลับสี ใช้ table-striped เพิ่มเข้าไป</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-striped&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/43.png" alt="43" /></p>
+
+<p>ทำให้ตารางเลื่อสีไปตาม cursor ใช้ table-hover เพิ่มเข้าไป</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-hover&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g5.gif" alt="g5" /></p>
+
+<p>ใส่ขอบให้ตารางใช้ table-bordered</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-hover table-bordered&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/44.png" alt="44" /></p>
+
+<p>ลองย่อหน้าต่างให้เล็กเป็นมุมมองมือถือ จะพบว่าตารางไม่รองรับ responsive</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/46a.png" alt="46a" /></p>
+
+<p>วิธีการแก้ก็คือเอาตารางไปใส่ใน div class <strong>table-responsive</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table-responsive&#34;</span>&gt;
+&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-hover table-bordered&#34;</span>&gt;
+...
+&lt;/<span style="color:#f92672">table</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>มันจะสามารถเลื่อน ซ้ายขวาได้</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g6.gif" alt="g6" /></p>
+
+<p>ใน VS Code ตรงไหนโค้ดยาวก็ย่อโค้ดได้นะ</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/47.png" alt="47" /></p>
+
+<h3 id="source-code">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/d7b07ec41ffef49429ec4c95112c1dcb">https://gist.github.com/benznest/d7b07ec41ffef49429ec4c95112c1dcb</a></p>
+
+<h2 id="form">Form</h2>
+
+<p>สร้างไฟล์ใหม่ login.html จะลองทำหน้า login กัน อย่าลืมเพิ่ม boostrap.css เข้ามาด้วย</p>
+
+<p>ฟอร์มล้อคอินที่จะทำ หน้าตาประมาณนี้</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/50.png" alt="50" /></p>
+
+<p>ลองใส่ฟอร์มล็อกอิน แบบง่ายๆ</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;Portal&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/bootstrap.min.css&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;
+&lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;usernmae&#34;</span>&gt;Username:  &lt;/<span style="color:#f92672">label</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;
+&lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;Password:  &lt;/<span style="color:#f92672">label</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;
+&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Sign in&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/48.png" alt="48" /></p>
+
+<p>ให้ใช้ class  <strong>form-group</strong>  จัดการแถวของฟอร์ม</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+&lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;usernmae&#34;</span>&gt;Username:  &lt;/<span style="color:#f92672">label</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+&lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;Password:  &lt;/<span style="color:#f92672">label</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Login&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/49.png" alt="49" /></p>
+
+<p>ใช้ class  <strong>form-control</strong>  ให้กับ input เพื่อให้มันรองรับ responsive และความสวยงาม</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/51.png" alt="51" />
+ส่วนปุ่มใช้ class ชื่อว่า  <strong>btn</strong> และอยากได้ส้มๆก็ใส่ <strong>btn-warning</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-warning text-white&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Login&lt;/<span style="color:#f92672">button</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/52.png" alt="52" /></p>
+
+<p>ถ้าต้องการให้ปุ่มแสดงตามขนาดจอ ก็ใช้ <strong>btn-block</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-block btn-warning text-white&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Login&lt;/<span style="color:#f92672">button</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/53.png" alt="53" /></p>
+
+<p>ถ้าต้องการให้แสดงแบบแถวเดียวใช้ <strong>form-inline</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-inline&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/54.png" alt="54" /></p>
+
+<p>ฟอร์มมันชิดไป ไม่สวยก็สามารถใช้ class margin มาร่วมได้</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-inline mt-3&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+&lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mr-2&#34;</span>  <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;usernmae&#34;</span>&gt;Username:  &lt;/<span style="color:#f92672">label</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control mr-3&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+&lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mr-2&#34;</span>  <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;Password:  &lt;/<span style="color:#f92672">label</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control mr-3&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-warning text-white&#34;</span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Login&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/55.png" alt="55" /></p>
+
+<h3 id="source-code-1">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/1d77e1a799253e5546b8d4c836cd2f1c">https://gist.github.com/benznest/1d77e1a799253e5546b8d4c836cd2f1c</a></p>
+
+<h2 id="card">Card</h2>
+
+<p>อีกอันที่ใช้บ่อยๆ คือ card มันคือการทำเนื้อหาเป็นบล็อกๆ</p>
+
+<p>สร้างไฟล์ใหม่ชื่อว่า news.html ทำ grid ไว้ 2 คอลัมภ์</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;News&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/bootstrap.min.css&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+
+<span style="color:#75715e">&lt;!--  Col  1  --&gt;</span>
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+
+<span style="color:#75715e">&lt;!--  Col  2  --&gt;</span>
+
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+
+<p>Card โครงสร้างจะเป็นประมาณนี้</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-header&#34;</span>&gt;
+&lt;<span style="color:#f92672">h4</span>&gt;Hot news&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor,  sit amet consectetur adipisicing elit.  Dolorem minus accusantium rerum suscipit,  commodi sapiente,  saepe doloremque beatae quod architecto voluptatibus.  Nobis ratione excepturi omnis incidunt laboriosam quidem quae quibusdam!&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-footer&#34;</span>&gt;
+By Benznest
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+
+<span style="color:#75715e">&lt;!--  Col  2  --&gt;</span>
+
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/58.png" alt="58" /></p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/56.png" alt="56" /></p>
+
+<p>สามารถจัดแต่งโดยใช้ utilities class ได้ตามปกติ เช่น bg และ text</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-header bg-danger text-white&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/57.png" alt="57" /></p>
+
+<p>สามารถนำรูปมาเป็น Header ได้ โดยใช้ class ชือว่า <strong>card-img-top</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+
+...
+
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-img-top&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff4.jpg&#34;</span>  &gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span>&gt;
+&lt;<span style="color:#f92672">h4</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-title&#34;</span>&gt;Our Staff&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">p</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-text&#34;</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Dolores excepturi modi voluptate animi repellat?  Animi accusantium numquam iste non voluptatem ipsum totam,  odio sequi.  Fuga amet qui vitae atque.  Illo.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/59.png" alt="59" /></p>
+
+<p>เพิ่มปุ่มใน card ให้ดูสวยงาม</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Read more&lt;/<span style="color:#f92672">a</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/60.png" alt="60" /></p>
+
+<p>ซึ่งถ้าจะทำสวยๆ ก็ต้องมีรูป และเนื้อหาที่เหมาะสมกัน</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/61.png" alt="61" /></p>
+
+<p>สามารถนำรูปมาวางด้านล่างแทนได้ โดยใช้ class ชื่อว่า  <strong>card-img-bottom</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span>&gt;
+
+...
+
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/62.png" alt="62" /></p>
+
+<h3 id="source-code-2">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/bb45d6f0affd79d462a837055408f3c8">https://gist.github.com/benznest/bb45d6f0affd79d462a837055408f3c8</a></p>
+
+<h2 id="การใช-media">การใช้ Media</h2>
+
+<p>การนำคลิป youtube embed มาใช้ใน bootstrap<br />
+ไปที่ youtube คลิกขวาที่คลิป &gt; Copy embed code</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/63a.png" alt="63a" /></p>
+
+<p>มันจะเป็น iframe  ถ้ามี width height ให้ลบออก  เพราะ เราจะทำให้ responsive</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.youtube.com/embed/5nLWk7kzXgI?ecver=1&#34;</span>
+<span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>  <span style="color:#a6e22e">allow</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accelerometer; autoplay; encrypted-media;
+</span><span style="color:#e6db74">gyroscope; picture-in-picture&#34;</span>  <span style="color:#a6e22e">allowfullscreen</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;</code></pre></div>
+
+<p>เพิ่ม <code>&lt;div&gt;</code>ครอบตัว video โดยเพิ่ม class ชื่อว่า <code>embed-responsive embed-responsive-4by3</code>
+<code>4by3</code> คือขนาด 4:3 สามารถใช้ตัวอื่นได้เช่น <code>16by9, 21by9, 1by1</code>และที่ iframe เพิ่ม class ชื่อว่า <code>embed-responsive-item</code></p>
+
+<p>โดยจะลองเพิ่มแถวเข้าไปต่อจากเดิม</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row mt-5&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">h3</span>&gt;Video gallery&lt;/<span style="color:#f92672">h3</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;embed-responsive embed-responsive-4by3&#34;</span>&gt;
+&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;embed-responsive-item&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.youtube.com/embed/5nLWk7kzXgI?ecver=1&#34;</span>  <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>  <span style="color:#a6e22e">allow</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34;</span>  <span style="color:#a6e22e">allowfullscreen</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/64.png" alt="64" /></p>
+
+<p>ลองเพิ่มคอมลัมภ์อีกอันเพื่อทำ photo gallery ด้านขวาของ video<br />
+ซึ่งสามารถใช้ class ชื่อว่า  <strong>media</strong> การทำงานของมันจะเรียงไปแนวนอน</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row mt-5&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-6&#34;</span>&gt;
+...
+
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-6&#34;</span>&gt;
+&lt;<span style="color:#f92672">h3</span>&gt;Photo gallery&lt;/<span style="color:#f92672">h3</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;media&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-50&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/content/office10.jpg&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;media-body pl-3&#34;</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem,  ipsum dolor sit amet consectetur adipisicing elit.  Neque aliquam nisi officiis aut
+beatae.  Voluptas,  aliquid!  Nostrum quam architecto  &lt;/<span style="color:#f92672">p</span>&gt;
+
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/65.png" alt="65" /></p>
+
+<p>การจะเพิ่มแถวของเนื้อหาที่ใช้ class media สามารถใช้ <code>&lt;ul class=”list-unstyled”&gt;</code> และ <code>&lt;li&gt;</code> เข้ามาได้</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-6&#34;</span>&gt;
+&lt;<span style="color:#f92672">h3</span>&gt;Photo gallery&lt;/<span style="color:#f92672">h3</span>&gt;
+&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;list-unstyled&#34;</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;media&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-50&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/content/office1.jpg&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;media-body pl-3&#34;</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem,  ipsum dolor sit amet consectetur adipisicing elit.  Neque aliquam nisi
+officiis aut
+beatae.  Voluptas,  aliquid!  Nostrum quam architecto  &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;media&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-50&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/content/office3.jpg&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;media-body pl-3&#34;</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem,  ipsum dolor sit amet consectetur adipisicing elit.  Neque aliquam nisi
+officiis aut
+beatae.  Voluptas,  aliquid!  Nostrum quam architecto  &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;media&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-50&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/content/office2.jpg&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;media-body pl-3&#34;</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem,  ipsum dolor sit amet consectetur adipisicing elit.  Neque aliquam nisi
+officiis aut
+beatae.  Voluptas,  aliquid!  Nostrum quam architecto  &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/66.png" alt="66" /></p>
+
+<h3 id="source-code-3">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/17e5753cff346c5ed5ba8f4689377801">https://gist.github.com/benznest/17e5753cff346c5ed5ba8f4689377801</a></p>
+
+<h2 id="navigation">Navigation</h2>
+
+<p>เพิ่ม row ไปที่บนสุดของ container ข้างในใช้ list คือ <code>&lt;ul&gt;&lt;li&gt; … &lt;/li&gt;&lt;/ul&gt;</code></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">ul</span>&gt;&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;&lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">ใน bootstrap จะใช้  
+class ชื่อ nav ใน &lt;<span style="color:#f92672">ul</span>&gt;  
+class ชื่อ nav-item ใน &lt;<span style="color:#f92672">li</span>&gt;  
+class ชื่อ nav-link ใน &lt;<span style="color:#f92672">a</span>&gt; ที่เป็นป้ายลิงค์</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row pt-3 pb-3&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav&#34;</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Service&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;About&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Contact&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/67.png" alt="67" /></p>
+
+<p>เพิ่ม ให้เมนูนึงถูกเลือกใช้ class ชื่อว่า  <strong>active</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link active&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;</code></pre></div>
+
+<p>เพิ่ม class  <strong>nav-pills</strong>  ให้กับ <code>&lt;ul&gt;</code></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav nav-pills&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/68.png" alt="68" /></p>
+
+<p>หรือจะใช้ class <strong>nav-tabs</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav nav-tabs&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/69.png" alt="69" /></p>
+
+<p>รายละเอียด</p>
+
+<p><a href="https://getbootstrap.com/docs/4.1/components/navs/">https://getbootstrap.com/docs/4.1/components/navs/</a></p>
+
+<h2 id="การใช-javascript-ของ-bootstrap">การใช้ Javascript ของ Bootstrap</h2>
+
+<p>Bootstrap ต้องใช้ library เพิ่มคือ jquery กับ popper ถึงจะใช้งานได้เต็มประสิทธิภาพ ซึ่ง bootstrap ไม่มีติดมาให้ เพราะ ติด license จำเป็นต้องไปดาวน์ดหลดมาจากต้นทางผู้พัฒนา<br />
+ให้ดาวน์โหลด jquery js กับ popper js มาติดตั้งไว้ในโปรเจค ในโฟลดเดอร์ js</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/71.png" alt="71" /></p>
+
+<p>เพิ่ม jquery , popper , bootstrap ไปที่ท้าย body โดยใช้คำสั่ง <code>&lt;script&gt;&lt;/script&gt;</code>
+โดยให้ jquery และ popper อยู่ด้านบนของ bootstrap.js เพราะการอ่านโค้ดจะอ่านจากบนลงล่าง วึ่ง bootstrap เรียกใช้งาน jquery<br />
+จึงจำเป็นต้องอ่าน jquery มาก่อนนั่นเอง</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/jquery-3.3.1.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/popper_1_14_3.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/bootstrap.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+
+<p>ถ้าใส่ผิด สามารถ Inspect ดูที่เมนู console</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/72.png" alt="72" /></p>
+
+<h2 id="การทำ-dropdown">การทำ dropdown</h2>
+
+<p>เพิ่ม dropdown ให้เมนู ได้ โดยใช้  <strong>dropdown-menu</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item dropdown&#34;</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link dropdown-toggle&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>  <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown&#34;</span>&gt;Service&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-menu&#34;</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;App&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Website&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Desktop&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;IoT&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">li</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/73.png" alt="73" /></p>
+
+<p>ปัญหาที่ตามมาคือ เมนูแบบนี้ไม่รองรับ responsive ดังนั้นต้องไปใช้ Navbar แบบใหม่</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/74.png" alt="74" /></p>
+
+<h2 id="ต-ตด-ง-extension">ติตดั้ง extension</h2>
+
+<p>ติดตั้ง Bootstrap v4 Snippets</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/70.png" alt="70" /></p>
+
+<h2 id="navbar-responsive">Navbar responsive</h2>
+
+<p>พิมพ์ b-navbar มันจะ generate โค้ดมาให้</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g7.gif" alt="g7" /></p>
+
+<p>ซึ่งเยอะมาก เรามีหน้าที่แก้เนื้อหาก็พอ นี่คือการใช้เครื่องมือให้เป็นประโยชน์</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar navbar-expand-lg navbar-light bg-light fixed-top&#34;</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-brand&#34;</span>&gt;Benznest&#39;s  blog&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-toggler&#34;</span>  <span style="color:#a6e22e">data-target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#my-nav&#34;</span>  <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse&#34;</span>&gt;
+&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-toggler-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-nav&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse navbar-collapse&#34;</span>&gt;
+&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-nav mr-auto&#34;</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link active&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item dropdown&#34;</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link dropdown-toggle&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>  <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown&#34;</span>&gt;Service&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-menu&#34;</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;App&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Website&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Desktop&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;IoT&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Android&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;iOS&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Windows&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-item&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Linux&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;About&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Contact&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">nav</span>&gt;</code></pre></div>
+
+<p>Navbar อันใหม่จะรองรับ responsive</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/75.png" alt="75" /></p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/76.png" alt="76" /><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/77.png" alt="77" /></p>
+
+<p>ปรับสีของ Navbar โดยใช้ class uitility</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar navbar-expand-lg navbar-dark bg-primary fixed-top&#34;</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-brand text-white&#34;</span>&gt;Benznest&#39;s  blog&lt;/<span style="color:#f92672">a</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/78.png" alt="78" /></p>
+
+<p>และเนื่องจาก Navbar มันใช้ Fix-top มันจะทำให้กินเนื้อด้านบน ก็ให้เนื้อหาของเราเว้นว่างด้านบนนิดนึง โดยใช้ pt-5 ก็คือ padding top 5 rem</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;/<span style="color:#f92672">nav</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container pt-5&#34;</span>&gt;</code></pre></div>
+
+<h2 id="แนะนำ-bootswatch">แนะนำ Bootswatch</h2>
+
+<p>bootswatch เป็นเว็บที่รวมแหล่งธีม css ของ bootstrap มาไว้ในที่เดียว เราสามารถดาวน์โหลดธีมที่ชอบมาใช้ได้ ซึ่งมันคือ css ของ bootstrap ดังนั้นสามารถนำมาใช้กับ bootstrap ได้เลย</p>
+
+<p><a href="https://bootswatch.com/">https://bootswatch.com/</a></p>
+
+<p>กดดาวน์โหลดธีมที่ชอบ แล้วจะได้ไฟล์ .css</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/79.png" alt="79" /></p>
+
+<p>เอาไฟล์ .css ไปไว้ในโฟลเดอร์ css แนะนำเปลี่ยนชื่อเป็นชื่อธีม ไม่ควรใช้ชื่อ bootstrap ทับอันเดิม</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/81.png" alt="81" /></p>
+
+<p>ใน html ให้เปลี่ยนการใช้ bootstrap.min.css มาใช้ธีมอันใหม่</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/minty.min.css&#34;</span>  /&gt;</code></pre></div>
+
+<p>Refresh หน้าเว็บ</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/80.png" alt="80" /></p>
+
+<h2 id="การใช-carousel">การใช้ Carousel</h2>
+
+<p>carousel คือ ตัวสไลด์รูปภาพ<br />
+ใช้โค้ดลัด พิมพ์ว่า b-carousel เลือก carousel-full</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g8.gif" alt="g8" /></p>
+
+<p>จากนั้นก็ปรับแต่ง carousel จะมีสามส่วน คือ<br />
+indicator ที่เป็นจุด ว่ารูปภาพเราคือรูปไหน<br />
+Slide คือรูปภาพ<br />
+Button คือปุ่มซ้าย ขวา</p>
+
+<p>active คืออันที่ถูกเลือกอยู่</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/82.png" alt="82" /></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container-fluid mt-5 p-0&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-carousel&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel slide&#34;</span>  <span style="color:#a6e22e">data-ride</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel&#34;</span>  <span style="color:#a6e22e">data-interval</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;500&#34;</span>&gt;
+&lt;<span style="color:#f92672">ol</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-indicators&#34;</span>  &gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span>  <span style="color:#a6e22e">data-target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#my-carousel&#34;</span>  <span style="color:#a6e22e">data-slide-to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>  <span style="color:#a6e22e">data-target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#my-carousel&#34;</span>  <span style="color:#a6e22e">data-slide-to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>  <span style="color:#a6e22e">data-target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#my-carousel&#34;</span>  <span style="color:#a6e22e">data-slide-to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ol</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-inner&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-item active&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-block w-100&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/banner/banner3.jpg&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-caption d-none d-md-block&#34;</span>&gt;
+&lt;<span style="color:#f92672">h5</span>&gt;Hello  ,  world&lt;/<span style="color:#f92672">h5</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Ullam aliquid doloremque,  &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-item&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-block w-100&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/banner/banner4.jpg&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-caption d-none d-md-block&#34;</span>&gt;
+&lt;<span style="color:#f92672">h5</span>&gt;Hello  ,  world&lt;/<span style="color:#f92672">h5</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Ullam aliquid doloremque,  &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-item&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-block w-100&#34;</span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/banner/banner5.jpg&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-caption d-none d-md-block&#34;</span>&gt;
+&lt;<span style="color:#f92672">h5</span>&gt;Hello  ,  world&lt;/<span style="color:#f92672">h5</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Ullam aliquid doloremque,  &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-control-prev&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#my-carousel&#34;</span>  <span style="color:#a6e22e">data-slide</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;prev&#34;</span>&gt;
+&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-control-prev-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-control-next&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#my-carousel&#34;</span>  <span style="color:#a6e22e">data-slide</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;next&#34;</span>&gt;
+&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel-control-next-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>การปรับเวลาในการเลื่อนอัตโนมัติ ทำได้โดยใช้ data-interval หน่วยเป็นมิลลิวินาที</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-carousel&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel slide&#34;</span>  <span style="color:#a6e22e">data-ride</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;carousel&#34;</span>
+<span style="color:#a6e22e">data-interval</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;500&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/83.png" alt="83" /></p>
+
+<h3 id="source-code-4">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/a2c5683a2f19ddd26617415821a2b141">https://gist.github.com/benznest/a2c5683a2f19ddd26617415821a2b141</a></p>
+
+<h2 id="modal">Modal</h2>
+
+<p>Modal คือป๊อบอัพแบบสวยๆ อันนี้ก็ใช้บ่อยมากๆ<br />
+ใช้โค้ดลัดสร้าง Modal คือพิมพ์ว่ b-modal แล้วเลือก modal-full</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g10.gif" alt="g10" /></p>
+
+<p>Modal ปกติมันจะถูกซ่อนเอาไว้ รอให้เรียกใช้งาน<br />
+ให้เพิ่ม id ให้กับ div modal หลัก</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal fade&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myModal&#34;</span>&gt;</code></pre></div>
+
+<p>ปรับแต่ง modal ตามใจ โดยภายในก็แบ่งเป็น header, content , footer</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal fade&#34;</span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myModal&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-dialog&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-content&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-header&#34;</span>&gt;
+&lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-title&#34;</span>&gt;Hello Modal&lt;/<span style="color:#f92672">h5</span>&gt;
+&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;close&#34;</span>  <span style="color:#a6e22e">data-dismiss</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal&#34;</span>&gt;
+&lt;<span style="color:#f92672">span</span>&gt;&amp;times;&lt;/<span style="color:#f92672">span</span>&gt;
+&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-body&#34;</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Content&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-footer&#34;</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-danger text-white&#34;</span>  <span style="color:#a6e22e">data-dismiss</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal&#34;</span>&gt;Close&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success text-white&#34;</span>  <span style="color:#a6e22e">data-dismiss</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal&#34;</span>&gt;Save&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>ปุ่มไหนที่อยากให้กดแล้วแสดง modal ก็เพิ่ม  **data-toggle=”modal” data-target=”#myModal”<br />
+**โดย target คือ id ของ modal</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary text-white&#34;</span>  <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal&#34;</span>  <span style="color:#a6e22e">data-target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#myModal&#34;</span>&gt;Read more&lt;/<span style="color:#f92672">a</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/84.png" alt="84" /></p>
+
+<h2 id="แนะนำ-bootsnipp">แนะนำ bootsnipp</h2>
+
+<p>bootsnipp จะเป็นเว็บที่รวม code หรือ component ต่างๆ เอาไว้สำหรับ bootstrap</p>
+
+<p><a href="https://bootsnipp.com/">https://bootsnipp.com</a></p>
+
+<p>เช่นอยากลองใช้ตัวที่ชื่อว่า Timeline vertical ในเว็บของเรา</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/85.png" alt="85" /></p>
+
+<p>กดเข้าไป ข้างในจะมีรายละเอียด เช่น HTML , CSS</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/87.png" alt="87" />
+ให้ copy โค้ด HTML มาไว้ในที่ต้องการ และ copy CSS ของมันมาด้วย โดยเอาไปวางไว้ใน custom.css ของเรา</p>
+
+<p>จากนั้น มาเพิ่ม custom.css</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/custom.css&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/86.png" alt="86" /></p>
+
+<h2 id="แนะนำ-startbootstrap-com">แนะนำ Startbootstrap.com</h2>
+
+<p>ตัวนี้เป็นแหล่งรวมธีมของ Bootstrap แบบมาทั้ง pack เลย เช่น ธีมสำหรับทำเว็บบริษัท ธีมสำหรับแสดงผลงาน</p>
+
+<p><a href="https://startbootstrap.com/">https://startbootstrap.com/</a></p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/88.png" alt="88" /></p>
+
+<h2 id="การใช-class-display">การใช้ class display</h2>
+
+<p>อันนี้เป็นความสามารถใหม่ใน ฺbootstrap4 เช่น อยากให้หน้าจอใหญ่แสดง Carousel แต่ในจอเล็กให้ซ่อน<br />
+ใน Bootstrap 4 สามารถใช้ class d-</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container-fluid mt-5 p-0 d-none d-sm-none d-md-block&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g12.gif" alt="g12" /></p>
+
+<h2 id="media-query">Media query</h2>
+
+<p>Media query คือการระบุเงื่อนไขเจาะจงสำหรับ css เช่น ถ้าหน้าจอขนาดมากกว่า 700px ให้ h1 , h2, h3 ขนาด 1 rem</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">media</span>  <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span>:<span style="color:#a6e22e">700px</span><span style="color:#f92672">)</span>{
+<span style="color:#f92672">h1</span><span style="color:#f92672">,</span><span style="color:#f92672">h2</span><span style="color:#f92672">,</span><span style="color:#f92672">h3</span>{
+<span style="color:#66d9ef">font-size</span>:<span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+}
+}</code></pre></div>
+
+<h2 id="ส-งท-ใช-ร-วมก-บ-bootstrap-ไม-ได">สิ่งที่ใช้ร่วมกับ Bootstrap ไม่ได้</h2>
+
+<p>เช่น คู่แข่ง ชื่อว่า Foundation เพราะใช้ชื่อ class เหมือนกัน ตัว Foundation มีความสามารถมากกว่า Bootstrap ทำอะไร Advance ได้มากกว่า แต่ก็ต้องเรียนรู้มากกว่า</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/39.png" alt="39" /></p>
+
+<h2 id="สร-ป">สรุป</h2>
+
+<p>บทความนี้ก็พาไปทำ component ที่ใช้งานบ่อย เช่น Table , Form , Carousel , Modal , Navbar รวมทั้งแนะนำเว็บที่เกี่ยวกับ bootstrap ที่จะช่วยให้ใช้งานได้ง่ายขึ้นอีกด้วย</p>
+
+<blockquote>
+<p>Written with <a href="https://benzneststudios.com/blog/web/bootstrap-4-basic-part-2/">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cFront-End%5cbootstrap%5cbasic-bootstap%5cep-2.md" target="_blank">
+      <img src="/library/book/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ตอนที่​ 3 - Deal with the Devil"><meta property="og:title" content="ตอนที่​ 3 - Deal with the Devil" />
+<meta property="og:description" content="ตอนที่​ 3 : Deal with the Devil ในช่วงฤดูร้อนปี 1980 ตัวแทนจาก IBM สองคนได้เดินทางมาที่สำนักงานใหญ่ของ Microsoft เพื่อหารือเรื่องคอมพิวเตอร์ส่วนบุคคลที่ IBM กำลังตัดสินใจครั้งสำคัญว่าจะสร้างมันดีหรือไม่?
+แม้ในยุคนั้น IBM จะเป็นเจ้าตลาด Hardware ครอบครองส่วนแบ่งการตลาดคอมพิวเตอร์แบบเมนเฟรมถึงกว่า 80% เรียกได้ว่าเป็นยักษ์ใหญ่ในตลาดครองตลาดได้แบบเบ็ดเสร็จสำหรับ IBM แต่ดูเหมือนคอมพิวเตอร์ขนาดเล็กนั้นจะเป็นปัญหาสำหรับ IBM เพราะพวกเขาคุ้นเคยกับการขายคอมพิวเตอร์ขนาดมหึมาในราคาแพง และลูกค้าส่วนใหญ่ เป็นลูกค้าธุรกิจที่เป็นบริษัทยักษ์ใหญ่ทั่วโลกในขณะนั้น
+ซึ่งการเข้ามาคุยกับ Microsoft เนื่องจาก ฝ่ายผู้บริหารระดับสูงเล็งเห็นว่า จำเป็นต้องดึงคนนอก เข้ามาช่วยเหลือในตลาดใหม่อย่าง คอมพิวเตอร์ส่วนบุคคล ซึ่งเป็นการขายให้กับผู้บริโภครายย่อย ซึ่งเป็นสิ่งที่ IBM นั้นไม่ถนัดเป็นอย่างยิ่ง
+และ IBM ต้องการเข็นคอมพิวเตอร์ส่วนบุคคลออกตลาดให้ได้ภายในปีนั้น โดย IBM ได้ตัดสินใจ สร้างเครื่องคอมพิวเตอร์ส่วนบุคคลที่ประกอบด้วยอุปกรณ์ที่หาซื้อได้ทั่วไปในท้องตลาด และทำสิ่งที่เซอร์ไพรซ์เป็นอย่างยิ่งคือ การสร้างระบบแบบเปิดและง่ายต่อการเลียนแบบ แม้ว่าในเครื่องเมนเฟรมขนาดใหญ่นั้น IBM จะออกแบบ Microprocessor เองทั้งหมด แต่ในตลาดใหม่อย่างคอมพิวเตอร์ส่วนบุคคล IBM ได้ตัดสินใจใช้ Microprocessor ของ intel และที่สำคัญที่สุด คือ IBM ได้ตัดสินใจที่จะให้คนอื่นเขียนระบบปฏิบัติการขึ้นมา ซึ่งแน่นอนว่านี่คือโอกาสทองครั้งสำคัญของ Microsoft
+และแน่นอนว่า Gates ไม่มีทางที่จะพลาดโอกาสทองครั้งยิ่งใหญ่แบบนี้ ที่น้อยคนนักที่จะมีโอกาสแบบที่ Gates ได้รับจาก IBM ซึ่งแน่นอนว่ามันเป็นเรื่องท้าทายครั้งสำคัญของ Gates และ Microsoft แต่อย่างไรก็ตาม พวกเขาก็ต้องการมีส่วนร่วมกับธุรกิจยักษ์ใหญ่นี้ โดย Gates ได้ไปซื้อโปรแกรมที่เคยพัฒนามาแล้วจากบริษัทเล็ก ๆ แห่งหนึ่งในเมืองซีแอตเติล และได้จ้าง Tim Paterson หัวหน้าวิศวกรจากบริษัทดังกล่าวมาร่วมงานกับ Microsoft และนำโปรแกรมดังกล่าวมาปรับแต่งให้กับ Hardware ของ IBM" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/book/docs/bill-gates/3/" />
+
+<title>ตอนที่​ 3 - Deal with the Devil | e-Library</title>
+<link rel="icon" href="/library/book/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/book/book.min.08035661ef2ab612c3c4d88297e5e911393100832d0d5e3fd76245b8996ef610.css" integrity="sha256-CANWYe8qthLDxNiCl&#43;XpETkxAIMtDV4/12JFuJlu9hA=">
+
+
+<script defer src="/library/book/en.search.min.ebb00cce6b320898e643f3a4da689763851cb6473bd88f65c69e1bc4e80f79b3.js" integrity="sha256-67AMzmsyCJjmQ/Ok2miXY4Uctkc72I9lxp4bxOgPebM="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/book/"><span>e-Library</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/homo-sapiens/" >
+      Homo Sapiens
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/homo-deus/" >
+      Homo Deus
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/bill-gates/" >
+      ประวัติ Bill Gates
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/1/" >
+      ตอนที่ 1 - A Revolution Begins
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/2/" >
+      ตอนที่ 2 - The Standard
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/3/"  class="active">
+      ตอนที่​ 3 - Deal with the Devil
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/4/" >
+      ตอนที่​ 4 - The Downfall of IBM
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/5/" >
+      ตอนที่​ 5 - Windows​ to the World
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/6/" >
+      ตอนที่​ 6 - NetScape Killer
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/7/" >
+      ตอนที่​ 7 - Enemy at the Gates
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/8/" >
+      ตอนที่​ 8 - The Internet Trap
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/9/" >
+      ตอนที่​ 9 - Revenge of the Fallen
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/10/" >
+      ตอนที่​ 10 - Glorious Reaction
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/11/" >
+      ตอนที่​ 11 - Glorious Failure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/12/" >
+      ตอนที่​ 12 - Hit Refresh
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/test/" >
+      Test Code
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/book/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>ตอนที่​ 3 - Deal with the Devil</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="ตอนท-3-deal-with-the-devil">ตอนที่​ 3 : Deal with the Devil</h1>
+
+<p><img src="https://t0.blockdit.com/photos/2019/09/5d77f373df76a90cbe40fa30_800x0xcover_KZDrPhGf.jpg" alt="" /></p>
+
+<p>ในช่วงฤดูร้อนปี 1980 ตัวแทนจาก IBM สองคนได้เดินทางมาที่สำนักงานใหญ่ของ Microsoft เพื่อหารือเรื่องคอมพิวเตอร์ส่วนบุคคลที่ IBM กำลังตัดสินใจครั้งสำคัญว่าจะสร้างมันดีหรือไม่?</p>
+
+<p>แม้ในยุคนั้น IBM จะเป็นเจ้าตลาด Hardware ครอบครองส่วนแบ่งการตลาดคอมพิวเตอร์แบบเมนเฟรมถึงกว่า 80% เรียกได้ว่าเป็นยักษ์ใหญ่ในตลาดครองตลาดได้แบบเบ็ดเสร็จสำหรับ IBM แต่ดูเหมือนคอมพิวเตอร์ขนาดเล็กนั้นจะเป็นปัญหาสำหรับ IBM เพราะพวกเขาคุ้นเคยกับการขายคอมพิวเตอร์ขนาดมหึมาในราคาแพง และลูกค้าส่วนใหญ่ เป็นลูกค้าธุรกิจที่เป็นบริษัทยักษ์ใหญ่ทั่วโลกในขณะนั้น</p>
+
+<p>ซึ่งการเข้ามาคุยกับ Microsoft เนื่องจาก ฝ่ายผู้บริหารระดับสูงเล็งเห็นว่า จำเป็นต้องดึงคนนอก เข้ามาช่วยเหลือในตลาดใหม่อย่าง คอมพิวเตอร์ส่วนบุคคล ซึ่งเป็นการขายให้กับผู้บริโภครายย่อย ซึ่งเป็นสิ่งที่ IBM นั้นไม่ถนัดเป็นอย่างยิ่ง</p>
+
+<p>และ IBM ต้องการเข็นคอมพิวเตอร์ส่วนบุคคลออกตลาดให้ได้ภายในปีนั้น โดย IBM ได้ตัดสินใจ สร้างเครื่องคอมพิวเตอร์ส่วนบุคคลที่ประกอบด้วยอุปกรณ์ที่หาซื้อได้ทั่วไปในท้องตลาด และทำสิ่งที่เซอร์ไพรซ์เป็นอย่างยิ่งคือ <strong>การสร้างระบบแบบเปิดและง่ายต่อการเลียนแบบ</strong> แม้ว่าในเครื่องเมนเฟรมขนาดใหญ่นั้น IBM จะออกแบบ Microprocessor เองทั้งหมด แต่ในตลาดใหม่อย่างคอมพิวเตอร์ส่วนบุคคล IBM ได้ตัดสินใจใช้ Microprocessor ของ intel และที่สำคัญที่สุด คือ IBM ได้ตัดสินใจที่จะให้คนอื่นเขียนระบบปฏิบัติการขึ้นมา ซึ่งแน่นอนว่านี่คือโอกาสทองครั้งสำคัญของ Microsoft</p>
+
+<p>และแน่นอนว่า Gates ไม่มีทางที่จะพลาดโอกาสทองครั้งยิ่งใหญ่แบบนี้ ที่น้อยคนนักที่จะมีโอกาสแบบที่ Gates ได้รับจาก IBM ซึ่งแน่นอนว่ามันเป็นเรื่องท้าทายครั้งสำคัญของ Gates และ Microsoft แต่อย่างไรก็ตาม พวกเขาก็ต้องการมีส่วนร่วมกับธุรกิจยักษ์ใหญ่นี้ โดย Gates ได้ไปซื้อโปรแกรมที่เคยพัฒนามาแล้วจากบริษัทเล็ก ๆ แห่งหนึ่งในเมืองซีแอตเติล และได้จ้าง Tim Paterson หัวหน้าวิศวกรจากบริษัทดังกล่าวมาร่วมงานกับ Microsoft และนำโปรแกรมดังกล่าวมาปรับแต่งให้กับ Hardware ของ IBM</p>
+
+<p><img src="https://t0.blockdit.com/photos/2019/09/5d77f39edf76a90cbe4104f3_800x0xcover_hH1oCnV5.jpg" alt="" /></p>
+
+<h2 id="gates-เล-อกทางล-ดในการสร-าง-ms-dos-ด-วยการซ-อ-software-พร-อมห-วหน-าท-มพ-ฒนาอย-าง-tim-paterson-มาร-วมงาน">gates เลือกทางลัดในการสร้าง MS-DOS ด้วยการซื้อ Software พร้อมหัวหน้าทีมพัฒนาอย่าง Tim Paterson มาร่วมงาน</h2>
+
+<p>ซึ่งผลที่ได้มันก็คือ MS-DOS (Microsoft Disk Operating System) และ IBM นี่เองที่เป็นลูกค้ารายแรกของ Microsoft ที่ซื้อลิขสิทธิ์ MS-DOS ไป และเปลี่ยนชื่อมันให้กลายเป็น PC-DOS และทำการออกวางขายเครื่องคอมพิวเตอร์ส่วนบุคคลของ IBM ในปี 1981 และมันประสบความสำเร็จอย่างท่วมท้น ทำยอดขายได้ดีมาก ๆ เป็นการเริ่มต้นตลาดคอมพิวเตอร์ส่วนบุคคลแบบจริง ๆ จัง ๆ ครั้งแรกของ IBM ทำให้ชื่อ PC (Personal Computer) นั้นกลายเป็นที่รู้จักไปทั่ว</p>
+
+<p>กลยุทธ์ของ Gates สำหรับการ Deal กับ IBM ครั้งนี้นั้น ถือว่าเป็นหนึ่งในกลยุทธ์ที่เป็น Case Study ที่น่าสนใจของวงการธุรกิจโลก เพราะ Microsoft ยื่นข้อเสนอที่ดีมาก ๆ ให้กับ IBM โดยเปิดให้เต็มที่กับ IBM นำลิขสิทธิ์ MS-DOS ไปใช้กี่เครื่องก็ได้ที่ IBM ต้องการขาย Gates นั้นมองเป้าหมายที่ยิ่งใหญ่กว่า คือ การสร้าง MS-DOS ให้กลายเป็นระบบปฏิบัติการที่ดีที่สุด เมื่อเทียบกับคู่แข่งอย่าง UCSD Pascal P-System และ CP/M-86 ซึ่งเป็นระบบปฏิบัติการที่เสนอขายให้ IBM เช่นเดียวกันในยุคนั้น Gates ต้องการให้ MS-DOS กลายเป็นระบบปฏิบัติการหลักของ PC และกระตุ้นให้บริษัทเขียน Software รายอื่น ๆ เขียนโปรแกรมโดยใช้พื้นฐานของ MS-DOS ของ Microsoft นั่นเอง</p>
+
+<p>ซึ่งแน่นอนว่าข้อเสนอของ Gates นั้นดีกว่าคู่แข่งอย่างเห็นได้ชัดทำให้ราคา PC ที่มีระบบปฏิบัติการ MS-DOS ราคาถูกกว่าใคร และทำให้ IBM ผลักดัน MS-DOS แบบเต็มที่ เป้าหมายของ Gates และ Microsoft นั้นไม่ได้อยู่ที่รายรับที่ได้จาก IBM แต่จะเป็นกำไรในการขายลิขสิทธิ์ MS-DOS ให้กับบริษัทคอมพิวเตอร์อื่น ๆ ที่ต้องการใช้ MS-DOS เพราะตอนนั้นมันได้กลายเป็นระบบเปิดไปเป็นที่เรียบร้อยแล้ว ผู้ผลิตคอมพิวเตอร์ทุกรายสามารถใช้ MS-DOS ได้ทั้งหมด และเมื่อ MS-DOS กลายเป็นมาตรฐาน กำไร ก็หลั่งไหลมาที่ Microsoft แทนนั่นเอง และแน่นอนว่าหลังจากออกวางจำหน่ายได้ไม่นานดูเหมือน IBM PC มีแนวโน้มที่จะกลายเป็นมาตรฐานของตลาดในอุตสาหกรรมใหม่นี้ ดูเหมือน IBM จะประสบความสำเร็จแล้วแถมยังเป็นระยะเวลาอันสั้นมาก ๆ ด้วย</p>
+
+<p><img src="https://t0.blockdit.com/photos/2019/09/5d77f3d2df76a90cbe4114f6_800x0xcover_6eGuB_7H.jpg" alt="" /></p>
+
+<h2 id="ibm-ประสบความสำเร-จในการสร-างมารตรฐานคอมพ-วเตอร-ส-วนบ-คคล">IBM ประสบความสำเร็จในการสร้างมารตรฐานคอมพิวเตอร์ส่วนบุคคล</h2>
+
+<p>แต่หารู้ไม่ว่า คนที่ชนะจริง ๆ ในการสร้างมาตรฐานให้อุตสาหกรรมนี้คือ Microsoft ต่างหากที่ทุกคนต้องใช้ MS-DOS เป็นระบบปฏิบัติการหลัก เหล่าบริษัท Software รายเล็กใหญ่ต่างพัฒนาโปรแกรมขึ้นมาบนพื้นฐานของ MS-DOS ไม่ใช่บนพื้นฐานของ IBM-PC ไม่นานหลังจากนั้น Software คุณภาพเยี่ยมตัวใหม่ ๆ อย่าง Lotus 1-2-3 โปรแกรมที่ปฏิวัติรูปแบบของการสร้างสเปรดชีทก็ได้รับการพัฒนาขึ้นมาให้รันบนระบบปฏิบัติการของ MS-DOS และตลาด Software การใช้งานนับพัน ๆ โปรแกรม ก็ได้เกิดขึ้นมาใน Ecosystem ของ MS-DOS โดยใช้มาตรฐานทาง Hardware ของ IBM-PC นั่นเอง</p>
+
+<p>ซึ่งแม้ IBM จะสร้างมาตรฐาน PC ขึ้นมาก็จริง แต่เป็นมาตรฐานให้ทุกคนเลียนแบบได้ง่าย และบริษัทอื่นก็สามารถสร้างคอมพิวเตอร์ส่วนบุคคลแบบที่ IBM ทำได้เช่นกัน และแน่นอนว่าเมื่อสถานการณ์เปลี่ยน บริษัทอื่นก็อาจจะมาครองตลาดแทน IBM และนี่เองเป็นสิ่งที่ IBM พลาดครั้งสำคัญในการดำเนินธุรกิจ พวกเขาพลาดที่ไปร่วมมือกับ Microsoft และ intel ในการสร้าง PC ขึ้นมาให้กลายเป็นมาตรฐานทางด้าน Hardware เพียงเท่านั้น มันคือจุดผิดพลาดครั้งสำคัญที่สุดครั้งหนึ่งของยักษ์ใหญ่วงการเทคโนโลยีโลกอย่าง IBM แล้วสถานะอันสั่นคลอนของ IBM ในตลาดคอมพิวเตอร์ส่วนบุคคลนี้จะยืนหยัดอยู่ได้นานเพียงใด แผนต่อไปของ Gates และ Microsoft คืออะไร?</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cBill-Gates%5c3.md" target="_blank">
+      <img src="/library/book/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
