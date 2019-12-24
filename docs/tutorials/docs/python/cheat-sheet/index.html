@@ -1,434 +1,0 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Python Cheat sheet"><meta property="og:title" content="Python Cheat sheet" />
-<meta property="og:description" content="Python Cheat sheet Useful tricks # Terminate a Python script early. quit()# For 1 statement on multiple lines,  # use line continuation character (\). # Good for blog post. def __str__(self):return &#34;Name={}, Title={}, Hourly rate={}.&#34;\.format( self.name, self.title, self.__hourly_rate ) String # Concatenation s1 = &#39;Open&#39;s2 = &#39;Writings.net&#39;print( s1&#43;s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetimenow_str = &#34;Today is &#34; &#43; str(datetime." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://dragon-library.github.io/library/book/docs/python/cheat-sheet/" />
-
-<title>Python Cheat sheet | e-Library</title>
-<link rel="icon" href="/library/book/favicon.png" type="image/x-icon">
-
-
-<link rel="stylesheet" href="/library/book/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
-
-
-<script defer src="/library/book/en.search.min.ad2d487d7fe0a47d6c04b5dc4be0a45bf5155cc06b86c0ee7a4606ede1526480.js" integrity="sha256-rS1IfX/gpH1sBLXcS&#43;CkW/UVXMBrhsDuekYG7eFSZIA="></script>
-
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-
-  
-</head>
-
-<body>
-  <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
-<h2 class="book-brand">
-  <a href="https://dragon-library.github.io/library/book/"><span>e-Library</span>
-  </a>
-</h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
-  <div class="book-search-spinner spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-
-
-
-
-
-    
-
-  
-  
-
-
-
-
-
- 
-  
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li >
-    
-      
-
-  <a href="/library/book/docs/python/" >
-      Python
-  </a>
-
-
-    
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
-        
-
-  <li >
-    
-      
-
-  <a href="/library/book/docs/python/flask/" >
-      Flask
-  </a>
-
-
-    
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        <li>
-
-  <a href="/library/book/docs/python/awesome/" >
-      Awesome Python
-  </a>
-
-</li>
-      
-    
-      
-        <li>
-
-  <a href="/library/book/docs/python/cheat-sheet/"  class="active">
-      Python Cheat sheet
-  </a>
-
-</li>
-      
-    
-      
-        <li>
-
-  <a href="/library/book/docs/python/list-python-basics/" >
-      List for Tutorial
-  </a>
-
-</li>
-      
-    
-      
-        <li>
-
-  <a href="/library/book/docs/python/modules-list/" >
-      Modules List
-  </a>
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li >
-    
-      
-
-  <a href="/library/book/docs/front-end/bootstrap/basic-bootstap/" >
-      Bootstrap 4 แบบพื้นฐาน
-  </a>
-
-
-    
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-  </ul>
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
-
-    </aside>
-
-    <div class="book-page">
-      <header class="flex align-center justify-between book-header">
-  <label for="menu-control">
-    <img src="/library/book/svg/menu.svg" alt="Menu" />
-  </label>
-  <strong>Python Cheat sheet</strong>
-</header>
-
-      
-<article class="markdown">
-
-<h1 id="python-cheat-sheet">Python Cheat sheet</h1>
-
-<h2 id="useful-tricks">Useful tricks</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Terminate a Python script early.</span>
-    quit()
- 
-<span style="color:#75715e"># For 1 statement on multiple lines, </span>
-<span style="color:#75715e"># use line continuation character (\).</span>
-<span style="color:#75715e"># Good for blog post.</span>
-    <span style="color:#66d9ef">def</span> __str__(self):
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Name={}, Title={}, Hourly rate={}.&#34;</span>\
-                <span style="color:#f92672">.</span>format( self<span style="color:#f92672">.</span>name, self<span style="color:#f92672">.</span>title, self<span style="color:#f92672">.</span>__hourly_rate )</code></pre></div>
-
-<h2 id="string">String</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Concatenation</span>
-    s1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Open&#39;</span>
-    s2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Writings.net&#39;</span>
-    <span style="color:#66d9ef">print</span>( s1<span style="color:#f92672">+</span>s2 ) <span style="color:#75715e"># Output: OpenWritings.net</span>
- 
-<span style="color:#75715e"># Object to string: Use str() function</span>
-    <span style="color:#f92672">import</span> datetime
-    now_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Today is &#34;</span> <span style="color:#f92672">+</span> str(datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now())
-    <span style="color:#66d9ef">print</span>(now_str)
- 
-<span style="color:#75715e"># Find and replace    </span>
-    string<span style="color:#f92672">.</span>replace(old_str, new_str, maxreplace) <span style="color:#75715e"># maxreplace: Replace N occurrences matched.</span>
- 
-<span style="color:#75715e"># Replace using regular expression</span>
-    <span style="color:#f92672">import</span> re
-    str<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Example regex&#34;</span>
-    test <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[Ee]&#34;</span>, <span style="color:#e6db74">&#34;a&#34;</span>, str) <span style="color:#75715e"># axampla ragax</span>
- 
-<span style="color:#75715e"># Join: string.join(iterable); iterable = list, string &amp; tuple</span>
-    my_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;3&#39;</span>, <span style="color:#e6db74">&#39;4&#39;</span>, <span style="color:#e6db74">&#39;5&#39;</span>]
-    separator <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;,&#39;</span>
-    <span style="color:#66d9ef">print</span>( separator<span style="color:#f92672">.</span>join(my_list) ) <span style="color:#75715e"># 1,3,4,5</span></code></pre></div>
-
-<h2 id="if-statement">If statement</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Conditions</span>
-    <span style="color:#75715e"># Comparison operators</span>
-    <span style="color:#75715e"># ==  : Values are equal.</span>
-    <span style="color:#75715e"># !=  : Values are NOT equal.</span>
-    <span style="color:#75715e"># &lt;&gt;  : Values are NOT equal.</span>
-    <span style="color:#75715e"># &gt;=  : Value is greater or equal.</span>
-    <span style="color:#75715e"># &lt;=  : Value is less or equal.</span>
-    <span style="color:#75715e"># is  : Is the same object.</span>
- 
-    <span style="color:#66d9ef">if</span> True <span style="color:#f92672">and</span> b <span style="color:#f92672">&gt;</span> a:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;b is greater than a&#34;</span>)
-    <span style="color:#66d9ef">elif</span> a <span style="color:#f92672">==</span> b <span style="color:#f92672">and</span> b <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;a and b are equal&#34;</span>)
- 
-<span style="color:#75715e"># Modulo</span>
-    <span style="color:#66d9ef">if</span> i<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;even&#39;</span>)
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;odd&#39;</span>)</code></pre></div>
-
-<h2 id="list">List</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_list<span style="color:#f92672">=</span>[]          <span style="color:#75715e"># Empty list.</span>
-my_list<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]     <span style="color:#75715e"># Create a list with some values.</span>
-<span style="color:#66d9ef">print</span>( len(my_list) ) <span style="color:#75715e"># Size of my_list.</span>
- 
-my_list[<span style="color:#ae81ff">2</span>]      <span style="color:#75715e"># Access the third element(Index starts at 0)</span>
-my_list[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]     <span style="color:#75715e"># Get last element.</span>
- 
-my_list<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;a&#39;</span>)         <span style="color:#75715e"># Append a new value to my_list</span>
-my_list<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;first&#39;</span>)  <span style="color:#75715e"># Insert &#39;first&#39; at position 0</span>
- 
-<span style="color:#66d9ef">del</span> my_list[<span style="color:#ae81ff">1</span>]      <span style="color:#75715e"># Delete element at position 1.</span>
-my_list<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;a&#39;</span>) <span style="color:#75715e"># Remove first element with value &#39;a&#39;. </span>
- 
-<span style="color:#75715e"># Loop through a list.</span>
-    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> my_list:
-        <span style="color:#66d9ef">print</span>(item)
- 
-<span style="color:#75715e"># Loop through a list using range.</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(my_list)):
-        <span style="color:#66d9ef">print</span>(my_list[i])
- 
-<span style="color:#75715e"># Loop through a list and at the same time, get the index too.</span>
-    my_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>]
-    <span style="color:#66d9ef">for</span> (i, item) <span style="color:#f92672">in</span> enumerate(my_list):
-        <span style="color:#66d9ef">print</span>(i, item)
- 
-<span style="color:#75715e"># Slicing</span>
-    first_two      <span style="color:#f92672">=</span> my_list[:<span style="color:#ae81ff">2</span>]    <span style="color:#75715e"># Get the first two items.</span>
-    last_two       <span style="color:#f92672">=</span> my_list[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>:]   <span style="color:#75715e"># Get the last two items.</span>
-    portion_of_list<span style="color:#f92672">=</span> my_list[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">4</span>]   <span style="color:#75715e"># Get items from position 2 to 4.</span>
- 
-<span style="color:#75715e"># For sorting, data type has to be the same. Can&#39;t mix int and string.</span>
-    my_list<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
-    my_list<span style="color:#f92672">.</span>sort()              <span style="color:#75715e"># Sort list permanently in alphabetical order.</span>
-    my_list<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92672">=</span>True)  <span style="color:#75715e"># Sort list permanently in reverse alphabetical order.</span>
-    my_list<span style="color:#f92672">.</span>reverse()           <span style="color:#75715e"># Reverse the order of the list.   </span></code></pre></div>
-
-<h2 id="loop">Loop</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Loop through a list &amp; get index at the same time.</span>
-    my_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>]
-    <span style="color:#66d9ef">for</span> (i, item) <span style="color:#f92672">in</span> enumerate(my_list):
-        <span style="color:#66d9ef">print</span>(i, item)</code></pre></div>
-
-<h2 id="date-time">Date &amp; Time</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> datetime
- 
-today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
-<span style="color:#66d9ef">print</span>(today)       <span style="color:#75715e"># 2018-12-31</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;{}-{}-{}&#34;</span><span style="color:#f92672">.</span>format(today<span style="color:#f92672">.</span>year, today<span style="color:#f92672">.</span>month, today<span style="color:#f92672">.</span>day))
- 
-<span style="color:#66d9ef">print</span>(datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2011</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">13</span>))  <span style="color:#75715e"># 2011-04-13</span>
-<span style="color:#66d9ef">print</span>(datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>fromtimestamp(<span style="color:#ae81ff">1326244364</span>)) <span style="color:#75715e"># 2012-01-10</span>
- 
-a_datetime <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2011</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">59</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;{}-{}-{}&#34;</span><span style="color:#f92672">.</span>format(a_datetime<span style="color:#f92672">.</span>year, a_datetime<span style="color:#f92672">.</span>month, a_datetime<span style="color:#f92672">.</span>day))
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;{}:{}:{}&#34;</span><span style="color:#f92672">.</span>format(a_datetime<span style="color:#f92672">.</span>hour, a_datetime<span style="color:#f92672">.</span>minute, a_datetime<span style="color:#f92672">.</span>second))
-<span style="color:#66d9ef">print</span>(a_datetime<span style="color:#f92672">.</span>timestamp())
- 
-<span style="color:#75715e"># Convert date to string.</span>
-    now <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()
-    <span style="color:#66d9ef">print</span>(now<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/%Y, %H:%M:%S&#34;</span>)) <span style="color:#75715e"># 04/04/2019, 12:45:08</span>
- 
-<span style="color:#75715e"># Convert string to date: string should match date representation.</span>
-<span style="color:#75715e">#  All directives(%): https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior</span>
-    a_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#34;21 June, 2018&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %B, %Y&#34;</span>)
-    <span style="color:#66d9ef">print</span>(a_date) <span style="color:#75715e"># 2018-06-21 00:00:00</span>
-    a_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#34;12/11/2018 09:15:32&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/%m/%Y %H:%M:%S&#34;</span>)
-    <span style="color:#66d9ef">print</span>(a_date) <span style="color:#75715e"># 2018-11-12 09:15:32</span>
- 
-<span style="color:#75715e"># Add / Substract date</span>
-<span style="color:#75715e">#  timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)</span>
-    today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()
-    days_ago_delta <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>timedelta(days <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>)
-    days_ago_5 <span style="color:#f92672">=</span> today <span style="color:#f92672">-</span> days_ago_delta
-    <span style="color:#66d9ef">print</span>(days_ago_5)</code></pre></div>
-
-<h2 id="function">Function</h2>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum</span>(a,b):
-    <span style="color:#66d9ef">return</span> (a, b, a<span style="color:#f92672">+</span>b)
- 
-<span style="color:#66d9ef">print</span>( sum(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>) ) <span style="color:#75715e"># Output: (3, 4, 7)</span></code></pre></div>
-
-<p>ที่มาบทความ : <a href="https://openwritings.net/pg/python/python-cheat-sheet">https://openwritings.net/pg/python/python-cheat-sheet</a></p>
-</article>
-
-      <div class="book-footer justify-between">
-  
-
-  
-
-  
-  <div>
-    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cCheat-sheet.md" target="_blank">
-      <img src="/library/book/svg/edit.svg" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-  
-
-</div>
-
-      
-    </div>
-
-    
-  
-
-  <aside class="book-toc levels-true fixed">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#python-cheat-sheet">Python Cheat sheet</a>
-<ul>
-<li><a href="#useful-tricks">Useful tricks</a></li>
-<li><a href="#string">String</a></li>
-<li><a href="#if-statement">If statement</a></li>
-<li><a href="#list">List</a></li>
-<li><a href="#loop">Loop</a></li>
-<li><a href="#date-time">Date &amp; Time</a></li>
-<li><a href="#function">Function</a></li>
-</ul></li>
-</ul>
-</nav>
-  </aside>
-
-
-
-  </main>
-
-  
-</body>
-
-</html>
