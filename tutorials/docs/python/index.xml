@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/python/</link>
+    <description>Recent content in Python on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Awesome Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/awesome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/awesome/</guid>
+      <description>Awesome Python A curated list of awesome Python frameworks, libraries, software and resources.
+Inspired by awesome-php.
+ Awesome Python  Admin Panels Algorithms and Design Patterns Audio Authentication Build Tools Built-in Classes Enhancement Caching ChatOps Tools CMS Code Analysis Command-line Interface Development Command-line Tools Compatibility Computer Vision Concurrency and Parallelism Configuration Cryptography Data Analysis Data Validation Data Visualization Database Database Drivers Date and Time Debugging Tools Deep Learning DevOps Tools Distributed Computing Distribution Documentation Downloader E-commerce Editor Plugins and IDEs Email Environment Management Files Foreign Function Interface Forms Functional Programming Game Development Geolocation GUI Development Hardware HTML Manipulation HTTP Clients Image Processing Implementations Interactive Interpreter Internationalization Job Scheduler Logging Machine Learning Miscellaneous Natural Language Processing Network Virtualization Networking News Feed ORM Package Management Package Repositories Permissions Processes Queue Recommender Systems RESTful API Robotics RPC Servers Science Search Serialization Serverless Frameworks Specific Formats Processing Static Site Generator Tagging Template Engine Testing Text Processing Third-party APIs URL Manipulation Video Web Asset Management Web Content Extracting Web Crawling Web Frameworks WebSocket WSGI Servers  Services  Code Quality Continuous Integration  Resources  Podcasts Twitter Websites Weekly  Contributing  [](https://github.</description>
+    </item>
+    
+    <item>
+      <title>Python Cheat sheet</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/cheat-sheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/cheat-sheet/</guid>
+      <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit()# For 1 statement on multiple lines,  # use line continuation character (\). # Good for blog post. def __str__(self):return &amp;#34;Name={}, Title={}, Hourly rate={}.&amp;#34;\.format( self.name, self.title, self.__hourly_rate ) String # Concatenation s1 = &amp;#39;Open&amp;#39;s2 = &amp;#39;Writings.net&amp;#39;print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetimenow_str = &amp;#34;Today is &amp;#34; + str(datetime.</description>
+    </item>
+    
+    <item>
+      <title>List for Tutorial</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/list-python-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/list-python-basics/</guid>
+      <description>List Python Tutorial Python is one of the most popular programming languages. In the last few years, it has gained a lot of popularity due to the increasing interest in Data Science, Deep Learning, Machine Learning, and Artificial Intelligence.
+Just have a look at the Google Trends chart for interest in Python programming language. It’s increasing continuously and it will keep on increasing over time.
+Python Interest Over Time</description>
+    </item>
+    
+    <item>
+      <title>Modules List</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/modules-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/modules-list/</guid>
+      <description>Python Modules List Python os module
+Python sys module
+Python time
+Python MySQL
+Python CSV
+Python multiprocessing
+Python pickle
+Python time sleep
+Python queue
+Python unittest
+Python socket
+Python SimpleHTTPServer
+Python json
+Python signal
+Python random
+Python System Command
+Python Daemon Thread
+Python Copy
+Python threading module
+Python struct
+Python logging
+Python subprocess
+Python argparse
+Python functools
+Python itertools
+Python getopt
+Python ftp
+Python tarfile
+Python lxml
+Python ConfigParser</description>
+    </item>
+    
+  </channel>
+</rss>

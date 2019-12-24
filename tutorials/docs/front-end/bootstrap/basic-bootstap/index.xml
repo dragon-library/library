@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bootstrap 4 แบบพื้นฐาน on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/</link>
+    <description>Recent content in Bootstrap 4 แบบพื้นฐาน on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bootstrap 4 แบบพื้นฐาน ตอนที่ 1</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-1/</guid>
+      <description>สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 1 บทความนี้เป็นบทความสอนการใช้ Bootstrap เรื่องมีอยู่ว่าที่ทำงานของผมส่งผมไปเรียนคอส Web Design สอนโดย อ.กษิติ พันธุ์ถนอม คอสนี้เกี่ยวกับการใช้งาน Bootstrap4 ซึ่งผมก็พอจะรู้อยู่บ้างแล้ว การเรียนครั้งนี้เลยเหมือนการทบทวนและเพิ่มเติมเทคนิคต่างๆ ผมก็เลยได้โอกาสเขียนเป็นบล็อกนี้ขึ้นครับ
+โดยเป้าหมายคือ การใช้งาน Bootstrap ทำให้เว็บ responsive แล้วก็ใช้งาน component ของ Bootstrap ต่างๆ รวมถึงคลาสที่ใช้งานบ่อยๆ นอกจากนี้ก็มีแนะนำเทค และการใช้เครื่องมือช่วยต่างๆด้วย
+ติดตั้ง VS code เครื่องมือสำหรับเขียน แนะนำ VS Code ใครไม่มีก็ติดตั้งเลย
+ดาวน์โหลดได้ที่
+https://code.visualstudio.com/
+เริ่มต้น เริ่มจากการพิมพ์คำสั่งลัด html:5 เพื่อให้ VS Code generate code ให้อัตโนมัติ
+คำสั่ง meta UTF-8 และ viewport สำคัญสำหรับ Bootstrap ต้องใส่ทุกครั้ง ซึ่งมันก็สร้างมาให้แล้ว
+&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; อีกอันคือพิมพ์ว่า lorem มันจะ generate ประโยคที่เรียกว่า lorem ให้ มันคือคำที่ไม่มีความหมาย เอามาวางไว้เฉยๆว่านี่คือตัวอักษรจะเห็นในงานพวก design หรือตัวอย่างโค้ดบ่อยๆ</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 4 แบบพื้นฐาน ตอนที่ 2</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-2/</guid>
+      <description>สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 2 Table สร้างไฟล์ใหม่ชื่อ portal.html
+ใส่โค้ดพื้นฐาน html ลงไปแล้วก็เพิ่ม bootstrap.css ด้วย
+&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;&amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34;&amp;gt;&amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/bootstrap.min.css&amp;#34; /&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;col&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt; ใส่ตารางลงไปใน container
+&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;&amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34;&amp;gt;&amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/bootstrap.min.css&amp;#34; /&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;col&amp;#34;&amp;gt;&amp;lt;h1&amp;gt;Portal&amp;lt;/h1&amp;gt;&amp;lt;table&amp;gt;&amp;lt;thead&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;No.</description>
+    </item>
+    
+  </channel>
+</rss>

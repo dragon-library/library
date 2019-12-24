@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bootstrap 4 แบบพื้นฐาน ตอนที่ 1"><meta property="og:title" content="Bootstrap 4 แบบพื้นฐาน ตอนที่ 1" />
+<meta property="og:description" content="สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 1 บทความนี้เป็นบทความสอนการใช้ Bootstrap เรื่องมีอยู่ว่าที่ทำงานของผมส่งผมไปเรียนคอส Web Design สอนโดย อ.กษิติ พันธุ์ถนอม คอสนี้เกี่ยวกับการใช้งาน Bootstrap4 ซึ่งผมก็พอจะรู้อยู่บ้างแล้ว การเรียนครั้งนี้เลยเหมือนการทบทวนและเพิ่มเติมเทคนิคต่างๆ ผมก็เลยได้โอกาสเขียนเป็นบล็อกนี้ขึ้นครับ
+โดยเป้าหมายคือ การใช้งาน Bootstrap ทำให้เว็บ responsive แล้วก็ใช้งาน component ของ Bootstrap ต่างๆ รวมถึงคลาสที่ใช้งานบ่อยๆ นอกจากนี้ก็มีแนะนำเทค และการใช้เครื่องมือช่วยต่างๆด้วย
+ติดตั้ง VS code เครื่องมือสำหรับเขียน แนะนำ VS Code ใครไม่มีก็ติดตั้งเลย
+ดาวน์โหลดได้ที่
+https://code.visualstudio.com/
+เริ่มต้น เริ่มจากการพิมพ์คำสั่งลัด html:5 เพื่อให้ VS Code generate code ให้อัตโนมัติ
+คำสั่ง meta UTF-8 และ viewport สำคัญสำหรับ Bootstrap ต้องใส่ทุกครั้ง ซึ่งมันก็สร้างมาให้แล้ว
+&lt;meta charset=&#34;UTF-8&#34;&gt;&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; อีกอันคือพิมพ์ว่า lorem มันจะ generate ประโยคที่เรียกว่า lorem ให้ มันคือคำที่ไม่มีความหมาย เอามาวางไว้เฉยๆว่านี่คือตัวอักษรจะเห็นในงานพวก design หรือตัวอย่างโค้ดบ่อยๆ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-1/" />
+
+<title>Bootstrap 4 แบบพื้นฐาน ตอนที่ 1 | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.83322c54af74a680e1142939d9a9e76b7fe0e7a83896bf8b01cad687d709706d.js" integrity="sha256-gzIsVK90poDhFCk52anna3/g56g4lr&#43;LAcrWh9cJcG0="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-1/"  class="active">
+      Bootstrap 4 แบบพื้นฐาน ตอนที่ 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-2/" >
+      Bootstrap 4 แบบพื้นฐาน ตอนที่ 2
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Bootstrap 4 แบบพื้นฐาน ตอนที่ 1</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="สร-ปการใช-งาน-bootstrap-4-แบบพ-นฐาน-ตอนท-1">สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 1</h1>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/cove.png" alt="enter image description here" /></p>
+
+<p>บทความนี้เป็นบทความสอนการใช้ Bootstrap เรื่องมีอยู่ว่าที่ทำงานของผมส่งผมไปเรียนคอส Web Design สอนโดย อ.กษิติ พันธุ์ถนอม คอสนี้เกี่ยวกับการใช้งาน Bootstrap4 ซึ่งผมก็พอจะรู้อยู่บ้างแล้ว การเรียนครั้งนี้เลยเหมือนการทบทวนและเพิ่มเติมเทคนิคต่างๆ ผมก็เลยได้โอกาสเขียนเป็นบล็อกนี้ขึ้นครับ</p>
+
+<p>โดยเป้าหมายคือ การใช้งาน Bootstrap ทำให้เว็บ responsive แล้วก็ใช้งาน component ของ Bootstrap ต่างๆ รวมถึงคลาสที่ใช้งานบ่อยๆ นอกจากนี้ก็มีแนะนำเทค และการใช้เครื่องมือช่วยต่างๆด้วย</p>
+
+<h2 id="ต-ดต-ง-vs-code">ติดตั้ง VS code</h2>
+
+<p>เครื่องมือสำหรับเขียน แนะนำ VS Code ใครไม่มีก็ติดตั้งเลย</p>
+
+<p>ดาวน์โหลดได้ที่<br />
+<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+
+<h2 id="เร-มต-น">เริ่มต้น</h2>
+
+<p>เริ่มจากการพิมพ์คำสั่งลัด <em>html:5</em> เพื่อให้ VS Code generate code ให้อัตโนมัติ</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g2.gif" alt="g2" /></p>
+
+<p>คำสั่ง meta UTF-8 และ viewport สำคัญสำหรับ Bootstrap ต้องใส่ทุกครั้ง ซึ่งมันก็สร้างมาให้แล้ว</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;</code></pre></div>
+
+<p>อีกอันคือพิมพ์ว่า lorem มันจะ generate ประโยคที่เรียกว่า lorem ให้ มันคือคำที่ไม่มีความหมาย เอามาวางไว้เฉยๆว่านี่คือตัวอักษรจะเห็นในงานพวก design หรือตัวอย่างโค้ดบ่อยๆ</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g3.gif" alt="g3" /></p>
+
+<h3 id="deprecate-tag">Deprecate tag</h3>
+
+<p>ใน HTML5 มียกเลิก tag บางอย่างไปแล้ว เปลี่ยนมาใช้อันใหม่ เช่น
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">b</span>&gt; เปลี่ยนเป็น &lt;<span style="color:#f92672">strong</span>&gt;  
+&lt;<span style="color:#f92672">i</span>&gt; ไม่ใช่ตัวเอียง แต่เป็น icons</code></pre></div></p>
+
+<h2 id="ทบทวน-css">ทบทวน CSS</h2>
+
+<p>ก่อนอื่นทบทวน css นิดนึง css คือภาษาสำหรับจัดแต่งหน้า HTML ในบทความนี้ การเขียน style ไม่แนะนำให้ใช้แบบ inline Style เพราะไม่ทำงานในบาง device , Framework แนะนำ external style sheet คือ เขียนแยกจาก HTML tag</p>
+
+<h3 id="เพ-ม-css-ใน-html">เพิ่ม css ใน html</h3>
+
+<p>เพิ่มให้ html ขอเราใช้ไฟล์ .css ได้</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/custom.css&#34;</span>/&gt;</code></pre></div>
+
+<h3 id="selector">Selector</h3>
+
+<p>สมมุติเราจะกำหนดให้ h1 เป็นสี #dd1144</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">h1</span> {
+<span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#d14</span>
+}</code></pre></div>
+ต้องการให้ h1 ที่อยู่ใน div เป็นสีแดง เขียนแบบนี้ได้</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> <span style="color:#f92672">h1</span>{
+<span style="color:#66d9ef">color</span>:<span style="color:#66d9ef">red</span>;
+}</code></pre></div>
+
+<h3 id="การใช-important">การใช้ !important</h3>
+
+<p>ปกติการทำงานจะทำแบบบนลงล่าง ทำให้คำสั่งมันทับกันได้ แต่ถ้าไม่อยากให้มันอานทับ ให้เพิ่ม !important</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">h1</span>{
+<span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#d14</span> <span style="color:#75715e">!important</span>;
+}
+<span style="color:#f92672">h1</span>{
+<span style="color:#66d9ef">color</span>:<span style="color:#66d9ef">green</span>;
+}</code></pre></div>
+
+<h3 id="การใช-id">การใช้ id</h3>
+
+<p>กำหนด id ให้ tag</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;</span><span style="color:#f92672">div</span> <span style="color:#f92672">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;first&#34;</span><span style="color:#f92672">&gt;</span></code></pre></div>
+
+<p>ใน CSS จะใช้สัญลักษณ์ #</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#first{
+<span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">lightblue</span>;
+}</code></pre></div>
+
+<h3 id="การใช-class">การใช้ class</h3>
+
+<p>กำหนด class ให้ tag ได้ ซึ่งใน Bootstrap จะใช้บ่อย</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;second&#34;</span>&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;Outside&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>ใน CSS จะใช้สัญลักษณ์ .</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">second</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">indianred</span>;
+}</code></pre></div>
+
+<h3 id="id-vs-class">id vs class</h3>
+
+<p>id มีได้ element เดียว แต่ class มีได้หลาย element การใช้ id ส่วนใหญ่จะใช้เชื่อมกับ js ส่วน class จะมักเชื่อมกับ css และใน bootstrap จะเน้นใช้ class ส่วน id จะใช้เชื่อมกับของ bootstrap เอง</p>
+
+<h2 id="ร-จ-ก-bootstrap">รู้จัก Bootstrap</h2>
+
+<p>Bootstrap คือ UI Framework พูดง่ายๆคือเขาเขียน CSS , JS สวยๆ มาให้แล้ว เรามีหน้าที่เรียกใช้ ซึ่งส่วนใหญ่ Bootstrap จะใช้ การเรียก class เป็นหลัก เรามาลองใช้งานกันนะ ตอนนี้ Bootstrap เวอชัน 4</p>
+
+<h3 id="ดาวน-โหลด-bootstrap">ดาวน์โหลด Bootstrap</h3>
+
+<p>ไปที่เว็บ <a href="https://getbootstrap.com/">https://getbootstrap.com/</a></p>
+
+<p><a href="https://benzneststudios.com/blog/wp-content/uploads/2018/11/2.png" title="2"><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/2.png" alt="2" /></a></p>
+
+<p>พอโหลด Bootstrap มาให้ copy มาไว้ในโปรเจค จะได้โฟลเดอร์ css กับ js มีไฟล์ด้านในประมาณนี้</p>
+
+<p>bootstarp grid จะมีเฉาะเรื่อง grid และ layout<br />
+bootstrap reboot จะมีฟังชันก์ใหม่ ตัวที่ยังไม่ใช่ production จริง<br />
+bootstarp.css จะเป็นแบบโค้ดสวยๆ อ่านได้<br />
+bootstarp.min.css จะทำ minify มาแล้ว ตัด space และ ขึ้นบรรทัดใหม่ ทำให้ไฟล์เล็กลง</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/1a.png" alt="1a" /></p>
+
+<p>เวลาจะใช้งานจริง เราจะใช้ bootstrap.min.css ในการทำงาน</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/bootstrap.min.css&#34;</span>/&gt;</code></pre></div>
+
+<h2 id="maxcdn">MaxCDN:</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Latest compiled and minified CSS --&gt;</span>
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&#34;</span>&gt;
+
+<span style="color:#75715e">&lt;!-- jQuery library --&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+
+<span style="color:#75715e">&lt;!-- Popper JS --&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+
+<span style="color:#75715e">&lt;!-- Latest compiled JavaScript --&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
+
+<h3 id="การจ-ด-layout-แบบ-grid">การจัด Layout แบบ GRID</h3>
+
+<p>ใน bootstrap จะใช้ระบบ GRID ในการวาง layout ต่างๆ<br />
+เริ่มจากใช้ div ที่มี class ชื่อว่า container
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span>  <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;Hello&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/bootstrap.min.css&#34;</span>/&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div></p>
+
+<p>ด้านในจะมี div ย่อย แบ่งเป็น row col คล้ายกับตาราง<br />
+<em>แนะนำเขียน comment เอาไว้ ซึ่งใน HTML จะใช้ &lt;!– –&gt;</em></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close col  1.1  --&gt;</span>
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close row  1  --&gt;</span>
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close container  --&gt;</span>
+&lt;/<span style="color:#f92672">body</span>&gt;</code></pre></div>
+
+<p>class container จะทำให้มีพื้นที่ว่างด้านข้าง และเปลี่ยน Font เป็น <strong>Helvetica Neue</strong></p>
+
+<p><a href="https://benzneststudios.com/blog/wp-content/uploads/2018/11/3.png" title="3"><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/3.png" alt="3" /></a></p>
+
+<p>เพื่อนของมันอีกตัวคือ container-fluid มันจะขายเต็มจอ</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container-fluid&#34;</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/4.png" alt="4" /></p>
+
+<p>มาลองเล่นเรื่องรูปภาพกันบ้าง</p>
+
+<p><a href="https://benzneststudios.com/blog/wp-content/uploads/2018/11/img.rar">ดาวน์โหลดรูปภาพ</a></p>
+
+<p>เพิ่มรูปภาพใน grid col คือใช้ <img></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello World&lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&gt;
+</span><span style="color:#e6db74">    &lt;img src=&#34;</span><span style="color:#a6e22e">img</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">banner</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">banner2</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">jpg</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">body</span>&gt;</code></pre></div>
+
+<p>ลองเลือกรูปภาพใหญ่ๆ เมื่อเปิดดูจะเห็นว่ารูปภาพมีขนาดใหญ่จนล้นจอ ยิ่งเปิดในมือถือก็ยิ่งล้น มันไม่ responsive</p>
+
+<p>วิธีแก้คือ เพิ่ม class ชื่อว่า img-fluid</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/banner/banner2.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>&gt;</code></pre></div>
+
+<p>รูปภาพจะปรับ scale อัตโนมัติ</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/7.png" alt="7" /></p>
+
+<p>ลองเพิ่ม col 3 อัน มันจะแบ่งหน้าจอให้เท่ากัน เป็น 3 ส่วน</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;Hello World&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close Row  1  --&gt;</span>
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/banner/banner2.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close Row  2  --&gt;</span>
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff1.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CEO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit,  suscipit corporis,  minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff2.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CTO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit,  suscipit corporis,  minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff3.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CFO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit,  suscipit corporis,  minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close Row  3  --&gt;</span>
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close container  --&gt;</span>
+&lt;/<span style="color:#f92672">body</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/8.png" alt="8" />](<a href="https://benzneststudios.com/blog/wp-content/uploads/2018/11/8.png">https://benzneststudios.com/blog/wp-content/uploads/2018/11/8.png</a> &ldquo;8&rdquo;)</p>
+
+<p>1 แถวของ Bootstrap มี 12 หน่วย ถ้าเกินมันจะล่วงลงมาแถวใหม่ ถ้าใส่ไม่ถึง 12 มันจะมีช่องว่างที่เหลืออยู่<br />
+วิธีการคือ ใช้คลาส col- ตามด้วยหน่วย เช่น ต้องการให้คอลัมภ์แรก 50% ของแถว อีกสองอันก็แบ่งอันละ 25%</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-6&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff1.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CEO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit,  suscipit corporis,  minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff2.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CTO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit,  suscipit corporis,  minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff3.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CFO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit,  suscipit corporis,  minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/10.png" alt="10" /></p>
+
+<p>ทีนี้ลองมาดูปัญหาเมื่อเปิดในจอของโทรศัพท์ คอลัมภ์สามอันมันดูอึดอัด การดูในมือถือมันควรจะแสดงทีละอัน มันยังไม่ responsive</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/9.png" alt="9" /></p>
+
+<p>วิธีการคือใช้ Grid option เช่น col-md-4 หมายถึง ถ้าหน้าจอมีขนาดมากกว่า Medium มันจะใช้หน่วยขนาด 4 แต่ถ้าไม่ใช่ มันจะใช้ 1 เป็นค่าเดิม ซึ่ง Medium มีหน้าจอขนาด &gt;= 768px ซึ่งคือหน้าจอคอมนั่นเอง ดังนั้น ถ้าหน้าจอเล็กมันก็จะใช้ col-1 แทนนั่นเอง หน้าจอมือถือเลยแสดง col-1 ซึ่งคืออันเดียวเต็มจอ</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-4&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff1.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CEO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-4&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff2.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CTO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-4&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff3.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;CFO&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close Row  3  --&gt;</span></code></pre></div>
+
+<p>พอเปิดในจอเล็กมันก็แสดงเต็มจอแล้ว</p>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/11.png" alt="11" /></p>
+
+<p>ดูรายละเอียดเรื่อง Grid Option ได้ที่</p>
+
+<p><a href="https://getbootstrap.com/docs/4.0/layout/grid/">https://getbootstrap.com/docs/4.0/layout/grid/</a></p>
+
+<p>ซึ่งนอกจาก md แล้วก็มี sm , lg , xl ด้วย</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/12.png" alt="12" />
+จะได้ประมาณนี้</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/14.png" alt="14" /></p>
+
+<h3 id="source-code">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/f365a2de60451b6696c78d5ce642e293">https://gist.github.com/benznest/f365a2de60451b6696c78d5ce642e293</a></p>
+
+<h3 id="การจ-ด-format">การจัด Format</h3>
+
+<p>ตอนนี้ เราจะเริ่มใช้ <div> ซับซ้อนขึ้น โค้ดมันอาจจะไม่เป็นระเบียบ<br />
+วิธีการให้มันจัดระเบียบ คือ คลิกขวาเลือก Format document หรือกด Shift + Alt + F</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g4.gif" alt="g4" /></p>
+
+<h3 id="การซ-อน-grid">การซ้อน Grid</h3>
+
+<p>เราสามารถนำ Grid มาซ้อนอีกชั้นได้ โดยมันจะยังใช้หน่วย 12 เหมือนเดิม</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--  Start Row  4  --&gt;</span>
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-6 col-12&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-4&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life2.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">h3</span>&gt;Service&lt;/<span style="color:#f92672">h3</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!
+Quisquam
+voluptatibus nesciunt impedit&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-4&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life3.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">h3</span>&gt;Subscription&lt;/<span style="color:#f92672">h3</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!
+Quisquam
+voluptatibus nesciunt impedit&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-4&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life4.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">h3</span>&gt;More&lt;/<span style="color:#f92672">h3</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!
+Quisquam
+voluptatibus nesciunt impedit&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-6 col-12&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/content/office12.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span>&gt;About&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.  Optio odit illum autem porro!  Quisquam
+voluptatibus nesciunt impedit, suscipit corporis, minus culpa molestiae necessitatibus blanditiis,
+repellat mollitia beatae hic voluptatum deleniti.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+<span style="color:#75715e">&lt;!--  Close Row  4  --&gt;</span></code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/16.png" alt="16" /></p>
+
+<h3 id="source-code-1">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/5c13cf8292c68a89183103233f53f7bd">https://gist.github.com/benznest/5c13cf8292c68a89183103233f53f7bd</a></p>
+
+<h3 id="class-ของร-ปภาพ">Class ของรูปภาพ</h3>
+
+<p>เพิ่มความสวยงามให้กับรูปภาพ ด้วย class ชื่อว่า rounded รุปภาพจะมีขอบมน</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life4.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/17.png" alt="17" /></p>
+
+<p>หรือจะใช้ class ชื่อว่า rounded-circle ทำให้รูปเป็นวงกลม</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life4.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded-circle&#34;</span>  /&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/18.png" alt="18" /></p>
+
+<p>อีกอัน คือ class ชื่อว่า img-thumbnail ทำให้รูปมีขอบเป็นเส้นด้านนอก</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life4.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid img-thumbnail&#34;</span>  /&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/19.png" alt="19" /></p>
+
+<h2 id="class-ของ-width">Class ของ Width</h2>
+
+<p>มี class ของ bootstrap ที่ใช้บ่อย เช่น การกำหนด width %<br />
+เช่น w-50 คือกำหนด ให้มีขนาด 50% และการกำหนด mx-auto d-block คือการกำหนดตรงกลาง</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff1.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-50 mx-auto d-block&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-center&#34;</span>&gt;CEO&lt;/<span style="color:#f92672">h1</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/21.png" alt="21" /></p>
+
+<p>class เพื่อนๆในแก็งนี้ก็มี w-25 , w-50 , w-75 , w-100</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff1.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-50&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff2.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-75&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/staffs/staff3.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;w-100&#34;</span>  /&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/20.png" alt="20" /></p>
+
+<h2 id="การ-custom-bootstrap">การ Custom Bootstrap</h2>
+
+<p>เวลาเราจะเพิ่ม css ของเราและต้องการทับกับ bootstrap ให้ไปเขียนที่ custom.css<br />
+เช่น ต้องเปลี่ยนสีพื้นหลัง ของ class container ซึ่ง container เป็นของ bootstrap</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#DCEBFC</span>;
+}
+.<span style="color:#a6e22e">container</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#FFF</span>;
+}</code></pre></div>
+
+<p>แล้วก็เวลาเรียกใน HTML ให้ใส่ทีหลัง bootstrap.css นะ เพราะมันจะได้อ่านทับ bootstrap แล้วนั่นเอง</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
+
+...
+
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/bootstrap.min.css&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/custom.css&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/23.png" alt="23" /></p>
+
+<h2 id="หน-วย-rem">หน่วย rem</h2>
+
+<p>rem คือ root element มันคือการกำหนด font-size ที่ root แล้วเอามาคูณ เช่น ถ้ากำหนด font-size 10 px<br />
+2 rem = 16×2 = 32 px นั่นเอง</p>
+
+<p>ใน Bootstrap จะใช้ font-size = 16 px ดังนั้น 1 rem = 16 px<br />
+ลองกำหนด padding ของ container 4.5rem = 16×4.5 = 72px</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#DCEBFC</span>;
+}
+.<span style="color:#a6e22e">container</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#FFF</span>;
+<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">4.5</span><span style="color:#66d9ef">rem</span>
+}</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/24.png" alt="24" /></p>
+
+<p>การ custom ค่า font-size ไม่ใช้ของ bootstrap ต้องไปเซ็ตใน html ที่เป็น root element</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">html</span>{
+<span style="color:#66d9ef">font-size</span>:<span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
+}</code></pre></div>
+
+<p>ค่า rem ก็จะเปลี่ยนมาใช้ font-size ของเราแทน</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#DCEBFC</span>;
+}
+.<span style="color:#a6e22e">container</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#FFF</span>;
+<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">rem</span>
+}
+<span style="color:#f92672">h1</span><span style="color:#f92672">,</span><span style="color:#f92672">h2</span><span style="color:#f92672">,</span><span style="color:#f92672">h3</span>{
+<span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#4F85D7</span>;
+}</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/25.png" alt="25" /></p>
+
+<h3 id="class-สำหร-บ-margin-padding-border">Class สำหรับ Margin – Padding – Border</h3>
+
+<p>เราสามารถใช้ rem มาใช้กับ class Margin Padding ได้<br />
+margin คือระยะห่างจาก element นี้กับอันอื่น<br />
+padding คือระยะห่างจากเนื้อหาถึงขอบ<br />
+border คือ ขนาดขอบ</p>
+
+<p>วิธีการคือ {boxmodel}{position}-{rem}</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">margin-top</span> <span style="color:#f92672">3</span> <span style="color:#f92672">rem</span> <span style="color:#f92672">=</span> <span style="color:#f92672">mt-3</span>  
+<span style="color:#f92672">padding</span> <span style="color:#f92672">5</span> <span style="color:#f92672">rem</span> <span style="color:#f92672">=</span> <span style="color:#f92672">p-5</span>  
+<span style="color:#f92672">margin</span> <span style="color:#f92672">2</span> <span style="color:#f92672">rem</span> <span style="color:#f92672">=</span> <span style="color:#f92672">m-2</span>  
+<span style="color:#f92672">padding-bottom</span> <span style="color:#f92672">3</span> <span style="color:#f92672">rem</span><span style="color:#f92672">=</span> <span style="color:#f92672">pd-3</span></code></pre></div>
+
+<p>ลองกำหนด padding-top 4 rem ซึ่งมีขนาด 16×4 = 64 px</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row pt-4&#34;</span>&gt;
+
+...</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/26.png" alt="26" />
+ซึ่ง class margin padding ใช้บ่อยมากๆ</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3 mt-2&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3 mt-2&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life2.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3 mt-2&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life3.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3 mt-2&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life4.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3 mt-2&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life5.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3 mt-2&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life6.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3 mt-2&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life7.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-3 mt-2&#34;</span>&gt;
+&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img/life/life8.jpg&#34;</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img-fluid rounded&#34;</span>  /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close Row  5  --&gt;</span></code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/28.png" alt="28" /></p>
+
+<h2 id="custom-font">Custom font</h2>
+
+<p>มาลองเปลี่ยน font ให้กับเว็บกัน<br />
+เข้าไปดาวน์โหลด font ที่ Google Font</p>
+
+<p><a href="https://fonts.google.com/">https://fonts.google.com/</a></p>
+
+<p>เลือกอันที่ชอบ กด +</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/29.png" alt="29" /></p>
+
+<p>มันจะมีแถบด้านล่าง กดขึ้นมาเลือกแท็บ IMPORT แล้ว copy โค้ด @import</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/30.png" alt="30" /></p>
+
+<p>เอาไปวางใน custom.css ของเรา<br />
+จากนั้นอยากใช้ font ตรงไหนก็เอา font-family ไปวางไว้ เช่นใส่ทั้งหน้าเลยก็ใส่ที่ body</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">import</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=Indie+Flower&#39;</span><span style="color:#f92672">)</span>;
+<span style="color:#f92672">body</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#DCEBFC</span>;
+<span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Indie Flower&#39;</span>, <span style="color:#66d9ef">cursive</span>;
+}
+.<span style="color:#a6e22e">container</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#FFF</span>;
+<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">rem</span>
+}
+<span style="color:#f92672">h1</span><span style="color:#f92672">,</span><span style="color:#f92672">h2</span><span style="color:#f92672">,</span><span style="color:#f92672">h3</span>{
+<span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#4F85D7</span>;
+}</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/31.png" alt="31" /></p>
+
+<h3 id="ทำ-footer">ทำ Footer</h3>
+
+<p>ลองเพิ่ม class ของเราเองชื่อ footer<br />
+เนื้อหาใส่เป็นคำคม เพื่อลองใช้ font อีกตัว</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row footer p-5&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-12&#34;</span>&gt;
+&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-center&#34;</span>&gt;Nothing in  life is  to  be feared,
+it is only to be understood.
+Now is the time to understand more,
+so that we may fear less.&lt;/<span style="color:#f92672">h2</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+
+<p>ก็ทำเหมือนเดิม คือเพิ่มตรง @import<br />
+แล้วก็ใส่ font-family ที่ footer</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">import</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;https://fonts.googleapis.com/css?family=Dancing+Script|Indie+Flower&#39;</span><span style="color:#f92672">)</span>;
+<span style="color:#f92672">body</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#DCEBFC</span>;
+<span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Indie Flower&#39;</span>, <span style="color:#66d9ef">cursive</span>;
+}
+.<span style="color:#a6e22e">container</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#FFF</span>;
+<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">rem</span>
+}
+
+<span style="color:#f92672">h1</span><span style="color:#f92672">,</span><span style="color:#f92672">h2</span><span style="color:#f92672">,</span><span style="color:#f92672">h3</span>{
+<span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#4F85D7</span>;
+}
+.<span style="color:#a6e22e">footer</span>{
+<span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Dancing Script&#39;</span>, <span style="color:#66d9ef">cursive</span>;
+}</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/33.png" alt="33" /></p>
+
+<h3 id="source-code-2">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/21a5a7f2acbce4815433cd77f91c0b8e">https://gist.github.com/benznest/21a5a7f2acbce4815433cd77f91c0b8e</a></p>
+
+<h2 id="fontawesome">Fontawesome</h2>
+
+<p>fontawesome คือ ไลบรารี่เกี่ยวกับ icon ซึ่ง Bootstrap 4 ไม่มี fontawesome ติดมาอีกแล้ว เนื่องจาก fontawesome ไม่มีฟรี</p>
+
+<p><a href="https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css">https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css</a></p>
+
+<p>copy link CDN ของ Fontawesome เข้ามา</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/bootstrap.min.css&#34;</span>  /&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://use.fontawesome.com/releases/v5.5.0/css/all.css&#34;</span>
+<span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU&#34;</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/custom.css&#34;</span>  /&gt;</code></pre></div>
+
+<p>ในเว็บ Fontawesome ก็เลือก icon ที่ชอบ พอกดเข้าไปมันจะมีโค้ดอยู่</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/34a.png" alt="34a" /></p>
+
+<p>ให้นำโค้ด มาใช้ โดย <i> คือ icon มันต้องอยู่ภายใต้แท็กอื่นๆ</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-center&#34;</span>&gt;
+&lt;<span style="color:#f92672">i</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;far fa-kiss-wink-heart&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+Nothing in life is to be feared,
+it is only to be understood.
+Now is the time to understand more,
+so that we may fear less.&lt;/<span style="color:#f92672">h2</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/35.png" alt="35" /></p>
+
+<p>เราสามารถนำ <span> มาใช้ได้เพื่อกำหนดขนาดของมัน<br />
+เช่น custom.css กำหนดขนาดของ icon ที่ 10rem</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">front-icon</span>{
+<span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">block</span>;
+}
+.<span style="color:#a6e22e">front-icon</span> <span style="color:#f92672">i</span>{
+<span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">rem</span>;
+}</code></pre></div>
+
+<p>ใน html ก็เอา span มาครอบ</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-12&#34;</span>&gt;
+&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;front-icon text-center&#34;</span>&gt;
+&lt;<span style="color:#f92672">i</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;far fa-kiss-wink-heart&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+&lt;/<span style="color:#f92672">span</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;  <span style="color:#75715e">&lt;!--  Close Row  7  --&gt;</span></code></pre></div>
+
+<p>icon จะมีขนาด 10rem แล้ว</p>
+
+<p>[<img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/36.png" alt="36" /></p>
+
+<p>หรือจะใช้พื้นหลังสีอื่น ไอคอนสีขาว</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">front-icon</span>{
+<span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">block</span>;
+<span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#FFFFFF</span>;
+<span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">3</span><span style="color:#66d9ef">rem</span>;
+<span style="color:#66d9ef">background</span>:<span style="color:#ae81ff">#4F85D7</span>;
+}
+.<span style="color:#a6e22e">front-icon</span> <span style="color:#f92672">i</span>{
+<span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">rem</span>;
+}</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/37.png" alt="37" /></p>
+
+<h2 id="class-ของส">Class ของสี</h2>
+
+<p>class utilities ที่ใช้บ่อยอีกตัวคือ เกี่ยวกับสี</p>
+
+<p>อ่านได้ที่ <a href="https://getbootstrap.com/docs/4.0/utilities/colors/">https://getbootstrap.com/docs/4.0/utilities/colors/</a></p>
+
+<p>หลักๆคือ มีให้เลือกใช้ดังนี้</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">_primary</span>  
+<span style="color:#f92672">**</span><span style="color:#f92672">danger</span>  
+<span style="color:#f92672">**</span><span style="color:#f92672">success</span>  
+<span style="color:#f92672">**</span><span style="color:#f92672">info</span>  
+<span style="color:#f92672">**</span><span style="color:#f92672">dark</span>  
+<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">_</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">_light_</span></code></pre></div>
+
+<p>ใช้กับ class พวก bg- , text-<br />
+เช่น</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-primary p-2 text-white&#34;</span>&gt;Service&lt;/<span style="color:#f92672">h3</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/38.png" alt="38" /></p>
+
+<h3 id="ว-ธ-custom">วิธี Custom</h3>
+
+<p>เช่นอยากเปลี่ยนสีให้ต่างจาก bootstrap ให้ใส่ !important ด้วย</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">bg-primary</span>{
+<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#4F85D7</span> <span style="color:#75715e">!important</span>;
+}</code></pre></div>
+
+<h2 id="การใช-animate-css">การใช้ Animate.css</h2>
+
+<p>เข้าไปดาวน์โหลด css ได้ที่<br />
+<a href="https://daneden.github.io/animate.css/">https://daneden.github.io/animate.css/</a></p>
+
+<p>แล้วเพิ่มเข้ามาใน HTML ของเรา</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;css/animate.css&#34;</span>  /&gt;</code></pre></div>
+
+<p>วิธีการเรียกใช้ ก็แค่ใช้ class<br />
+animated = เรียกใช้ animated<br />
+infinite = ทำไปเรื่อยๆ<br />
+pulse = Animation แบบ pulse<br />
+delay-1s = delay 1 วินาที</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-center animated infinite pulse delay-1s&#34;</span>&gt;&lt;<span style="color:#f92672">i</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;far fa-kiss-wink-heart&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+
+Nothing in life is to be feared,
+
+it is only to be understood.
+
+Now is the time to understand more,
+
+so that we may fear less.&lt;/<span style="color:#f92672">h2</span>&gt;</code></pre></div>
+
+<p><img src="https://benzneststudios.com/blog/wp-content/uploads/2018/11/g1.gif" alt="g1" /></p>
+
+<h3 id="source-code-3">Source code</h3>
+
+<p><a href="https://gist.github.com/benznest/ad45fd26b773e1ff47bb9727a4702494">https://gist.github.com/benznest/ad45fd26b773e1ff47bb9727a4702494</a></p>
+
+<h2 id="สร-ป">สรุป</h2>
+
+<p>บทความนี้ก็สรุปคร่าวๆเกี่ยวกับการใช้ bootstrap ที่เป็นเรื่องสำคัญๆ เช่นการใช้ grid จัดวาง layout การทำให้รองรับ responsive การใช้ utility class เช่น margin padding รวมถึงพวกสี เช่น primary danger ที่เจอบ่อยมาก แล้วก็แนะนำเกี่ยวกับหน่วย rem ด้วย แถมด้วยเปลี่ยน Font กับใส่ Icon</p>
+
+<p>ตอนหน้าจะเป็นเรื่องของการใช้ component อื่นๆที่ใช้งานบ่อยๆ รวมถึงเทคนิคเกี่ยวกับ bootstrap เพิ่มเติมด้วย</p>
+
+<blockquote>
+<p>Source : <a href="https://benzneststudios.com/blog/web/bootstrap-4-basic-part-1/">benzneststudios.com</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cFront-End%5cbootstrap%5cbasic-bootstap%5cep-1.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

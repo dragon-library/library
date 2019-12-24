@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.6 Jinja template design"><meta property="og:title" content="Ep.6 Jinja template design" />
+<meta property="og:description" content="Jinja template design | Learning Flask Ep. 6 An brief introduction to the power of the Jinja templating engine
+In this part of the Learning Flask series, we&rsquo;re going to dive deeper into the Jinja templating engine and you&rsquo;ll learn more of the advanced features of this powerful library!
+In the last part of this series, you learned how to create base templates, child templates and how to extend them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-6/" />
+
+<title>Ep.6 Jinja template design | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.83322c54af74a680e1142939d9a9e76b7fe0e7a83896bf8b01cad687d709706d.js" integrity="sha256-gzIsVK90poDhFCk52anna3/g56g4lr&#43;LAcrWh9cJcG0="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/"  class="active">
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.6 Jinja template design</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="jinja-template-design-learning-flask-ep-6">Jinja template design | Learning Flask Ep. 6</h1>
+
+<p>An brief introduction to the power of the Jinja templating engine</p>
+
+<p>In this part of the Learning Flask series, we&rsquo;re going to dive deeper into the Jinja templating engine and you&rsquo;ll learn more of the advanced features of this powerful library!</p>
+
+<p>In the last part of this series, you learned how to create base templates, child templates and how to extend them. In this part you&rsquo;ll learn more about template design, working with Python objects in your HTML and a few more handy tips for writing efficient, reusable code.</p>
+
+<p>There&rsquo;s a lot to cover, in fact, too much for this article. Check out the  <a href="http://jinja.pocoo.org/docs/2.10/">Jinja documentation</a>  for a full list of the features available.</p>
+
+<p>Let&rsquo;s get started!</p>
+
+<h3 id="creating-a-new-view">Creating a new view</h3>
+
+<p>For this example we&rsquo;ll create a new view called  <code>jinja</code>. Open up  <code>views.py</code>  and add the following route:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/jinja&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jinja</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/jinja.html&#34;</span>)</code></pre></div>
+
+<p>We&rsquo;ll need to create a new child template for this view. Create a file called  <code>jinja.html</code>  in the  <code>templates/public</code>, open it in your editor and add the following:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% extends &#34;public/templates/public_template.html&#34; %}
+
+{% block title %}Jinja{% endblock %}
+
+{% block main %}
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;Jinja&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;<span style="color:#f92672">hr</span>&gt;
+
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+{% endblock %}</code></pre></div>
+We should also add a link in our navbar so we access this view quickly! Go ahead and open up  <code>public_template.html</code>  in your editor.</p>
+
+<p>Let&rsquo;s switch the  <code>About</code>  link to our new  <code>Jinja</code>  view.</p>
+
+<p>Change this:</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
+  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/about&#34;</span>&gt;About&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">li</span>&gt;</code></pre></div>
+To this:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
+  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/jinja&#34;</span>&gt;Jinja&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">li</span>&gt;</code></pre></div></p>
+
+<p>Reload your browser and click on the Jinja link in the nav to see our new view in action.</p>
+
+<h3 id="passing-objects-to-templates">Passing objects to templates</h3>
+
+<p>We can pass any Python object to a template by passing it to the  <code>render_template</code>  function as a key/value pair. For example, let&rsquo;s create a simple variable called  <code>my_name</code>  and assign it a string value (Feel free to replace the value for your own!)</p>
+
+<p>Open up  <code>views.py</code>  and create the new  <code>my_name</code>  variable inside the  <code>jinja</code>  view:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/jinja&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jinja</span>():
+    my_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Julian&#34;</span>
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/jinja.html&#34;</span>)</code></pre></div>
+We pass objects to views in the  <code>render_template</code>  function as key/value pairs, like so:</p>
+
+<p><code>return render_template(&quot;public/jinja.html&quot;, my_name=my_name)</code></p>
+
+<p>Go ahead and pass the  <code>my_name</code>  key/value pair into  <code>render_template</code></p>
+
+<p>Your view will now look like this:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/jinja&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jinja</span>():
+    my_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Julian&#34;</span>
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/jinja.html&#34;</span>, my_name<span style="color:#f92672">=</span>my_name)</code></pre></div>
+
+<p>Let&rsquo;s use this variable in our  <code>jinja.html</code>  template. We access objects in Jinja with the  <code>{{ object }}</code>  syntax.</p>
+
+<p>Open up  <code>jinja.html</code>  and add the following just under the  <code>&lt;hr&gt;</code>  tag:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Accessing an objects value&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Hello {{ my_name }}!&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div>
+Your  <code>jinja.html</code>  file should look like this:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% extends &#34;public/templates/public_template.html&#34; %}
+
+{% block title %}Jinja{% endblock %}
+
+{% block main %}
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;Jinja&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;<span style="color:#f92672">hr</span>&gt;
+
+      &lt;<span style="color:#f92672">h4</span>&gt;Accessing an objects value&lt;/<span style="color:#f92672">h4</span>&gt;
+      &lt;<span style="color:#f92672">hr</span>&gt;
+      &lt;<span style="color:#f92672">p</span>&gt;Hello {{ my_name }}!&lt;/<span style="color:#f92672">p</span>&gt;
+
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+{% endblock %}</code></pre></div>
+
+<blockquote>
+<p>Tip - Going forward, we&rsquo;re going to separate all of the sections in our  <code>jinja.html</code>  with a heading, description and example</p>
+</blockquote>
+
+<p>Save the file and reload the page to see  <code>Hello</code>  and the value for  <code>my_name</code>!</p>
+
+<p>We access an objects value in Jinja by passing it in between a pair of curly braces  <code>{{ like_so }}</code></p>
+
+<p>Let&rsquo;s create some more objects in our jinja view and pass them into our template. Replace the contents of the  <code>jinja</code>  function with the following:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Strings</span>
+my_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Julian&#34;</span>
+
+<span style="color:#75715e"># Integers</span>
+my_age <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>
+
+<span style="color:#75715e"># Lists</span>
+langs <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Python&#34;</span>, <span style="color:#e6db74">&#34;JavaScript&#34;</span>, <span style="color:#e6db74">&#34;Bash&#34;</span>, <span style="color:#e6db74">&#34;Ruby&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>, <span style="color:#e6db74">&#34;Rust&#34;</span>]
+
+<span style="color:#75715e"># Dictionaries</span>
+friends <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#34;Tony&#34;</span>: <span style="color:#ae81ff">43</span>,
+    <span style="color:#e6db74">&#34;Cody&#34;</span>: <span style="color:#ae81ff">28</span>,
+    <span style="color:#e6db74">&#34;Amy&#34;</span>: <span style="color:#ae81ff">26</span>,
+    <span style="color:#e6db74">&#34;Clarissa&#34;</span>: <span style="color:#ae81ff">23</span>,
+    <span style="color:#e6db74">&#34;Wendell&#34;</span>: <span style="color:#ae81ff">39</span>
+}
+
+<span style="color:#75715e"># Tuples</span>
+colors <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;Red&#34;</span>, <span style="color:#e6db74">&#34;Blue&#34;</span>)
+
+<span style="color:#75715e"># Booleans</span>
+cool <span style="color:#f92672">=</span> True
+
+<span style="color:#75715e"># Classes</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GitRemote</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, name, description, domain):
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+        self<span style="color:#f92672">.</span>description <span style="color:#f92672">=</span> description 
+        self<span style="color:#f92672">.</span>domain <span style="color:#f92672">=</span> domain
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clone</span>(self, repo):
+        <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;Cloning into {repo}&#34;</span>
+
+my_remote <span style="color:#f92672">=</span> GitRemote(
+    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Learning Flask&#34;</span>,
+    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Learn the Flask web framework for Python&#34;</span>,
+    domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/Julian-Nash/learning-flask.git&#34;</span>
+)
+
+<span style="color:#75715e"># Functions</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">repeat</span>(x, qty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> qty</code></pre></div>
+Now we need to pass our objects into our template using the  <code>render_template</code>  function. Pass them in as key/value pairs like the following:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">return</span> render_template(
+    <span style="color:#e6db74">&#34;public/jinja.html&#34;</span>, my_name<span style="color:#f92672">=</span>my_name, my_age<span style="color:#f92672">=</span>my_age, langs<span style="color:#f92672">=</span>langs,
+    friends<span style="color:#f92672">=</span>friends, colors<span style="color:#f92672">=</span>colors, cool<span style="color:#f92672">=</span>cool, GitRemote<span style="color:#f92672">=</span>GitRemote, 
+    my_remote<span style="color:#f92672">=</span>my_remote, repeat<span style="color:#f92672">=</span>repeat
+)</code></pre></div></p>
+
+<p>Your  <code>jinja</code>  view should now look like this:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/jinja&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jinja</span>():
+
+    <span style="color:#75715e"># Strings</span>
+    my_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Julian&#34;</span>
+
+    <span style="color:#75715e"># Integers</span>
+    my_age <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>
+
+    <span style="color:#75715e"># Lists</span>
+    langs <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Python&#34;</span>, <span style="color:#e6db74">&#34;JavaScript&#34;</span>, <span style="color:#e6db74">&#34;Bash&#34;</span>, <span style="color:#e6db74">&#34;Ruby&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>, <span style="color:#e6db74">&#34;Rust&#34;</span>]
+
+    <span style="color:#75715e"># Dictionaries</span>
+    friends <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#34;Tony&#34;</span>: <span style="color:#ae81ff">43</span>,
+        <span style="color:#e6db74">&#34;Cody&#34;</span>: <span style="color:#ae81ff">28</span>,
+        <span style="color:#e6db74">&#34;Amy&#34;</span>: <span style="color:#ae81ff">26</span>,
+        <span style="color:#e6db74">&#34;Clarissa&#34;</span>: <span style="color:#ae81ff">23</span>,
+        <span style="color:#e6db74">&#34;Wendell&#34;</span>: <span style="color:#ae81ff">39</span>
+    }
+
+    <span style="color:#75715e"># Tuples</span>
+    colors <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;Red&#34;</span>, <span style="color:#e6db74">&#34;Blue&#34;</span>)
+
+    <span style="color:#75715e"># Booleans</span>
+    cool <span style="color:#f92672">=</span> True
+
+    <span style="color:#75715e"># Classes</span>
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GitRemote</span>:
+        <span style="color:#66d9ef">def</span> __init__(self, name, description, domain):
+            self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+            self<span style="color:#f92672">.</span>description <span style="color:#f92672">=</span> description 
+            self<span style="color:#f92672">.</span>domain <span style="color:#f92672">=</span> domain
+
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pull</span>(self):
+            <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;Pulling repo &#39;{self.name}&#39;&#34;</span>
+
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clone</span>(self, repo):
+            <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;Cloning into {repo}&#34;</span>
+
+    my_remote <span style="color:#f92672">=</span> GitRemote(
+        name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Learning Flask&#34;</span>,
+        description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Learn the Flask web framework for Python&#34;</span>,
+        domain<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/Julian-Nash/learning-flask.git&#34;</span>
+    )
+
+    <span style="color:#75715e"># Functions</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">repeat</span>(x, qty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> qty
+
+    <span style="color:#66d9ef">return</span> render_template(
+        <span style="color:#e6db74">&#34;public/jinja.html&#34;</span>, my_name<span style="color:#f92672">=</span>my_name, my_age<span style="color:#f92672">=</span>my_age, langs<span style="color:#f92672">=</span>langs,
+        friends<span style="color:#f92672">=</span>friends, colors<span style="color:#f92672">=</span>colors, cool<span style="color:#f92672">=</span>cool, GitRemote<span style="color:#f92672">=</span>GitRemote, 
+        my_remote<span style="color:#f92672">=</span>my_remote, repeat<span style="color:#f92672">=</span>repeat
+    )</code></pre></div>
+Ok so we&rsquo;ve added quite a lot of code to our view function, just some standard Python objects that most of which you should be fairly familiar with.</p>
+
+<p>We then passed them as key/value pairs into our template using the  <code>render_template</code>  function.</p>
+
+<p>Let&rsquo;s put them to use in  <code>jinja.html</code>.</p>
+
+<h3 id="accessing-objects-in-templates">Accessing objects in templates</h3>
+
+<p>Our template now contains all of the objects we&rsquo;ve passed into it. Let&rsquo;s explore what we can do with them!</p>
+
+<h4 id="looping">Looping</h4>
+
+<p>Looping in Jinja is done with the following syntax:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{<span style="color:#f92672">%</span> <span style="color:#66d9ef">for</span> variable <span style="color:#f92672">in</span> iterable <span style="color:#f92672">%</span>}
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#f92672">--</span> Do something <span style="color:#66d9ef">with</span> the variable <span style="color:#f92672">--&gt;</span>
+{{ variable }}
+{<span style="color:#f92672">%</span> endfor <span style="color:#f92672">%</span>}</code></pre></div>
+Just like a Python  <code>for loop</code>, we use the  <code>for variable in iterable</code>  syntax, wrapped in a pair of  <code>{% %}</code>  braces.</p>
+
+<p>We then access the variable using the double curly brace syntax  <code>{{ variable }}</code></p>
+
+<p>For loops must always be closed with  <code>{% endfor %}</code></p>
+
+<p>Let&rsquo;s put this into practice and loop through our  <code>langs</code>  list and create a HTML list with each of the values:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Looping through an iterable&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+
+&lt;<span style="color:#f92672">strong</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-block mb-3&#34;</span>&gt;Programming languages&lt;/<span style="color:#f92672">strong</span>&gt;
+&lt;<span style="color:#f92672">ul</span>&gt;
+  {% for lang in langs %}
+  &lt;<span style="color:#f92672">li</span>&gt;{{ lang }}&lt;/<span style="color:#f92672">li</span>&gt;
+  {% endfor %}
+&lt;/<span style="color:#f92672">ul</span>&gt;</code></pre></div>
+Reload your browser tab to see the changes.</p>
+
+<p>We can also enumarate an iterable using  <code>{{ loop.index }}</code></p>
+
+<p><strong>app/app/templates/public/jinja.html</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Looping and enumerating an iterable&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+
+&lt;<span style="color:#f92672">strong</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-block mb-3&#34;</span>&gt;Programming languages&lt;/<span style="color:#f92672">strong</span>&gt;
+&lt;<span style="color:#f92672">ul</span>&gt;
+  {% for lang in langs %}
+  &lt;<span style="color:#f92672">li</span>&gt;{{ loop.index }} - {{ lang }}&lt;/<span style="color:#f92672">li</span>&gt;
+  {% endfor %}
+&lt;/<span style="color:#f92672">ul</span>&gt;</code></pre></div>
+
+<blockquote>
+<p>Tip -  <code>loop.index</code>  starts at 1. To start enumerating at 0, use  <code>loop.index0</code></p>
+</blockquote>
+
+<p>Let&rsquo;s loop though the key/value pairs of our  <code>friends</code>  dictionary:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Looping key/value pairs in a dict&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+
+&lt;<span style="color:#f92672">strong</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d-block mb-3&#34;</span>&gt;Friends <span style="color:#960050;background-color:#1e0010">&amp;</span> ages&lt;/<span style="color:#f92672">strong</span>&gt;
+&lt;<span style="color:#f92672">ul</span>&gt;
+  {% for name, age in friends.items() %}
+  &lt;<span style="color:#f92672">li</span>&gt;{{ name }}: {{ age }}&lt;/<span style="color:#f92672">li</span>&gt;
+  {% endfor %}
+&lt;/<span style="color:#f92672">ul</span>&gt;</code></pre></div></p>
+
+<p>Just like in Python, we can access the dictionary methods such as  <code>.keys()</code>,  <code>.values()</code>  and  <code>.items()</code>.</p>
+
+<p>Using the  <code>{% for variable in iterable %}</code>  and closing it with the  <code>{% endfor %}</code>  syntax, you can loop through any iterable, including lists, tuples, dictionaries, sets etc.. and access the variable value using  <code>{{ variable }}</code></p>
+
+<h3 id="calling-functions">Calling functions</h3>
+
+<p>We can call any functions we pass into our template simply by doing just that!</p>
+
+<p>Let&rsquo;s call our  <code>repeat</code>  function and pass it some arguments:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Calling functions&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;{{ repeat(&#34;Jinja is great! &#34;, 10) }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div>
+
+<p>Save and refresh the page to see  <code>Jinja is great!</code>  printed 10 times.</p>
+
+<p>Passing and calling functions from templates is useful, but an even better way is to create custom filters which you&rsquo;ll learn about shortly!</p>
+
+<h3 id="accessing-object-indexes-keys-and-attributes">Accessing object indexes, keys and attributes</h3>
+
+<p>Just like in Python, we can access the indexes, keys and attributes of an object.</p>
+
+<p>Accessing a list index:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;List index&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;{{ langs[0] }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div>
+Accessing a dictionary value:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Dictionary value&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;{{ friends[&#34;Tony&#34;] }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div>
+Accessing a class attribute:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Class attributes&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;{{ my_remote.description }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div></p>
+
+<p>As you can see, we just use the familiar Python syntax for accessing these values.</p>
+
+<h3 id="classes">Classes</h3>
+
+<p>You&rsquo;ve seen how to access class attributes using the  <code>class.attribute</code>  syntax. We can also call class methods from our Jinja template, just like in Python:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Class methods&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;{{ my_remote.pull() }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div></p>
+
+<h3 id="assignments">Assignments</h3>
+
+<p>Assigning new variables in Jinja is done using the  <code>{% set x = y %}</code>  syntax.</p>
+
+<p>Let&rsquo;s create a new instance of our  <code>GitRemote</code>  class from within our template using the  <code>set</code>  tag:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Create a class&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+{% set new_repo = GitRemote(
+    name=&#34;Learning Flask&#34;,
+    description=&#34;Learn the Flask web framework for Python&#34;,
+    domain=&#34;https://github.com/Julian-Nash/learning-flask.git&#34;) 
+%}
+&lt;<span style="color:#f92672">p</span>&gt;{{ new_repo.description }}&lt;/<span style="color:#f92672">p</span>&gt;` </code></pre></div>
+We can also unpack and set variables directly in our template, for example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Unpack variables&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+{% set foo, bar = colors %}
+&lt;<span style="color:#f92672">p</span>&gt;{{ foo }}&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;{{ bar }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div></p>
+
+<h3 id="conditionals-comparison-operators">Conditionals &amp; comparison operators</h3>
+
+<p>Just like in Python, Jinja gives us acccess to many of the familiar conditional operators.</p>
+
+<p><code>if</code>  statement:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Conditional if&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+{% if cool %}
+  &lt;<span style="color:#f92672">p</span>&gt;Cool = {{ cool }}&lt;/<span style="color:#f92672">p</span>&gt;
+{% endif %}</code></pre></div>
+We have to close any  <code>if</code>  conditionals with the  <code>{% endif %}</code>  syntax</p>
+
+<p><code>if</code>,  <code>elif</code>  &amp;  <code>else</code>:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Conditional if/elif&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+{% if my_age &lt; <span style="color:#f92672">18</span> <span style="color:#960050;background-color:#1e0010">%}</span>
+<span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">p</span>&gt;No entry&lt;/<span style="color:#f92672">p</span>&gt;
+{% elif my_age <span style="color:#960050;background-color:#1e0010">&lt;</span>= 25 %}
+&lt;<span style="color:#f92672">p</span>&gt;You may enter&lt;/<span style="color:#f92672">p</span>&gt;
+{% else %}
+&lt;<span style="color:#f92672">p</span>&gt;Entry denied. You&#39;re not cool enough&lt;/<span style="color:#f92672">p</span>&gt;
+{% endif %}</code></pre></div></p>
+
+<p>As you&rsquo;ll see we threw in some Python comparison operators. You have access to all of the standard operators including:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">-   `==`  Equality
+-   `!=`  Inequality
+-   `&gt;`  Greater than
+-   `&gt;=`  Greater than or equal to
+-   `<span style="color:#960050;background-color:#1e0010">&lt;</span>`  Less than
+-   `<span style="color:#960050;background-color:#1e0010">&lt;</span>=`  Less than or equal to</code></pre></div></p>
+
+<blockquote>
+<p>Tip - You must always close an  <code>{% if x %}</code>  statement with  <code>{% endif %}</code></p>
+</blockquote>
+
+<h3 id="logic-other-operators">Logic &amp; other operators</h3>
+
+<p>Just like in Python, you have full access to the logic operators:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">-   `and`  Return true if the left and the right operand are true
+-   `or`  Return true if the left or the right operand are true.
+-   `not`  Negate a statement (See tip below)
+-   `(exp)`  Group an expression</code></pre></div></p>
+
+<blockquote>
+<p>Tip - Read more about the  <code>not</code>  operator  <a href="http://jinja.pocoo.org/docs/2.10/templates/#logic">here</a>  at the official Jinja docs</p>
+</blockquote>
+
+<p>You&rsquo;ll also have access to many other operators you&rsquo;ll be familiar with including:</p>
+
+<ul>
+<li><code>in</code>  Containment test. For example  <code>{{ &quot;a&quot; in [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] }}</code>  will return  <code>true</code></li>
+<li><code>is</code>  Performs a test.  <code>{% foo is bar %}</code>  /  <code>{{ foo is not bar }}</code></li>
+</ul>
+
+<h3 id="special-jinja-operators">Special Jinja operators</h3>
+
+<p>Jinja features some special operators you may not be familiar with and we&rsquo;ll be using later in this guide:</p>
+
+<ul>
+<li><code>|</code>  Applies a filter (Continue reading) For example  <code>{{ langs|length }}</code>  will return  <code>6</code></li>
+<li><code>~</code>  Converts all operands to strings and concatenates them, for example  <code>{{ &quot;cool&quot; ~ &quot;==&quot; ~ cool }}</code>  returns &ldquo;cool==True&rdquo;</li>
+<li><code>(**args, **kwargs)</code>  Callable. You&rsquo;ve seen this used when we called class method</li>
+</ul>
+
+<h3 id="math">Math</h3>
+
+<p>You&rsquo;ll have full access to all of the Python math operators in Jinja. Not particularly useful but there if you need them.</p>
+
+<h3 id="template-filters">Template filters</h3>
+
+<p>Jinja comes with a bunch of useful template filters which can be compared to funtions that take an argument or aguments and return a value or set of values.</p>
+
+<p>We&rsquo;re only going to show a few in this example, but a full list of built in filters can be found  <a href="http://jinja.pocoo.org/docs/2.10/templates/#logic">here</a></p>
+
+<p>The syntax for using filters is  <code>{{ object|filter }}</code></p>
+
+<p>We&rsquo;ll use the  <code>length</code>  filter to return the length of a list:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Built in filters (length)&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;{{ langs|length }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div></p>
+
+<p>We can also use filters in conjunction with conditionals, for example:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Filters <span style="color:#960050;background-color:#1e0010">&amp;</span> conditionals&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+{% if langs|length &gt; 2 %}
+  {% for lang in langs %}
+    {% if lang == &#34;Python&#34; %}
+      &lt;<span style="color:#f92672">p</span>&gt;{{ lang|upper }}&lt;/<span style="color:#f92672">p</span>&gt;
+    {% else %}
+      &lt;<span style="color:#f92672">p</span>&gt;{{ lang|reverse }}&lt;/<span style="color:#f92672">p</span>&gt;
+    {% endif %}
+  {% endfor %}
+{% endif %}</code></pre></div></p>
+
+<blockquote>
+<p>Tip - You can nest loops and conditionals just like in Python. Be sure to close the conditional or loop with an  <code>{% endif %}</code>  or  <code>{% endfor %}</code>  respectively</p>
+</blockquote>
+
+<p>The  <code>upper</code>  filter will capitalize the string we pass to it whilst the  <code>reverse</code>  filter will return a reversed string.</p>
+
+<p>Be sure to read the Jinja  <a href="http://jinja.pocoo.org/docs/2.10/templates/#list-of-builtin-filters">docs</a>  for a full list of built in filters, they&rsquo;re incredibly useful</p>
+
+<p>One of the filters I find myself using a lot is the  <code>join</code>  filter. Let&rsquo;s join our  <code>langs</code>  list into a single string:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Join filter&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Unjoined: {{ langs }}&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Joined: {{ langs|join(&#34;, &#34;) }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div></p>
+
+<h3 id="custom-filters">Custom filters</h3>
+
+<p>Flask provides us a convenient way to build our own custom template filters.</p>
+
+<p>Let&rsquo;s create a filter that takes a datetime object and returns a nicely formatted string.</p>
+
+<p>Open up  <code>views.py</code>  and add follow along.</p>
+
+<p>First, we need to import the  <code>datetime</code>  library</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><code>from datetime import datetime</code></p>
+
+<p>Let&rsquo;s create a datetime variable in our  <code>jinja</code>  view and pass it to  <code>render_template</code>:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>utcnow()
+
+<span style="color:#66d9ef">return</span> render_template(
+    <span style="color:#e6db74">&#34;public/jinja.html&#34;</span>, my_name<span style="color:#f92672">=</span>my_name, my_age<span style="color:#f92672">=</span>my_age, langs<span style="color:#f92672">=</span>langs,
+    friends<span style="color:#f92672">=</span>friends, colors<span style="color:#f92672">=</span>colors, cool<span style="color:#f92672">=</span>cool, GitRemote<span style="color:#f92672">=</span>GitRemote, 
+    my_remote<span style="color:#f92672">=</span>my_remote, repeat<span style="color:#f92672">=</span>repeat, date<span style="color:#f92672">=</span>date)</code></pre></div></p>
+
+<p>Let&rsquo;s drop our  <code>date</code>  variable into our  <code>jinja.html</code>  file and see how it looks without formatting:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Custom filters&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;{{ date }}&lt;/<span style="color:#f92672">p</span>&gt;</code></pre></div></p>
+
+<p>Save and refresh your browser to see the raw datetime object:</p>
+
+<p><code>2019-02-06 17:40:58.374084</code></p>
+
+<p>Let&rsquo;s create a custom filter and pass our  <code>date</code>  variable to it. Back in  <code>views.py</code>, add the following:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.template_filter</span>(<span style="color:#e6db74">&#34;clean_date&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clean_date</span>(dt):
+    <span style="color:#66d9ef">return</span> dt<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %b %Y&#34;</span>)</code></pre></div>
+We create custom filters by registering them on our app using the  <code>@app.template_filter</code>  syntax and passing it the name of the filter we want to create.</p>
+
+<p>We then pass our object into the function defined below it. It&rsquo;s here we can modify the object and return it back to the template.</p>
+
+<p>The great thing about custom template filters is that once defined, we can access them from any template in our app! In this case, we&rsquo;re just formatting the datetime object and returning it as a nicely formatted string.</p>
+
+<p>Go ahead and save the file and reload the browser to see the changes take effect.</p>
+
+<h3 id="escaping">Escaping</h3>
+
+<p>Escaping strings is vital in any web application as we simply cannot rely on our users (or ourselves!) to ensure we&rsquo;re not passing in any malicious strings that may get executed by the browser.</p>
+
+<p>In Flask, auto escaping IS enabled by default for all templates ending in  <code>.html</code>,  <code>.htm</code>,  <code>.xml</code>  and  <code>.xhtml</code>  when using the  <code>render_template</code>  function.</p>
+
+<p>Let&rsquo;s start by looking at when we want to insert some HTML or JavaScript into our template to be executed by the browser. This is not uncommon, in fact, you&rsquo;re looking at it right now!</p>
+
+<p>Let&rsquo;s create a variable in our  <code>jinja</code>  route and assign it an HTML string:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><code>my_html = &quot;&lt;h1&gt;This is some HTML&lt;/h1&gt;&quot;</code></p>
+
+<p>Be sure to pass it to  <code>render_template</code>  as  <code>my_html=my_html</code></p>
+
+<p>Let&rsquo;s dump  <code>my_html</code>  into our  <code>jinja.html</code>  template:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Escaped&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+{{ my_html }}</code></pre></div></p>
+
+<p>Save and reload the page.</p>
+
+<p>Instinct tell us that the browser is going to parse the HTML and render it as part of our page. However, as Flask enables Jinja escaping by default, we just see a string containing the HTML, rather than the H1 heading we defined.</p>
+
+<p>Let&rsquo;s escape our  <code>my_html</code>  variable and make it part of the page with the  <code>safe</code>  filter:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Marked as safe&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+{{ my_html|safe }}</code></pre></div>
+You&rsquo;ll see a big H1 heading which is now part of our pages actual HTML.</p>
+
+<blockquote>
+<p>Tip - Use with caution. Never pipe any values through the  <code>safe</code>  filter from untrusted sources. Especially from users!</p>
+</blockquote>
+
+<p>To illustrate this, let&rsquo;s create a suspicious variables in our  <code>jinja</code>  view:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><code>suspicious = &quot;&lt;script&gt;alert('NEVER TRUST USER INPUT!')&lt;/script&gt;&quot;</code></p>
+
+<p>Pass the  <code>suspicious</code>  variable to  <code>render_template</code>  and add the following to  <code>jinja.html</code>:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Suspicious script&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+{{ suspicious|safe }}</code></pre></div>
+Save and refresh your browser to see why cautious use of the  <code>safe</code>  filter is required! (Don&rsquo;t worry it&rsquo;s safe&hellip; Get it?)</p>
+
+<p>Go ahead and comment out the last part otherwise you&rsquo;ll have an annoying  <code>alert</code>  dialogue every time you reload your browser!</p>
+
+<p>Let&rsquo;s move on to macros.</p>
+
+<h3 id="macros">macros</h3>
+
+<p>Jinja macros are an extremely convenient and useful way to create reusable code within your templates. They&rsquo;re a bit like functions as in we can reuse them over and over again and supply arguments.</p>
+
+<p>We define a  <code>macro</code>  with the following syntax:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{<span style="color:#f92672">%</span> macro macro_name(<span style="color:#f92672">**</span>args, <span style="color:#f92672">**</span>kwargs) <span style="color:#f92672">-%</span>}
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#f92672">--</span> We then define the code we want <span style="color:#66d9ef">as</span> part of our macro <span style="color:#f92672">--&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#f92672">--</span> We have access to any args <span style="color:#f92672">&amp;</span> kwargs passed into the macro <span style="color:#f92672">--&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#f92672">--</span> We access the args <span style="color:#f92672">and</span> kwargs <span style="color:#66d9ef">with</span> the familiar <span style="color:#e6db74">`{{ variable }}`</span> syntax <span style="color:#f92672">--&gt;</span>
+{<span style="color:#f92672">%-</span> endmacro <span style="color:#f92672">%</span>}</code></pre></div></p>
+
+<blockquote>
+<p>Tip - Pay attention to the dashes in the opening and closing {% macro -%} &amp; {%- endmacro %} tags</p>
+</blockquote>
+
+<p>A demonstration is in order!</p>
+
+<p>Say you&rsquo;ve got a page with lots of input fields, we can create an  <code>input</code>  macro and pass it arguments which then get rendered within the macro.</p>
+
+<p>Open up  <code>jinja.html</code>  and add the following:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% macro input(label=&#34;&#34;, type=&#34;text&#34;, id=&#34;&#34;, name=&#34;&#34;, placeholder=&#34;&#34;) -%}
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;{{ label }}&lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ type }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ id }}&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ name }}&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ placeholder }}&#34;</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+{%- endmacro %}</code></pre></div></p>
+
+<p>We&rsquo;ve created an HTML  <code>input</code>  elemt inside our macro which we can pass arguments to and reuse throughout our template.</p>
+
+<blockquote>
+<p>Tip - Notice the default arguments? You can do that with macros!</p>
+</blockquote>
+
+<p>Here&rsquo;s the syntax to use a macro in your templates:</p>
+
+<p><code>{{ macro_name(**args, **kwargs) }}</code></p>
+
+<p>Let&rsquo;s go ahead and use our macro a few times in  <code>jinja.html</code>. We&rsquo;ll wrap our macros in a  <code>&lt;form&gt;</code>  tag:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Macros&lt;/<span style="color:#f92672">h4</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+
+{% macro input(label=&#34;&#34;, type=&#34;text&#34;, id=&#34;&#34;, name=&#34;&#34;, placeholder=&#34;&#34;) -%}
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;{{ label }}&lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ type }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ id }}&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ name }}&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ placeholder }}&#34;</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+{%- endmacro %}
+
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+
+    {{ input(label=&#34;Name&#34;, id=&#34;name&#34;, name=&#34;name&#34;, placeholder=&#34;Enter your name&#34;) }}
+
+    {{ input(label=&#34;Email&#34;, type=&#34;email&#34;, id=&#34;email&#34;, name=&#34;email&#34;, placeholder=&#34;Enter your email&#34;) }}
+
+    {{ input(label=&#34;Password&#34;, id=&#34;password&#34;, name=&#34;password&#34;, placeholder=&#34;Enter your password&#34;) }}
+
+&lt;/<span style="color:#f92672">form</span>&gt;</code></pre></div>
+Save and refresh your browser.</p>
+
+<p>Awesome, we&rsquo;ve got 3  <code>&lt;input&gt;</code>  fields all with different labels, types, names, ids and placeholders. Notice how little code we had to white to produce these 3 input fields? That&rsquo;s the power of macros!</p>
+
+<p>Another key feature of macros, is being able to import them from other templates, similarly to how you import a Python library.</p>
+
+<p>Let&rsquo;s create a  <code>macros</code>  directory at the root of our  <code>templates</code>  directory and create a new file in there called  <code>input_macros.html</code>.</p>
+
+<p>Open up  <code>input_macros.html</code>  and copy and paste the macro we just created:</p>
+
+<p><strong>app/app/templates/macros/input_macros.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% macro input(label=&#34;&#34;, type=&#34;text&#34;, id=&#34;&#34;, name=&#34;&#34;, placeholder=&#34;&#34;) -%}
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;{{ label }}&lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ type }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ id }}&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ name }}&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ placeholder }}&#34;</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+{%- endmacro %}</code></pre></div></p>
+
+<p>Save and close the file.</p>
+
+<p>Now back in  <code>jinja.html</code>, we&rsquo;re going to refactor our code to import and use the macro from  <code>input_macros.html</code>.</p>
+
+<p>First up, we need to import the template. At the top of  <code>jinja.html</code>, just under the  <code>{% extends %}</code>  tag, add the following:</p>
+
+<p><code>{% import &quot;macros/input_macros.html&quot; as im %}</code></p>
+
+<p>We now have full access to any of the macros defined in  <code>input_macros.html</code>! Pretty cool right.</p>
+
+<p>We just need to refactor our existing macros and get rid of the macro we created in  <code>jinja.html</code>  just now. Go ahead and delete the macro and change the following:</p>
+
+<p>from this:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+
+  {{ input(label=&#34;Name&#34;, id=&#34;name&#34;, name=&#34;name&#34;, placeholder=&#34;Enter your name&#34;) }}
+
+  {{ input(label=&#34;Email&#34;, type=&#34;email&#34;, id=&#34;email&#34;, name=&#34;email&#34;, placeholder=&#34;Enter your email&#34;) }}
+
+  {{ input(label=&#34;Password&#34;, id=&#34;password&#34;, name=&#34;password&#34;, placeholder=&#34;Enter your password&#34;) }}
+
+&lt;/<span style="color:#f92672">form</span>&gt;</code></pre></div>
+To this:</p>
+
+<p><strong>app/app/templates/public/jinja.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+
+  {{ im.input(label=&#34;Name&#34;, id=&#34;name&#34;, name=&#34;name&#34;, placeholder=&#34;Enter your name&#34;) }}
+
+  {{ im.input(label=&#34;Email&#34;, type=&#34;email&#34;, id=&#34;email&#34;, name=&#34;email&#34;, placeholder=&#34;Enter your email&#34;) }}
+
+  {{ im.input(label=&#34;Password&#34;, id=&#34;password&#34;, name=&#34;password&#34;, placeholder=&#34;Enter your password&#34;) }}
+
+&lt;/<span style="color:#f92672">form</span>&gt;</code></pre></div>
+We&rsquo;ve just prepend our macro calls with  <code>im</code>  after adding  <code>{% import &quot;macros/input_macros.html&quot; as im %}</code>  at the top of the file.</p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>As you can see, Jinja provides us with some pretty useful tools for creating smart templates in our Flask application (And I can&rsquo;t help but feel I&rsquo;ve only touched the surface!)</p>
+
+<p>I highly suggest you have a look through the  <a href="http://jinja.pocoo.org/docs/2.10/">Jinja documentation</a>  to grasp even more knowledge of this awesome templating language.</p>
+
+<p>Getting to grips with Jinja early on can really make a difference. You&rsquo;ll be way more efficient and reduce the amount of boilerplate code you&rsquo;re writing.</p>
+
+<p>Drop a comment below if you found this guide useful or if you think I missed anything critical. This wasn&rsquo;t designed to be an exhaustive or in depth guide (That&rsquo;s what the docs are for!) But it should give you enough ammo to start designing smarter templates of your own!</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Source : <a href="https://pythonise.com/series/learning-flask/jinja-template-design">pythonise.com</a></p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-6.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#jinja-template-design-learning-flask-ep-6">Jinja template design | Learning Flask Ep. 6</a>
+<ul>
+<li>
+<ul>
+<li><a href="#creating-a-new-view">Creating a new view</a></li>
+<li><a href="#passing-objects-to-templates">Passing objects to templates</a></li>
+<li><a href="#accessing-objects-in-templates">Accessing objects in templates</a>
+<ul>
+<li><a href="#looping">Looping</a></li>
+</ul></li>
+<li><a href="#calling-functions">Calling functions</a></li>
+<li><a href="#accessing-object-indexes-keys-and-attributes">Accessing object indexes, keys and attributes</a></li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#assignments">Assignments</a></li>
+<li><a href="#conditionals-comparison-operators">Conditionals &amp; comparison operators</a></li>
+<li><a href="#logic-other-operators">Logic &amp; other operators</a></li>
+<li><a href="#special-jinja-operators">Special Jinja operators</a></li>
+<li><a href="#math">Math</a></li>
+<li><a href="#template-filters">Template filters</a></li>
+<li><a href="#custom-filters">Custom filters</a></li>
+<li><a href="#escaping">Escaping</a></li>
+<li><a href="#macros">macros</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
