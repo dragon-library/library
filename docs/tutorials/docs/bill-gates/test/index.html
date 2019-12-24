@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Test Code"><meta property="og:title" content="Test Code" />
+<meta property="og:description" content="Python Web Applications with Flask – Part I Table of Contents
+ Articles in this series: What we are building Starting off  First principles A note on the repository structure  Starting the project  Dependencies  Outgrowing small A place for everything  Domain models Data translation layer Views Application setup Configuration and command line runner  And everything in its place Wrapping Up  Please note: This is a collaboration piece between Michael Herman, from Real Python, and Sean Vieira, a Python developer from De Deo Designs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/book/docs/bill-gates/test/" />
+
+<title>Test Code | e-Library</title>
+<link rel="icon" href="/library/book/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/book/book.min.08035661ef2ab612c3c4d88297e5e911393100832d0d5e3fd76245b8996ef610.css" integrity="sha256-CANWYe8qthLDxNiCl&#43;XpETkxAIMtDV4/12JFuJlu9hA=">
+
+
+<script defer src="/library/book/en.search.min.ebb00cce6b320898e643f3a4da689763851cb6473bd88f65c69e1bc4e80f79b3.js" integrity="sha256-67AMzmsyCJjmQ/Ok2miXY4Uctkc72I9lxp4bxOgPebM="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/book/"><span>e-Library</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/homo-sapiens/" >
+      Homo Sapiens
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/homo-deus/" >
+      Homo Deus
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/bill-gates/" >
+      ประวัติ Bill Gates
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/1/" >
+      ตอนที่ 1 - A Revolution Begins
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/2/" >
+      ตอนที่ 2 - The Standard
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/3/" >
+      ตอนที่​ 3 - Deal with the Devil
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/4/" >
+      ตอนที่​ 4 - The Downfall of IBM
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/5/" >
+      ตอนที่​ 5 - Windows​ to the World
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/6/" >
+      ตอนที่​ 6 - NetScape Killer
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/7/" >
+      ตอนที่​ 7 - Enemy at the Gates
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/8/" >
+      ตอนที่​ 8 - The Internet Trap
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/9/" >
+      ตอนที่​ 9 - Revenge of the Fallen
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/10/" >
+      ตอนที่​ 10 - Glorious Reaction
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/11/" >
+      ตอนที่​ 11 - Glorious Failure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/12/" >
+      ตอนที่​ 12 - Hit Refresh
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/bill-gates/test/"  class="active">
+      Test Code
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/book/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Test Code</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-web-applications-with-flask-part-i">Python Web Applications with Flask – Part I</h1>
+
+<p>Table of Contents</p>
+
+<ul>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#articles-in-this-series">Articles in this series:</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#what-we-are-building">What we are building</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#starting-off">Starting off</a>
+
+<ul>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#first-principles">First principles</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#a-note-on-the-repository-structure">A note on the repository structure</a></li>
+</ul></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#starting-the-project">Starting the project</a>
+
+<ul>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#dependencies">Dependencies</a></li>
+</ul></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#outgrowing-small">Outgrowing small</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#a-place-for-everything">A place for everything</a>
+
+<ul>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#domain-models">Domain models</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#data-translation-layer">Data translation layer</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#views">Views</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#application-setup">Application setup</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#configuration-and-command-line-runner">Configuration and command line runner</a></li>
+</ul></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#and-everything-in-its-place">And everything in its place</a></li>
+<li><a href="https://realpython.com/python-web-applications-with-flask-part-i/#wrapping-up">Wrapping Up</a></li>
+</ul>
+
+<p>Please note: This is a collaboration piece between Michael Herman, from Real Python, and Sean Vieira, a Python developer from  <a href="http://dedeodesigns.com/">De Deo Designs</a>.</p>
+
+<hr />
+
+<h3 id="articles-in-this-series">Articles in this series:</h3>
+
+<ol>
+<li><strong>Part I: Application setup ←  <em>CURRENT ARTICLE</em></strong></li>
+<li>Part II:  <a href="https://realpython.com/python-web-applications-with-flask-part-ii/">Setup user accounts, Templates, Static files</a></li>
+<li>Part III:  <a href="https://realpython.com/python-web-applications-with-flask-part-iii/">Testing (unit and integration), Debugging, and Error handling</a></li>
+</ol>
+
+<p><strong>Updated: November 17th, 2013</strong></p>
+
+<p>Recently, thanks to an awesome gig, I re-introduced myself to  <a href="http://flask.pocoo.org/">Flask</a>, which is “a microframework for Python”. It is a great little framework; unfortunately, like  <a href="http://www.sinatrarb.com/">Sinatra</a>  (which inspired it), making the transition from small “self-contained” applications to larger applications is difficult. There are a number of boilerplates out there (including my own  <a href="https://github.com/mjhea0/flask-boilerplate">Flask-Boilerplate</a>) to help make the transition easier. However, using a boilerplate doesn’t help us understand the “why” of the boilerplate’s conventions.</p>
+
+<p>After reviewing the available tutorials out there I thought, “there must be a better way” - then I saw  <a href="http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">Miguel Grinberg’s mega-tutorial</a>. The focus that building an  <em>application</em>  rather than a boilerplate gave to his articles impressed me. So in this tutorial series we are going to be building a mid-sized application of our own and as a side-effect generating a boilerplate. The hope is that when we are finished we will have a better appreciation for what Flask provides and what we can build around it.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h2 id="what-we-are-building">What we are building</h2>
+
+<p>This series will be following the development of a web analytics solution called  <a href="https://github.com/mjhea0/flask-tracking">Flask-Tracking</a>. The goal of this series is to have a working application that will enable users to:</p>
+
+<ul>
+<li>Register with the application.</li>
+<li>Add sites to their account.</li>
+<li>Install tracking codes on their site(s) to track various events as the events occur.</li>
+<li>View reports on their site(s)’ event activity.</li>
+</ul>
+
+<p>At the end of the day,  <em>our</em>  goal (over and above having a working application that conforms to the above napkin spec) is to:</p>
+
+<ul>
+<li>Learn how to develop a mid-sized application using Flask.</li>
+<li>Get practical experience with  <a href="https://realpython.com/python-refactoring/">refactoring</a>  and  <a href="https://realpython.com/python-testing/">testing</a>.</li>
+<li>Gain a deeper appreciation of building composable systems.</li>
+<li>Develop a boilerplate that we can re-use for future projects.</li>
+</ul>
+
+<h2 id="starting-off">Starting off</h2>
+
+<p>This series assumes that you have a passing familiarity with Python and Flask already. You should already be comfortable with everything in  <a href="http://docs.python.org/2/tutorial/">Python’s tutorial</a>, be familiar with the command line (or, at the very least, with  <a href="https://realpython.com/what-is-pip/"><code>pip</code></a>), and you should have read Flask’s  <a href="http://flask.pocoo.org/docs/quickstart/">Quickstart</a>and  <a href="http://flask.pocoo.org/docs/tutorial/">Tutorial</a>. If you want more practice, take it a step further and read my beginning tutorial on Flask  <a href="https://github.com/mjhea0/flaskr-tdd">here</a>. That being said, if you are a  <a href="https://realpython.com/python-basics/">newcomer to Python</a>  and Flask you should still be able to follow along.</p>
+
+<p>Our goal today is to implement the core of our application - tracking visits to a site. We will allow multiple sites, but we will not worry about users or access control yet.</p>
+
+<h3 id="first-principles">First principles</h3>
+
+<p>Before we dive in I would like to touch on some of the principles that will guide our development - we will not be delving too deeply into the “whys” of some of these best practices, but where possible will provide links to articles that explain what these practices provide us. Please consider all of the opinions in this series to be  <a href="http://www.saffo.com/02008/07/26/strong-opinions-weakly-held/">strong opinions, weakly held</a>.</p>
+
+<h4 id="the-zen-of-python">The Zen of Python</h4>
+
+<p>If you did not already know, Python has a “development philosophy” called the  <a href="http://www.python.org/dev/peps/pep-0020/">Zen of Python (also known as PEP 20)</a>. To give it a read, simply open a python interpreter and type:</p>
+
+<p>import this</p>
+
+<p>and then you’ll see:</p>
+
+<blockquote>
+<p><strong>The Zen of Python, by Tim Peters</strong></p>
+
+<p>Beautiful is better than ugly.</p>
+
+<p>Explicit is better than implicit.</p>
+
+<p>Simple is better than complex.</p>
+
+<p>Complex is better than complicated.</p>
+
+<p>Flat is better than nested.</p>
+
+<p>Sparse is better than dense.</p>
+
+<p>Readability counts.</p>
+
+<p>Special cases aren’t special enough to break the rules.</p>
+
+<p>Although practicality beats purity.</p>
+
+<p>Errors should never pass silently.</p>
+
+<p>Unless explicitly silenced.</p>
+
+<p>In the face of ambiguity, refuse the temptation to guess.</p>
+
+<p>There should be one– and preferably only one – obvious way to do it.</p>
+
+<p>Although that way may not be obvious at first unless you’re Dutch.</p>
+
+<p>Now is better than never.</p>
+
+<p>Although never is often better than  <em>right</em>  now.</p>
+
+<p>If the implementation is hard to explain, it’s a bad idea.</p>
+
+<p>If the implementation is easy to explain, it may be a good idea.</p>
+
+<p>Namespaces are one honking great idea – let’s do more of those!</p>
+</blockquote>
+
+<p>These are words to work by. Read  <a href="http://pydanny-event-notes.readthedocs.org/en/latest/PyconAU2011/zen_of_python.html">Daniel Greenfeld’s notes on Richard Jones’ 19 Pythonic Theses talk</a>  for a more detailed explanation.</p>
+
+<h4 id="acronym-explosion">Acronym explosion</h4>
+
+<p>We will also conform our development practices to the following principles:</p>
+
+<ul>
+<li>While there are many tools we could build to make our lives easier, we are going to confine ourselves to building what is necessary to make our application  <em>work</em>, remembering that in many cases  <a href="http://c2.com/cgi/wiki?YouArentGonnaNeedIt">YAGNI (You Ain’t Gonna Need It)</a>.</li>
+<li>That being said, when we come across a pattern of code that we are repeating across the application we will be refactoring our code to keep it  <a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY</a>.</li>
+<li>Our trigger to cross over from YAGNI to DRY will be the  <a href="http://c2.com/cgi/wiki?ThreeStrikesAndYouRefactor">three strikes and you refactor principle</a>. Using a pattern in three places will qualify it for extraction. Two uses will still fall under YAGNI. (In large projects many suggest a modified version of this rule - when you need to reuse it, refactor it.)</li>
+</ul>
+
+<h3 id="a-note-on-the-repository-structure">A note on the repository structure</h3>
+
+<p>Throughout this series you will be able to find the finished code for these exercises in the  <a href="https://github.com/mjhea0/flask-tracking"><code>flask-tracking</code>  repository on Github</a>. Each part of this tutorial has a branch in the repository and a  <a href="https://github.com/mjhea0/flask-tracking/releases">release</a>. The code for this section is in the  <a href="https://github.com/mjhea0/flask-tracking/tree/part-1">part-1 branch</a>. If you choose to check out the repository, you can work with the code for any article in this series by simply running:</p>
+
+<p>$ git checkout part-N</p>
+
+<p>where  <code>N</code>  is the number of the article the code is for (so for this article use  <code>git checkout part-1</code>).</p>
+
+<h2 id="starting-the-project">Starting the project</h2>
+
+<p>With that front-matter out of the way let’s start by creating a new folder to hold our project and activating a virtual environment (if you are unsure how to setup a virtual environment, take a moment and review the  <a href="http://flask.pocoo.org/docs/installation/">guide in Flask’s quickstart</a>):</p>
+
+<pre><code>$ mkdir flask-tracking
+$ cd flask-tracking
+$ virtualenv --no-site-packages venv
+$ source venv/bin/activate
+</code></pre>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<p>Like Alice in Wonderland we want to get our dependencies “just right”. Too many dependencies and we will not be able to work on the codebase after leaving it for a month without spending a week reviewing documentation. Too few dependencies and we will spend our time developing everything except our application. To ensure that we keep our dependencies “just right” we will use the following (imperfect) rule - each dependency must solve at least one  <em>difficult</em>  problem well. We will start with dependencies on three libraries - Flask itself for managing the request / response cycle,  <a href="http://pythonhosted.org/Flask-WTF/">Flask-WTF</a>  for its CSRF protection and data validation and finally  <a href="http://pythonhosted.org/Flask-SQLAlchemy/">Flask-SQLAlchemy</a>  for database connection pooling and object / relational mapper. Here is our requirements.txt file:</p>
+
+<pre><code class="language-python">Flask==0.10.1
+Flask-SQLAlchemy==1.0
+Flask-WTF==0.9.3
+</code></pre>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Site</span>(db<span style="color:#f92672">.</span>Model):
+    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tracking_site&#39;</span>
+
+    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>Integer, primary_key<span style="color:#f92672">=</span>True)
+    base_url <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String)
+    visits <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>relationship(<span style="color:#e6db74">&#39;Visit&#39;</span>, backref<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tracking_site&#39;</span>, lazy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;select&#39;</span>)
+
+    <span style="color:#66d9ef">def</span> __repr__(self):
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&lt;Site </span><span style="color:#e6db74">%r</span><span style="color:#e6db74">&gt;&#39;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>base_url)
+
+    <span style="color:#66d9ef">def</span> __str__(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>base_url
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Visit</span>(db<span style="color:#f92672">.</span>Model):
+    <span style="color:#75715e"># ... snip ...</span>
+
+<span style="color:#f92672">and</span> forms:
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SiteForm</span>(Form):
+    base_url <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>StringField()
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VisitForm</span>(Form):
+    <span style="color:#75715e"># ... snip ...</span>
+
+<span style="color:#f92672">and</span> routes that utilize these models <span style="color:#f92672">and</span> forms:</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Now we can run  <code>pip install -r requirements.txt</code>  to install our requirements into our virtual environment.</p>
+
+<h2 id="outgrowing-small">Outgrowing small</h2>
+
+<p>Most Flask applications start out small and then are refactored as the scope of the project grows. For those of us who have not written and then refactored a small Flask application we have a single module version of our tracking application in the  <a href="https://github.com/mjhea0/flask-tracking/tree/part-0"><code>part-0</code>  branch</a>  (it weighs in at 145 lines  <em>total</em>). Feel free to  <a href="https://realpython.com/python-web-applications-with-flask-part-i/#toc_9">skip to the next section</a>  if you have already written a single module application in Flask.</p>
+
+<p>For those of you who remain, please  <code>git checkout part-0</code>  or download Part 0 from the  <a href="https://github.com/mjhea0/flask-tracking/releases">releases section of the repository</a>. There should be a single module inside the application,  <code>tracking.py</code>, and the overal structure should look like this:</p>
+
+<pre><code class="language-python">├── flask-tracking.db
+├── requirements.txt
+├── templates
+│   ├── data_list.html
+│   ├── helpers
+│   │   ├── forms.html
+│   │   └── tables.html
+│   ├── index.html
+│   ├── layout.html
+│   └── validation_error.html
+└── tracking.py
+</code></pre>
+
+<p>If you crack it open, the first thing you see after the imports is:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">_cwd <span style="color:#f92672">=</span> dirname(abspath(__file__))
+
+SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;flask-session-insecure-secret-key&#39;</span>
+SQLALCHEMY_DATABASE_URI <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sqlite:///&#39;</span> <span style="color:#f92672">+</span> join(_cwd, <span style="color:#e6db74">&#39;flask-tracking.db&#39;</span>)
+SQLALCHEMY_ECHO <span style="color:#f92672">=</span> True
+WTF_CSRF_SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;this-is-not-random-but-it-should-be&#39;</span>
+
+app <span style="color:#f92672">=</span> Flask(__name__)
+app<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>from_object(__name__)
+
+db <span style="color:#f92672">=</span> SQLAlchemy(app)</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>We set up some basic config settings - the  <code>SECRET_KEY</code>  is used to sign Flask’s sessions, the  <code>SQLALCHEMY_DATABASE_URI</code>  is the path to our database (we are using SQLite for now), and the  <code>WTF_CSRF_SECRET_KEY</code>  is used to sign WTForms’ CSRF tokens. We initialize a new Flask application and tell it to configure itself (with our  <code>app.config.from_object</code>  call) with all of the  <code>ALL_CAPS</code>  symbols in the current module. Then we initialize our Flask-SQLAlchemy extension with our application.</p>
+
+<p>From there, it is pretty much a straight shot - we set up our models:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Site</span>(db<span style="color:#f92672">.</span>Model):
+</span><span style="display:block;width:100%;background-color:#3c3d38">    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tracking_site&#39;</span> 
+</span><span style="display:block;width:100%;background-color:#3c3d38">    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>Integer, primary_key<span style="color:#f92672">=</span>True)
+</span><span style="display:block;width:100%;background-color:#3c3d38">    base_url <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String)
+</span><span style="display:block;width:100%;background-color:#3c3d38">    visits <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>relationship(<span style="color:#e6db74">&#39;Visit&#39;</span>, backref<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tracking_site&#39;</span>, lazy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;select&#39;</span>)
+</span>
+    <span style="color:#66d9ef">def</span> __repr__(self):
+<span style="display:block;width:100%;background-color:#3c3d38">        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&lt;Site </span><span style="color:#e6db74">%r</span><span style="color:#e6db74">&gt;&#39;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>base_url)
+</span>
+    <span style="color:#66d9ef">def</span> __str__(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>base_url
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Visit</span>(db<span style="color:#f92672">.</span>Model):
+    <span style="color:#75715e"># ... snip ...</span>
+
+<span style="color:#f92672">and</span> forms:
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SiteForm</span>(Form):
+    base_url <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>StringField()
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VisitForm</span>(Form):
+    <span style="color:#75715e"># ... snip ...</span>
+
+<span style="color:#f92672">and</span> routes that utilize these models <span style="color:#f92672">and</span> forms:
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+    site_form <span style="color:#f92672">=</span> SiteForm()
+    visit_form <span style="color:#f92672">=</span> VisitForm()
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;index.html&#34;</span>,
+                           site_form<span style="color:#f92672">=</span>site_form,
+                           visit_form<span style="color:#f92672">=</span>visit_form)
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/site&#34;</span>, methods<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;POST&#34;</span>, ))
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_site</span>():
+    form <span style="color:#f92672">=</span> SiteForm()
+    <span style="color:#66d9ef">if</span> form<span style="color:#f92672">.</span>validate_on_submit():
+        site <span style="color:#f92672">=</span> Site()
+        form<span style="color:#f92672">.</span>populate_obj(site)
+        db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add(site)
+        db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit()
+        flash(<span style="color:#e6db74">&#34;Added site&#34;</span>)
+        <span style="color:#66d9ef">return</span> redirect(url_for(<span style="color:#e6db74">&#34;index&#34;</span>))
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;validation_error.html&#34;</span>, form<span style="color:#f92672">=</span>form)</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>There are also a couple of helper functions to turn SQLAlchemy query objects into lists of lists of data for our templates and then at the bottom of the module we set up a  <code>main</code>  block to create our tables if they do not exist and run the application in debug mode:</p>
+
+<pre><code class="language-py">if __name__ == &quot;__main__&quot;:
+    app.debug = True
+    db.create_all()
+    app.run()
+</code></pre>
+
+<p>If you run  <code>python tracking.py</code>  and then navigate to  <a href="http://localhost:5000/">localhost:5000</a>  in your browser you will see the extremely bare-bones application. It is functional (you can create sites and add visits), but it has no users and no access control - everyone sees everything.</p>
+
+<p><a href="https://files.realpython.com/media/flask-tracking-1.6f407a760368.png"><img src="https://files.realpython.com/media/flask-tracking-1.6f407a760368.png" alt="Welcome to Flask Tracking example screenshot" /></a></p>
+
+<p>However, as you can see,  <code>tracking.py</code>  is already quite a smörgåsbord of functionality - controllers, models, helpers, and command line setup all jammed into one file. Breaking it up into separate areas of functionality will make it easier to maintain. In addition, re-packaging this application will make it clearer where to add all of the other features that we want (users, access control, etc.). When you are done playing around with the Part 0 code just run  <code>git checkout part-1</code>  and move on to the next section.</p>
+
+<h2 id="a-place-for-everything">A place for everything</h2>
+
+<p>Let’s start by creating a package for our application to live in (we are going to be using a modified form of the structure described in Flask’s documentation for  <a href="http://flask.pocoo.org/docs/patterns/packages/">packages</a>  and  <a href="http://flask.pocoo.org/docs/blueprints/">blueprints</a>):</p>
+
+<pre><code class="language-python">flask-tracking/       # Our working root
+    flask_tracking/   # The application package
+        __init__.py
+    requirements.txt  # Meta data needed by our application
+    README.md         # and developers
+</code></pre>
+
+<p>Keeping in mind that our goal today is simply to track visits to a site, we will avoid creating a sub-package for our tracking code … yet (remember, YAGNI until you need it). Let’s go ahead and add separate  <code>models</code>,  <code>forms</code>, and  <code>views</code>  modules to hold our domain models, our data translation layer, and our view code respectively. Let’s also create a  <code>templates</code>  subdirectory to hold the resources we will use to render the site. Finally, we will add a configuration file and a script to run the application. Now we should have a directory structure that looks like this:</p>
+
+<pre><code class="language-py">flask-tracking/
+    flask_tracking/
+        templates/    # Holds Jinja templates
+        __init__.py   # General application setup
+        forms.py      # User data to domain data mappers and validators
+        models.py     # Domain models
+        views.py      # well ... controllers, really.
+    config.py         # Configuration, just like it says on the cover
+    README.md
+    requirements.txt
+    run.py            # `python run.py` to bring the application up locally.
+</code></pre>
+
+<h3 id="domain-models">Domain models</h3>
+
+<p>Our domain models are simple - a site has a root URL and a visit has metadata about the visitor (browser, IP address, URL, etc.). We include  <code>__repr__</code>  methods to give us better details on the command line (<code>&lt;Visit for site ID 1: / - 2013-11-09 14:10:11&gt;</code>  is more useful than  <code>&lt;package.module.Visit object at 0x12345&gt;</code>).  <code>Site</code>  includes a  <code>__str__</code>  method to control what we display when we display a list of sites in a drop down menu.</p>
+
+<pre><code class="language-py">from flask.ext.sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class Site(db.Model):
+    __tablename__ = 'tracking_site'
+
+    id = db.Column(db.Integer, primary_key=True)
+    base_url = db.Column(db.String)
+    visits = db.relationship('Visit', backref='tracking_site', lazy='select')
+
+    def __repr__(self):
+        return '&lt;Site {:d}  {}&gt;'.format(self.id, self.base_url)
+
+    def __str__(self):
+        return self.base_url
+
+class Visit(db.Model):
+    __tablename__ = 'tracking_visit'
+
+    id = db.Column(db.Integer, primary_key=True)
+    browser = db.Column(db.String)
+    date = db.Column(db.DateTime)
+    event = db.Column(db.String)
+    url = db.Column(db.String)
+    ip_address = db.Column(db.String)
+    site_id = db.Column(db.Integer, db.ForeignKey('tracking_site.id'))
+
+    def __repr__(self):
+        r = '&lt;Visit for site ID {:d}: {} - {:%Y-%m-%d %H:%M:%S}&gt;'
+        return r.format(self.site_id, self.url, self.date)
+</code></pre>
+
+<p>Note that we have not initialized our  <code>flask.ext.sqlalchemy</code>  object with any application so these models are not bound to this particular application (this flexibility comes with some small costs, which we will encounter shortly).</p>
+
+<h3 id="data-translation-layer">Data translation layer</h3>
+
+<p>Our  <code>forms</code>  code is standard WTForms, with one exception. If you look at  <code>VisitForm</code>:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> .models <span style="color:#f92672">import</span> Site
+
+ <span style="color:#f92672">...</span> snip <span style="color:#f92672">...</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VisitForm</span>(Form):
+    browser <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>StringField()
+    date <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>DateField()
+    event <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>StringField()
+    url <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>StringField()
+    ip_address <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>StringField(<span style="color:#e6db74">&#34;IP Address&#34;</span>)
+    site <span style="color:#f92672">=</span> QuerySelectField(query_factory<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span>: Site<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>all())</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>you will note that we need to wrap  <code>Site.query.all</code>  in a  <a href="https://realpython.com/python-lambda/"><code>lambda</code></a>  rather than passing it in as-is. Since our  <code>db</code>  is not bound to an application when  <code>VisitForm</code>  is being constructed we cannot access  <code>Site.query</code>. Creating a function that will call  <code>Site.query</code>  only when  <code>VisitForm</code>  is instantiated (e. g. in our views we call  <code>form = VisitForm()</code>) ensures that we will only access  <code>Site.query</code>  when we will have access to a Flask application instance.</p>
+
+<h3 id="views">Views</h3>
+
+<p>Our views are the most complex part of our application (witness how many dependencies we are importing):</p>
+
+<pre><code class="language-python">from flask import Blueprint, flash, Markup, redirect, render_template, url_for
+
+from .forms import SiteForm, VisitForm
+from .models import db, query_to_list, Site, Visit
+</code></pre>
+
+<p>We start out by creating a blueprint (we could also  <code>from flask_tracking import app</code>  and use the app, but I prefer to switch to blueprints once my application has grown beyond a single file)</p>
+
+<pre><code class="language-python">tracking = Blueprint(&quot;tracking&quot;, __name__)
+</code></pre>
+
+<p>We then map our views to routes using the normal decorator syntax - I have added comments around some of the functionality where what we are doing may not be perfectly clear (or where we are repeating ourselves and we will want to refactor later):</p>
+
+<pre><code class="language-python">@tracking.route(&quot;/&quot;)
+def index():
+    site_form = SiteForm()
+    visit_form = VisitForm()
+    return render_template(&quot;index.html&quot;,
+                           site_form=site_form,
+                           visit_form=visit_form)
+
+@tracking.route(&quot;/site&quot;, methods=(&quot;POST&quot;, ))
+def add_site():
+    # The create a form, validate the form,
+    # map the form to a model, save the model,
+    # and redirect pattern will be pretty common
+    # throughout the application. This is an area
+    # that is ripe for improvement and refactoring.
+    form = SiteForm()
+    if form.validate_on_submit():
+        site = Site()
+        form.populate_obj(site)
+        db.session.add(site)
+        db.session.commit()
+        flash(&quot;Added site&quot;)
+        return redirect(url_for(&quot;.index&quot;))
+
+    return render_template(&quot;validation_error.html&quot;, form=form)
+
+@tracking.route(&quot;/site/&lt;int:site_id&gt;&quot;)
+def view_site_visits(site_id=None):
+    site = Site.query.get_or_404(site_id)
+    query = Visit.query.filter(Visit.site_id == site_id)
+    data = query_to_list(query)
+    title = &quot;visits for {}&quot;.format(site.base_url)
+    return render_template(&quot;data_list.html&quot;, data=data, title=title)
+
+@tracking.route(&quot;/visit&quot;, methods=(&quot;POST&quot;, ))
+@tracking.route(&quot;/site/&lt;int:site_id&gt;/visit&quot;, methods=(&quot;POST&quot;,))
+def add_visit(site_id=None):
+    if site_id is None:
+        # This is only used by the visit_form on the index page.
+        form = VisitForm()
+    else:
+        site = Site.query.get_or_404(site_id)
+        # WTForms does not coerce obj or keyword arguments
+        # (otherwise, we could just pass in `site=site_id`)
+        # CSRF is disabled in this case because we will *want*
+        # users to be able to hit the /site/:id endpoint from other sites.
+        form = VisitForm(csrf_enabled=False, site=site)
+
+    if form.validate_on_submit():
+        visit = Visit()
+        form.populate_obj(visit)
+        visit.site_id = form.site.data.id
+        db.session.add(visit)
+        db.session.commit()
+        flash(&quot;Added visit for site {}&quot;.format(form.site.data.base_url))
+        return redirect(url_for(&quot;.index&quot;))
+
+    return render_template(&quot;validation_error.html&quot;, form=form)
+
+@tracking.route(&quot;/sites&quot;)
+def view_sites():
+    query = Site.query.filter(Site.id &gt;= 0)
+    data = query_to_list(query)
+
+    # The header row should not be linked
+    results = [next(data)]
+    for row in data:
+        row = [_make_link(cell) if i == 0 else cell
+               for i, cell in enumerate(row)]
+        results.append(row)
+
+    return render_template(&quot;data_list.html&quot;, data=results, title=&quot;Sites&quot;)
+
+_LINK = Markup('&lt;a href=&quot;{url}&quot;&gt;{name}&lt;/a&gt;')
+
+def _make_link(site_id):
+    url = url_for(&quot;.view_site_visits&quot;, site_id=site_id)
+    return _LINK.format(url=url, name=site_id)
+</code></pre>
+
+<p>This gives us an application that will let us add a site or a visit on the home page, view a list of sites, and view each site’s visits. We have not actually registered the blueprint with an application yet, so …</p>
+
+<h3 id="application-setup">Application setup</h3>
+
+<pre><code class="language-python">… onwards to  `__init__.py`:
+
+from flask import Flask
+
+from .models import db
+from .views import tracking
+
+app = Flask(__name__)
+app.config.from_object('config')
+</code></pre>
+
+<h1 id="add-the-constants-variable-to-all-jinja-templates">Add the <code>constants</code> variable to all Jinja templates.</h1>
+
+<pre><code class="language-python">@app.context_processor
+def provide_constants():
+    return {&quot;constants&quot;: {&quot;TUTORIAL_PART&quot;: 1}}
+
+db.init_app(app)
+
+app.register_blueprint(tracking)
+</code></pre>
+
+<p>We create an application, configure it, register our Flask-SQLAlchemy instance on our application, and finally register our blueprint. Now Flask knows how to handle our routes.</p>
+
+<h3 id="configuration-and-command-line-runner">Configuration and command line runner</h3>
+
+<p>One level up our configuration enables Flask’s sessions and sets up our SQLite database:</p>
+
+<pre><code class="language-python"># config.py
+from os.path import abspath, dirname, join
+
+_cwd = dirname(abspath(__file__))
+
+SECRET_KEY = 'flask-session-insecure-secret-key'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + join(_cwd, 'flask-tracking.db')
+SQLALCHEMY_ECHO = True
+</code></pre>
+
+<p>And our application runner creates the database tables if they do not exist and runs the application in debug mode:</p>
+
+<pre><code class="language-python"># run.py
+#!/usr/bin/env python
+from flask_tracking import app, db
+
+if __name__ == &quot;__main__&quot;:
+    app.debug = True
+    # Because we did not initialize Flask-SQLAlchemy with an application
+    # it will use `current_app` instead.  Since we are not in an application
+    # context right now, we will instead pass in the configured application
+    # into our `create_all` call.
+    db.create_all(app=app)
+    app.run()
+</code></pre>
+
+<p>See Flask-SQLAlchemy’s  <a href="http://pythonhosted.org/Flask-SQLAlchemy/contexts.html"><em>Introduction to Contexts</em></a>  if you want to get a better sense of why we need to pass our  <code>app</code>  into the  <code>db.create_all</code>  call.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h2 id="and-everything-in-its-place">And everything in its place</h2>
+
+<p>Now we should be able to run  <code>python run.py</code>  and see our application start up. Go to  <a href="http://localhost:5000/">localhost:5000</a>  and create a site to test things out. Then, to verify that others can add visits to the site, try running:</p>
+
+<p>$ curl &ndash;data &lsquo;event=BashVisit&amp;browser=cURL&amp;url=/&amp;ip_address=1.2.3.4&amp;date=2013-11-09&rsquo; localhost:5000/site/1/visit</p>
+
+<p>from the command line. When you go back to the application, click on “Sites” and then click on the “1” for your site. A single visit should be displayed on the page:</p>
+
+<p><a href="https://files.realpython.com/media/flask-tracking-2.00893fc13094.png"><img src="https://files.realpython.com/media/flask-tracking-2.00893fc13094.png" alt="Flask Tracking app example screenshot" /></a></p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>That’s it for this post. We now have a working application where sites can be added and visits recorded against them. We still need to add user accounts, an easy to use client-side API for tracking, and reports.</p>
+
+<ol>
+<li><p>In Part II we will add users, access control, and enable users to add visits from their own websites. We will explore more best practices for writing templates, keeping our models and forms in sync, and handling static files.</p></li>
+
+<li><p>In Part III we’ll explore writing tests for our application, logging, and debugging errors.</p></li>
+
+<li><p>In Part IV we’ll do some Test Driven Development to enable our application to accept payments and display simple reports.</p></li>
+
+<li><p>In Part V we will write a RESTful JSON API for others to consume.</p></li>
+
+<li><p>In Part VI we will cover automating deployments (on Heroku) with Fabric and basic A/B Feature Testing.</p></li>
+
+<li><p>Finally, in Part VII we will cover preserving your application for the future with documentation, code coverage and quality metric tools.</p></li>
+</ol>
+
+<p>Thanks for reading and tune in next time!</p>
+
+<p>Reference : <a href="https://realpython.com/python-web-applications-with-flask-part-i/">https://realpython.com/python-web-applications-with-flask-part-i/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cBill-Gates%5ctest.md" target="_blank">
+      <img src="/library/book/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

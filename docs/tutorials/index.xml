@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>e-Library</title>
+    <link>https://dragon-library.github.io/library/book/</link>
+    <description>Recent content on e-Library</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 26 Nov 2019 17:04:13 +0700</lastBuildDate>
+    
+	<atom:link href="https://dragon-library.github.io/library/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bootstrap 4 แบบพื้นฐาน ตอนที่ 1</title>
+      <link>https://dragon-library.github.io/library/book/docs/front-end/bootstrap/basic-bootstap/ep-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/front-end/bootstrap/basic-bootstap/ep-1/</guid>
+      <description>สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 1 บทความนี้เป็นบทความสอนการใช้ Bootstrap เรื่องมีอยู่ว่าที่ทำงานของผมส่งผมไปเรียนคอส Web Design สอนโดย อ.กษิติ พันธุ์ถนอม คอสนี้เกี่ยวกับการใช้งาน Bootstrap4 ซึ่งผมก็พอจะรู้อยู่บ้างแล้ว การเรียนครั้งนี้เลยเหมือนการทบทวนและเพิ่มเติมเทคนิคต่างๆ ผมก็เลยได้โอกาสเขียนเป็นบล็อกนี้ขึ้นครับ
+โดยเป้าหมายคือ การใช้งาน Bootstrap ทำให้เว็บ responsive แล้วก็ใช้งาน component ของ Bootstrap ต่างๆ รวมถึงคลาสที่ใช้งานบ่อยๆ นอกจากนี้ก็มีแนะนำเทค และการใช้เครื่องมือช่วยต่างๆด้วย
+ติดตั้ง VS code เครื่องมือสำหรับเขียน แนะนำ VS Code ใครไม่มีก็ติดตั้งเลย
+ดาวน์โหลดได้ที่
+https://code.visualstudio.com/
+เริ่มต้น เริ่มจากการพิมพ์คำสั่งลัด html:5 เพื่อให้ VS Code generate code ให้อัตโนมัติ
+คำสั่ง meta UTF-8 และ viewport สำคัญสำหรับ Bootstrap ต้องใส่ทุกครั้ง ซึ่งมันก็สร้างมาให้แล้ว
+&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; อีกอันคือพิมพ์ว่า lorem มันจะ generate ประโยคที่เรียกว่า lorem ให้ มันคือคำที่ไม่มีความหมาย เอามาวางไว้เฉยๆว่านี่คือตัวอักษรจะเห็นในงานพวก design หรือตัวอย่างโค้ดบ่อยๆ</description>
+    </item>
+    
+    <item>
+      <title>Ep.1 Your first Flask app</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-1/</guid>
+      <description>Your first Flask app | Learning Flask Ep. 1 In the first part of this series, you&amp;rsquo;ll learn how to create and run your very first Flask web application
+Creating a project directory and virtual environment First of all, we need to create our new project directory. We&amp;rsquo;re going to a new directory called app in our home directory.
+ Tip - I advise using the same names for your project so it&amp;rsquo;s easier to follow along</description>
+    </item>
+    
+    <item>
+      <title>Awesome Python</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/awesome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/awesome/</guid>
+      <description>Awesome Python A curated list of awesome Python frameworks, libraries, software and resources.
+Inspired by awesome-php.
+ Awesome Python  Admin Panels Algorithms and Design Patterns Audio Authentication Build Tools Built-in Classes Enhancement Caching ChatOps Tools CMS Code Analysis Command-line Interface Development Command-line Tools Compatibility Computer Vision Concurrency and Parallelism Configuration Cryptography Data Analysis Data Validation Data Visualization Database Database Drivers Date and Time Debugging Tools Deep Learning DevOps Tools Distributed Computing Distribution Documentation Downloader E-commerce Editor Plugins and IDEs Email Environment Management Files Foreign Function Interface Forms Functional Programming Game Development Geolocation GUI Development Hardware HTML Manipulation HTTP Clients Image Processing Implementations Interactive Interpreter Internationalization Job Scheduler Logging Machine Learning Miscellaneous Natural Language Processing Network Virtualization Networking News Feed ORM Package Management Package Repositories Permissions Processes Queue Recommender Systems RESTful API Robotics RPC Servers Science Search Serialization Serverless Frameworks Specific Formats Processing Static Site Generator Tagging Template Engine Testing Text Processing Third-party APIs URL Manipulation Video Web Asset Management Web Content Extracting Web Crawling Web Frameworks WebSocket WSGI Servers  Services  Code Quality Continuous Integration  Resources  Podcasts Twitter Websites Weekly  Contributing  [](https://github.</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 4 แบบพื้นฐาน ตอนที่ 2</title>
+      <link>https://dragon-library.github.io/library/book/docs/front-end/bootstrap/basic-bootstap/ep-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/front-end/bootstrap/basic-bootstap/ep-2/</guid>
+      <description>สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 2 Table สร้างไฟล์ใหม่ชื่อ portal.html
+ใส่โค้ดพื้นฐาน html ลงไปแล้วก็เพิ่ม bootstrap.css ด้วย
+&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;&amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34;&amp;gt;&amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/bootstrap.min.css&amp;#34; /&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;col&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt; ใส่ตารางลงไปใน container
+&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;&amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34;&amp;gt;&amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/bootstrap.min.css&amp;#34; /&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;col&amp;#34;&amp;gt;&amp;lt;h1&amp;gt;Portal&amp;lt;/h1&amp;gt;&amp;lt;table&amp;gt;&amp;lt;thead&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;No.</description>
+    </item>
+    
+    <item>
+      <title>Ep.2 Flask application structure</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-2/</guid>
+      <description>Flask application structure | Learning Flask Ep. 2 Structuring your Flask application for
+In this part of the Learning Flask series, you&amp;rsquo;ll learn how to structure files and directories in your Flask application.
+Flask is a very flexible framework and doesn&amp;rsquo;t enforce that you follow any specific pattern for structuring your application. However there are some best practices and tips to make sure you don&amp;rsquo;t run into issues down the line as your application grows!</description>
+    </item>
+    
+    <item>
+      <title>Ep.3 Serving HTML files</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-3/</guid>
+      <description>Serving HTML files | Learning Flask Ep. 3 How to render HTML files and structure template directories with Flask
+In this part of the Learning Flask series, you&amp;rsquo;ll learn how to work with and serve HTML files.
+Flask provides a fast and easy way for us to serve static files! So building a simple website is a breeze.
+We&amp;rsquo;re going to pick up the same application we created in the last episode and build upon it.</description>
+    </item>
+    
+    <item>
+      <title>Python Cheat sheet</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/cheat-sheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/cheat-sheet/</guid>
+      <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit()# For 1 statement on multiple lines,  # use line continuation character (\). # Good for blog post. def __str__(self):return &amp;#34;Name={}, Title={}, Hourly rate={}.&amp;#34;\.format( self.name, self.title, self.__hourly_rate ) String # Concatenation s1 = &amp;#39;Open&amp;#39;s2 = &amp;#39;Writings.net&amp;#39;print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetimenow_str = &amp;#34;Today is &amp;#34; + str(datetime.</description>
+    </item>
+    
+    <item>
+      <title>Ep.4 Serving static files</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-4/</guid>
+      <description>Serving static files | Learning Flask Ep. 4 Linking stylesheets, javascript files and serving images with Flask
+In this episode of the Learning Flask series, we&amp;rsquo;ll be making our HTML look prettier with some images, CSS and JavaScript, along with a few extra tips on working with static files.
+Flask provides a few useful ways for working with static files so let&amp;rsquo;s get started.
+Creating stylesheets If you&amp;rsquo;ve worked with HTML and CSS before, you&amp;rsquo;ll know that we have to import a stylesheet in the &amp;lt;head&amp;gt; tag of our HTML.</description>
+    </item>
+    
+    <item>
+      <title>List for Tutorial</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/list-python-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/list-python-basics/</guid>
+      <description>List Python Tutorial Python is one of the most popular programming languages. In the last few years, it has gained a lot of popularity due to the increasing interest in Data Science, Deep Learning, Machine Learning, and Artificial Intelligence.
+Just have a look at the Google Trends chart for interest in Python programming language. It’s increasing continuously and it will keep on increasing over time.
+Python Interest Over Time</description>
+    </item>
+    
+    <item>
+      <title>Ep.5 Jinja template inheritance</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-5/</guid>
+      <description>Jinja template inheritance | Learning Flask Ep. 5 Creating reusable base HTML templates and extending them throughout your Flask app
+In this firth part of the Learning Flask series, you&amp;rsquo;ll learn how to use the powerful Jinja templating engine to make working with our HTML files much more efficient.
+Template inheritance works by creating a series of &amp;ldquo;base templates&amp;rdquo; and importing them into &amp;ldquo;child templates&amp;rdquo;, minimising the amount of repetitive code we need to write and allowing us to reuse elements effectively and reliably.</description>
+    </item>
+    
+    <item>
+      <title>Modules List</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/modules-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/modules-list/</guid>
+      <description>Python Modules List Python os module
+Python sys module
+Python time
+Python MySQL
+Python CSV
+Python multiprocessing
+Python pickle
+Python time sleep
+Python queue
+Python unittest
+Python socket
+Python SimpleHTTPServer
+Python json
+Python signal
+Python random
+Python System Command
+Python Daemon Thread
+Python Copy
+Python threading module
+Python struct
+Python logging
+Python subprocess
+Python argparse
+Python functools
+Python itertools
+Python getopt
+Python ftp
+Python tarfile
+Python lxml
+Python ConfigParser</description>
+    </item>
+    
+    <item>
+      <title>Ep.6 Jinja template design</title>
+      <link>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-6/</guid>
+      <description>Jinja template design | Learning Flask Ep. 6 An brief introduction to the power of the Jinja templating engine
+In this part of the Learning Flask series, we&amp;rsquo;re going to dive deeper into the Jinja templating engine and you&amp;rsquo;ll learn more of the advanced features of this powerful library!
+In the last part of this series, you learned how to create base templates, child templates and how to extend them.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>https://dragon-library.github.io/library/book/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/posts/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Migrate to Hugo from Jekyll</title>
+      <link>https://dragon-library.github.io/library/book/posts/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/posts/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Newfunction</title>
+      <link>https://dragon-library.github.io/library/book/functions/newfunction/</link>
+      <pubDate>Tue, 26 Nov 2019 17:04:13 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/functions/newfunction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>https://dragon-library.github.io/library/book/posts/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/posts/goisforlovers/</guid>
+      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
+This document is a brief primer on using Go templates.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>https://dragon-library.github.io/library/book/posts/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/posts/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at Install Hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+  </channel>
+</rss>

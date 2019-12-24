@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.4 Serving static files"><meta property="og:title" content="Ep.4 Serving static files" />
+<meta property="og:description" content="Serving static files | Learning Flask Ep. 4 Linking stylesheets, javascript files and serving images with Flask
+In this episode of the Learning Flask series, we&rsquo;ll be making our HTML look prettier with some images, CSS and JavaScript, along with a few extra tips on working with static files.
+Flask provides a few useful ways for working with static files so let&rsquo;s get started.
+Creating stylesheets If you&rsquo;ve worked with HTML and CSS before, you&rsquo;ll know that we have to import a stylesheet in the &lt;head&gt; tag of our HTML." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/book/docs/python/flask/learning-flask/ep-4/" />
+
+<title>Ep.4 Serving static files | e-Library</title>
+<link rel="icon" href="/library/book/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/book/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/book/en.search.min.ad2d487d7fe0a47d6c04b5dc4be0a45bf5155cc06b86c0ee7a4606ede1526480.js" integrity="sha256-rS1IfX/gpH1sBLXcS&#43;CkW/UVXMBrhsDuekYG7eFSZIA="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/book/"><span>e-Library</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/flask/learning-flask/ep-4/"  class="active">
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/book/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.4 Serving static files</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="serving-static-files-learning-flask-ep-4">Serving static files | Learning Flask Ep. 4</h1>
+
+<p>Linking stylesheets, javascript files and serving images with Flask</p>
+
+<p>In this episode of the Learning Flask series, we&rsquo;ll be making our HTML look prettier with some images, CSS and JavaScript, along with a few extra tips on working with static files.</p>
+
+<p>Flask provides a few useful ways for working with static files so let&rsquo;s get started.</p>
+
+<h3 id="creating-stylesheets">Creating stylesheets</h3>
+
+<p>If you&rsquo;ve worked with HTML and CSS before, you&rsquo;ll know that we have to import a stylesheet in the  <code>&lt;head&gt;</code>  tag of our HTML.</p>
+
+<p>It&rsquo;s no dirrefent in Flask, however we need to cover a few bases before we try and import and stylesheets into our HTML files.</p>
+
+<p>Flask requires a  <code>static</code>  directory. Just like the  <code>templates</code>  directory we created in the last episode.</p>
+
+<p>Let&rsquo;s go ahead and create a  <code>static</code>  directory, a  <code>css</code>  directory and a stylesheet.</p>
+
+<p>We&rsquo;ll create the  <code>static</code>  directory next to our  <code>templates</code>  directory. From the root  <code>app</code>  directory, enter the following:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">cd app
+mkdir static
+cd static
+mkdir css
+cd css
+touch style.css </code></pre></div>
+Your application filestructure should now look loike this:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">app
+├── app
+│   ├── __init__.py
+│   ├── admin_views.py
+│   ├── static
+│   │   └── css
+│   │       └── style.css
+│   ├── templates
+│   │   ├── admin
+│   │   │   └── dashboard.html
+│   │   └── public
+│   │       └── index.html
+│   └── views.py
+├── requirements.txt
+└── run.py</code></pre></div></p>
+
+<p>Open up  <code>style.css</code>  in your editor and add the following:</p>
+
+<p><strong>app/app/static/css/style.css</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#f1f1f1</span>;
+}</code></pre></div>
+Save and close the file for now.</p>
+
+<p>Next up, we&rsquo;ll import our new stylesheet into our  <code>index.html</code>  file in the  <code>public</code>  directory.</p>
+
+<p>Typically you would provide a relative path to your stylesheet in the  <code>&lt;head&gt;</code>, for example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;path/to/your/stylesheet.css&#34;</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt; </code></pre></div>
+You can use relative paths in Flask, but it&rsquo;ll get complicated real fast as we&rsquo;ve split our HTML templates up into sub-directories.</p>
+
+<p>Thankfully, there&rsquo;s a better way!</p>
+
+<h3 id="linking-stylesheets">Linking stylesheets</h3>
+
+<p>Flask has a function called  <code>url_for</code>  which can be used in our HTML to provide a path to any static files we want to fetch.</p>
+
+<p>Go ahead and open up  <code>index.html</code>  in your editor and in the  <code>&lt;head&gt;</code>  tag, add the following:</p>
+
+<p><strong>app/app/templates/public/index.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;css/style.css&#39;) }}&#34;</span>&gt;</code></pre></div>
+&gt; Notice the double curly braces  <code>{{ }}</code></p>
+
+<p>These double curly braces are part of the Jinja templating engine that Flask uses to render our HTML templates.</p>
+
+<p>You&rsquo;ll learn all about Jinja in the next couple of episodes in this series! Just know for now, that before any of our HTML files are rendered in the browser, Flask will pass our HTML files through the Jinja templating engine and parse anything we provide in between the sets of curly braces.</p>
+
+<p>In this case, Jinja will replace  <code>{{ url_for('static', filename='css/style.css') }}</code>  with the path to the CSS file.</p>
+
+<p>The  <code>url_for</code>  function takes 2 arguments, and endpoint and some values. In this case, we&rsquo;ve providing  <code>static</code>  as the endpoint and  <code>css/style.css</code>  as the filename value.</p>
+
+<p>In this case, Flask will render the stylesheet we just created at  <code>static/css/style.css</code>.</p>
+
+<p>Save the file and reload your browser to see the subtle changes to the background color.</p>
+
+<p>Next up, you&rsquo;ll learn how to do something very similar with JavaScript files.</p>
+
+<h3 id="javascript-files">Javascript files</h3>
+
+<p>We&rsquo;re going to create a Javascript directory and a JavaScript file and link them to our HTML templates in the exact same way as we did with the CSS.</p>
+
+<p>We&rsquo;ll create a  <code>js</code>  directory inside our  <code>static</code>  directory, along with creating a new file called  <code>app.js</code>  in the  <code>js</code>  folder.</p>
+
+<p>Our new app file structure will look like this:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">app
+├── app
+│   ├── __init__.py
+│   ├── admin_views.py
+│   ├── static
+│   │   ├── css
+│   │   │   └── style.css
+│   │   └── js
+│   │       └── app.js
+│   ├── templates
+│   │   ├── admin
+│   │   │   └── dashboard.html
+│   │   └── public
+│   │       └── index.html
+│   └── views.py
+├── requirements.txt
+└── run.py</code></pre></div>
+From the  <code>app</code>  root directory, we&rsquo;ll run the following:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">cd app
+cd static
+mkdir js
+cd js
+touch app.js</code></pre></div>
+Open up the  <code>app.js</code>  file and add the following:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello from app.js!&#34;</span>);
+</code></pre></div>
+Let&rsquo;s link our  <code>js</code>  file to our HTML template.</p>
+
+<p>Open up  <code>index.html</code>in your editor, and at the bottom of the page, just before the closing  <code>&lt;/body&gt;</code>  tag, add the following:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/app.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt; </code></pre></div>
+Your  <code>index.html</code>  file should now look something like this:</p>
+
+<p><strong>app/app/templates/public/index.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;css/style.css&#39;) }}&#34;</span>&gt;
+  &lt;<span style="color:#f92672">title</span>&gt;Index&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: blue&#34;</span>&gt;Index&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;This is an HTML file served up by Flask&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/app.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+Just like we did with the stylesheet, we use  <code>url_for</code>  to provide a directory and a path to our filename.</p>
+
+<p>Save the file, make sure your app is running with the  <code>flask run</code>  command and reload your browser.</p>
+
+<blockquote>
+<p>Tip - You must run the  <code>flask run</code>  command from the root directory of your application, in the same directory as  <code>run.py</code></p>
+</blockquote>
+
+<p>Open up the developer tools and click on the  <code>console</code>  tab to see the message from your JavaScript file.</p>
+
+<p><code>Hello from app.js!</code></p>
+
+<p>Perfect! We&rsquo;ve linked our stylesheet and our Javascript file. Let&rsquo;s talk about serving images in Flask.</p>
+
+<h3 id="serving-images">Serving images</h3>
+
+<p>Any guesses on how we&rsquo;re going to serve images?</p>
+
+<p>We&rsquo;re going to do exactly what we did with our CSS and JavaScript files and create a new  <code>img</code>  directory in our  <code>static</code>  directory and place all of our pictures in there.</p>
+
+<p>Our new app file structure will look like this:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">app
+├── app
+│   ├── __init__.py
+│   ├── admin_views.py
+│   ├── static
+│   │   ├── css
+│   │   │   └── style.css
+│   │   ├── img
+│   │   │   └── my-image.png
+│   │   └── js
+│   │       └── app.js
+│   ├── templates
+│   │   ├── admin
+│   │   │   └── dashboard.html
+│   │   └── public
+│   │       └── index.html
+│   └── views.py
+├── requirements.txt
+└── run.py` </code></pre></div>
+From the root  <code>app</code>  directory, we&rsquo;ll create our new directories with the following commands:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bush" data-lang="bush">cd app
+cd static
+mkdir img` </code></pre></div>
+Go ahead and drop any image into the  <code>img</code>  directory.</p>
+
+<p>Next up, let&rsquo;s put an  <code>&lt;img&gt;</code>  tag in our  <code>index.html</code>  file and render an image to the browser.</p>
+
+<p>open up  <code>index.html</code>  and add the following just under the  <code>&lt;p&gt;</code>  tag in the  <code>&lt;body&gt;</code>:</p>
+
+<p><strong>app/app/templates/public/index.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;img/TEST-IMG.png&#39;) }}&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;` </code></pre></div>
+Your  <code>index.html</code>  should now look like this:</p>
+
+<p><strong>app/app/templates/public/index.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`<span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span>&gt;
+  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;css/style.css&#39;) }}&#34;</span>&gt;
+  &lt;<span style="color:#f92672">title</span>&gt;Index&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: blue&#34;</span>&gt;Index&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;This is an HTML file served up by Flask&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;img/TEST-IMG.png&#39;) }}&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/app.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;` </code></pre></div>
+We&rsquo;re using the exact same  <code>url_for</code>  function to point to the path of our image.</p>
+
+<p>Save the file, make sure your app is running and reload the browser windows to see your image rendered!</p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>You&rsquo;ve learned how to create the static directory, CSS, JavaScript and image directories and link static files to HTML templates, along with rendering images using the  <code>url_for</code>  function.</p>
+
+<p><code>url_for</code>  provides some other powerful uses that you&rsquo;ll learn about very soon.</p>
+
+<p>At this point, your armed with the tools to be able to create a simple static website! If you&rsquo;re feeling confident, go ahead and create a few more pages, add some CSS and JavaScript and have some fun.</p>
+
+<p>In the next part of this series, you&rsquo;ll be learning more about the Jinja templating engine, along with passing variables and objects into your HTML from Flask views.</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Source : <a href="https://pythonise.com/series/learning-flask/serving-static-files-with-flask">pythonise.com</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-4.md" target="_blank">
+      <img src="/library/book/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#serving-static-files-learning-flask-ep-4">Serving static files | Learning Flask Ep. 4</a>
+<ul>
+<li>
+<ul>
+<li><a href="#creating-stylesheets">Creating stylesheets</a></li>
+<li><a href="#linking-stylesheets">Linking stylesheets</a></li>
+<li><a href="#javascript-files">Javascript files</a></li>
+<li><a href="#serving-images">Serving images</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
