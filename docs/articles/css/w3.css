@@ -200,14 +200,19 @@ svg:not(:root) {
     overflow: hidden
 }
 
-code,
+
 kbd,
 pre,
 samp {
-    font-family: "Noto Serif Thai",
-    monospace,
+    font-family: "Noto Serif Thai",    
     monospace;
     font-size: .8em
+}
+code{
+    font-family: "Noto Serif Thai",
+    monospace;
+    font-size: 1em
+
 }
 
 hr {
