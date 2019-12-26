@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/articles/</loc>
-    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
+    <lastmod>2019-12-26T21:40:11+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -18,13 +18,8 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/articles/tags/business/</loc>
-    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dragon-library.github.io/library/articles/categories/</loc>
-    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
+    <lastmod>2019-12-26T21:40:11+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -38,13 +33,8 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/articles/categories/people/</loc>
-    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dragon-library.github.io/library/articles/posts/</loc>
-    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
+    <lastmod>2019-12-26T21:40:11+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -58,13 +48,13 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/articles/posts/test/</loc>
-    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
+    <loc>https://dragon-library.github.io/library/articles/categories/society/</loc>
+    <lastmod>2019-12-26T21:40:11+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/articles/tags/</loc>
-    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
+    <lastmod>2019-12-26T21:40:11+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -75,6 +65,81 @@
                 hreflang="en"
                 href="https://dragon-library.github.io/library/articles/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/categories/world/</loc>
+    <lastmod>2019-12-26T21:40:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/tags/%E0%B9%80%E0%B8%A7%E0%B8%B5%E0%B8%A2%E0%B8%94%E0%B8%99%E0%B8%B2%E0%B8%A1/</loc>
+    <lastmod>2019-12-26T21:40:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/posts/%E0%B9%80%E0%B8%A7%E0%B8%B5%E0%B8%A2%E0%B8%95%E0%B8%99%E0%B8%B2%E0%B8%A1-%E0%B8%AA%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%A8%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%A9%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%B9%E0%B8%8D%E0%B8%AB%E0%B8%B2%E0%B8%A2/</loc>
+    <lastmod>2019-12-26T21:40:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/categories/parent/</loc>
+    <lastmod>2019-12-26T20:40:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/tags/%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%87/</loc>
+    <lastmod>2019-12-26T20:40:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/posts/%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%87-13/</loc>
+    <lastmod>2019-12-26T20:40:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/posts/%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%87-4/</loc>
+    <lastmod>2019-12-26T09:40:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/posts/you-can-be-happy-for-your-success-for-only-one-day/</loc>
+    <lastmod>2019-12-25T21:50:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/tags/book-review/</loc>
+    <lastmod>2019-12-25T21:50:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/tags/business/</loc>
+    <lastmod>2019-12-25T21:50:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/categories/industry/</loc>
+    <lastmod>2019-12-25T21:50:11+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://dragon-library.github.io/library/articles/zh-cn/categories/industry/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://dragon-library.github.io/library/articles/categories/industry/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/categories/people/</loc>
+    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/articles/posts/test/</loc>
+    <lastmod>2019-12-06T13:55:11+07:00</lastmod>
   </url>
   
   <url>
@@ -95,21 +160,6 @@
   <url>
     <loc>https://dragon-library.github.io/library/articles/tags/disruption/</loc>
     <lastmod>2019-12-01T08:40:11+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dragon-library.github.io/library/articles/categories/industry/</loc>
-    <lastmod>2019-12-01T08:40:11+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://dragon-library.github.io/library/articles/zh-cn/categories/industry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://dragon-library.github.io/library/articles/categories/industry/"
-                />
   </url>
   
   <url>
@@ -149,11 +199,6 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/articles/posts/book-review-principles-2/</loc>
-    <lastmod>2019-11-24T22:40:11+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dragon-library.github.io/library/articles/tags/book-review/</loc>
     <lastmod>2019-11-24T22:40:11+07:00</lastmod>
   </url>
   
@@ -215,11 +260,6 @@
   <url>
     <loc>https://dragon-library.github.io/library/articles/posts/alphago-documentary/</loc>
     <lastmod>2019-11-24T13:40:11+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dragon-library.github.io/library/articles/categories/parent/</loc>
-    <lastmod>2019-11-24T09:40:11+07:00</lastmod>
   </url>
   
   <url>

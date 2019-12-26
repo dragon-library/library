@@ -77,5 +77,16 @@ In this part of the Learning Flask series, we&amp;rsquo;re going to dive deeper 
 In the last part of this series, you learned how to create base templates, child templates and how to extend them.</description>
     </item>
     
+    <item>
+      <title>Ep.7 Working with forms in Flask</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-7/</guid>
+      <description>Working with forms in Flask | Learning Flask Ep. 7 Creating forms, posting data to views and working with form data in Flask
+In this part of the Learning Flask series, You&amp;rsquo;ll learn how to post forms to a Flask view and work with the incoming data.
+Forms (or input data in general) play a critical role in any kind of website or web allication as we need a way for the user to communicate with our app!</description>
+    </item>
+    
   </channel>
 </rss>

@@ -6,10 +6,46 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Dec 2019 13:55:11 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2019 21:40:11 +0700</lastBuildDate>
     
 	<atom:link href="https://dragon-library.github.io/library/articles/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Society</title>
+      <link>https://dragon-library.github.io/library/articles/categories/society/</link>
+      <pubDate>Thu, 26 Dec 2019 21:40:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/society/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>World</title>
+      <link>https://dragon-library.github.io/library/articles/categories/world/</link>
+      <pubDate>Thu, 26 Dec 2019 21:40:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/world/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parent</title>
+      <link>https://dragon-library.github.io/library/articles/categories/parent/</link>
+      <pubDate>Thu, 26 Dec 2019 20:40:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/parent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Industry</title>
+      <link>https://dragon-library.github.io/library/articles/categories/industry/</link>
+      <pubDate>Wed, 25 Dec 2019 21:50:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/industry/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>People</title>
@@ -30,15 +66,6 @@
     </item>
     
     <item>
-      <title>Industry</title>
-      <link>https://dragon-library.github.io/library/articles/categories/industry/</link>
-      <pubDate>Sun, 01 Dec 2019 08:40:11 +0700</pubDate>
-      
-      <guid>https://dragon-library.github.io/library/articles/categories/industry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Lift</title>
       <link>https://dragon-library.github.io/library/articles/categories/lift/</link>
       <pubDate>Sun, 24 Nov 2019 22:40:11 +0700</pubDate>
@@ -53,15 +80,6 @@
       <pubDate>Sun, 24 Nov 2019 13:45:11 +0700</pubDate>
       
       <guid>https://dragon-library.github.io/library/articles/categories/tech/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Parent</title>
-      <link>https://dragon-library.github.io/library/articles/categories/parent/</link>
-      <pubDate>Sun, 24 Nov 2019 09:40:11 +0700</pubDate>
-      
-      <guid>https://dragon-library.github.io/library/articles/categories/parent/</guid>
       <description></description>
     </item>
     

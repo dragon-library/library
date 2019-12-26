@@ -38,6 +38,15 @@ Creating a project directory and virtual environment First of all, we need to cr
     </item>
     
     <item>
+      <title>JavaScript Cheat Sheet</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/javascript/cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/javascript/cheatsheet/</guid>
+      <description>JavaScript Cheat Sheet  Link  If - Else⇵ if ((age &amp;gt;= 14) &amp;amp;&amp;amp; (age &amp;lt; 19)) { // logical condition status = &amp;quot;Eligible.&amp;quot;; // executed if condition is true } else { // else block is optional status = &amp;quot;Not eligible.&amp;quot;; // executed if condition is false } Switch Statement switch (new Date().getDay()) { // input is current day case 6: // if (day == 6) text = &amp;quot;Saturday&amp;quot;; break; case 0: // if (day == 0) text = &amp;quot;Sunday&amp;quot;; break; default: // else.</description>
+    </item>
+    
+    <item>
       <title>Awesome Python</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/awesome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -173,6 +182,17 @@ Python ConfigParser</description>
       <description>Jinja template design | Learning Flask Ep. 6 An brief introduction to the power of the Jinja templating engine
 In this part of the Learning Flask series, we&amp;rsquo;re going to dive deeper into the Jinja templating engine and you&amp;rsquo;ll learn more of the advanced features of this powerful library!
 In the last part of this series, you learned how to create base templates, child templates and how to extend them.</description>
+    </item>
+    
+    <item>
+      <title>Ep.7 Working with forms in Flask</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-7/</guid>
+      <description>Working with forms in Flask | Learning Flask Ep. 7 Creating forms, posting data to views and working with form data in Flask
+In this part of the Learning Flask series, You&amp;rsquo;ll learn how to post forms to a Flask view and work with the incoming data.
+Forms (or input data in general) play a critical role in any kind of website or web allication as we need a way for the user to communicate with our app!</description>
     </item>
     
     <item>
