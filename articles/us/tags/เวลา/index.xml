@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>เวลา on </title>
+    <link>https://yosarawut.github.io/knowledge-base/articles/us/tags/%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2/</link>
+    <description>Recent content in เวลา on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Nov 2019 15:15:05 +0700</lastBuildDate>
+    
+	<atom:link href="https://yosarawut.github.io/knowledge-base/articles/us/tags/%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>การบอกเวลา</title>
+      <link>https://yosarawut.github.io/knowledge-base/articles/us/english/posts/time-component/</link>
+      <pubDate>Fri, 15 Nov 2019 15:15:05 +0700</pubDate>
+      
+      <guid>https://yosarawut.github.io/knowledge-base/articles/us/english/posts/time-component/</guid>
+      <description>นาฬิกาเป็นเครื่องมือที่ใช้บอกเวลา บนหน้าปักนาฬิกาจะมีตัวเลข12ตัวคือ1,2,3…12 เข็มยาว เข็มสั้น และเข็มวินาที เพื่อใช้บอกเวลา
+การบอกเวลาเป็นนาฬิกาและนาที
+การบอกเวลาในแต่ละวันจะเริ่มที่0นาฬิกา และสิ้นสุดที่ 24 นาฬิกา โดยแบ่งออกเป็น2ช่วงคือ ช่วงเวลากลางวันจะเริ่มตั้งแต่ 6 นาฬิกา ถึง12นาฬิกา และช่วงเวลากลางคืนจะเริ่มตั้งแต่ 18นาฬิกาถึง 6 นาฬิกา
+การเขียนบอกเวลาโดยใช้จุดและการอ่าน
+การเขียนบอกเวลานิยมใช้จุด (.) คั่นระหว่างตัวเลขบอกเวลาเป็นนาฬิกากับนาที และใช้อักษรย่อ น. แทนคำว่านาฬิกา
+หน่วยของเวลาที่ควรทราบ    หน่วย ขนาด     นาโนวินาที 1&amp;frasl;1,000,000,000 วินาที   ไมโครวินาที 1&amp;frasl;1,000,000 วินาที   มิลลิวินาที 1&amp;frasl;1,000 วินาที   วินาที หน่วยฐานในระบบเอสไอ   นาที 60 วินาที   ชั่วโมง 60 นาที   วัน 24 ชั่วโมง   สัปดาห์ 7 วัน   ปักษ์ 14 หรือ 15 วัน; 2 สัปดาห์   เดือน 28 ถึง 31 วัน   ไตรมาส 3 เดือน   ปี (ปีปฏิทิน) 12 เดือน   ปีสุริยคติ 365.</description>
+    </item>
+    
+  </channel>
+</rss>

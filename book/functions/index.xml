@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Functions on e-Library</title>
+    <link>https://dragon-library.github.io/library/book/functions/</link>
+    <description>Recent content in Functions on e-Library</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 26 Nov 2019 17:04:13 +0700</lastBuildDate>
+    
+	<atom:link href="https://dragon-library.github.io/library/book/functions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Newfunction</title>
+      <link>https://dragon-library.github.io/library/book/functions/newfunction/</link>
+      <pubDate>Tue, 26 Nov 2019 17:04:13 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/book/functions/newfunction/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

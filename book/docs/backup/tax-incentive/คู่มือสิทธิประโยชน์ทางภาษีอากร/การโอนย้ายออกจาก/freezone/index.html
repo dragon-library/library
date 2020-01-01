@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="เขตปลอดอากร (Freezone)"><meta property="og:title" content="เขตปลอดอากร (Freezone)" />
+<meta property="og:description" content="การโอนย้ายของออกจากสิทธิประโยชน์เขตปลอดอากร โอนย้ายของเข้าโดยใช้สิทธิ์คลังสินค้าทัณฑ์บน การโอนย้ายของออกจากเขตปลอดอากร เพื่อโอนย้ายของเข้าโดยใช้สิทธิ์คลังสินค้าทัณฑ์บน
+ผู้นำของเข้า ส่งใบขนสินค้าขาเข้าโอนย้ายออกจากเขตปลอดอากร C ให้ระบุค่าดังนี้
+ ระบุ Release Port = รหัสสถานที่ตรวจปล่อยของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมใน ใบขนสินค้า ระบุ Discharge Port = รหัสสถานที่รับบรรทุกของของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมในใบขนสินค้า ระบุ Export Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์เขตปลอดอากรที่นำของออกที่ส่วนควบคุมในใบขนสินค้า ระบุ Bond = Y ที่ส่วนรายการในใบขนสินค้า ระบุ Import Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์คลังสินค้าทัณฑ์บนที่นำของเข้า ที่ส่วนรายการในใบขนสินค้า โอนย้ายของเข้าโดยใช้สิทธิ์ ขอคืนอากรตามมาตรา 29 การโอนย้ายของออกจากเขตปลอดอากร เพื่อโอนย้ายของเข้าโดยใช้สิทธิ์ ขอคืนอากรตามมาตรา 29
+ผู้นำของเข้า ส่งใบขนสินค้าขาเข้าโอนย้ายออกจากเขตปลอดอากร C ให้ระบุค่าดังนี้  ระบุ Release Port = รหัสสถานที่ตรวจปล่อยของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมใน ใบขนสินค้า ระบุ Discharge Port = รหัสสถานที่รับบรรทุกของของเขตปลอดอากรที่นำออก ที่ส่วนควบคุม ในใบขนสินค้า ระบุ Export Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์เขตปลอดอากรที่นำของออกที่ส่วนควบคุมในใบขนสินค้า ระบุ Drawback = Y ที่ส่วนรายการในใบขนสินค้า ระบุ Import Tax Incentives ID = เลขทะเบียนผู้ใช้สิทธิประโยชน์ขอคืนอากรตามมาตรา 29ที่ส่วนรายการในใบขนสินค้า เพื่อชำระค่าภาษีอากรบริโภคภายในประเทศ การโอนย้ายของออกจากเขตปลอดอากร เพื่อชำระค่าภาษีอากรบริโภคภายในประเทศ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/freezone/" />
+
+<title>เขตปลอดอากร (Freezone) | e-Library</title>
+<link rel="icon" href="/library/book/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/book/book.min.b30b2fa1744d4c509371b41d7e9c95ff83d8f1e285bd95b6b7b8b52ad4fd99f7.css" integrity="sha256-swsvoXRNTFCTcbQdfpyV/4PY8eKFvZW2t7i1KtT9mfc=">
+
+
+<script defer src="/library/book/en.search.min.ebb00cce6b320898e643f3a4da689763851cb6473bd88f65c69e1bc4e80f79b3.js" integrity="sha256-67AMzmsyCJjmQ/Ok2miXY4Uctkc72I9lxp4bxOgPebM="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/book/"><span>e-Library</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/homo-sapiens/" >
+      Homo Sapiens
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/homo-deus/" >
+      Homo Deus
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/bill-gates/" >
+      ประวัติ Bill Gates
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      
+
+  <a href="/library/book/docs/backup/example/" >
+      Example Site
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/example/table-of-contents/" >
+      Docs\backup\example\table of Contents\
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/example/table-of-contents/with-toc/" >
+      With ToC
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/example/table-of-contents/without-toc/" >
+      Without ToC
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/example/2nd/" >
+      Docs\backup\example\2nd\
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2/" >
+      การนำเข้าสินค้า
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/tax-incentive/" >
+      สิทธิประโยชน์ทางภาษีอากร
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/" >
+      คู่มือสิทธิประโยชน์ทางภาษีอากร
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/" >
+      การโอนย้ายของออกจากสิทธิประโยชน์
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/%E0%B8%BAbond/" >
+      คลังสินค้าทัณฑ์บน
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/%E0%B8%A1%E0%B8%B2%E0%B8%95%E0%B8%A3%E0%B8%B229/" >
+      มาตรา 29
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/boi/" >
+      ส่งเสริมการลงทุน BOI
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/freezone/"  class="active">
+      เขตปลอดอากร (Freezone)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%88%E0%B8%B2%E0%B8%81/i-eat/" >
+      เขตประกอบการเสรี (I-EAT)
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/tax-incentive/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%A3/%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%A2%E0%B8%8A%E0%B8%99%E0%B9%8C/" >
+      เลขทะเบียนสิทธิประโยชน์ทางภาษีอากร
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/book/docs/backup/transit/" >
+      ถ่ายลำ/ผ่านแดน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      <span>Docs\backup\shortcodes\</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/shortcodes/buttons/" >
+      Buttons
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/shortcodes/columns/" >
+      Columns
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/shortcodes/expand/" >
+      Expand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/shortcodes/hints/" >
+      Hints
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/shortcodes/katex/" >
+      Katex
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/shortcodes/mermaid/" >
+      Mermaid
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/book/docs/backup/shortcodes/tabs/" >
+      Tabs
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/book/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>เขตปลอดอากร (Freezone)</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="การโอนย-ายของออกจากส-ทธ-ประโยชน-เขตปลอดอากร">การโอนย้ายของออกจากสิทธิประโยชน์เขตปลอดอากร</h1>
+
+<p><img src="https://github.com/yosarawut/KnowledgeCenter/raw/master/img/e-tax-incentive/tranfer-freezone.jpg" alt="enter image description here" /></p>
+
+<h2 id="โอนย-ายของเข-าโดยใช-ส-ทธ-คล-งส-นค-าท-ณฑ-บน">โอนย้ายของเข้าโดยใช้สิทธิ์คลังสินค้าทัณฑ์บน</h2>
+
+<p><strong>การโอนย้ายของออกจากเขตปลอดอากร เพื่อโอนย้ายของเข้าโดยใช้สิทธิ์คลังสินค้าทัณฑ์บน</strong></p>
+
+<p><strong>ผู้นำของเข้า</strong> ส่งใบขนสินค้าขาเข้าโอนย้ายออกจากเขตปลอดอากร <strong>C</strong> ให้ระบุค่าดังนี้</p>
+
+<blockquote class="book-hint info">
+  <ul>
+<li>ระบุ Release Port = รหัสสถานที่ตรวจปล่อยของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมใน ใบขนสินค้า</li>
+<li>ระบุ Discharge Port = รหัสสถานที่รับบรรทุกของของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Export Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์เขตปลอดอากรที่นำของออกที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Bond = Y ที่ส่วนรายการในใบขนสินค้า</li>
+<li>ระบุ Import Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์คลังสินค้าทัณฑ์บนที่นำของเข้า ที่ส่วนรายการในใบขนสินค้า</li>
+</ul>
+</blockquote>
+
+
+<h2 id="โอนย-ายของเข-าโดยใช-ส-ทธ-ขอค-นอากรตามมาตรา-29">โอนย้ายของเข้าโดยใช้สิทธิ์ ขอคืนอากรตามมาตรา 29</h2>
+
+<p><strong>การโอนย้ายของออกจากเขตปลอดอากร เพื่อโอนย้ายของเข้าโดยใช้สิทธิ์ ขอคืนอากรตามมาตรา 29</strong></p>
+
+<p><strong>ผู้นำของเข้า</strong> ส่งใบขนสินค้าขาเข้าโอนย้ายออกจากเขตปลอดอากร <strong>C</strong> ให้ระบุค่าดังนี้
+<blockquote class="book-hint info">
+  <ul>
+<li>ระบุ Release Port = รหัสสถานที่ตรวจปล่อยของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมใน ใบขนสินค้า</li>
+<li>ระบุ Discharge Port = รหัสสถานที่รับบรรทุกของของเขตปลอดอากรที่นำออก ที่ส่วนควบคุม ในใบขนสินค้า</li>
+<li>ระบุ Export Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์เขตปลอดอากรที่นำของออกที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Drawback = Y ที่ส่วนรายการในใบขนสินค้า</li>
+<li>ระบุ Import Tax Incentives ID = เลขทะเบียนผู้ใช้สิทธิประโยชน์ขอคืนอากรตามมาตรา 29ที่ส่วนรายการในใบขนสินค้า</li>
+</ul>
+</blockquote>
+</p>
+
+<h2 id="เพ-อชำระค-าภาษ-อากรบร-โภคภายในประเทศ">เพื่อชำระค่าภาษีอากรบริโภคภายในประเทศ</h2>
+
+<p><strong>การโอนย้ายของออกจากเขตปลอดอากร เพื่อชำระค่าภาษีอากรบริโภคภายในประเทศ</strong></p>
+
+<p><strong>ผู้นำของเข้า</strong> นำของออกบริโภคภายในประเทศ ผู้นำของออกจัดทำใบขนสินค้า <strong>P</strong> ให้ระบุค่าดังนี้
+<blockquote class="book-hint info">
+  <ul>
+<li>ระบุ Release Port = รหัสสถานที่ตรวจปล่อยของเขตปลอดอากร ที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Discharge Port = รหัสสถานที่รับบรรทุกของเขตปลอดอากร ที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Export Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์เขตปลอดอากรที่นำของออกที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>กรณีประเภทย่อยของผู้ได้รับใบอนุญาตประกอบกิจการในเขตปลอดอากรเป็น ประเภทพาณิชยกรรม ให้ระบุ Reference Declaration Number = เลขที่ใบขนสินค้าขาเข้าที่นำสินค้าเข้าเก็บในเขตปลอดอากร ที่ส่วนรายการในใบขนสินค้า</li>
+<li>กรณีประเภทย่อยของผู้ได้รับใบอนุญาตให้ประกอบกิจการเป็น ประเภทพาณิชยกรรม ให้ระบุ Reference Declaration Line Number = รายการในใบขนสินค้าขาเข้าที่นำสินค้าเข้าเก็บในเขตปลอดอากรที่นำของออก ที่ส่วนรายการใน ใบขนสินค้า</li>
+<li>กรณีประเภทย่อยของผู้ได้รับใบอนุญาตให้ประกอบกิจการเป็น ประเภทพาณิชยกรรม ให้ระบุ Tariff Code = รหัสพิกัดศุลกากร ตามใบขนสินค้าขาเข้าและรายการในใบขนสินค้าขาเข้าที่นำสินค้าเข้าเก็บในเขตปลอดอากรที่นำของออก ที่ส่วนรายการในใบขนสินค้า</li>
+<li>กรณีประเภทย่อยของผู้ได้รับใบอนุญาตประกอบกิจการในเขตปลอดอากรเป็น ประเภทพาณิชยกรรม ให้ระบุ Statistical Code = รหัสสถิติสินค้า ตามใบขนสินค้าขาเข้าและรายการในใบขนสินค้าขาเข้าที่นำสินค้าเข้าเก็บในเขตปลอดอากรที่นำของออก ที่ส่วนรายการในใบขนสินค้า</li>
+<li>กรณีประเภทย่อยของผู้ได้รับใบอนุญาตประกอบกิจการในเขตปลอดอากรเป็น ประเภทพาณิชยกรรม ให้ระบุ Privilege Code ตามสิทธิ์ที่มีขณะนำเข้า เช่น มาตรา 12, WTO, TAU, AFTA เป็นต้น และต้องคำนวณค่าภาษีอากรตามปกติ ที่ส่วนรายการในใบขนสินค้า</li>
+<li>กรณีประเภทย่อยของผู้ได้รับใบอนุญาตประกอบกิจการในเขตปลอดอากรเป็น ประเภทพาณิชยกรรม ให้ระบุ Thai Description of Goods = ชนิดของ ภาษาไทย ตามใบขนสินค้าขาเข้าและรายการในใบขนสินค้าขาเข้าที่นำสินค้าเข้าเก็บในเขตปลอดอากรที่นำของออก ที่ส่วนรายการในใบขนสินค้า</li>
+<li>กรณีประเภทย่อยของผู้ได้รับใบอนุญาตประกอบกิจการในเขตปลอดอากรเป็น ประเภทพาณิชยกรรม ให้ระบุ English Description of Goods = ชนิดของ ภาษาอังกฤษ ตามใบขนสินค้าขาเข้าและรายการในใบขนสินค้าขาเข้าที่นำสินค้าเข้าเก็บในเขตปลอดอากรที่นำของออก ที่ส่วนรายการในใบขนสินค้า</li>
+</ul>
+</blockquote>
+</p>
+
+<h2 id="โอนย-ายของเข-าโดยใช-ส-ทธ-เขตปลอดอากร">โอนย้ายของเข้าโดยใช้สิทธิ์เขตปลอดอากร</h2>
+
+<p><strong>การโอนย้ายของออกจากเขตปลอดอากร เพื่อโอนย้ายของเข้าโดยใช้สิทธิ์เขตปลอดอากร</strong></p>
+
+<ol>
+<li><p><strong>ผู้ส่งออกของ</strong> ส่งใบขนสินค้าขาออกโอนย้ายเข้าเขตปลอดอากร <strong>(D)</strong> ให้ระบุค่าดังนี้
+<blockquote class="book-hint info">
+  <ul>
+<li>ระบุ Release Port = รหัสสถานที่ตรวจปล่อยของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Load Port = รหัสสถานที่รับบรรทุกของของเขตปลอดอากรที่นำออก ที่ส่วนควบคุม ในใบขนสินค้า</li>
+<li>ระบุ Export Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์เขตปลอดอากรที่นำของออกที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Free Zone = Y ที่ส่วนรายการในใบขนสินค้า</li>
+<li>ระบุ Import Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์ผู้ได้รับใบอนุญาตประกอบกิจการในเขตปลอดอากรที่นำของเข้าที่ส่วนรายการในใบขนสินค้า</li>
+</ul>
+</blockquote>
+</p></li>
+
+<li><p>ผู้ได้รับใบอนุญาตจัดตั้งเขตปลอดอากร<strong>ทำรายงานการยืนยันการโอนย้าย</strong> สรุปให้กรมศุลกากร</p></li>
+</ol>
+
+<h2 id="โอนย-ายของเข-าโดยใช-ส-ทธ-เขตประกอบการเสร">โอนย้ายของเข้าโดยใช้สิทธิ์เขตประกอบการเสรี</h2>
+
+<p><strong>การโอนย้ายของออกจากเขตปลอดอากร เพื่อโอนย้ายของเข้าโดยใช้สิทธิ์เขตประกอบการเสรี</strong></p>
+
+<ol>
+<li><strong>ผู้ส่งออกของ</strong> ส่งใบขนสินค้าขาออกโอนย้ายเข้าเขตประกอบการเสรี <strong>D</strong> ให้ระบุค่าดังนี้
+<blockquote class="book-hint info">
+  <ul>
+<li>ระบุ Release Port = รหัสสถานที่ตรวจปล่อยของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Load Port = รหัสสถานที่ของเขตปลอดอากรที่นำออก ที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ Export Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์เขตปลอดอากรที่นำของออกที่ส่วนควบคุมในใบขนสินค้า</li>
+<li>ระบุ I-EAT Free Zone = Y ที่ส่วนรายการในใบขนสินค้า</li>
+<li>ระบุ Import Tax Incentives ID = เลขที่ทะเบียนสิทธิ์ประโยชน์ผู้ประกอบการในเขตประกอบการเสรีที่นำของเข้าที่ส่วนรายการในใบขนสินค้า.</li>
+</ul>
+</blockquote>
+<br /></li>
+<li>เจ้าของเขตประกอบการเสรีที่นำของเข้า<strong>ทำรายงานสรุปการนำเข้า</strong> ส่งให้กรมศุลกากร</li>
+</ol>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cbackup%5ctax-incentive%5c%e0%b8%84%e0%b8%b9%e0%b9%88%e0%b8%a1%e0%b8%b7%e0%b8%ad%e0%b8%aa%e0%b8%b4%e0%b8%97%e0%b8%98%e0%b8%b4%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b9%82%e0%b8%a2%e0%b8%8a%e0%b8%99%e0%b9%8c%e0%b8%97%e0%b8%b2%e0%b8%87%e0%b8%a0%e0%b8%b2%e0%b8%a9%e0%b8%b5%e0%b8%ad%e0%b8%b2%e0%b8%81%e0%b8%a3%5c%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%82%e0%b8%ad%e0%b8%99%e0%b8%a2%e0%b9%89%e0%b8%b2%e0%b8%a2%e0%b8%ad%e0%b8%ad%e0%b8%81%e0%b8%88%e0%b8%b2%e0%b8%81%5cFreezone.md" target="_blank">
+      <img src="/library/book/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#การโอนย-ายของออกจากส-ทธ-ประโยชน-เขตปลอดอากร">การโอนย้ายของออกจากสิทธิประโยชน์เขตปลอดอากร</a>
+<ul>
+<li><a href="#โอนย-ายของเข-าโดยใช-ส-ทธ-คล-งส-นค-าท-ณฑ-บน">โอนย้ายของเข้าโดยใช้สิทธิ์คลังสินค้าทัณฑ์บน</a></li>
+<li><a href="#โอนย-ายของเข-าโดยใช-ส-ทธ-ขอค-นอากรตามมาตรา-29">โอนย้ายของเข้าโดยใช้สิทธิ์ ขอคืนอากรตามมาตรา 29</a></li>
+<li><a href="#เพ-อชำระค-าภาษ-อากรบร-โภคภายในประเทศ">เพื่อชำระค่าภาษีอากรบริโภคภายในประเทศ</a></li>
+<li><a href="#โอนย-ายของเข-าโดยใช-ส-ทธ-เขตปลอดอากร">โอนย้ายของเข้าโดยใช้สิทธิ์เขตปลอดอากร</a></li>
+<li><a href="#โอนย-ายของเข-าโดยใช-ส-ทธ-เขตประกอบการเสร">โอนย้ายของเข้าโดยใช้สิทธิ์เขตประกอบการเสรี</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on </title>
+    <link>https://dragon-library.github.io/library/articles/categories/</link>
+    <description>Recent content in Categories on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Dec 2019 21:40:11 +0700</lastBuildDate>
+    
+	<atom:link href="https://dragon-library.github.io/library/articles/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Society</title>
+      <link>https://dragon-library.github.io/library/articles/categories/society/</link>
+      <pubDate>Thu, 26 Dec 2019 21:40:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/society/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>World</title>
+      <link>https://dragon-library.github.io/library/articles/categories/world/</link>
+      <pubDate>Thu, 26 Dec 2019 21:40:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/world/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parent</title>
+      <link>https://dragon-library.github.io/library/articles/categories/parent/</link>
+      <pubDate>Thu, 26 Dec 2019 20:40:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/parent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Industry</title>
+      <link>https://dragon-library.github.io/library/articles/categories/industry/</link>
+      <pubDate>Wed, 25 Dec 2019 21:50:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/industry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>People</title>
+      <link>https://dragon-library.github.io/library/articles/categories/people/</link>
+      <pubDate>Fri, 06 Dec 2019 13:55:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/people/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Finance</title>
+      <link>https://dragon-library.github.io/library/articles/categories/finance/</link>
+      <pubDate>Mon, 02 Dec 2019 19:40:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/finance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lift</title>
+      <link>https://dragon-library.github.io/library/articles/categories/lift/</link>
+      <pubDate>Sun, 24 Nov 2019 22:40:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/lift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tech</title>
+      <link>https://dragon-library.github.io/library/articles/categories/tech/</link>
+      <pubDate>Sun, 24 Nov 2019 13:45:11 +0700</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Series</title>
+      <link>https://dragon-library.github.io/library/articles/categories/series/</link>
+      <pubDate>Sat, 23 Nov 2019 11:40:11 +0200</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Website Programming</title>
+      <link>https://dragon-library.github.io/library/articles/categories/website-programming/</link>
+      <pubDate>Fri, 09 Nov 2018 07:26:15 +1300</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/articles/categories/website-programming/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

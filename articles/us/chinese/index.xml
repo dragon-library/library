@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chineses on </title>
+    <link>https://yosarawut.github.io/knowledge-base/articles/us/chinese/</link>
+    <description>Recent content in Chineses on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Nov 2018 00:28:38 +0000</lastBuildDate>
+    
+	<atom:link href="https://yosarawut.github.io/knowledge-base/articles/us/chinese/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About W3 Simple</title>
+      <link>https://yosarawut.github.io/knowledge-base/articles/zh-cn/about/</link>
+      <pubDate>Sat, 10 Nov 2018 00:28:38 +0000</pubDate>
+      
+      <guid>https://yosarawut.github.io/knowledge-base/articles/zh-cn/about/</guid>
+      <description>Hugo W3 Simple是由Jesse Lau根据W3 CSS框架设计的HUGO主题模板</description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>https://yosarawut.github.io/knowledge-base/articles/us/chinese/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yosarawut.github.io/knowledge-base/articles/us/chinese/search/</guid>
+      <description> Manticore Search </description>
+    </item>
+    
+  </channel>
+</rss>
