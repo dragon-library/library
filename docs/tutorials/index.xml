@@ -47,6 +47,18 @@ Creating a project directory and virtual environment First of all, we need to cr
     </item>
     
     <item>
+      <title>Python Thailand</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/pythonthailand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/pythonthailand/</guid>
+      <description>Python Thailand Python Thailand - แหล่งเรียนรู้ภาษาไพธอนสำหรับคนไทย print(&amp;quot;Hello Thai Pythonista!&amp;quot;)  ยินดีต้อนรับเข้าสู่ Python Thailand เว็บไซต์ที่เปรียบเสมือนเป็นประตูบานแรกสำหรับคนที่ต้องการก้าวเข้ามาสู่จักรวาลของภาษาไพธอน เว็บไซต์นี้ได้รวบรวมแหล่งข้อมูลที่เกี่ยวข้องกับภาษาไพธอนที่ถูกเขียนขึ้นในภาษาไทย ไม่ว่าจะเป็นทั้งการสอนไพธอน เว็บบล็อกไพธอน รวมถึงวิดีโอที่เกี่ยวกับไพธอนต่าง ๆ ไพธอนนั้นมีประโยชน์มากมาย ไพธอนเปรียบเสมือนไม้กายสิทธิ์ที่สามารถช่วยให้เราสร้างสรรค์นวัตกรรมหรือสิ่งใหม่ ๆ ให้กับมวลมนุษยชาติได้
+ด้วยเนื้อหาที่รวบรวมในเว็บไซต์นี้ คุณจะสามารถเขียนโปรแกรมด้วยภาษาไพธอนได้ เริ่มตั้งแต่การสร้างแอพพลิเคชันอย่างง่ายไปจนถึงโปรแกรมการคำนวณที่ซับซ้อน คุณจะเข้าใจหลักการสำคัญในการเขียนโปรแกรมทั้งในพื้นฐานทั้งหมดและในขั้นสูงที่เป็นการเขียนโปรแกรมแบบเชิงวัตถุ คุณจะได้รู้จักกับเครื่องมือที่ใช้ในการพัฒนาโปรแกรมหลากหลายรูปแบบ ซึ่งเนื้อหาเหล่านี้เป็นพื้นฐานที่สำคัญที่จะทำให้คุณสามารถนำไปพัฒนาทักษะการเขียนโปรแกรมภาษาไพธอน ของคุณในขั้นสูงต่อไป เช่น การพัฒนาเว็บไซต์ การสร้างเกม ฐานข้อมูล เน็ตเวิร์ค การจัดการกราฟฟิค
+ภาษาไพธอน  ประวัติและต้นกำเนิด ตราสัญลักษณ์ของภาษาไพธอน ปรัชญาของไพธอน เกร็ดความรู้เกี่ยวกับไพธอน ทำไมต้องไพธอน ความสำเร็จของไพธอน   ดาวน์โหลดไพธอนและเครื่องมืออื่น ๆ  เริ่มต้นใช้งานไพธอน ระบบปฏิบัติการที่รองรับ ดาวน์โหลดไพธอน การติดตั้งไพธอน โปรแกรมแก้ไขข้อความสำหรับเขียนภาษาไพธอน ไลบรารี่และแพคเกจ   เนื้อหาไพธอน เลือกระดับความยากของเนื้อหา
+ เริ่มต้น (Beginner) ปานกลาง (Intermediate) ขั้นสูง (Advanced)   โจทย์และการแก้ปัญหา  ระดับพื้นฐาน ระดับปานกลาง ระดับยาก โจทย์แข่งขัน คำถามสอบสัมภาษณ์งาน   หนังสือแนะนำ  Python ๑๐๑ คณะวิศวกรรมศาสตร์ จุฬา ฯ เชี่ยวชาญการเขียนโปรแกรมด้วยไพธอน ผศ.</description>
+    </item>
+    
+    <item>
       <title>Awesome Python</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/awesome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -196,6 +208,29 @@ Forms (or input data in general) play a critical role in any kind of website or 
     </item>
     
     <item>
+      <title>Ep.8 Generating dynamic URLs in Flask</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-8/</guid>
+      <description>Generating dynamic URLs in Flask | Learning Flask Ep. 8 Learn how to create and work with dynamic URLs and dynamic data in Flask
+Dynamic URL&amp;rsquo;s in Flask play an important role in the ability to create unique URL&amp;rsquo;s that aren&amp;rsquo;t hard-coded into our application.
+For example, let&amp;rsquo;s say our application allows users to create an account and log into their profile, we&amp;rsquo;ll need a way to dynamically generate a route for that specific user.</description>
+    </item>
+    
+    <item>
+      <title>Ep.9 Working with JSON data</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-9/</guid>
+      <description>Working with JSON data | Learning Flask Ep. 9 Handle incoming, parsing and returning JSON data with Flask!
+In this part of the &amp;ldquo;Learning Flask&amp;rdquo; series, we&amp;rsquo;re going to be working with JSON data.
+JSON is an extremely popular format for sending and receiving data over the web. Flask provides us with some great tools to make light work of handling JSON data.
+In this guide, we&amp;rsquo;re going to quickly cover how to handle incoming JSON data and return JSON data to the client.</description>
+    </item>
+    
+    <item>
       <title>Creating a New Theme</title>
       <link>https://dragon-library.github.io/library/tutorials/posts/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
@@ -214,6 +249,52 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Ep.10 Flask and the Fetch API</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-10/</guid>
+      <description>Flask and the Fetch API | Learning Flask Ep. 10 Asynchronous requests from the client to the server using the JavaScript Fetch API
+Making asynchronus requests from the client to the server is a common feature of most modern web applications, allowing a more fluid user experience.
+In this episode of the &amp;ldquo;Learning Flask&amp;rdquo; series, you&amp;rsquo;ll learn how to make asynchronus requests from the client to your application using some basic vanilla JavaScript and the Fetch API.</description>
+    </item>
+    
+    <item>
+      <title>Ep.11 Query strings in Flask</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-11/</guid>
+      <description>Query strings in Flask | Learning Flask Ep. 11 Creating, serializing and working with query string data in Flask
+In this part of the &amp;ldquo;Learning Flask&amp;rdquo; series, we&amp;rsquo;re going to working with query strings. A query string is part of the URL as a string of parameters and values and are used ubiquitously across the web.
+Query strings are essentially a string of key/value pairs sent by the client to the server.</description>
+    </item>
+    
+    <item>
+      <title>Ep.12 Flask configuration files</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-12/</guid>
+      <description>Flask configuration files | Learning Flask Ep. 12 Configuring Flask applications using a config file and classes
+Configuration is an important part of any appliction and Flask provides several different methods for us to configure our app.
+In this part of the &amp;ldquo;Learning Flask&amp;rdquo; series, we&amp;rsquo;re going to cover our preferred app configuration method, using a config file with classes.
+Let&amp;rsquo;s get started.
+Config basics Every Flask application has a global config object which can be accessed via app.</description>
+    </item>
+    
+    <item>
+      <title>Ep.13 Uploading files with Flask</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-13/</guid>
+      <description>Uploading files with Flask | Learning Flask Ep. 13 Posting, checking and validating file uploads with Flask
+Uploading files to the server is often a requirement of a website or web application. Thankfully, Flask makes this relitively simple for us with a few useful functions.
+We&amp;rsquo;re using Bootstrap 4 CSS in this example but feel free to use any other CSS library, use your own or skip the styling completely.</description>
     </item>
     
     <item>

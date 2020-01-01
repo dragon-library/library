@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.8 Generating dynamic URLs in Flask"><meta property="og:title" content="Ep.8 Generating dynamic URLs in Flask" />
+<meta property="og:description" content="Generating dynamic URLs in Flask | Learning Flask Ep. 8 Learn how to create and work with dynamic URLs and dynamic data in Flask
+Dynamic URL&rsquo;s in Flask play an important role in the ability to create unique URL&rsquo;s that aren&rsquo;t hard-coded into our application.
+For example, let&rsquo;s say our application allows users to create an account and log into their profile, we&rsquo;ll need a way to dynamically generate a route for that specific user." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-8/" />
+
+<title>Ep.8 Generating dynamic URLs in Flask | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/"  class="active">
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.8 Generating dynamic URLs in Flask</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="generating-dynamic-urls-in-flask-learning-flask-ep-8">Generating dynamic URLs in Flask | Learning Flask Ep. 8</h1>
+
+<p>Learn how to create and work with dynamic URLs and dynamic data in Flask</p>
+
+<p>Dynamic URL&rsquo;s in Flask play an important role in the ability to create unique URL&rsquo;s that aren&rsquo;t hard-coded into our application.</p>
+
+<p>For example, let&rsquo;s say our application allows users to create an account and log into their profile, we&rsquo;ll need a way to dynamically generate a route for that specific user.</p>
+
+<p>Can you imagine hard coding a unique URL for each and every user of your application?!</p>
+
+<p>Let&rsquo;s dive in and learn how we can generate dynamic URL&rsquo;s in Flask.</p>
+
+<h3 id="creating-a-dynamic-route">creating a dynamic route</h3>
+
+<p>First up, let&rsquo;s create a new route in out app. We&rsquo;re going to give it the URL  <code>/profile</code>:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/profile&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">profile</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/profile.html&#34;</span>)</code></pre></div>
+We&rsquo;ll also create a new template for this route. Go ahead and create a file named  <code>profile.html</code>  in the  <code>templates/public</code>  directory (Or whatever directory contains your HTML files)</p>
+
+<p>Let&rsquo;s just create a simple page for now:</p>
+
+<p><strong>app/app/templates/public/dynamic.html</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{<span style="color:#f92672">%</span> extends <span style="color:#e6db74">&#34;public/templates/public_template.html&#34;</span> <span style="color:#f92672">%</span>}
+
+{<span style="color:#f92672">%</span> block title <span style="color:#f92672">%</span>}Profile{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}
+
+{<span style="color:#f92672">%</span> block main <span style="color:#f92672">%</span>}
+
+<span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span><span style="color:#f92672">&gt;</span>
+
+      <span style="color:#f92672">&lt;</span>h1<span style="color:#f92672">&gt;</span>Profile<span style="color:#f92672">&lt;/</span>h1<span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;</span>
+
+    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+
+{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}</code></pre></div>
+
+<blockquote>
+<p>Tip - We&rsquo;re using the Bootstrap CSS library but feel free to use your own or leave it out completely</p>
+</blockquote>
+
+<p>As it is, our new route isn&rsquo;t dynamic. We need to make some tweaks to the URL we&rsquo;ve provided in out  <code>@app.route</code>  decorator.</p>
+
+<p>Go ahead and make the following changes to the  <code>@app.route</code>  URL:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/profile/&lt;username&gt;&#34;</span>)</code></pre></div>
+
+<ul>
+<li>We&rsquo;ve added trailing slash to  <code>/profile/</code></li>
+<li>We&rsquo;ve provided a variable in the URL path and wrapped in with two opposing arrows  <code>&lt;&gt;</code>  as shown.</li>
+</ul>
+
+<p>Essentially, we&rsquo;re expecting some sort of value to be passed into the URL after  <code>/profile/</code>. We&rsquo;re then capturing that data as a variable called  <code>username</code>.</p>
+
+<p>Just remember, to catch a a value in the URL and store it as a variable it must look  <code>&lt;like_this&gt;</code>  and follow a trailing slash.</p>
+
+<p>Before we can work with the  <code>username</code>  data, we need to pass it into the routes function as an argument:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><code>def profile(username):</code></p>
+
+<p>We now have access to the  <code>username</code>  variable and its data.</p>
+
+<p>For clarity, our route now looks like this:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/profile/&lt;username&gt;&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">profile</span>(username):
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/profile.html&#34;</span>)</code></pre></div></p>
+
+<p>At this point, if you try to access the  <code>/profile</code>  route in your browser, Flask will throw an error because the  <code>profile</code>  function is expecting an value!</p>
+
+<blockquote>
+<p>Tip - Trailing slashes matter in Flask. If you try to access a route that&rsquo;s not defined with a trailing slash in the URL, you&rsquo;ll get an error.</p>
+</blockquote>
+
+<h3 id="capturing-url-variables">Capturing URL variables</h3>
+
+<p>Go to  <code>/profile/x</code>  in your browser. You&rsquo;ll see Flask returns our new  <code>profile.html</code>  page and displays  <code>/profile/x</code>  in the browser URL address bar.</p>
+
+<p>We can now work with data that comes into our app from the URL! Let&rsquo;s create a dictionary containing a few usernames and some information about our users.</p>
+
+<p>We&rsquo;ll search the dictonary for the  <code>username</code>  variable and return some basic information about that user. Let&rsquo;s create our  <code>users</code>  dictionary:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">users <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#34;mitsuhiko&#34;</span>: {
+        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Armin Ronacher&#34;</span>,
+        <span style="color:#e6db74">&#34;bio&#34;</span>: <span style="color:#e6db74">&#34;Creatof of the Flask framework&#34;</span>,
+        <span style="color:#e6db74">&#34;twitter_handle&#34;</span>: <span style="color:#e6db74">&#34;@mitsuhiko&#34;</span>
+    },
+    <span style="color:#e6db74">&#34;gvanrossum&#34;</span>: {
+        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Guido Van Rossum&#34;</span>,
+        <span style="color:#e6db74">&#34;bio&#34;</span>: <span style="color:#e6db74">&#34;Creator of the Python programming language&#34;</span>,
+        <span style="color:#e6db74">&#34;twitter_handle&#34;</span>: <span style="color:#e6db74">&#34;@gvanrossum&#34;</span>
+    },
+    <span style="color:#e6db74">&#34;elonmusk&#34;</span>: {
+        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Elon Musk&#34;</span>,
+        <span style="color:#e6db74">&#34;bio&#34;</span>: <span style="color:#e6db74">&#34;technology entrepreneur, investor, and engineer&#34;</span>,
+        <span style="color:#e6db74">&#34;twitter_handle&#34;</span>: <span style="color:#e6db74">&#34;@elonmusk&#34;</span>
+    }
+}</code></pre></div></p>
+
+<p>We&rsquo;ll add some logic to our  <code>profile</code>  route to look up the user and return their information:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/profile/&lt;username&gt;&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">profile</span>(username):
+
+    user <span style="color:#f92672">=</span> None
+
+    <span style="color:#66d9ef">if</span> username <span style="color:#f92672">in</span> users:
+        user <span style="color:#f92672">=</span> users[username]
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/profile.html&#34;</span>, username<span style="color:#f92672">=</span>username, user<span style="color:#f92672">=</span>user)</code></pre></div>
+Lastly, let&rsquo;s refactor our  <code>profile.html</code>  to display our user information:</p>
+
+<p><strong>app/app/templates/public/dynamic.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{<span style="color:#f92672">%</span> extends <span style="color:#e6db74">&#34;public/templates/public_template.html&#34;</span> <span style="color:#f92672">%</span>}
+
+{<span style="color:#f92672">%</span> block title <span style="color:#f92672">%</span>}Profile{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}
+
+{<span style="color:#f92672">%</span> block main <span style="color:#f92672">%</span>}
+
+<span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span><span style="color:#f92672">&gt;</span>
+
+      <span style="color:#f92672">&lt;</span>h1<span style="color:#f92672">&gt;</span>Profile<span style="color:#f92672">&lt;/</span>h1<span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;</span>
+
+      <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span><span style="color:#f92672">&gt;</span>
+          {<span style="color:#f92672">%</span> <span style="color:#66d9ef">if</span> user <span style="color:#f92672">%</span>}
+          <span style="color:#f92672">&lt;</span>h5 class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-title&#34;</span><span style="color:#f92672">&gt;</span>{{ username }}<span style="color:#f92672">&lt;/</span>h5<span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;&lt;</span>strong<span style="color:#f92672">&gt;</span>{{ user[<span style="color:#e6db74">&#34;name&#34;</span>] }}<span style="color:#f92672">&lt;/</span>strong<span style="color:#f92672">&gt;&lt;/</span>p<span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span>p style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: blue&#34;</span><span style="color:#f92672">&gt;</span>{{ user[<span style="color:#e6db74">&#34;twitter_handle&#34;</span>] }}<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span>p class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-muted&#34;</span><span style="color:#f92672">&gt;</span>{{ user[<span style="color:#e6db74">&#34;bio&#34;</span>] }}<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
+          {<span style="color:#f92672">%</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">%</span>}
+          <span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;</span>User {{ username }} <span style="color:#f92672">not</span> found<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
+          {<span style="color:#f92672">%</span> endif <span style="color:#f92672">%</span>}
+        <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+
+    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+
+{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}</code></pre></div></p>
+
+<h3 id="requesting-a-dynamic-route">Requesting a dynamic route</h3>
+
+<p>Save the files and head to  <code>/profile/mitsuhiko</code>  or any of the other usernames in your browser to see their profile!</p>
+
+<p><img src="https://pythonise.com/static/img/uploads/dynamic-url-example.PNG" alt="Dynamic URLs in Flask" title="Dynamic URLs in Flask" /></p>
+
+<p>Also, try a name that&rsquo;s not in our dictionary to see how we&rsquo;ve handled that with a simple  <code>{% if user %}</code>  statement in our template.</p>
+
+<p>Dynamic URL&rsquo;s aren&rsquo;t just limited to one variable. Let&rsquo;s stack some more veriables to capture in our URL string.</p>
+
+<h3 id="multiple-url-variables">Multiple URL variables</h3>
+
+<p>In our first example, we created the  <code>profile</code>  route to expect only one variable in the URL. However, we can add as many as we like.</p>
+
+<p>Let&rsquo;s create a new route with multiple variables that just prints the variables and returns a simple string to the client:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/multiple/&lt;foo&gt;/&lt;bar&gt;/&lt;baz&gt;&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multiple</span>(foo, bar, baz):
+
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;foo is {foo}&#34;</span>)
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;bar is {bar}&#34;</span>)
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;baz is {baz}&#34;</span>)
+
+    <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;foo is {foo}, bar is {bar}, baz is {baz}&#34;</span></code></pre></div></p>
+
+<p>Go to  <code>/multiple/foo/bar/baz</code>  in your browser, you&rsquo;ll see:</p>
+
+<p><code>foo is foo, bar is bar, baz is baz</code></p>
+
+<p>As you can see, we have full access to the variables captured in the URL and passed into our function!</p>
+
+<p>In the next part of this series, we&rsquo;ll be covering how to work with query strings in Flask.</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="https://pythonise.com/series/learning-flask/generating-dynamic-urls-with-flask">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-8.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#generating-dynamic-urls-in-flask-learning-flask-ep-8">Generating dynamic URLs in Flask | Learning Flask Ep. 8</a>
+<ul>
+<li>
+<ul>
+<li><a href="#creating-a-dynamic-route">creating a dynamic route</a></li>
+<li><a href="#capturing-url-variables">Capturing URL variables</a></li>
+<li><a href="#requesting-a-dynamic-route">Requesting a dynamic route</a></li>
+<li><a href="#multiple-url-variables">Multiple URL variables</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

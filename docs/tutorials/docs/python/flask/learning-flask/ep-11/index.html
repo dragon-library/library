@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.11 Query strings in Flask"><meta property="og:title" content="Ep.11 Query strings in Flask" />
+<meta property="og:description" content="Query strings in Flask | Learning Flask Ep. 11 Creating, serializing and working with query string data in Flask
+In this part of the &ldquo;Learning Flask&rdquo; series, we&rsquo;re going to working with query strings. A query string is part of the URL as a string of parameters and values and are used ubiquitously across the web.
+Query strings are essentially a string of key/value pairs sent by the client to the server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-11/" />
+
+<title>Ep.11 Query strings in Flask | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/"  class="active">
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.11 Query strings in Flask</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="query-strings-in-flask-learning-flask-ep-11">Query strings in Flask | Learning Flask Ep. 11</h1>
+
+<p>Creating, serializing and working with query string data in Flask</p>
+
+<p>In this part of the &ldquo;Learning Flask&rdquo; series, we&rsquo;re going to working with query strings. A query string is part of the URL as a string of parameters and values and are used ubiquitously across the web.</p>
+
+<p>Query strings are essentially a string of key/value pairs sent by the client to the server.</p>
+
+<p>Here&rsquo;s an example of a query string in the URL from a quick Google search for  <code>query string</code>:</p>
+
+<p><code>https://www.google.com/search?q=query+string</code></p>
+
+<p>Let&rsquo;s break down the URL:</p>
+
+<ul>
+<li><code>https</code>  is the protocol</li>
+<li><code>www.google.com</code>  is the domain</li>
+<li><code>/search</code>  is the path</li>
+<li><code>?q=query+string</code>  is the query string</li>
+</ul>
+
+<h3 id="anatomy-of-a-query-string">Anatomy of a query string</h3>
+
+<p>Focusing on the query string element of the URL, we see the following components:</p>
+
+<ul>
+<li><code>?</code>  starts the query string</li>
+<li><code>q</code>  is the first parameter</li>
+<li><code>=</code>  separates/assigns a value to the parameter</li>
+<li><code>query+string</code>  is the value assigned to the  <code>q</code>  parameter</li>
+</ul>
+
+<p>You&rsquo;ll notice the  <code>+</code>  substitution between &ldquo;query string&rdquo;. This is because the space charactes is not allowed in a URL so must be replaced with something else.</p>
+
+<p>Spaces in query strings are replaced with  <code>+</code>  or  <code>%20</code></p>
+
+<p>Let&rsquo;s take a look at a slightly more complex query string, again from a Google search for &ldquo;flask&rdquo;:</p>
+
+<p><code>https://www.google.com/search?q=flask&amp;oq=flask&amp;sourceid=chrome&amp;ie=UTF-8</code></p>
+
+<p>If you take a closer look at the query string, you&rsquo;ll see multiple parameters and values, separated by the  <code>&amp;</code>  symbol.</p>
+
+<p>We use  <code>&amp;</code>  to separate parameters and values in the query string. Let&rsquo;s create a query string below with a few sets of params &amp; values:</p>
+
+<p><code>http://127.0.0.1:5000/query?foo=foo&amp;bar=bar&amp;baz=baz&amp;title=query+strings+with+flask</code></p>
+
+<p>Let&rsquo;s use this query string in our Flask application and learn how to work with it!</p>
+
+<h3 id="flask-query-strings">Flask query strings</h3>
+
+<p>First up, let&rsquo;s create a new route with the URL  <code>/query</code>:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No query string received&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+
+<p>If you got to  <code>/query</code>  in your browser, you&rsquo;ll see  <code>No query string received</code>  in your window.</p>
+
+<p>Go ahead and paste the query string we just created above into your browser URL bar and see what happens.</p>
+
+<p>You&rsquo;ll notice we don&rsquo;t get any errors, however we&rsquo;re not yet doing anything with our query string. Let&rsquo;s go ahead and serialize it!</p>
+
+<h3 id="serializing-query-strings">Serializing query strings</h3>
+
+<p>To work with any kind of request object or data, we need to import  <code>request</code>  from flask:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request</code></pre></div>
+
+<p>Just like we&rsquo;ve used  <code>request.form</code>  for serializing form data and  <code>request.get_json()</code>  to serialize incoming JSON data, we use  <code>request.args</code>  to parse and serialize the query string into a Python object.</p>
+
+<p>Let&rsquo;s store our query string object as a variable called  <code>args</code>  and print them:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+
+    args <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>args
+
+    <span style="color:#66d9ef">print</span>(args)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No query string received&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+
+<p>Save and reload that same URL with the query string, you&rsquo;ll see the following in your terminal:</p>
+
+<p><code>ImmutableMultiDict([('foo', 'foo'), ('bar', 'bar'), ('baz', 'baz'), ('title', 'query strings with flask')])</code></p>
+
+<p><code>request.args</code>  has parsed our query string and conveniently converted it into an  <code>ImmutableMultiDict</code>  which we can treat just like a Python dictionary, for example, change  <code>print(args)</code>  for the following:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> args<span style="color:#f92672">.</span>items():
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{k}: {v}&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+
+<p>You&rsquo;ll see our keys and values printed out to the console:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">foo: foo
+bar: bar
+baz: baz
+title: query strings <span style="color:#66d9ef">with</span> flask<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+
+<p>Just like a dictionary, we can now pluck out values by their key:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+
+    args <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>args
+
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;foo&#34;</span> <span style="color:#f92672">in</span> args:
+        foo <span style="color:#f92672">=</span> args[<span style="color:#e6db74">&#34;foo&#34;</span>]
+
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;bar&#34;</span> <span style="color:#f92672">in</span> args:
+        bar <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;bar&#34;</span>)
+
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;baz&#34;</span> <span style="color:#f92672">in</span> args:
+        baz <span style="color:#f92672">=</span> args[<span style="color:#e6db74">&#34;baz&#34;</span>]
+
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;title&#34;</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>args:
+        title <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>args<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;title&#34;</span>)
+
+    <span style="color:#66d9ef">print</span>(foo, bar, baz, title)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No query string received&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+
+<p>However at this point we&rsquo;ll get an error if we don&rsquo;t send a query string with values for  <code>foo</code>,  <code>bar</code>,  <code>baz</code>  and  <code>title</code>.</p>
+
+<p>Let&rsquo;s refactor our code to mitigate any potantial errors and return a formatted query string to the client:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>args:
+
+        <span style="color:#75715e"># We have our query string nicely serialized as a Python dictionary</span>
+        args <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>args
+
+        <span style="color:#75715e"># We&#39;ll create a string to display the parameters &amp; values</span>
+        serialized <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">.</span>join(f<span style="color:#e6db74">&#34;{k}: {v}&#34;</span> <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>args<span style="color:#f92672">.</span>items())
+
+        <span style="color:#75715e"># Display the query string to the client in a different format</span>
+        <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;(Query) {serialized}&#34;</span>, <span style="color:#ae81ff">200</span>
+
+    <span style="color:#66d9ef">else</span>:
+
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No query string received&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+
+<p>If you re-submit the URL, you&rsquo;ll see:</p>
+
+<p><code>(Query) foo: foo, bar: bar, baz: baz, title: query strings with flask</code></p>
+
+<p>And that pretty much wraps things up for query strings with Flask!</p>
+
+<h3 id="extras">Extras</h3>
+
+<p>Although I&rsquo;ve not found much use for them in the past, the  <code>request</code>  object also provides us with a few more features for working with query strings.</p>
+
+<p><code>request.query_string</code>  will return the query string, for example:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+
+    <span style="color:#66d9ef">print</span>(request<span style="color:#f92672">.</span>query_string)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+
+<p>Will return:</p>
+
+<p><code>b'foo=foo&amp;bar=bar&amp;baz=baz&amp;title=query+strings+with+flask'</code></p>
+
+<p><code>request.values</code>  will return a  <code>CombinedMultiDict</code>  which comines  <code>args</code>  with  <code>form</code>, for example:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+
+    <span style="color:#66d9ef">print</span>(request<span style="color:#f92672">.</span>values)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks&#34;</span>, <span style="color:#ae81ff">200</span><span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+
+<p>Returns:</p>
+
+<p><code>CombinedMultiDict([ImmutableMultiDict([('foo', 'foo'), ('bar', 'bar'), ('baz', 'baz'), ('title', 'query strings with flask')]), ImmutableMultiDict([])])</code></p>
+
+<p>Not something I&rsquo;ve used in the past but can imagine it would be useful to submit a form with query string parameters in the URL.</p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>Query strings are a convenient way to pass arguments to your application and Flask makes light work of quickly parsing them into something we can work with.</p>
+
+<p>POST requests don&rsquo;t typically include a query string as they tend to include data that you want to keep within the request body, so you&rsquo;ll mostly be using them with GET requests.</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="[https://pythonise.com/series/learning-flask/flask-query-strings](https://pythonise.com/series/learning-flask/flask-query-strings)">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-11.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#query-strings-in-flask-learning-flask-ep-11">Query strings in Flask | Learning Flask Ep. 11</a>
+<ul>
+<li>
+<ul>
+<li><a href="#anatomy-of-a-query-string">Anatomy of a query string</a></li>
+<li><a href="#flask-query-strings">Flask query strings</a></li>
+<li><a href="#serializing-query-strings">Serializing query strings</a></li>
+<li><a href="#extras">Extras</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

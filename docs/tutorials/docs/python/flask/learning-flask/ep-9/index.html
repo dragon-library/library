@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.9 Working with JSON data"><meta property="og:title" content="Ep.9 Working with JSON data" />
+<meta property="og:description" content="Working with JSON data | Learning Flask Ep. 9 Handle incoming, parsing and returning JSON data with Flask!
+In this part of the &ldquo;Learning Flask&rdquo; series, we&rsquo;re going to be working with JSON data.
+JSON is an extremely popular format for sending and receiving data over the web. Flask provides us with some great tools to make light work of handling JSON data.
+In this guide, we&rsquo;re going to quickly cover how to handle incoming JSON data and return JSON data to the client." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-9/" />
+
+<title>Ep.9 Working with JSON data | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/"  class="active">
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.9 Working with JSON data</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="working-with-json-data-learning-flask-ep-9">Working with JSON data | Learning Flask Ep. 9</h1>
+
+<p>Handle incoming, parsing and returning JSON data with Flask!</p>
+
+<p>In this part of the &ldquo;Learning Flask&rdquo; series, we&rsquo;re going to be working with JSON data.</p>
+
+<p>JSON is an extremely popular format for sending and receiving data over the web. Flask provides us with some great tools to make light work of handling JSON data.</p>
+
+<p>In this guide, we&rsquo;re going to quickly cover how to handle incoming JSON data and return JSON data to the client.</p>
+
+<h3 id="handling-json">Handling JSON</h3>
+
+<p>Let&rsquo;s start out with a new route. This route will receive some JSON, parse the data, do some validation and return a new JSON response.</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks!&#34;</span></code></pre></div>
+
+<p>We&rsquo;re going to be POSTing data to the server so we need to pass the  <code>methods</code>  argument to the  <code>@app.route()</code>  decorator, along with the HTTP methods we want to allow for this route:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks!&#34;</span> </code></pre></div>
+
+<p>Working with any kind of request in Flask requires importing the  <code>request</code>  object. Go ahead and import it:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request</code></pre></div>
+
+<p>Now we need a method to handle the incoming JSON. Flask provides the handy  <code>request.get_json()</code>  method, which parses any incoming JSON data into a Python dictionary.</p>
+
+<p>Let&rsquo;s store our incoming JSON data in a variable called  <code>req</code>  and print it out to the terminal:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+
+    req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+
+    <span style="color:#66d9ef">print</span>(req)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks!&#34;</span></code></pre></div>
+
+<p>Whilst we&rsquo;re here, let&rsquo;s explicitly set an HTTP response by passing it to  <code>return</code>:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+
+    req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+
+    <span style="color:#66d9ef">print</span>(req)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks!&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+
+<h3 id="posting-json">POSTing JSON</h3>
+
+<p>Let&rsquo;s post some data to our route!</p>
+
+<blockquote>
+<p>Tip - We&rsquo;re going to use the free  <a href="https://www.getpostman.com/downloads/">Postman</a>  app to make our requests, however, feel free to use an alternative such as curl or write a JavaScript function and call it from the browser (You&rsquo;ll learn how to do this in the next episode!)</p>
+</blockquote>
+
+<p>Go ahead and create a new  <code>POST</code>  request to the following URL:</p>
+
+<p><strong>Postman URL</strong></p>
+
+<p><code>http://127.0.0.1:5000/json</code></p>
+
+<p>We need to create some JSON data in the body of our request. Go ahead and click the  <code>raw</code>  tab and select  <code>JSON (application/json)</code>  from the dropdown list on the right.</p>
+
+<p>Let&rsquo;s just create a simple JSON object with 2 fields for now:</p>
+
+<p><strong>Postman body</strong></p>
+
+<p><code>{
+    &quot;name&quot;: &quot;Julian&quot;,
+    &quot;message&quot;: &quot;Posting JSON data to Flask!&quot;
+}</code></p>
+
+<p>If you&rsquo;re using  <a href="https://curl.haxx.se/">cURL</a>:</p>
+
+<p><strong>cURL request</strong></p>
+
+<p><code>curl --header &quot;Content-Type: application/json&quot; --request POST --data '{&quot;name&quot;:&quot;Julian&quot;,&quot;message&quot;:&quot;Posting JSON data to Flask!&quot;}' http://127.0.0.1:5000/json</code></p>
+
+<p>Go ahead and click the Send button and look at the bottom of the app for the response body.</p>
+
+<p>You&rsquo;ll see:</p>
+
+<p><strong>Postman response body</strong></p>
+
+<p><code>Thanks!</code></p>
+
+<p>Now take a look in your terminal, you&rsquo;ll see:</p>
+
+<p><strong>Terminal</strong></p>
+
+<p><code>{'name': 'Julian', 'message': 'Posting JSON data to Flask!'}</code></p>
+
+<p>Awesome, We&rsquo;ve posted some JSON data to Flask and received a response. You&rsquo;ll also notice the response  <code>status</code>  at the bottom of the Postman app with  <code>200 OK</code>. Just as we told our route to do!</p>
+
+<h3 id="parsing-incoming-json">Parsing incoming JSON</h3>
+
+<p>We know using the  <code>get_json()</code>  method on the  <code>request</code>  object will return a Python dictionary with our JSON fields serielized into key/value pairs.</p>
+
+<p>We can also validate and perform some conditional testing on our incoming request to determine if the body contains JSON data or not using the  <code>is_json</code>  check provided by Flask.</p>
+
+<p>Let&rsquo;s check that our response is JSON and return a response depending on what we receive:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+
+    <span style="color:#75715e"># Validate the request body contains JSON</span>
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>is_json:
+
+        <span style="color:#75715e"># Parse the JSON into a Python dictionary</span>
+        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+
+        <span style="color:#75715e"># Print the dictionary</span>
+        <span style="color:#66d9ef">print</span>(req)
+
+        <span style="color:#75715e"># Return a string along with an HTTP status code</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;JSON received!&#34;</span>, <span style="color:#ae81ff">200</span>
+
+    <span style="color:#66d9ef">else</span>:
+
+        <span style="color:#75715e"># The request body wasn&#39;t JSON so return a 400 HTTP status code</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Request was not JSON&#34;</span>, <span style="color:#ae81ff">400</span></code></pre></div>
+We perform a conditional check using the  <code>if</code>  statement on the incoming request object to determine if the request body contains JSON or not.</p>
+
+<p>If the request contains JSON, we&rsquo;re printing it and returning the  <code>JSON received!</code>  string along with a  <code>200</code>  status code to indicate a successful transaction.</p>
+
+<p>If the request body doesn&rsquo;t contain JSON, we&rsquo;re returning  <code>Request was not JSON</code>  along with a  <code>400</code>  HTTP status code to let the client know there was a bad request.</p>
+
+<p>Go ahead and make another POST request in the Postman app to see the updates  <code>JSON received!</code>  response.</p>
+
+<p><strong>Postman response body</strong></p>
+
+<p><code>JSON received!</code></p>
+
+<p>Now, change the dropdown menu in the Postman app from  <code>JSON (applicationjson)</code>  to  <code>text</code>  and click send to see the  <code>Request was not JSON</code>  message in the response, along with the  <code>400 BAD REQUEST</code>  error.</p>
+
+<p><strong>Postman response body</strong></p>
+
+<p><code>Request was not JSON</code></p>
+
+<p>Alright! So now you know how to handle incoming JSON. Let&rsquo;s go ahead and return some!</p>
+
+<h3 id="returning-json">Returning JSON</h3>
+
+<p>Again, Flask makes returning JSON a breeze using the the built in  <code>jsonify</code>  and  <code>make_response</code>  functions.</p>
+
+<p>Let&rsquo;s go ahead and import them:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><code>from flask import jsonify, make_response</code></p>
+
+<p>Let&rsquo;s refactor our  <code>/json</code>  route to use  <code>jsonify</code>  and  <code>make_response</code>. We&rsquo;ll discuss them after:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>is_json:
+
+        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+
+        response_body <span style="color:#f92672">=</span> {
+            <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;JSON received!&#34;</span>,
+            <span style="color:#e6db74">&#34;sender&#34;</span>: req<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;name&#34;</span>)
+        }
+
+        res <span style="color:#f92672">=</span> make_response(jsonify(response_body), <span style="color:#ae81ff">200</span>)
+
+        <span style="color:#66d9ef">return</span> res
+
+    <span style="color:#66d9ef">else</span>:
+
+        <span style="color:#66d9ef">return</span> make_response(jsonify({<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Request body must be JSON&#34;</span>}), <span style="color:#ae81ff">400</span>)</code></pre></div>
+We&rsquo;ve created a new  <code>response_body</code>  object using a dictionary and passed it some values.</p>
+
+<p>We then use the  <code>make_response()</code>  function to prepare a response, to which we&rsquo;ve provided 2 arguments:</p>
+
+<ul>
+<li><code>jsonify(*args, **kwargs)</code>  wraps Python&rsquo;s own  <code>json.dumps()</code>  method and will serialize Python strings, lists or dicts as a JSON string.</li>
+<li><code>200</code>  is the HTTP status code we want to return.</li>
+</ul>
+
+<blockquote>
+<p>Tip -  <code>jsonify(1, 2, 3)</code>  and  <code>jsonify([1, 2, 3])</code>  will both serialize to  <code>[1, 2, 3]</code></p>
+</blockquote>
+
+<p>By passing both of these arguments to the  <code>make_response()</code>  function, we can create our response ahead of returning it by storing it as a variable. In our case, the  <code>res</code>  variable.</p>
+
+<p>We&rsquo;ve also done the same under the  <code>else</code>  conditional, just with it all on one line to save some space.</p>
+
+<p>Go ahead and repeat the same process in the Postman app or cURL to see the newly formatted responses.</p>
+
+<p>Posting  <code>JSON (application/json)</code>  will return:</p>
+
+<p><strong>Postman response body</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;JSON received!&#34;</span>,
+    <span style="color:#f92672">&#34;sender&#34;</span>: <span style="color:#e6db74">&#34;Julian&#34;</span>
+} </code></pre></div>
+Changing the dropdown to  <code>Text</code>  and posting will return:</p>
+
+<p><strong>Postman response body</strong></p>
+
+<p><code>{
+    &quot;message&quot;: &quot;Request body must be JSON&quot;
+}</code></p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>Flask makes working with JSON easy, providing many useful functions and methods such as  <code>is_json</code>,  <code>get_json()</code>  and  <code>jsonify()</code>, along with helpful functions such as  <code>make_response()</code>. Creating API&rsquo;s, webhooks and handling JSON is only a few lines of code away!</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="https://pythonise.com/series/learning-flask/working-with-json-in-flask">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-9.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#working-with-json-data-learning-flask-ep-9">Working with JSON data | Learning Flask Ep. 9</a>
+<ul>
+<li>
+<ul>
+<li><a href="#handling-json">Handling JSON</a></li>
+<li><a href="#posting-json">POSTing JSON</a></li>
+<li><a href="#parsing-incoming-json">Parsing incoming JSON</a></li>
+<li><a href="#returning-json">Returning JSON</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
