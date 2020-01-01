@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.10 Flask and the Fetch API"><meta property="og:title" content="Ep.10 Flask and the Fetch API" />
+<meta property="og:description" content="Flask and the Fetch API | Learning Flask Ep. 10 Asynchronous requests from the client to the server using the JavaScript Fetch API
+Making asynchronus requests from the client to the server is a common feature of most modern web applications, allowing a more fluid user experience.
+In this episode of the &ldquo;Learning Flask&rdquo; series, you&rsquo;ll learn how to make asynchronus requests from the client to your application using some basic vanilla JavaScript and the Fetch API." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-10/" />
+
+<title>Ep.10 Flask and the Fetch API | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/"  class="active">
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.10 Flask and the Fetch API</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="flask-and-the-fetch-api-learning-flask-ep-10">Flask and the Fetch API | Learning Flask Ep. 10</h1>
+
+<p>Asynchronous requests from the client to the server using the JavaScript Fetch API</p>
+
+<p>Making asynchronus requests from the client to the server is a common feature of most modern web applications, allowing a more fluid user experience.</p>
+
+<p>In this episode of the &ldquo;Learning Flask&rdquo; series, you&rsquo;ll learn how to make asynchronus requests from the client to your application using some basic vanilla JavaScript and the Fetch API.</p>
+
+<p>The Fetch API supersedes XML AJAX requests, allowing a relitively clean and simple promise based way to post and fetch data to and from the server, with a simple yet powerful feature set for catching errors and bad requests.</p>
+
+<h3 id="create-a-new-route">Create a new route</h3>
+
+<p>For this example, we&rsquo;re going to be building a simple guestbook, allowing our users to post their name and message along with reading other previous entries.</p>
+
+<p>We&rsquo;ll use the Fetch API to post a new entry and a JavaScript function to render the entries to our template.</p>
+
+<p>Let&rsquo;s start with a new route called  <code>/guestbook</code>:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/guestbook&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">guestbook</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/guestbook.html&#34;</span>)</code></pre></div>
+
+<p>We&rsquo;ll need to create a new template too. Go ahead and create  <code>guestbook.html</code>  in the  <code>public</code>  directory and add the following:</p>
+
+<p><strong>app/app/templates/public/guestbook.html</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% extends &#34;public/templates/public_template.html&#34; %}
+
+{% block title %}Guestbook{% endblock %}
+
+{% block main %}
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+
+      &lt;<span style="color:#f92672">h1</span>&gt;Guestbook&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;<span style="color:#f92672">hr</span>&gt;
+
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+{% endblock %}</code></pre></div>
+
+<p>Save the files and head to  <code>/guestbook</code>  in the browser to see the new template.</p>
+
+<blockquote>
+<p>Note - We&rsquo;re using the Bootstrap 4 library for CSS</p>
+</blockquote>
+
+<p>We&rsquo;ll need some input fields for our users to fill out the guestbook.</p>
+
+<p>We&rsquo;ll add an input field for  <code>name</code>  and a textarea for  <code>message</code>  along with a button to submit their entry:</p>
+
+<p><strong>app/app/templates/public/guestbook.html</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% extends &#34;public/templates/public_template.html&#34; %}
+
+{% block title %}Guestbook{% endblock %}
+
+{% block main %}
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+
+      &lt;<span style="color:#f92672">h1</span>&gt;Guestbook&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;<span style="color:#f92672">hr</span>&gt;
+
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-3&#34;</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+          &lt;<span style="color:#f92672">label</span>&gt;Name&lt;/<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Your name&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+          &lt;<span style="color:#f92672">label</span>&gt;Message&lt;/<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;message&#34;</span> <span style="color:#a6e22e">cols</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30&#34;</span> <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Your message&#34;</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+
+        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit_message();&#34;</span>&gt;Submit message&lt;/<span style="color:#f92672">button</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+
+      &lt;<span style="color:#f92672">h3</span>&gt;Messages&lt;/<span style="color:#f92672">h3</span>&gt;
+      &lt;<span style="color:#f92672">hr</span>&gt;
+
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-3&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;messages&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+{% endblock %}
+
+{% block script %}</code></pre></div>
+
+<p>Notice we&rsquo;ve set an id attribute on the input elements and the button. We&rsquo;ll create a function to submit the data when the button is clicked, collecting the values from the input fields and posting it to our Flask app.</p>
+
+<p>We&rsquo;ve also added a new heading and a  <code>&lt;div&gt;</code>  element with the id  <code>messages</code>. We&rsquo;ll use this div to display the entries of our guestbook later.</p>
+
+<h3 id="collecting-json">Collecting JSON</h3>
+
+<p>We&rsquo;re going to wrap all of our JavaScript in a set of  <code>{% block script %} {% endblock %}</code>  tags with corresponding  <code>{% block script %} {% endblock %}</code>  tags in our base template.</p>
+
+<p>Let&rsquo;s create a function to collect the input values and create a new JSON object when the button is clicked:</p>
+
+<p><strong>app/app/templates/public/guestbook.html</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% block script %}
+
+&lt;<span style="color:#f92672">script</span>&gt;
+
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">submit_message</span>() {
+
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;name&#34;</span>);
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;message&#34;</span>);
+
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entry</span> <span style="color:#f92672">=</span> {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">value</span>,
+            <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">value</span>
+        };
+    }
+
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+{% endblock %}</code></pre></div>
+
+<p>We need to attach this function to the submit button. Go ahead and refactor the  <code>&lt;button&gt;</code>  element to the following:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit_message();&#34;</span>&gt;Submit message&lt;/<span style="color:#f92672">button</span>&gt;</code></pre></div></p>
+
+<p>We&rsquo;re calling the  <code>submit_message()</code>  function when someone clicks the button, fetching the input values and storing them in a JSON object called  <code>entry</code>.</p>
+
+<h3 id="creating-a-json-handler-in-flask">Creating a JSON handler in Flask</h3>
+
+<p>Before we attempt to post any data to our app, we need to create a handler for it.</p>
+
+<p>We&rsquo;re submitting data to our app so we&rsquo;ll need to import  <code>request</code>  from flask.</p>
+
+<p>We&rsquo;re also going to be creating a JSON response so go ahead and import  <code>jsonify</code>  from flask too.</p>
+
+<p>We will also create a response object, so go ahead and import  <code>make_response</code>  from flask.</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request, jsonify, make_response<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+Go ahead and create the following route in your Flask app:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/guestbook/create-entry&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_entry</span>():
+
+    req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+
+    <span style="color:#66d9ef">print</span>(req)
+
+    res <span style="color:#f92672">=</span> make_response(jsonify({<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;OK&#34;</span>}), <span style="color:#ae81ff">200</span>)
+
+    <span style="color:#66d9ef">return</span> res
+  </code></pre></div></p>
+
+<p>For now, we&rsquo;ll just use the  <code>print()</code>  function to print our request data to the terminal and return a simple JSON response.</p>
+
+<h3 id="fetch-setup">Fetch setup</h3>
+
+<p>Let&rsquo;s go back to  <code>guestbook.html</code>  and work on the  <code>submit_message()</code>  function to post some data to our app.</p>
+
+<p>Our fetch function is initially going to look like this:</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">$</span>{window.<span style="color:#a6e22e">origin</span>}<span style="color:#f92672">/</span><span style="color:#a6e22e">guestbook</span><span style="color:#f92672">/</span><span style="color:#a6e22e">create</span><span style="color:#f92672">-</span><span style="color:#a6e22e">entry</span>, {
+    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+    <span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;include&#34;</span>,
+    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">entry</span>),
+    <span style="color:#a6e22e">cache</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;no-cache&#34;</span>,
+    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Headers</span>({
+      <span style="color:#e6db74">&#34;content-type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>
+    })
+  })
+  .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">response</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">200</span>) {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Looks like there was a problem. Status code: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+      <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>().<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+    });
+  })
+  .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">error</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Fetch error: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>);
+});
+</code></pre></div>
+Let&rsquo;s take a look at our JavaScript so far and take a quick look at what we&rsquo;re doing:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{<span style="color:#f92672">%</span> <span style="color:#a6e22e">block</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">%</span>}
+
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">submit_message</span>() {
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;name&#34;</span>);
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;message&#34;</span>);
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">entry</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">value</span>,
+      <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">value</span>
+    };
+
+    <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span>window.<span style="color:#a6e22e">origin</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/guestbook/create-entry`</span>, {
+      <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+      <span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;include&#34;</span>,
+      <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">entry</span>),
+      <span style="color:#a6e22e">cache</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;no-cache&#34;</span>,
+      <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Headers</span>({
+        <span style="color:#e6db74">&#34;content-type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>
+      })
+    })
+      .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">200</span>) {
+          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Looks like there was a problem. Status code: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+          <span style="color:#66d9ef">return</span>;
+        }
+        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>().<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+        });
+      })
+      .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">error</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Fetch error: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>);
+      });
+
+  }
+
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+
+{<span style="color:#f92672">%</span> <span style="color:#a6e22e">endblock</span> <span style="color:#f92672">%</span>}
+</code></pre></div></p>
+
+<h3 id="fetch-explained">Fetch explained</h3>
+
+<p><code>fetch()</code>  takes 2 arguments, a URL or  <code>input</code>  and a set of options or  <code>init</code>  as descibed in the fetch documentation.</p>
+
+<p>We&rsquo;ve provided the URL to our Flask JSON handler using  <code>${window.origin}</code>  followed by our URL, along with an init object containing several keys and values to setup the type of request we want to make. In our case:</p>
+
+<ul>
+<li><code>method: &quot;POST&quot;</code>  As we&rsquo;re posting data to the server</li>
+<li><code>credentials: &quot;include&quot;</code>  To send any cookies from the current domain/client to the server</li>
+<li><code>body: JSON.stringify(entry)</code>  Converts our JSON object into a string</li>
+<li><code>cache: &quot;no-cache&quot;</code>  We&rsquo;re not interested in any cached data</li>
+<li><code>headers: new Headers({&quot;content-type&quot;: &quot;application/json&quot;})</code>  Adds a header to tell the server we&rsquo;re sending JSON</li>
+</ul>
+
+<p>You&rsquo;ll then see we&rsquo;ve got  <code>.then()</code>  chained to our  <code>fetch()</code>  request which does some error handling for us, depending on what status code the server responds with. We&rsquo;re going to leave that as is for now.</p>
+
+<p><code>response.json()</code>  parses returned JSON from a string to a JSON object which we can access with the  <code>data</code>  variable passed into the callback function chained to it using  <code>.then()</code>! 😅</p>
+
+<p>The final block is a  <code>.catch()</code>  containing a callback function to catch and handle any errors with our fetch request.</p>
+
+<blockquote>
+<p>Tip - The more you use fetch the more it starts to make sense!</p>
+</blockquote>
+
+<p>Let&rsquo;s post some data to our route.</p>
+
+<h3 id="posting-with-fetch">Posting with Fetch</h3>
+
+<p>Save the file, reload the browser, fill out the name and message fields and submit the form. You should see a dictionary printed in your terminal along with a JSON response printed to the browser console.</p>
+
+<p>Let&rsquo;s refactor the code in our view to return the same object send to us from the client:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/guestbook/create-entry&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_entry</span>():
+
+    req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+
+    <span style="color:#66d9ef">print</span>(req)
+
+    res <span style="color:#f92672">=</span> make_response(jsonify(req), <span style="color:#ae81ff">200</span>)
+
+    <span style="color:#66d9ef">return</span> res</code></pre></div>
+All we do it pass the  <code>req</code>  variable to  <code>jsonify()</code>, which will serialize the Python dictionary into a JSON string.</p>
+
+<p>If you now fill out the form and send another request to the app, you&rsquo;ll see down in the developer tools console our route is now just bouncing back what was sent to it!</p>
+
+<h3 id="takeaways">Takeaways</h3>
+
+<p>The main takeaway from this episode is that asynchronously sending and receiving data betwen the client and the server is relitively simple using the Fetch API.</p>
+
+<p>In the next part of this series, we&rsquo;ll complete our guestbook app where you&rsquo;ll see more of the Fetch API in action! We&rsquo;ll be saving entries and reloading new entries in the background without having to reload the page.</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="https://pythonise.com/series/learning-flask/flask-and-fetch-api">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-10.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#flask-and-the-fetch-api-learning-flask-ep-10">Flask and the Fetch API | Learning Flask Ep. 10</a>
+<ul>
+<li>
+<ul>
+<li><a href="#create-a-new-route">Create a new route</a></li>
+<li><a href="#collecting-json">Collecting JSON</a></li>
+<li><a href="#creating-a-json-handler-in-flask">Creating a JSON handler in Flask</a></li>
+<li><a href="#fetch-setup">Fetch setup</a></li>
+<li><a href="#fetch-explained">Fetch explained</a></li>
+<li><a href="#posting-with-fetch">Posting with Fetch</a></li>
+<li><a href="#takeaways">Takeaways</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

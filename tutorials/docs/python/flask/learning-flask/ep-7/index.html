@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.7 Working with forms in Flask"><meta property="og:title" content="Ep.7 Working with forms in Flask" />
+<meta property="og:description" content="Working with forms in Flask | Learning Flask Ep. 7 Creating forms, posting data to views and working with form data in Flask
+In this part of the Learning Flask series, You&rsquo;ll learn how to post forms to a Flask view and work with the incoming data.
+Forms (or input data in general) play a critical role in any kind of website or web allication as we need a way for the user to communicate with our app!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-7/" />
+
+<title>Ep.7 Working with forms in Flask | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/"  class="active">
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.7 Working with forms in Flask</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="working-with-forms-in-flask-learning-flask-ep-7">Working with forms in Flask | Learning Flask Ep. 7</h1>
+
+<p>Creating forms, posting data to views and working with form data in Flask</p>
+
+<p>In this part of the Learning Flask series, You&rsquo;ll learn how to post forms to a Flask view and work with the incoming data.</p>
+
+<p>Forms (or input data in general) play a critical role in any kind of website or web allication as we need a way for the user to communicate with our app!</p>
+
+<p>In this example, we&rsquo;ll start with a simple account sign-up form.</p>
+
+<h3 id="creating-a-new-route">Creating a new route</h3>
+
+<p>Let&rsquo;s get started by creating a new route in  <code>views.py</code>. We&rsquo;ll give it the URL  <code>sign-up</code>.</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)</code></pre></div>
+We&rsquo;re going to be accepting  <code>POST</code>  requests on this route so we need to pass another argument to  <code>@app.route</code></p>
+
+<p>We do this by passing the  <code>methods</code>  argument, along with a list of methods as the value.</p>
+
+<p>Flask supports all of the common HTTP methods including:</p>
+
+<ul>
+<li><code>GET</code></li>
+<li><code>POST</code></li>
+<li><code>PUT</code></li>
+<li><code>DELETE</code></li>
+</ul>
+
+<p>Let&rsquo;s privide our route with the  <code>methods</code>  argument and a list of methods we want the route to handle:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)</code></pre></div>
+&gt; Tip - Flask routes support  <code>GET</code>  requests by default, however must be declared if the  <code>methods</code>  argument is provided</p>
+
+<p>We need to create a new template so go ahead and create a new file called  <code>sign_up.html</code>  and place it in the  <code>templates/public</code>  directory.</p>
+
+<p>Open up  <code>sign_up.html</code>  in your editor and add the following:</p>
+
+<p><strong>app/app/templates/public/sign_up.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{<span style="color:#f92672">%</span> extends <span style="color:#e6db74">&#34;public/templates/public_template.html&#34;</span> <span style="color:#f92672">%</span>}
+
+{<span style="color:#f92672">%</span> block title <span style="color:#f92672">%</span>}Sign up{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}
+
+{<span style="color:#f92672">%</span> block main <span style="color:#f92672">%</span>}
+
+<span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span>h1<span style="color:#f92672">&gt;</span>Sign up<span style="color:#f92672">&lt;/</span>h1<span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+
+{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}</code></pre></div></p>
+
+<p>Save the file and open go to the  <code>/sign-up</code>  route in your browser. You should see the new page render.</p>
+
+<p>Let&rsquo;s create a form and add some input fields to our template. We&rsquo;re going to add fields for username, email and pasword. Go ahead and enter the following just under the  <code>&lt;hr&gt;</code>  tag:</p>
+
+<p><strong>app/app/templates/public/sign_up.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sign-up&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;Username&lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Select a username&#34;</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;Email&lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter your email&#34;</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;Password&lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create a password&#34;</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;/<span style="color:#f92672">form</span>&gt;` 
+
+Lastly, we need to add a submit button. Add it just befor the closing  `&lt;/<span style="color:#f92672">form</span>&gt;`  tag:
+
+**app/app/templates/public/sign_up.html**
+
+`&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Sign up&lt;/<span style="color:#f92672">button</span>&gt;` 
+
+Your template should now look something like this:
+
+**app/app/templates/public/sign_up.html**
+
+`{% extends &#34;public/templates/public_template.html&#34; %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block main %}
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+
+      &lt;<span style="color:#f92672">h1</span>&gt;Sign up&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;<span style="color:#f92672">hr</span>&gt;
+
+      &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sign-up&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+          &lt;<span style="color:#f92672">label</span>&gt;Username&lt;/<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Select a username&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+          &lt;<span style="color:#f92672">label</span>&gt;Email&lt;/<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter your email&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+          &lt;<span style="color:#f92672">label</span>&gt;Password&lt;/<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create a password&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+
+        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Sign up&lt;/<span style="color:#f92672">button</span>&gt;
+
+      &lt;/<span style="color:#f92672">form</span>&gt;
+
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+{% endblock %}` </code></pre></div>
+&gt; Tip - To access form data in Flask, you must provide the  <code>name</code>  attribute in each of the forms  <code>input</code>  tags</p>
+
+<p>Pay attention to the opening  <code>&lt;form&gt;</code>  tag.</p>
+
+<p>We pass the URL of the route we want to post the form data to in the  <code>action</code>  attribute of the form. In our case  <code>action=&quot;/sign-up&quot;</code>.</p>
+
+<p>You&rsquo;ll also need to pass the request method to the  <code>method</code>  attribute in the opening  <code>&lt;form&gt;</code>  tag. We&rsquo;ve added  <code>method=&quot;POST&quot;</code>  because we&rsquo;re POSTing data to the server.</p>
+
+<p>Save the file and refresh the page to see your form.</p>
+
+<h3 id="posting-form-data-to-a-route">Posting form data to a route</h3>
+
+<p>Go ahead and hit the submit button and pay attention to your terminal or console. You&rsquo;ll see:</p>
+
+<p><code>127.0.0.1 - - [06/Feb/2019 22:00:25] &quot;POST /sign-up HTTP/1.1&quot; 200 -</code></p>
+
+<p>Perfect, our form is posting to the  <code>sign-up</code>  route on our server!</p>
+
+<p>Let&rsquo;s jump back into  <code>views.py</code>  and start working with our form data.</p>
+
+<h3 id="handling-form-data">Handling form data</h3>
+
+<p>Before we can access any of the request data, we need to import  <code>request</code>  from flask.</p>
+
+<p>At the top of  <code>views.py</code>, go ahead and import  <code>request</code>  from  <code>flask</code>. We&rsquo;ll also import  <code>redirect</code></p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request, redirect<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+To access form data in our route, we use  <code>request.form</code>.</p>
+
+<p>Let&rsquo;s capture our incoming form data to a variable called  <code>req</code>, but first, we should add a conditional to validate we&rsquo;re receiving  <code>POST</code>  data.</p>
+
+<p>We can do so by testing  <code>request.method</code>  for the  <code>&quot;POST&quot;</code>  method:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form
+
+        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+The  <code>redirect</code>  function, amongst many other things allows us to redirect the client to different parts our app. We&rsquo;ll be exploring  <code>redirect</code>  in more detail in a future part of this series.</p>
+
+<p>In this case, we&rsquo;re instructing  <code>redirect</code>  to redirect the client to the URL of the request.</p>
+
+<p>If you were to  <code>print(type(req))</code>  you&rsquo;ll see that the  <code>request.form</code>  object a special type called  <code>werkzeug.datastructures.ImmutableMultiDict</code>  which we can essentially treat it like a dictionary.</p>
+
+<p>Let&rsquo;s just  <code>print(req)</code>  and inspect the results.</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form
+        <span style="color:#66d9ef">print</span>(req)
+
+        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)</code></pre></div>
+Depending on whether you supplied any input, you&rsquo;ll see:</p>
+
+<p><code>ImmutableMultiDict([('username', ''), ('email', ''), ('password', '')])</code></p>
+
+<p>We can treat our  <code>req</code>  object just like a normal Python dictionary, for example, to access the individual inputs from the form, we can use any of the following:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form
+
+        username <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;username&#34;</span>)
+        email <span style="color:#f92672">=</span> req[<span style="color:#e6db74">&#34;email&#34;</span>]
+        password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;password&#34;</span>]
+
+        <span style="color:#75715e"># You could also use </span>
+        password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;password&#34;</span>)
+
+        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+You could bypass capturing and storing the form data as a variable with the following:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        username <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;username&#34;</span>)
+        email <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;email&#34;</span>)
+        password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;password&#34;</span>)
+
+        <span style="color:#75715e"># Alternatively</span>
+
+        username <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;username&#34;</span>]
+        email <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;email&#34;</span>]
+        password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;password&#34;</span>]
+
+        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)</code></pre></div>
+We&rsquo;ve now got each of the form values stored as a Python variable to do as we please.</p>
+
+<h3 id="validating-form-data">Validating form data</h3>
+
+<p>There&rsquo;s lots of things we could do to validate, however they&rsquo;re very much application specific. Let&rsquo;s keep it simple and just validate that we&rsquo;ve got some data for all 3 fields. We&rsquo;ll cover validating a sign up form later in this series.</p>
+
+<p>Let&rsquo;s iterate through the keys and values of our  <code>req</code>  object and look for missing fields, then return a response and message to the user:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form
+
+        missing <span style="color:#f92672">=</span> list()
+
+        <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> req<span style="color:#f92672">.</span>items():
+            <span style="color:#66d9ef">if</span> v <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>:
+                missing<span style="color:#f92672">.</span>append(k)
+
+        <span style="color:#66d9ef">if</span> missing:
+            feedback <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#34;Missing fields for {&#39;, &#39;.join(missing)}&#34;</span>
+            <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>, feedback<span style="color:#f92672">=</span>feedback)
+
+        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+We&rsquo;ll add a message in  <code>sign_up.html</code>  to give some feedback to the user. Open up  <code>sign_up.html</code>  and add the following just under the  <code>&lt;button&gt;</code>  tag inside the form:</p>
+
+<p><strong>app/app/templates/public/sign_up.html</strong></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% if feedback %}
+&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-danger float-right&#34;</span>&gt;{{ feedback }}&lt;/<span style="color:#f92672">p</span>&gt;
+{% endif %}` </code></pre></div>
+Save and close the file.</p>
+
+<p>Refresh your browser and submit an empty form. You should see the error message appear to the bottom right of the form. When you submit values for all 3 fields, the feedback message doesn&rsquo;t appear.</p>
+
+<p>We could use the  <code>required</code>  attribute in the HTML form and let the browser do the validation for us but that&rsquo;s not much fun is it. And besides, this series is about Flask!</p>
+
+<p>In the next part, you&rsquo;ll be learning about dynamic URL&rsquo;s</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="https://pythonise.com/series/learning-flask/flask-working-with-forms">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-7.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#working-with-forms-in-flask-learning-flask-ep-7">Working with forms in Flask | Learning Flask Ep. 7</a>
+<ul>
+<li>
+<ul>
+<li><a href="#creating-a-new-route">Creating a new route</a></li>
+<li><a href="#posting-form-data-to-a-route">Posting form data to a route</a></li>
+<li><a href="#handling-form-data">Handling form data</a></li>
+<li><a href="#validating-form-data">Validating form data</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

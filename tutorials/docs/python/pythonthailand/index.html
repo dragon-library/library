@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python Thailand"><meta property="og:title" content="Python Thailand" />
+<meta property="og:description" content="Python Thailand Python Thailand - แหล่งเรียนรู้ภาษาไพธอนสำหรับคนไทย print(&quot;Hello Thai Pythonista!&quot;)  ยินดีต้อนรับเข้าสู่ Python Thailand เว็บไซต์ที่เปรียบเสมือนเป็นประตูบานแรกสำหรับคนที่ต้องการก้าวเข้ามาสู่จักรวาลของภาษาไพธอน เว็บไซต์นี้ได้รวบรวมแหล่งข้อมูลที่เกี่ยวข้องกับภาษาไพธอนที่ถูกเขียนขึ้นในภาษาไทย ไม่ว่าจะเป็นทั้งการสอนไพธอน เว็บบล็อกไพธอน รวมถึงวิดีโอที่เกี่ยวกับไพธอนต่าง ๆ ไพธอนนั้นมีประโยชน์มากมาย ไพธอนเปรียบเสมือนไม้กายสิทธิ์ที่สามารถช่วยให้เราสร้างสรรค์นวัตกรรมหรือสิ่งใหม่ ๆ ให้กับมวลมนุษยชาติได้
+ด้วยเนื้อหาที่รวบรวมในเว็บไซต์นี้ คุณจะสามารถเขียนโปรแกรมด้วยภาษาไพธอนได้ เริ่มตั้งแต่การสร้างแอพพลิเคชันอย่างง่ายไปจนถึงโปรแกรมการคำนวณที่ซับซ้อน คุณจะเข้าใจหลักการสำคัญในการเขียนโปรแกรมทั้งในพื้นฐานทั้งหมดและในขั้นสูงที่เป็นการเขียนโปรแกรมแบบเชิงวัตถุ คุณจะได้รู้จักกับเครื่องมือที่ใช้ในการพัฒนาโปรแกรมหลากหลายรูปแบบ ซึ่งเนื้อหาเหล่านี้เป็นพื้นฐานที่สำคัญที่จะทำให้คุณสามารถนำไปพัฒนาทักษะการเขียนโปรแกรมภาษาไพธอน ของคุณในขั้นสูงต่อไป เช่น การพัฒนาเว็บไซต์ การสร้างเกม ฐานข้อมูล เน็ตเวิร์ค การจัดการกราฟฟิค
+ภาษาไพธอน  ประวัติและต้นกำเนิด ตราสัญลักษณ์ของภาษาไพธอน ปรัชญาของไพธอน เกร็ดความรู้เกี่ยวกับไพธอน ทำไมต้องไพธอน ความสำเร็จของไพธอน   ดาวน์โหลดไพธอนและเครื่องมืออื่น ๆ  เริ่มต้นใช้งานไพธอน ระบบปฏิบัติการที่รองรับ ดาวน์โหลดไพธอน การติดตั้งไพธอน โปรแกรมแก้ไขข้อความสำหรับเขียนภาษาไพธอน ไลบรารี่และแพคเกจ   เนื้อหาไพธอน เลือกระดับความยากของเนื้อหา
+ เริ่มต้น (Beginner) ปานกลาง (Intermediate) ขั้นสูง (Advanced)   โจทย์และการแก้ปัญหา  ระดับพื้นฐาน ระดับปานกลาง ระดับยาก โจทย์แข่งขัน คำถามสอบสัมภาษณ์งาน   หนังสือแนะนำ  Python ๑๐๑ คณะวิศวกรรมศาสตร์ จุฬา ฯ เชี่ยวชาญการเขียนโปรแกรมด้วยไพธอน ผศ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/pythonthailand/" />
+
+<title>Python Thailand | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/"  class="active">
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python Thailand</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-thailand-https-python-thailand-github-io"><a href="https://python-thailand.github.io/">Python Thailand</a></h1>
+
+<h2 id="python-thailand-แหล-งเร-ยนร-ภาษาไพธอนสำหร-บคนไทย"><strong>Python Thailand - แหล่งเรียนรู้ภาษาไพธอนสำหรับคนไทย</strong></h2>
+
+<p><img src="https://python-thailand.github.io/assets/img/python-th-logo.png" alt="python-th-logo" /></p>
+
+<pre><code class="language-python">print(&quot;Hello Thai Pythonista!&quot;)
+</code></pre>
+
+<p>ยินดีต้อนรับเข้าสู่ Python Thailand เว็บไซต์ที่เปรียบเสมือนเป็นประตูบานแรกสำหรับคนที่ต้องการก้าวเข้ามาสู่จักรวาลของภาษาไพธอน เว็บไซต์นี้ได้รวบรวมแหล่งข้อมูลที่เกี่ยวข้องกับภาษาไพธอนที่ถูกเขียนขึ้นในภาษาไทย ไม่ว่าจะเป็นทั้งการสอนไพธอน เว็บบล็อกไพธอน รวมถึงวิดีโอที่เกี่ยวกับไพธอนต่าง ๆ ไพธอนนั้นมีประโยชน์มากมาย ไพธอนเปรียบเสมือนไม้กายสิทธิ์ที่สามารถช่วยให้เราสร้างสรรค์นวัตกรรมหรือสิ่งใหม่ ๆ ให้กับมวลมนุษยชาติได้</p>
+
+<p>ด้วยเนื้อหาที่รวบรวมในเว็บไซต์นี้ คุณจะสามารถเขียนโปรแกรมด้วยภาษาไพธอนได้ เริ่มตั้งแต่การสร้างแอพพลิเคชันอย่างง่ายไปจนถึงโปรแกรมการคำนวณที่ซับซ้อน คุณจะเข้าใจหลักการสำคัญในการเขียนโปรแกรมทั้งในพื้นฐานทั้งหมดและในขั้นสูงที่เป็นการเขียนโปรแกรมแบบเชิงวัตถุ คุณจะได้รู้จักกับเครื่องมือที่ใช้ในการพัฒนาโปรแกรมหลากหลายรูปแบบ ซึ่งเนื้อหาเหล่านี้เป็นพื้นฐานที่สำคัญที่จะทำให้คุณสามารถนำไปพัฒนาทักษะการเขียนโปรแกรมภาษาไพธอน ของคุณในขั้นสูงต่อไป เช่น การพัฒนาเว็บไซต์ การสร้างเกม ฐานข้อมูล เน็ตเวิร์ค การจัดการกราฟฟิค</p>
+
+<h2 id="ภาษาไพธอน">ภาษาไพธอน</h2>
+
+<ul>
+<li><a href="https://python-thailand.github.io/intro/history">ประวัติและต้นกำเนิด</a></li>
+<li><a href="https://python-thailand.github.io/intro/logo">ตราสัญลักษณ์ของภาษาไพธอน</a></li>
+<li><a href="https://python-thailand.github.io/intro/philosophy">ปรัชญาของไพธอน</a></li>
+<li><a href="https://python-thailand.github.io/intro/you-should-know">เกร็ดความรู้เกี่ยวกับไพธอน</a></li>
+<li><a href="https://python-thailand.github.io/intro/why-python">ทำไมต้องไพธอน</a></li>
+<li><a href="https://python-thailand.github.io/intro/outcomes">ความสำเร็จของไพธอน</a>
+
+<br /></li>
+</ul>
+
+<h2 id="ดาวน-โหลดไพธอนและเคร-องม-ออ-น-ๆ">ดาวน์โหลดไพธอนและเครื่องมืออื่น ๆ</h2>
+
+<ul>
+<li><a href="https://python-thailand.github.io/getting-python/get-started">เริ่มต้นใช้งานไพธอน</a></li>
+<li><a href="https://python-thailand.github.io/getting-python/platform">ระบบปฏิบัติการที่รองรับ</a></li>
+<li><a href="https://python-thailand.github.io/getting-python/download">ดาวน์โหลดไพธอน</a></li>
+<li><a href="https://python-thailand.github.io/getting-python/install">การติดตั้งไพธอน</a></li>
+<li><a href="https://python-thailand.github.io/getting-python/text-editor">โปรแกรมแก้ไขข้อความสำหรับเขียนภาษาไพธอน</a></li>
+<li><a href="https://python-thailand.github.io/getting-python/library-package">ไลบรารี่และแพคเกจ</a>
+
+<br /></li>
+</ul>
+
+<h2 id="เน-อหาไพธอน">เนื้อหาไพธอน</h2>
+
+<p>เลือกระดับความยากของเนื้อหา</p>
+
+<ul>
+<li><a href="https://python-thailand.github.io/learning/beginner">เริ่มต้น (Beginner)</a></li>
+<li><a href="https://python-thailand.github.io/learning/intermediate">ปานกลาง (Intermediate)</a></li>
+<li><a href="https://python-thailand.github.io/learning/advanced">ขั้นสูง (Advanced)</a>
+
+<br /></li>
+</ul>
+
+<h2 id="โจทย-และการแก-ป-ญหา">โจทย์และการแก้ปัญหา</h2>
+
+<ul>
+<li><a href="https://python-thailand.github.io/problems">ระดับพื้นฐาน</a></li>
+<li><a href="https://python-thailand.github.io/problems">ระดับปานกลาง</a></li>
+<li><a href="https://python-thailand.github.io/problems">ระดับยาก</a></li>
+<li><a href="https://python-thailand.github.io/problems/competition">โจทย์แข่งขัน</a></li>
+<li><a href="https://python-thailand.github.io/problems">คำถามสอบสัมภาษณ์งาน</a>
+
+<br /></li>
+</ul>
+
+<h2 id="หน-งส-อแนะนำ">หนังสือแนะนำ</h2>
+
+<ul>
+<li><a href="https://www.cp.eng.chula.ac.th/books/python101/">Python ๑๐๑ คณะวิศวกรรมศาสตร์ จุฬา ฯ</a></li>
+<li><a href="https://isan.msu.ac.th/suchart/Python/ProgrammingExpertwithPython.pdf">เชี่ยวชาญการเขียนโปรแกรมด้วยไพธอน ผศ.ดร. สุชาติ คุ้มมะณี</a></li>
+<li><a href="https://wiki.python.org/moin/PythonBooks">Text books ต่างประเทศอื่น ๆ ที่แนะนำ</a>
+
+<br /></li>
+</ul>
+
+<h2 id="แชนแนลย-ท-ปแนะนำ">แชนแนลยูทูปแนะนำ</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/channel/UCgWqtSlHS0hCFlV4OfcAmAQ">SIPA programming</a></li>
+<li><a href="https://www.youtube.com/user/prasertcbs">prasertcbs</a></li>
+<li><a href="https://www.youtube.com/channel/UCB6eDEzpqpiaZnDMzoje57Q">Kong Ruksiam</a></li>
+<li><a href="https://www.youtube.com/channel/UCluWaSUkB8WMZ722yjNpWgg">Piyanop Nuchanat</a></li>
+<li><a href="https://www.youtube.com/channel/UCIlmY13nFIVFtd1S1ocnn3Q">AI บ้านบ้าน</a></li>
+<li><a href="https://www.youtube.com/rangsiman1993">Rangsiman</a></li>
+<li><a href="https://www.youtube.com/channel/UCqpjARTD4PHnLexXUdb15aQ">Uncle Engineer</a>
+
+<br /></li>
+</ul>
+
+<h2 id="ทอล-คและพอดแคสต-น-าสนใจ">ทอล์คและพอดแคสต์น่าสนใจ</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLTv50MjNM7OrNRagvtwxHHcncUrCgUXe7">PyCon Thailand 2019</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLTv50MjNM7OpbcJbEs7EtfYGzliyPcMrV">PyCon Thailand 2018</a></li>
+<li><a href="https://soundcloud.com/user-137278435/ep05-python">ทำไมเราต้องเรียน Python (ไพธอน) by CodeKids</a></li>
+<li><a href="https://python-thailand.github.io/talks">อื่น ๆ</a>
+
+<br /></li>
+</ul>
+
+<h2 id="บทความ">บทความ</h2>
+
+<p>แบ่งตามหมวดหมู่</p>
+
+<ul>
+<li><a href="https://python-thailand.github.io/articles/gen">ทั่วไป</a></li>
+<li><a href="https://python-thailand.github.io/articles/web">การพัฒนาเว็บไซต์และอินเทอร์เน็ต</a></li>
+<li><a href="https://python-thailand.github.io/articles/software-dev">การพัฒนาซอฟต์แวร์</a></li>
+<li><a href="https://python-thailand.github.io/articles/gui">การพัฒนาแอพพลิเคชันแบบ Desktop GUI</a></li>
+<li><a href="https://python-thailand.github.io/articles/sci">การประยุกต์ใช้ทางคณิตศาสตร์และวิทยาศาสตร์</a></li>
+<li><a href="https://python-thailand.github.io/articles/edu">การประยุกต์ใช้ทางการศึกษา</a></li>
+<li><a href="https://python-thailand.github.io/articles/art">การประยุกต์ใช้ทางศิลปะ</a></li>
+<li><a href="https://python-thailand.github.io/articles/lang">การประยุกต์ใช้ทางภาษา</a></li>
+<li><a href="https://python-thailand.github.io/articles/business">การประยุกต์ใช้ทางธุรกิจ</a></li>
+<li><a href="https://python-thailand.github.io/articles/games">เกมส์และ 3D กราฟฟิก</a></li>
+<li><a href="https://python-thailand.github.io/articles/ai">ปัญญาประดิษฐ์ (AI)</a></li>
+<li><a href="https://python-thailand.github.io/articles/dl">การเรียนรู้แบบลึก (DL)</a></li>
+<li><a href="https://python-thailand.github.io/articles/ml">การเรียนรู้ของเครื่องจักร (ML)</a></li>
+<li><a href="https://python-thailand.github.io/articles/database">การจัดการและการเข้าถึงฐานข้อมูล</a></li>
+<li><a href="https://python-thailand.github.io/articles/data-ana">การวิเคราะห์ข้อมูล</a></li>
+<li><a href="https://python-thailand.github.io/articles/comp-vis">การประมวลผมภาพ</a></li>
+<li><a href="https://python-thailand.github.io/articles/multimedia">การประยุกต์ใช้ทางมัลติมีเดีย</a>
+
+<br /></li>
+</ul>
+
+<h2 id="ผลงานของคนไทยท-สร-างสรรค-ด-วยไพธอน">ผลงานของคนไทยที่สร้างสรรค์ด้วยไพธอน</h2>
+
+<ul>
+<li><a href="https://www.thainlp.org/">PyThaiNLP</a>
+
+<br /></li>
+</ul>
+
+<h2 id="ช-มชนและส-อออนไลน">ชุมชนและสื่อออนไลน์</h2>
+
+<ul>
+<li><a href="https://www.facebook.com/groups/admin.py.dev/">Python-Thailand</a></li>
+<li><a href="https://www.facebook.com/thai.python.dev/">สมาคม Python Dev แห่งประเทศไทย</a></li>
+<li><a href="https://www.facebook.com/groups/thaipybkk/">ThaiPy Bangkok</a></li>
+<li><a href="https://www.facebook.com/groups/941490879222335/">Thailand Machine Learning &amp; Artificial Intelligence</a></li>
+<li><a href="https://www.facebook.com/groups/dsbkkgroup">Data Science BKK</a></li>
+<li><a href="https://www.facebook.com/groups/colab.thailand/">Colab Thailand</a></li>
+<li><a href="https://www.facebook.com/writepythontoscarecow/">เขียนงูให้วัวกลัว</a>
+
+<br /></li>
+</ul>
+
+<h2 id="งานประช-มและส-มมนา">งานประชุมและสัมมนา</h2>
+
+<ul>
+<li><a href="https://th.pycon.org/">PyCon Thailand</a></li>
+<li><a href="https://www.meetup.com/ThaiPy-Bangkok-Python-Meetup/">ThaiPy Bangkok Meetup</a></li>
+<li><a href="https://www.thaiprogrammer.org/">Code Mania</a></li>
+<li><a href="https://www.techjam.tech/__tj200718/">TECHJAM</a></li>
+<li><a href="https://www.facebook.com/writepythontoscarecow">PySomTum</a>
+
+<br /></li>
+</ul>
+
+<h2 id="แหล-งเร-ยนร-ต-างประเทศ">แหล่งเรียนรู้ต่างประเทศ</h2>
+
+<ul>
+<li><a href="https://python-thailand.github.io/courses/">คอร์สเรียนฟรีไพธอนของต่างประเทศที่น่าสนใจ</a>
+
+<br /></li>
+</ul>
+
+<h2 id="ฟอร-ม">ฟอรั่ม</h2>
+
+<ul>
+<li><a href="https://wiki.python.org/moin/FrontPage">Python Wiki</a></li>
+<li><a href="https://python-forum.io/">Python Forum</a></li>
+<li><a href="https://www.reddit.com/r/learnpython/">r/learnpython/</a>
+
+<br /></li>
+</ul>
+
+<h2 id="เบ-ดเตล-ด">เบ็ดเตล็ด</h2>
+
+<ul>
+<li><a href="https://python-thailand.github.io/misc/cheat-sheet">เอกสารรวบรวมคำสั่ง</a>
+
+<br /></li>
+</ul>
+
+<hr />
+
+<h2 id="ร-วมเป-นหน-งในท-มพ-ฒนา">ร่วมเป็นหนึ่งในทีมพัฒนา</h2>
+
+<p>ใครที่สนใจพัฒนาเว็บไซต์ไม่ว่าจะเป็นการอัพเดทเนื้อหาใหม่หรือการแก้ไขปรับปรุงเนื้อหาเดิมให้มีความถูกต้องมากขึ้น  <a href="https://python-thailand.github.io/about">สามารถดูรายละเอียดเพิ่มเติมได้ที่นี่</a>  หรือติดต่อมาทางผู้พัฒนาได้ตามช่องทางต่อไปนี้</p>
+
+<ul>
+<li>เพจ  <a href="https://www.facebook.com/thai.python.dev/">สมาคม Python Dev แห่งประเทศไทย</a></li>
+<li>กลุ่ม  <a href="https://python-thailand.github.io/(https://www.facebook.com/groups/admin.py.dev/)">Python-Thailand</a></li>
+<li>GitHub  <a href="https://github.com/python-thailand">https://github.com/python-thailand</a></li>
+</ul>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cPythonThailand.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-thailand-https-python-thailand-github-io"><a href="https://python-thailand.github.io/">Python Thailand</a></a>
+<ul>
+<li><a href="#python-thailand-แหล-งเร-ยนร-ภาษาไพธอนสำหร-บคนไทย"><strong>Python Thailand - แหล่งเรียนรู้ภาษาไพธอนสำหรับคนไทย</strong></a></li>
+<li><a href="#ภาษาไพธอน">ภาษาไพธอน</a></li>
+<li><a href="#ดาวน-โหลดไพธอนและเคร-องม-ออ-น-ๆ">ดาวน์โหลดไพธอนและเครื่องมืออื่น ๆ</a></li>
+<li><a href="#เน-อหาไพธอน">เนื้อหาไพธอน</a></li>
+<li><a href="#โจทย-และการแก-ป-ญหา">โจทย์และการแก้ปัญหา</a></li>
+<li><a href="#หน-งส-อแนะนำ">หนังสือแนะนำ</a></li>
+<li><a href="#แชนแนลย-ท-ปแนะนำ">แชนแนลยูทูปแนะนำ</a></li>
+<li><a href="#ทอล-คและพอดแคสต-น-าสนใจ">ทอล์คและพอดแคสต์น่าสนใจ</a></li>
+<li><a href="#บทความ">บทความ</a></li>
+<li><a href="#ผลงานของคนไทยท-สร-างสรรค-ด-วยไพธอน">ผลงานของคนไทยที่สร้างสรรค์ด้วยไพธอน</a></li>
+<li><a href="#ช-มชนและส-อออนไลน">ชุมชนและสื่อออนไลน์</a></li>
+<li><a href="#งานประช-มและส-มมนา">งานประชุมและสัมมนา</a></li>
+<li><a href="#แหล-งเร-ยนร-ต-างประเทศ">แหล่งเรียนรู้ต่างประเทศ</a></li>
+<li><a href="#ฟอร-ม">ฟอรั่ม</a></li>
+<li><a href="#เบ-ดเตล-ด">เบ็ดเตล็ด</a></li>
+<li><a href="#ร-วมเป-นหน-งในท-มพ-ฒนา">ร่วมเป็นหนึ่งในทีมพัฒนา</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

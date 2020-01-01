@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.13 Uploading files with Flask"><meta property="og:title" content="Ep.13 Uploading files with Flask" />
+<meta property="og:description" content="Uploading files with Flask | Learning Flask Ep. 13 Posting, checking and validating file uploads with Flask
+Uploading files to the server is often a requirement of a website or web application. Thankfully, Flask makes this relitively simple for us with a few useful functions.
+We&rsquo;re using Bootstrap 4 CSS in this example but feel free to use any other CSS library, use your own or skip the styling completely." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-13/" />
+
+<title>Ep.13 Uploading files with Flask | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+
+
+<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/"  class="active">
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.13 Uploading files with Flask</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="uploading-files-with-flask-learning-flask-ep-13">Uploading files with Flask | Learning Flask Ep. 13</h1>
+
+<p>Posting, checking and validating file uploads with Flask</p>
+
+<p>Uploading files to the server is often a requirement of a website or web application. Thankfully, Flask makes this relitively simple for us with a few useful functions.</p>
+
+<p>We&rsquo;re using Bootstrap 4 CSS in this example but feel free to use any other CSS library, use your own or skip the styling completely.</p>
+
+<p>Let&rsquo;s get started.</p>
+
+<h3 id="create-a-new-route">Create a new route</h3>
+
+<p>We&rsquo;ll start by creating a new route which we&rsquo;ll use to render a template containing a form, which users can use to upload an image.</p>
+
+<blockquote>
+<p>Tip - You&rsquo;ll need to import  <code>render_template</code>  from  <code>flask</code>  if you haven&rsquo;t already</p>
+</blockquote>
+
+<p>We&rsquo;ll give the route the URL of  <code>/upload-image</code>:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/upload-image&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_image</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/upload_image.html&#34;</span>)</code></pre></div>
+We&rsquo;ll be making a  <code>POST</code>  request to the server, so we&rsquo;ve added  <code>methods=[&quot;GET&quot;, &quot;POST&quot;]</code>  to the route.</p>
+
+<h3 id="upload-form">Upload form</h3>
+
+<p>Now we need to create our HTML template. We&rsquo;ll call it  <code>upload_image.html</code>  and place it in the  <code>templates/public</code>  directory.</p>
+
+<p>Go ahead and add the following:</p>
+
+<p><strong>app/app/templates/public/upload_image.html</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% extends &#34;public/templates/public_template.html&#34; %}
+
+{% block title %}Upload{% endblock %}
+
+{% block main %}
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+
+      &lt;<span style="color:#f92672">h1</span>&gt;Upload an image&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;<span style="color:#f92672">hr</span>&gt;
+
+      &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/upload-image&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span>&gt;
+
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
+          &lt;<span style="color:#f92672">label</span>&gt;Select image&lt;/<span style="color:#f92672">label</span>&gt;
+          &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-file&#34;</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-file-input&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-file-label&#34;</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span>&gt;Select image...&lt;/<span style="color:#f92672">label</span>&gt;
+          &lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+
+        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Upload&lt;/<span style="color:#f92672">button</span>&gt;
+
+      &lt;/<span style="color:#f92672">form</span>&gt;
+
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+{% endblock %}</code></pre></div>
+We&rsquo;ve created a new child template containing a form with a single input, a file browser.</p>
+
+<blockquote>
+<p>Tip - When uploading images via a form with Flask, you must add the  <code>enctype</code>  attribute to the form with the value  <code>multipart/form-data</code></p>
+</blockquote>
+
+<p>Now that we have our form and file browser, we can move on to handling the upload in our route.</p>
+
+<h3 id="accessing-files-in-a-route">Accessing files in a route</h3>
+
+<p>To access a file being posted by a fowm, we use  <code>request.files</code>  provided by the  <code>request</code>  object.</p>
+
+<p>We need to import  <code>request</code>  from flask. We&rsquo;ll also go ahead and import  <code>redirect</code>  too.</p>
+
+<p><code>from flask import request, redirect</code></p>
+
+<p>Go ahead and refactor the  <code>/upload-image</code>  route to the following:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/upload-image&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_image</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>files:
+
+            image <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>files[<span style="color:#e6db74">&#34;image&#34;</span>]
+
+            <span style="color:#66d9ef">print</span>(image)
+
+            <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/upload_image.html&#34;</span>)</code></pre></div>
+-   We&rsquo;re veryfying the request method is  <code>POST</code>  with  <code>if request.method == &quot;POST&quot;:</code>
+-   We then veryfy if the request contains files with  <code>if request.files:</code>
+-   We then store the file as a variable called image using  <code>image = request.files[&quot;image&quot;]</code></p>
+
+<p>Using  <code>request.files[&quot;image&quot;]</code>, we&rsquo;re able to access the file from the form with the attribute  <code>name=&quot;image&quot;</code></p>
+
+<p>Adding another file input is as simple as creating another file input field in the HTML form and providing a different value in the  <code>name</code>  attribute.</p>
+
+<p>For example, creating another file input with the attribute  <code>name=&quot;image_2&quot;</code>  could then be accessed in Flask with  <code>request.files[&quot;image_2&quot;]</code></p>
+
+<p>Printing the  <code>image</code>  variable you&rsquo;ll see:</p>
+
+<p><code>&lt;FileStorage: 'example.png' ('image/png')&gt;</code></p>
+
+<p>You&rsquo;ll notice the  <code>FileStorage</code>  class, followed by the filename and the type of file.</p>
+
+<p>FileStroage is a wrapper class around incoming files provided by Werkzeug, Flask&rsquo;s underlying HTTP library which handles incoming request data.</p>
+
+<p>Flask stores incoming file uploads in the webservers memory (If the files are small), otherwise it will store them in a temporary location.</p>
+
+<h3 id="saving-files">Saving files</h3>
+
+<p>We&rsquo;ll start with the quickest and easiest way to save a file.</p>
+
+<p>You&rsquo;ll need the  <code>os</code>  library. Go ahead and import it:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><code>import os</code></p>
+
+<p>We should specify a directory to save our uploaded images which we&rsquo;ll add to our  <code>app.config</code>  object. You don&rsquo;t have to do this but it&rsquo;s best practice.</p>
+
+<p>Either create a variable in your config file with  <code>IMAGE_UPLOADS = /path/to/uploads/folder</code>  or asssign it directly to  <code>app.config[&quot;IMAGE_UPLOADS&quot;]</code>.</p>
+
+<blockquote>
+<p>TIp - You should provide a complete path, making sure any directories in the path exist</p>
+</blockquote>
+
+<p>In this example, we&rsquo;re going to assign the  <code>IMAGE_UPLOADS</code>  config attribute in our app but I&rsquo;d recommend you create it in your app config file.</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;IMAGE_UPLOADS&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/img/uploads&#34;</span><span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+As you can see, we have a long but complete path!</p>
+
+<p>To save the file, we simply call  <code>image.save()</code>  and join the path to the uploads folder with the filename using  <code>os.join()</code>:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">image<span style="color:#f92672">.</span>save(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;IMAGE_UPLOADS&#34;</span>], image))</code></pre></div></p>
+
+<p>Our route now looks like this:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request, redirect
+<span style="color:#f92672">import</span> os
+
+app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;IMAGE_UPLOADS&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/img/uploads&#34;</span>
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/upload-image&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_image</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>files:
+
+            image <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>files[<span style="color:#e6db74">&#34;image&#34;</span>]
+
+            image<span style="color:#f92672">.</span>save(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;IMAGE_UPLOADS&#34;</span>], image<span style="color:#f92672">.</span>filename))
+
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Image saved&#34;</span>)
+
+            <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/upload_image.html&#34;</span>)</code></pre></div>
+We use  <code>image.filename</code>  to access the filename of the image and join that with the path to the uploads folder with  <code>os.join()</code>.</p>
+
+<p>Save the file and upload an image to see it in action.</p>
+
+<h3 id="securing-file-uploads">Securing file uploads</h3>
+
+<p>At this point, a user could upload any kind of file of any filesize, which is dangerous..</p>
+
+<blockquote>
+<p>Tip - NEVER TRUST USER INPUT</p>
+</blockquote>
+
+<p>To mitigate any damage our application might receive from a malicius actor or user error, we should consider the following:</p>
+
+<ul>
+<li>Ensuring the file has a name</li>
+<li>Ensuring the file type is allowed</li>
+<li>Ensuring the filename is allowed</li>
+<li>Ensuring the filesize is allowed</li>
+</ul>
+
+<p>Let&rsquo;s start with the filename.</p>
+
+<p>Ensuring the file has a filename is a simple fix:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">if</span> image<span style="color:#f92672">.</span>filename <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;No filename&#34;</span>)
+    <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)</code></pre></div>
+To ensure the type of file is allowed, we should create a set of allowed extensions in our  <code>app.config</code>.</p>
+
+<p>We&rsquo;ll just stick to image extensions for now but you&rsquo;ll need to modify this to allow other file types.</p>
+
+<p>Go ahead and add the following:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;ALLOWED_IMAGE_EXTENSIONS&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;JPEG&#34;</span>, <span style="color:#e6db74">&#34;JPG&#34;</span>, <span style="color:#e6db74">&#34;PNG&#34;</span>, <span style="color:#e6db74">&#34;GIF&#34;</span>]</code></pre></div>
+This declares we&rsquo;re only going to accept 4 file extensions for image uploads.</p>
+
+<p>We should create a function that we can call to confirm this:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">allowed_image</span>(filename):
+
+    <span style="color:#75715e"># We only want files with a . in the filename</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">in</span> filename:
+        <span style="color:#66d9ef">return</span> False
+
+    <span style="color:#75715e"># Split the extension from the filename</span>
+    ext <span style="color:#f92672">=</span> filename<span style="color:#f92672">.</span>rsplit(<span style="color:#e6db74">&#34;.&#34;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">1</span>]
+
+    <span style="color:#75715e"># Check if the extension is in ALLOWED_IMAGE_EXTENSIONS</span>
+    <span style="color:#66d9ef">if</span> ext<span style="color:#f92672">.</span>upper() <span style="color:#f92672">in</span> app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;ALLOWED_IMAGE_EXTENSIONS&#34;</span>]:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> False</code></pre></div>
+Ensuring the filename itself isn&rsquo;t dangerous is probably even more important. Luckily for us, Werkzeug provides a handy function called  <code>secure_filename</code>  that we can call to return a secure filename.</p>
+
+<p>First of all we need to import it:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><code>from werkzeug.utils import secure_filename</code></p>
+
+<p>We can now call it to return a secure filename of our file:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">filename <span style="color:#f92672">=</span> secure_filename(image<span style="color:#f92672">.</span>filename)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+Lastly, we need to modify  <code>image.save()</code>  to include the safe filename:</p>
+
+<p><strong>app/app/views.py</strong></p>
+
+<p><code>image.save(os.path.join(app.config[&quot;IMAGE_UPLOADS&quot;], filename))</code></p>
+
+<p>Putting everything together, our app now looks like this:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request, redirect
+<span style="color:#f92672">from</span> werkzeug.utils <span style="color:#f92672">import</span> secure_filename
+
+<span style="color:#f92672">import</span> os
+
+app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;IMAGE_UPLOADS&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/img/uploads&#34;</span>
+app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;ALLOWED_IMAGE_EXTENSIONS&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;JPEG&#34;</span>, <span style="color:#e6db74">&#34;JPG&#34;</span>, <span style="color:#e6db74">&#34;PNG&#34;</span>, <span style="color:#e6db74">&#34;GIF&#34;</span>]
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">allowed_image</span>(filename):
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">in</span> filename:
+        <span style="color:#66d9ef">return</span> False
+
+    ext <span style="color:#f92672">=</span> filename<span style="color:#f92672">.</span>rsplit(<span style="color:#e6db74">&#34;.&#34;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">1</span>]
+
+    <span style="color:#66d9ef">if</span> ext<span style="color:#f92672">.</span>upper() <span style="color:#f92672">in</span> app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;ALLOWED_IMAGE_EXTENSIONS&#34;</span>]:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> False
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/upload-image&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_image</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>files:
+
+            image <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>files[<span style="color:#e6db74">&#34;image&#34;</span>]
+
+            <span style="color:#66d9ef">if</span> image<span style="color:#f92672">.</span>filename <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>:
+                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;No filename&#34;</span>)
+                <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+            <span style="color:#66d9ef">if</span> allowed_image(image<span style="color:#f92672">.</span>filename):
+                filename <span style="color:#f92672">=</span> secure_filename(image<span style="color:#f92672">.</span>filename)
+
+                image<span style="color:#f92672">.</span>save(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;IMAGE_UPLOADS&#34;</span>], filename))
+
+                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Image saved&#34;</span>)
+
+                <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+            <span style="color:#66d9ef">else</span>:
+                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;That file extension is not allowed&#34;</span>)
+                <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/upload_image.html&#34;</span>)</code></pre></div>
+Lastly, we should ensure the file is of an acceptable filesize.</p>
+
+<p>Just like we did with specifying the allowed image extensions in the app config. We can do the same with the maximum filesize using the default  <code>MAX_CONTENT_LENGTH</code>  config variable.</p>
+
+<p>Let&rsquo;s set our maximum filesize at around 50 megabytes:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#39;MAX_CONTENT_LENGTH&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span></code></pre></div>
+This setting will apply globally to all uploads sent to your application, which may or may not be ideal.</p>
+
+<h3 id="limiting-file-upload-size">Limiting file upload size</h3>
+
+<p>I&rsquo;ve been unable to find a way to read the filesize using the Flask or Werkzeug utilities, so had to find another creative way.</p>
+
+<p>There may be instances where you need users to upload different file types, all with different filesize restrictions.</p>
+
+<p>An alternative to using  <code>MAX_CONTENT_LENGTH</code>  is to send the filesize as a cookie along with the file, validate the filesize and then decide whether to save the file of not.</p>
+
+<p>In order to achieve this, we&rsquo;re going to do the following:</p>
+
+<ul>
+<li>Create a JavaScript function that saves the filesize as a cookie</li>
+<li>Set a maximum filesize limit for images in the app config</li>
+<li>Create a function to validate the image filesize</li>
+</ul>
+
+<p>Let&rsquo;s create the JavaScript function to listen for an  <code>oninput</code>  event and attach it to the file  <code>input</code>  field:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">filesize</span>(<span style="color:#a6e22e">elem</span>){
+    document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`filesize=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">elem</span>.<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">size</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+  }
+
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;`</span>
+</code></pre></div></p>
+
+<p>We also need to attach the  <code>oninput</code>  event to the  <code>input</code>  field and call the function:</p>
+
+<p><code>&lt;input type=&quot;file&quot; class=&quot;custom-file-input&quot; name=&quot;image&quot; id=&quot;image&quot; oninput=&quot;filesize(this);&quot;&gt;</code></p>
+
+<p>Now, when the user changes the input value, a cookie is saved and send to our app when the form is submitted.</p>
+
+<p>Let&rsquo;s set a  <code>MAX_IMAGE_FILESIZE</code>  in our app config:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;MAX_IMAGE_FILESIZE&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span></code></pre></div>
+We&rsquo;ve set it at around 500,00 bytes for testing purposes.</p>
+
+<p>Next up, we&rsquo;ll need to create a function to validate the filesize:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">allowed_image_filesize</span>(filesize):
+
+    <span style="color:#66d9ef">if</span> int(filesize) <span style="color:#f92672">&lt;=</span> app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;MAX_IMAGE_FILESIZE&#34;</span>]:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> False</code></pre></div>
+Cookies come in as strings, so we pass the  <code>filesize</code>  cookie to the  <code>int()</code>  function to convert it.</p>
+
+<p>We access cookies using  <code>request.cookies</code>, a dictionary like object which we can extract values by key.</p>
+
+<p>Finally, let&rsquo;s grab the cookie and call the  <code>allowed_image_filesize</code>  function, passing the value to it:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;filesize&#34;</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>cookies:
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> allowed_image_filesize(request<span style="color:#f92672">.</span>cookies[<span style="color:#e6db74">&#34;filesize&#34;</span>]):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Filesize exceeded maximum limit&#34;</span>)
+        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)</code></pre></div>
+Our finished app now looks like this:</p>
+
+<p><strong>app/app/views.py</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request, redirect
+<span style="color:#f92672">from</span> werkzeug.utils <span style="color:#f92672">import</span> secure_filename
+
+<span style="color:#f92672">import</span> os
+
+app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;IMAGE_UPLOADS&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/img/uploads&#34;</span>
+app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;ALLOWED_IMAGE_EXTENSIONS&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;JPEG&#34;</span>, <span style="color:#e6db74">&#34;JPG&#34;</span>, <span style="color:#e6db74">&#34;PNG&#34;</span>, <span style="color:#e6db74">&#34;GIF&#34;</span>]
+app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;MAX_IMAGE_FILESIZE&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">allowed_image</span>(filename):
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">in</span> filename:
+        <span style="color:#66d9ef">return</span> False
+
+    ext <span style="color:#f92672">=</span> filename<span style="color:#f92672">.</span>rsplit(<span style="color:#e6db74">&#34;.&#34;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">1</span>]
+
+    <span style="color:#66d9ef">if</span> ext<span style="color:#f92672">.</span>upper() <span style="color:#f92672">in</span> app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;ALLOWED_IMAGE_EXTENSIONS&#34;</span>]:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> False
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">allowed_image_filesize</span>(filesize):
+
+    <span style="color:#66d9ef">if</span> int(filesize) <span style="color:#f92672">&lt;=</span> app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;MAX_IMAGE_FILESIZE&#34;</span>]:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> False
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/upload-image&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_image</span>():
+
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+
+        <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>files:
+
+            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;filesize&#34;</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>cookies:
+
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> allowed_image_filesize(request<span style="color:#f92672">.</span>cookies[<span style="color:#e6db74">&#34;filesize&#34;</span>]):
+                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Filesize exceeded maximum limit&#34;</span>)
+                    <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+                image <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>files[<span style="color:#e6db74">&#34;image&#34;</span>]
+
+                <span style="color:#66d9ef">if</span> image<span style="color:#f92672">.</span>filename <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>:
+                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;No filename&#34;</span>)
+                    <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+                <span style="color:#66d9ef">if</span> allowed_image(image<span style="color:#f92672">.</span>filename):
+                    filename <span style="color:#f92672">=</span> secure_filename(image<span style="color:#f92672">.</span>filename)
+
+                    image<span style="color:#f92672">.</span>save(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;IMAGE_UPLOADS&#34;</span>], filename))
+
+                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Image saved&#34;</span>)
+
+                    <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+                <span style="color:#66d9ef">else</span>:
+                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;That file extension is not allowed&#34;</span>)
+                    <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/upload_image.html&#34;</span>)</code></pre></div>
+Go ahead and try to upload an image over 500,000 bytes. It should print  <code>&quot;Filesize exceeded maximum limit&quot;</code></p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="https://pythonise.com/series/learning-flask/flask-uploading-files">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-13.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#uploading-files-with-flask-learning-flask-ep-13">Uploading files with Flask | Learning Flask Ep. 13</a>
+<ul>
+<li>
+<ul>
+<li><a href="#create-a-new-route">Create a new route</a></li>
+<li><a href="#upload-form">Upload form</a></li>
+<li><a href="#accessing-files-in-a-route">Accessing files in a route</a></li>
+<li><a href="#saving-files">Saving files</a></li>
+<li><a href="#securing-file-uploads">Securing file uploads</a></li>
+<li><a href="#limiting-file-upload-size">Limiting file upload size</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
