@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Current Weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style -->
+
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css'>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <script>
+        var metrics = "si";
+    </script>
+
+<body>
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="https://gitlab.com/yosarawut/financial-investment/raw/master/img/planet-earth.png?inline=false"
+                width="30" height="30" class="d-inline-block align-top" alt="">
+            Current Weather
+        </a>
+
+        <form method="post" class="form-inline my-2 my-lg-0">
+            <select class="form-control mr-sm-4" name="citys">
+                <option selected>Search..</option>
+                {% for v in labels %}
+
+                <option>{{v}}</option>
+                {% endfor %}
+
+
+
+            </select>
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" id="gtw">Search</button>
+        </form>
+
+
+
+
+    </nav>
+
+    <div class="bgimg">
+
+
+        <!-- Container -->
+        <div class="container middle" style='width:60%'>
+            <!--   <h1 style='padding-top: 20px'>Current Weather</h1>   -->
+            <h2 style='float: left;padding-left: 20px;padding-top: 20px;'>{{data.city_name}}, {{data.country_name}}<span
+                    style='padding-left: 15px'>
+                    <img src="{{ url_for('static', filename = data.flag_path) }}" class="svg" fill="white" width=28px
+                        hight=21px vertical-align="middle" />
+                </span></h2><span class="wi wi-time-10"
+                style='font-size: .75em;float: right;padding-right: 20px; padding-top: 20px;color:grey'>
+                {{data.day_name}}
+                {{data.date_day}}</span>
+            <!-- City -->
+            <div class="city" style='min-height: 10px;'>
+                <div class="title">
+
+                </div>
+
+            </div>
+
+            <div class="temperature" style='padding-top: 5px'>
+                <div class="temperature-wrapper">
+                    <div id="temperature">
+                        <div id="show-temp" style='font-size: 28vh; '>{{data.temp}}</div>
+                        <div id="metrics" data-icon="" onclick="temperatureConverter()"></div>
+                    </div>
+                </div>
+
+                <!-- <p>20°<span>C</span></p> -->
+
+
+                <!-- Range -->
+
+                <div class="daily" sytle='margin-top: 10px'>
+                    <div class="low-high">
+                        <div class="low">
+                            <div id="low">{{data.temp_min}}</div><span>Low</span>
+                        </div>
+                        <div class="temperature-range"></div>
+                        <div class="high">
+                            <div id="high">{{data.temp_max}}</div><span>High</span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                    <div class="sun" style='padding-top: 20px'>
+                        <div class="low-high">
+                            <div class="sunrise">
+                                <div id="sunrise" style='font-size: .85em;text-align: center;'>{{data.sunrise}}</div>
+                                <span class='wi wi-sunrise'
+                                    style='font-size: 1em;padding-top: 8px;padding-bottom: 30px'>Sunrise</span>
+                            </div>
+                            <div class="sun-range"
+                                style='padding: 3px 110px;background: grey;border-radius: 20px;margin: 0 .75rem;'></div>
+                            <div class="sunset">
+                                <div id="sunset" style='font-size: .85em;text-align: center;'>{{data.sunset}}</div><span
+                                    class='wi wi-sunset'
+                                    style='font-size: 1em;padding-top: 8px;padding-bottom: 30px'>Sunset</span>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+            <!--sunset -->
+
+
+
+
+
+            <!-- Forecast -->
+            <div class="forecast">
+
+
+                <div class="today-weather">
+
+                    <img src="{{ url_for('static', filename = data.icon_svg)}}" class="svg" fill="white" width='120'
+                        hight='120' vertical-align="middle">
+
+                    <!--   <img src= {{data.icon_path}}  style = "width:2em; height:2em;"> -->
+
+                    <!--  <i class= "{{data.icon_class}}" style='font-size: 3em'></i> -->
+
+
+                    <h3>{{data.weather_main}}</h3>
+
+                    <ul>
+                        <li><i class='wi wi-barometer' align-items='left' style='font-size: 1.3em;'></i> Pressure <span>
+                                {{data.pressure}} mb</span></li>
+
+                        <li><i class='wi wi-humidity' style='font-size: 1.3em;'></i> Humidity <span> {{data.humidity}}
+                                %</span></li>
+                        <li><i class='wi wi-strong-wind' style='font-size: 1.3em;'></i> Wind <span> {{data.wind}}
+                                km/h</span></li>
+                        <li><i class='wi wi-day-sunny' style='font-size: 1.3em;'></i> Visibility
+                            <span>{{data.visibility}} km</span></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- //Container -->
+
+
+
+    <script>
+
+        function temperatureConverter() {
+            // var valTemp = document.getElementById("show-temp").innerHTML
+            //  var valLow = document.getElementById("low").innerHTML
+            // var valHight = document.getElementById("high").innerHTML
+
+            if (metric == 'si') {
+                var valTemp = document.getElementById("show-temp").innerHTML
+                var valLow = document.getElementById("low").innerHTML
+                var valHigh = document.getElementById("high").innerHTML
+
+                t = Number(valTemp);
+                l = Number(valLow);
+                h = Number(valHigh);
+                document.getElementById("show-temp").innerHTML = Math.round((t * 1.8) + 32);
+                document.getElementById("low").innerHTML = Math.round((l * 1.8) + 32);
+                document.getElementById("high").innerHTML = Math.round((h * 1.8) + 32);
+
+            } else {
+                var valTemp = document.getElementById("show-temp").innerHTML
+                var valLow = document.getElementById("low").innerHTML
+                var valHigh = document.getElementById("high").innerHTML
+
+                t = Number(valTemp);
+                l = Number(valLow);
+                h = Number(valHigh);
+
+                document.getElementById("show-temp").innerHTML = Math.round((t - 32) / 1.8);
+                document.getElementById("low").innerHTML = Math.round((l - 32) / 1.8);
+                document.getElementById("high").innerHTML = Math.round((h - 32) / 1.8);
+
+
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

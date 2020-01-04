@@ -1,0 +1,439 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Animated Weather Widget Responsive Widget Template :: w3layouts</title>
+	<!--mobile-apps-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link
+		href='//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic'
+		rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+	<!--//web-font-->
+	<!--weather-icons-->
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css'>
+	<!--//weather-icons-->
+
+	<!--Google Icons-->
+	<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' type='text/css'>
+
+	<!--//mobile-apps-->
+	<!--Custom Theme files-->
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='1css/style.css') }}">
+	<!--web-font-->
+	<link
+		href='//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic'
+		rel='stylesheet' type='text/css'>
+	<!--//web-font-->
+	<!--skycons-icons-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="{{url_for('static', filename='script.js')}}"></script>
+	<script>
+		var metrics = "si";
+	</script>
+
+	<style>
+		@font-face {
+			font-family: 'Weather-Icons';
+			font-style: normal;
+			font-weight: normal;
+			src: url("https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/font/weathericons-regular-webfont.ttf");
+		}
+
+		.bgimg {
+			background-image: url("{{ url_for('static', filename='img/milky-way.jpg') }}");
+
+			width: 100%;
+			height: 100%;
+			background-position: center;
+			background-size: cover;
+			position: relative;
+			font-family: "Helvetica", sans-serif;
+
+		}
+
+
+
+
+		h1 {
+			font-size: 3em;
+			text-align: center;
+			color: #000;
+			font-weight: 300;
+
+		}
+
+		/*--main--*/
+		.main {
+			padding: 1em 0 0;
+		}
+
+		.main-info {
+			width: 70%;
+			margin: 1em auto;
+			background-color: rgba(0, 0, 0, 0.6);
+			padding: 1em;
+			border-radius: 5px;
+
+		}
+
+		/*--//main--*/
+		.weather-grids {
+			float: left;
+			width: 33%;
+		}
+
+		.weather-grids.weather-mdl {
+			text-align: center;
+		}
+
+		.weather-grids:nth-child(3) {
+			text-align: right;
+		}
+
+		.weather-grids h3 {
+			font-size: 1.5em;
+			color: #fff;
+		}
+
+		.weather-grids h2.cur {
+			font-weight: 600;
+			color: #FFF;
+			margin-top: 0.7em;
+		}
+
+		.weather-grids h2 {
+			font-size: 2em;
+			font-weight: 300;
+			color: #fff;
+		}
+
+		.weather-grids h4 {
+			font-size: 1em;
+			color: #fff;
+		}
+
+		.weather-bottom {
+			text-align: center;
+			margin: 2em auto;
+			display: flex;
+			justify-content: center;
+
+
+		}
+
+		.weather-bottom ul li {
+			display: inline-block;
+			background-color: rgba(0, 0, 0, 0.6);
+			margin: 5px;
+
+			width: 16%;
+		}
+
+		.weather-bottom ul li.bg {
+			display: inline-block;
+			padding: 10px;
+		}
+
+		.weather-bottom h4 {
+			font-size: 1.2em;
+			color: #0f88ff;
+			font-weight: 400;
+		}
+
+		figure.icons {
+			margin: 0.5em 0;
+		}
+
+		.weather-bottom h5 {
+			font-size: 1.2em;
+			color: #fff;
+			font-weight: 600;
+		}
+
+		.weather-bottom h6 {
+			font-size: 1em;
+			color: #0f88ff;
+			;
+			margin-top: 0.5em;
+		}
+
+		.temperature-wrapper {
+			display: flex;
+			justify-content: center;
+		}
+
+		.show-temp {
+			display: flex;
+			position: relative;
+
+		}
+
+
+		#metrics {
+
+
+			color: #0f88ff;
+			position: relative;
+			top: -0.4em;
+			right: -0.2em;
+			font-size: 10vh;
+		}
+
+
+		#metrics:hover {
+			color: #90ee90;
+		}
+
+		#metrics:after {
+			font-family: 'Weather-Icons';
+			content: attr(data-icon);
+		}
+
+		/*--copyright--*/
+		.copyright {
+			margin: 2em 0 1em;
+			text-align: center;
+			display: block;
+			color: #fff;
+		}
+
+		.copyright p {
+			font-size: 1.1em;
+			color: #BEBEBE;
+			line-height: 1.8em;
+		}
+
+		.copyright p a {
+			color: #BEBEBE;
+		}
+
+		.copyright p a:hover {
+			color: #FFD700;
+			transition: 0.5s all;
+			-webkit-transition: 0.5s all;
+			-moz-transition: 0.5s all;
+			-o-transition: 0.5s all;
+			-ms-transition: 0.5s all;
+		}
+
+		/*-- //low-high temperature-range --*/
+
+.daily {
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+	float: right;
+	text-align: center;
+	padding-right: 20px;
+  }
+
+.daily .low-high {
+	font-size: 1rem;
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+  }
+
+  
+
+  .daily .low-high .high #high {
+	color: #f95757;
+	font-size: 1.2rem;
+	font-weight: 500;
+  }
+  .daily .low-high .low #low {
+	color:  #0f88ff;
+	font-size: 1.2rem;
+	font-weight: 500;
+  }
+
+
+
+
+  .daily .low-high span {
+	display: block;
+	font-size: .8rem;
+	color: #888;
+  }
+
+
+
+  .daily .low-high .temperature-range {
+	width: 30vw;
+	height: 1vh;
+	margin: 0 1rem;
+	max-width: 180px;
+	background: linear-gradient(to right, #0f88ff 0%, #2989d8 10%, #207cca 20%, #207cca 30%, #ce6fc0 58%, #f95757 100%);
+	border-radius: 20px;
+  }
+
+ 
+	
+
+  .daily .currently {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  }
+
+  .day .day-low-high {
+	font-size: 1rem;
+  }
+	</style>
+
+
+
+
+	<!--//skycons-icons-->
+</head>
+
+<body>
+	
+	<div class="bgimg">
+		<!-- main -->
+		<div class="main">
+			
+			<div class="main-info">
+				<div class="title" >
+				<ul class="row" >
+					<i class="material-icons" style="font-size:1.5em;color:red;text-align: center;">place</i>
+					<li>
+						<h1 style='color:#FFF;font-weight:500;font-size:1.5em;text-align: center;'>{{title}}</h1>
+					</li>
+				</ul>
+			</div>
+				<div class="weather-top">
+					<div class="weather-grids">
+						<h3 class="fri" style='color:#FFF;margin-left:1.5em;'>{{data.day_name}}</h3>
+						<h2 style="font-weight:400;font-size:1em;margin-top: 0.3em;margin-left:2em; ">{{data.date_day}}
+							<span class="wi wi-time-10" style='font-size: 1em;color:#BEBEBE; '>
+								{{data.time_stamp}}</span></h2>
+					</div>
+
+					<div class="weather-grids weather-mdl" style="width:33%;">
+						<img src="{{ url_for('static', filename = data.icon_svg)}}" class="svg" width='120' hight='120'
+							vertical-align="middle">
+						<h2 style='font-size:1.5em;margin-bottom:1em'>{{data.weather_thai}}</h2>
+
+					</div>
+
+					<div class="weather-grids temperature-wrapper">
+
+						<h2 class="curr" style='color: #FFD700;font-weight:400;font-size: 13vh;text-align:center;' id='show-temp'>
+							{{data.temp}}</h2>
+						<span id="metrics" style='display: inline-block;' data-icon=""
+							onclick="temperatureConverter()"></span>
+					</div>
+					<div class="daily" sytle='margin-top: 10px'>
+						<div class="low-high">
+							<div class="low">
+								<div id="low">{{data.temp_min}}</div><span>ต่ำสุด</span>
+							</div>
+							<div class="temperature-range"></div>
+							<div class="high">
+								<div id="high">{{data.temp_max}}</div><span>สูงสุด</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="clear"> </div>
+				<div class="weather-bottom" style='margin: auto;width:70%;'>
+					<ul>
+						{% for i in range(1,6) %}
+						<li class="bg">
+							<h4>{{forcast.days[i]}}</h4>
+							<figure class="icons">
+								<img src="{{ url_for('static', filename = forcast.descrip[i])}}" class="svg" width='60'
+									hight='60' vertical-align="middle">
+							</figure>
+							<h5>{{forcast.maxs[i]}}°C</h5>
+							<h6>{{forcast.mins[i]}}°C</h6>
+							<i class='wi wi-umbrella' style='font-size: 1.1em; margin-top: 0.5em;color:grey'></i>
+							<span class="rain" style='color: #FFD700;font-size:.85em'>
+								{{forcast.rains[i]}}%</span>
+						</li>
+
+						{% endfor %}
+					</ul>
+
+				</div>
+				<div class="clear"> </div>
+
+				<!--copyright-->
+					<div class="copyright">
+				<p style='color: #BEBEBE;'>© 2019 ตรวจสอบสภาพอากาศปัจจุบัน และพยากรณ์อากาศล่วงหน้า 5 วัน  | ข้อมูลโดย <a
+						href="https://www.tmd.go.th" target="_blank">กรมอุตุนิยมวิทยา</span>
+				</p>
+
+			</div>
+
+
+
+
+				<script>
+
+					function temperatureConverter() {
+						// var valTemp = document.getElementById("show-temp").innerHTML
+						//  var valLow = document.getElementById("low").innerHTML
+						// var valHight = document.getElementById("high").innerHTML
+
+						if (metric == 'si') {
+							var valTemp = document.getElementById("show-temp").innerHTML
+							var valLow = document.getElementById("low").innerHTML
+							var valHigh = document.getElementById("high").innerHTML
+
+							t = Number(valTemp);
+							l = Number(valLow);
+							h = Number(valHigh);
+							document.getElementById("show-temp").innerHTML = Math.round((t * 1.8) + 32);
+							document.getElementById("low").innerHTML = Math.round((l * 1.8) + 32);
+							document.getElementById("high").innerHTML = Math.round((h * 1.8) + 32);
+
+						} else {
+							var valTemp = document.getElementById("show-temp").innerHTML
+							var valLow = document.getElementById("low").innerHTML
+							var valHigh = document.getElementById("high").innerHTML
+
+							t = Number(valTemp);
+							l = Number(valLow);
+							h = Number(valHigh);
+
+							document.getElementById("show-temp").innerHTML = Math.round((t - 32) / 1.8);
+							document.getElementById("low").innerHTML = Math.round((l - 32) / 1.8);
+							document.getElementById("high").innerHTML = Math.round((h - 32) / 1.8);
+
+
+
+						}
+
+					}
+
+				</script>
+
+			</div>
+		</div>
+	</div>
+
+	<!--//main -->
+</body>
+
+</html>
