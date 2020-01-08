@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>J.A.R.V.I.S. Theme</title>
+
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="static/js/script.js"></script>
+    <script src="static/js/calculate_age.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <!-- Left Menu -->
+    <div id="leftmenu">
+
+        <div id="date_time">
+            <div id="date" class="semi_arc e4">
+                <div class="semi_arc_2 e4_1">
+                    <div class="counterspin4"></div>
+                </div>
+                <div style="font-size: 20px; margin-top: 25px;color:red;" id='day_name'></div>
+                <div style="font-size: 25px; margin-top: 10px;" id='date_now'></div>
+                <div style="font-size: 25px;color:white;" id='month_now'></div>
+            </div>
+
+            <div id="time" class="arc e1">
+                <div style="font-size: 24px; margin-left: 0px; margin-top: 32px;color:yellow" id='time_now'>23:41</div>
+
+
+            </div>
+        </div>
+
+        <p class="title">Performance</p>
+        <div class="hline title_underline"></div>
+
+        <span class="menuitem entypo-gauge" style="font-size: 30px; margin-left: 10px;">
+            <p id="cpu" class="caption" style="font-size: 20px;">CPU Usage: 19%</p>
+        </span> <br />
+
+        <span class="menuitem entypo-chart-area" style="font-size: 30px; margin-left: 10px;">
+            <p id="ram" class="caption" style="font-size: 20px;">Physical Memory: 28%</p>
+        </span> <br />
+
+        <span class="menuitem entypo-chart-pie" style="font-size: 30px; margin-left: 10px;">
+            <p id="proc" class="caption" style="font-size: 20px;">Processes: 73</p>
+        </span>
+
+        <p class="title">Shortcuts</p>
+        <div class="hline title_underline"></div>
+
+        <div class="menu">
+            <button id='btn_home' class="menuitem"> <span class="entypo-right-open" />
+                <p class="caption">Home</p>
+            </button>
+            <button id='btn_age_cal' class="menuitem"> <span class="entypo-right-open" />
+                <a class="caption">ตรวจสอบอายุ</a>
+            </button>
+            <button id='btn_countdown_1' class="menuitem"> <span class="entypo-right-open" />
+                <a class="caption">วันเด็กแห่งชาติ</a>
+            </button>
+
+            <button class="menuitem"> <span class="entypo-right-open" />
+                <p class="caption">Control Panel</p>
+            </button>
+
+            <hr style="border-color: transparent; margin: 0;" />
+            <div class="hline" style="margin-top: 5px; margin-bottom: 5px;"></div>
+
+            <button class="menuitem"> <span class="entypo-right-open" />
+                <p class="caption">Custom Path 1</p>
+            </button>
+            <button class="menuitem"> <span class="entypo-right-open" />
+                <p class="caption">Custom Path 2</p>
+            </button>
+            <button class="menuitem"> <span class="entypo-right-open" />
+                <p class="caption">Custom Path 3</p>
+            </button>
+
+
+            <p class="title">Social</p>
+            <div class="hline title_underline"></div>
+
+            <div class="app_icon entypo-facebook-squared"></div>
+            <div class="app_icon entypo-twitter"></div>
+            <div class="app_icon entypo-gplus"></div>
+            <div class="app_icon entypo-skype"></div>
+
+          
+        </div>
+
+    </div>
+
+
+
+    <!-- Right Menu -->
+    <div id="rightmenu">
+        <p class="title" style="text-align: left; margin-left: 10px;">Notes</p>
+        <div id="particle10" class="hline"></div>
+        <div id="particle11" class="hline"></div>
+        <div id="particle12" class="vline"></div>
+        <textarea id="note_input" rows="12" cols="44">For the maximum viewing experience, please view this pen in full screen where the code is displayed to the side of the display.
+    
+    To Complete:
+    - Right Menu (this side of the screen)
+      - Make this note restricted to 11 rows
+      - Fill in empty space below
+    - Weather widget next to date/time
+    - Place quick access taskbar down bottom
+    - Fill in space at the top</textarea>
+    </div>
+    </div>
+    </div>
+    <!-- End -->
+
+    <!-- Arc Reactor -->
+    <div id="arc_container">
+        <div class='title_start' id='start_title'></div>
+        <div class="arc_reactor">
+            <div class="case_container">
+                
+                <div class="e7">
+                    <div class="semi_arc_3 e5_1">
+                        <div class="semi_arc_3 e5_2">
+                            <div class="semi_arc_3 e5_3">
+                                <div class="semi_arc_3 e5_4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="core2"></div>
+                </div>
+                <ul class="marks">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+
+        </div>
+      
+    </div>
+
+  
+
+    <!-- End Particles -->
+
+
+    <!-- Age Calculate -->
+    <div class='content-center' id='age_calculate'>
+        <div class='title_coundown' id='title_age'></div>
+        <div class='circles'>
+
+            <div id="date" class="semi_arc e4"
+                style='color:red;padding:10px auto;animation: neon_box 5s ease-in-out infinite alternate;'>
+                <div class="semi_arc_2 e4_1">
+                    <div class="counterspin4"></div>
+                </div>
+                <div style="font-size: 20px; margin-top: 28px;"></div>
+                <div style="font-size: 2.5em; margin-top: 10px;font-weight:500;" id='year_age'></div>
+                <div style="font-size: 20px;color:grey;">Year</div>
+            </div>
+
+            <div id="date" class="semi_arc e4"
+                style='color:red;margin-left:9em; display:inline-block;animation: neon_box 11s ease-in-out infinite alternate;'>
+                <div class="semi_arc_2 e4_1">
+                    <div class="counterspin4"></div>
+                </div>
+                <div style="font-size: 20px; margin-top: 28px;"></div>
+                <div style="font-size: 2.5em; margin-top: 10px;font-weight:500;" id='month_age'></div>
+                <div style="font-size: 20px;color:grey;">Month</div>
+            </div>
+
+            <div id="date" class="semi_arc e4"
+                style='color:red;margin-left:18em; display:inline-block;animation: neon_box 17s ease-in-out infinite alternate;'>
+                <div class="semi_arc_2 e4_1">
+                    <div class="counterspin4"></div>
+                </div>
+                <div style="font-size: 20px; margin-top: 28px;"></div>
+                <div style="font-size: 2.5em; margin-top: 10px;font-weight:500;" id='day_age'></div>
+                <div style="font-size: 20px;color:grey;">Day</div>
+            </div>
+            <div id="date" style='margin-left:32em;color:yellow;margin-top:1.2em;'>
+                <div class="time_age arc e1 text-neon ">
+                    <div style="font-size:1.8em;margin-top: 18px; " id='hour_age'></div>
+                    <div style="font-size: 1em;color:grey;">Hour</div>
+                </div>
+            </div>
+
+            <div id="date" style='margin-left:39em;color:yellow'>
+                <div class="time_age arc e1 text-neon ">
+                    <div style="font-size:1.8em;margin-top: 18px; " id='minute_age'></div>
+                    <div style="font-size: 1em;color:grey;">Minute</div>
+                </div>
+            </div>
+            <div id="date" style='margin-left:46em;color:yellow;width:15%'>
+                <div class="time_age arc e1 text-neon ">
+                    <div style="font-size:1.8em;margin-top: 18px; " id='second_age'></div>
+                    <div style="font-size: 1em;color:grey;">Second</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
+    <!-- Countdown -1 -->
+    <div class='content-center' id='countdown_1'>
+        <div class='title_coundown'>งานวันเด็ก [Jan 11, 2020 08:00:00]</div>
+        <div class='circles'>
+            <div id="date" class="semi_arc e4" style='margin-left:2.5em;color:red;'>
+                <div class="semi_arc_2 e4_1">
+                    <div class="counterspin4"></div>
+                </div>
+                <div style="font-size: 20px; margin-top: 25px;"></div>
+                <div style="font-size: 2.5em; margin-top: 10px;" id='days'></div>
+                <div style="font-size: 20px;color:grey;">Day</div>
+            </div>
+            <div id="date" class="semi_arc e4" style='display:inline-block;margin-left:12em;color:yellow;'>
+                <div class="semi_arc_2 e4_1">
+                    <div class="counterspin4"></div>
+                </div>
+                <div style="font-size: 20px; margin-top: 25px;color:red;"></div>
+                <div style="font-size: 2.5em; margin-top: 10px;" id='hours'></div>
+                <div style="font-size: 20px;color:grey;">Hours</div>
+            </div>
+            <div id="date" class="semi_arc e4" style='display:inline-block;margin-left:21.5em;color:yellow;'>
+                <div class="semi_arc_2 e4_1">
+                    <div class="counterspin4"></div>
+                </div>
+                <div style="font-size: 20px; margin-top: 25px;color:red;"></div>
+                <div style="font-size: 2.5em; margin-top: 10px;" id='minutes'></div>
+                <div style="font-size: 20px;color:grey;">Minutes</div>
+            </div>
+            <div id="date" class="semi_arc e4" style='display:inline-block;margin-left:31em;color:yellow;'>
+                <div class="semi_arc_2 e4_1">
+                    <div class="counterspin4"></div>
+                </div>
+                <div style="font-size: 20px; margin-top: 25px;color:red;"></div>
+                <div style="font-size: 2.5em; margin-top: 10px;" id='seconds'></div>
+                <div style="font-size: 20px;color:grey;">Seconds</div>
+            </div>
+        </div>
+        <div class='content-end'></div>
+    </div>
+    </div>
+    <!-- End -->
+
+
+
+
+
+    <!-- Left Menu Particles -->
+    <canvas id="particle1" width="20" height="500"></canvas>
+    <script>
+        $("#age_calculate").hide();
+        $("#countdown_1").hide();
+        $("#arc_container").show();
+        $("#btn_home").click(function () {
+            $("#age_calculate").hide();
+            $("#countdown_1").hide();
+            $("#arc_container").show();
+        });
+        $("#btn_age_cal").click(function () {
+            $("#arc_container").hide();     
+        $("#countdown_1").hide();
+        $("#age_calculate").show();
+        });
+        $("#btn_countdown_1").click(function () {
+            $("#arc_container").hide();
+            $("#age_calculate").hide();
+            $("#countdown_1").show();
+        });
+        var canvas = document.getElementById('particle1');
+        var context = canvas.getContext('2d');
+        context.beginPath();
+        context.moveTo(0, 0);
+        context.lineTo(0, 70);
+        context.lineTo(10, 85);
+        context.lineTo(10, 135);
+        context.lineTo(0, 150);
+        context.lineTo(0, 480);
+        context.lineTo(5, 490);
+        context.lineTo(10, 490);
+        context.lineTo(20, 490);
+        context.lineTo(20, 250);
+        context.lineTo(10, 235);
+        context.lineTo(10, 185);
+        context.lineTo(20, 170);
+        context.lineTo(20, 40);
+        context.lineTo(10, 30);
+        context.lineTo(10, 20);
+        context.closePath();
+        context.lineWidth = 1;
+        context.fillStyle = 'rgba(2,254,255,0.3)';
+        context.fill();
+        context.strokeStyle = 'transparent';
+        context.stroke();
+    </script>
+
+    <canvas id="particle1_1" width="40" height="510"></canvas>
+    <script>
+        var canvas = document.getElementById('particle1_1');
+        var context = canvas.getContext('2d');
+        context.beginPath();
+        context.lineTo(0, 0);
+        context.lineTo(10, 15);
+        context.lineTo(10, 65);
+        context.lineTo(0, 80);
+        context.lineTo(0, 0);
+        context.closePath();
+        context.lineWidth = 1;
+        context.fillStyle = 'rgba(2,254,255,0.3)';
+        context.fill();
+        context.strokeStyle = 'transparent';
+        context.stroke();
+    </script>
+
+    <canvas id="particle1_2" width="40" height="510"></canvas>
+    <script>
+        var canvas = document.getElementById('particle1_2');
+        var context = canvas.getContext('2d');
+        context.beginPath();
+        context.lineTo(10, 80);
+        context.lineTo(0, 65);
+        context.lineTo(0, 15);
+        context.lineTo(10, 0);
+        context.lineTo(10, 80);
+        context.closePath();
+        context.lineWidth = 1;
+        context.fillStyle = 'rgba(2,254,255,0.3)';
+        context.fill();
+        context.strokeStyle = 'transparent';
+        context.stroke();
+        typeWriter()
+    </script>
+
+    <div id="particle1_3">
+        > > > >
+    </div>
+
+    <div id="particle2">▶<br />▶<br />▶</div>
+    <div id="particle3" class="vline" />
+    <div id="particle4" class="vline" />
+    <div id="particle5" class="vline" />
+    <div id="particle6" class="vline" />
+    <div id="particle7" class="vline" />
+    <div id="particle8" class="vline" />
+    <div id="particle9" class="vline" />
+    <!-- partial -->
+
+</body>
+
+</html>
