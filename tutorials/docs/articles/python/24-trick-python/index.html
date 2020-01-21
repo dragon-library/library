@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="24 เคล็ดลับ การใช้งาน Python"><meta property="og:title" content="24 เคล็ดลับ การใช้งาน Python" />
+<meta property="og:description" content="24 เคล็ดลับ การใช้งาน Python Python เป็นอีกหนึ่งภาษา Programming ที่ได้รับความนิยม ถูกนำไปใช้ในการเขียน Program ได้หลากหลายประเภท โดยไม่ได้จำกัดอยู่ที่งานเฉพาะทางใดทางหนึ่ง ไม่ว่าจะเป็นการพัฒนา Web หรือด้าน Data Science และ Machine Learning เป็นต้น จึงทำให้มีการนำไปใช้กันอย่างแพร่หลาย วันนี้เรามาดู 24 เคล็ดลับ การใช้งาน Python ที่จะช่วยให้คุณประหยัดเวลาและทำงานได้สะดวกขึ้น โดยดูตัวอย่างการใช้งานในแต่ละหัวข้อกันได้เลย
+1. Unpacking Array Items (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/01.png)
+2. Swapping Variables 3. Profile And Stats Of Your Code
+3. Profile And Stats Of Your Code
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png)
+4. Repeat String
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png)
+5. Slicing
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png)
+6. Reversing
+
+7. Negative Index
+ถ้าคุณต้องการที่จะเริ่มต้นจาก Character ตัวสุดท้าย สามารถใช้ Negative Index ได้" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/24-trick-python/" />
+
+<title>24 เคล็ดลับ การใช้งาน Python | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/"  class="active">
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>24 เคล็ดลับ การใช้งาน Python</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="24-เคล-ดล-บ-การใช-งาน-python">24 เคล็ดลับ การใช้งาน Python</h1>
+
+<p>Python เป็นอีกหนึ่งภาษา Programming ที่ได้รับความนิยม ถูกนำไปใช้ในการเขียน Program ได้หลากหลายประเภท โดยไม่ได้จำกัดอยู่ที่งานเฉพาะทางใดทางหนึ่ง ไม่ว่าจะเป็นการพัฒนา Web หรือด้าน Data Science และ Machine Learning เป็นต้น จึงทำให้มีการนำไปใช้กันอย่างแพร่หลาย วันนี้เรามาดู 24 เคล็ดลับ การใช้งาน Python ที่จะช่วยให้คุณประหยัดเวลาและทำงานได้สะดวกขึ้น โดยดูตัวอย่างการใช้งานในแต่ละหัวข้อกันได้เลย</p>
+
+<h2 id="1-unpacking-array-items"><strong>1. Unpacking Array Items</strong></h2>
+
+<p><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/01.png" alt="" />(<a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/01.png">http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/01.png</a>)</p>
+
+<h2 id="2-swapping-variables"><strong>2. Swapping Variables</strong></h2>
+
+<p><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/02.png" alt="" /></p>
+
+<p><strong>3. Profile And Stats Of Your Code</strong></p>
+
+<p><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/02.png" alt="" /></p>
+
+<p><strong>3. Profile And Stats Of Your Code</strong></p>
+
+<p><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png" alt="" />(<a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png">http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png</a>)</p>
+
+<p><strong>4. Repeat String</strong></p>
+
+<p><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png" alt="" />(<a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png">http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png</a>)</p>
+
+<p><strong>5. Slicing</strong></p>
+
+<p><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png" alt="" />(<a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png">http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png</a>)</p>
+
+<p><strong>6. Reversing</strong></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/06.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/06.png" alt="" /></a></p>
+
+<p><strong>7. Negative Index</strong></p>
+
+<p>ถ้าคุณต้องการที่จะเริ่มต้นจาก Character ตัวสุดท้าย สามารถใช้ Negative Index ได้</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/07.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/07.png" alt="" /></a></p>
+
+<p><strong>8. Intersect Sets</strong></p>
+
+<p>กรณีต้องการดึงสมาชิกที่ซ้ำกันของทั้ง 2 Sets</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/08.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/08.png" alt="" /></a></p>
+
+<p><strong>9. Difference In Sets</strong></p>
+
+<p>กรณีต้องการดึงสมาชิกของ Set ที่ไม่เป็นสมาชิกของอีก Set หนึ่ง (ในตัวอย่างนี้ ต้องการดึงสมาชิกของ a ที่ไม่ซ้ำกับสมาชิกของ b)</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/09.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/09.png" alt="" /></a></p>
+
+<p><strong>10. Union Of Collections</strong></p>
+
+<p>กรณีต้องการดึงสมาชิกทั้งหมดของทั้ง 2 Sets</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/10.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/10.png" alt="" /></a></p>
+
+<p><strong>11. Optional Arguments</strong></p>
+
+<p>เราสามารถส่งผ่าน Optional Argument โดยระบุค่า Default ให้กับ Argument ได้:</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/11.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/11.png" alt="" /></a></p>
+
+<p><strong>12. Unknown Arguments Using</strong>  *<strong>arguments</strong></p>
+
+<p>หาก Function ของคุณสามารถรับ Argument จำนวนเท่าใดก็ได้ ให้เพิ่ม * ไว้ที่ด้านหน้าของชื่อ Parameter:</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/12.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/12.png" alt="" /></a></p>
+
+<p><strong>13. Dictionary As Arguments Using</strong>  **<strong>arguments</strong></p>
+
+<p>จะช่วยให้คุณสามารถส่งผ่านจำนวน Keyword Arguments ที่แตกต่างกันไปยัง Function<br />
+นอกจากนี้ คุณยังสามารถส่งผ่านค่า Dictionary เป็น Keyword Arguments ได้:</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/13.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/13.png" alt="" /></a></p>
+
+<p><strong>14. Function With Multiple Outputs</strong></p>
+
+<p>ใช้ในกรณีที่ Function ต้องการ Return Outputs หลาย ๆ ค่า:</p>
+
+<p><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/14.png" alt="" />](<a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/14.png">http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/14.png</a>)</p>
+
+<p><strong>15. One Liner For Loops</strong></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/15.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/15.png" alt="" /></a></p>
+
+<p><strong>16. Combining Lists Using Zip</strong></p>
+
+<ul>
+<li>ใช้หลาย ๆ Collection แล้ว Return เป็น Collection ใหม่</li>
+<li>Collection ใหม่ จะมี Items ที่แต่ละ Item ประกอบด้วย 1 Element จากแต่ละ Collection ที่ถูก Input เข้ามา</li>
+<li>ช่วยให้เราสามารถ Transverse ได้หลาย Collection ในเวลาเดียวกัน</li>
+</ul>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/16.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/16.png" alt="" /></a></p>
+
+<p><strong>17. Free up Memory</strong></p>
+
+<p>เราสามารถเคลียร์หน่วยความจำ (Garbage Collection) แบบ Manual ได้ตามต้องการ</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/17.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/17.png" alt="" /></a></p>
+
+<p><strong>18. Using Decorators</strong></p>
+
+<ul>
+<li>Decorators สามารถเพิ่ม Function การทำงานให้กับ Code ได้ มันเป็น Function ที่เรียก Object / Function อื่น ๆ ด้วยเหตุนี้ พวกมันจึง Return Object ที่จะถูกเรียกใช้ในภายหลังจากที่ Decorated Function ถูก Invoked</li>
+<li>Decorates ก็เปรียบเหมือนการใช้แนวคิดของ Aspect-Oriented Programming</li>
+<li>เราสามารถ Wrap Class/Function จากนั้น Code นั้นจะถูก Executed เมื่อใดก็ตามที่ Function ถูกเรียกใช้</li>
+</ul>
+
+<p><em>(ตัวอย่างนี้ แสดงถึงวิธีการ</em> <em>Print ชื่อ Function นี่เป็นเพียงตัวอย่าง Code เพื่อแสดงให้เห็นถึงวิธีที่คุณสามารถเรียกใช้ Decorator คุณสามารถใช้ Decorator เพื่อเรียก Loggers ของคุณ, perform security operations เป็นต้น)</em></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/18_1.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/18_1.png" alt="" /></a></p>
+
+<p>และเมื่อเราใช้มันใน Function จะเป็นลักษณะดังนี้:</p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/18_2.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/18_2.png" alt="" /></a></p>
+
+<p><strong>19. Unzipping</strong></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/19.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/19.png" alt="" /></a></p>
+
+<p><strong>20. Joining Collection</strong></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/20.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/20.png" alt="" /></a></p>
+
+<p><strong>21. Memory Footprint Of An Object</strong></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/21.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/21.png" alt="" /></a></p>
+
+<p><strong>22. Print Current Directory</strong></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/22.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/22.png" alt="" /></a></p>
+
+<p><strong>23. Print Imported Modules</strong></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/23.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/23.png" alt="" /></a></p>
+
+<p><strong>24. Get Current Process Id</strong></p>
+
+<p><a href="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/24.png"><img src="http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/24.png" alt="" /></a></p>
+
+<p><strong>ที่มา:</strong> <a href="https://medium.com/fintechexplained/top-python-tips-tricks-dd996b807865"><strong><em>https://medium.com/</em></strong></a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5c24-trick-python.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#24-เคล-ดล-บ-การใช-งาน-python">24 เคล็ดลับ การใช้งาน Python</a>
+<ul>
+<li><a href="#1-unpacking-array-items"><strong>1. Unpacking Array Items</strong></a></li>
+<li><a href="#2-swapping-variables"><strong>2. Swapping Variables</strong></a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

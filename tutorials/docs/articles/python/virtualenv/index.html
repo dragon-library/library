@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="การใช้งาน Virtualenv"><meta property="og:title" content="การใช้งาน Virtualenv" />
+<meta property="og:description" content="การใช้งาน Virtualenv Virtualenv คืออะไร Virtualenv(ironment) คือ environment ของ python เช่น คุณทำโปรแกรมอยู่ 2 ตัว A กับ B แล้วเวลาคุณจะติดตั้ง library ถ้าคุณ pip install ลงไปเลย
+ library ที่คุณใช้กับงาน A กับปนมั่วกับงาน B  เช่น เวลาจะทำไฟล์ requirement เพื่อให้คนอื่น สามารถติดตั้ง library ที่ใช้กับงานเราได้สะดวกมากขึ้นก็กลับกลายเป็นว่า งาน A ใช้ 5 library งาน B ใช้ 10 Libray สรุป คนที่เอาโปรแกรมเราไม่ไปใช้ก็ไม่รู้ว่า โปรแกรมเราใช้ library อะไรบ้างก็ต้องติดตั้งทั้งหมด 15 library
+ หรือแบบไม่สามารถแยก version ของ library กันได้  เช่น งาน A ใช้ OpenCV 3 แต่ งาน B ใช้ OpenCV 4 ทำไงให้ลง 2 version พร้อมกันได้ละ ก็ต้องให้เจ้า Virtualenv ช่วยเราไง" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/virtualenv/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>การใช้งาน Virtualenv | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/"  class="active">
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>การใช้งาน Virtualenv</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="การใช-งาน-virtualenv">การใช้งาน Virtualenv</h1>
+
+<h3 id="virtualenv-ค-ออะไร">Virtualenv คืออะไร</h3>
+
+<p>Virtualenv(ironment) คือ environment ของ python เช่น คุณทำโปรแกรมอยู่ 2 ตัว A กับ B แล้วเวลาคุณจะติดตั้ง library ถ้าคุณ pip install ลงไปเลย</p>
+
+<ul>
+<li>library ที่คุณใช้กับงาน A กับปนมั่วกับงาน B</li>
+</ul>
+
+<p>เช่น เวลาจะทำไฟล์ requirement เพื่อให้คนอื่น สามารถติดตั้ง library ที่ใช้กับงานเราได้สะดวกมากขึ้นก็กลับกลายเป็นว่า งาน A ใช้ 5 library งาน B ใช้ 10 Libray สรุป คนที่เอาโปรแกรมเราไม่ไปใช้ก็ไม่รู้ว่า โปรแกรมเราใช้ library อะไรบ้างก็ต้องติดตั้งทั้งหมด 15 library</p>
+
+<ul>
+<li>หรือแบบไม่สามารถแยก version ของ library กันได้</li>
+</ul>
+
+<p>เช่น งาน A ใช้ OpenCV 3 แต่ งาน B ใช้ OpenCV 4 ทำไงให้ลง 2 version พร้อมกันได้ละ ก็ต้องให้เจ้า Virtualenv ช่วยเราไง</p>
+
+<p>โดยเจ้า Virtualenv จะสร้าง environment ใหม่ขึ้นมา ที่มีแต่ตัว Python เปล่าๆ แล้วเวลาเราติดตั้ง library อะไรไปมันก็จะเก็บไว้ใน Folder ของ environment แต่ละตัวไม่มาปนกัน</p>
+
+<p>ตอนนี้อาจจะ งง เดี๋ยวไปลองติดตั้งแล้วใช้งานจริงกันเลยดีกว่าครับ</p>
+
+<h3 id="การต-ดต-ง-virtualenv">การติดตั้ง Virtualenv</h3>
+
+<p>เราจะติดตั้ง Virtualenv ผ่าน pip กันนะครับ โดยการพิมพ์ command</p>
+
+<pre><code class="language-shell">pip install virtualenv
+</code></pre>
+
+<h3 id="การใช-งาน-virtualenv-1">การใช้งาน Virtualenv</h3>
+
+<p>สมมติ ผมทำโปรเจค image_enhancement อยู่ผมก็จะเข้าไปใน folder โปรเจคของผม</p>
+
+<p>ในทีนี้ผมจะสร้าง python environment ชื่อ env โดยสั่ง</p>
+
+<pre><code class="language-shell">virtualenv.exe venv
+</code></pre>
+
+<p>เวลาจะใช้งานก็สั่ง command</p>
+
+<pre><code class="language-shell">.\venv\Scripts\activate
+</code></pre>
+
+<p><a href="https://www.skconan.com/static/4532781f8248da2f308149f100b825e7/e1a0c/pip-00.png"><img src="https://www.skconan.com/static/4532781f8248da2f308149f100b825e7/fb8a0/pip-00.png" alt="pip 00" /></a></p>
+
+<h3 id="note">Note:</h3>
+
+<p>สำหรับใครที่ใช้ Virtualenv แล้วติดปัญหาเกี่ยวกับ execution policies แบบในรูปด้านล่าง</p>
+
+<p><a href="https://www.skconan.com/static/83dcaa6797ca6992755add5f6e4baf32/e1a0c/virtualenv-error.png"><img src="https://www.skconan.com/static/83dcaa6797ca6992755add5f6e4baf32/fb8a0/virtualenv-error.png" alt="virtualenv error" /></a></p>
+
+<p>ก็ให้เปิด Powershell หรือ Command Prompt แบบ Admin แล้วสั่ง</p>
+
+<pre><code class="language-shell">Set-ExecutionPolicy AllSigned
+</code></pre>
+
+<p>กับ</p>
+
+<pre><code class="language-shell">Set-ExecutionPolicy RemoteSigned
+</code></pre>
+
+<p>โดยจะเลือกแบบ Yes หรือ Yes to All ก็ได้ ดูรายละเอียดได้จาก  <a href="https://virtualenv.pypa.io/en/stable/userguide/">User Guid</a>  ของ virtualenv ครับ</p>
+
+<p>กลับมาเข้าเรื่องของเราต่อครับ เมื่อเราสั่ง activate แล้วจะมีชื่อ environment ของเราอยู่หน้าบรรทัดของ powershell หรือ command</p>
+
+<h3 id="การใช-งาน-virtualenv-ต-อ">การใช้งาน Virtualenv (ต่อ)</h3>
+
+<p>คราวนี้ถ้าเราอยากรู้ว่า environment ของเรามี library อะไรอยู่บ้างก็ให้ลองสั่ง</p>
+
+<pre><code class="language-py">pip freeze
+</code></pre>
+
+<p>ซึ่งเราจะยังไม่เห็น library ใดๆ คราวนนี้เรามาลองติดตั้ง library OpenCV กัน</p>
+
+<pre><code class="language-py">pip install opencv-python
+</code></pre>
+
+<p>แล้วลอง pip freeze อีกรอบ เราก็จะเห็นว่ามี library OpenCV เพิ่มเข้ามา</p>
+
+<pre><code class="language-py">numpy==1.16.3
+opencv-python==4.1.0.25
+</code></pre>
+
+<p>ทีนี้ก็มาลองทดสอบ library ที่เพิ่งลงกันครับ</p>
+
+<p><a href="https://www.skconan.com/static/98028e7c1d764ae8e4cb5f48fac51861/e1a0c/use-cv2.png"><img src="https://www.skconan.com/static/98028e7c1d764ae8e4cb5f48fac51861/fb8a0/use-cv2.png" alt="use cv2" /></a></p>
+
+<p>ถ้าเราใช้งาน environment เสร็จแล้ว ก็ให้สั่ง</p>
+
+<pre><code class="language-shell">deactivate
+</code></pre>
+
+<p>เพื่อออกจาก environment นั้น</p>
+
+<h3 id="ประโยชน-ของ-virtualenv">ประโยชน์ของ Virtualenv</h3>
+
+<p>สมมติ ว่าเราทำโปรเจคเสร็จ แล้วคนอื่นอยากนำไปใช้งานต่อ ให้เราสั่ง</p>
+
+<pre><code class="language-shell">pip freeze &gt; requirement.txt
+</code></pre>
+
+<p>เพื่อจะรวบรวม library ไว้ในไฟล์ requirement.txt เราอาจจะใช้ชื่อไฟล์อื่นก็ได้นะครับ</p>
+
+<p><a href="https://www.skconan.com/static/1793746c981b2c1dc6cce89125108a35/cab54/pip-freeze.png"><img src="https://www.skconan.com/static/1793746c981b2c1dc6cce89125108a35/fb8a0/pip-freeze.png" alt="pip freeze" /></a></p>
+
+<p>เวลาคนอื่นเอาไปใช้ เค้าก็จะสั่ง</p>
+
+<pre><code class="language-shell">pip install -r &lt;file requirement&gt;
+</code></pre>
+
+<p>เจ้า pip ก็จะลง library ทุกตัวให้อัตโนมัติ ของเพียงแค่ version ของ python เหมือนกัน เพราะ บางทีถ้าเรา freeze library จาก python 3.7 แล้วไปลงใน python 3.6 version ของ library บางตัวอาจจะไม่มีก็ได้ครับ</p>
+
+<h3 id="สร-ป">สรุป</h3>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>virtualenv <env_name></td>
+<td>สร้าง environment</td>
+</tr>
+
+<tr>
+<td><env_name>/Scripts/activate</td>
+<td>ใช้งาน environment</td>
+</tr>
+
+<tr>
+<td>deactivate</td>
+<td>ออกจาก environtment</td>
+</tr>
+
+<tr>
+<td>pip install <library_name></td>
+<td>ติดตั้ง library</td>
+</tr>
+
+<tr>
+<td>pip freeze</td>
+<td>แสดงรายชื่อ library</td>
+</tr>
+
+<tr>
+<td>สัญลักษณ์ &gt; <output_file></td>
+<td>เป็นการบอกให้เขียนใส่ <output_file></td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>ที่มาบทความ <a href="https://www.skconan.com/python-virtualenv/?fbclid=IwAR3fxMtdaTGVhcV_8G7syMIs0n4fpx-0n58q5CdafU1IkZ727cZFO5ZxSjE">skconan.com</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cvirtualenv.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#การใช-งาน-virtualenv">การใช้งาน Virtualenv</a>
+<ul>
+<li>
+<ul>
+<li><a href="#virtualenv-ค-ออะไร">Virtualenv คืออะไร</a></li>
+<li><a href="#การต-ดต-ง-virtualenv">การติดตั้ง Virtualenv</a></li>
+<li><a href="#การใช-งาน-virtualenv-1">การใช้งาน Virtualenv</a></li>
+<li><a href="#note">Note:</a></li>
+<li><a href="#การใช-งาน-virtualenv-ต-อ">การใช้งาน Virtualenv (ต่อ)</a></li>
+<li><a href="#ประโยชน-ของ-virtualenv">ประโยชน์ของ Virtualenv</a></li>
+<li><a href="#สร-ป">สรุป</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

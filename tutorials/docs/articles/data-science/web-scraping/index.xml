@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Scraping on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/</link>
+    <description>Recent content in Web Scraping on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building a Stock Screener - Part 1</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</guid>
+      <description>Building a Stock Screener in Python- Part 1  ที่มาบทความ .
+ In this post, I’ll share how to create a stock screener — a program which can filter stocks based on user preferences — from scratch (and for free) using python. This project will be broken into 3 parts-
+ Scraping data Storing data Screening data  Before we dive into programming, let’s start by asking why anyone would want to build a stock screener.</description>
+    </item>
+    
+    <item>
+      <title>Building a Stock Screener - Part 2</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/</guid>
+      <description>Building a Stock Screener in Python- Part 2 In this series, I’ll share how to create a stock screener — a program which can filter stocks based on user preferences — from scratch (and for free) using python. This project will be broken into 3 parts-
+ Scraping data Storing data Screening data  If you haven’t already, check out Part 1 where I talk about scraping stock information from Yahoo Finance in under 10 minutes!</description>
+    </item>
+    
+    <item>
+      <title>How to scrape Yahoo Finance</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/</guid>
+      <description>How to scrape Yahoo Finance and extract fundamental stock market data using Python, LXML, and Pandas In this blog post I’ll show you how to scrape Income Statement, Balance Sheet, and Cash Flow data for companies from Yahoo Finance using Python, LXML, and Pandas.
+I’ll use data from Mainfreight NZ (MFT.NZ) as an example, but the code will work for any stock symbol on Yahoo Finance.
+The screenshot below shows a Pandas DataFrame with MFT.</description>
+    </item>
+    
+    <item>
+      <title>Requests and BeautifulSoup</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/</guid>
+      <description>Ultimate Guide to Web Scraping with Python Part 1: Requests and BeautifulSoup After the 2016 election I became much more interested in media bias and the manipulation of individuals through advertising. This series will be a walkthrough of a web scraping project that monitors political news from both left and right wing media outlets and performs an analysis on the rhetoric being used, the ads being displayed, and the sentiment of certain topics.</description>
+    </item>
+    
+    <item>
+      <title>Web Scraping 101</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</guid>
+      <description>Web Scraping 101 in Python : overview of the tools &amp;amp; the pros and cons of each Summary:  Web Fundamentals Manually opening a socket and sending the HTTP request urllib3 &amp;amp; LXML requests &amp;amp; BeautifulSoup Scrapy Selenium &amp;amp; Chrome —headless Conclusion  Web Fundamentals The internet is really complex–there are many underlying technologies and concepts involved to view a simple web page in your browser. I&amp;rsquo;m not going to explain everything, but I will show you the most important things you have to understand in order to extract data from the web.</description>
+    </item>
+    
+  </channel>
+</rss>

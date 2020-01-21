@@ -15,11 +15,20 @@ Forms (or input data in general) play a critical role in any kind of website or 
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
 
 
-<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -90,6 +99,78 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
     
       
         
@@ -265,14 +346,34 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
-  </ul>
-  
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
-  </li>
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
       
     
   </ul>
@@ -288,21 +389,21 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/library/tutorials/docs/python/pythonthailand/" >
-      Python Thailand
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
   </a>
 
 </li>
       
     
-      
-        <li>
+  </ul>
+  
 
-  <a href="/library/tutorials/docs/python/awesome/" >
-      Awesome Python
-  </a>
 
-</li>
+
+  </li>
+
+
       
     
       
@@ -397,6 +498,32 @@ https://github.com/alex-shpak/hugo-book
 
       
     
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
   </ul>
   
 
@@ -456,10 +583,12 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)</code></pre></div>
-We&rsquo;re going to be accepting  <code>POST</code>  requests on this route so we need to pass another argument to  <code>@app.route</code></p>
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;)
+def sign_up():
+    return render_template(&quot;public/sign_up.html&quot;)
+</code></pre>
+
+<p>We&rsquo;re going to be accepting  <code>POST</code>  requests on this route so we need to pass another argument to  <code>@app.route</code></p>
 
 <p>We do this by passing the  <code>methods</code>  argument, along with a list of methods as the value.</p>
 
@@ -474,108 +603,121 @@ We&rsquo;re going to be accepting  <code>POST</code>  requests on this route so 
 
 <p>Let&rsquo;s privide our route with the  <code>methods</code>  argument and a list of methods we want the route to handle:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)</code></pre></div>
-&gt; Tip - Flask routes support  <code>GET</code>  requests by default, however must be declared if the  <code>methods</code>  argument is provided</p>
+<p><strong>app/app/views.py</strong></p>
+
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_up():
+    return render_template(&quot;public/sign_up.html&quot;)
+</code></pre>
+
+<blockquote>
+<p>Tip - Flask routes support  <code>GET</code>  requests by default, however must be declared if the  <code>methods</code>  argument is provided</p>
+</blockquote>
 
 <p>We need to create a new template so go ahead and create a new file called  <code>sign_up.html</code>  and place it in the  <code>templates/public</code>  directory.</p>
 
 <p>Open up  <code>sign_up.html</code>  in your editor and add the following:</p>
 
-<p><strong>app/app/templates/public/sign_up.html</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{<span style="color:#f92672">%</span> extends <span style="color:#e6db74">&#34;public/templates/public_template.html&#34;</span> <span style="color:#f92672">%</span>}
+<p><strong>app/app/templates/public/sign_up.html</strong></p>
 
-{<span style="color:#f92672">%</span> block title <span style="color:#f92672">%</span>}Sign up{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}
-
-{<span style="color:#f92672">%</span> block main <span style="color:#f92672">%</span>}
-
-<span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>h1<span style="color:#f92672">&gt;</span>Sign up<span style="color:#f92672">&lt;/</span>h1<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-
-{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}</code></pre></div></p>
-
-<p>Save the file and open go to the  <code>/sign-up</code>  route in your browser. You should see the new page render.</p>
-
-<p>Let&rsquo;s create a form and add some input fields to our template. We&rsquo;re going to add fields for username, email and pasword. Go ahead and enter the following just under the  <code>&lt;hr&gt;</code>  tag:</p>
-
-<p><strong>app/app/templates/public/sign_up.html</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sign-up&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
-
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
-    &lt;<span style="color:#f92672">label</span>&gt;Username&lt;/<span style="color:#f92672">label</span>&gt;
-    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Select a username&#34;</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
-    &lt;<span style="color:#f92672">label</span>&gt;Email&lt;/<span style="color:#f92672">label</span>&gt;
-    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter your email&#34;</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
-    &lt;<span style="color:#f92672">label</span>&gt;Password&lt;/<span style="color:#f92672">label</span>&gt;
-    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create a password&#34;</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-
-&lt;/<span style="color:#f92672">form</span>&gt;` 
-
-Lastly, we need to add a submit button. Add it just befor the closing  `&lt;/<span style="color:#f92672">form</span>&gt;`  tag:
-
-**app/app/templates/public/sign_up.html**
-
-`&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Sign up&lt;/<span style="color:#f92672">button</span>&gt;` 
-
-Your template should now look something like this:
-
-**app/app/templates/public/sign_up.html**
-
-`{% extends &#34;public/templates/public_template.html&#34; %}
+<pre><code class="language-py">{% extends &quot;public/templates/public_template.html&quot; %}
 
 {% block title %}Sign up{% endblock %}
 
 {% block main %}
 
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;h1&gt;Sign up&lt;/h1&gt;
+      &lt;hr&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-      &lt;<span style="color:#f92672">h1</span>&gt;Sign up&lt;/<span style="color:#f92672">h1</span>&gt;
-      &lt;<span style="color:#f92672">hr</span>&gt;
+{% endblock %}
+</code></pre>
 
-      &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sign-up&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+<p>Save the file and open go to the  <code>/sign-up</code>  route in your browser. You should see the new page render.</p>
 
-        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
-          &lt;<span style="color:#f92672">label</span>&gt;Username&lt;/<span style="color:#f92672">label</span>&gt;
-          &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Select a username&#34;</span>&gt;
-        &lt;/<span style="color:#f92672">div</span>&gt;
+<p>Let&rsquo;s create a form and add some input fields to our template. We&rsquo;re going to add fields for username, email and pasword. Go ahead and enter the following just under the  <code>&lt;hr&gt;</code>  tag:</p>
 
-        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
-          &lt;<span style="color:#f92672">label</span>&gt;Email&lt;/<span style="color:#f92672">label</span>&gt;
-          &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter your email&#34;</span>&gt;
-        &lt;/<span style="color:#f92672">div</span>&gt;
+<p><strong>app/app/templates/public/sign_up.html</strong></p>
 
-        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span>&gt;
-          &lt;<span style="color:#f92672">label</span>&gt;Password&lt;/<span style="color:#f92672">label</span>&gt;
-          &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create a password&#34;</span>&gt;
-        &lt;/<span style="color:#f92672">div</span>&gt;
+<pre><code class="language-html">&lt;form action=&quot;/sign-up&quot; method=&quot;POST&quot;&gt;
 
-        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Sign up&lt;/<span style="color:#f92672">button</span>&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label&gt;Username&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;username&quot; name=&quot;username&quot; placeholder=&quot;Select a username&quot;&gt;
+  &lt;/div&gt;
 
-      &lt;/<span style="color:#f92672">form</span>&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Enter your email&quot;&gt;
+  &lt;/div&gt;
 
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label&gt;Password&lt;/label&gt;
+    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Create a password&quot;&gt;
+  &lt;/div&gt;
 
-{% endblock %}` </code></pre></div>
-&gt; Tip - To access form data in Flask, you must provide the  <code>name</code>  attribute in each of the forms  <code>input</code>  tags</p>
+&lt;/form&gt;
+</code></pre>
+
+<p>Lastly, we need to add a submit button. Add it just befor the closing  <code>&lt;/form&gt;</code>  tag:</p>
+
+<p><strong>app/app/templates/public/sign_up.html</strong></p>
+
+<p><code>&lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Sign up&lt;/button&gt;</code></p>
+
+<p>Your template should now look something like this:</p>
+
+<p><strong>app/app/templates/public/sign_up.html</strong></p>
+
+<pre><code class="language-html">{% extends &quot;public/templates/public_template.html&quot; %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block main %}
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+
+      &lt;h1&gt;Sign up&lt;/h1&gt;
+      &lt;hr&gt;
+
+      &lt;form action=&quot;/sign-up&quot; method=&quot;POST&quot;&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+          &lt;label&gt;Username&lt;/label&gt;
+          &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;username&quot; name=&quot;username&quot; placeholder=&quot;Select a username&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+          &lt;label&gt;Email&lt;/label&gt;
+          &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Enter your email&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+          &lt;label&gt;Password&lt;/label&gt;
+          &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Create a password&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Sign up&lt;/button&gt;
+
+      &lt;/form&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+{% endblock %}` 
+</code></pre>
+
+<blockquote>
+<p>Tip - To access form data in Flask, you must provide the  <code>name</code>  attribute in each of the forms  <code>input</code>  tags</p>
+</blockquote>
 
 <p>Pay attention to the opening  <code>&lt;form&gt;</code>  tag.</p>
 
@@ -601,26 +743,32 @@ Your template should now look something like this:
 
 <p>At the top of  <code>views.py</code>, go ahead and import  <code>request</code>  from  <code>flask</code>. We&rsquo;ll also import  <code>redirect</code></p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request, redirect<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
-To access form data in our route, we use  <code>request.form</code>.</p>
+<p><strong>app/app/views.py</strong></p>
+
+<pre><code class="language-py">from flask import request, redirect` 
+</code></pre>
+
+<p>To access form data in our route, we use  <code>request.form</code>.</p>
 
 <p>Let&rsquo;s capture our incoming form data to a variable called  <code>req</code>, but first, we should add a conditional to validate we&rsquo;re receiving  <code>POST</code>  data.</p>
 
 <p>We can do so by testing  <code>request.method</code>  for the  <code>&quot;POST&quot;</code>  method:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+<p><strong>app/app/views.py</strong></p>
 
-    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_up():
 
-        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form
+    if request.method == &quot;POST&quot;:
 
-        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+        req = request.form
 
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
-The  <code>redirect</code>  function, amongst many other things allows us to redirect the client to different parts our app. We&rsquo;ll be exploring  <code>redirect</code>  in more detail in a future part of this series.</p>
+        return redirect(request.url)
+
+    return render_template(&quot;public/sign_up.html&quot;)` 
+</code></pre>
+
+<p>The  <code>redirect</code>  function, amongst many other things allows us to redirect the client to different parts our app. We&rsquo;ll be exploring  <code>redirect</code>  in more detail in a future part of this series.</p>
 
 <p>In this case, we&rsquo;re instructing  <code>redirect</code>  to redirect the client to the URL of the request.</p>
 
@@ -628,64 +776,73 @@ The  <code>redirect</code>  function, amongst many other things allows us to red
 
 <p>Let&rsquo;s just  <code>print(req)</code>  and inspect the results.</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+<p><strong>app/app/views.py</strong></p>
 
-    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_up():
 
-        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form
-        <span style="color:#66d9ef">print</span>(req)
+    if request.method == &quot;POST&quot;:
 
-        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+        req = request.form
+        print(req)
 
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)</code></pre></div>
-Depending on whether you supplied any input, you&rsquo;ll see:</p>
+        return redirect(request.url)
+
+    return render_template(&quot;public/sign_up.html&quot;)
+</code></pre>
+
+<p>Depending on whether you supplied any input, you&rsquo;ll see:</p>
 
 <p><code>ImmutableMultiDict([('username', ''), ('email', ''), ('password', '')])</code></p>
 
 <p>We can treat our  <code>req</code>  object just like a normal Python dictionary, for example, to access the individual inputs from the form, we can use any of the following:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+<p><strong>app/app/views.py</strong></p>
 
-    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_up():
 
-        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form
+    if request.method == &quot;POST&quot;:
 
-        username <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;username&#34;</span>)
-        email <span style="color:#f92672">=</span> req[<span style="color:#e6db74">&#34;email&#34;</span>]
-        password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;password&#34;</span>]
+        req = request.form
 
-        <span style="color:#75715e"># You could also use </span>
-        password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;password&#34;</span>)
+        username = req.get(&quot;username&quot;)
+        email = req[&quot;email&quot;]
+        password = request.form[&quot;password&quot;]
 
-        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+        # You could also use 
+        password = request.form.get(&quot;password&quot;)
 
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
-You could bypass capturing and storing the form data as a variable with the following:</p>
+        return redirect(request.url)
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+    return render_template(&quot;public/sign_up.html&quot;)` 
+</code></pre>
 
-    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+<p>You could bypass capturing and storing the form data as a variable with the following:</p>
 
-        username <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;username&#34;</span>)
-        email <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;email&#34;</span>)
-        password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;password&#34;</span>)
+<p><strong>app/app/views.py</strong></p>
 
-        <span style="color:#75715e"># Alternatively</span>
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_up():
 
-        username <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;username&#34;</span>]
-        email <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;email&#34;</span>]
-        password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;password&#34;</span>]
+    if request.method == &quot;POST&quot;:
 
-        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+        username = request.form.get(&quot;username&quot;)
+        email = request.form.get(&quot;email&quot;)
+        password = request.form.get(&quot;password&quot;)
 
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)</code></pre></div>
-We&rsquo;ve now got each of the form values stored as a Python variable to do as we please.</p>
+        # Alternatively
+
+        username = request.form[&quot;username&quot;]
+        email = request.form[&quot;email&quot;]
+        password = request.form[&quot;password&quot;]
+
+        return redirect(request.url)
+
+    return render_template(&quot;public/sign_up.html&quot;)
+</code></pre>
+
+<p>We&rsquo;ve now got each of the form values stored as a Python variable to do as we please.</p>
 
 <h3 id="validating-form-data">Validating form data</h3>
 
@@ -693,35 +850,41 @@ We&rsquo;ve now got each of the form values stored as a Python variable to do as
 
 <p>Let&rsquo;s iterate through the keys and values of our  <code>req</code>  object and look for missing fields, then return a response and message to the user:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/sign-up&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sign_up</span>():
+<p><strong>app/app/views.py</strong></p>
 
-    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_up():
 
-        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form
+    if request.method == &quot;POST&quot;:
 
-        missing <span style="color:#f92672">=</span> list()
+        req = request.form
 
-        <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> req<span style="color:#f92672">.</span>items():
-            <span style="color:#66d9ef">if</span> v <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>:
-                missing<span style="color:#f92672">.</span>append(k)
+        missing = list()
 
-        <span style="color:#66d9ef">if</span> missing:
-            feedback <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#34;Missing fields for {&#39;, &#39;.join(missing)}&#34;</span>
-            <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>, feedback<span style="color:#f92672">=</span>feedback)
+        for k, v in req.items():
+            if v == &quot;&quot;:
+                missing.append(k)
 
-        <span style="color:#66d9ef">return</span> redirect(request<span style="color:#f92672">.</span>url)
+        if missing:
+            feedback = f&quot;Missing fields for {', '.join(missing)}&quot;
+            return render_template(&quot;public/sign_up.html&quot;, feedback=feedback)
 
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/sign_up.html&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
-We&rsquo;ll add a message in  <code>sign_up.html</code>  to give some feedback to the user. Open up  <code>sign_up.html</code>  and add the following just under the  <code>&lt;button&gt;</code>  tag inside the form:</p>
+        return redirect(request.url)
+
+    return render_template(&quot;public/sign_up.html&quot;)` 
+</code></pre>
+
+<p>We&rsquo;ll add a message in  <code>sign_up.html</code>  to give some feedback to the user. Open up  <code>sign_up.html</code>  and add the following just under the  <code>&lt;button&gt;</code>  tag inside the form:</p>
 
 <p><strong>app/app/templates/public/sign_up.html</strong></p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% if feedback %}
-&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-danger float-right&#34;</span>&gt;{{ feedback }}&lt;/<span style="color:#f92672">p</span>&gt;
-{% endif %}` </code></pre></div>
-Save and close the file.</p>
+<pre><code class="language-html">
+{% if feedback %}
+&lt;p class=&quot;text-danger float-right&quot;&gt;{{ feedback }}&lt;/p&gt;
+{% endif %}` 
+</code></pre>
+
+<p>Save and close the file.</p>
 
 <p>Refresh your browser and submit an empty form. You should see the error message appear to the bottom right of the form. When you submit values for all 3 fields, the feedback message doesn&rsquo;t appear.</p>
 

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python vs. Scala  (Part II)"><meta property="og:title" content="Python vs. Scala  (Part II)" />
+<meta property="og:description" content="Pandas vs. Spark: how to handle dataframes (Part II) “Panda statues on gray concrete stairs during daytime” by chuttersnap on Unsplash. “Scala” means “stairway” in Italian, my native language: hence the choice of the picture. It just seemed appropriate.
+A few days ago I published a post comparing the basic commands of Python and Scala: how to deal with lists and arrays, functions, loops, dictionaries and so on. As I continue practicing with Scala, it seemed appropriate to follow-up with a second part, comparing how to handle dataframes in the two programming languages, in order to get the data ready before the modeling process." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Python vs. Scala  (Part II) | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/"  class="active">
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python vs. Scala  (Part II)</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="pandas-vs-spark-how-to-handle-dataframes-part-ii">Pandas vs. Spark: how to handle dataframes (Part II)</h1>
+
+<p><img src="https://miro.medium.com/max/3264/0*DSIo5PnX246bcJ4x" alt="" /></p>
+
+<p>“Panda statues on gray concrete stairs during daytime” by  <a href="https://unsplash.com/@chuttersnap?utm_source=medium&amp;utm_medium=referral">chuttersnap</a>  on  <a href="https://unsplash.com/?utm_source=medium&amp;utm_medium=referral">Unsplash</a>. “Scala” means “stairway” in Italian, my native language: hence the choice of the picture. It just seemed appropriate.</p>
+
+<p>A few days ago I published a  <a href="https://towardsdatascience.com/python-vs-scala-a-comparison-of-the-basic-commands-fae23b3ede23">post</a>  comparing the basic commands of Python and Scala: how to deal with lists and arrays, functions, loops, dictionaries and so on. As I continue practicing with Scala, it seemed appropriate to follow-up with a second part, comparing how to handle dataframes in the two programming languages, in order to get the data ready before the modeling process. In Python, we will do all this by using Pandas library, while in Scala we will use Spark.</p>
+
+<blockquote>
+<p>For this exercise, I will use the Titanic train dataset that can be easily downloaded  <a href="https://www.kaggle.com/c/titanic/data">at this link</a>. Also, I do my Scala practices in Databricks: if you do so as well, remember to import your dataset first by clicking on Data and then Add Data.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="1-read-the-dataframe">1. Read the dataframe</h2>
+
+<p>I will import and name my dataframe  <em>df</em>, in  <strong>Python</strong>  this will be just two lines of code. This will work if you saved your  <em>train.csv</em> in the same folder where your notebook is.</p>
+
+<pre><code class="language-py">import pandas as pd  
+df = pd.read_csv('train.csv')
+</code></pre>
+
+<p><strong>Scala</strong>  will require more typing.</p>
+
+<pre><code class="language-py">var df = sqlContext  
+    .read  
+    .format(&quot;csv&quot;)  
+    .option(&quot;header&quot;, &quot;true&quot;)  
+    .option(&quot;inferSchema&quot;, &quot;true&quot;)  
+    .load(&quot;Filestore/tables/train.csv&quot;)
+</code></pre>
+
+<p>Let’s see what’s going on up here. Scala does not assume your dataset has a header, so we need to specify that. Also, Python will assign automatically a dtype to the dataframe columns, while Scala doesn’t do so, unless we specify  <code>.option(&quot;inferSchema&quot;, &quot;true&quot;)</code>. Also notice that I did not import Spark Dataframe, because I practice Scala in  <a href="https://databricks.com/">Databricks</a>, and it is preloaded. Otherwise we will need to do so.</p>
+
+<blockquote>
+<p>Notice: booleans are capitalized in Python, while they are all lower-case in Scala!</p>
+</blockquote>
+
+<h2 id="2-display-the-first-rows-of-the-dataframe">2. Display the first rows of the dataframe</h2>
+
+<p>In  <strong>Python</strong>,  <code>df.head()</code>  will show the first five rows by default: the output will look like this.</p>
+
+<p><img src="https://miro.medium.com/max/1948/1*0ZvDRoJd9DXoPLqTp4AlAw.png" alt="" /></p>
+
+<p><code>df.head()</code> output in Python.</p>
+
+<p>If you want to see a number of rows different than five, you can just pass a different number in the parenthesis.  <strong>Scala</strong>, with its  <code>df.show()</code>,will display the first 20 rows by default.</p>
+
+<p><img src="https://miro.medium.com/max/1802/1*7OfENvo-y_bOk5oGmC9yqQ.png" alt="" /></p>
+
+<p><code>df.show()</code> in Scala.</p>
+
+<p>If we want to keep it shorter, and also get rid of the ellipsis in order to read the entire content of the columns, we can run  <code>df.show(5, false)</code>.</p>
+
+<h2 id="3-dataframe-columns-and-dtypes">3. Dataframe Columns and Dtypes</h2>
+
+<p>To retrieve the column names, in both cases we can just type  <code>df.columns</code>:  <strong>Scala</strong> and  <strong>Pandas</strong>  will return an Array and an Index of strings, respectively.</p>
+
+<p>If we want to check the dtypes, the command is again the same for both languages:  <code>df.dtypes</code>. Pandas will return a Series object, while Scala will return an Array of tuples, each tuple containing respectively the name of the</p>
+
+<p><img src="https://miro.medium.com/max/392/1*7TKnEnYemucWRQmQ_Clnmg.png" alt="" /></p>
+
+<p>df.dtypes in Python</p>
+
+<p>column and the dtype. So, if we are in Python and we want to check what type is the  <em>Age</em>  column, we run  <code>df.dtypes['Age']</code>, while in Scala we will need to filter and use the Tuple indexing:  <code>df.dtypes.filter(colTup =&gt; colTup._1 == &quot;Age&quot;)</code>.</p>
+
+<h2 id="4-summary-statistics">4. Summary Statistics</h2>
+
+<p>This is another thing that every Data Scientist does while exploring his/her data: summary statistics. For every numerical column, we can see information such as count, mean, median, deviation, so on and so forth, to see immediately if there is something that doesn’t look right. In both cases this will return a dataframe, where the columns are the numerical columns of the original dataframe, and the rows are the statistical values.</p>
+
+<p>In  <strong>Python</strong>, we type  <code>df.describe()</code>, while in  <strong>Scala</strong>  <code>df.describe().show()</code>. The reason we have to add the  <code>.show()</code>  in the latter case, is because Scala doesn’t output the resulting dataframe automatically, while Python does so (as long as we don’t assign it to a new variable).</p>
+
+<h2 id="5-select-columns">5. Select Columns</h2>
+
+<p>Suppose we want to see a subset of columns, for example  <em>Name</em>  and  <em>Survived.</em></p>
+
+<p>In  <strong>Python</strong>  we can use either  <code>df[['Name','Survived]]</code>  or  <code>df.loc[:,['Name','Survived]</code>  indistinctly. Remember that the  <code>:</code>  in this case means “all the rows”.</p>
+
+<p>In  <strong>Scala</strong>, we will type  <code>df.select(&quot;Name&quot;,&quot;Survived&quot;).show()</code>. If you want to assign the subset to a new variable, remember to omit the  <code>.show()</code>.</p>
+
+<h2 id="6-filtering">6. Filtering</h2>
+
+<p>Let’s say we want to have a look at the  <em>Name</em>  and  <em>Pclass</em>  of the passengers who survived. We will need to filter a condition on the  <em>Survived</em>  column and then select the the other ones.</p>
+
+<p>In  <strong>Python</strong>, we will use  <code>.loc</code>  again, by passing the filter in the rows place and then selecting the columns with a list. Basically like the example above but substituting the  <code>:</code>  with a filter, which means</p>
+
+<pre><code class="language-py">df.loc[df['Survived'] == 1, ['Name','Pclass']].
+</code></pre>
+
+<p>In  <strong>Scala</strong>  we will use  <code>.filter</code>  followed by  <code>.select</code>, which will be  <code>df.filter(&quot;Survived = 1&quot;).select(&quot;Name&quot;,&quot;Pclass&quot;).show()</code>.</p>
+
+<h2 id="6-1-filtering-null-values">6.1. Filtering null values</h2>
+
+<p>If we want to check the null values, for example in the  <em>Embarked</em>  column, it will work like a normal filter, just with a different condition.</p>
+
+<p>In  <strong>Python</strong>, we apply the  <code>.isnull()</code>  when passing the condition, in this case<code>df[df['Embarked'].isnull()]</code>. Since we didn’t specify any columns, this will return a dataframe will all the original columns, but only the rows where the  <em>Embarked</em>  values are empty.</p>
+
+<p>In  <strong>Scala</strong>, we will use  <code>.filter</code>  again:  <code>df.filter(&quot;Embarked IS NULL&quot;).show()</code>. Notice that the boolean filters we pass in Scala, kind of look like SQL queries.</p>
+
+<h2 id="7-imputing-null-values">7. Imputing Null Values</h2>
+
+<p>We should always give some thought before imputing null values in a dataset, because it is something that will influence our final model and we want to be careful with that. However, just for demonstrative purposes, let’s say we want to impute the string “N/A” to the null values in our dataframe.</p>
+
+<p>We can do so in  <strong>Python</strong>  with either  <code>df = df.fillna('N/A')</code>  or  <code>df.fillna('N/A', inplace = True)</code>.</p>
+
+<p>In  <strong>Scala</strong>, quite similarly, this would be achieved with  <code>df = df.na.fill(&quot;N/A&quot;)</code>. Remember to not use the  <code>.show()</code>  in this case, because we are assigning the revised dataframe to a variable.</p>
+
+<h1 id="8-renaming-columns">8. Renaming Columns</h1>
+
+<p>This is something that you will need to for sure in Scala, since the machine learning models will need two columns named  <em>features</em>  and  <em>label</em>  in order to be trained. However, this is something you might want to do also in Pandas if you don’t like how a column has been named, for example. For this purpose, we want to change the  <em>Survived</em>  column into  <em>label</em>.</p>
+
+<p>In  <strong>Python</strong>  we will pass a dictionary, where the key and the value are respectively the old and the new name of the column. In this case, it will be</p>
+
+<pre><code class="language-py">df.rename(columns = {&quot;Survived&quot;: &quot;label&quot;}, inplace = True).
+</code></pre>
+
+<p>In  <strong>Scala</strong>, this equals to  <code>df = df.withColumnRenamed(&quot;Survived&quot;, &quot;label&quot;)</code>.</p>
+
+<h1 id="9-group-by-and-aggregation">9. Group By and Aggregation</h1>
+
+<p>Let’s say we want to calculate the maximum  <em>Age</em>  for men and women distinctively, in this case  <code>.groubpby</code>  comes in handy. Not only to retrieve the maximum value; after  <code>.groupby</code>  we can use all sorts of aggregation functions: mean, count, median, so on and so forth. We stick with  <code>.max()</code>  for this example.</p>
+
+<p>In  <strong>Python</strong>  this will be  <code>df.groupby('Sex').mean()['Age']</code>. If we don’t specify  <code>['Age']</code>  after  <code>.mean()</code>, this will return a dataframe with the maximum values for all numerical columns, grouped by  <em>Sex</em>.</p>
+
+<p>In  <strong>Scala</strong>, we will need to import the aggregation function we want to use, first.</p>
+
+<pre><code class="language-py">import org.apache.spark.sql.functions.max  
+df.groupBy(&quot;Sex&quot;).agg(max(&quot;Age&quot;)).show()
+</code></pre>
+
+<h2 id="10-create-a-new-column">10. Create a New Column</h2>
+
+<p>This is really useful for feature engineering, we might want to combine two variables to see how their interaction is related to the target. For purely demonstrative purpose, let’s see how to create a column containing the product between  <em>Age</em>  and  <em>Fare.</em></p>
+
+<p>In  <strong>Python</strong>  it is pretty straightforward.</p>
+
+<pre><code class="language-py">df['Age_times_Fare'] = df['Age'] * df['Fare']
+</code></pre>
+
+<p>In  <strong>Scala</strong>, we will need to put  <code>$</code>  before the names of the columns we want to use, so that the column object with the corresponding name will be considered.</p>
+
+<pre><code class="language-py">df = df.withColumn(&quot;AgeTimesFare&quot;, $&quot;Age&quot; * $&quot;Fare&quot;)
+</code></pre>
+
+<h2 id="11-correlation">11. Correlation</h2>
+
+<p>Exploring correlation among numerical variables and target is always convenient, and obtaining a matrix of correlation coefficients among all numeric variables is pretty easy in  <strong>Python</strong>, just by running  <code>df.corr()</code>. If you want to look at the correlation, let’s say between  <em>Age</em> and  <em>Fare</em>, we will just need to specify the columns:  <code>df[['Age','Fare']].corr()</code>.</p>
+
+<p>In Scala, we will need to import first, and then run the command by specifying the columns.</p>
+
+<pre><code class="language-py">import org.apache.spark.sql.functions.corr  
+df.select(corr(&quot;Age&quot;,&quot;Fare&quot;)).show()
+</code></pre>
+
+<hr />
+
+<p>This is it! I hope you found this post useful as much as it has been useful for me writing it. I intend to publish a Part III where I can walk through a machine learning model example to kind of complete the circle!</p>
+
+<blockquote>
+<p>Written with <a href="https://towardsdatascience.com/python-pandas-vs-scala-how-to-handle-dataframes-part-ii-d3e5efe8287d">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-scala-comparison-part-2.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#pandas-vs-spark-how-to-handle-dataframes-part-ii">Pandas vs. Spark: how to handle dataframes (Part II)</a>
+<ul>
+<li><a href="#1-read-the-dataframe">1. Read the dataframe</a></li>
+<li><a href="#2-display-the-first-rows-of-the-dataframe">2. Display the first rows of the dataframe</a></li>
+<li><a href="#3-dataframe-columns-and-dtypes">3. Dataframe Columns and Dtypes</a></li>
+<li><a href="#4-summary-statistics">4. Summary Statistics</a></li>
+<li><a href="#5-select-columns">5. Select Columns</a></li>
+<li><a href="#6-filtering">6. Filtering</a></li>
+<li><a href="#6-1-filtering-null-values">6.1. Filtering null values</a></li>
+<li><a href="#7-imputing-null-values">7. Imputing Null Values</a></li>
+</ul></li>
+<li><a href="#8-renaming-columns">8. Renaming Columns</a></li>
+<li><a href="#9-group-by-and-aggregation">9. Group By and Aggregation</a>
+<ul>
+<li><a href="#10-create-a-new-column">10. Create a New Column</a></li>
+<li><a href="#11-correlation">11. Correlation</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

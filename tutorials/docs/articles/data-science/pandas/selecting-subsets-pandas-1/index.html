@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Selecting Subsets of Data 1"><meta property="og:title" content="Selecting Subsets of Data 1" />
+<meta property="og:description" content="Selecting Subsets of Data in Pandas Part 1  Source  This article is available as a Jupyter Notebook complete with exercises at the bottom to practice and detailed solutions in another notebook.
+Become an Expert  My book Master Data Analysis with Python is the most comprehensive text on the market to learn data analysis using Python and comes with 300&#43; exercises and projects. Sign-up for the FREE Intro to Pandas class Follow me on Twitter @TedPetrou for my daily data science tricks  Part 1: Selection with [ ], ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Selecting Subsets of Data 1 | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/" >
+      A Simple Example-Based Guide
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/" >
+      10 Pandas tips
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/" >
+      21 Pandas operations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/" >
+      Basic Data Analysis
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/" >
+      House Market Analysis 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/" >
+      Pandas Cheatsheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/"  class="active">
+      Selecting Subsets of Data 1
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Selecting Subsets of Data 1</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="selecting-subsets-of-data-in-pandas-part-1">Selecting Subsets of Data in Pandas Part 1</h1>
+
+<ul>
+<li><a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">Source</a></li>
+</ul>
+
+<p>This article is available as a  <a href="https://github.com/tdpetrou/Learn-Pandas/blob/master/Learn-Pandas/Selecting%20Subsets/01%20Selecting%20Subsets%20with%20%5B%20%5D%2C%20.loc%20and%20.iloc.ipynb">Jupyter Notebook</a>  complete with exercises at the bottom to practice and  <a href="https://github.com/tdpetrou/Learn-Pandas/blob/master/Learn-Pandas/Selecting%20Subsets/Solutions.ipynb">detailed solutions</a>  in another notebook.</p>
+
+<h2 id="become-an-expert">Become an Expert</h2>
+
+<ul>
+<li>My book  <a href="http://b.link/MDAPM">Master Data Analysis with Python</a>  is the most comprehensive text on the market to learn data analysis using Python and comes with 300+ exercises and projects.</li>
+<li>Sign-up for the  <strong>FREE</strong>  <a href="http://b.link/IntroToPandasM">Intro to Pandas class</a></li>
+<li>Follow me on  <a href="http://b.link/tedpetrouM">Twitter @TedPetrou</a>  for my daily data science tricks</li>
+</ul>
+
+<h2 id="part-1-selection-with-loc-and-iloc">Part 1: Selection with  <code>[ ]</code>,  <code>.loc</code>  and  <code>.iloc</code></h2>
+
+<p>This is the beginning of a four-part series on how to select subsets of data from a pandas DataFrame or Series. Pandas offers a wide variety of options for subset selection which necessitates multiple articles. This series is broken down into the following four topics.</p>
+
+<ol>
+<li><a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">Selection with</a> <a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">[]</a><a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">,</a> <a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">.loc</a> <a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">and</a> <a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">.iloc</a>`</li>
+<li><a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-39e811c81a0c">Boolean indexing</a></li>
+<li><a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-part-3-d5704b4b9116">Assigning subsets of data</a></li>
+<li><a href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-part-4-c4216f84d388">How NOT to select subsets of data</a></li>
+</ol>
+
+<h2 id="assumptions-before-we-begin">Assumptions before we begin</h2>
+
+<p>These series of articles assume you have no knowledge of pandas, but that you understand the fundamentals of the Python programming language. It also assumes that you have installed pandas on your machine.</p>
+
+<p>The easiest way to get pandas along with Python and the rest of the main scientific computing libraries is to install the  <a href="https://medium.com/dunder-data/anaconda-is-bloated-set-up-a-lean-robust-data-science-environment-with-miniconda-and-conda-forge-b48e1ac11646">Miniconda distribution</a>  (follow the link for a comprehensive tutorial).</p>
+
+<p>If you have no knowledge of Python then I suggest completing the following two books cover to cover before even touching pandas. They are both free.</p>
+
+<ul>
+<li><a href="http://greenteapress.com/wp/think-python-2e/">Think Python</a>  by Allen B. Downey</li>
+<li><a href="https://automatetheboringstuff.com/">Automate the Boring Stuff</a>  by Al Sweigart</li>
+</ul>
+
+<p>I also have a book titled Exercise Python ($15) which covers the fundamentals as well as providing 100+ exercises with detailed solutions.</p>
+
+<h2 id="the-importance-of-making-subset-selections">The importance of making subset selections</h2>
+
+<p>You might be wondering why there need to be so many articles on selecting subsets of data. This topic is extremely important to pandas and it’s unfortunate that it is fairly complicated because subset selection happens frequently during an actual analysis. Because you are frequently making subset selections, you need to master it in order to make your life with pandas easier.</p>
+
+<h2 id="always-reference-the-documentation">Always reference the documentation</h2>
+
+<p>The material in this article is also covered in the official pandas documentation on  <a href="http://pandas.pydata.org/pandas-docs/stable/indexing.html">Indexing and Selecting Data</a>. I highly recommend that you read that part of the documentation along with this tutorial. In fact, the documentation is one of the primary means for mastering pandas. I wrote a step-by-step article,  <a href="https://medium.com/dunder-data/how-to-learn-pandas-108905ab4955">How to Learn Pandas</a>, which gives suggestions on how to use the documentation as you master pandas.</p>
+
+<h2 id="the-anatomy-of-a-dataframe-and-a-series">The anatomy of a DataFrame and a Series</h2>
+
+<p>The pandas library has two primary containers of data, the DataFrame and the Series. You will spend nearly all your time working with both of the objects when you use pandas. The DataFrame is used more than the Series, so let’s take a look at an image of it first.</p>
+
+<p><img src="https://miro.medium.com/max/1258/1*ZSehcrMtBWN7_qCWq_HiSg.png" alt="" /></p>
+
+<p>Anatomy of a DataFrame</p>
+
+<p>This image comes with some added illustrations to highlight its components. At first glance, the DataFrame looks like any other two-dimensional table of data that you have seen. It has rows and it has columns. Technically, there are three main components of the DataFrame.</p>
+
+<h2 id="the-three-components-of-a-dataframe">The three components of a DataFrame</h2>
+
+<p>A DataFrame is composed of three different components, the  <strong>index</strong>,  <strong>columns</strong>, and the  <strong>data</strong>. The data is also known as the  <strong>values</strong>.</p>
+
+<p>The index represents the sequence of values on the far left-hand side of the DataFrame. All the values in the index are in <strong>bold</strong> font. Each individual value of the index is called a <strong>label</strong>. Sometimes the index is referred to as the <strong>row labels</strong>. In the example above, the row labels are not very interesting and are just the integers beginning from 0 up to n-1, where n is the number of rows in the table. Pandas defaults DataFrames with this simple index.</p>
+
+<p>The columns are the sequence of values at the very top of the DataFrame. They are also in  <strong>bold</strong>  font. Each individual value of the columns is called a  <strong>column</strong>, but can also be referred to as  <strong>column name</strong>  or  <strong>column label</strong>.</p>
+
+<p>Everything else not in bold font is the data or values. You will sometimes hear DataFrames referred to as  <strong>tabular</strong>  data. This is just another name for a rectangular table data with rows and columns.</p>
+
+<h2 id="axis-and-axes">Axis and axes</h2>
+
+<p>It is also common terminology to refer to the rows or columns as an  <strong>axis</strong>. Collectively, we call them  <strong>axes</strong>. So, a row is an axis and a column is another axis.</p>
+
+<p>The word axis appears as a parameter in many DataFrame methods. Pandas allows you to choose the direction of how the method will work with this parameter. This has nothing to do with subset selection so you can just ignore it for now.</p>
+
+<h2 id="each-row-has-a-label-and-each-column-has-a-label">Each row has a label and each column has a label</h2>
+
+<p>The main takeaway from the DataFrame anatomy is that each row has a label and each column has a label. These labels are used to refer to specific rows or columns in the DataFrame. It’s the same as how humans use names to refer to specific people.</p>
+
+<h2 id="what-is-subset-selection">What is subset selection?</h2>
+
+<p>Before we start doing subset selection, it might be good to define what it is. Subset selection is simply selecting particular rows and columns of data from a DataFrame (or Series). This could mean selecting all the rows and some of the columns, some of the rows and all of the columns, or some of each of the rows and columns.</p>
+
+<h2 id="example-selecting-some-columns-and-all-rows">Example selecting some columns and all rows</h2>
+
+<p>Let’s see some images of subset selection. We will first look at a sample DataFrame with fake data.</p>
+
+<p><img src="https://miro.medium.com/max/407/1*8F3TgEXSmJ3G4cRkiY56-Q.png" alt="" /></p>
+
+<p>Sample DataFrame</p>
+
+<p>Let’s say we want to select just the columns  <code>color</code>,  <code>age</code>, and  <code>height</code>  but keep all the rows.</p>
+
+<p><img src="https://miro.medium.com/max/410/1*5kyMLYDbLXCGvHCU17OEYQ.png" alt="" /></p>
+
+<p>Our final DataFrame would look like this:</p>
+
+<p><img src="https://miro.medium.com/max/241/1*lvkfp1UmWVp-ugCilEn7iw.png" alt="" /></p>
+
+<h2 id="example-selecting-some-rows-and-all-columns">Example selecting some rows and all columns</h2>
+
+<p>We can also make selections that select just some of the rows. Let’s select the rows with labels  <code>Aaron</code>  and  <code>Dean</code>  along with all of the columns:</p>
+
+<p><img src="https://miro.medium.com/max/410/1*aB19DS5gDeAoIZ0Qkgm1pQ.png" alt="" /></p>
+
+<p>Our final DataFrame would like:</p>
+
+<p><img src="https://miro.medium.com/max/390/1*T02_TrcvbfKkU7U7J2-ugw.png" alt="" /></p>
+
+<h2 id="example-selecting-some-rows-and-some-columns">Example selecting some rows and some columns</h2>
+
+<p>Let’s combine the selections from above and select the columns  <code>color</code>,  <code>age</code>, and  <code>height</code>  for only the rows with labels  <code>Aaron</code>  and  <code>Dean</code>.</p>
+
+<p><img src="https://miro.medium.com/max/407/1*SMzyeMGukFU7y9lSwDim5A.png" alt="" /></p>
+
+<p>Our final DataFrame would look like this:</p>
+
+<p><img src="https://miro.medium.com/max/216/1*wXdCm9RlUbMiPS9Q-cFa9g.png" alt="" /></p>
+
+<h2 id="pandas-dual-references-by-label-and-by-integer-location">Pandas dual references: by label and by integer location</h2>
+
+<p>We already mentioned that each row and each column have a specific label that can be used to reference them. This is displayed in bold font in the DataFrame.</p>
+
+<p>But, what hasn’t been mentioned, is that each row and column may be referenced by an integer as well. I call this  <strong>integer location</strong>. The integer location begins at 0 and ends at n-1 for each row and column. Take a look above at our sample DataFrame one more time.</p>
+
+<p>The rows with labels  <code>Aaron</code>  and  <code>Dean</code>  can also be referenced by their respective integer locations 2 and 4. Similarly, the columns  <code>color</code>,  <code>age</code>  and  <code>height</code>  can be referenced by their integer locations 1, 3, and 4.</p>
+
+<p>The documentation refers to integer location as  <strong>position</strong>. I don’t particularly like this terminology as its not as explicit as integer location. The key thing term here is INTEGER.</p>
+
+<h2 id="what-s-the-difference-between-indexing-and-selecting-subsets-of-data">What’s the difference between indexing and selecting subsets of data?</h2>
+
+<p>The documentation uses the term  <strong>indexing</strong>  frequently. This term is essentially just a one-word phrase to say ‘subset selection’. I prefer the term subset selection as, again, it is more descriptive of what is actually happening. Indexing is also the term used in the official Python documentation.</p>
+
+<h2 id="focusing-only-on-loc-and-iloc">Focusing only on  <code>[]</code>,  <code>.loc</code>, and  <code>.iloc</code></h2>
+
+<p>There are many ways to select subsets of data, but in this article we will only cover the usage of the square brackets  <strong>[ ]</strong>,  <strong>.loc</strong> and  <strong>.iloc</strong>. Collectively, they are called the  <strong>indexers</strong>. These are by far the most common ways to select data. A different part of this Series will discuss a few methods that can be used to make subset selections.</p>
+
+<p>If you have a DataFrame,  <code>df</code>, your subset selection will look something like the following:</p>
+
+<pre><code class="language-py">df[ ]  
+df.loc[ ]  
+df.iloc[ ]
+</code></pre>
+
+<p>A real subset selection will have something inside of the square brackets. All selections in this article will take place inside of those square brackets.</p>
+
+<p>Notice that the square brackets also follow  <code>.loc</code>  and  <code>.iloc</code>. All indexing in Python happens inside of these square brackets.</p>
+
+<h2 id="a-term-for-just-those-square-brackets">A term for just those square brackets</h2>
+
+<p>The term  <strong>indexing operator</strong>  is used to refer to the square brackets following an object. The  <strong>.loc</strong>  and  <strong>.iloc</strong>  indexers also use the indexing operator to make selections. I will use the term  <strong>just the indexing operator</strong>  to refer to  <strong>df[]</strong>. This will distinguish it from  <strong>df.loc[]</strong> and  <strong>df.iloc[]</strong>.</p>
+
+<h2 id="read-in-data-into-a-dataframe-with-read-csv">Read in data into a DataFrame with  <code>read_csv</code></h2>
+
+<p>Let’s begin using pandas to read in a DataFrame, and from there, use the indexing operator by itself to select subsets of data. All the data for these tutorials are in the  <strong>data</strong>  directory.</p>
+
+<p>We will use the  <strong>read_csv</strong>  function to read in data into a DataFrame. We pass the path to the file as the first argument to the function. We will also use the  <strong>index_col</strong>  parameter to select the first column of data as the index (more on this later).</p>
+
+<pre><code class="language-python">import pandas as pd  
+import numpy as np
+df = pd.read_csv('data/sample_data.csv', index_col=0)  
+df
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/407/1*8F3TgEXSmJ3G4cRkiY56-Q.png" alt="" /></p>
+
+<h2 id="extracting-the-individual-dataframe-components">Extracting the individual DataFrame components</h2>
+
+<p>Earlier, we mentioned the three components of the DataFrame. The index, columns and data (values). We can extract each of these components into their own variables. Let’s do that and then inspect them:</p>
+
+<pre><code class="language-py">index = df.index  
+columns = df.columns  
+values = df.values
+index  
+</code></pre>
+
+<pre><code class="language-py">Index(['Jane', 'Niko', 'Aaron', 'Penelope', 'Dean', 'Christina',   
+       'Cornelia'], dtype='object')
+</code></pre>
+
+<pre><code class="language-py">columns
+</code></pre>
+
+<pre><code class="language-py">Index(['state', 'color', 'food', 'age', 'height', 'score'],   
+      dtype='object')
+</code></pre>
+
+<pre><code class="language-py">values  
+</code></pre>
+
+<pre><code class="language-py">array([['NY', 'blue', 'Steak', 30, 165, 4.6],  
+       ['TX', 'green', 'Lamb', 2, 70, 8.3],  
+       ['FL', 'red', 'Mango', 12, 120, 9.0],  
+       ['AL', 'white', 'Apple', 4, 80, 3.3],  
+       ['AK', 'gray', 'Cheese', 32, 180, 1.8],  
+       ['TX', 'black', 'Melon', 33, 172, 9.5],  
+       ['TX', 'red', 'Beans', 69, 150, 2.2]], dtype=object)
+</code></pre>
+
+<h1 id="data-types-of-the-components">Data types of the components</h1>
+
+<p>Let’s output the type of each component to understand exactly what kind of object they are.</p>
+
+<pre><code>type(index)  
+</code></pre>
+
+<pre><code class="language-py">pandas.core.indexes.base.Index
+</code></pre>
+
+<pre><code class="language-py"> type(columns) 
+</code></pre>
+
+<pre><code class="language-py">pandas.core.indexes.base.Index
+</code></pre>
+
+<pre><code class="language-py">type(values)  
+</code></pre>
+
+<pre><code class="language-py">numpy.ndarray
+</code></pre>
+
+<h2 id="understanding-these-types">Understanding these types</h2>
+
+<p>Interestingly, both the index and the columns are the same type. They are both a pandas  <strong>Index</strong>  object. This object is quite powerful in itself, but for now you can just think of it as a sequence of labels for either the rows or the columns.</p>
+
+<p>The values are a NumPy  <strong>ndarray</strong>, which stands for n-dimensional array, and is the primary container of data in the NumPy library. Pandas is built directly on top of NumPy and it&rsquo;s this array that is responsible for the bulk of the workload.</p>
+
+<h2 id="beginning-with-just-the-indexing-operator-on-dataframes">Beginning with just the indexing operator on DataFrames</h2>
+
+<p>We will begin our journey of selecting subsets by using just the indexing operator on a DataFrame. Its main purpose is to select a single column or multiple columns of data.</p>
+
+<h2 id="selecting-a-single-column-as-a-series">Selecting a single column as a Series</h2>
+
+<p>To select a single column of data, simply put the name of the column in-between the brackets. Let’s select the food column:</p>
+
+<pre><code class="language-py">df['food']  
+</code></pre>
+
+<pre><code class="language-py">Jane          Steak  
+Niko           Lamb  
+Aaron         Mango  
+Penelope      Apple  
+Dean         Cheese  
+Christina     Melon  
+Cornelia      Beans  
+Name: food, dtype: object
+</code></pre>
+
+<h2 id="anatomy-of-a-series">Anatomy of a Series</h2>
+
+<p>Selecting a single column of data returns the other pandas data container, the Series. A Series is a one-dimensional sequence of labeled data. There are two main components of a Series, the  <strong>index</strong>  and the  <strong>data</strong>(or  <strong>values</strong>). There are NO columns in a Series.</p>
+
+<p>The visual display of a Series is just plain text, as opposed to the nicely styled table for DataFrames. The sequence of person names on the left is the index. The sequence of food items on the right is the values.</p>
+
+<p>You will also notice two extra pieces of data on the bottom of the Series. The  <strong>name</strong>  of the Series becomes the old-column name. You will also see the data type or  <strong>dtype</strong>  of the Series. You can ignore both these items for now.</p>
+
+<h1 id="selecting-multiple-columns-with-just-the-indexing-operator">Selecting multiple columns with just the indexing operator</h1>
+
+<p>It’s possible to select multiple columns with just the indexing operator by passing it a list of column names. Let’s select  <code>color</code>,  <code>food</code>, and  <code>score</code>:</p>
+
+<pre><code class="language-py"> df[['color', 'food', 'score']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/256/1*ctcUH__YabtZmT5SjzZLvA.png" alt="" /></p>
+
+<h1 id="selecting-multiple-columns-returns-a-dataframe">Selecting multiple columns returns a DataFrame</h1>
+
+<p>Selecting multiple columns returns a DataFrame. You can actually select a single column as a DataFrame with a one-item list:</p>
+
+<pre><code class="language-py">df[['food']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/158/1*rIbPU6Q7wlNwuudMzFfZKA.png" alt="" /></p>
+
+<p>Although, this resembles the Series from above, it is technically a DataFrame, a different object.</p>
+
+<h2 id="column-order-doesn-t-matter">Column order doesn’t matter</h2>
+
+<p>When selecting multiple columns, you can select them in any order that you choose. It doesn’t have to be the same order as the original DataFrame. For instance, let’s select  <code>height</code>  and  <code>color</code>.</p>
+
+<pre><code class="language-py">df[['height', 'color']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/203/1*JJ5KTFSgyFEGTWvWsN_GSA.png" alt="" /></p>
+
+<h2 id="exceptions">Exceptions</h2>
+
+<p>There are a couple common exceptions that arise when doing selections with just the indexing operator.</p>
+
+<ul>
+<li>If you misspell a word, you will get a  <strong>KeyError</strong></li>
+
+<li><p>If you forgot to use a list to contain multiple columns you will also get a  <strong>KeyError</strong></p>
+
+<pre><code class="language-py">df['hight']  
+</code></pre>
+
+<pre><code class="language-py">KeyError: 'hight'&gt;&gt;&gt; df['color', 'age'] # should be:  df[['color', 'age']]  
+KeyError: ('color', 'age')
+</code></pre>
+
+<h2 id="summary-of-just-the-indexing-operator">Summary of just the indexing operator</h2></li>
+
+<li><p>Its primary purpose is to select columns by the column names</p></li>
+
+<li><p>Select a single column as a Series by passing the column name directly to it:  <strong>df[&lsquo;col_name&rsquo;]</strong></p></li>
+
+<li><p>Select multiple columns as a DataFrame by passing a  <strong>list</strong>  to it:  <strong>df[[&lsquo;col_name1, col_name2&rsquo;]]</strong></p></li>
+
+<li><p>You actually can select rows with it, but this will not be shown here as it is confusing and not used often.</p></li>
+</ul>
+
+<h2 id="getting-started-with-loc">Getting started with  <code>.loc</code></h2>
+
+<p>The  = <strong>.loc</strong>  indexer selects data in a different way than just the indexing operator. It can select subsets of rows or columns. It can also simultaneously select subsets of rows and columns. Most importantly, it only selects data by the  <strong>LABEL</strong>  of the rows and columns.</p>
+
+<h1 id="select-a-single-row-as-a-series-with-loc">Select a single row as a Series with  <code>.loc</code></h1>
+
+<p>The  <strong>.loc</strong>  indexer will return a single row as a Series when given a single row label. Let&rsquo;s select the row for  <strong>Niko</strong>.</p>
+
+<pre><code class="language-py">df.loc['Niko']  
+</code></pre>
+
+<pre><code class="language-py">state        TX  
+color     green  
+food       Lamb  
+age           2  
+height       70  
+score       8.3  
+Name: Niko, dtype: object
+</code></pre>
+
+<p>We now have a Series, where the old column names are now the index labels. The  <strong>name</strong>  of the Series has become the old index label,  <strong>Niko</strong>  in this case.</p>
+
+<h2 id="select-multiple-rows-as-a-dataframe-with-loc">Select multiple rows as a DataFrame with  <code>.loc</code></h2>
+
+<p>To select multiple rows, put all the row labels you want to select in a list and pass that to  <strong>.loc</strong>. Let&rsquo;s select  <code>Niko</code>  and  <code>Penelope</code>.</p>
+
+<pre><code class="language-py"> df.loc[['Niko', 'Penelope']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/397/1*r-KQCeJEsK2Ba9zdKOrFyw.png" alt="" /></p>
+
+<h2 id="use-slice-notation-to-select-a-range-of-rows-with-loc">Use slice notation to select a range of rows with  <code>.loc</code></h2>
+
+<p>It is possible to ‘slice’ the rows of a DataFrame with  <code>.loc</code>  by using  <strong>slice notation</strong>. Slice notation uses a colon to separate  <strong>start</strong>,  <strong>stop</strong>  and  <strong>step</strong>  values. For instance we can select all the rows from  <code>Niko</code>  through  <code>Dean</code>  like this:</p>
+
+<pre><code class="language-py">df.loc['Niko':'Dean']
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/400/1*LjZswKJUDlUFHnLRIs-tag.png" alt="" /></p>
+
+<h2 id="loc-includes-the-last-value-with-slice-notation"><code>.loc</code>  includes the last value with slice notation</h2>
+
+<p>Notice that the row labeled with  <code>Dean</code>  was kept. In other data containers such as Python lists, the last value is excluded.</p>
+
+<h1 id="other-slices">Other slices</h1>
+
+<p>You can use slice notation similarly to how you use it with lists. Let’s slice from the beginning through  <code>Aaron</code>:</p>
+
+<pre><code class="language-py">df.loc[:'Aaron']
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/397/1*-_lSxZREXisX6Hc7vanI8w.png" alt="" /></p>
+
+<p>Slice from  <code>Niko</code>  to  <code>Christina</code>  stepping by <strong>2</strong>:</p>
+
+<pre><code class="language-py">df.loc['Niko':'Christina':2]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/403/1*RVd_oBYyVDjY_yDCGQ5fZg.png" alt="" /></p>
+
+<p>Slice from  <code>Dean</code>  to the <strong>end</strong>:</p>
+
+<pre><code class="language-py">df.loc['Dean':]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/400/1*lbGk9hPAvv4CEOCTjGSGSA.png" alt="" /></p>
+
+<h2 id="selecting-rows-and-columns-simultaneously-with-loc">Selecting rows and columns simultaneously with  <code>.loc</code></h2>
+
+<p>Unlike just the indexing operator, it is possible to select rows and columns simultaneously with  <code>.loc</code>. You do it by separating your row and column selections by a  <strong>comma</strong>. It will look something like this:</p>
+
+<pre><code class="language-py">df.loc[row_selection, column_selection]
+</code></pre>
+
+<h2 id="select-two-rows-and-three-columns">Select two rows and three columns</h2>
+
+<p>For instance, if we wanted to select the rows  <code>Dean</code>  and  <code>Cornelia</code>  along with the columns  <code>age</code>,  <code>state</code>  and  <code>score</code>  we would do this:</p>
+
+<pre><code class="language-py">df.loc[['Dean', 'Cornelia'], ['age', 'state', 'score']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/226/1*03DYVgodNXVjcx_V9Hj6PQ.png" alt="" /></p>
+
+<h2 id="use-any-combination-of-selections-for-either-row-or-columns-for-loc">Use any combination of selections for either row or columns for  <code>.loc</code></h2>
+
+<p>Row or column selections can be any of the following as we have already seen:</p>
+
+<ul>
+<li>A single label</li>
+<li>A list of labels</li>
+<li>A slice with labels</li>
+</ul>
+
+<p>We can use any of these three for either row or column selections with  <strong>.loc</strong>. Let&rsquo;s see some examples.</p>
+
+<p>Let’s select two rows and a single column:</p>
+
+<pre><code class="language-py">df.loc[['Dean', 'Aaron'], 'food']  
+</code></pre>
+
+<pre><code class="language-py">Dean     Cheese  
+Aaron     Mango  
+Name: food, dtype: object
+</code></pre>
+
+<p>Select a slice of rows and a list of columns:</p>
+
+<pre><code class="language-py">df.loc['Jane':'Penelope', ['state', 'color']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/190/1*NA-MxX9soaLLhnq34cp7Rg.png" alt="" /></p>
+
+<p>Select a single row and a single column. This returns a scalar value.</p>
+
+<pre><code class="language-py">df.loc['Jane', 'age']  
+</code></pre>
+
+<pre><code class="language-py">30
+</code></pre>
+
+<p>Select a slice of rows and columns</p>
+
+<pre><code class="language-py">df.loc[:'Dean', 'height':]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/208/1*hguNxXIZc878r11XzzAW_Q.png" alt="" /></p>
+
+<h2 id="selecting-all-of-the-rows-and-some-columns">Selecting all of the rows and some columns</h2>
+
+<p>It is possible to select all of the rows by using a single colon. You can then select columns as normal:</p>
+
+<pre><code class="language-py">df.loc[:, ['food', 'color']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/204/1*oRPKw_82d0_PFNB5Cho1zw.png" alt="" /></p>
+
+<p>You can also use this notation to select all of the columns:</p>
+
+<pre><code class="language-py">df.loc[['Penelope','Cornelia'], :]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/404/1*LfdbzoBocHPGMXT5ZkpKRA.png" alt="" /></p>
+
+<p>But, it isn’t necessary as we have seen, so you can leave out that last colon:</p>
+
+<pre><code class="language-py">df.loc[['Penelope','Cornelia']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/404/1*LfdbzoBocHPGMXT5ZkpKRA.png" alt="" /></p>
+
+<h2 id="assign-row-and-column-selections-to-variables">Assign row and column selections to variables</h2>
+
+<p>It might be easier to assign row and column selections to variables before you use  <code>.loc</code>. This is useful if you are selecting many rows or columns:</p>
+
+<pre><code class="language-py">rows = ['Jane', 'Niko', 'Dean', 'Penelope', 'Christina']  
+cols = ['state', 'age', 'height', 'score']  
+df.loc[rows, cols]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/292/1*WG_BZ7r77RZtRIiSxZVzqQ.png" alt="" /></p>
+
+<h1 id="summary-of-loc">Summary of  <code>.loc</code></h1>
+
+<ul>
+<li>Only uses labels</li>
+<li>Can select rows and columns simultaneously</li>
+<li>Selection can be a single label, a list of labels or a slice of labels</li>
+<li>Put a comma between row and column selections</li>
+</ul>
+
+<p>If you are enjoying this article, consider purchasing the  <a href="http://b.link/ddallaccessm">All Access Pass!</a>  which includes all my current and future material for one low price.</p>
+
+<h1 id="getting-started-with-iloc">Getting started with  <code>.iloc</code></h1>
+
+<p>The  <code>.iloc</code>  indexer is very similar to  <code>.loc</code>  but only uses integer locations to make its selections. The word  <code>.iloc</code>  itself stands for integer location so that should help with remember what it does.</p>
+
+<h1 id="selecting-a-single-row-with-iloc">Selecting a single row with  <code>.iloc</code></h1>
+
+<p>By passing a single integer to  <code>.iloc</code>, it will select one row as a Series:</p>
+
+<pre><code class="language-py">df.iloc[3]  
+</code></pre>
+
+<pre><code>state        AL  
+color     white  
+food      Apple  
+age           4  
+height       80  
+score       3.3  
+Name: Penelope, dtype: object
+</code></pre>
+
+<h1 id="selecting-multiple-rows-with-iloc">Selecting multiple rows with  <code>.iloc</code></h1>
+
+<p>Use a list of integers to select multiple rows:</p>
+
+<pre><code class="language-py">df.iloc[[5, 2, 4]]       # remember, don't do df.iloc[5, 2, 4]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/402/1*WpJZ25LMTESDrozrs7Y5qA.png" alt="" /></p>
+
+<h1 id="use-slice-notation-to-select-a-range-of-rows-with-iloc">Use slice notation to select a range of rows with  <code>.iloc</code></h1>
+
+<p>Slice notation works just like a list in this instance and is exclusive of the last element</p>
+
+<pre><code class="language-py">df.iloc[3:5]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/410/1*RgXHsZiNzAd8Z_0BK7Olqg.png" alt="" /></p>
+
+<p>Select 3rd position until end:</p>
+
+<pre><code class="language-py">df.iloc[3:]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/398/1*vDDHDznwNeGHYrM18V3ABA.png" alt="" /></p>
+
+<p>Select 3rd position to end by 2:</p>
+
+<pre><code class="language-py">df.iloc[3::2]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/396/1*_MGwbnVitEnnH_RoOAxLxw.png" alt="" /></p>
+
+<h2 id="selecting-rows-and-columns-simultaneously-with-iloc">Selecting rows and columns simultaneously with  <code>.iloc</code></h2>
+
+<p>Just like with  <code>.iloc</code>  any combination of a single integer, lists of integers or slices can be used to select rows and columns simultaneously. Just remember to separate the selections with a  <strong>comma</strong>.</p>
+
+<p>Select two rows and two columns:</p>
+
+<pre><code class="language-py">df.iloc[[2,3], [0, 4]]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/198/1*xdBEnpt4APUgtFnmo9uoAw.png" alt="" /></p>
+
+<p>Select a slice of the rows and two columns:</p>
+
+<pre><code class="language-py">df.iloc[3:6, [1, 4]]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/202/1*4Ff8OMPaU6u1GEG88CrBEQ.png" alt="" /></p>
+
+<p>Select slices for both</p>
+
+<pre><code class="language-py">df.iloc[2:5, 2:5]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/262/1*jFvBH1eyLSs09-SQIWa2Eg.png" alt="" /></p>
+
+<p>Select a single row and column</p>
+
+<pre><code class="language-py">df.iloc[0, 2]  
+</code></pre>
+
+<pre><code class="language-py">'Steak'
+</code></pre>
+
+<p>Select all the rows and a single column</p>
+
+<pre><code class="language-py">df.iloc[:, 5]  
+</code></pre>
+
+<pre><code class="language-py">Jane         4.6  
+Niko         8.3  
+Aaron        9.0  
+Penelope     3.3  
+Dean         1.8  
+Christina    9.5  
+Cornelia     2.2  
+Name: score, dtype: float64
+</code></pre>
+
+<h1 id="deprecation-of-ix">Deprecation of  <code>.ix</code></h1>
+
+<p>Early in the development of pandas, there existed another indexer,  <code>**ix**</code>. This indexer was capable of selecting both by label and by integer location. While it was versatile, it caused lots of confusion because it&rsquo;s not explicit. Sometimes integers can also be labels for rows or columns. Thus there were instances where it was ambiguous.</p>
+
+<p>You can still call  <strong>.ix</strong>, but it has been deprecated, so please  <strong>never use it</strong>.</p>
+
+<h2 id="selecting-subsets-of-series">Selecting subsets of Series</h2>
+
+<p>We can also, of course, do subset selection with a Series. Earlier I recommended using just the indexing operator for column selection on a DataFrame. Since Series do not have columns, I suggest using only  <strong>.loc</strong>  and  <strong>.iloc</strong>. You can use just the indexing operator, but its ambiguous as it can take both labels and integers. I will come back to this at the end of the tutorial.</p>
+
+<p>Typically, you will create a Series by selecting a single column from a DataFrame. Let’s select the  <strong>food</strong>  column:</p>
+
+<pre><code class="language-py">food = df['food']  
+food  
+</code></pre>
+
+<pre><code class="language-py">Jane          Steak  
+Niko           Lamb  
+Aaron         Mango  
+Penelope      Apple  
+Dean         Cheese  
+Christina     Melon  
+Cornelia      Beans  
+Name: food, dtype: object
+</code></pre>
+
+<h1 id="series-selection-with-loc">Series selection with  <code>.loc</code></h1>
+
+<p>Series selection with  <code>.loc</code>  is quite simple, since we are only dealing with a single dimension. You can again use a single row label, a list of row labels or a slice of row labels to make your selection. Let&rsquo;s see several examples.</p>
+
+<p>Let’s select a single value:</p>
+
+<pre><code class="language-py">food.loc['Aaron']  
+</code></pre>
+
+<pre><code class="language-py">'Mango'
+</code></pre>
+
+<p>Select three different values. This returns a Series:</p>
+
+<pre><code class="language-py">food.loc[['Dean', 'Niko', 'Cornelia']]  
+</code></pre>
+
+<pre><code class="language-py">Dean        Cheese  
+Niko          Lamb  
+Cornelia     Beans  
+Name: food, dtype: object
+</code></pre>
+
+<p>Slice from  <code>Niko</code>  to  <code>Christina</code>  - is inclusive of last index</p>
+
+<pre><code class="language-py">food.loc['Niko':'Christina'] 
+</code></pre>
+
+<pre><code class="language-py">Niko           Lamb  
+Aaron         Mango  
+Penelope      Apple  
+Dean         Cheese  
+Christina     Melon  
+Name: food, dtype: object
+</code></pre>
+
+<p>Slice from  <code>Penelope</code>  to the end:</p>
+
+<pre><code class="language-py">food.loc['Penelope':]  
+</code></pre>
+
+<pre><code class="language-py">Penelope      Apple  
+Dean         Cheese  
+Christina     Melon  
+Cornelia      Beans  
+Name: food, dtype: object
+</code></pre>
+
+<p>Select a single value in a list which returns a Series</p>
+
+<pre><code class="language-py">food.loc[['Aaron']]  
+</code></pre>
+
+<pre><code class="language-py">Aaron    Mango  
+Name: food, dtype: object
+</code></pre>
+
+<h1 id="series-selection-with-iloc">Series selection with  <code>.iloc</code></h1>
+
+<p>Series subset selection with  <strong>.iloc</strong>  happens similarly to  <strong>.loc</strong>  except it uses integer location. You can use a single integer, a list of integers or a slice of integers. Let&rsquo;s see some examples.</p>
+
+<p>Select a single value:</p>
+
+<pre><code class="language-py">food.iloc[0]  
+</code></pre>
+
+<pre><code class="language-py">'Steak'
+</code></pre>
+
+<p>Use a list of integers to select multiple values:</p>
+
+<pre><code class="language-py">food.iloc[[4, 1, 3]]  
+</code></pre>
+
+<pre><code class="language-py">Dean        Cheese  
+Niko          Lamb  
+Penelope     Apple  
+Name: food, dtype: object
+</code></pre>
+
+<p>Use a slice — is exclusive of last integer</p>
+
+<pre><code class="language-py"> food.iloc[4:6]  
+</code></pre>
+
+<pre><code class="language-py">Dean         Cheese  
+Christina     Melon  
+Name: food, dtype: object
+</code></pre>
+
+<h1 id="comparison-to-python-lists-and-dictionaries">Comparison to Python lists and dictionaries</h1>
+
+<p>It may be helpful to compare pandas ability to make selections by label and integer location to that of Python lists and dictionaries.</p>
+
+<p>Python lists allow for selection of data only through integer location. You can use a single integer or slice notation to make the selection but NOT a list of integers.</p>
+
+<p>Let’s see examples of subset selection of lists using integers:</p>
+
+<pre><code class="language-py">some_list = ['a', 'two', 10, 4, 0, 'asdf', 'mgmt', 434, 99]
+ some_list[5]  
+</code></pre>
+
+<pre><code class="language-py">asdf
+</code></pre>
+
+<pre><code class="language-py"> some_list[-1]  
+</code></pre>
+
+<pre><code class="language-py">99
+</code></pre>
+
+<pre><code class="language-py">some_list[:4] 
+</code></pre>
+
+<pre><code class="language-py">['a', 'two', 10, 4]
+</code></pre>
+
+<pre><code class="language-py">some_list[3:] 
+</code></pre>
+
+<pre><code class="language-py">[4, 0, 'asdf', 'mgmt', 434, 99]&gt;&gt;&gt; some_list[2:6:3]  
+[10, 'asdf']
+</code></pre>
+
+<h1 id="selection-by-label-with-python-dictionaries">Selection by label with Python dictionaries</h1>
+
+<p>All values in each dictionary are labeled by a  <strong>key</strong>. We use this key to make single selections. Dictionaries only allow selection with a single label. Slices and lists of labels are not allowed.</p>
+
+<pre><code class="language-py">d = {'a':1, 'b':2, 't':20, 'z':26, 'A':27}  
+d['a']  
+</code></pre>
+
+<pre><code class="language-py">1
+</code></pre>
+
+<pre><code class="language-py">d['A']  
+</code></pre>
+
+<pre><code class="language-py">27
+</code></pre>
+
+<h2 id="pandas-has-power-of-lists-and-dictionaries">Pandas has power of lists and dictionaries</h2>
+
+<p>DataFrames and Series are able to make selections with integers like a list and with labels like a dictionary.</p>
+
+<h2 id="extra-topics">Extra Topics</h2>
+
+<p>There are a few more items that are important and belong in this tutorial and will be mentioned now.</p>
+
+<h2 id="using-just-the-indexing-operator-to-select-rows-from-a-dataframe-confusing">Using just the indexing operator to select rows from a DataFrame — Confusing!</h2>
+
+<p>Above, I used just the indexing operator to select a column or columns from a DataFrame. But, it can also be used to select rows using a  <strong>slice</strong>. This behavior is very confusing in my opinion. The entire operation changes completely when a slice is passed.</p>
+
+<p>Let’s use an integer slice as our first example:</p>
+
+<pre><code class="language-py"> df[3:6]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/408/1*VLlVzvrycrlMeQw_OPnlmg.png" alt="" /></p>
+
+<p>To add to this confusion, you can slice by labels as well.</p>
+
+<pre><code class="language-py">df['Aaron':'Christina']
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/398/1*ckgKLl2gSA39EB2I1GH2hw.png" alt="" /></p>
+
+<h2 id="i-recommend-not-doing-this">I recommend not doing this!</h2>
+
+<p>This feature is not deprecated and completely up to you whether you wish to use it. But, I highly prefer not to select rows in this manner as can be ambiguous, especially if you have integers in your index.</p>
+
+<p>Using  <strong>.iloc</strong>  and  <strong>.loc</strong>  is explicit and clearly tells the person reading the code what is going to happen. Let&rsquo;s rewrite the above using  <strong>.iloc</strong> and  <strong>.loc</strong>.</p>
+
+<pre><code class="language-py">df.iloc[3:6]      # More explicit that df[3:6]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/408/1*VLlVzvrycrlMeQw_OPnlmg.png" alt="" /></p>
+
+<pre><code class="language-py"> df.loc['Aaron':'Christina'] 
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/398/1*ckgKLl2gSA39EB2I1GH2hw.png" alt="" /></p>
+
+<h2 id="cannot-simultaneously-select-rows-and-columns-with">Cannot simultaneously select rows and columns with  <code>[]</code></h2>
+
+<p>An exception will be raised if you try and select rows and columns simultaneously with just the indexing operator. You must use  <strong>.loc</strong>  or  <strong>.iloc</strong>  to do so.</p>
+
+<pre><code class="language-py">df[3:6, 'Aaron':'Christina']  
+</code></pre>
+
+<pre><code class="language-py">TypeError: unhashable type: 'slice'
+</code></pre>
+
+<h2 id="using-just-the-indexing-operator-to-select-rows-from-a-series-confusing">Using just the indexing operator to select rows from a Series — Confusing!</h2>
+
+<p>You can also use just the indexing operator with a Series. Again, this is confusing because it can accept integers or labels. Let’s see some examples</p>
+
+<pre><code class="language-py">food  
+</code></pre>
+
+<pre><code class="language-py">Jane          Steak  
+Niko           Lamb  
+Aaron         Mango  
+Penelope      Apple  
+Dean         Cheese  
+Christina     Melon  
+Cornelia      Beans  
+Name: food, dtype: object
+</code></pre>
+
+<pre><code class="language-py">food[2:4]  
+</code></pre>
+
+<pre><code class="language-py">Aaron       Mango  
+Penelope    Apple  
+Name: food, dtype: object
+</code></pre>
+
+<pre><code class="language-py">food['Niko':'Dean']
+</code></pre>
+
+<pre><code class="language-py">Niko          Lamb  
+Aaron        Mango  
+Penelope     Apple  
+Dean        Cheese  
+Name: food, dtype: object
+</code></pre>
+
+<p>Since Series don’t have columns you can use a single label and list of labels to make selections as well</p>
+
+<pre><code class="language-py">food['Dean']  
+</code></pre>
+
+<pre><code class="language-py">'Cheese'
+</code></pre>
+
+<pre><code class="language-py">food[['Dean', 'Christina', 'Aaron']]  
+</code></pre>
+
+<pre><code class="language-py">Dean         Cheese  
+Christina     Melon  
+Aaron         Mango  
+Name: food, dtype: object
+</code></pre>
+
+<p>Again, I recommend against doing this and always use  <strong>.iloc</strong>  or  <code>.loc</code></p>
+
+<h2 id="importing-data-without-choosing-an-index-column">Importing data without choosing an index column</h2>
+
+<p>We imported data by choosing the first column to be the index with the  <strong>index_col</strong>  parameter of the  <strong>read_csv</strong>  function. This is not typically how most DataFrames are read into pandas.</p>
+
+<p>Usually, all the columns in the csv file become DataFrame columns. Pandas will use the integers 0 to n-1 as the labels. See the example data below with a slightly different dataset:</p>
+
+<pre><code class="language-py"> df2 = pd.read_csv('data/sample_data2.csv')  
+df2
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/425/1*WIHN9IKCZ2b9AJMVybtkqg.png" alt="" /></p>
+
+<h2 id="the-default-rangeindex">The default  <code>RangeIndex</code></h2>
+
+<p>If you don’t specify a column to be the index when first reading in the data, pandas will use the integers 0 to n-1 as the index. This technically creates a  <code>**RangeIndex**</code>  object. Let&rsquo;s take a look at it.</p>
+
+<pre><code class="language-py">df2.index  
+</code></pre>
+
+<pre><code class="language-py">RangeIndex(start=0, stop=7, step=1)
+</code></pre>
+
+<p>This object is similar to Python  <strong>range</strong> objects. Let&rsquo;s create one:</p>
+
+<pre><code class="language-py">range(7) 
+</code></pre>
+
+<pre><code class="language-py">range(0, 7)
+</code></pre>
+
+<p>Converting both of these objects to a list produces the exact same thing:</p>
+
+<pre><code class="language-py"> list(df2.index)  
+</code></pre>
+
+<pre><code class="language-py">[0, 1, 2, 3, 4, 5, 6]
+</code></pre>
+
+<pre><code class="language-py">list(range(7))  
+</code></pre>
+
+<pre><code class="language-py">[0, 1, 2, 3, 4, 5, 6]
+</code></pre>
+
+<p>For now, it’s not at all important that you have a  <code>**RangeIndex**</code>. Selections from it happen just the same with  <code>**.loc**</code>  and  <code>**.iloc**</code>. Let&rsquo;s look at some examples.</p>
+
+<pre><code class="language-py">df2.loc[[2, 4, 5], ['food', 'color']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/143/1*CM8GwO6O4DjNlNB43AoKZQ.png" alt="" /></p>
+
+<pre><code class="language-py">df2.iloc[[2, 4, 5], [3,2]]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/150/1*UaTEMv6chUaFv5mXIunb0g.png" alt="" /></p>
+
+<p>There is a subtle difference when using a slice.  <strong>.iloc</strong>  excludes the last value, while  <strong>.loc</strong>  includes it:</p>
+
+<pre><code class="language-py">df2.iloc[:3]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/408/1*pTp1BxEPoLERdhE6X-FVdg.png" alt="" /></p>
+
+<pre><code class="language-py">df2.loc[:3]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/420/1*jEJWfGHzkyE24Wv7oy64Cw.png" alt="" /></p>
+
+<h2 id="setting-an-index-from-a-column-after-reading-in-data">Setting an index from a column after reading in data</h2>
+
+<p>It is common to see pandas code that reads in a DataFrame with a RangeIndex and then sets the index to be one of the columns. This is typically done with the  <strong>set_index</strong>  method:</p>
+
+<pre><code class="language-py">df2_idx = df2.set_index('Names')  
+df2_idx
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/400/1*3x34RRUQyGKE9lkI-Za6yw.png" alt="" /></p>
+
+<h2 id="the-index-has-a-name">The index has a name</h2>
+
+<p>Notice that this DataFrame does not look exactly like our first one from the very top of this tutorial. Directly above the index is the bold-faced word  <strong>Names</strong>. This is technically the  <strong>name</strong>  of the index. Our original DataFrame had no name for its index. You can ignore this small detail for now. Subset selections will happen in the same fashion.</p>
+
+<h2 id="dataframe-column-selection-with-dot-notation">DataFrame column selection with dot notation</h2>
+
+<p>Pandas allows you to select a single column as a Series by using  <strong>dot notation</strong>. This is also referred to as  <strong>attribute access</strong>. You simply place the name of the column without quotes following a dot and the DataFrame like this:</p>
+
+<pre><code class="language-py">df.state  
+</code></pre>
+
+<pre><code class="language-py">Jane         NY  
+Niko         TX  
+Aaron        FL  
+Penelope     AL  
+Dean         AK  
+Christina    TX  
+Cornelia     TX  
+Name: state, dtype: object
+</code></pre>
+
+<pre><code class="language-py">df.age 
+</code></pre>
+
+<pre><code class="language-py">Jane         30  
+Niko          2  
+Aaron        12  
+Penelope      4  
+Dean         32  
+Christina    33  
+Cornelia     69  
+Name: age, dtype: int64
+</code></pre>
+
+<h2 id="pros-and-cons-when-selecting-columns-by-attribute-access">Pros and cons when selecting columns by attribute access</h2>
+
+<p>The best benefit of selecting columns like this is that you get help when chaining methods after selection. For instance, if you place another dot after the column name and press  <strong>tab</strong>, a list of all the Series methods will appear in a pop-up menu. It will look like this:</p>
+
+<p><img src="https://miro.medium.com/max/468/1*-LvX7f1u0S8xRPXp_YLJfw.png" alt="" /></p>
+
+<p>This help disappears when you use just the indexing operator:</p>
+
+<p><img src="https://miro.medium.com/max/443/1*eV73GAR5_rkckmt_pGXAVQ.png" alt="" /></p>
+
+<p>The biggest drawback is that you cannot select columns that have spaces or other characters that are not valid as Python identifiers (variable names).</p>
+
+<h2 id="selecting-the-same-column-twice">Selecting the same column twice?</h2>
+
+<p>This is rather peculiar, but you can actually select the same column more than once:</p>
+
+<pre><code class="language-py">df[['age', 'age', 'age']]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/209/1*fEtloDbpCd9Z3qv_O1MCuQ.png" alt="" /></p>
+
+<h2 id="summary-of-part-1">Summary of Part 1</h2>
+
+<p>We covered an incredible amount of ground. Let’s summarize all the main points:
+- Before learning pandas, ensure you have the fundamentals of Python
+- Always refer to the documentation when learning new pandas operations
+- The DataFrame and the Series are the containers of data
+- A DataFrame is two-dimensional, tabular data
+- A Series is a single dimension of data
+- The three components of a DataFrame are the index, the columns and the data (or values)
+- Each row and column of the DataFrame is referenced by both a label and an integer location
+- There are three primary ways to select subsets from a DataFrame — [], .loc and .iloc
+- I use the term just the indexing operator to refer to [] immediately following a DataFrame/Series
+- Just the indexing operator’s primary purpose is to select a column or columns from a DataFrame
+- Using a single column name to just the indexing operator returns a single column of data as a Series
+- Passing multiple columns in a list to just the indexing operator returns a DataFrame
+- A Series has two components, the index and the data (values). It has no columns
+- .loc makes selections only by label
+- .loc can simultaneously select rows and columns
+- .loc can make selections with either a single label, a list of labels, or a slice of labels
+- .loc makes row selections first followed by column selections: df.loc[row_selection, col_selection]
+- .iloc is analogous to .loc but uses only integer location to refer to rows or columns.
+- .ix is deprecated and should never be used
+- .loc and .iloc work the same for Series except they only select based on the index as there are no columns
+- Pandas combines the power of python lists (selection via integer location) and dictionaries (selection by label)
+- You can use just the indexing operator to select rows from a DataFrame, but I recommend against this and instead sticking with the explicit .loc and .iloc
+- Normally data is imported without setting an index. Use the set_index method to use a column as an index.
+- You can select a single column as a Series from a DataFrame with dot notation</p>
+
+<h2 id="way-more-to-the-story">Way more to the story</h2>
+
+<p>This is only part 1 of the series, so there is much more to cover on how to select subsets of data in pandas. Some of the explanations in this part will be expanded to include other possibilities.</p>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>This best way to learn pandas is to practice on your own. All these exercises will use the Chicago food inspections dataset found  <a href="https://data.world/cityofchicago/food-inspections-map">here at data.world</a>.</p>
+
+<ul>
+<li>Download the  <a href="https://github.com/tdpetrou/Learn-Pandas/blob/master/Learn-Pandas/Selecting%20Subsets/01%20Selecting%20Subsets%20with%20%5B%20%5D%2C%20.loc%20and%20.iloc.ipynb">Jupyter Notebook</a>  to get started on the exercises.</li>
+<li>Make sure to  <a href="https://github.com/tdpetrou/Learn-Pandas/blob/master/Learn-Pandas/Selecting%20Subsets/Solutions.ipynb">review the detailed solutions</a>  as well after you attempt the exercises</li>
+</ul>
+
+<h2 id="get-the-all-access-pass">Get the All Access Pass!</h2>
+
+<p>Get all of my current and future material for one low price with the  <a href="http://b.link/ddallaccessm">All Access Pass!</a>  The primary courses available are the following:</p>
+
+<ul>
+<li><a href="http://b.link/exercisepythonm">Exercise Python</a></li>
+<li><a href="http://b.link/MDAPM">Master Data Analysis with Python</a></li>
+<li><a href="http://b.link/MMLPM">Master Machine Learning with Python</a></li>
+</ul>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cpandas%5cselecting%20-subsets-pandas-1.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#selecting-subsets-of-data-in-pandas-part-1">Selecting Subsets of Data in Pandas Part 1</a>
+<ul>
+<li><a href="#become-an-expert">Become an Expert</a></li>
+<li><a href="#part-1-selection-with-loc-and-iloc">Part 1: Selection with  <code>[ ]</code>,  <code>.loc</code>  and  <code>.iloc</code></a></li>
+<li><a href="#assumptions-before-we-begin">Assumptions before we begin</a></li>
+<li><a href="#the-importance-of-making-subset-selections">The importance of making subset selections</a></li>
+<li><a href="#always-reference-the-documentation">Always reference the documentation</a></li>
+<li><a href="#the-anatomy-of-a-dataframe-and-a-series">The anatomy of a DataFrame and a Series</a></li>
+<li><a href="#the-three-components-of-a-dataframe">The three components of a DataFrame</a></li>
+<li><a href="#axis-and-axes">Axis and axes</a></li>
+<li><a href="#each-row-has-a-label-and-each-column-has-a-label">Each row has a label and each column has a label</a></li>
+<li><a href="#what-is-subset-selection">What is subset selection?</a></li>
+<li><a href="#example-selecting-some-columns-and-all-rows">Example selecting some columns and all rows</a></li>
+<li><a href="#example-selecting-some-rows-and-all-columns">Example selecting some rows and all columns</a></li>
+<li><a href="#example-selecting-some-rows-and-some-columns">Example selecting some rows and some columns</a></li>
+<li><a href="#pandas-dual-references-by-label-and-by-integer-location">Pandas dual references: by label and by integer location</a></li>
+<li><a href="#what-s-the-difference-between-indexing-and-selecting-subsets-of-data">What’s the difference between indexing and selecting subsets of data?</a></li>
+<li><a href="#focusing-only-on-loc-and-iloc">Focusing only on  <code>[]</code>,  <code>.loc</code>, and  <code>.iloc</code></a></li>
+<li><a href="#a-term-for-just-those-square-brackets">A term for just those square brackets</a></li>
+<li><a href="#read-in-data-into-a-dataframe-with-read-csv">Read in data into a DataFrame with  <code>read_csv</code></a></li>
+<li><a href="#extracting-the-individual-dataframe-components">Extracting the individual DataFrame components</a></li>
+</ul></li>
+<li><a href="#data-types-of-the-components">Data types of the components</a>
+<ul>
+<li><a href="#understanding-these-types">Understanding these types</a></li>
+<li><a href="#beginning-with-just-the-indexing-operator-on-dataframes">Beginning with just the indexing operator on DataFrames</a></li>
+<li><a href="#selecting-a-single-column-as-a-series">Selecting a single column as a Series</a></li>
+<li><a href="#anatomy-of-a-series">Anatomy of a Series</a></li>
+</ul></li>
+<li><a href="#selecting-multiple-columns-with-just-the-indexing-operator">Selecting multiple columns with just the indexing operator</a></li>
+<li><a href="#selecting-multiple-columns-returns-a-dataframe">Selecting multiple columns returns a DataFrame</a>
+<ul>
+<li><a href="#column-order-doesn-t-matter">Column order doesn’t matter</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+<li><a href="#summary-of-just-the-indexing-operator">Summary of just the indexing operator</a></li>
+<li><a href="#getting-started-with-loc">Getting started with  <code>.loc</code></a></li>
+</ul></li>
+<li><a href="#select-a-single-row-as-a-series-with-loc">Select a single row as a Series with  <code>.loc</code></a>
+<ul>
+<li><a href="#select-multiple-rows-as-a-dataframe-with-loc">Select multiple rows as a DataFrame with  <code>.loc</code></a></li>
+<li><a href="#use-slice-notation-to-select-a-range-of-rows-with-loc">Use slice notation to select a range of rows with  <code>.loc</code></a></li>
+<li><a href="#loc-includes-the-last-value-with-slice-notation"><code>.loc</code>  includes the last value with slice notation</a></li>
+</ul></li>
+<li><a href="#other-slices">Other slices</a>
+<ul>
+<li><a href="#selecting-rows-and-columns-simultaneously-with-loc">Selecting rows and columns simultaneously with  <code>.loc</code></a></li>
+<li><a href="#select-two-rows-and-three-columns">Select two rows and three columns</a></li>
+<li><a href="#use-any-combination-of-selections-for-either-row-or-columns-for-loc">Use any combination of selections for either row or columns for  <code>.loc</code></a></li>
+<li><a href="#selecting-all-of-the-rows-and-some-columns">Selecting all of the rows and some columns</a></li>
+<li><a href="#assign-row-and-column-selections-to-variables">Assign row and column selections to variables</a></li>
+</ul></li>
+<li><a href="#summary-of-loc">Summary of  <code>.loc</code></a></li>
+<li><a href="#getting-started-with-iloc">Getting started with  <code>.iloc</code></a></li>
+<li><a href="#selecting-a-single-row-with-iloc">Selecting a single row with  <code>.iloc</code></a></li>
+<li><a href="#selecting-multiple-rows-with-iloc">Selecting multiple rows with  <code>.iloc</code></a></li>
+<li><a href="#use-slice-notation-to-select-a-range-of-rows-with-iloc">Use slice notation to select a range of rows with  <code>.iloc</code></a>
+<ul>
+<li><a href="#selecting-rows-and-columns-simultaneously-with-iloc">Selecting rows and columns simultaneously with  <code>.iloc</code></a></li>
+</ul></li>
+<li><a href="#deprecation-of-ix">Deprecation of  <code>.ix</code></a>
+<ul>
+<li><a href="#selecting-subsets-of-series">Selecting subsets of Series</a></li>
+</ul></li>
+<li><a href="#series-selection-with-loc">Series selection with  <code>.loc</code></a></li>
+<li><a href="#series-selection-with-iloc">Series selection with  <code>.iloc</code></a></li>
+<li><a href="#comparison-to-python-lists-and-dictionaries">Comparison to Python lists and dictionaries</a></li>
+<li><a href="#selection-by-label-with-python-dictionaries">Selection by label with Python dictionaries</a>
+<ul>
+<li><a href="#pandas-has-power-of-lists-and-dictionaries">Pandas has power of lists and dictionaries</a></li>
+<li><a href="#extra-topics">Extra Topics</a></li>
+<li><a href="#using-just-the-indexing-operator-to-select-rows-from-a-dataframe-confusing">Using just the indexing operator to select rows from a DataFrame — Confusing!</a></li>
+<li><a href="#i-recommend-not-doing-this">I recommend not doing this!</a></li>
+<li><a href="#cannot-simultaneously-select-rows-and-columns-with">Cannot simultaneously select rows and columns with  <code>[]</code></a></li>
+<li><a href="#using-just-the-indexing-operator-to-select-rows-from-a-series-confusing">Using just the indexing operator to select rows from a Series — Confusing!</a></li>
+<li><a href="#importing-data-without-choosing-an-index-column">Importing data without choosing an index column</a></li>
+<li><a href="#the-default-rangeindex">The default  <code>RangeIndex</code></a></li>
+<li><a href="#setting-an-index-from-a-column-after-reading-in-data">Setting an index from a column after reading in data</a></li>
+<li><a href="#the-index-has-a-name">The index has a name</a></li>
+<li><a href="#dataframe-column-selection-with-dot-notation">DataFrame column selection with dot notation</a></li>
+<li><a href="#pros-and-cons-when-selecting-columns-by-attribute-access">Pros and cons when selecting columns by attribute access</a></li>
+<li><a href="#selecting-the-same-column-twice">Selecting the same column twice?</a></li>
+<li><a href="#summary-of-part-1">Summary of Part 1</a></li>
+<li><a href="#way-more-to-the-story">Way more to the story</a></li>
+<li><a href="#exercises">Exercises</a></li>
+<li><a href="#get-the-all-access-pass">Get the All Access Pass!</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

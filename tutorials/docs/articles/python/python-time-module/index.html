@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python Time Module"><meta property="og:title" content="Python Time Module" />
+<meta property="og:description" content="A Beginner’s Guide to the Python time Module Table of Contents
+ Dealing With Python Time Using Seconds  The Epoch Python Time in Seconds as a Floating Point Number Python Time in Seconds as a String Representing Local Time  Understanding Time Zones  UTC and Time Zones Daylight Savings Time  Dealing With Python Time Using Data Structures  Python Time as a Tuple Python Time as an Object  Converting Python Time in Seconds to an Object  Coordinated Universal Time (UTC) Local Time  Converting a Local Time Object to Seconds Converting a Python Time Object to a String  asctime() strftime()  Converting a Python Time String to an Object Suspending Execution Measuring Performance Conclusion Further Reading  The Python time module provides many ways of representing time in code, such as objects, numbers, and strings." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-time-module./" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Python Time Module | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./"  class="active">
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python Time Module</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="a-beginner-s-guide-to-the-python-time-module">A Beginner’s Guide to the Python time Module</h1>
+
+<p>Table of Contents</p>
+
+<ul>
+<li><a href="https://realpython.com/python-time-module/#dealing-with-python-time-using-seconds">Dealing With Python Time Using Seconds</a>
+
+<ul>
+<li><a href="https://realpython.com/python-time-module/#the-epoch">The Epoch</a></li>
+<li><a href="https://realpython.com/python-time-module/#python-time-in-seconds-as-a-floating-point-number">Python Time in Seconds as a Floating Point Number</a></li>
+<li><a href="https://realpython.com/python-time-module/#python-time-in-seconds-as-a-string-representing-local-time">Python Time in Seconds as a String Representing Local Time</a></li>
+</ul></li>
+<li><a href="https://realpython.com/python-time-module/#understanding-time-zones">Understanding Time Zones</a>
+
+<ul>
+<li><a href="https://realpython.com/python-time-module/#utc-and-time-zones">UTC and Time Zones</a></li>
+<li><a href="https://realpython.com/python-time-module/#daylight-savings-time">Daylight Savings Time</a></li>
+</ul></li>
+<li><a href="https://realpython.com/python-time-module/#dealing-with-python-time-using-data-structures">Dealing With Python Time Using Data Structures</a>
+
+<ul>
+<li><a href="https://realpython.com/python-time-module/#python-time-as-a-tuple">Python Time as a Tuple</a></li>
+<li><a href="https://realpython.com/python-time-module/#python-time-as-an-object">Python Time as an Object</a></li>
+</ul></li>
+<li><a href="https://realpython.com/python-time-module/#converting-python-time-in-seconds-to-an-object">Converting Python Time in Seconds to an Object</a>
+
+<ul>
+<li><a href="https://realpython.com/python-time-module/#coordinated-universal-time-utc">Coordinated Universal Time (UTC)</a></li>
+<li><a href="https://realpython.com/python-time-module/#local-time">Local Time</a></li>
+</ul></li>
+<li><a href="https://realpython.com/python-time-module/#converting-a-local-time-object-to-seconds">Converting a Local Time Object to Seconds</a></li>
+<li><a href="https://realpython.com/python-time-module/#converting-a-python-time-object-to-a-string">Converting a Python Time Object to a String</a>
+
+<ul>
+<li><a href="https://realpython.com/python-time-module/#asctime">asctime()</a></li>
+<li><a href="https://realpython.com/python-time-module/#strftime">strftime()</a></li>
+</ul></li>
+<li><a href="https://realpython.com/python-time-module/#converting-a-python-time-string-to-an-object">Converting a Python Time String to an Object</a></li>
+<li><a href="https://realpython.com/python-time-module/#suspending-execution">Suspending Execution</a></li>
+<li><a href="https://realpython.com/python-time-module/#measuring-performance">Measuring Performance</a></li>
+<li><a href="https://realpython.com/python-time-module/#conclusion">Conclusion</a></li>
+<li><a href="https://realpython.com/python-time-module/#further-reading">Further Reading</a></li>
+</ul>
+
+<p>The Python  <code>time</code>  module provides many ways of representing time in code, such as objects, numbers, and strings. It also provides functionality other than representing time, like waiting during code execution and measuring the efficiency of your code.</p>
+
+<p>This article will walk you through the most commonly used functions and objects in  <code>time</code>.</p>
+
+<p><strong>By the end of this article, you’ll be able to:</strong></p>
+
+<ul>
+<li><strong>Understand</strong>  core concepts at the heart of working with dates and times, such as epochs, time zones, and daylight savings time</li>
+<li><strong>Represent</strong>  time in code using floats, tuples, and  <code>struct_time</code></li>
+<li><strong>Convert</strong>  between different time representations</li>
+<li><strong>Suspend</strong>  thread execution</li>
+<li><strong>Measure</strong>  code performance using  <code>perf_counter()</code></li>
+</ul>
+
+<p>You’ll start by learning how you can use a floating point number to represent time.</p>
+
+<p><strong>Free Bonus:</strong>  <a href="https://realpython.com/python-time-module/">Click here to get our free Python Cheat Sheet</a>  that shows you the basics of Python 3, like working with data types, dictionaries, lists, and Python functions.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h2 id="dealing-with-python-time-using-seconds">Dealing With Python Time Using Seconds</h2>
+
+<p>One of the ways you can manage the concept of Python time in your application is by using a floating point number that represents the number of seconds that have passed since the beginning of an era—that is, since a certain starting point.</p>
+
+<p>Let’s dive deeper into what that means, why it’s useful, and how you can use it to implement logic, based on Python time, in your application.</p>
+
+<h3 id="the-epoch">The Epoch</h3>
+
+<p>You learned in the previous section that you can manage Python time with a floating point number representing elapsed time since the beginning of an era.</p>
+
+<p><a href="https://www.merriam-webster.com/dictionary/era">Merriam-Webster</a>  defines an era as:</p>
+
+<ul>
+<li>A fixed point in time from which a series of years is reckoned</li>
+<li>A system of chronological notation computed from a given date as basis</li>
+</ul>
+
+<p>The important concept to grasp here is that, when dealing with Python time, you’re considering a period of time identified by a starting point. In computing, you call this starting point the  <strong>epoch</strong>.</p>
+
+<p>The epoch, then, is the starting point against which you can measure the passage of time.</p>
+
+<p>For example, if you define the epoch to be midnight on January 1, 1970 UTC—the epoch as defined on Windows and most UNIX systems—then you can represent midnight on January 2, 1970 UTC as  <code>86400</code>  seconds since the epoch.</p>
+
+<p>This is because there are 60 seconds in a minute, 60 minutes in an hour, and 24 hours in a day. January 2, 1970 UTC is only one day after the epoch, so you can apply basic math to arrive at that result:</p>
+
+<pre><code class="language-python"> 60 * 60 * 24
+</code></pre>
+
+<pre><code>86400
+</code></pre>
+
+<p>It is also important to note that you can still represent time before the epoch. The number of seconds would just be negative.</p>
+
+<p>For example, you would represent midnight on December 31, 1969 UTC (using an epoch of January 1, 1970) as  <code>-86400</code>  seconds.</p>
+
+<p>While January 1, 1970 UTC is a common epoch, it is not the only epoch used in computing. In fact, different operating systems, filesystems, and APIs sometimes use different epochs.</p>
+
+<p>As you saw before, UNIX systems define the epoch as January 1, 1970. The Win32 API, on the other hand, defines the epoch as  <a href="https://blogs.msdn.microsoft.com/oldnewthing/20090306-00/?p=18913/">January 1, 1601</a>.</p>
+
+<p>You can use  <code>time.gmtime()</code>  to determine your system’s epoch:</p>
+
+<pre><code class="language-python">import time
+time.gmtime(0)
+</code></pre>
+
+<pre><code class="language-python">time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0)
+</code></pre>
+
+<p>You’ll learn about  <code>gmtime()</code>  and  <code>struct_time</code>  throughout the course of this article. For now, just know that you can use  <code>time</code>  to discover the epoch using this function.</p>
+
+<p>Now that you understand more about how to measure time in seconds using an epoch, let’s take a look at Python’s  <code>time</code>  module to see what functions it offers that help you do so.</p>
+
+<h3 id="python-time-in-seconds-as-a-floating-point-number">Python Time in Seconds as a Floating Point Number</h3>
+
+<p>First,  <code>time.time()</code>  returns the number of seconds that have passed since the epoch. The return value is a floating point number to account for fractional seconds:</p>
+
+<pre><code class="language-python">from time import time
+time()
+</code></pre>
+
+<pre><code class="language-python">1551143536.9323719
+</code></pre>
+
+<p>The number you get on your machine may be very different because the reference point considered to be the epoch may be very different.</p>
+
+<p><strong>Further Reading:</strong>  Python 3.7 introduced  <a href="https://realpython.com/python37-new-features/#timing-precision"><code>time_ns()</code></a>, which returns an integer value representing the same elapsed time since the epoch, but in nanoseconds rather than seconds.</p>
+
+<p>Measuring time in seconds is useful for a number of reasons:</p>
+
+<ul>
+<li>You can use a float to calculate the difference between two points in time.</li>
+<li>A float is easily  <a href="https://en.wikipedia.org/wiki/Serialization">serializable</a>, meaning that it can be stored for data transfer and come out intact on the other side.</li>
+</ul>
+
+<p>Sometimes, however, you may want to see the current time represented as a string. To do so, you can pass the number of seconds you get from  <code>time()</code>  into  <code>time.ctime()</code>.</p>
+
+<h3 id="python-time-in-seconds-as-a-string-representing-local-time">Python Time in Seconds as a String Representing Local Time</h3>
+
+<p>As you saw before, you may want to convert the Python time, represented as the number of elapsed seconds since the epoch, to a  <a href="https://realpython.com/python-strings/">string</a>. You can do so using  <code>ctime()</code>:</p>
+
+<pre><code class="language-python"> from time import time, ctime
+ t = time()
+ ctime(t)
+</code></pre>
+
+<pre><code class="language-python">'Mon Feb 25 19:11:59 2019'
+</code></pre>
+
+<p>Here, you’ve recorded the current time in seconds into the variable  <code>t</code>, then passed  <code>t</code>  as an argument to  <code>ctime()</code>, which returns a string representation of that same time.</p>
+
+<p><strong>Technical Detail:</strong>  The argument, representing seconds since the epoch, is optional according to the  <code>ctime()</code>  definition. If you don’t pass an argument, then  <code>ctime()</code>  uses the return value of  <code>time()</code>  by default. So, you could simplify the example above:</p>
+
+<pre><code class="language-python"> from time import ctime
+ ctime()
+</code></pre>
+
+<pre><code class="language-python">'Mon Feb 25 19:11:59 2019'
+</code></pre>
+
+<p>The string representation of time, also known as a  <strong>timestamp</strong>, returned by  <code>ctime()</code>  is formatted with the following structure:</p>
+
+<ol>
+<li><strong>Day of the week:</strong>  <code>Mon</code>  (<code>Monday</code>)</li>
+<li><strong>Month of the year:</strong>  <code>Feb</code>  (<code>February</code>)</li>
+<li><strong>Day of the month:</strong>  <code>25</code></li>
+<li><strong>Hours, minutes, and seconds using the  <a href="https://en.wikipedia.org/wiki/24-hour_clock">24-hour clock</a>  notation:</strong>  <code>19:11:59</code></li>
+<li><strong>Year:</strong>  <code>2019</code></li>
+</ol>
+
+<p>The previous example displays the timestamp of a particular moment captured from a computer in the South Central region of the United States. But, let’s say you live in Sydney, Australia, and you executed the same command at the same instant.</p>
+
+<p>Instead of the above output, you’d see the following:</p>
+
+<pre><code class="language-python"> from time import time, ctime
+ t = time()
+ ctime(t)
+</code></pre>
+
+<pre><code class="language-python">'Tue Feb 26 12:11:59 2019'
+</code></pre>
+
+<p>Notice that the  <code>day of week</code>,  <code>day of month</code>, and  <code>hour</code>  portions of the timestamp are different than the first example.</p>
+
+<p>These outputs are different because the timestamp returned by  <code>ctime()</code>  depends on your geographical location.</p>
+
+<p><strong>Note:</strong>  While the concept of time zones is relative to your physical location, you can modify this in your computer’s settings without actually relocating.</p>
+
+<p>The representation of time dependent on your physical location is called  <strong>local time</strong>  and makes use of a concept called  <strong>time zones</strong>.</p>
+
+<p><strong>Note:</strong>  Since local time is related to your locale, timestamps often account for locale-specific details such as the order of the elements in the string and translations of the day and month abbreviations.  <code>ctime()</code>  ignores these details.</p>
+
+<p>Let’s dig a little deeper into the notion of time zones so that you can better understand Python time representations.</p>
+
+<h2 id="understanding-time-zones">Understanding Time Zones</h2>
+
+<p>A time zone is a region of the world that conforms to a standardized time. Time zones are defined by their offset from  <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated Universal Time</a>  (UTC) and, potentially, the inclusion of daylight savings time (which we’ll cover in more detail later in this article).</p>
+
+<p><strong>Fun Fact:</strong>  If you’re a native English speaker, you might be wondering why the abbreviation for “Coordinated Universal Time” is UTC rather than the more obvious CUT. However, if you’re a native French speaker, you would call it “Temps Universel Coordonné,” which suggests a different abbreviation: TUC.</p>
+
+<p>Ultimately, the  <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time#Etymology">International Telecommunication Union and the International Astronomical Union compromised on UTC</a>  as the official abbreviation so that, regardless of language, the abbreviation would be the same.</p>
+
+<h3 id="utc-and-time-zones">UTC and Time Zones</h3>
+
+<p>UTC is the time standard against which all the world’s timekeeping is synchronized (or coordinated). It is not, itself, a time zone but rather a transcendent standard that defines what time zones are.</p>
+
+<p>UTC time is precisely measured using  <a href="https://www.merriam-webster.com/dictionary/astronomical%20time">astronomical time</a>, referring to the Earth’s rotation, and  <a href="https://en.wikipedia.org/wiki/Atomic_clock">atomic clocks</a>.</p>
+
+<p>Time zones are then defined by their offset from UTC. For example, in North and South America, the Central Time Zone (CT) is behind UTC by five or six hours and, therefore, uses the notation UTC-5:00 or UTC-6:00.</p>
+
+<p>Sydney, Australia, on the other hand, belongs to the Australian Eastern Time Zone (AET), which is ten or eleven hours ahead of UTC (UTC+10:00 or UTC+11:00).</p>
+
+<p>This difference (UTC-6:00 to UTC+10:00) is the reason for the variance you observed in the two outputs from  <code>ctime()</code>  in the previous examples:</p>
+
+<ul>
+<li><strong>Central Time (CT):</strong>  <code>'Mon Feb 25 19:11:59 2019'</code></li>
+<li><strong>Australian Eastern Time (AET):</strong>  <code>'Tue Feb 26 12:11:59 2019'</code></li>
+</ul>
+
+<p>These times are exactly sixteen hours apart, which is consistent with the time zone offsets mentioned above.</p>
+
+<p>You may be wondering why CT can be either five or six hours behind UTC or why AET can be ten or eleven hours ahead. The reason for this is that some areas around the world, including parts of these time zones, observe daylight savings time.</p>
+
+<h3 id="daylight-savings-time">Daylight Savings Time</h3>
+
+<p>Summer months generally experience more  <a href="https://sciencing.com/many-hours-daylight-summer-8196183.html">daylight hours</a>  than winter months. Because of this, some areas observe daylight savings time (DST) during the spring and summer to make better use of those daylight hours.</p>
+
+<p>For places that observe DST, their clocks will jump ahead one hour at the beginning of spring (effectively losing an hour). Then, in the fall, the clocks will be reset to standard time.</p>
+
+<p>The letters S and D represent standard time and daylight savings time in time zone notation:</p>
+
+<ul>
+<li>Central Standard Time (CST)</li>
+<li>Australian Eastern Daylight Time (AEDT)</li>
+</ul>
+
+<p>When you represent times as timestamps in local time, it is always important to consider whether DST is applicable or not.</p>
+
+<p><code>ctime()</code>  accounts for daylight savings time. So, the output difference listed previously would be more accurate as the following:</p>
+
+<ul>
+<li><strong>Central Standard Time (CST):</strong>  <code>'Mon Feb 25 19:11:59 2019'</code></li>
+<li><strong>Australian Eastern Daylight Time (AEDT):</strong>  <code>'Tue Feb 26 12:11:59 2019'</code></li>
+</ul>
+
+<h2 id="dealing-with-python-time-using-data-structures">Dealing With Python Time Using Data Structures</h2>
+
+<p>Now that you have a firm grasp on many fundamental concepts of time including epochs, time zones, and UTC, let’s take a look at more ways to represent time using the Python  <code>time</code>  module.</p>
+
+<h3 id="python-time-as-a-tuple">Python Time as a Tuple</h3>
+
+<p>Instead of using a number to represent Python time, you can use another primitive data structure: a  <a href="https://realpython.com/python-lists-tuples/">tuple</a>.</p>
+
+<p>The tuple allows you to manage time a little more easily by abstracting some of the data and making it more readable.</p>
+
+<p>When you represent time as a tuple, each element in your tuple corresponds to a specific element of time:</p>
+
+<ol>
+<li>Year</li>
+<li>Month as an integer, ranging between 1 (January) and 12 (December)</li>
+<li>Day of the month</li>
+<li>Hour as an integer, ranging between 0 (12 A.M.) and 23 (11 P.M.)</li>
+<li>Minute</li>
+<li>Second</li>
+<li>Day of the week as an integer, ranging between 0 (Monday) and 6 (Sunday)</li>
+<li>Day of the year</li>
+<li>Daylight savings time as an integer with the following values:
+
+<ul>
+<li><code>1</code>  is daylight savings time.</li>
+<li><code>0</code>  is standard time.</li>
+<li><code>-1</code>  is unknown.</li>
+</ul></li>
+</ol>
+
+<p>Using the methods you’ve already learned, you can represent the same Python time in two different ways:</p>
+
+<pre><code class="language-python"> from time import time, ctime
+ t = time()
+ t
+</code></pre>
+
+<pre><code>1551186415.360564
+</code></pre>
+
+<pre><code class="language-python"> ctime(t)
+</code></pre>
+
+<pre><code>'Tue Feb 26 07:06:55 2019'
+</code></pre>
+
+<pre><code class="language-python"> time_tuple = (2019, 2, 26, 7, 6, 55, 1, 57, 0)
+</code></pre>
+
+<p>In this case, both  <code>t</code>  and  <code>time_tuple</code>  represent the same time, but the tuple provides a more readable interface for working with time components.</p>
+
+<p><strong>Technical Detail:</strong>  Actually, if you look at the Python time represented by  <code>time_tuple</code>  in seconds (which you’ll see how to do later in this article), you’ll see that it resolves to  <code>1551186415.0</code>  rather than  <code>1551186415.360564</code>.</p>
+
+<p>This is because the tuple doesn’t have a way to represent fractional seconds.</p>
+
+<p>While the tuple provides a more manageable interface for working with Python time, there is an even better object:  <code>struct_time</code>.</p>
+
+<h3 id="python-time-as-an-object">Python Time as an Object</h3>
+
+<p>The problem with the tuple construct is that it still looks like a bunch of numbers, even though it’s better organized than a single, seconds-based number.</p>
+
+<p><code>struct_time</code>  provides a solution to this by utilizing  <a href="https://dbader.org/blog/writing-clean-python-with-namedtuples"><code>NamedTuple</code></a>, from Python’s  <code>collections</code>  module, to associate the tuple’s sequence of numbers with useful identifiers:</p>
+
+<pre><code class="language-python"> from time import struct_time
+ time_tuple = (2019, 2, 26, 7, 6, 55, 1, 57, 0)
+ time_obj = struct_time(time_tuple)
+ time_obj
+</code></pre>
+
+<pre><code class="language-python">time.struct_time(tm_year=2019, tm_mon=2, tm_mday=26, tm_hour=7, tm_min=6, tm_sec=55, tm_wday=1, tm_yday=57, tm_isdst=0)
+</code></pre>
+
+<p><strong>Technical Detail:</strong>  If you’re coming from another language, the terms  <code>struct</code>  and  <code>object</code>  might be in opposition to one another.</p>
+
+<p>In Python, there is no data type called  <code>struct</code>. Instead, everything is an object.</p>
+
+<p>However, the name  <code>struct_time</code>  is derived from the  <a href="https://en.cppreference.com/w/c/chrono/tm">C-based time library</a>  where the data type is actually a  <code>struct</code>.</p>
+
+<p>In fact, Python’s  <code>time</code>  module, which is  <a href="https://github.com/python/cpython/blob/master/Modules/timemodule.c">implemented in C</a>, uses this  <code>struct</code>  directly by including the header file  <code>times.h</code>.</p>
+
+<p>Now, you can access specific elements of  <code>time_obj</code>  using the attribute’s name rather than an index:</p>
+
+<pre><code class="language-python"> day_of_year = time_obj.tm_yday
+ day_of_year
+</code></pre>
+
+<pre><code class="language-python">57
+</code></pre>
+
+<pre><code class="language-python"> day_of_month = time_obj.tm_mday
+ day_of_month
+</code></pre>
+
+<pre><code class="language-python">26
+</code></pre>
+
+<p>Beyond the readability and usability of  <code>struct_time</code>, it is also important to know because it is the return type of many of the functions in the Python  <code>time</code>  module.</p>
+
+<h2 id="converting-python-time-in-seconds-to-an-object">Converting Python Time in Seconds to an Object</h2>
+
+<p>Now that you’ve seen the three primary ways of working with Python time, you’ll learn how to convert between the different time data types.</p>
+
+<p>Converting between time data types is dependent on whether the time is in UTC or local time.</p>
+
+<h3 id="coordinated-universal-time-utc">Coordinated Universal Time (UTC)</h3>
+
+<p>The epoch uses UTC for its definition rather than a time zone. Therefore, the seconds elapsed since the epoch is not variable depending on your geographical location.</p>
+
+<p>However, the same cannot be said of  <code>struct_time</code>. The object representation of Python time may or may not take your time zone into account.</p>
+
+<p>There are two ways to convert a float representing seconds to a  <code>struct_time</code>:</p>
+
+<ol>
+<li>UTC</li>
+<li>Local time</li>
+</ol>
+
+<p>To convert a Python time float to a UTC-based  <code>struct_time</code>, the Python  <code>time</code>  module provides a function called  <code>gmtime()</code>.</p>
+
+<p>You’ve seen  <code>gmtime()</code>  used once before in this article:</p>
+
+<pre><code class="language-python"> import time
+ time.gmtime(0)
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0)
+</code></pre>
+
+<p>You used this call to discover your system’s epoch. Now, you have a better foundation for understanding what’s actually happening here.</p>
+
+<p><code>gmtime()</code>  converts the number of elapsed seconds since the epoch to a  <code>struct_time</code>  in UTC. In this case, you’ve passed  <code>0</code>  as the number of seconds, meaning you’re trying to find the epoch, itself, in UTC.</p>
+
+<p><strong>Note:</strong>  Notice the attribute  <code>tm_isdst</code>  is set to  <code>0</code>. This attribute represents whether the time zone is using daylight savings time. UTC never subscribes to DST, so that flag will always be  <code>0</code>  when using  <code>gmtime()</code>.</p>
+
+<p>As you saw before,  <code>struct_time</code>  cannot represent fractional seconds, so  <code>gmtime()</code>  ignores the fractional seconds in the argument:</p>
+
+<pre><code class="language-python"> import time
+ time.gmtime(1.99)
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=1, tm_wday=3, tm_yday=1, tm_isdst=0)
+</code></pre>
+
+<p>Notice that even though the number of seconds you passed was very close to  <code>2</code>, the  <code>.99</code>  fractional seconds were simply ignored, as shown by  <code>tm_sec=1</code>.</p>
+
+<p>The  <code>secs</code>  parameter for  <code>gmtime()</code>  is optional, meaning you can call  <code>gmtime()</code>  with no arguments. Doing so will provide the current time in UTC:</p>
+
+<pre><code class="language-python"> import time
+ time.gmtime()
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=2, tm_mday=28, tm_hour=12, tm_min=57, tm_sec=24, tm_wday=3, tm_yday=59, tm_isdst=0)
+</code></pre>
+
+<p>Interestingly, there is no inverse for this function within  <code>time</code>. Instead, you’ll have to look in Python’s  <code>calendar</code>  module for a function named  <code>timegm()</code>:</p>
+
+<pre><code class="language-python"> import calendar
+ import time
+ time.gmtime()
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=2, tm_mday=28, tm_hour=13, tm_min=23, tm_sec=12, tm_wday=3, tm_yday=59, tm_isdst=0)
+</code></pre>
+
+<pre><code class="language-python"> calendar.timegm(time.gmtime())
+</code></pre>
+
+<pre><code class="language-python">1551360204
+</code></pre>
+
+<p><code>timegm()</code>  takes a tuple (or  <code>struct_time</code>, since it is a subclass of tuple) and returns the corresponding number of seconds since the epoch.</p>
+
+<p><strong>Historical Context:</strong>  If you’re interested in why  <code>timegm()</code>  is not in  <code>time</code>, you can view the discussion in  <a href="https://bugs.python.org/issue6280">Python Issue 6280</a>.</p>
+
+<p>In short, it was originally added to  <code>calendar</code>  because  <code>time</code>  closely follows C’s time library (defined in  <code>time.h</code>), which contains no matching function. The above-mentioned issue proposed the idea of moving or copying  <code>timegm()</code>  into  <code>time</code>.</p>
+
+<p>However, with advances to the  <code>datetime</code>  library, inconsistencies in the patched implementation of  <code>time.timegm()</code>, and a question of how to then handle  <code>calendar.timegm()</code>, the maintainers declined the patch, encouraging the use of  <code>datetime</code>  instead.</p>
+
+<p>Working with UTC is valuable in programming because it’s a standard. You don’t have to worry about DST, time zone, or locale information.</p>
+
+<p>That said, there are plenty of cases when you’d want to use local time. Next, you’ll see how to convert from seconds to local time so that you can do just that.</p>
+
+<h3 id="local-time">Local Time</h3>
+
+<p>In your application, you may need to work with local time rather than UTC. Python’s  <code>time</code>  module provides a function for getting local time from the number of seconds elapsed since the epoch called  <code>localtime()</code>.</p>
+
+<p>The signature of  <code>localtime()</code>  is similar to  <code>gmtime()</code>  in that it takes an optional  <code>secs</code>  argument, which it uses to build a  <code>struct_time</code>  using your local time zone:</p>
+
+<pre><code class="language-python"> import time
+ time.time()
+</code></pre>
+
+<pre><code>1551448206.86196
+</code></pre>
+
+<pre><code class="language-python"> time.localtime(1551448206.86196)
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=3, tm_mday=1, tm_hour=7, tm_min=50, tm_sec=6, tm_wday=4, tm_yday=60, tm_isdst=0)
+</code></pre>
+
+<p>Notice that  <code>tm_isdst=0</code>. Since DST matters with local time,  <code>tm_isdst</code>  will change between  <code>0</code>  and  <code>1</code>  depending on whether or not DST is applicable for the given time. Since  <code>tm_isdst=0</code>, DST is not applicable for March 1, 2019.</p>
+
+<p>In the United States in 2019, daylight savings time begins on March 10. So, to test if the DST flag will change correctly, you need to add 9 days’ worth of seconds to the  <code>secs</code>  argument.</p>
+
+<p>To compute this, you take the number of seconds in a day (86,400) and multiply that by 9 days:</p>
+
+<pre><code class="language-python"> new_secs = 1551448206.86196 + (86400 * 9)
+ time.localtime(new_secs)
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=3, tm_mday=10, tm_hour=8, tm_min=50, tm_sec=6, tm_wday=6, tm_yday=69, tm_isdst=1)
+</code></pre>
+
+<p>Now, you’ll see that the  <code>struct_time</code>  shows the date to be March 10, 2019 with  <code>tm_isdst=1</code>. Also, notice that  <code>tm_hour</code>  has also jumped ahead, to  <code>8</code>  instead of  <code>7</code>  in the previous example, because of daylight savings time.</p>
+
+<p>Since Python 3.3,  <code>struct_time</code>  has also included two attributes that are useful in determining the time zone of the  <code>struct_time</code>:</p>
+
+<ol>
+<li><code>tm_zone</code></li>
+<li><code>tm_gmtoff</code></li>
+</ol>
+
+<p>At first, these attributes were platform dependent, but they have been available on all platforms since Python 3.6.</p>
+
+<p>First,  <code>tm_zone</code>  stores the local time zone:</p>
+
+<pre><code class="language-python"> import time
+ current_local = time.localtime()
+ current_local.tm_zone
+</code></pre>
+
+<pre><code>'CST'
+</code></pre>
+
+<p>Here, you can see that  <code>localtime()</code>  returns a  <code>struct_time</code>  with the time zone set to  <code>CST</code>  (Central Standard Time).</p>
+
+<p>As you saw before, you can also tell the time zone based on two pieces of information, the UTC offset and DST (if applicable):</p>
+
+<pre><code class="language-python"> import time
+ current_local = time.localtime()
+ current_local.tm_gmtoff
+</code></pre>
+
+<pre><code>-21600
+</code></pre>
+
+<pre><code class="language-python"> current_local.tm_isdst
+</code></pre>
+
+<pre><code>0
+</code></pre>
+
+<p>In this case, you can see that  <code>current_local</code>  is  <code>21600</code>  seconds behind GMT, which stands for Greenwich Mean Time. GMT is the time zone with no UTC offset: UTC±00:00.</p>
+
+<p><code>21600</code>  seconds divided by seconds per hour (3,600) means that  <code>current_local</code>  time is  <code>GMT-06:00</code>  (or  <code>UTC-06:00</code>).</p>
+
+<p>You can use the GMT offset plus the DST status to deduce that  <code>current_local</code>  is  <code>UTC-06:00</code>  at standard time, which corresponds to the Central standard time zone.</p>
+
+<p>Like  <code>gmtime()</code>, you can ignore the  <code>secs</code>  argument when calling  <code>localtime()</code>, and it will return the current local time in a  <code>struct_time</code>:</p>
+
+<pre><code class="language-python"> import time
+ time.localtime()
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=3, tm_mday=1, tm_hour=8, tm_min=34, tm_sec=28, tm_wday=4, tm_yday=60, tm_isdst=0)
+</code></pre>
+
+<p>Unlike  <code>gmtime()</code>, the inverse function of  <code>localtime()</code>  does exist in the Python  <code>time</code>  module. Let’s take a look at how that works.</p>
+
+<h2 id="converting-a-local-time-object-to-seconds">Converting a Local Time Object to Seconds</h2>
+
+<p>You’ve already seen how to convert a UTC time object to seconds using  <code>calendar.timegm()</code>. To convert local time to seconds, you’ll use  <code>mktime()</code>.</p>
+
+<p><code>mktime()</code>  requires you to pass a parameter called  <code>t</code>  that takes the form of either a normal 9-tuple or a  <code>struct_time</code>  object representing local time:</p>
+
+<pre><code class="language-python"> import time
+
+ time_tuple = (2019, 3, 10, 8, 50, 6, 6, 69, 1)
+ time.mktime(time_tuple)
+</code></pre>
+
+<pre><code>1552225806.0
+</code></pre>
+
+<pre><code class="language-python"> time_struct = time.struct_time(time_tuple)
+ time.mktime(time_struct)
+</code></pre>
+
+<pre><code>1552225806.0
+</code></pre>
+
+<p>It’s important to keep in mind that  <code>t</code>  must be a tuple representing local time, not UTC:</p>
+
+<pre><code class="language-python"> from time import gmtime, mktime
+
+ # 1
+ current_utc = time.gmtime()
+ current_utc
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=3, tm_mday=1, tm_hour=14, tm_min=51, tm_sec=19, tm_wday=4, tm_yday=60, tm_isdst=0)
+</code></pre>
+
+<pre><code class="language-python"> # 2
+ current_utc_secs = mktime(current_utc)
+ current_utc_secs
+</code></pre>
+
+<pre><code>1551473479.0
+</code></pre>
+
+<pre><code class="language-python"> # 3
+ time.gmtime(current_utc_secs)
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=3, tm_mday=1, tm_hour=20, tm_min=51, tm_sec=19, tm_wday=4, tm_yday=60, tm_isdst=0)
+</code></pre>
+
+<p><strong>Note:</strong>  For this example, assume that the local time is  <code>March 1, 2019 08:51:19 CST</code>.</p>
+
+<p>This example shows why it’s important to use  <code>mktime()</code>  with local time, rather than UTC:</p>
+
+<ol>
+<li><p><strong><code>gmtime()</code></strong>  with no argument returns a  <code>struct_time</code>  using UTC.  <code>current_utc</code>  shows  <code>March 1, 2019 14:51:19 UTC</code>. This is accurate because  <code>CST is UTC-06:00</code>, so UTC should be 6 hours ahead of local time.</p></li>
+
+<li><p><strong><code>mktime()</code></strong>  tries to return the number of seconds, expecting local time, but you passed  <code>current_utc</code>  instead. So, instead of understanding that  <code>current_utc</code>  is UTC time, it assumes you meant  <code>March 1, 2019 14:51:19 CST</code>.</p></li>
+
+<li><p><strong><code>gmtime()</code></strong>  is then used to convert those seconds back into UTC, which results in an inconsistency. The time is now  <code>March 1, 2019 20:51:19 UTC</code>. The reason for this discrepancy is the fact that  <code>mktime()</code>  expected local time. So, the conversion back to UTC adds  <em>another</em>  6 hours to local time.</p></li>
+</ol>
+
+<p>Working with time zones is notoriously difficult, so it’s important to set yourself up for success by understanding the differences between UTC and local time and the Python time functions that deal with each.</p>
+
+<h2 id="converting-a-python-time-object-to-a-string">Converting a Python Time Object to a String</h2>
+
+<p>While working with tuples is fun and all, sometimes it’s best to work with strings.</p>
+
+<p>String representations of time, also known as timestamps, help make times more readable and can be especially useful for building intuitive user interfaces.</p>
+
+<p>There are two Python  <code>time</code>  functions that you use for converting a  <code>time.struct_time</code>  object to a string:</p>
+
+<ol>
+<li><code>asctime()</code></li>
+<li><code>strftime()</code></li>
+</ol>
+
+<p>You’ll begin by learning about<code>asctime()</code>.</p>
+
+<h3 id="asctime"><code>asctime()</code></h3>
+
+<p>You use  <code>asctime()</code>  for converting a time tuple or  <code>struct_time</code>  to a timestamp:</p>
+
+<pre><code class="language-python"> import time
+ time.asctime(time.gmtime())
+</code></pre>
+
+<pre><code>'Fri Mar  1 18:42:08 2019'
+</code></pre>
+
+<pre><code class="language-python"> time.asctime(time.localtime())
+</code></pre>
+
+<pre><code>'Fri Mar  1 12:42:15 2019'
+</code></pre>
+
+<p>Both  <code>gmtime()</code>  and  <code>localtime()</code>  return  <code>struct_time</code>  instances, for UTC and local time respectively.</p>
+
+<p>You can use  <code>asctime()</code>  to convert either  <code>struct_time</code>  to a timestamp.  <code>asctime()</code>  works similarly to  <code>ctime()</code>, which you learned about earlier in this article, except instead of passing a floating point number, you pass a tuple. Even the timestamp format is the same between the two functions.</p>
+
+<p>As with  <code>ctime()</code>, the parameter for  <code>asctime()</code>  is optional. If you do not pass a time object to  <code>asctime()</code>, then it will use the current local time:</p>
+
+<pre><code class="language-python"> import time
+ time.asctime()
+</code></pre>
+
+<pre><code>'Fri Mar  1 12:56:07 2019'
+</code></pre>
+
+<p>As with  <code>ctime()</code>, it also ignores locale information.</p>
+
+<p>One of the biggest drawbacks of  <code>asctime()</code>  is its format inflexibility.  <code>strftime()</code>  solves this problem by allowing you to format your timestamps.</p>
+
+<h3 id="strftime"><code>strftime()</code></h3>
+
+<p>You may find yourself in a position where the string format from  <code>ctime()</code>  and  <code>asctime()</code>  isn’t satisfactory for your application. Instead, you may want to format your strings in a way that’s more meaningful to your users.</p>
+
+<p>One example of this is if you would like to display your time in a string that takes locale information into account.</p>
+
+<p>To format strings, given a  <code>struct_time</code>  or Python time tuple, you use  <code>strftime()</code>, which stands for “string  <strong>format</strong>  time.”</p>
+
+<p><code>strftime()</code>  takes two arguments:</p>
+
+<ol>
+<li><strong><code>format</code></strong>  specifies the order and form of the time elements in your string.</li>
+<li><strong><code>t</code></strong>  is an optional time tuple.</li>
+</ol>
+
+<p>To format a string, you use  <strong>directives</strong>. Directives are character sequences that begin with a  <code>%</code>  that specify a particular time element, such as:</p>
+
+<ul>
+<li><strong><code>%d</code>:</strong>  Day of the month</li>
+<li><strong><code>%m</code>:</strong>  Month of the year</li>
+<li><strong><code>%Y</code>:</strong>  Year</li>
+</ul>
+
+<p>For example, you can output the date in your local time using the  <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>  standard like this:</p>
+
+<pre><code class="language-python"> import time
+ time.strftime('%Y-%m-%d', time.localtime())
+</code></pre>
+
+<pre><code>'2019-03-01'
+</code></pre>
+
+<p><strong>Further Reading:</strong>  While representing dates using Python time is completely valid and acceptable, you should also consider using Python’s  <code>datetime</code>  module, which provides shortcuts and a more robust framework for working with dates and times together.</p>
+
+<p>For example, you can simplify outputting a date in the ISO 8601 format using  <code>datetime</code>:</p>
+
+<pre><code class="language-python"> from datetime import date
+ date(year=2019, month=3, day=1).isoformat()
+</code></pre>
+
+<pre><code>'2019-03-01'
+</code></pre>
+
+<p>As you saw before, a great benefit of using  <code>strftime()</code>  over  <code>asctime()</code>  is its ability to render timestamps that make use of locale-specific information.</p>
+
+<p>For example, if you want to represent the date and time in a locale-sensitive way, you can’t use  <code>asctime()</code>:</p>
+
+<pre><code class="language-python"> from time import asctime
+ asctime()
+</code></pre>
+
+<pre><code>'Sat Mar  2 15:21:14 2019'
+</code></pre>
+
+<pre><code class="language-python"> import locale
+ locale.setlocale(locale.LC_TIME, 'zh_HK')  # Chinese - Hong Kong
+</code></pre>
+
+<pre><code>'zh_HK'
+</code></pre>
+
+<pre><code class="language-python"> asctime()
+</code></pre>
+
+<pre><code>'Sat Mar  2 15:58:49 2019'
+</code></pre>
+
+<p>Notice that even after programmatically changing your locale,  <code>asctime()</code>  still returns the date and time in the same format as before.</p>
+
+<p><strong>Technical Detail:</strong>  <code>LC_TIME</code>  is the locale category for date and time formatting. The  <code>locale</code>  argument  <code>'zh_HK'</code>  may be different, depending on your system.</p>
+
+<p>When you use  <code>strftime()</code>, however, you’ll see that it accounts for locale:</p>
+
+<pre><code class="language-python"> from time import strftime, localtime
+ strftime('%c', localtime())
+</code></pre>
+
+<pre><code>'Sat Mar  2 15:23:20 2019'
+</code></pre>
+
+<pre><code class="language-python"> import locale
+ locale.setlocale(locale.LC_TIME, 'zh_HK')  # Chinese - Hong Kong
+</code></pre>
+
+<pre><code>'zh_HK'
+</code></pre>
+
+<pre><code class="language-python"> strftime('%c', localtime())
+</code></pre>
+
+<pre><code>'六  3/ 2 15:58:12 2019' 2019'
+</code></pre>
+
+<p>Here, you have successfully utilized the locale information because you used  <code>strftime()</code>.</p>
+
+<p><strong>Note:</strong>  <code>%c</code>  is the directive for locale-appropriate date and time.</p>
+
+<p>If the time tuple is not passed to the parameter  <code>t</code>, then  <code>strftime()</code>  will use the result of  <code>localtime()</code>  by default. So, you could simplify the examples above by removing the optional second argument:</p>
+
+<pre><code class="language-python"> from time import strftime
+ strftime('The current local datetime is: %c')
+</code></pre>
+
+<pre><code>'The current local datetime is: Fri Mar  1 23:18:32 2019'
+</code></pre>
+
+<p>Here, you’ve used the default time instead of passing your own as an argument. Also, notice that the  <code>format</code>  argument can consist of text other than formatting directives.</p>
+
+<p><strong>Further Reading:</strong>  Check out this thorough  <a href="https://docs.python.org/3/library/time.html#time.strftime">list of directives</a>  available to  <code>strftime()</code>.</p>
+
+<p>The Python  <code>time</code>  module also includes the inverse operation of converting a timestamp back into a  <code>struct_time</code>  object.</p>
+
+<h2 id="converting-a-python-time-string-to-an-object">Converting a Python Time String to an Object</h2>
+
+<p>When you’re working with date and time related strings, it can be very valuable to convert the timestamp to a time object.</p>
+
+<p>To convert a time string to a  <code>struct_time</code>, you use  <code>strptime()</code>, which stands for “string  <strong>parse</strong>  time”:</p>
+
+<pre><code class="language-python"> from time import strptime
+ strptime('2019-03-01', '%Y-%m-%d')
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=3, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=4, tm_yday=60, tm_isdst=-1)
+</code></pre>
+
+<p>The first argument to  <code>strptime()</code>  must be the timestamp you wish to convert. The second argument is the  <code>format</code>  that the timestamp is in.</p>
+
+<p>The  <code>format</code>  parameter is optional and defaults to  <code>'%a %b %d %H:%M:%S %Y'</code>. Therefore, if you have a timestamp in that format, you don’t need to pass it as an argument:</p>
+
+<pre><code class="language-python"> strptime('Fri Mar 01 23:38:40 2019')
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2019, tm_mon=3, tm_mday=1, tm_hour=23, tm_min=38, tm_sec=40, tm_wday=4, tm_yday=60, tm_isdst=-1)
+</code></pre>
+
+<p>Since a  <code>struct_time</code>  has 9 key date and time components,  <code>strptime()</code>  must provide reasonable defaults for values for those components it can’t parse from  <code>string</code>.</p>
+
+<p>In the previous examples,  <code>tm_isdst=-1</code>. This means that  <code>strptime()</code>  can’t determine by the timestamp whether it represents daylight savings time or not.</p>
+
+<p>Now you know how to work with Python times and dates using the  <code>time</code>  module in a variety of ways. However, there are other uses for  <code>time</code>  outside of simply creating time objects, getting Python time strings, and using seconds elapsed since the epoch.</p>
+
+<h2 id="suspending-execution">Suspending Execution</h2>
+
+<p>One really useful Python time function is  <code>sleep()</code>, which suspends the thread’s execution for a specified amount of time.</p>
+
+<p>For example, you can suspend your program’s execution for 10 seconds like this:</p>
+
+<pre><code class="language-python"> from time import sleep, strftime
+ strftime('%c')
+</code></pre>
+
+<pre><code>'Fri Mar  1 23:49:26 2019'
+</code></pre>
+
+<pre><code class="language-python"> sleep(10)
+ strftime('%c')
+</code></pre>
+
+<pre><code>'Fri Mar  1 23:49:36 2019'
+</code></pre>
+
+<p>Your program will print the first formatted  <code>datetime</code>  string, then pause for 10 seconds, and finally print the second formatted  <code>datetime</code>  string.</p>
+
+<p>You can also pass fractional seconds to  <code>sleep()</code>:</p>
+
+<pre><code class="language-python"> from time import sleep
+ sleep(0.5)
+</code></pre>
+
+<p><code>sleep()</code>  is useful for testing or making your program wait for any reason, but you must be careful not to halt your production code unless you have good reason to do so.</p>
+
+<p>Before Python 3.5, a signal sent to your process could interrupt  <code>sleep()</code>. However, in 3.5 and later,  <code>sleep()</code>  will always suspend execution for at least the amount of specified time, even if the process receives a signal.</p>
+
+<p><code>sleep()</code>  is just one Python time function that can help you test your programs and make them more robust.</p>
+
+<h2 id="measuring-performance">Measuring Performance</h2>
+
+<p>You can use  <code>time</code>  to measure the performance of your program.</p>
+
+<p>The way you do this is to use  <code>perf_counter()</code>  which, as the name suggests, provides a performance counter with a high resolution to measure short distances of time.</p>
+
+<p>To use  <code>perf_counter()</code>, you place a counter before your code begins execution as well as after your code’s execution completes:</p>
+
+<pre><code class="language-python"> from time import perf_counter
+ def longrunning_function():
+     for i in range(1, 11):
+         time.sleep(i / i ** 2)
+
+ start = perf_counter()
+ longrunning_function()
+ end = perf_counter()
+ execution_time = (end - start)
+ execution_time
+</code></pre>
+
+<pre><code>8.201258441999926
+</code></pre>
+
+<p>First,  <code>start</code>  captures the moment before you call the function.  <code>end</code>  captures the moment after the function returns. The function’s total execution time took  <code>(end - start)</code>  seconds.</p>
+
+<p><strong>Technical Detail:</strong>  Python 3.7 introduced  <code>perf_counter_ns()</code>, which works the same as  <code>perf_counter()</code>, but uses nanoseconds instead of seconds.</p>
+
+<p><code>perf_counter()</code>  (or  <code>perf_counter_ns()</code>) is the most precise way to measure the performance of your code using one execution. However, if you’re trying to accurately gauge the performance of a code snippet, I recommend using the  <a href="https://docs.python.org/3/library/timeit.html">Python  <code>timeit</code></a>  module.</p>
+
+<p><code>timeit</code>  specializes in running code many times to get a more accurate performance analysis and helps you to avoid oversimplifying your time measurement as well as other common pitfalls.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Congratulations! You now have a great foundation for working with dates and times in Python.</p>
+
+<p>Now, you’re able to:</p>
+
+<ul>
+<li>Use a floating point number, representing seconds elapsed since the epoch, to deal with time</li>
+<li>Manage time using tuples and  <code>struct_time</code>  objects</li>
+<li>Convert between seconds, tuples, and timestamp strings</li>
+<li>Suspend the execution of a Python thread</li>
+<li>Measure performance using  <code>perf_counter()</code></li>
+</ul>
+
+<p>On top of all that, you’ve learned some fundamental concepts surrounding date and time, such as:</p>
+
+<ul>
+<li>Epochs</li>
+<li>UTC</li>
+<li>Time zones</li>
+<li>Daylight savings time</li>
+</ul>
+
+<p>Now, it’s time for you to apply your newfound knowledge of Python time in your real world applications!</p>
+
+<p>Ref : <a href="https://realpython.com/python-time-module/">https://realpython.com/python-time-module/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-time-module..md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#a-beginner-s-guide-to-the-python-time-module">A Beginner’s Guide to the Python time Module</a>
+<ul>
+<li><a href="#dealing-with-python-time-using-seconds">Dealing With Python Time Using Seconds</a>
+<ul>
+<li><a href="#the-epoch">The Epoch</a></li>
+<li><a href="#python-time-in-seconds-as-a-floating-point-number">Python Time in Seconds as a Floating Point Number</a></li>
+<li><a href="#python-time-in-seconds-as-a-string-representing-local-time">Python Time in Seconds as a String Representing Local Time</a></li>
+</ul></li>
+<li><a href="#understanding-time-zones">Understanding Time Zones</a>
+<ul>
+<li><a href="#utc-and-time-zones">UTC and Time Zones</a></li>
+<li><a href="#daylight-savings-time">Daylight Savings Time</a></li>
+</ul></li>
+<li><a href="#dealing-with-python-time-using-data-structures">Dealing With Python Time Using Data Structures</a>
+<ul>
+<li><a href="#python-time-as-a-tuple">Python Time as a Tuple</a></li>
+<li><a href="#python-time-as-an-object">Python Time as an Object</a></li>
+</ul></li>
+<li><a href="#converting-python-time-in-seconds-to-an-object">Converting Python Time in Seconds to an Object</a>
+<ul>
+<li><a href="#coordinated-universal-time-utc">Coordinated Universal Time (UTC)</a></li>
+<li><a href="#local-time">Local Time</a></li>
+</ul></li>
+<li><a href="#converting-a-local-time-object-to-seconds">Converting a Local Time Object to Seconds</a></li>
+<li><a href="#converting-a-python-time-object-to-a-string">Converting a Python Time Object to a String</a>
+<ul>
+<li><a href="#asctime"><code>asctime()</code></a></li>
+<li><a href="#strftime"><code>strftime()</code></a></li>
+</ul></li>
+<li><a href="#converting-a-python-time-string-to-an-object">Converting a Python Time String to an Object</a></li>
+<li><a href="#suspending-execution">Suspending Execution</a></li>
+<li><a href="#measuring-performance">Measuring Performance</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python Dictionary Tutorial"><meta property="og:title" content="Python Dictionary Tutorial" />
+<meta property="og:description" content="Python Dictionary Tutorial  Introduction Creating a Dictionary Accessing Elements Adding Elements Updating Elements Removing Elements Other Common Methods Conclusion  Introduction Python comes with a variety of built-in data structures, capable of storing different types of data. A Python dictionary is one such data structure that can store data in the form of key-value pairs. The values in a Python dictionary can be accessed using the keys. In this article, we will be discussing the Python dictionary in detail." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionary-tutorial/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Python Dictionary Tutorial | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/"  class="active">
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python Dictionary Tutorial</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-dictionary-tutorial">Python Dictionary Tutorial</h1>
+
+<ul>
+<li><a href="https://stackabuse.com/python-dictionary-tutorial/#introduction">Introduction</a></li>
+<li><a href="https://stackabuse.com/python-dictionary-tutorial/#creatingadictionary">Creating a Dictionary</a></li>
+<li><a href="https://stackabuse.com/python-dictionary-tutorial/#accessingelements">Accessing Elements</a></li>
+<li><a href="https://stackabuse.com/python-dictionary-tutorial/#addingelements">Adding Elements</a></li>
+<li><a href="https://stackabuse.com/python-dictionary-tutorial/#updatingelements">Updating Elements</a></li>
+<li><a href="https://stackabuse.com/python-dictionary-tutorial/#removingelements">Removing Elements</a></li>
+<li><a href="https://stackabuse.com/python-dictionary-tutorial/#othercommonmethods">Other Common Methods</a></li>
+<li><a href="https://stackabuse.com/python-dictionary-tutorial/#conclusion">Conclusion</a></li>
+</ul>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Python comes with a variety of built-in data structures, capable of storing different types of data. A Python dictionary is one such data structure that can store data in the form of key-value pairs. The values in a Python dictionary can be accessed using the keys. In this article, we will be discussing the Python dictionary in detail.</p>
+
+<h3 id="creating-a-dictionary">Creating a Dictionary</h3>
+
+<p>To create a Python dictionary, we need to pass a sequence of items inside curly braces  <code>{}</code>, and separate them using a comma (,). Each item has a key and a value expressed as a &ldquo;key:value&rdquo; pair.</p>
+
+<p>The values can belong to any data type and they can repeat, but the keys must remain unique.</p>
+
+<p>The following examples demonstrate how to create Python dictionaries:</p>
+
+<p><strong>Creating an empty dictionary:</strong></p>
+
+<pre><code class="language-python">dict_sample = {}
+</code></pre>
+
+<p><strong>Creating a dictionary with integer keys:</strong></p>
+
+<pre><code class="language-python">dict_sample = {1: 'mango', 2: 'pawpaw'}
+</code></pre>
+
+<p><strong>Creating a dictionary with mixed keys:</strong></p>
+
+<pre><code class="language-python">dict_sample = {'fruit': 'mango', 1: [4, 6, 8]}
+</code></pre>
+
+<p>We can also create a dictionary by explicitly calling the Python&rsquo;s  <code>dict()</code>  method:</p>
+
+<pre><code class="language-python">dict_sample = dict({1:'mango', 2:'pawpaw'})
+</code></pre>
+
+<p>A dictionary can also be created from a sequence as shown below:</p>
+
+<pre><code class="language-python">dict_sample = dict([(1,'mango'), (2,'pawpaw')])
+</code></pre>
+
+<p>Dictionaries can also be nested, which means that we can create a dictionary inside another dictionary. For example:</p>
+
+<pre><code class="language-python">dict_sample = {1: {'student1' : 'Nicholas', 'student2' : 'John', 'student3' : 'Mercy'},
+        2: {'course1' : 'Computer Science', 'course2' : 'Mathematics', 'course3' : 'Accounting'}}
+</code></pre>
+
+<p>To print the dictionary contents, we can use the Python&rsquo;s  <code>print()</code>  function and pass the dictionary name as the argument to the function. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'Company': 'Toyota', 'model': 'Premio', 'year': 2012}
+</code></pre>
+
+<h3 id="accessing-elements">Accessing Elements</h3>
+
+<p>To access dictionary items, pass the key inside square brackets  <code>[]</code>. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+x = dict_sample[&quot;model&quot;]
+print(x)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>Premio
+</code></pre>
+
+<p>We created a dictionary named  <code>dict_sample</code>. A variable named  <code>x</code>  was then created and its value is set to be the value for the key &ldquo;model&rdquo; in the dictionary.</p>
+
+<p>Here is another example:</p>
+
+<pre><code class="language-python">dict = {'Name': 'Mercy', 'Age': 23, 'Course': 'Accounting'}
+print(&quot;Student Name:&quot;, dict['Name'])
+print(&quot;Course:&quot;, dict['Course'])
+print(&quot;Age:&quot;, dict['Age'])
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>Student Name: Mercy
+Course: Accounting
+Age: 23
+</code></pre>
+
+<p>The dictionary object also provides the  <code>get()</code>  function, which can be used to access dictionary elements as well. We append the function with the dictionary name using the dot operator and then pass the name of the key as the argument to the function. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+x = dict_sample.get(&quot;model&quot;)
+print(x)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>Premio
+</code></pre>
+
+<p>Now we know how to access dictionary elements using a few different methods. In the next section we&rsquo;ll discuss how to add new elements to an already existing dictionary.</p>
+
+<h3 id="adding-elements">Adding Elements</h3>
+
+<p>There are numerous ways to add new elements to a dictionary. We can use a new index key and assign a value to it. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+dict_sample[&quot;Capacity&quot;] = &quot;1800CC&quot;
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'Capacity': '1800CC', 'year': 2012, 'Company': 'Toyota', 'model': 'Premio'}
+</code></pre>
+
+<p>The new element has &ldquo;Capacity&rdquo; as the key and &ldquo;1800CC&rdquo; as its corresponding value. It has been added as the first element of the dictionary.</p>
+
+<p>Here is another example. First let&rsquo;s first create an empty dictionary:</p>
+
+<pre><code class="language-python">MyDictionary = {}
+print(&quot;An Empty Dictionary: &quot;)
+print(MyDictionary)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>An Empty Dictionary:
+</code></pre>
+
+<p>The dictionary returns nothing as it has nothing stored yet. Let us add some elements to it, one at a time:</p>
+
+<pre><code class="language-python">MyDictionary[0] = 'Apples'
+MyDictionary[2] = 'Mangoes'
+MyDictionary[3] = 20
+print(&quot;\n3 elements have been added: &quot;)
+print(MyDictionary)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>3 elements have been added:
+{0: 'Apples', 2: 'Mangoes', 3: 20}
+</code></pre>
+
+<p>To add the elements, we specified keys as well as the corresponding values. For example:</p>
+
+<pre><code class="language-python">MyDictionary[0] = 'Apples'
+</code></pre>
+
+<p>In the above example, 0 is the key while &ldquo;Apples&rdquo; is the value.</p>
+
+<p>It is even possible for us to add a set of values to one key. For example:</p>
+
+<pre><code class="language-python">MyDictionary['Values'] = 1, &quot;Pairs&quot;, 4
+print(&quot;\n3 elements have been added: &quot;)
+print(MyDictionary)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>3 elements have been added:
+{'Values': (1, 'Pairs', 4)}
+</code></pre>
+
+<p>In the above example, the name of the key is &ldquo;Values&rdquo; while everything after the  <code>=</code>  sign are the actual values for that key, stored as a  <a href="https://docs.python.org/3/tutorial/datastructures.html#sets">Set</a>.</p>
+
+<p>Other than adding new elements to a dictionary, dictionary elements can also be updated/changed, which we&rsquo;ll go over in the next section.</p>
+
+<h3 id="updating-elements">Updating Elements</h3>
+
+<p>After adding a value to a dictionary we can then modify the existing dictionary element. You use the key of the element to change the corresponding value. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+
+dict_sample[&quot;year&quot;] = 2014
+
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'year': 2014, 'model': 'Premio', 'Company': 'Toyota'}
+</code></pre>
+
+<p>In this example you can see that we have updated the value for the key &ldquo;year&rdquo; from the old value of 2012 to a new value of 2014.</p>
+
+<h3 id="removing-elements">Removing Elements</h3>
+
+<p>The removal of an element from a dictionary can be done in several ways, which we&rsquo;ll discuss one-by-one in this section:</p>
+
+<p>The  <code>del</code>  keyword can be used to remove the element with the specified key. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+del dict_sample[&quot;year&quot;]
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'Company': 'Toyota', 'model': 'Premio'}
+</code></pre>
+
+<p>We called the  <code>del</code>  keyword followed by the dictionary name. Inside the square brackets that follow the dictionary name, we passed the key of the element we need to delete from the dictionary, which in this example was &ldquo;year&rdquo;. The entry for &ldquo;year&rdquo; in the dictionary was then deleted.</p>
+
+<p>Another way to delete a key-value pair is to use the  <code>pop()</code>  function and pass the key of the entry to be deleted as the argument to the function. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+dict_sample.pop(&quot;year&quot;)
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'Company': 'Toyota', 'model': 'Premio'}
+</code></pre>
+
+<p>We invoked the  <code>pop()</code>  function by appending it with the dictionary name. Again, in this example the entry for &ldquo;year&rdquo; in the dictionary will be deleted.</p>
+
+<p>The  <code>popitem()</code>  function removes the last item inserted into the dictionary, without needing to specify the key. Take a look at the following example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+dict_sample.popitem()
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'Company': 'Toyota', 'model': 'Premio'}
+</code></pre>
+
+<p>The last entry into the dictionary was &ldquo;year&rdquo;. It has been removed after calling the  <code>popitem()</code>  function.</p>
+
+<h4 id="subscribe-to-our-newsletter">Subscribe to our Newsletter</h4>
+
+<p>Get occassional tutorials, guides, and reviews in your inbox. No spam ever. Unsubscribe at any time.</p>
+
+<p>Subscribe</p>
+
+<p>But what if you want to delete the entire dictionary? It would be difficult and cumbersome to use one of these methods on every single key. Instead, you can use the  <code>del</code>  keyword to delete the entire dictionary. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+del dict_sample
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>NameError: name 'dict_sample' is not defined
+</code></pre>
+
+<p>The code returns an error. The reason is that we are trying to access a dictionary which doesn&rsquo;t exist since it has been deleted.</p>
+
+<p>However, your use-case may require you to just remove all dictionary elements and be left with an empty dictionary. This can be achieved by calling the  <code>clear()</code>  function on the dictionary:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+dict_sample.clear()
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{}
+</code></pre>
+
+<p>The code returns an empty dictionary since all the dictionary elements have been removed.</p>
+
+<h3 id="other-common-methods">Other Common Methods</h3>
+
+<p><strong>The len() Method</strong></p>
+
+<p>With this method, you can count the number of elements in a dictionary. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+print(len(dict_sample))
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>3
+</code></pre>
+
+<p>There are three entries in the dictionary, hence the method returned 3.</p>
+
+<p><strong>The copy() Method</strong></p>
+
+<p>This method returns a copy of the existing dictionary. For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+x = dict_sample.copy()
+
+print(x)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'Company': 'Toyota', 'year': 2012, 'model': 'Premio'}
+</code></pre>
+
+<p>We created a copy of dictionary named  <code>dict_sample</code>  and assigned it to the variable  <code>x</code>. If  <code>x</code>  is printed on the console, you will see that it contains the same elements as those stored by  <code>dict_sample</code>  dictionary.</p>
+
+<p>Note that this is useful because modifications made to the copied dictionary won&rsquo;t affect the original one.</p>
+
+<p><strong>The items() Method</strong></p>
+
+<p>When called, this method returns an iterable object. The iterable object has key-value pairs for the dictionary, as tuples in a list. This method is primarily used when you want to iterate through a dictionary.</p>
+
+<p>The method is simply called on the dictionary object name as shown below:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+
+for k, v in dict_sample.items():
+  print(k, v)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>('Company', 'Toyota')
+('model', 'Premio')
+('year', 2012)
+</code></pre>
+
+<p>The object returned by  <code>items()</code>  can also be used to show the changes that have been implemented on the dictionary. This is demonstrated below:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+
+x = dict_sample.items()
+
+print(x)
+
+dict_sample[&quot;model&quot;] = &quot;Mark X&quot;
+
+print(x)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>dict_items([('Company', 'Toyota'), ('model', 'Premio'), ('year', 2012)])
+dict_items([('Company', 'Toyota'), ('model', 'Mark X'), ('year', 2012)])
+</code></pre>
+
+<p>The output shows that when you change a value in the dictionary, the items object is also updated to reflect this change.</p>
+
+<p><strong>The fromkeys() Method</strong></p>
+
+<p>This method returns a dictionary having specified keys and values. It takes the syntax given below:</p>
+
+<pre><code class="language-python">dictionary.fromkeys(keys, value)
+</code></pre>
+
+<p>The value for required  <code>keys</code>  parameter is an iterable and it specifies the keys for the new dictionary. The value for  <code>value</code>  parameter is optional and it specifies the default value for all the keys. The default value for this is  <code>None</code>.</p>
+
+<p>Suppose we need to create a dictionary of three keys all with the same value. We can do so as follows:</p>
+
+<pre><code class="language-python">name = ('John', 'Nicholas', 'Mercy')
+age = 25
+
+dict_sample = dict.fromkeys(name, age)
+
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'John': 25, 'Mercy': 25, 'Nicholas': 25}
+</code></pre>
+
+<p>In the script above, we specified the keys and one value. The  <code>fromkeys()</code>  method was able to pick the keys and combine them with this value to create a populated dictionary.</p>
+
+<p>The value for the  <code>keys</code>  parameter is mandatory. The following example demonstrates what happens when the value for the  <code>values</code>  parameter is not specified:</p>
+
+<pre><code class="language-python">name = ('John', 'Nicholas', 'Mercy')
+
+dict_sample = dict.fromkeys(name)
+
+print(dict_sample)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>{'John': None, 'Mercy': None, 'Nicholas': None}
+</code></pre>
+
+<p>The default value, which is  <code>None</code>, was used.</p>
+
+<p><strong>The setdefault() Method</strong></p>
+
+<p>This method is applicable when we need to get the value of the element with the specified key. If the key is not found, it will be inserted into the dictionary alongside the specified value.</p>
+
+<p>The method takes the following syntax:</p>
+
+<pre><code class="language-python">dictionary.setdefault(keyname, value)
+</code></pre>
+
+<p>In this function the  <code>keyname</code>  parameter is required. It represents the keyname of the item you need to return a value from. The  <code>value</code>  parameter is optional. If the dictionary already has the key, this parameter won&rsquo;t have any effect. If the key doesn&rsquo;t exist, then the value given in this function will become the value of the key. It has a default value of  <code>None</code>.</p>
+
+<p>For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+
+x = dict_sample.setdefault(&quot;color&quot;, &quot;Gray&quot;)
+
+print(x)
+</code></pre>
+
+<p><strong>Output</strong></p>
+
+<pre><code>Gray
+</code></pre>
+
+<p>The dictionary doesn&rsquo;t have the key for  <code>color</code>. The  <code>setdefault()</code>  method has inserted this key and the specified a value, that is, &ldquo;Gray&rdquo;, has been used as its value.</p>
+
+<p>The following example demonstrates how the method behaves if the value for the key  <em>does</em>  exist:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+
+x = dict_sample.setdefault(&quot;model&quot;, &quot;Allion&quot;)
+
+print(x)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>Premio
+</code></pre>
+
+<p>The value &ldquo;Allion&rdquo; has no effect on the dictionary since we already have a value for the key.</p>
+
+<p><strong>The keys() Method</strong></p>
+
+<p>This method also returns an iterable object. The object returned is a list of all keys in the dictionary. And just like with the  <code>items()</code>  method, the returned object can be used to reflect the changes made to the dictionary.</p>
+
+<p>To use this method, we only call it on the name of the dictionary, as shown below:</p>
+
+<pre><code class="language-python">dictionary.keys()
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+
+x = dict_sample.keys()
+
+print(x)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>dict_keys(['model', 'Company', 'year'])
+</code></pre>
+
+<p>Often times this method is used to iterate through each key in your dictionary, like so:</p>
+
+<pre><code class="language-python">dict_sample = {
+  &quot;Company&quot;: &quot;Toyota&quot;,
+  &quot;model&quot;: &quot;Premio&quot;,
+  &quot;year&quot;: 2012
+}
+
+for k in dict_sample.keys():
+  print(k)
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>Company
+model
+year
+</code></pre>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>This marks the end of this tutorial on Python dictionaries. These dictionaries store data in &ldquo;key:value&rdquo; pairs. The &ldquo;key&rdquo; acts as the identifier for the item while &ldquo;value&rdquo; is the value of the item. The Python dictionary comes with a variety of functions that can be applied for retrieval or manipulation of data. In this article, we saw how Python dictionary can be created, modified and deleted along with some of the most commonly used dictionary methods.</p>
+
+<p>Ref : <a href="https://stackabuse.com/python-dictionary-tutorial/">https://stackabuse.com/python-dictionary-tutorial/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-dictionary-tutorial.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-dictionary-tutorial">Python Dictionary Tutorial</a>
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#creating-a-dictionary">Creating a Dictionary</a></li>
+<li><a href="#accessing-elements">Accessing Elements</a></li>
+<li><a href="#adding-elements">Adding Elements</a></li>
+<li><a href="#updating-elements">Updating Elements</a></li>
+<li><a href="#removing-elements">Removing Elements</a>
+<ul>
+<li><a href="#subscribe-to-our-newsletter">Subscribe to our Newsletter</a></li>
+</ul></li>
+<li><a href="#other-common-methods">Other Common Methods</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

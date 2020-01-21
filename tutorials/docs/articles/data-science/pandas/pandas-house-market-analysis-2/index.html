@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Basic Data Analysis"><meta property="og:title" content="Basic Data Analysis" />
+<meta property="og:description" content="Introduction to basic data analysis with Pandas (Private Munich Housemarket data set) Source
+This article is the continuation from a previous article (here link to medium) where I explained my goal of identifying the value of House Market in Munich in order to buy a house.
+Since I get the data, buying a house in Munich is out the question, I don’t (and probably will never) earn enough to actually realize that but the data are still interesting in order to do a quick look at data analysis with pandas." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Basic Data Analysis | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/" >
+      A Simple Example-Based Guide
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/" >
+      10 Pandas tips
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/" >
+      21 Pandas operations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/"  class="active">
+      Basic Data Analysis
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/" >
+      House Market Analysis 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/" >
+      Pandas Cheatsheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/" >
+      Selecting Subsets of Data 1
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Basic Data Analysis</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="introduction-to-basic-data-analysis-with-pandas-private-munich-housemarket-data-set">Introduction to basic data analysis with Pandas (Private Munich Housemarket data set)</h1>
+
+<p><a href="https://towardsdatascience.com/introduction-to-basic-data-analysis-with-pandas-private-munich-housemarket-data-set-4da58720172e">Source</a></p>
+
+<p>This article is the continuation from a  <a href="https://www.datanalyst.info/python/python-others-ideas/python-pandas-house-market-analysis-munich-2016-2017-1-2/?camp=rf~medium~pandas-intro-2">previous article</a>  (here link to  <a href="https://towardsdatascience.com/introduction-to-cleaning-data-with-pandas-private-munich-housemarket-data-set-be5fc558c9e3">medium</a>) where I explained my goal of identifying the value of House Market in Munich in order to buy a house.</p>
+
+<p>Since I get the data, buying a house in Munich is out the question, I don’t (and probably will never) earn enough to actually realize that but the data are still interesting in order to do a quick look at data analysis with pandas.</p>
+
+<p>The first article was really focused on cleaning the data, because in order to do realize a proper data analysis you need clean data. Otherwise, you will stumble on a lot of issues when running your code. Also, I really like the saying that state : “Garbage in, Garbage out”</p>
+
+<p>If you don’t clean your data, then you could analyse wrong data points and it would give you wrong results.</p>
+
+<p>On this article, we will go deeper on what the pandas library can do for you regarding the analysis of your data set and some visualization. I like the idiom “_A picture is worth a thousand words_”. I am also very visual so it really helps to picture what you are seeing in your data set.</p>
+
+<h2 id="pandas-methods-overview">Pandas methods overview</h2>
+
+<p>At the very beginning, by importing the last version of the data set (that you have cleaned or retrieved from my github account), you can start by doing some method that will give you some information.</p>
+
+<pre><code class="language-py">import pandas as pd  
+df = pd.read_csv('data_immo.clean.csv', delimiter='\t')  
+df.head(1).T 
+## I like the transpose function as it gives you a better view
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/16/1*z7akDcjftqGVoxxkKGNK-Q.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/232/1*z7akDcjftqGVoxxkKGNK-Q.jpeg" alt="" /></p>
+
+<p><em>using the transpose on one line allows you to see easily type of data and column name</em></p>
+
+<pre><code class="language-py">df.describe() 
+## Always worth checking
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*-Z9tupV_TodaAzKSHBQqkA.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/650/1*-Z9tupV_TodaAzKSHBQqkA.jpeg" alt="" /></p>
+
+<p>As you have probably noticing, we have the same number of count for each column. Thanks to our cleaning, all of the remaining data are available for us to find some interesting information.</p>
+
+<p>As you probably have realized by now, this data set is a time series, it means that there is a timestamp-like column and that would enable to see evolution of the data set over time.<br />
+This can be useful for our analysis, seeing if there is a evolution.</p>
+
+<p>In order to set the time series, we would need to use some method to identify which column is containing this information and how to translate it into the pandas data frame.</p>
+
+<p>You would want (but not need) to import the datetime library and transform the date_year_month column.<br />
+We import the datetime if we want to actually do other stuff from the datetime column we will create from this translation.</p>
+
+<pre><code class="language-py">import datetime  
+df['date'] = pd.to_datetime(df['date_year_month'],format= '%Y%m') ## This will create a new column that contains your datetime element  
+##Let's not stop here and analyze the different element identified in that column   
+df['date'].value_counts() 
+##Unique values and number of occurences
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/14/1*Ijhj5zuT1BgkRH9JIlXg_g.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/199/1*Ijhj5zuT1BgkRH9JIlXg_g.jpeg" alt="" /></p>
+
+<p>We see that the April 2016, May and December<br />
+2017 have low number of values.</p>
+
+<p>We need to remember that in order to not get conclusion on those month. Not enough data points to assume anything there.</p>
+
+<p>Continuing from having an idea on your data set, you can realize some easy visualization in order to analyse your data set or just a series.<br />
+If we want to see the distribution of the price, we can realize this kind of box plotting</p>
+
+<pre><code class="language-py">ax = df['price'].plot(kind='box', title='box plot visualization - price') #return an object from matplotlib  
+ax.set_ylabel('price')  
+ax.set_xlabel('data set')
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*0EyOqPEfQVY0H21E_kPD4w.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/533/1*0EyOqPEfQVY0H21E_kPD4w.jpeg" alt="" /></p>
+
+<p><em>oh oh… what are those data points near 0 ?</em></p>
+
+<p>Here you can see that most of the values (25–75%) are within 210 k and 500 K€.<br />
+But you can also see some extra point and more importantly, it seems that there are data points to clean. We have a price for it but it is 0, which is impossible, even if I would really like this.</p>
+
+<pre><code class="language-py">df[df['price'] == df['price'].min()] 
+## look for the data that match the minimum.  
+</code></pre>
+
+<h2 id="in-case-you-want-to-have-some-margin-against-the-minimum-you-can-do-something-like-this">In case you want to have some margin against the minimum, you can do something like this</h2>
+
+<pre><code class="language-py">df[df['price'] &lt; df['price'].min()*1.1] 
+</code></pre>
+
+<h2 id="will-take-everything-below-10-more-than-the-minimum">Will take everything below 10% more than the minimum.</h2>
+
+<h2 id="it-doesn-t-work-in-our-case-as-our-minimum-is-0-but-we-can-set-a-hardcap-nothing-below-50k">it doesn&rsquo;t work in our case as our minimum is 0 but we can set a hardcap nothing below 50K.</h2>
+
+<pre><code class="language-py">df[df['price'] &lt; 50000]
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*u0dafcOtkfLUPOh_wI-ECQ.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1256/1*u0dafcOtkfLUPOh_wI-ECQ.jpeg" alt="" /></p>
+
+<p>Let’s keep them for now, we could use that data later on.<br />
+We are just removing them away from the main analysis and keep them in a separate data frame.</p>
+
+<pre><code class="language-py">df_0_price = df[df['price'] &lt; 50000].copy()  
+df_0_price.reset_index(inplace=True,drop=True) 
+## let's reset their index  
+df = df[df['price'] &gt; 50000]  
+df.reset_index(inplace=True,drop=True) 
+## let's reset their index  
+df['price'].plot(kind='box')
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*X3yF22qT7nBQ2Zn4iT_hXg.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/499/1*X3yF22qT7nBQ2Zn4iT_hXg.jpeg" alt="" /></p>
+
+<p>This is a lot better</p>
+
+<p>I think that this part is really a good example of what you are doing at your actual job. Even if you have spent some times cleaning your data set, you will always found something to clean afterwards when you are realizing the analysis. This is the moment when you are actually digging on data and you will face this kind of situation quite often. Re-cleaning the data.</p>
+
+<p>Getting back to the analysis, an interesting method from pandas is to look if there are correlation between 2 variables.<br />
+In order to do that, you can use the corr() between 2 series.</p>
+
+<pre><code class="language-py">df[['date_year_month','price']].corr()  
+## returns 0.42 : So positive correlation, price are increasing with time  
+## note that we are taking the 'date_year_month' data that are a number such as 201801 so it increased over time.   
+df[['rooms','price']].corr()  
+## returns 0.093 : No correlation between price and number of rooms.   
+## But this can be biased by the few number of different room number.   
+  
+df['rooms'].value_counts()  
+## returns 3 values 2 (821), 3 (24), 4 (8).   
+## The over representation of 2 rooms will bias the correlation here.
+</code></pre>
+
+<p>One of the interesting to do with your data is to see reverse the view on them by grouping element by categorical data. If you know a bit of SQL, you will tickle directly on the word “grouping”. Yes the groupby function exists with pandas and it is pretty easy to use.</p>
+
+<p>One of interesting analyze that we could do is to see the average price per zip code. In order to have really comparison, we will take the price per square meter (price_surface).</p>
+
+<p>This will return a groupby object, the best would be to store it in a variable.</p>
+
+<pre><code class="language-py">df_groupby_zip = df.groupby('zip')['price_surface'].mean() 
+## The good thing is that you can do a groupby on multiple elements.  
+</code></pre>
+
+<pre><code class="language-py">df_groupby_zip_room =  df.groupby(['zip','rooms'])['price'].mean()
+</code></pre>
+
+<p>This method is actually very powerful. At this state, it gives a clearer view and a new way to see your data. You may also be like “that is nice, it gets ride of the complexity but I would like to know what is actually going on”<br />
+What if I tell you that you can work with this method in order to see what is going on (how many data points have been aggregated) but adding more calculation into a single command.</p>
+
+<pre><code class="language-py">df_groupby_zip_agg = df.groupby('zip').agg({'price_surface' : ['mean','count','max']})
+</code></pre>
+
+<p>WHAT ??? In one line ?<br />
+Yes, it is that easy to get the average price per square meter per zip code and the number or data points and the maximum of each group aggregation. The .agg is definitely something you need to remember.</p>
+
+<p>As you could have guessed, it would just requires that we add another column name in the dictionary to actually take another column into account(with the appropriate calculation you would like to apply to it).</p>
+
+<p>The problem comes here as the  _price<em>surface</em> column will have a multiple index and this is not easy to deal with.<br />
+The way I use to select only one column from the  _price<em>surface</em> data type is to use .loc[] selection.</p>
+
+<pre><code class="language-py">df_groupby_zip_agg.loc[:,('price_surface','mean')]
+</code></pre>
+
+<h2 id="pandas-visualization">Pandas Visualization</h2>
+
+<p>Pandas has matplotlib integrated in order to realize some easy visualizations.<br />
+You have already seen the boxplot which is quite interesting to have a view on your data set distribution. On the next part of this article, we will see how to create such visualization in order to see your data set.</p>
+
+<p>In order to see the visualization, you want to write this line of code :</p>
+
+<pre><code class="language-py">%matplotlib inline #will generate the graph in your console
+</code></pre>
+
+<p>As I explained earlier, the cool thing with our data set is that it is a time series.<br />
+To really get the most of this kind of data, you want to have the datetime column to be on your index.<br />
+Once you have done that, all the plot will be generated in a time series manner.</p>
+
+<pre><code class="language-py">ddf = df.set_index('date')  
+ddf_gby_mean = ddf.groupby('date').mean()  
+ddf_gby_mean[['price_room','price']].plot()
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*8rAT1CRtMIpxs47XOlQsgA.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/503/1*8rAT1CRtMIpxs47XOlQsgA.jpeg" alt="" /></p>
+
+<p>simple visualization</p>
+
+<p>This is a very basic plotting though.<br />
+You could change the type, using the  <em>kind</em>  attribute but there are so much more attributes you can use. The most useful ones for me are :</p>
+
+<ul>
+<li>kind : determine the type of plot, my favorite being barh or bar.</li>
+<li>figsize : takes a tuple to resize your graph</li>
+<li>title : give a title to your graph</li>
+
+<li><p>cmap : use a different color map, link to some  <a href="https://matplotlib.org/examples/color/colormaps_reference.html">docs</a></p>
+
+<pre><code class="language-py">ddf_gby_mean[['price_room','price']].plot(kind='area',title='price per room &amp; price overtime',figsize=(10,7),cmap='tab20')
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*h55hIX5TwTW4faKYnBh3nQ.jpeg?q=20" alt="" /></p></li>
+</ul>
+
+<p><img src="https://miro.medium.com/max/632/1*h55hIX5TwTW4faKYnBh3nQ.jpeg" alt="" /></p>
+
+<p>How better is it ?</p>
+
+<p>You can clearly see an evolution in the data set starting November 2016.<br />
+We get a higher price average, this may be because the maximum has been increase. I can tell you that is the case but let’s look at the data to confirm that.</p>
+
+<pre><code class="language-py">graph = pd.DataFrame(df.groupby('date').agg({'price':['max','count']})) ##setting a new view with groupby  
+ax = graph.loc[:,('price','max')].plot(kind='line',title='Maximum price per month',figsize=(13,6))
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*zPOKO8PssBUMw8jevFD-Rg.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/792/1*zPOKO8PssBUMw8jevFD-Rg.jpeg" alt="" /></p>
+
+<p>You can clearly see that I increased the maximum price that I was looking for. This is because the price in Munich are so high that there are no other choices.</p>
+
+<p>Pandas graphic representation are quite useful and will help you to get a good understanding of your data. However, you can also use other plotting library that have some advance visual representation. This topic will deserve another blog post by itself but let’s look at another one, which is quite easy to use and can be quite powerful for additional graph visualization : seaborn</p>
+
+<pre><code class="language-py">import seaborn as sns  
+sns.relplot(x=&quot;construction_year&quot;, y=&quot;price&quot;, hue='rooms',sizes=(20, 400), alpha=.7, height=10, data=df)
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*emFc3QWRSvrIP_piXGl8pw.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/855/1*emFc3QWRSvrIP_piXGl8pw.jpeg" alt="" /></p>
+
+<p>Easy enough to visualize the price by construction year and number of room ?<br />
+We can see that most of the offer in the market (for my price range) is for between ~1960 till ~1990. There are even building that have expected construction year till 2020.</p>
+
+<p>Overall, the usage of plotting functions are often coming from a wrapper around matplotlib. Therefore, you should really start to know what this library is about so you can better integrate the possibilities that it offers.</p>
+
+<p>I hope this post was helping on knowing how to use pandas to actually doing basic data analysis. I planned to cover more topics and visualization but this is getting already long. I will be back ;)</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cpandas%5cpandas-house-market-analysis-2.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#introduction-to-basic-data-analysis-with-pandas-private-munich-housemarket-data-set">Introduction to basic data analysis with Pandas (Private Munich Housemarket data set)</a>
+<ul>
+<li><a href="#pandas-methods-overview">Pandas methods overview</a></li>
+<li><a href="#in-case-you-want-to-have-some-margin-against-the-minimum-you-can-do-something-like-this">In case you want to have some margin against the minimum, you can do something like this</a></li>
+<li><a href="#will-take-everything-below-10-more-than-the-minimum">Will take everything below 10% more than the minimum.</a></li>
+<li><a href="#it-doesn-t-work-in-our-case-as-our-minimum-is-0-but-we-can-set-a-hardcap-nothing-below-50k">it doesn&rsquo;t work in our case as our minimum is 0 but we can set a hardcap nothing below 50K.</a></li>
+<li><a href="#pandas-visualization">Pandas Visualization</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

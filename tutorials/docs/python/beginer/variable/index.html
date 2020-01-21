@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ตัวแปรและประเภทข้อมูล"><meta property="og:title" content="ตัวแปรและประเภทข้อมูล" />
+<meta property="og:description" content="Variable &amp; Data Types (ตัวแปรและประเภทข้อมูล) ตัวแปรและประข้อมูลในภาษา Python เราจะพูดถึงการประกาศตัวแปรและการนำตัวแปรไปใช้งานในโปรแกรม และเราจะอธิบายถึงข้อมูลประเภทต่างๆ ที่เป็น Primitive datatype ในภาษา Python และรวมทั้งฟังก์ชันสำหรับการใช้งานกับตัวแปร
+ตัวแปร ตัวแปร (variable) คือชื่อหรือเครื่องหมายที่กำหนดขึ้นสำหรับใช้เก็บค่าในหน่วยความจำ ตัวแปรจะมีชื่อ (identifier) สำหรับใช้ในการอ้างถึงข้อมูลของมัน ในการเขียนโปรแกรม ค่าของตัวแปรสามารถที่จะกำหนดได้ใน run-time หรือเปลี่ยนแปลงอยู่ตลอดเวลาในขณะที่โปรแกรมทำงาน (executing)
+ในการเขียนโปรแกรมคอมพิวเตอร์นั้น ตัวแปรจะแตกต่างจากตัวแปรในทางคณิตศาสตร์ ค่าของตัวแปรนั้นไม่จำเป็นต้องประกอบไปด้วยสูตรหรือสมการที่สมบูรณ์เหมือนกับในคณิตศาสตร์ ในคอมพิวเตอร์ ตัวแปรนั้นอาจจะมีการทำงานซ้ำๆ เช่น การกำหนดค่าในที่หนึ่ง และนำไปใช้อีกที่หนึ่งในโปรแกรม และนอกจากนี้ยังสามารถกำหนดค่าใหม่ให้กับตัวแปรได้ตลอดเวลา ต่อไปเป็นตัวอย่างของการประกาศตัวแปรในภาษา Python
+a = 3 b = 4.92 c = &quot;marcuscode.com&quot; c = 10.5  ในตัวอย่าง เราได้ทำการประกาศ 3 ตัวแปร ในการประกาศตัวแปรในภาษา Python คุณไม่จำเป็นต้องระบุประเภทของตัวแปรในตอนที่ประกาศเหมือนในภาษา C ในตัวแปร a มีค่าเป็น 3 และเป็นประเภทเป็น Integer ตัวแปร b มีค่าเป็น 4.92 และเป็นประเภทเป็น Float และตัวแปร c มีค่าเป็น &ldquo;marcuscode." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/" />
+
+<title>ตัวแปรและประเภทข้อมูล | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/variable/"  class="active">
+      ตัวแปรและประเภทข้อมูล
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/list/" >
+      Lists
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/" >
+      Dictionary
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>ตัวแปรและประเภทข้อมูล</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="variable-data-types-ต-วแปรและประเภทข-อม-ล">Variable &amp; Data Types (ตัวแปรและประเภทข้อมูล)</h1>
+
+<p>ตัวแปรและประข้อมูลในภาษา Python เราจะพูดถึงการประกาศตัวแปรและการนำตัวแปรไปใช้งานในโปรแกรม และเราจะอธิบายถึงข้อมูลประเภทต่างๆ ที่เป็น Primitive datatype ในภาษา Python และรวมทั้งฟังก์ชันสำหรับการใช้งานกับตัวแปร</p>
+
+<h2 id="ต-วแปร">ตัวแปร</h2>
+
+<p>ตัวแปร (variable) คือชื่อหรือเครื่องหมายที่กำหนดขึ้นสำหรับใช้เก็บค่าในหน่วยความจำ ตัวแปรจะมีชื่อ (identifier) สำหรับใช้ในการอ้างถึงข้อมูลของมัน ในการเขียนโปรแกรม ค่าของตัวแปรสามารถที่จะกำหนดได้ใน run-time หรือเปลี่ยนแปลงอยู่ตลอดเวลาในขณะที่โปรแกรมทำงาน (executing)</p>
+
+<p>ในการเขียนโปรแกรมคอมพิวเตอร์นั้น ตัวแปรจะแตกต่างจากตัวแปรในทางคณิตศาสตร์ ค่าของตัวแปรนั้นไม่จำเป็นต้องประกอบไปด้วยสูตรหรือสมการที่สมบูรณ์เหมือนกับในคณิตศาสตร์ ในคอมพิวเตอร์ ตัวแปรนั้นอาจจะมีการทำงานซ้ำๆ เช่น การกำหนดค่าในที่หนึ่ง และนำไปใช้อีกที่หนึ่งในโปรแกรม และนอกจากนี้ยังสามารถกำหนดค่าใหม่ให้กับตัวแปรได้ตลอดเวลา ต่อไปเป็นตัวอย่างของการประกาศตัวแปรในภาษา Python</p>
+
+<pre><code class="language-py">a = 3
+b = 4.92
+c = &quot;marcuscode.com&quot;
+c = 10.5
+</code></pre>
+
+<p>ในตัวอย่าง เราได้ทำการประกาศ 3 ตัวแปร ในการประกาศตัวแปรในภาษา Python คุณไม่จำเป็นต้องระบุประเภทของตัวแปรในตอนที่ประกาศเหมือนในภาษา C ในตัวแปร a มีค่าเป็น 3 และเป็นประเภทเป็น Integer ตัวแปร b มีค่าเป็น 4.92 และเป็นประเภทเป็น Float และตัวแปร c มีค่าเป็น &ldquo;marcuscode.com&rdquo; และเป็นประเภท String ภายหลังเราได้เปลี่ยนค่าของตัวแปร c เป็น 10.5 ตัวแปรกลายเป็นประเภท Float</p>
+
+<pre><code class="language-py">a, b = 1, 2
+x = y = z = 10
+print(&quot;a = &quot; , a)
+print(&quot;b = &quot; , b)
+print(&quot;x = &quot; , x)
+print(&quot;y = &quot; , y)
+print(&quot;z = &quot; , z)
+</code></pre>
+
+<p>ในภาษา Python นั้นสนับสนุนการกำหนดค่าให้กับตัวแปรหลายค่าในคำสั่งเดียว ในตัวอย่าง เป็นการกำหนดค่า 1 และ 2 กับตัวแปร a และ b ตามลำดับ และในคำสั่งต่อมาเป็นการกำหนดค่า 10 ให้กับตัวแปร x y และ z ซึ่งทำให้การเขียนโปรแกรมสะดวกและรวดเร็วมากขึ้น</p>
+
+<pre><code class="language-py">a =  1
+b =  2
+x =  10
+y =  10
+z =  10
+</code></pre>
+
+<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรม</p>
+
+<p>ต่อไปจะเป็นการพูดถึงประเภทข้อมูลชนิดต่างๆ ที่ภาษา Python สนับสนุน ซึ่งจะมีอยู่สามประเภทใหญ่ๆ คือ ข้อมูลแบบตัวเลข นั้นจะแบ่งย่อยออกเป็น Integer และ Float ข้อมูลประเภท String และข้อมูลแบบลำดับ เช่น List และ Tuple ประเภทข้อมูลทั้งหมดนี้เป็น Built-in type ในภาษา Python</p>
+
+<h2 id="numbers">Numbers</h2>
+
+<p>ในภาษา Python นั้นสนับสนุนข้อมูลแบบตัวเลข ซึ่งข้อมูลประเภทนี้จะแบ่งออกเป็น Integer Float Decimal และ Complex อย่างไรก็ตามเราจะเน้นย้ำใน Integer ซึ่งเป็นการเก็บข้อมูลแบบจำนวนเต็ม และ Float เป็นข้อมูลแบบจำนวนจริง สำหรับประเภทแบบ Decimal นั้นแตกต่างไปจาก Float คือสามารถเก็บความละเอียดของจุดทศนิยมได้มากกว่า นอกจากนี้ Python ยังสนุนตัวเลขในรูปแบบ Complex ที่แสดงในแบบ a +bj ต่อไปเป็นตวอย่างในการประกาศและใช้งานตัวแปรแบบตัวเลขในภาษา Python</p>
+
+<pre><code class="language-py"># Integer
+a = 7
+b = 3
+c = a + b
+d = a / b
+
+print ('a = %d' % a)
+print ('b = %d' % b)
+print ('c = %d' % c)
+print ('d = ', d)
+</code></pre>
+
+<p>ในตัวอย่าง เป็นการประกาศและใช้งานตัวแปรประเภท Integer เราได้ทำการประกาศตัวแปรและกำหนดค่าให้กับ a และ b ในการแสดงผลในรูปแบบของ String format กับฟังก์ชัน print() นั้นจะใช้ specifier เป็น %d เราสามารถกำหนดค่าให้กับตัวแปรได้โดย Literal หรือ Expression และการหารตัวเลขในภาษา Python นั้นจะได้ค่าเป็น Float เสมอ ถึงแม้ตัวเลขทั้งสองจะเป็น Integer ก็ตาม เช่นในตัวแปร d</p>
+
+<pre><code class="language-py">a = 7
+b = 3
+c = 10
+d =  2.3333333333333335
+</code></pre>
+
+<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรม</p>
+
+<pre><code class="language-py"># Floating point number
+speed = 34.12
+pi = 22 / 7
+height = 2.31E5
+length = 1.3E-3
+
+print ('speed = %f' % speed)
+print ('pi = %f' % pi)
+print ('height = %f' % height)
+print ('length = %f' % length)
+print (pi)
+</code></pre>
+
+<p>ต่อไปเป็นการประกาศและใช้งานตัวแปรประเภท Float หรือตัวเลขที่มีจุดทศนิยม ในการกำหนดค่าใก้กับตัวแปรนั้นเมื่อคุณกำหนดค่าที่มีจุดนั้นตัวเลขจะเป็นประเภท Float อัตโนมัติ เราสามารถกำหนดค่าโดยตรงหรือในรูปแบบของ Expression ได้ และนอกจากนี้ในภาษา Python ยังสามารถกำหนดในรูปแบบสัญกรณ์วิทยาศาสตร์ได้เหมือนในตัวแปร height ซึ่งหมายถึง 2.31 x 10 ^ 5 และในตัวแปร length ซึ่งหมายถึง 1.3 x 10 ^ -3</p>
+
+<pre><code class="language-py">speed = 34.120000
+pi = 3.142857
+height = 231000.000000
+length = 0.001300
+3.142857142857143
+</code></pre>
+
+<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรม ซึ่งในการแสดงผลของข้อมูลประเภท Float กับการจัดรูปแบบของตัวเลขนั้นจะใช้ %f สำหรับการดูค่าเต็มของตัวเลขจริงๆ นั้นเราจะแสดงค่าของตัวเลขโดยเหมือนในคำสั่งแสดงผลค่าของ pi ในคำสั่งบรรทัดสุดท้าย</p>
+
+<h2 id="strings">Strings</h2>
+
+<p>Strings นั้นเป็นประเภทข้อมูลที่สำคัญและใช้งานทั่วไปในการเขียนโปรแกรม ในภาษาเขียนโปรแกรมส่วนมากแล้วจะมีประเภทข้อมูลแบบ String และในภาษา Python เช่นกัน String เป็นลำดับของตัวอักษรหลายตัวเรียงต่อกัน ซึ่งในภาษา Python นั้น String จะอยู่ในเครื่องหมาย Double quote หรือ Single quote เท่านั้น นอกจากนี้ในภาษา Python ยังมีฟังก์ชันในการจัดการกับ String มากมายซึ่งเราจะพูดอีกครั้งในบทของ String ในบทนี้มาทำความรู้จักกับ String เบื้องต้นกันก่อน</p>
+
+<pre><code class="language-py">name = &quot;Mateo&quot;
+country = &quot;Ukrain&quot;
+language = 'Python'
+interest = 'Mountain Everest'
+</code></pre>
+
+<p>ในตัวอย่าง เป็นการประกาศตัวแปรประเภท String สองตัวแปรแรกเป็นการประโดยการใช้ Double quote และสองตัวแปรต่อม่เป็นการใช้ Single quote ซึ่งคุณสามารถใช้แบบไหนก็ได้ แต่มีสิ่งที่แตกต่างกันเล็กน้อยคือเกี่ยวกับการกำหนดตัวอักพิเศษหรือเรียกว่า Escape character</p>
+
+<pre><code class="language-py">sentent1 = &quot;What's your name?&quot;
+sentent2 = 'I\'m Mateo.'
+sentent3 = &quot;He said \&quot;I would learn Python first\&quot;.&quot;
+sentent4 = 'His teach replied &quot;Oh well!&quot;'
+print (sentent1)
+print (sentent2)
+print (sentent3)
+print (sentent4)
+</code></pre>
+
+<p>ในตัวอย่าง เป็นสิ่งที่แตกต่างของการประกาศ String ทั้งสองแบบกับ Escape character ตัวอักษร &lsquo; และ &ldquo; นั้นเป็น Escape character ดังนั้นในการใช้งานตัวอักษรเหล่านี้ เราจะต้องทำการใส่เครื่องหมาย \ ลงไปข้างหน้าเสมอ แต่ในภาษา Python เมื่อคุณใช้ Double quote ในการประกาศ String คุณไม่ต้องทำการ Escape character สำหรับ Single quote และในทางกลับกัน อย่างไรก็ตามเราจะพูดอีกครั้งในบทของ String</p>
+
+<pre><code class="language-py">What's your name?
+I'm Mateo.
+He said &quot;I would learn Python first&quot;.
+His teach replied &quot;Oh well!&quot;
+</code></pre>
+
+<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรมในการใช้งาน Escape character ในภาษา Python</p>
+
+<pre><code class="language-py">site = 'marcuscode' + '.com'
+tutorial = 'Python' ' Language'
+print(site)
+print(tutorial)
+</code></pre>
+
+<p>การทำงานอย่างหนึ่งที่สำคัญเกี่ยวกับ String ก็คือการเชื่อมต่อ String ซึ่งเป็นการนำ String ตั้งต่อสองอันขึ้นไปมาต่อกัน ในภาษา Python คุณสามารถต่อ String ได้โดยการใช้เครื่องหมาย + หรือคั่นด้วยช่องว่างหรือบรรทัดใหม่เหมือนในตัวอย่างข้างบน</p>
+
+<pre><code>marcuscode.com
+Python Language
+</code></pre>
+
+<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรม</p>
+
+<p>อย่างไรก็ตาม นี่เป็นการแนะนำเกี่ยวกับ String ในเบื้องต้นเท่านั้น เพราะว่า String นั้นมีเนื้อหาเป็นจำนวนมาก คุณจะได้เรียนรู้เกี่ยวกับ String อย่างละเอียด อีกครั้งในบทของ String</p>
+
+<h2 id="lists">Lists</h2>
+
+<p>Lists เป็นประเภทข้อมูลที่เก็บข้อมูลแบบเป็นชุดและลำดับ กล่าวคือมันสามารถเก็บข้อมูลได้หลายค่าในตัวแปรเดียว และมี Index สำหรับเข้าถึงข้อมูล ในภาษา Python นั้น List จะเป็นเหมือนอาเรย์ในภาษา C มันสามารถเก็บข้อมูลได้หลายตัวและยังสามารถเป็นประเภทข้อมูลที่แตกต่างกันได้อีกด้วย มาดูการประกาศและใช้งาน List ในเบื้องต้น</p>
+
+<pre><code class="language-py"># Declare lists
+numbers = [1, 2, 4, 6, 8, 19]
+names = [&quot;Mateo&quot;, &quot;Danny&quot;, &quot;James&quot;, &quot;Thomas&quot;, &quot;Luke&quot;]
+mixed = [-2, 5, 84.2, &quot;Mountain&quot;, &quot;Python&quot;]
+
+# Display lists
+print(numbers)
+print(names)
+print(mixed)
+
+# Display lists using the for loops
+for n in numbers:
+    print(n, end=&quot; &quot;)
+print()
+
+for n in names:
+    print(n, end=&quot; &quot;)
+print()
+
+for n in mixed:
+    print(n, end=&quot; &quot;)
+print()
+</code></pre>
+
+<p>ในตัวอย่าง เราได้ทำการประกาศ 3 Lists โดยตัวแปรแรกนั้นเป็น List ของตัวเลข และตัวแปรที่สองเป็น List ของ String และตัวแปรสุดท้ายเป็น List แบบรวมกันของประเภทข้อมูล เราใช้ฟังก์ชัน print() ในการแสดงผลข้อมูลใน List และใช้คำสั่ง For loop ในการอ่านค่าในลิสต์และนำมาแสดงผลเช่นกัน</p>
+
+<pre><code class="language-py">[1, 2, 4, 6, 8, 19]
+['Mateo', 'Danny', 'James', 'Thomas', 'Luke']
+[-2, 5, 84.2, 'Mountain', 'Python']
+1 2 4 6 8 19 
+Mateo Danny James Thomas Luke 
+-2 5 84.2 Mountain Python
+</code></pre>
+
+<p>นี่เป็นผลการทำงานของโปรแกรม</p>
+
+<pre><code class="language-py">languages = [&quot;C&quot;, &quot;C++&quot;, &quot;Java&quot;, &quot;Python&quot;, &quot;PHP&quot;]
+
+print(&quot;Index at 0 = &quot;, languages[0])
+print(&quot;Index at 3 = &quot;, languages[3])
+languages[0] = &quot;Scalar&quot;
+print(&quot;Index at 0 = &quot;, languages[0])
+</code></pre>
+
+<p>Lists นั้นทำงานกับ Index ดังนั้นเราสามารถเข้าถึงข้อมูลของ List โดยการใช้ Index ของมันได้ ในตัวอย่างเป็นการเข้าถึงข้อมูบภายใน Index ซึ่ง Index ของ List นั้นจะเริ่มจาก 0 ไปจนถึงจำนวนทั้งหมดของมันลบด้วย 1 ในตัวอย่างเราได้แสดงผลข้อมูลของสอง List ในตำแหน่งแรกและในตำแหน่งที่ 4 ด้วย Index 0 และ 3 ตามลำดับ หลังจากนั้นเราเปลี่ยนค่าของ List ที่ตำแหน่งแรกเป็น &ldquo;Scalar&rdquo;</p>
+
+<pre><code class="language-py">Index 0 =  C
+Index 3 =  Python
+Index 0 =  Scalar
+</code></pre>
+
+<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรม ซึ่งคุณได้ทำความรู้จักกับ List ในเบื้องต้น คุณจะได้เรียนรู้เกี่ยวกับ List ในภาษา Python อย่างละเอียดอีกครั้งในบทของ List ซึ่งเราจะพูดเกี่ยวกับการดำเนินการและการใช้ฟังก์ชันของ List นอกจากนี้ Python ยังมีประเภทข้อมูลแบบ Tuple และ Dictionary ซึ่งมีรูปแบบการเก็บข้อมูลคล้ายกับ List จึงคุณจะได้เรียนในบทต่อไป</p>
+
+<h2 id="ฟ-งก-ช-นท-ใช-ก-บต-วแปร">ฟังก์ชันที่ใช้กับตัวแปร</h2>
+
+<p>ในภาษา Python นั้นมีฟังก์ชันที่สร้างมาเพื่อให้ใช้งานกับตัวแปร เช่น ฟังก์ชันสำหรับหาขนาดของตัวแปร ฟังก์ชันในการหาประเภทของตัวแปร ฟังก์ชันลบตัวแปรออกไปในหน่วยความจำ และฟังก์ชันในการตรวจสอบว่าตัวแปรมีอยู่หรือไม่ ซึ่งในบางครั้งการเขียนโปรแกรมก็จำเป็นที่คุณอาจจะต้องมีการตรวจสอบสิ่งเหล่านี้ในขณะที่โปรแกรมทำงาน นี่เป็นตัวอย่างการใช้งาน</p>
+
+<pre><code class="language-py">import sys
+
+a = 8
+b = 13.4
+c = &quot;Python&quot;
+d = [1, 2, 3, 4]
+
+print('Size of a = ', sys.getsizeof(a))
+print('Type of a = ', type(a))
+
+print('Size of b = ', sys.getsizeof(b))
+print('Type of b = ', type(b))
+
+print('Size of c = ', sys.getsizeof(c))
+print('Type of c = ', type(c))
+
+print('Size of d = ', sys.getsizeof(d))
+print('Type of d = ', type(d))
+
+del a
+del b, c, d
+
+if 'a' in locals():
+    print(&quot;a is exist&quot;)
+else:
+    print(&quot;a is not exist&quot;)
+</code></pre>
+
+<p>ในตัวอย่าง เราได้ประกาศตัวแปรกับประเภทต่างๆ เราได้ฟังก์ชัน getsizeof() สำหรับหาขนาดของตัวแปรที่มีหน่วยเป็น Byte และฟังก์ชัน type() สำหรับประเภทของตัวแปรว่าอยู่ในคลาสไหน ฟังก์ชัน del() สำหรับยกเลิกหรือลบการประกาศตัวแปรออกไปจากหน่วยความจำ และสุดท้ายเป็นการตรวจสอบว่าตัวแปรถูกประกาศและหรือยังในฟังก์ชัน locals() สำหรับตรวจสอบตัวแปรในโมดูลปัจจึบัน หรือ globals() สำหรับตรวจสอบตัวแปรในโปรแกรมทั้งหมด</p>
+
+<pre><code class="language-py">Size of a =  14
+Type of a =  &lt;class 'int'&gt;
+Size of b =  16
+Type of b =  &lt;class 'float'&gt;
+Size of c =  31
+Type of c =  &lt;class 'str'&gt;
+Size of d =  52
+Type of d =  &lt;class 'list'&gt;
+a is not exist
+</code></pre>
+
+<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรมในการใช้ฟังก์ชันที่จำเป็นกับตัวแปร</p>
+
+<p>ในบทนี้ คุณได้เรียนรู้เกี่ยวกับตัวแปรและประเภทข้อมูลในภาษา Python เราได้พูดถึงการประกาศและการใช้งานตัวแปร รวมถึงข้อมูลประเภทต่างๆ ในภาษา Python เช่น ตัวเลข String และ List และนอกจากนี้เรายังแนะนำให้คุณรู้จักกับฟังก์ชันที่มีความจำเป็นในการทำงานกับตัวแปร</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cBeginer%5cVariable.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#variable-data-types-ต-วแปรและประเภทข-อม-ล">Variable &amp; Data Types (ตัวแปรและประเภทข้อมูล)</a>
+<ul>
+<li><a href="#ต-วแปร">ตัวแปร</a></li>
+<li><a href="#numbers">Numbers</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#ฟ-งก-ช-นท-ใช-ก-บต-วแปร">ฟังก์ชันที่ใช้กับตัวแปร</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

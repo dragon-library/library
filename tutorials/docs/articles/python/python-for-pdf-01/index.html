@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python for PDF"><meta property="og:title" content="Python for PDF" />
+<meta property="og:description" content="Python for Pdf Why Python for PDF processing PDF processing comes under text analytics. Most of the Text Analytics Library or frameworks are designed in Python only. This gives leverage on text analytics. Once you extract the useful information from PDF you can easily use that data into any Machine Learning or Natural Language Processing Model.
+Common Python Libraries Here is the list of some Python Libraries could be used to handle PDF files" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-01/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Python for PDF | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/"  class="active">
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python for PDF</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-for-pdf">Python for Pdf</h1>
+
+<p><img src="https://miro.medium.com/proxy/1*F1oFCwu6_4ork7pWE__IIg.jpeg" alt="enter image description here" /></p>
+
+<h2 id="why-python-for-pdf-processing">Why Python for PDF processing</h2>
+
+<p>PDF processing comes under text analytics. Most of the Text Analytics Library or frameworks are designed in Python only. This gives leverage on text analytics. Once you extract the useful information from PDF you can easily use that data into any Machine Learning or Natural Language Processing Model.</p>
+
+<h2 id="common-python-libraries">Common Python Libraries</h2>
+
+<p>Here is the list of some Python Libraries could be used to handle PDF files</p>
+
+<ol>
+<li><a href="https://github.com/euske/pdfminer"><strong>PDFMiner</strong></a> is a tool for extracting information from PDF documents. Unlike other PDF-related tools, it focuses entirely on getting and analyzing text data.</li>
+<li><a href="https://github.com/mstamy2/PyPDF2"><strong>PyPDF2</strong></a> is a pure-python PDF library capable of splitting, merging together, cropping, and transforming the pages of PDF files. It can also add custom data, viewing options, and passwords to PDF files. It can retrieve text and metadata from PDFs as well as merge entire files together.</li>
+<li><a href="https://github.com/chezou/tabula-py"><strong>Tabula-py</strong></a>  is a simple Python wrapper of  <a href="https://github.com/tabulapdf/tabula-java">tabula-java</a>, which can read the table of PDF. You can read tables from PDF and convert into pandas’ DataFrame. tabula-py also enables you to convert a PDF file into CSV/TSV/JSON file.</li>
+<li><a href="https://github.com/timClicks/slate"><strong>Slate</strong></a> is wrapper Implementation of PDFMiner</li>
+<li><a href="https://github.com/jcushman/pdfquery"><strong>PDFQuery</strong></a> is a light wrapper around pdfminer, lxml and pyquery. It’s designed to reliably extract data from sets of PDFs with as little code as possible.</li>
+<li><a href="https://github.com/ecatkins/xpdf_python"><strong>xpdf</strong></a> Python wrapper for xpdf (currently just the “pdftotext” utility)</li>
+</ol>
+
+<h2 id="extracting-text-from-pdf">Extracting Text from pdf</h2>
+
+<p>First, we need to Install the</p>
+
+<pre><code class="language-py">!pip install PyPDF2
+</code></pre>
+
+<p>Following is the code to extract simple Text from pdf using PyPDF2</p>
+
+<pre><code class="language-py"># modules for 
+import PyPDF2
+# pdf file object
+# you can find find the pdf file with complete code in below
+pdfFileObj = open('example.pdf', 'rb')
+# pdf reader object
+pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+# number of pages in pdf
+print(pdfReader.numPages)
+# a page object
+pageObj = pdfReader.getPage(0)
+# extracting text from page.
+# this will print the text you can also save that into String
+print(pageObj.extractText())
+</code></pre>
+
+<p>You can read more Details from  <a href="https://www.geeksforgeeks.org/working-with-pdf-files-in-python/">here</a></p>
+
+<h2 id="reading-the-table-data-from-pdf">Reading the Table data from pdf</h2>
+
+<p>In order to work with the Table data in Pdf, we can use Tabula-py</p>
+
+<pre><code class="language-py">pip install tabula-py
+</code></pre>
+
+<p>Following is the code to extract simple Text from pdf using PyPDF2</p>
+
+<pre><code class="language-py">import tabula
+# readinf the PDF file that contain Table Data
+# you can find find the pdf file with complete code in below
+# read_pdf will save the pdf table into Pandas Dataframe
+df = tabula.read_pdf(&quot;offense.pdf&quot;)
+# in order to print first 5 lines of Table
+df.head()
+</code></pre>
+
+<pre><code class="language-py">import PyPDF2
+
+PDFfilename = &quot;Sammamish.pdf&quot; #filename of your PDF/directory where your PDF is stored
+
+pfr = PyPDF2.PdfFileReader(open(PDFfilename, &quot;rb&quot;)) #PdfFileReader object
+
+pg4 = pfr.getPage(126) #extract pg 127
+
+writer = PyPDF2.PdfFileWriter() #create PdfFileWriter object
+#add pages
+writer.addPage(pg4)
+
+NewPDFfilename = &quot;allTables.pdf&quot; #filename of your PDF/directory where you want your new PDF to be
+with open(NewPDFfilename, &quot;wb&quot;) as outputStream:
+    writer.write(outputStream) #write pages to new PDF
+</code></pre>
+
+<p><img src="https://i.stack.imgur.com/0kWSg.png" alt="enter image description here" /></p>
+
+<pre><code class="language-py">#the table will be returned in a list of dataframe,for working with dataframe you need pandas
+import pandas as pd
+import tabula
+file = &quot;filename.pdf&quot;
+path = 'enter your directory path here'  + file
+df = tabula.read_pdf(path, pages = '1', multiple_tables = True)
+print(df)
+</code></pre>
+
+<p>Your question is near similar with:</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/28532770/extract-identify-tables-from-pdf-python">Extract / Identify Tables from PDF python</a><br /></li>
+<li><a href="https://stackoverflow.com/questions/27927880/extracting-tables-from-a-pdf">Extracting tables from a pdf</a><br /></li>
+<li><a href="https://stackoverflow.com/questions/17591426/extract-table-from-a-pdf">Extract table from a PDF</a><br /></li>
+<li><a href="https://stackoverflow.com/questions/25125178/how-to-scrape-tables-in-thousands-of-pdf-files">How to scrape tables in thousands of PDF files?</a><br /></li>
+<li><a href="https://stackoverflow.com/questions/29868541/pdf-data-and-table-scraping-to-excel">PDF Data and Table Scraping to Excel</a><br /></li>
+<li><a href="https://stackoverflow.com/questions/17217194/extracting-table-contents-from-a-collection-of-pdf-files/26110587#26110587">Extracting table contents from a collection of PDF files</a></li>
+</ul>
+
+<p>If you Pdf file contain Multiple Table</p>
+
+<pre><code class="language-py">df = tabula.read_pdf(“offense.pdf”,multiple_tables=True)
+</code></pre>
+
+<p>you can extract Information from the specific part of any specific page of PDF</p>
+
+<pre><code class="language-py">tabula.read_pdf(&quot;offense.pdf&quot;, area=(126,149,212,462), pages=1)
+</code></pre>
+
+<p>If you want the output into JSON Format</p>
+
+<pre><code class="language-py">tabula.read_pdf(&quot;offense.pdf&quot;, output_format=&quot;json&quot;)
+</code></pre>
+
+<h2 id="export-pdf-into-excel">Export Pdf into Excel</h2>
+
+<p>you can us Below code to convert the PDF Data into Excel or CSV</p>
+
+<pre><code class="language-py">tabula.convert_into(&quot;offense.pdf&quot;, &quot;offense_testing.xlsx&quot;, output_format=&quot;xlsx&quot;)
+</code></pre>
+
+<h2 id="further-readings">Further Readings</h2>
+
+<p>you can find the complete code and Pdf files in  <a href="https://github.com/umer7/Python-for-PDF">This Github Link</a></p>
+
+<ol>
+<li>This question on StackOverflow also has a lot of useful link in its Answer  <a href="https://stackoverflow.com/questions/47533875/how-to-extract-table-as-text-from-the-pdf-using-python">How to extract table as text from the PDF using Python?</a></li>
+<li><a href="https://www.geeksforgeeks.org/working-with-pdf-files-in-python/">Working with PDF files in Python</a>  using PyPDF2</li>
+<li><a href="https://automatetheboringstuff.com/chapter13/">Working with PDF and Word Documents</a></li>
+<li><a href="http://theautomatic.net/2019/05/24/3-ways-to-scrape-tables-from-pdfs-with-python/">3 WAYS TO SCRAPE TABLES FROM PDFS WITH PYTHON</a></li>
+<li><a href="https://tomassetti.me/how-to-convert-a-pdf-to-excel/">How to Convert a PDF to Excel</a></li>
+</ol>
+
+<blockquote>
+<p>ที่มาบทความ <a href="https://towardsdatascience.com/python-for-pdf-ef0fac2808b0">towardsdatascience.com</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-for-pdf-01.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-for-pdf">Python for Pdf</a>
+<ul>
+<li><a href="#why-python-for-pdf-processing">Why Python for PDF processing</a></li>
+<li><a href="#common-python-libraries">Common Python Libraries</a></li>
+<li><a href="#extracting-text-from-pdf">Extracting Text from pdf</a></li>
+<li><a href="#reading-the-table-data-from-pdf">Reading the Table data from pdf</a></li>
+<li><a href="#export-pdf-into-excel">Export Pdf into Excel</a></li>
+<li><a href="#further-readings">Further Readings</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

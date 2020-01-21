@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lists"><meta property="og:title" content="Lists" />
+<meta property="og:description" content="Lists ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูลแบบ List ในภาษา Python เราจะพูดถึงการสร้างและใช้งาน List ในเบื้องต้น การใช้งานเมธอดและฟังก์ชันเพื่อจัดการข้อมูลภายใน List และการใช้งานคำสั่ง For loop กับ List รวมถึงการ slicing
+List (ลิสต์) คือโครงสร้างข้อมูลชนิดหนึ่งในภาษา Python ที่ใช้เก็บข้อมูลแบบลำดับ (Sequence) โดยมี Index เป็นตัวระบุตำแหน่งในการเข้าถึงข้อมูล เราสามารถใช้ List เพื่อเก็บข้อมูลจำนวนมากและหลากหลายประเภทในเวลาเดียวกัน List เป็นประเภทข้อมูลที่ใช้อย่างหลากหลายในการเขียนโปรแกรม นอกจากนี้ ในภาษา Python ยังมี built-in function ที่สามารถทำงานกับ List และใน List ออบเจ็คเองก็มีเมธอดต่างๆ เป็นจำนวนมากที่ช่วยอำนวยความสะดวกในการเขียนโปรแกรม
+การประกาศและใช้งาน List List นั้นเป็นตัวแปรประเภทหนึ่ง การใช้งานของมันจะเหมือนกันอาเรย์ในภาษาอื่นๆ ในการประกาศ List นั้นข้อมูลของมันจะอยู่ภายในเครื่องหมาย [] และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา , มาดูตัวอย่างการประกาศ List ในภาษา Python
+numbers = [-1, 2, 5, 8, 10, 13] names = [&#39;Mateo&#39;, &#39;Danny&#39;, &#39;James&#39;, &#39;Thomas&#39;, &#39;Luke&#39;] mixed_type = [-2, 5, 84." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/" />
+
+<title>Lists | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/variable/" >
+      ตัวแปรและประเภทข้อมูล
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/list/"  class="active">
+      Lists
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/" >
+      Dictionary
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Lists</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="lists">Lists</h1>
+
+<p>ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูลแบบ List ในภาษา Python เราจะพูดถึงการสร้างและใช้งาน List ในเบื้องต้น การใช้งานเมธอดและฟังก์ชันเพื่อจัดการข้อมูลภายใน List และการใช้งานคำสั่ง For loop กับ List รวมถึงการ slicing</p>
+
+<p><img src="http://marcuscode.com/media/72/marcuscode_KSVAJo7O_1000.jpg" alt="Python Lists" title="Python Lists" /></p>
+
+<p>List (ลิสต์) คือโครงสร้างข้อมูลชนิดหนึ่งในภาษา Python ที่ใช้เก็บข้อมูลแบบลำดับ (Sequence) โดยมี Index เป็นตัวระบุตำแหน่งในการเข้าถึงข้อมูล เราสามารถใช้ List เพื่อเก็บข้อมูลจำนวนมากและหลากหลายประเภทในเวลาเดียวกัน List เป็นประเภทข้อมูลที่ใช้อย่างหลากหลายในการเขียนโปรแกรม นอกจากนี้ ในภาษา Python ยังมี built-in function ที่สามารถทำงานกับ List และใน List ออบเจ็คเองก็มีเมธอดต่างๆ เป็นจำนวนมากที่ช่วยอำนวยความสะดวกในการเขียนโปรแกรม</p>
+
+<h2 id="การประกาศและใช-งาน-list">การประกาศและใช้งาน List</h2>
+
+<p>List นั้นเป็นตัวแปรประเภทหนึ่ง การใช้งานของมันจะเหมือนกันอาเรย์ในภาษาอื่นๆ ในการประกาศ List นั้นข้อมูลของมันจะอยู่ภายในเครื่องหมาย  <code>[]</code>  และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา  <code>,</code>  มาดูตัวอย่างการประกาศ List ในภาษา Python</p>
+
+<pre><code class="language-py">numbers = [-1, 2, 5, 8, 10, 13]
+names = ['Mateo', 'Danny', 'James', 'Thomas', 'Luke']
+mixed_type = [-2, 5, 84.2, &quot;Mountain&quot;, &quot;Python&quot;]
+</code></pre>
+
+<p>ในตัวอย่าง เราได้สร้างตัวแปร List สามตัวแปร  <code>numbers</code>  เป็นตัวแปร List ที่มีสมาชิกเป็นตัวเลขจำนวนเต็ม 6 ตัว  <code>names</code>  เป็น List ของ String ที่สำหรับเก็บชื่อและมี 5 รายชื่อ และสุดท้ายตัวแปร  <code>mixed_type</code>  เป็น List ที่เก็บข้อมูลประเภทต่างๆ แบบรวมกันในตัวแปรเดียวซึ่งมีสมาชิกทั้งหมด 5 ตัว ซึ่งทั้งหมดนี้เป็นการกำหนดสมาชิกให้กับ List พร้อมกับการประกาศตัวแปร ในภาษา Python เราสามารถกำหนดค่าให้กับ List หลังจากประกาศตัวแปรแล้วได้ มาดูตัวอย่าง</p>
+
+<pre><code class="language-py">numbers = []
+numbers.append(-1)
+numbers.append(2)
+numbers.append(5)
+numbers.append(8)
+numbers.append(10)
+numbers.append(13)
+
+names = ['Mateo', 'Danny']
+names.append('James')
+names.append('Thomas')
+names.append('Luke')
+
+print(numbers)
+print(names)
+
+print('numbers count = ', len(numbers))
+print('names count = ', len(names))
+</code></pre>
+
+<p>ในตัวอย่าง เป็นการกำหนดค่าให้กับ List หลังจากที่มันถูกสร้างแล้ว เราใช้เมธอด  <code>append()</code>  เพื่อเพิ่มข้อมูลใหม่เข้าไปใน List ซึ่งข้อมูลที่เพิ่มเข้าจะอยู่ท้ายสุดและเรียง Index เพิ่มขึ้นไปเรื่อยๆ โดยเริ่มจาก 0 ในตัวแปร  <code>numbers</code>  เราได้เพิ่ม 5 จำนวนเต็มเข้าไปใน List และในตัวแปร  <code>names</code>  ในตอนแรกได้ประกาศและกำหนดสองชื่อให้กับตัวแปร และเพิ่มเข้าไปภายหลังอีก 3 ชื่อ และฟังก์ชัน  <code>len()</code>  ใช้เพื่อนับจำนวนสมาชิกภายใน List</p>
+
+<pre><code class="language-py">[-1, 2, 5, 8, 10, 13]
+['Mateo', 'Danny', 'James', 'Thomas', 'Luke']
+numbers count =  6
+names count =  5
+</code></pre>
+
+<h2 id="การเข-าถ-งข-อม-ลภายใน-list">การเข้าถึงข้อมูลภายใน List</h2>
+
+<p>List นั้นใช้ Index สำหรับการเข้าถึงข้อมูล โดย Index ของ List จะเป็นจำนวนเต็มที่เริ่มจาก 0 และเพิ่มขึ้นทีละ 1 ไปเรื่อยๆ ดังนั้น เราจึงสามารถเข้าถึงข้อมูลภายใน List เพื่ออ่านหรืออัพเดทค่าได้โดยตรงผ่าน Index ของมัน นี่เป็นโค้ดการเข้าถึงข้อมูลภายใน List ในภาษา Python</p>
+
+<pre><code class="language-py">names = ['Mateo', 'Danny', 'James', 'Thomas', 'Luke']
+print('names[0] = ', names[0])
+print('names[3] = ', names[3])
+print('names[-1] = ', names[-1])
+
+# update value
+names[0] = 'Bob'
+print('names[0] = ', names[0])
+</code></pre>
+
+<p>ในตัวอย่าง เรามีตัวแปร List ที่ชื่อว่า  <code>names</code>  ดังนั้น เพือเข้าถึงสมาชิกตัวแรกภายใน List ซึ่งก็คือ  <em>&ldquo;Mateo&rdquo;</em>  นั้นจะใช้คำสั่ง  <code>names[0]</code>  และสมาชิกที่มีค่าเป็น  <em>&ldquo;Thomas&rdquo;</em>  ซึ่งอยู่ตำแหน่งที่ 4 จะใช้คำสั่ง  <code>names[3]</code>  สังเกตว่า Index จะลดลงหนึ่งเพราะ Index ของ List นั้นเริ่มต้นจาก 0</p>
+
+<pre><code class="language-py">print('names[-1] = ', names[-1])
+</code></pre>
+
+<p>นอกจากนี้ เราสามารถเข้าถึงข้อมูลภายใน List โดยการใช้ Index เป็นจำนวนลบได้ โดยเริ่มจาก -1 ซึ่งเป็นสมาชิกตัวสุดท้ายของ List และ -2 สมาชิกตัวถัดมาและลดลงไปทีละ 1</p>
+
+<pre><code class="language-py">names[0] = 'Bob'
+print('names[0] = ', names[0])
+</code></pre>
+
+<p>นี่เป็นการอัพเดทค่าของสมาชิกภายใน List ในตัวอย่างเราได้เปลี่ยนค่าของสมาชิกในตำแหน่งแรกของ List จากเดิมที่เป็น  <em>&ldquo;Mateo&rdquo;</em>  ให้เป็น  <em>&ldquo;Bob&rdquo;</em></p>
+
+<pre><code class="language-py">names[0] =  Mateo
+names[3] =  Thomas
+names[-1] =  Luke
+names[0] =  Bob
+</code></pre>
+
+<h2 id="การอ-านค-าใน-list-ด-วยคำส-ง-for-loop">การอ่านค่าใน List ด้วยคำสัง For loop</h2>
+
+<p>เนื่องจาก List นั้นเก็บข้อมูลเป็นแบบลำดับและใช้ Index ในการเข้าถึงข้อมูล ดังนั้น เราจึงมักจะใช้คำสั่งวนซ้ำสำหรับการเขียนโปรแกรมที่ทำงานกับ List เพราะทำให้การทำงานรวดเร็วและง่ายขึ้น เช่น การใช้คำสั่งวนซ้ำวนอ่านค่าใน List ที่มีข้อมูลเป็นจำนวนมาก เป็นต้น ต่อไปมาดูตัวอย่างการใช้งานคำสั่ง For loop กับ List ในภาษา Python</p>
+
+<pre><code class="language-py">numbers = [10, 20, 30, 40, 50, 60, 70]
+sum = 0
+for n in numbers:
+    print(n, end =' ')
+    sum += n
+
+print('sum = ', sum)
+
+names = ['Mateo', 'Danny', 'James', 'Thomas', 'Luke']
+for i in range(0, len(names)):
+    print(names[i].upper(), end =' ')
+</code></pre>
+
+<p>ในตัวอย่าง เป็นการวนอ่านค่าภายใน List ด้วยการใช้คำสั่ง For loop โดยเราได้แยกการทำงานออกเป็นสองลูป ในลูปแรกเป็นการใช้งานคำสั่ง For loop เพื่อวนอ่านค่าภายใน List  <code>numbers</code>  โดยตรง โปรแกรมจะวนอ่านค่าไปทีละค่าและนำค่าในแต่ละรอบที่ได้มาใส่ในตัวแปร  <code>n</code>  เราได้ทำการแสดงผลตัวเลขภายใน List และหาผลรวมของตัวเลขภายใน List โดยเก็บไว้ในตัวแปร  <code>sum</code></p>
+
+<p>ในลูปที่สอง เป็นการใช้คำสั่ง For loop เช่นกัน แต่ในตอนนี้เราจะสร้าง Index ขึ้นมาโดยการใช้ตัวแปร  <code>i</code>  เป็นตัวรัน Index จาก 0 ถึงขนาดตัวสุดท้ายของ List ที่สร้างจากฟังก์ชัน  <code>range()</code>  และเราแสดงผลชื่อในตัวพิมพ์ใหญ่ด้วยเมธอด  <code>upper()</code>  ของ String</p>
+
+<pre><code class="language-py">10 20 30 40 50 60 70 sum =  280
+MATEO DANNY JAMES THOMAS LUKE
+</code></pre>
+
+<h2 id="list-slicing">List slicing</h2>
+
+<p>ในภาษา Python เราสามารถตัดข้อมูลจาก List หนึ่งแล้วนำไปสร้างเป็น List ใหม่ได้ โดยวิธีดังกล่าวนั้นเรียกกว่า  <em>slicing</em>  ในการตัดข้อมูลใน List นั้นจะทำในรูปแบบ [a:b] เมื่อ a เป็น Index เริ่มต้นและ b เป็น Index ก่อนสมาชิกตัวสุดท้ายที่ต้องการตัด มาดูตัวอย่างของ list slicing</p>
+
+<pre><code class="language-py">ch = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+a = ch[0:4] # a - d
+b = ch[4:9] # e - h
+c = ch[:3] # a - c
+d = ch[3:] # c - h
+e = ch[:] # copy all list, or equivalent to e = ch
+f = ch[0:2] + ch[6:8] # a - b and g - h
+
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+print(f)
+</code></pre>
+
+<p>ในตัวอย่าง เรามีตัวแปร  <code>ch</code>  ซึ่งมีสมาชิกเป็นตัวอักษรในภาษาอังกฤษจาก a ถึง h หลังจากนั้นเราได้ทำการ slice ข้อมูลจาก List ดังกล่าว ในตัวแปร  <code>a</code>  นั้นเป็นการตัดเอาข้อมูลจากตำแหน่งที่ 0 ถึง 3 มา ในตัวแปร  <code>b</code>  นั้นตัดเอาตำแหน่งที่ 4 ถึง 8 ถัดมาเป็นตัวแปร  <code>c</code>  <code>d</code>  และ  <code>e</code>  เป็นการเว้นว่างตำแหน่งข้างหน้าและข้างหลัง ซึ่งถ้าตำแหน่งข้างหน้าถูกเว้นว่างไว้ เป็นการตัดเอาสมาชิกตั้งแต่ตำแหน่งเริ่มต้นของ List และถ้าตำแหน่งสิ้นสุดถูกเว้นว่างไว้ เป็นการตัดเอาจนถึงสมาชิกตัวสุดท้ายของ List และในตัวแปร  <code>f</code>  เป็นการตัดเอาสองส่วนของ List มาต่อกัน ในการนำสอง List มาต่อกันนั้นเราจะใช้ตัวดำเนินการ  <code>+</code></p>
+
+<pre><code class="language-py">['a', 'b', 'c', 'd']
+['e', 'f', 'g', 'h']
+['a', 'b', 'c']
+['d', 'e', 'f', 'g', 'h']
+['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+['a', 'b', 'g', 'h']
+</code></pre>
+
+<h2 id="การใช-งานคำส-ง-del-เพ-อลบข-อม-ลใน-list">การใช้งานคำสั่ง del เพื่อลบข้อมูลใน List</h2>
+
+<p>คำสั่ง del เป็นคำสั่งที่ใช้สำหรับลบตัวแปรใดๆ ออกไปจากหน่วยความจำหรือใช้ยกเลิกตัวแปรที่เคยประกาศไปแล้ว เราสามารถใช้คำสั่ง del เพื่อลบสมาชิกภายใน List ได้เช่นเดียวกัน มาดูตัวอย่างการใช้งานคำสั่ง del ในภาษา Python</p>
+
+<pre><code class="language-py">ch = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+del ch[0] # delete a 
+print(ch)
+
+del ch[0] # delete b 
+print(ch)
+
+del ch[2:4] # delete e, f 
+print(ch)
+
+del ch[:] # delete all
+print(ch)
+</code></pre>
+
+<p>ในตัวอย่าง เป็นการใช้งานคำสั่ง del สำหรับลบสมาชิกภายใน List ในตอนแรก เราได้ลบอักษร a ออกไปจาก List ซึ่งสมาชิกตัวแรกนั้นจะมี Index เป็น 0 ดังนั้น เมื่อการลบเสร็จสิ้น List จะทำการเลื่อนตัวอักษร b มายัง Index 0 แทน ซึ่งสิ่งนี้เป็นสภาวะการสูญเสียตำแหน่งของ List หรือ Index lose หลังจากนั้น เราได้ลบโดยการใช้วิธีการกำหนด Index แบบ slicing เราได้ทำการลบค่าจาก Index 0 ถึง 3 ซึ่งเป็นการลบตัวอักษรจาก e ถึง f และในคำสั่งสุดท้ายเป็นการลบข้อมูลภายใน List ทั้งหมด</p>
+
+<pre><code class="language-py">['b', 'c', 'd', 'e', 'f', 'g', 'h']
+['c', 'd', 'e', 'f', 'g', 'h']
+['c', 'd', 'g', 'h']
+[]
+</code></pre>
+
+<p><strong>Warning:</strong>  จากตัวอย่างข้างต้นนั้น เมื่อคุณต้องการลบข้อมูลทั้งหมดภายใน List เราจะใช้  <code>del ch[:]</code>  เพราะว่าเป็นการลบแบบ slicing จากตำแหน่งแรกถึงตำแหน่งสุดท้ายและจะทำให้มันกลายเป็น List ว่างปล่าว เมื่อคุณใช้คำสั่ง  <code>del ch</code>  จะหมายความว่าลบตัวแปรออกไปจากหน่วยความจำแทน</p>
+
+<p>ในบทนี้ คุณได้เรียนรู้เกี่ยวกับการประกาศและใช้งาน List ในภาษา Python นอกจากนี้เรายังใช้คำสัง For loop เพื่อให้ง่ายในการอ่านข้อมูลภายใน List รวมทั้งการตัดข้อมูลใน List ด้วยการ slicing และการใช้คำสั่ง del เพื่อลบข้อมูลภายใน List ออกไป ในบทต่อไป เราจะเป็นการใช้งานฟังก์ชันและเมธอดของ List</p>
+
+<p>Reference :</p>
+
+<ul>
+<li><a href="http://marcuscode.com/lang/python/lists">http://marcuscode.com/lang/python/lists</a></li>
+</ul>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cBeginer%5clist.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#lists">Lists</a>
+<ul>
+<li><a href="#การประกาศและใช-งาน-list">การประกาศและใช้งาน List</a></li>
+<li><a href="#การเข-าถ-งข-อม-ลภายใน-list">การเข้าถึงข้อมูลภายใน List</a></li>
+<li><a href="#การอ-านค-าใน-list-ด-วยคำส-ง-for-loop">การอ่านค่าใน List ด้วยคำสัง For loop</a></li>
+<li><a href="#list-slicing">List slicing</a></li>
+<li><a href="#การใช-งานคำส-ง-del-เพ-อลบข-อม-ลใน-list">การใช้งานคำสั่ง del เพื่อลบข้อมูลใน List</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

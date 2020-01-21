@@ -9,5 +9,16 @@
 	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/python/flask/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Primer on Jinja Templating</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/</guid>
+      <description>Primer on Jinja Templating Flask comes packaged with the powerful Jinja templating language.
+For those who have not been exposed to a templating language before, such languages essentially contain variables as well as some programming logic, which when evaluated (or rendered into HTML) are replaced with actual values.
+The variables and/or logic are placed between tags or delimiters. For example, Jinja templates use {% ... %} for expressions or logic (like for loops), while {{ .</description>
+    </item>
+    
   </channel>
 </rss>

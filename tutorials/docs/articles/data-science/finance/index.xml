@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Finance on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/</link>
+    <description>Recent content in Finance on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Jan 2020 10:42:26 +0600</lastBuildDate>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exploration of S&amp;P 500 Index</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/</guid>
+      <description>Exploration of S&amp;amp;P 500 Index Using Pandas and Matplotlib In this article we want to explore whether it is true that staying in the market over a longer duration can be lucrative.
+Import the Python libraries that are commonly used for data analysis and data exploration such as Pandas and Matplotlib.
+In [1]:
+import pandas as pd import numpy as np import matplotlib.pyplot as plt  Read the files with S&amp;amp;P 500 data into Pandas dataframes.</description>
+    </item>
+    
+    <item>
+      <title>Stock Analysis in Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-analysis-in-python/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-analysis-in-python/</guid>
+      <description>Stock Analysis in Python Exploring financial data with object-oriented programming and additive models
+It’s easy to get carried away with the wealth of data and free open-source tools available for data science. After spending a little bit of time with the quandl financial library and the prophet modeling library, I decided to try some simple stock data exploration. Several days and 1000 lines of Python later, I ended up with a complete stock analysis and prediction tool.</description>
+    </item>
+    
+    <item>
+      <title>Dash by Plotly</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/</guid>
+      <description>Python for Finance: Dash by Plotly  Source.
+ Part 2 of Leveraging Python for Stock Portfolio Analyses. In part 1 of this series I discussed how, since I’ve become more accustomed to using pandas, that I have signficantly increased my use of Python for financial analyses. During the part 1 post, we reviewed how to largely automate the tracking and benchmarking of a stock portfolio’s performance leveraging pandas and the Yahoo Finance API.</description>
+    </item>
+    
+    <item>
+      <title>Quantitative Trading Strategies</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/</guid>
+      <description>Python for Finance, Part 2: Intro to Quantitative Trading Strategies In Python for Finance, Part I, we focused on using Python and Pandas to
+ retrieve financial time-series from free online sources (Yahoo), format the data by filling missing observations and aligning them, calculate some simple indicators such as rolling moving averages and visualise the final time-series.  As a reminder, the dataframe containing the three “cleaned” price timeseries has the following format:</description>
+    </item>
+    
+    <item>
+      <title>Stock Portfolio Analyses</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/</guid>
+      <description>Python for Finance: Stock Portfolio Analyses  Written with StackEdit.
+ My two most recent blog posts were about Scaling Analytical Insights with Python; part 1 can be found here and part 2 can be found here. It has been several months since I wrote those, largely due to the fact that I relocated my family to Seattle to join Amazon in November; I’ve spent most of the time on my primary project determining our global rollout plan and related business intelligence roadmap.</description>
+    </item>
+    
+    <item>
+      <title>Yahoo &amp; Google Finance API</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</guid>
+      <description>Python for Finance, Part I: Yahoo &amp;amp; Google Finance API, pandas, and matplotlib Getting the Data Pandas and matplotlib are included in the more popular distributions of Python for Windows, such as Anaconda.
+In case it&amp;rsquo;s not included in your Python distribution, just simply use pip or conda install. Once installed, to use pandas, all one needs to do is import it. We will also need the pandas_datareader package (pip install pandas-datareader), as well as matplotlib for visualizing our results.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Yahoo &amp; Google Finance API"><meta property="og:title" content="Yahoo &amp; Google Finance API" />
+<meta property="og:description" content="Python for Finance, Part I: Yahoo &amp; Google Finance API, pandas, and matplotlib Getting the Data Pandas and matplotlib are included in the more popular distributions of Python for Windows, such as Anaconda.
+In case it&rsquo;s not included in your Python distribution, just simply use pip or conda install. Once installed, to use pandas, all one needs to do is import it. We will also need the pandas_datareader package (pip install pandas-datareader), as well as matplotlib for visualizing our results." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/" />
+
+<title>Yahoo &amp; Google Finance API | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/" >
+      Exploration of S&amp;P 500 Index
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-analysis-in-python/" >
+      Stock Analysis in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/" >
+      Dash by Plotly
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/" >
+      Quantitative Trading Strategies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/" >
+      Stock Portfolio Analyses
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/"  class="active">
+      Yahoo &amp; Google Finance API
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Yahoo &amp; Google Finance API</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-for-finance-part-i-yahoo-google-finance-api-pandas-and-matplotlib">Python for Finance, Part I: Yahoo &amp; Google Finance API, pandas, and matplotlib</h1>
+
+<h2 id="getting-the-data">Getting the Data</h2>
+
+<p>Pandas and matplotlib are included in the more popular distributions of Python for Windows, such as Anaconda.</p>
+
+<p>In case it&rsquo;s not included in your Python distribution, just simply use pip or conda install. Once installed, to use pandas, all one needs to do is import it. We will also need the  <code>pandas_datareader</code>  package (<code>pip install pandas-datareader</code>), as well as  <code>matplotlib</code>  for visualizing our results.</p>
+
+<p>from pandas_datareader import data import matplotlib.pyplot as plt import pandas as pd</p>
+
+<p>Having imported the appropriate tools, getting market data from a free online source, such as Yahoo Finance, is super easy. Since pandas has a simple  <a href="http://pandas-datareader.readthedocs.io/en/latest/remote_data.html#yahoo-finance">remote data access</a>  for the Yahoo Finance API data, this is as simple as:</p>
+
+<h4 id="update-4-14-18-yahoo-finance-api-issue">UPDATE (4/14/18): YAHOO FINANCE API ISSUE</h4>
+
+<p>Yahoo finance has changed the structure of its website and as a result the most popular Python packages for retrieving data have stopped functioning properly. Until this is resolved,  <strong>we will be using Google Finance for the rest this article</strong>  so that data is taken from Google Finance instead. We are using the ETF &ldquo;SPY&rdquo; as proxy for S&amp;P 500 on Google Finance</p>
+
+<p>Please note that there has been some issues with missing data in Google&rsquo;s API, as well as frequent, random errors that occur when pulling a lot of data.</p>
+
+<pre><code class="language-py"># Define the instruments to download. We would like to see Apple, Microsoft and the S&amp;P500 index.
+tickers = ['AAPL', 'MSFT', '^GSPC']
+
+# We would like all available data from 01/01/2000 until 12/31/2016.
+start_date = '2010-01-01'
+end_date = '2016-12-31'
+
+# User pandas_reader.data.DataReader to load the desired data. As simple as that.
+panel_data = data.DataReader('INPX', 'google', start_date, end_date)
+</code></pre>
+
+<p>What does  <code>panel_data</code>  look like?  <code>data.DataReader</code>  returns a  <code>Panel</code>  object, which can be thought of as a 3D matrix. The first dimension consists of the various fields Yahoo Finance returns for a given instrument, namely, the  <em>Open</em>,  <em>High</em>,  <em>Low</em>,  <em>Close</em>  and  <em>Adj Close</em>  prices for each date. The second dimension contain the dates. The third one contains the instrument identifiers.</p>
+
+<p>Let&rsquo;s see what  <code>panel_data</code>  actually is by temporarily making it a dataframe and calling the top nine rows:</p>
+
+<pre><code class="language-py">panel_data.to_frame().head(9)  
+</code></pre>
+
+<h2 id="preparing-the-data">Preparing the Data</h2>
+
+<p>Let us assume we are interested in working with the  <em>Close</em>  prices which have been already been adjusted by Google finance to account for stock splits. We want to make sure that all weekdays are included in our dataset, which is very often desirable for quantitative trading strategies.</p>
+
+<p>Of course, some of the weekdays might be public holidays in which case no price will be available. For this reason, we will fill the missing prices with the latest available prices:</p>
+
+<pre><code class="language-py"># All we need to do is reindex close using all_weekdays as the new index
+close = close.reindex(all_weekdays)
+
+# Reindexing will insert missing values (NaN) for the dates that were not present
+# in the original set. To cope with this, we can fill the missing by replacing them
+# with the latest available price for each instrument.
+close = close.fillna(method='ffill')
+</code></pre>
+
+<p>Initially,  <code>close</code>  contains all the closing prices for all instruments and all the dates that Google returned. Some of the week days might be missing from the data Google provides. For this reason we create a Series of all the weekdays between the first and last date of interest and store them in the all_weekdays variable. Getting all the weekdays is achieved by passing the  <code>freq=’B’</code>  named parameter to the  <code>pd.date_range()</code>  function. This function return a  <code>DatetimeIndex</code>  which is shown below:</p>
+
+<pre><code class="language-py">print(all_weekdays)
+
+# DatetimeIndex(['2010-01-01', '2010-01-04', '2010-01-05', '2010-01-06',
+#               '2010-01-07', '2010-01-08', '2010-01-11', '2010-01-12',
+#               '2010-01-13', '2010-01-14',
+#               ...
+#               '2016-12-19', '2016-12-20', '2016-12-21', '2016-12-22',
+#               '2016-12-23', '2016-12-26', '2016-12-27', '2016-12-28',
+#               '2016-12-29', '2016-12-30'],
+#              dtype='datetime64[ns]', length=1826, freq='B')
+</code></pre>
+
+<p>Aligning the original DataFrame with the new DatetimeIndex is accomplished by substitution of the initial DatetimeIndex of the  <code>close</code>  DataFrame. If any of the new dates were not included in the original DatetimeIndex, the prices for that date will be filled with NaNs. For this reason, we will fill any resulting NaNs with the last available price. The final, clean DataFrame is shown below:</p>
+
+<pre><code class="language-py">close.head(10)  
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>AAPL</th>
+<th>MSFT</th>
+<th>SPY</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>01/01/2010</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+
+<tr>
+<td>04/01/2010</td>
+<td>30.57</td>
+<td>30.95</td>
+<td>113.33</td>
+</tr>
+
+<tr>
+<td>05/01/2010</td>
+<td>30.63</td>
+<td>30.96</td>
+<td>113.63</td>
+</tr>
+
+<tr>
+<td>06/01/2010</td>
+<td>30.14</td>
+<td>30.77</td>
+<td>113.71</td>
+</tr>
+
+<tr>
+<td>07/01/2010</td>
+<td>30.08</td>
+<td>30.45</td>
+<td>114.19</td>
+</tr>
+
+<tr>
+<td>08/01/2010</td>
+<td>30.28</td>
+<td>30.66</td>
+<td>114.57</td>
+</tr>
+
+<tr>
+<td>11/01/2010</td>
+<td>30.02</td>
+<td>30.27</td>
+<td>114.73</td>
+</tr>
+
+<tr>
+<td>12/01/2010</td>
+<td>29.67</td>
+<td>30.07</td>
+<td>113.66</td>
+</tr>
+
+<tr>
+<td>13/01/2010</td>
+<td>30.09</td>
+<td>30.35</td>
+<td>114.62</td>
+</tr>
+
+<tr>
+<td>14/01/2010</td>
+<td>29.92</td>
+<td>30.96</td>
+<td>114.93</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="looking-at-the-data">Looking at the Data</h2>
+
+<p>Our dataset is now complete and free of missing values. We can see a summary of the values in each of the instrument by calling the  <code>describe()</code>  method of a Pandas DataFrame:</p>
+
+<pre><code class="language-py">close.describe()  
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Dest</th>
+<th>AAPL</th>
+<th>MSFT</th>
+<th>SPY</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>count</td>
+<td>1825.0</td>
+<td>1825.0</td>
+<td>1825.0</td>
+</tr>
+
+<tr>
+<td>mean</td>
+<td>79.413167</td>
+<td>37.118404999999996</td>
+<td>164.67498600000002</td>
+</tr>
+
+<tr>
+<td>std</td>
+<td>28.30244</td>
+<td>10.814263</td>
+<td>37.049846</td>
+</tr>
+
+<tr>
+<td>min</td>
+<td>27.44</td>
+<td>23.01</td>
+<td>102.2</td>
+</tr>
+
+<tr>
+<td>25%</td>
+<td>55.46</td>
+<td>27.84</td>
+<td>131.28</td>
+</tr>
+
+<tr>
+<td>50%</td>
+<td>78.44</td>
+<td>33.03</td>
+<td>165.22</td>
+</tr>
+
+<tr>
+<td>75%</td>
+<td>103.12</td>
+<td>46.11</td>
+<td>201.99</td>
+</tr>
+
+<tr>
+<td>max</td>
+<td>133.0</td>
+<td>63.62</td>
+<td>227.76</td>
+</tr>
+</tbody>
+</table>
+
+<p>Suppose we would like to plot the  <strong>MSFT time-series</strong>. We would also like to see how the stock behaves compared to a short and longer term moving average of its price.</p>
+
+<p>A simple moving average of the original time-series is calculated by taking for each date the average of the last  <em>W</em>  prices (including the price on the date of interest). pandas has  <code>rolling()</code>, a built in function for Series which returns a  <strong>rolling object</strong>  for a user-defined window, e.g. 20 days.</p>
+
+<p>Once a rolling object has been obtained, a number of functions can be applied on it, such as  <code>sum()</code>,  <code>std()</code>  (to calculate the standard deviation of the values in the window) or  <code>mean()</code>. See below:</p>
+
+<pre><code class="language-py"># Get the MSFT timeseries. This now returns a Pandas Series object indexed by date.
+msft = close.loc[:, 'MSFT']
+
+# Calculate the 20 and 100 days moving averages of the closing prices
+short_rolling_msft = msft.rolling(window=20).mean()
+long_rolling_msft = msft.rolling(window=100).mean()
+
+# Plot everything by leveraging the very powerful matplotlib package
+fig, ax = plt.subplots(figsize=(16,9))
+
+ax.plot(msft.index, msft, label='MSFT')
+ax.plot(short_rolling_msft.index, short_rolling_msft, label='20 days rolling')
+ax.plot(long_rolling_msft.index, long_rolling_msft, label='100 days rolling')
+
+ax.set_xlabel('Date')
+ax.set_ylabel('Adjusted closing price ($)')
+ax.legend()
+</code></pre>
+
+<p>RESULT:</p>
+
+<p><img src="https://storage.googleapis.com/lds-media/images/msft_100_and_20_day_rolling_average_etHMdst.width-1200.png" alt="MSFT 100 and 20 Day Moving Average" /></p>
+
+<p>Now, we finally the stock price history together with the two moving averages plotted!</p>
+
+<h2 id="what-s-next">What&rsquo;s Next</h2>
+
+<p>All of this has been but a small preview of the way a quantitative analyst can leverage the power of Python and pandas to analyze scores of financial data. In  <a href="http://www.learndatasci.com/python-finance-part-2-intro-quantitative-trading-strategies/">part 2 of this series</a>  on Python and financial quantitative analysis, we are going to show how to use the two technical indicators already created to create a simple yet realistic trading strategy.</p>
+
+<blockquote>
+<p>Written with <a href="https://www.learndatasci.com/tutorials/python-finance-part-yahoo-finance-api-pandas-matplotlib/">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cfinance%5cyahoo-finance-API_1.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-for-finance-part-i-yahoo-google-finance-api-pandas-and-matplotlib">Python for Finance, Part I: Yahoo &amp; Google Finance API, pandas, and matplotlib</a>
+<ul>
+<li><a href="#getting-the-data">Getting the Data</a>
+<ul>
+<li>
+<ul>
+<li><a href="#update-4-14-18-yahoo-finance-api-issue">UPDATE (4/14/18): YAHOO FINANCE API ISSUE</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#preparing-the-data">Preparing the Data</a></li>
+<li><a href="#looking-at-the-data">Looking at the Data</a></li>
+<li><a href="#what-s-next">What&rsquo;s Next</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

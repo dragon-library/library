@@ -157,5 +157,39 @@ Uploading files to the server is often a requirement of a website or web applica
 We&amp;rsquo;re using Bootstrap 4 CSS in this example but feel free to use any other CSS library, use your own or skip the styling completely.</description>
     </item>
     
+    <item>
+      <title>Ep.14 Sending files with Flask</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-14/</guid>
+      <description>Sending files with Flask | Learning Flask Ep. 14 How to send and allow users to download files with Flask
+Allowing users to download files from your website of application is an often required feature of any website or application and Flask provides us with some useful function to do so.
+In this example, we&amp;rsquo;re going to allow our users to download 3 types of files, images, CSV&amp;rsquo;s and PDF&amp;rsquo;s simply by accessing a route and providing a unique id to the resource.</description>
+    </item>
+    
+    <item>
+      <title>Ep.15 Flask cookies</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-15/</guid>
+      <description>Flask cookies | Learning Flask Ep. 15 Setting, getting and working with cookies in Flask
+Cookies play an important role in most modern websites and web applications, allowing us leave small strings of key/value pairs on the clients browser to help both developers and users by temporarily preserving inportant information such as preferences, unique identifiers, state etc..
+Fortunately for us, Flask makes working with cookies very simple.
+Let&amp;rsquo;s get started.</description>
+    </item>
+    
+    <item>
+      <title>Ep.16 The Flask session object</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-16/</guid>
+      <description>The Flask session object | Learning Flask Ep. 16 Using, understanding and decoding the Flask session object, the globally available signed &amp;amp; encoded cookie
+Sessions in Flask are a way to store information about a specific user from one request to the next. They work by storing a cryptographically signed cookie on the users browser and decoding it on every request.
+The sesison object can be treated just like a dictionary that persists across requests, making it an ideal place to store non sensitive user data.</description>
+    </item>
+    
   </channel>
 </rss>

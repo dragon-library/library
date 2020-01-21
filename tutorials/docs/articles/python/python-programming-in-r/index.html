@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python Programming in R"><meta property="og:title" content="Python Programming in R" />
+<meta property="og:description" content="Python Programming in R  All code used in this tutorial can be found here: https://github.com/joelalcedo/Python_in_R
+ I am a Data Scientist working in New York. I have worked on a number of different projects spanning data visualization, machine learning and software development all in hopes to better understand the complexities associated with the financial markets. I started learning how to program about 10 years ago in visual basic. One thing led to another (as it does) and I learned SQL, R, Python, JavaScript (regrettably), C&#43;&#43; and others." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-programming-in-r/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Python Programming in R | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/"  class="active">
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python Programming in R</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-programming-in-r">Python Programming in R</h1>
+
+<blockquote>
+<p>All code used in this tutorial can be found here:  <a href="https://github.com/joelalcedo/Python_in_R">https://github.com/joelalcedo/Python_in_R</a></p>
+</blockquote>
+
+<p>I am a Data Scientist working in New York. I have worked on a number of different projects spanning data visualization, machine learning and software development all in hopes to better understand the complexities associated with the financial markets. I started learning how to program about 10 years ago in visual basic. One thing led to another  <em>(as it does)</em>  and I learned SQL, R,  <a href="https://hackernoon.com/tagged/python">Python</a>,  <a href="https://hackernoon.com/tagged/javascript">JavaScript</a>  <em>(regrettably)</em>, C++ and others. Currently, I am working on some Flutter projects, using Google’s Dart framework.</p>
+
+<p>Do my credentials sound like an alphabet soup? If you yourself are a programmer, chances are you have a few languages on the resume. If you are interested in hiring a programmer, but do not know quite what to look for, chances are you have been inundated with a spectrum of  <a href="https://hackernoon.com/tagged/programming">programming</a>  languages and obscure libraries on candidate resumes, wondering to yourself,  <em>“am I still reading English?”.</em></p>
+
+<p>Why am I writing this? To address a question I hear all time on Wall Street from aspiring programmers:</p>
+
+<p><strong><em>“Should I learn Python or R?”</em></strong></p>
+
+<p>Well gather around, because I am about to show you it is possible to use both  <a href="https://hackernoon.com/tagged/python">Python</a>  and R seamlessly. Personally, I say learn them both. There are certain advantages Python brings to the table versus R, and vice-versa.</p>
+
+<p>Using the  <a href="https://rstudio.github.io/reticulate/articles/introduction.html">reticulate</a>  package in R, it is very easy to interface between the two. I will write a simple function in Python to pull some data in from  <a href="http://www.quandl.com/">Quandl</a>, then clean up and visualize the data in R using ggplot2.</p>
+
+<p>Here’s the 30,000 foot view. We have some directory that contains our Python code and R code  <em>(you can download the full directory</em> <a href="https://github.com/joelalcedo/Python_in_R"><em>here on my GitHub</em></a><em>)</em>. Using the reticulate package in R, we will call a Python file, which will then port over to R, which can then continue to be used in R.</p>
+
+<p><img src="https://miro.medium.com/max/30/1*-VHMCjHHrUHP8IZp81QVWg.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/547/1*-VHMCjHHrUHP8IZp81QVWg.png" alt="" /></p>
+
+<p>Here’s our function in Python:</p>
+
+<p><img src="https://miro.medium.com/max/30/1*JMsrindK3s5WRdexERApfg.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/827/1*JMsrindK3s5WRdexERApfg.png" alt="" /></p>
+
+<p>Full code is available on my GitHub</p>
+
+<p>If you don’t have an API key in Quandl, sign up for an account to get an API key— it is free. You don’t necessarily need an API key for this, but if you make enough queries they will time you out.</p>
+
+<p>Anyhow, here’s what the output looks like in Python:</p>
+
+<p><img src="https://miro.medium.com/max/30/1*NGALRYn96BEk7B5YuwMb2A.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/520/1*NGALRYn96BEk7B5YuwMb2A.png" alt="" /></p>
+
+<p>Passing “WIKI/AAPL” through “grab_from_quandl”, will return the data as expected.</p>
+
+<p>Just in case an incorrect code is input, I added a custom handler:</p>
+
+<p><img src="https://miro.medium.com/max/30/1*ij8Q4PLotRBMRMz1cV0VDg.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/368/1*ij8Q4PLotRBMRMz1cV0VDg.png" alt="" /></p>
+
+<p>Output of error handler.</p>
+
+<p>Let’s port this Python function over to R.</p>
+
+<p><img src="https://miro.medium.com/max/30/1*6ONxL2Oitq_cqYebHivMxw.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1622/1*6ONxL2Oitq_cqYebHivMxw.png" alt="" /></p>
+
+<p>All it takes is one line of code!</p>
+
+<p>The “source_python” function essentially ports your Python code into R, which then will enable you to continue using your Python function in R:</p>
+
+<p><img src="https://miro.medium.com/max/30/1*TwJrlxUhUGiYUWgk9FJYuw.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/706/1*TwJrlxUhUGiYUWgk9FJYuw.png" alt="" /></p>
+
+<p>The error handler works, too:</p>
+
+<p><img src="https://miro.medium.com/max/30/1*TstyFCWFiaIloSeyn8JYSw.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/736/1*TstyFCWFiaIloSeyn8JYSw.png" alt="" /></p>
+
+<p>Now that we can run our Python code in R, we can use dplyr to wrangle the data and ggplot2 to visualize the results…</p>
+
+<p><img src="https://miro.medium.com/max/30/1*Ri61pAeolT9cTrrdl-uXTA.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1259/1*Ri61pAeolT9cTrrdl-uXTA.png" alt="" /></p>
+
+<p>Voila! There you have it. While this was a simple example, the benefits of the reticulate package in R are very broad in scope.</p>
+
+<p>Hopefully you find this helpful. Give me a shout if you have questions about any of this..</p>
+
+<p><em>Joel Alcedo is a Data Scientist working at BNP Paribas in New York. Prior to his time at BNP Paribas, he worked at Porsche North America HQ, Virgin Galactic and Cantor Fitzgerald.</em></p>
+
+<p><a href="https://medium.com/hackernoon/python-programming-in-r-baa513b01bc8"><strong>Source :</strong></a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-programming-in-r.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-programming-in-r">Python Programming in R</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

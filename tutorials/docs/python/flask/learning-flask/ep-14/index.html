@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.14 Sending files with Flask"><meta property="og:title" content="Ep.14 Sending files with Flask" />
+<meta property="og:description" content="Sending files with Flask | Learning Flask Ep. 14 How to send and allow users to download files with Flask
+Allowing users to download files from your website of application is an often required feature of any website or application and Flask provides us with some useful function to do so.
+In this example, we&rsquo;re going to allow our users to download 3 types of files, images, CSV&rsquo;s and PDF&rsquo;s simply by accessing a route and providing a unique id to the resource." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-14/" />
+
+<title>Ep.14 Sending files with Flask | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/"  class="active">
+      Ep.14 Sending files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.14 Sending files with Flask</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="sending-files-with-flask-learning-flask-ep-14">Sending files with Flask | Learning Flask Ep. 14</h1>
+
+<p>How to send and allow users to download files with Flask</p>
+
+<p>Allowing users to download files from your website of application is an often required feature of any website or application and Flask provides us with some useful function to do so.</p>
+
+<p>In this example, we&rsquo;re going to allow our users to download 3 types of files, images, CSV&rsquo;s and PDF&rsquo;s simply by accessing a route and providing a unique id to the resource.</p>
+
+<p>Let&rsquo;s get started.</p>
+
+<h3 id="flask-imports">Flask imports</h3>
+
+<p>First up, we&rsquo;re going to need some imports from  <code>flask</code>. Go ahead and import the following:</p>
+
+<p><code>from flask import send_file, send_from_directory, safe_join, abort</code></p>
+
+<ul>
+<li><code>send_file</code>  allows us to send the contents of a file to the client</li>
+<li><code>send_from_directory</code>  allows us to send a specific file from a directory (Recommended)</li>
+<li><code>safe_join</code>  allows us to safely join a filename with a file/directory path</li>
+<li><code>abort</code>  allows us to abort a request and return an HTTP status code of our choosing</li>
+</ul>
+
+<h3 id="variable-rules">Variable rules</h3>
+
+<p>Before we jump in and create any routes, I want to quickly discuss variable rules which we&rsquo;ve touched on before.</p>
+
+<p>Variable rules allow values to be passed into the URL using  <code>&lt;this_syntax&gt;</code>  and allows us to work with variable data coming in via the URL.</p>
+
+<p>Although not a necessity, Flask provides us with some useful converters to add an additional layer of validation to any values soming in via the URL.</p>
+
+<p>We an use converters in our URL routes like so:</p>
+
+<pre><code>@app.route(&quot;/get-image/&lt;image_name&gt;&quot;)  # No converter (defaults to string)
+@app.route(&quot;/get-image/&lt;int:image_number&gt;&quot;)  # Integer
+@app.route(&quot;/get-image/&lt;uuid:image_uuid&gt;&quot;)  # uuid
+</code></pre>
+
+<h3 id="full-list-of-variable-rules">Full list of variable rules:</h3>
+
+<p>Converter</p>
+
+<p>Function</p>
+
+<p><code>string</code></p>
+
+<p>Accepts any text without a slash (Default)</p>
+
+<p><code>int</code></p>
+
+<p>Accepts positive integers</p>
+
+<p><code>float</code></p>
+
+<p>Accepts positive floating point values</p>
+
+<p><code>path</code></p>
+
+<p>Like string but also accepts slashes</p>
+
+<p><code>uuid</code></p>
+
+<p>Accepts UUID strings (Universally unique identifier) (e.g 118bc9c3-1af4-4d46-87a1-266db2e64e7a)</p>
+
+<p>Using any of the converters listed above will convert the incoming variable into it&rsquo;s related type.</p>
+
+<p>For example, if you define a url with  <code>&lt;int:some_integer&gt;</code>, Flask will try to convert it into an integer,  <code>&lt;path:path_to_some_file&gt;</code>  will allow a path like string, including slashes etc..</p>
+
+<h3 id="directory-structure">Directory structure</h3>
+
+<p>Like many other important application configuration variables, we&rsquo;re going to add 3 new entries to our  <code>app.config</code>  object, each with a path to the directories we&rsquo;ve created to hold the files we want to make available for our users.</p>
+
+<p>But before we do so, we&rsquo;re going to create some new directories and add some files for our users to download:</p>
+
+<ul>
+<li>We&rsquo;re first going to create a new directory inside our  <code>static</code>  directory called  <code>client</code></li>
+<li>Inside of the  <code>client</code>  directory, we&rsquo;ll create 3 more directories,  <code>img</code>,  <code>csv</code>  and  <code>pdf</code></li>
+<li>We&rsquo;ll then place 2 of each file type in their parent folders.</li>
+</ul>
+
+<blockquote>
+<p>Note - Feel free to use dirrefent file &amp; directory names, just be sure to update the examples in this guide with your own names</p>
+</blockquote>
+
+<p>Our applications directory/file structure now looks like this (pay attention to the  <code>client</code>  directory in the  <code>static</code>  directory):</p>
+
+<pre><code class="language-html">app
+├── app
+│   ├── __init__.py
+│   ├── admin_views.py
+│   ├── static
+│   │   ├── client
+│   │   │   ├── csv
+│   │   │   │   ├── sales_report.csv
+│   │   │   │   └── users.csv
+│   │   │   ├── img
+│   │   │   │   ├── 001.jpg
+│   │   │   │   └── 002.jpg
+│   │   │   └── pdf
+│   │   │       ├── 202de685-1dcb-4272-9aff-3dc10b65ef77.pdf
+│   │   │       └── 7471eaf0-f85a-48b9-8450-4ccb5d493210.pdf
+│   │   ├── css
+│   │   │   └── style.css
+│   │   ├── img
+│   │   │   ├── flask.png
+│   │   │   └── uploads
+│   │   │       ├── YT-THUMB.png
+│   │   │       ├── post-img.png
+│   │   │       └── pythonise_favicon.png
+│   │   └── js
+│   │       └── app.js
+│   ├── templates
+│   │   ├── admin
+│   │   │   ├── dashboard.html
+│   │   │   └── templates
+│   │   │       └── admin_template.html
+│   │   ├── macros
+│   │   │   └── input_macros.html
+│   │   └── public
+│   │       ├── guestbook.html
+│   │       ├── index.html
+│   │       ├── jinja.html
+│   │       ├── profile.html
+│   │       ├── sign_up.html
+│   │       ├── templates
+│   │       │   └── public_template.html
+│   │       └── upload_image.html
+│   └── views.py
+├── config.py
+├── requirements.txt
+└── run.py
+</code></pre>
+
+<p>Now that we&rsquo;ve got our directories and files in place, let&rsquo;s update our  <code>app.config</code>.</p>
+
+<h3 id="app-config">App config</h3>
+
+<p>We&rsquo;re going to create 3 new entries in our  <code>app.config</code>  object, each containing an absolute path to their corresponding directories:</p>
+
+<pre><code class="language-py"># The absolute path of the directory containing images for users to download
+app.config[&quot;CLIENT_IMAGES&quot;] = &quot;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/client/img&quot;
+
+# The absolute path of the directory containing CSV files for users to download
+app.config[&quot;CLIENT_CSV&quot;] = &quot;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/client/csv&quot;
+
+# The absolute path of the directory containing PDF files for users to download
+app.config[&quot;CLIENT_PDF&quot;] = &quot;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/client/pdf&quot;
+</code></pre>
+
+<p>Now that we&rsquo;ve updated our app config, let&rsquo;s go ahead and create our routes (I&rsquo;d recommend using a config file for this which you can read more about  <a href="https://pythonise.com/feed/flask/flask-configuration-files">here</a>).</p>
+
+<h3 id="send-from-directory">Send from directory</h3>
+
+<p>The  <code>send_from_directory</code>  function is the recommended secure way to allow a user to download a file from our application.</p>
+
+<p>Let&rsquo;s create our first route and discuss it after:</p>
+
+<pre><code class="language-py">@app.route(&quot;/get-image/&lt;image_name&gt;&quot;)
+def get_image(image_name):
+    try:
+        return send_from_directory(app.config[&quot;CLIENT_IMAGES&quot;], filename=image_name, as_attachment=True)
+    except FileNotFoundError:
+        abort(404)
+</code></pre>
+
+<p>Let&rsquo;s step through what we&rsquo;ve done:</p>
+
+<p>We&rsquo;re using  <code>&lt;image_name&gt;</code>  in the URL and expect to receive the filename of the image without any slashes. As we haven&rsquo;t set a variable rule, Flask will default to  <code>string</code>  and not allow any slashes.</p>
+
+<pre><code class="language-py">@app.route(&quot;/get-image/&lt;image_name&gt;&quot;)
+</code></pre>
+
+<p>Tip - As a reminder, if you replaced  <code>&lt;image_name&gt;</code>  with  <code>&lt;path:image_name&gt;</code>  and a user went to  <code>/get-image/path/to/the/image.png</code>, the  <code>my_image</code>  variable would be  <code>path/to/the/image.png</code>, so use with caution.</p>
+
+<p>We then pass the  <code>image_name</code>  string to the  <code>get_image()</code>  function.</p>
+
+<pre><code class="language-py">def get_image(image_name):
+</code></pre>
+
+<p>We setup a  <code>try</code>  &amp;  <code>except</code>  block to catch if the filename isn&rsquo;t found on the server by using the  <code>FileNotFoundError</code>  handler.</p>
+
+<pre><code class="language-py">try:
+    return send_from_directory(app.config[&quot;CLIENT_IMAGES&quot;], filename=image_name, as_attachment=True)
+except FileNotFoundError:
+    abort(404)
+</code></pre>
+
+<p>Inside the  <code>try:</code>  block, we call the  <code>send_from_directory</code>  function and pass it 3 arguments:</p>
+
+<ul>
+<li><code>app.config[&quot;CLIENT_IMAGES&quot;]</code>  - The path to the directory containing the images we&rsquo;re allowing our users to download</li>
+<li><code>filename=image_name</code>  - The  <code>image_name</code>  variable passed in from the URL</li>
+<li><code>as_attachment=True</code>  - Allows the client to download the file as an attachment</li>
+<li><code>send_from_directory</code>  is then returned</li>
+</ul>
+
+<p>Inside the  <code>except FileNotFoundError:</code>  block, we call  <code>abort()</code>  and pass it an HTTP status code, a  <code>404</code>  in the case that the file doesn&rsquo;t exist.</p>
+
+<p><code>abort(404)</code></p>
+
+<p>If you now go to either  <code>http://127.0.0.1:5000/get-image/001.png</code>  or  <code>http://127.0.0.1:5000/get-image/002.png</code>, you&rsquo;ll instantly download the file!</p>
+
+<p>If you try a filename that doesn&rsquo;t exist, you&rsquo;ll get a  <code>Not Found</code>  error in your browser.</p>
+
+<p>Let&rsquo;s setup our remaining 2 routes to serve CSV&rsquo;s and PDF&rsquo;s.</p>
+
+<p>You&rsquo;ll notice these 2 routes are very similar to the first, with the addition of the  <code>filename</code>  variable.</p>
+
+<p><strong>CSV route:</strong></p>
+
+<pre><code class="language-py">@app.route(&quot;/get-csv/&lt;csv_id&gt;&quot;)
+def get_csv(csv_id):
+    filename = f&quot;{csv_id}.csv&quot;
+    try:
+        return send_from_directory(app.config[&quot;CLIENT_CSV&quot;], filename=filename, as_attachment=True)
+    except FileNotFoundError:
+        abort(404)
+</code></pre>
+
+<p><strong>PDF route:</strong></p>
+
+<pre><code class="language-py">@app.route(&quot;/get-pdf/&lt;pdf_id&gt;&quot;)
+def get_pdf(pdf_id):
+    filename = f&quot;{pdf_id}.csv&quot;
+    try:
+        return send_from_directory(app.config[&quot;CLIENT_PDF&quot;], filename=filename, as_attachment=True)
+    except FileNotFoundError:
+        abort(404)
+</code></pre>
+
+<p>Both router are identical apart from the addition of their corresponding file extensions in the  <code>filename</code>  variable, where we&rsquo;ve just used an  <code>f</code>  string to append the extension to the filename.</p>
+
+<p>We&rsquo;ve hard coded the extension this way as we&rsquo;re only allowing that type of file extension from their given route. You could of course omit it and ask the user to provide the file extension too.</p>
+
+<h3 id="file-path-in-the-url">File path in the URL</h3>
+
+<p>You may want a nested directory structure within your trusted base directory, where users can provide a path to a file in the URL to retrieve a file.</p>
+
+<p>Let&rsquo;s say  <code>reports</code>  is our trusted base directory, containing several sub-directories and files, like so:</p>
+
+<pre><code class="language-html">├── app
+│   ├── __init__.py
+│   ├── admin_views.py
+│   ├── static
+│   │   ├── client
+│   │   │   └── reports
+│   │   │       ├── 2017
+│   │   │       │   ├── feb
+│   │   │       │   │   └── sales
+│   │   │       │   │       └── sales_report.csv
+│   │   │       │   └── jan
+│   │   │       │       └── sales
+│   │   │       │           └── sales_report.csv
+│   │   │       ├── 2018
+│   │   │       │   ├── feb
+│   │   │       │   │   └── sales
+│   │   │       │   │       └── sales_report.csv
+│   │   │       │   └── jan
+│   │   │       │       └── sales
+│   │   │       │           └── sales_report.csv
+│   │   │       └── 2019
+│   │   │           ├── feb
+│   │   │           │   └── sales
+│   │   │           │       └── sales_report.csv
+│   │   │           └── jan
+│   │   │               └── sales
+│   │   │                   └── sales_report.csv
+</code></pre>
+
+<p>Without using a database, we can create a dynamic system of URL&rsquo;s and allow users to provide a path to a file.</p>
+
+<p>Let&rsquo;s create a new route and put this into practice, allowing our user to download a report by providing a path in the URL.</p>
+
+<p>First up, we&rsquo;ll add our  <code>reports</code>  directory to our  <code>app.config</code>:</p>
+
+<pre><code class="language-py">app.config[&quot;CLIENT_REPORTS&quot;] = &quot;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/client/reports&quot;
+</code></pre>
+
+<p>Now we&rsquo;ll create the route:</p>
+
+<pre><code class="language-py">@app.route(&quot;/get-report/&lt;path:path&gt;&quot;)
+def get_report(path):
+    try:
+        return send_from_directory(app.config[&quot;CLIENT_REPORTS&quot;], filename=path, as_attachment=True)
+    except FileNotFoundError:
+        abort(404)
+</code></pre>
+
+<p>We&rsquo;re doing exactly the same as above, with the exception of adding the  <code>path</code>  prefix to the URL variable.</p>
+
+<pre><code class="language-py">@app.route(&quot;/get-report/&lt;path:path&gt;&quot;)
+</code></pre>
+
+<p>The path should be relative from the  <code>reports</code>  directory saved in our  <code>app.config</code>!</p>
+
+<p>If you were to go to  <code>/get-report/2018/feb/sales/sales_report.csv</code>, the file would be downloaded. Likewise any non-existent filenames would throw a 404 error.</p>
+
+<h3 id="send-file-and-safe-join">Send file and safe join</h3>
+
+<p>The  <code>send_file</code>  function is another way to allow users to download and directly access files on your server, however it&rsquo;s not recommended for any application that may take a filename from user sources.</p>
+
+<blockquote>
+<p>Tip - Always use  <code>send_from_directory</code>  where possible.</p>
+</blockquote>
+
+<p>The reason?  <code>send_file</code>  will happily return any file from a specified path! I&rsquo;m sure you wouldn&rsquo;t want users to be able to downlaod any file from your application at their own will. If you do intend on using  <code>send_file</code>, make sure your input source is trusted.</p>
+
+<p>Let&rsquo;s setup a route to show  <code>send_file</code>  in action, using Flask&rsquo;s  <code>safe_join</code>  function:</p>
+
+<pre><code class="language-py">@app.route(&quot;/get-csv/&lt;path:filename&gt;&quot;)
+def get_csv(filename):
+    safe_path = safe_join(app.config[&quot;CLIENT_CSV&quot;], filename)
+    try:
+        return send_file(safe_path, as_attachment=True)
+    except FileNotFoundError:
+        abort(404)
+</code></pre>
+
+<p>We use  <code>safe_join</code>  and pass it 2 arguments:</p>
+
+<ul>
+<li>The TRUSTED base directory</li>
+<li>The UNTRUSTED path to the file</li>
+</ul>
+
+<p>This function will safely join the base directory and zero or more pathnames/filenames and return it to the  <code>safe_path</code>  variable.</p>
+
+<p>Again, you can send files this way but it&rsquo;s recommended to use  <code>send_from_directory</code></p>
+
+<p>We then call  <code>send_files</code>  and pass it the  <code>safe_path</code>  along with  <code>as_attachment=True</code>  to allow the user to download the file.</p>
+
+<p>Read more about sending files in Flask over at the official documentation, linked  <a href="http://flask.pocoo.org/docs/1.0/api/#flask.send_file">here</a></p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="https://pythonise.com/series/learning-flask/sending-files-with-flask">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-14.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#sending-files-with-flask-learning-flask-ep-14">Sending files with Flask | Learning Flask Ep. 14</a>
+<ul>
+<li>
+<ul>
+<li><a href="#flask-imports">Flask imports</a></li>
+<li><a href="#variable-rules">Variable rules</a></li>
+<li><a href="#full-list-of-variable-rules">Full list of variable rules:</a></li>
+<li><a href="#directory-structure">Directory structure</a></li>
+<li><a href="#app-config">App config</a></li>
+<li><a href="#send-from-directory">Send from directory</a></li>
+<li><a href="#file-path-in-the-url">File path in the URL</a></li>
+<li><a href="#send-file-and-safe-join">Send file and safe join</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Requests and BeautifulSoup"><meta property="og:title" content="Requests and BeautifulSoup" />
+<meta property="og:description" content="Ultimate Guide to Web Scraping with Python Part 1: Requests and BeautifulSoup After the 2016 election I became much more interested in media bias and the manipulation of individuals through advertising. This series will be a walkthrough of a web scraping project that monitors political news from both left and right wing media outlets and performs an analysis on the rhetoric being used, the ads being displayed, and the sentiment of certain topics." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/" />
+
+<title>Requests and BeautifulSoup | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/" >
+      Building a Stock Screener - Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/" >
+      Building a Stock Screener - Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/" >
+      How to scrape Yahoo Finance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/"  class="active">
+      Requests and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/" >
+      Web Scraping 101
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Requests and BeautifulSoup</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="ultimate-guide-to-web-scraping-with-python-part-1-requests-and-beautifulsoup">Ultimate Guide to Web Scraping with Python Part 1: Requests and BeautifulSoup</h1>
+
+<p>After the 2016 election I became much more interested in media bias and the manipulation of individuals through advertising. This series will be a walkthrough of a web scraping project that monitors political news from both left and right wing media outlets and performs an analysis on the rhetoric being used, the ads being displayed, and the sentiment of certain topics.</p>
+
+<p>The first part of the series will we be getting media bias data and focus on only working locally on your computer, but if you wish to learn how to deploy something like this into production, feel free to leave a comment and let me know.</p>
+
+<h2 id="limit-your-impact-when-scraping">Limit your impact when scraping</h2>
+
+<p>Every time you load a web page you&rsquo;re making a request to a server, and when you&rsquo;re just a human with a browser there&rsquo;s not a lot of damage you can do. With a Python script that can execute thousands of requests a second if coded incorrectly, you could end up costing the website owner a lot of money and possibly bring down their site (see <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">Denial-of-service attack (DoS)</a>).</p>
+
+<p>With this in mind, we want to be very careful with how we program scrapers to avoid crashing sites and causing damage. Every time we scrape a website we want to attempt to <strong>make only one request per page</strong>. We don&rsquo;t want to be making a request every time our parsing or other logic doesn&rsquo;t work out, so we need to parse only after we&rsquo;ve saved the page locally.</p>
+
+<p>If I&rsquo;m just doing some quick tests, I&rsquo;ll usually start out in a Jupyter notebook because you can request a web page in one cell and have that web page available to every cell below it without making a new request. Since this article is available as a Jupyter notebook, you will see how it works if you choose that format.</p>
+
+<h3 id="how-to-save-html-locally">How to save HTML locally</h3>
+
+<p>After we make a request and retrieve a web page&rsquo;s content, we can store that content locally with Python&rsquo;s <code>open()</code> function. To do so we need to use the argument <code>wb</code>, which stands for &ldquo;write bytes&rdquo;. This let&rsquo;s us avoid any encoding issues when saving.</p>
+
+<p>Below is a function that wraps the <code>open()</code> function to reduce a lot of repetitive coding later on:</p>
+
+<pre><code class="language-python">def  save_html(html, path):
+	with  open(path, 'wb') as f:
+		f.write(html)
+save_html(r.content, 'google_com')
+</code></pre>
+
+<p>Assume we have captured the HTML from google.com in <code>html</code>, which you&rsquo;ll see later how to do. After running this function we will now have a file in the same directory as this notebook called <code>google_com</code> that contains the HTML.</p>
+
+<h3 id="how-to-open-read-html-from-a-local-file">How to open/read HTML from a local file</h3>
+
+<p>To retrieve our saved file we&rsquo;ll make another function to wrap reading the HTML back into <code>html</code>. We need to use <code>rb</code> for &ldquo;read bytes&rdquo; in this case.</p>
+
+<pre><code class="language-python">def  open_html(path):
+	with  open(path, 'rb') as f:
+		return f.read()
+	html = open_html('google_com')
+</code></pre>
+
+<p>The open function is doing just the opposite: read the HTML from <code>google_com</code>. If our script fails, notebook closes, computer shutsdown, etc., we no longer need to request google.com again, lessening our impact on their servers. While it doesn&rsquo;t matter much with Google since they have a lot of resources, smaller sites with smaller servers will benefit from this.</p>
+
+<p>I save almost every page and parse later when web scraping as a safety precaution.</p>
+
+<h3 id="follow-the-rules-for-scrapers-and-bots">Follow the rules for scrapers and bots</h3>
+
+<p>Each site usually has a <strong>robots.txt</strong> on the root of their domain. This is where the website owner explicitly states what bots are allowed to do on their site. Simply go to example.com/robots.txt and you should find a text file that looks something like this:</p>
+
+<pre><code>User-agent: *
+Crawl-delay: 10
+Allow: /pages/
+Disallow: /scripts/
+# more stuff
+</code></pre>
+
+<p>The <em>User-agent</em> field is the name of the bot and the rules that follow are what the bot should follow. Some robots.txt will have many User-agents with different rules. Common bots are <em>googlebot</em>, <em>bingbot</em>, and <em>applebot</em>, all of which you can probably guess the purpose and origin of.</p>
+
+<p>We don&rsquo;t really need to provide a User-agent when scraping, so <code>User-agent: *</code> is what we would follow. A <code>*</code> means that the following rules apply to <em>all</em> bots (that&rsquo;s us).</p>
+
+<p>The <em>Crawl-delay</em> tells us the number of seconds to wait before requests, so in this example we need to wait 10 seconds before making another request.</p>
+
+<p><em>Allow</em> gives us specific URLs we&rsquo;re <em>allowed</em> to request with bots, and vice versa for <em>Disallow</em>.</p>
+
+<p>In this example we&rsquo;re allowed to request anything in the <strong>/pages/</strong> subfolder which means anything that starts with <strong>example.com/pages/</strong>. On the other hand, we are disallowed from scraping anything from the <strong>/scripts/</strong> subfolder.</p>
+
+<p>Many times you&rsquo;ll see a <code>*</code> next to Allow or Disallow which means you are either allowed or not allowed to scrape everything on the site.</p>
+
+<p>Sometimes there will be a disallow all pages followed by allowed pages like this:</p>
+
+<pre><code>Disallow: *
+Allow: /pages/
+</code></pre>
+
+<p>This means that you&rsquo;re not allowed to scrape anything <em>except</em> the subfolder <em>/pages/</em>. Essentially, you just want to read the rules in order where the next rule overrides the previous rule.</p>
+
+<h2 id="scraping-project-getting-media-bias-data">Scraping Project: Getting Media Bias Data</h2>
+
+<p>This project will primarily be run through a Jupyter notebook, which is done for teaching purposes and is not the usual way scrapers are programmed. After showing you the pieces, we&rsquo;ll put it all together into a Python script that can be run from command line or your IDE of choice.</p>
+
+<h3 id="making-web-requests">Making web requests</h3>
+
+<p>With Python&rsquo;s <code>requests</code> library we&rsquo;re getting a web page by using <code>get()</code> on the URL. The response <code>r</code> contains many things, but using <code>r.content</code> will give us the HTML. Once we have the HTML we can then parse it for the data we&rsquo;re interested in analyzing.</p>
+
+<p>There&rsquo;s an interesting website called <em>AllSides</em> that has a <a href="https://www.allsides.com/media-bias/media-bias-ratings">media bias rating table</a> where users can agree or disagree with the rating.</p>
+
+<p><img src="https://github.com/yosarawut/e-Library/raw/master/img/Media%20Bias%20Ratings%20AllSides.jpg" alt="enter image description here" /></p>
+
+<p>Since there&rsquo;s nothing in their robots.txt that disallows us from scraping this section of the site, I&rsquo;m assuming it&rsquo;s okay to go ahead and extract this data for our project. Let&rsquo;s request the this first page:</p>
+
+<pre><code class="language-python">!pip install requests
+</code></pre>
+
+<pre><code class="language-python">import requests  
+url = 'https://www.allsides.com/media-bias/media-bias-ratings' 
+r = requests.get(url)
+print(r.content[:100])
+</code></pre>
+
+<p>Since we essentially have a giant string of HTML, we can print a slice of 100 characters to confirm we have the source of the page. Let&rsquo;s start extracting data.</p>
+
+<h3 id="parsing-html-with-beautifulsoup">Parsing HTML with BeautifulSoup</h3>
+
+<h4 id="what-does-beautifulsoup-do">What does BeautifulSoup do?</h4>
+
+<p>We used <code>requests</code> to get the page from the AllSides server, but now we need the BeautifulSoup library to parse HTML and XML. When we pass our HTML to the BeautifulSoup constructor we get an object in return that we can then navigate like the original tree structure of the DOM.</p>
+
+<p>This way we can find elements using names of tags, classes, IDs, and through relationships to other elements, like getting the children and siblings of elements.</p>
+
+<h4 id="creating-a-new-soup-object">Creating a new soup object</h4>
+
+<p>We create a new BeautifulSoup object by passing the constructor our newly acquired HTML content and the type of parser we want to use:</p>
+
+<pre><code class="language-python">!pip install beautifulsoup4
+</code></pre>
+
+<pre><code class="language-python">from bs4 import BeautifulSoup
+soup = BeautifulSoup(r.content, 'html.parser')
+</code></pre>
+
+<p>This <code>soup</code> object defines a bunch of methods — many of which can achieve the same result — that we can use to extract data from the HTML. Let&rsquo;s start with finding elements.</p>
+
+<h4 id="finding-elements-and-data">Finding elements and data</h4>
+
+<p>To find elements and data inside our HTML we&rsquo;ll be using <code>select_one</code>, which returns a single element, and <code>select</code>, which returns a list of elements (even if only one item exists). Both of these methods use CSS selectors to find elements, so if you&rsquo;re rusty on how CSS selectors work here&rsquo;s a quick refresher:</p>
+
+<p><strong>A CSS selector refresher</strong></p>
+
+<ol>
+<li><p>To get a tag, such as <code>&lt;a&gt;&lt;/a&gt;</code>, <code>&lt;body&gt;&lt;/body&gt;</code>, use the naked name for the tag. E.g. <code>select_one('a')</code> gets an anchor/link element, <code>select_one('body')</code> gets the body element</p></li>
+
+<li><p><code>.temp</code> gets an element with a class of <strong>temp</strong>, E.g. to get <code>&lt;a class=&quot;temp&quot;&gt;&lt;/a&gt;</code> use <code>select_one('.temp')</code></p></li>
+
+<li><p><code>#temp</code> gets an element with an id of <strong>temp</strong>, E.g. to get <code>&lt;a id=&quot;temp&quot;&gt;&lt;/a&gt;</code> use <code>select_one('#temp')</code></p></li>
+
+<li><p><code>.temp.example</code> gets an element with both classes <strong>temp</strong> and <strong>example</strong>, E.g. to get <code>&lt;a class=&quot;temp example&quot;&gt;&lt;/a&gt;</code> use <code>select_one('.temp.example')</code></p></li>
+
+<li><p><code>.temp a</code> gets an anchor element nested inside of a parent element with class <strong>temp</strong>, E.g. to get <code>&lt;div class=&quot;temp&quot;&gt;&lt;a&gt;&lt;/a&gt;&lt;/div&gt;</code> use <code>select_one('.temp a')</code>. Note the space between <code>.temp</code> and <code>a</code>.</p></li>
+
+<li><p><code>.temp .example</code> gets an element with class <strong>example</strong> nested inside of a parent element with class <strong>temp</strong>, E.g. to get <code>&lt;div class=&quot;temp&quot;&gt;&lt;a class=&quot;example&quot;&gt;&lt;/a&gt;&lt;/div&gt;</code> use <code>select_one('.temp .example')</code>. Again, note the space between <code>.temp</code> and <code>.example</code>. The space tells the selector that the class after the space is a child of the class before the space.</p></li>
+
+<li><p>ids, such as <code>&lt;a id=one&gt;&lt;/a&gt;</code>, are unique so you can usually use the id selector by itself to get the right element. No need to do nested selectors when using ids.</p></li>
+</ol>
+
+<p>There&rsquo;s many more selectors for for doing various tasks, like selecting certain child elements, specific links, etc., that you can <a href="https://www.w3schools.com/cssref/css_selectors.asp">look up when needed</a>. The selectors above get us pretty close to everything we would need for now.</p>
+
+<p><strong>Tips on figuring out how to select certain elements</strong></p>
+
+<p>Most browsers have a quick way of finding the selector for an element using their developer tools. In Chrome, we can quickly find selectors for elements by</p>
+
+<ol>
+<li><p>Right-click on the the element then select &ldquo;Inspect&rdquo; in the menu. Developer tools opens and and highlights the element we right-clicked</p></li>
+
+<li><p>Right-click the code element in developer tools, hover over &ldquo;Copy&rdquo; in the menu, then click &ldquo;Copy selector&rdquo;</p></li>
+</ol>
+
+<p>Sometimes it&rsquo;ll be a little off and we need to scan up a few elements to find the right one. Here&rsquo;s what it looks like to find the selector and Xpath, another type of selector, in Chrome:</p>
+
+<p><br  /></p>
+
+<video  src="assets/css selector vs xpath.mp4"  width="700px"  controls></video>
+
+<h3 id="let-s-start-getting-data-out-of-a-table">Let&rsquo;s start! Getting data out of a table</h3>
+
+<p>Our data is housed in a table on AllSides, and by inspecting the header element we can find the code that renders the table and rows. What we need to do is <code>select</code> all the rows from the table and then parse out the information from each row.</p>
+
+<p><br  />
+<video  src="assets/finding table in HTML.mp4"  width="700px"  controls></video></p>
+
+<p>Simplifying the table&rsquo;s HTML, the structure looks like this (comments <code>&lt;!-- --&gt;</code> added by me):</p>
+
+<pre><code class="language-html">&lt;table&gt;
+&lt;thead&gt;
+&lt;!-- header information --&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr  class=&quot;odd views-row-first&quot;&gt;  &lt;!-- begin table row --&gt;
+&lt;td  class=&quot;views-field views-field-title source-title&quot;&gt;  &lt;!-- table cell --&gt;
+&lt;!-- outlet name --&gt;
+&lt;/td&gt;
+&lt;td  class=&quot;views-field views-field-field-bias-image&quot;&gt;  &lt;!-- table cell --&gt;
+&lt;!-- bias data --&gt;
+&lt;/td&gt;
+&lt;td  class=&quot;views-field views-field-nothing-1 what-do-you-think&quot;&gt;  &lt;!-- table cell --&gt;
+&lt;!-- agree / disagree buttons --&gt;
+&lt;/td&gt;
+&lt;td  class=&quot;views-field views-field-nothing community-feedback&quot;&gt;  &lt;!-- table cell --&gt;
+&lt;!-- agree / disagree data --&gt;
+&lt;/td&gt;
+&lt;/tr&gt;  &lt;!-- end table row --&gt;
+&lt;!-- more rows --&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+
+<p>So to get each row, we just select all <code>&lt;tr&gt;</code> inside <code>&lt;tbody&gt;</code>:</p>
+
+<pre><code class="language-python">rows = soup.select('tbody tr')
+</code></pre>
+
+<p><code>tbody tr</code> tells the selector to extract all <code>&lt;tr&gt;</code> (<strong>t</strong>able <strong>r</strong>ow) tags that are children of the <code>&lt;tbody&gt;</code> body tag. If there were more than one table on this page we would have to make a more specific selector, but since this is the only table, we&rsquo;re good to go.</p>
+
+<p>Now we have a list of HTML table rows that each contain four cells:</p>
+
+<ul>
+<li><p>News source name and link</p></li>
+
+<li><p>Bias data</p></li>
+
+<li><p>Agreement buttons</p></li>
+
+<li><p>Community feedback data</p></li>
+</ul>
+
+<p>Below is a breakdown of how to extract each one.</p>
+
+<h4 id="news-source-name">News source name</h4>
+
+<p><br  /></p>
+
+<video  src="assets/news source name.mp4"  width="700px"  controls></video>
+
+<p>Let&rsquo;s look at the first cell:</p>
+
+<pre><code class="language-html">&lt;td  class=&quot;views-field views-field-title source-title&quot;&gt;
+&lt;a  href=&quot;/news-source/abc-news-media-bias&quot;&gt;ABC News&lt;/a&gt;
+&lt;/td&gt;
+</code></pre>
+
+<p>The outlet name (<em>ABC News</em>) is the text of an anchor tag that&rsquo;s nested inside a <code>&lt;td&gt;</code> tag, which is a cell — or <strong>t</strong>able <strong>d</strong>ata tag.</p>
+
+<p>Getting the outlet name is pretty easy: just get the first row in <code>rows</code> and run a <code>select_one</code> off that object:</p>
+
+<pre><code class="language-python">row = rows[0] 
+name = row.select_one('.source-title').text.strip()
+print(name)
+</code></pre>
+
+<p>The only class we needed to use in this case was <code>.source-title</code> since <code>.views-field</code> looks to be just a class each row is given for styling and doesn&rsquo;t provide any uniqueness.</p>
+
+<p>Notice that we didn&rsquo;t need to worry about selecting the anchor tag <code>a</code> that contains the text. When we use <code>.text</code> is gets all text in that element, and since &ldquo;ABC News&rdquo; is the only text, that&rsquo;s all we need to do. Bear in mind that using <code>select</code> or <code>select_one</code> will give you the whole element with the tags included, so we need <code>.text</code> to give us the text between the tags.</p>
+
+<p><code>.strip()</code> ensures all the whitespace surrounding the name is removed. This is a good thing to always do since many websites use whitespace as a way to visually pad the text inside elements.</p>
+
+<p>You&rsquo;ll notice that we can run BeautifulSoup methods right off one of the rows. That&rsquo;s because the rows become their own BeautifulSoup objects when we make a select from another BeautifulSoup object. On the other hand, our <code>name</code> variable is no longer a BeautifulSoup object because we called <code>.text</code>.</p>
+
+<h3 id="news-source-page-link">News source page link</h3>
+
+<p>We also need the link to this news source&rsquo;s page on AllSides. If we look back at the HTML we&rsquo;ll see that in this case we <em>do</em> want to select the anchor in order to get the <code>href</code> that contains the link, so let&rsquo;s do that:</p>
+
+<pre><code class="language-python">allsides_page = row.select_one('.source-title a')['href']
+allsides_page = 'https://www.allsides.com' + allsides_page
+print(allsides_page)
+</code></pre>
+
+<p>It is a relative path in the HTML, so we prepend the site&rsquo;s URL to make it a link we can request later.</p>
+
+<p>Getting the link was a bit different than just selecting an element. We had to access an <em>attribute</em> (<code>href</code>) of the element, which is done using brackets, like how we would access a Python dictionary. This will be the same for other attributes of elements, like <code>src</code> in images and videos.</p>
+
+<h3 id="bias-rating">Bias rating</h3>
+
+<p><br  /></p>
+
+<video  src="assets/bias rating.mp4"  width="700px"  controls></video>
+
+<p>We can see that the rating is displayed as an image so how can we get the rating in words? Looking at the HTML notice the link that surrounds the image has the text we need:</p>
+
+<pre><code class="language-html">&lt;td  class=&quot;views-field views-field-field-bias-image&quot;&gt;
+&lt;a  href=&quot;/media-bias/left-center&quot;&gt;
+&lt;img  src=&quot;...&quot;  width=&quot;144&quot;  height=&quot;24&quot;  alt=&quot;Political News Media Bias Rating: Lean Left&quot;  title=&quot;Political News Media Bias Rating: Lean Left&quot;&gt;
+&lt;/a&gt;
+&lt;/td&gt;
+</code></pre>
+
+<p>We could also pull the <code>alt</code> attribute, but the link looks easier. Let&rsquo;s grab it:</p>
+
+<pre><code class="language-python">bias = row.select_one('.views-field-field-bias-image a')['href']
+bias = bias.split('/')[-1]
+print(bias)
+</code></pre>
+
+<p>Here we selected the anchor tag by using the class name and tag together: <code>.views-field-field-bias-image</code> is the class of the <code>&lt;td&gt;</code> and <code>&lt;a&gt;</code> is for the anchor nested inside.</p>
+
+<p>After that we extract the <code>href</code> just like before, but now we only want the last part of the URL for the name of the bias so we split on slashes and get the last element of that split (<em>left-center</em>).</p>
+
+<h3 id="community-feedback-data">Community feedback data</h3>
+
+<p><br  />
+<video  src="assets/agree ratio community feedback.mp4"  width="700px"  controls></video></p>
+
+<p>The last thing to scrape is the agree/disagree ratio from the community feedback area. The HTML of this cell is pretty convoluted due to the styling, but here&rsquo;s the basic structure:</p>
+
+<pre><code class="language-html">&lt;td  class=&quot;views-field views-field-nothing community-feedback&quot;&gt;
+&lt;div  class=&quot;getratingval&quot;&gt;
+&lt;div  class=&quot;rate-widget-4 rate-widget clear-block rate-average rate-widget-yesno&quot;  id=&quot;rate-node-76-4-1&quot;&gt;
+&lt;div  class=&quot;item-list&quot;&gt;
+&lt;ul&gt;
+&lt;li  class=&quot;first&quot;&gt;
+&lt;a  class=&quot;rate-button rate-btn&quot;  href=&quot;...&quot;  id=&quot;rate-button-3&quot;&gt;agree&lt;/a&gt;
+&lt;/li&gt;
+&lt;li  class=&quot;last&quot;&gt;
+&lt;a  class=&quot;rate-button rate-btn&quot;  href=&quot;...&quot;  id=&quot;rate-button-4&quot;&gt;disagree&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div  class=&quot;rate-details&quot;&gt;
+&lt;span  class=&quot;agree&quot;&gt;8241&lt;/span&gt;/&lt;span  class=&quot;disagree&quot;&gt;6568&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+</code></pre>
+
+<p>The numbers we want are located in two <code>span</code> elements in the last <code>div</code>. Both <code>span</code> elements have classes that are unique in this cell so we can use them to make the selection:</p>
+
+<pre><code class="language-python">agree = row.select_one('.agree').text
+agree = int(agree)
+disagree = row.select_one('.disagree').text
+disagree = int(disagree)
+agree_ratio = agree / disagree 
+print(f&quot;Agree: {agree}, Disagree: {disagree}, Ratio {agree_ratio:.2f}&quot;)
+</code></pre>
+
+<p>Using <code>.text</code> will return a string, so we need to convert them to integers in order to calculate the ratio.</p>
+
+<p><strong>Side note:</strong> If you&rsquo;ve never seen this way of formatting print statements in Python, the <code>f</code> at the front allows us to insert variables right into the string using curly braces. The <code>:.2f</code> is a way to format floats to only show two decimals places.</p>
+
+<p>If you look at the page in your browser you&rsquo;ll notice that they say how much the community is in agreement by using &ldquo;somewhat agree&rdquo;, &ldquo;strongly agree&rdquo;, etc. so how do we get that? If we try to select it:</p>
+
+<pre><code class="language-python">print(row.select_one('.community-feedback-rating-page'))
+</code></pre>
+
+<p>It shows up as None because this element is rendered with Javascript and <code>requests</code> can&rsquo;t pull HTML rendered with Javascript. We&rsquo;ll be looking at how to get data rendered with JS in a later article, but since this is the only piece of information that&rsquo;s rendered this way we can manually recreate the text.</p>
+
+<p>To find the JS files they&rsquo;re using, just CTRL+F for &ldquo;.js&rdquo; in the page source and open the files in a new tab to look for that logic.</p>
+
+<p>It turned out the logic was located in the eleventh JS file and they have a function that calculates the text and color with these parameters:</p>
+
+<table  width="300px">
+<thead>
+<td>Range</td>
+<td>Agreeance</td>
+</thead>
+<tr>
+<td>$ratio > 3$</td>
+<td>absolutely agrees</td>
+</tr>
+<tr>
+<td>$2 < ratio \leq 3$</td>
+<td>strongly agrees</td>
+</tr>
+<tr>
+<td>$1.5 < ratio \leq 2$</td>
+<td>agrees</td>
+</tr>
+<tr>
+<td>$1 < ratio \leq 1.5$</td>
+<td>somewhat agrees</td>
+</tr>
+<tr>
+<td>$ratio = 1$</td>
+<td>neutral</td>
+</tr>
+<tr>
+<td>$0.67 < ratio < 1$</td>
+<td>somewhat disgrees</td>
+</tr>
+<tr>
+<td>$0.5 < ratio \leq 0.67$</td>
+<td>disgrees</td>
+</tr>
+<tr>
+<td>$0.33 < ratio \leq 0.5$</td>
+<td>strongly disagrees</td>
+</tr>
+<tr>
+<td>$ratio \leq 0.33$</td>
+<td>absolutely disagrees</td>
+</tr>
+</table>
+
+<p>Let&rsquo;s make a function that replicates this logic:</p>
+
+<pre><code class="language-python">def  get_agreeance_text(ratio):
+if ratio &gt; 3: return  &quot;absolutely agrees&quot;
+elif  2 &lt; ratio &lt;= 3: return  &quot;strongly agrees&quot;
+elif  1.5 &lt; ratio &lt;= 2: return  &quot;agrees&quot;
+elif  1 &lt; ratio &lt;= 1.5: return  &quot;somewhat agrees&quot;
+elif ratio == 1: return  &quot;neutral&quot;
+elif  0.67 &lt; ratio &lt; 1: return  &quot;somewhat disagrees&quot;
+elif  0.5 &lt; ratio &lt;= 0.67: return  &quot;disagrees&quot;
+elif  0.33 &lt; ratio &lt;= 0.5: return  &quot;strongly disagrees&quot;
+elif ratio &lt;= 0.33: return  &quot;absolutely disagrees&quot;
+else: return  None
+print(get_agreeance_text(2.5))
+</code></pre>
+
+<p>Now that we have the general logic for a single row and we can generate the agreeance text, let&rsquo;s create a loop that gets data from every row on the first page:</p>
+
+<pre><code class="language-python">data= []
+for row in rows:
+	d = dict()
+	d['name'] = row.select_one('.source-title').text.strip()
+	d['allsides_page'] = 'https://www.allsides.com' + 
+	row.select_one('.source-title a')['href']
+	d['bias'] = row.select_one('.views-field-field-bias-image a')
+	['href'].split('/')[-1]
+	d['agree'] = int(row.select_one('.agree').text)
+	d['disagree'] = int(row.select_one('.disagree').text)
+	d['agree_ratio'] = d['agree'] / d['disagree']
+	d['agreeance_text'] = get_agreeance_text(d['agree_ratio'])
+	data.append(d)
+</code></pre>
+
+<p>In the loop we can combine any multi-step extractions into one to create the values in the least number of steps.</p>
+
+<p>Our <code>data</code> list now contains a dictionary containing key information for every row.</p>
+
+<pre><code class="language-python">print(data[0])
+</code></pre>
+
+<p>Keep in mind that <strong>this is still only the first page</strong>. The list on <em>AllSides</em> is three pages long as of this writing, so we need to modify this loop to get the other pages.</p>
+
+<h3 id="requesting-and-parsing-multiple-pages">Requesting and parsing multiple pages</h3>
+
+<p>Notice that the URLs for each page follow a pattern. The first page has no parameters on the URL, but the next pages do; specifically they attach a <code>?page=#</code> to the URL where &lsquo;#&rsquo; is the page number.</p>
+
+<p>Right now, the easiest way to get all pages is just to manually make a list of these three pages and loop over them. If we were working on a project with thousands of pages we might build a more automated way of constructing/finding the next URLs, but for now this works.</p>
+
+<pre><code class="language-python">pages = [
+'https://www.allsides.com/media-bias/media-bias-ratings',
+'https://www.allsides.com/media-bias/media-bias-ratings?page=1',
+'https://www.allsides.com/media-bias/media-bias-ratings?page=2'
+]
+</code></pre>
+
+<p>According to AllSides&rsquo; <em>robots.txt</em> we need to make sure we wait ten seconds before each request.</p>
+
+<p>Our loop will:</p>
+
+<ul>
+<li>request a page</li>
+<li>parse the page</li>
+<li>wait ten seconds</li>
+<li>repeat for next page.
+
+<br /></li>
+</ul>
+
+<p>Remember, we&rsquo;ve already tested our parsing above on a page that was cached locally so we know it works. You&rsquo;ll want to make sure to do this <strong>before</strong> making a loop that performs requests to prevent having to reloop if you forgot to parse something.</p>
+
+<p>By combining all the steps we&rsquo;ve done up to this point and adding a loop over pages, here&rsquo;s how it looks:</p>
+
+<pre><code class="language-python">from time import sleep
+
+data= []  
+for page in pages:
+	r = requests.get(page)
+	soup = BeautifulSoup(r.content, 'html.parser')
+	rows = soup.select('tbody tr')
+	for row in rows:
+		d = dict()
+		d['name'] = row.select_one('.source-title').text.strip()
+		d['allsides_page'] = 'https://www.allsides.com' + 	
+		row.select_one('.source-title a')['href']
+		d['bias'] = row.select_one('.views-field-field-bias-image a')['href'].split('/')[-1]
+		d['agree'] = int(row.select_one('.agree').text)
+		d['disagree'] = int(row.select_one('.disagree').text)
+		d['agree_ratio'] = d['agree'] / d['disagree']
+		d['agreeance_text'] = get_agreeance_text(d['agree_ratio'])
+		data.append(d)
+		sleep(10)
+</code></pre>
+
+<p>Now we have a list of dictionaries for each row on all three pages.</p>
+
+<p>To cap it off, we want to get the real URL to the news source, not just the link to their presence on AllSides. To do this, we will need to get the AllSides page and look for the link.</p>
+
+<p>If we go to <a href="https://www.allsides.com/news-source/abc-news-media-bias">ABC News&rsquo; page</a> there&rsquo;s a row of external links to Facebook, Twitter, Wikipedia, and the ABC News website. The HTML for that sections looks like this:</p>
+
+<pre><code class="language-html">&lt;div  class=&quot;row-fluid source-links gray-bg-box&quot;&gt;
+&lt;div  class=&quot;container&quot;&gt;
+&lt;a  href=&quot;https://www.facebook.com/ABCNews/&quot;  class=&quot;facebook&quot;&gt;
+&lt;i  class=&quot;fa fa-facebook&quot;  aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Facebook&lt;/span&gt;
+&lt;/a&gt;
+&lt;a  href=&quot;https://twitter.com/ABC&quot;  class=&quot;twitter&quot;&gt;
+&lt;i  class=&quot;fa fa-twitter&quot;  aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+&lt;span&gt;Twitter&lt;/span&gt;
+&lt;/a&gt;
+&lt;a  href=&quot;https://en.wikipedia.org/wiki/ABC_News&quot;  class=&quot;wikipedia&quot;&gt;
+&lt;i  class=&quot;fa fa-wikipedia-w&quot;  aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+&lt;span&gt;Wikipedia&lt;/span&gt;
+&lt;/a&gt;
+&lt;a  href=&quot;http://abcnews.go.com/&quot;  class=&quot;www&quot;&gt;&lt;i  class=&quot;fa fa-globe&quot;  aria-hidden=&quot;true&quot;&gt;
+&lt;/i&gt;&lt;span&gt;ABC News&lt;/span&gt;
+&lt;/a&gt;
+&lt;a  href=&quot;/contact&quot;  class=&quot;improve-this-page&quot;&gt;
+&lt;i  class=&quot;fa fa-line-chart&quot;  aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+&lt;span&gt;Improve this page&lt;/span&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Notice the anchor tag (<code>&lt;a&gt;</code>) that contains the link to ABC News has a class of &ldquo;www&rdquo;. Pretty easy to get with what we&rsquo;ve already learned:</p>
+
+<pre><code class="language-python">website = soup.select_one('.www')['href']
+</code></pre>
+
+<p>So let&rsquo;s make another loop to request the AllSides page and get links for each news source. Unfortunately, some pages don&rsquo;t have a link in this grey bar to the news source, which brings up a good point: <strong>always account for elements to randomly not exist</strong>.</p>
+
+<p>Up until now we&rsquo;ve assumed elements exist in the tables we scraped, but it&rsquo;s always a good idea to program scrapers in way so they don&rsquo;t break when an element goes missing.</p>
+
+<p>Using <code>select_one</code> or <code>select</code> will always return None or an empty list if nothing is found, so in this loop we&rsquo;ll check if we found the website element or not so it doesn&rsquo;t throw an Exception when trying to access the <code>href</code> attribute.</p>
+
+<p>Finally, since there&rsquo;s 265 news source pages and the wait time between pages is 10 seconds, it&rsquo;s going to take ~44 minutes to do this. Instead of blindly not knowing our progress, let&rsquo;s use the <code>tqdm</code> library to give us a nice progress bar:</p>
+
+<pre><code class="language-python">!pip install tqdm
+</code></pre>
+
+<pre><code class="language-python">from tqdm import tqdm_notebook
+for d in tqdm_notebook(data):
+	r = requests.get(d['allsides_page'])
+	soup = BeautifulSoup(r.content, 'html.parser')
+try:
+	website = soup.select_one('.www')['href']
+	d['website'] = website
+except  TypeError:
+	pass
+sleep(10)
+</code></pre>
+
+<p><code>tqdm</code> is a little weird at first, but essentially <code>tqdm_notebook</code> is just wrapping around our data list to produce a progress bar. We are still able to access each dictionary, <code>d</code>, just as we would normally. Note that <code>tqdm_notebook</code> is only for Jupyter notebooks. In regular editors you&rsquo;ll just <code>import tqdm from tqdm</code> and use <code>tqdm</code> instead.</p>
+
+<h3 id="saving-our-data">Saving our data</h3>
+
+<p>So what do we have now? At this moment, <code>data</code> is a list of dictionaries, each of which contains all the data from the tables as well as the websites from each individual news source&rsquo;s page on AllSides.</p>
+
+<p>The first thing we&rsquo;ll want to do now is save that data to a file so we don&rsquo;t have to make those requests again. We&rsquo;ll be storing the data as JSON since it&rsquo;s already in that form anyway:</p>
+
+<pre><code class="language-python">import json  
+with  open('allsides.json', 'w') as f:
+json.dump(data, f)
+</code></pre>
+
+<p>To load it back in when you need it:</p>
+
+<pre><code class="language-python">with  open('allsides.json', 'r') as f:
+data = json.load(f)
+</code></pre>
+
+<p>If you&rsquo;re not familiar with JSON, just quickly open <code>allsides.json</code> in an editor and see what it looks like. It should look almost exactly like what <code>data</code> looks like if we print it in Python: a list of dictionaries.</p>
+
+<h2 id="brief-data-analysis">Brief Data Analysis</h2>
+
+<p>Before ending this article I think it would be worthwhile to actually see what&rsquo;s interesting about this data we just retrieved. So, let&rsquo;s answer a couple of questions.</p>
+
+<p><strong>Which ratings for outlets does the community <em>absolutely agree</em> on?</strong></p>
+
+<p>To find where the community absolutely agrees we can do a simple list comprehension that checks each <code>dict</code> for the agreeance text we want:</p>
+
+<pre><code class="language-python">abs_agree = [d for d in data if d['agreeance_text'] == 'absolutely agrees']
+print(f&quot;{'Outlet':&lt;20} {'Bias':&lt;20}&quot;)
+print(&quot;-&quot; * 30)
+for d in abs_agree:
+	print(f&quot;{d['name']:&lt;20} {d['bias']:&lt;20}&quot;)
+</code></pre>
+
+<p>Using some string formatting we can make it look somewhat tabular. Interestingly, <em>C-SPAN</em> is the only center bias that the community absolutely agrees on. The others for left and right aren&rsquo;t that surprising.</p>
+
+<h3 id="making-analysis-easier-with-pandas">Making analysis easier with Pandas</h3>
+
+<p><strong>Which ratings for outlets does the community <em>absolutely disagree</em> on?</strong></p>
+
+<p>To make analysis a little easier, we can also load our JSON data into a Pandas DataFrame as well. This is easy with Pandas since they have a simple function for reading JSON into a DataFrame.</p>
+
+<p>As an aside, if you&rsquo;ve never used Pandas, Matplotlib, or any of the other data science libraries, I would definitely recommend checking out [Jose Portilla&rsquo;s data science course]() for a great intro to these tools and many machine learning concepts.</p>
+
+<p>Now to the DataFrame:</p>
+
+<pre><code class="language-python">import pandas as pd
+df = pd.read_json(open('allsides.json', 'r'))  
+df.set_index('name', inplace=True)
+df.head()
+
+</code></pre>
+
+<p>Now filter the DataFrame by &ldquo;agreeance_text&rdquo;:</p>
+
+<pre><code class="language-python">df[df['agreeance_text'] == 'strongly disagrees']  
+</code></pre>
+
+<p>It looks like much of the community disagrees strongly with certain outlets being rated with a &ldquo;center&rdquo; bias.</p>
+
+<p>Let&rsquo;s make a quick visualization of agreeance. Since there&rsquo;s too many news sources to plot so let&rsquo;s pull only those with the most votes. To do that, we can make a new column that counts the total votes and then sort by that value:</p>
+
+<pre><code class="language-python">df['total_votes'] = df['agree'] + df['disagree']
+df.sort_values('total_votes', ascending=False, inplace=True)
+df.head(10)
+</code></pre>
+
+<h4 id="visualizing-the-data">Visualizing the data</h4>
+
+<p>To make a bar plot we&rsquo;ll use Matplotlib with Seaborn&rsquo;s dark grid style:</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+plt.style.use('seaborn-darkgrid')
+</code></pre>
+
+<p>As mentioned above, we have too many news outlets to plot comfortably, so just make a copy of the top 25 and place it in a new <code>df2</code> variable:</p>
+
+<pre><code class="language-python">df2 = df.head(25).copy()
+df2.head()
+</code></pre>
+
+<p>With the top 25 news sources by amount of feedback, let&rsquo;s create a stacked bar chart where the number of <em>agrees</em> are stacked on top of the number of <em>disagrees</em>. This makes the total height of the bar the total amount of feedback.</p>
+
+<p>Below, we first create a figure and axes, plot the agree bars, plot the disagree bars on top of the agrees using <code>bottom</code>, then set various text features:</p>
+
+<pre><code class="language-python">fig, ax = plt.subplots(figsize=(20, 10))
+ax.bar(df2.index, df2['agree'], color='#5DAF83')
+ax.bar(df2.index, df2['disagree'], bottom=df2['agree'], color='#AF3B3B')
+ax.set_ylabel = 'Total feedback'
+plt.yticks(fontsize='x-large')
+plt.xticks(rotation=60, ha='right', fontsize='x-large', rotation_mode='anchor')  
+plt.title('AllSides Bias Rating vs. Community Feedback', fontsize='xx-large')
+plt.show()
+</code></pre>
+
+<p>For a slightly more complex version, let&rsquo;s make a subplot for each bias and plot the respective news sources.</p>
+
+<p>This time we&rsquo;ll make a new copy of the original DataFrame beforehand since we can plot more news outlets now.</p>
+
+<p>Instead of making one axes, we&rsquo;ll create a new one for each bias to make six total subplots:</p>
+
+<pre><code class="language-python">df3 = df.copy()
+fig = plt.figure(figsize=(15,15))
+biases = df3['bias'].unique()
+for i, bias in  enumerate(biases):
+# Get top 10 news sources for this bias and sort index alphabetically
+temp_df = df3[df3['bias'] == bias].iloc[:10]
+temp_df.sort_index(inplace=True)
+# Get max votes, i.e. the y value for tallest bar in this temp dataframe
+max_votes = temp_df['total_votes'].max()
+# Add a new subplot in the correct grid position
+ax = fig.add_subplot(len(biases) / 2, 2, i + 1)
+# Create the stacked bars
+ax.bar(temp_df.index, temp_df['agree'], color='#5DAF83')
+ax.bar(temp_df.index, temp_df['disagree'], bottom=temp_df['agree'], color='#AF3B3B')
+# Place text for the ratio on top of each bar
+for x, y, ratio in  zip(ax.get_xticks(), temp_df['total_votes'], temp_df['agree_ratio']):
+ax.text(x, y + (0.02 * max_votes), f&quot;{ratio:.2f}&quot;, ha='center')
+ax.set_ylabel('Total feedback')
+ax.set_title(bias.title())
+# Make y limit larger to compensate for text on bars
+ax.set_ylim(0, max_votes + (0.12 * max_votes))
+# Rotate tick labels so they don't overlap
+plt.setp(ax.get_xticklabels(), rotation=30, ha='right')
+plt.tight_layout(w_pad=3.0, h_pad=1.0)
+plt.show()
+</code></pre>
+
+<p>Hopefully the comments help with how these plots were created. We&rsquo;re just looping through each unique bias and adding a subplot to the figure.</p>
+
+<p>When interpreting these plots keep in mind that the y-axis has different scales for each subplot. Overall it&rsquo;s a nice way to see which outlets have a lot of votes and where the most disagreement is. This is what makes scraping so much fun!</p>
+
+<h2 id="final-words">Final words</h2>
+
+<p>We have the tools to make some fairly complex web scrapers now, but there&rsquo;s still the issue with Javascript rendering. This is something that deserves its own article, but for now we can do quite a lot.</p>
+
+<p>There&rsquo;s also some project organization that needs to occur when making this into a more easily runnable program. We need to pull it out of this notebook and code in command-line arguments if we plan to run it often for updates.</p>
+
+<p>These sorts of things will be addressed later when we build more complex scrapers, but feel free to let me know in the comments of anything in particular you&rsquo;re interested in learning about.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cweb-scraping%5crequest-and-beautifulsoup.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#ultimate-guide-to-web-scraping-with-python-part-1-requests-and-beautifulsoup">Ultimate Guide to Web Scraping with Python Part 1: Requests and BeautifulSoup</a>
+<ul>
+<li><a href="#limit-your-impact-when-scraping">Limit your impact when scraping</a>
+<ul>
+<li><a href="#how-to-save-html-locally">How to save HTML locally</a></li>
+<li><a href="#how-to-open-read-html-from-a-local-file">How to open/read HTML from a local file</a></li>
+<li><a href="#follow-the-rules-for-scrapers-and-bots">Follow the rules for scrapers and bots</a></li>
+</ul></li>
+<li><a href="#scraping-project-getting-media-bias-data">Scraping Project: Getting Media Bias Data</a>
+<ul>
+<li><a href="#making-web-requests">Making web requests</a></li>
+<li><a href="#parsing-html-with-beautifulsoup">Parsing HTML with BeautifulSoup</a>
+<ul>
+<li><a href="#what-does-beautifulsoup-do">What does BeautifulSoup do?</a></li>
+<li><a href="#creating-a-new-soup-object">Creating a new soup object</a></li>
+<li><a href="#finding-elements-and-data">Finding elements and data</a></li>
+</ul></li>
+<li><a href="#let-s-start-getting-data-out-of-a-table">Let&rsquo;s start! Getting data out of a table</a>
+<ul>
+<li><a href="#news-source-name">News source name</a></li>
+</ul></li>
+<li><a href="#news-source-page-link">News source page link</a></li>
+<li><a href="#bias-rating">Bias rating</a></li>
+<li><a href="#community-feedback-data">Community feedback data</a></li>
+<li><a href="#requesting-and-parsing-multiple-pages">Requesting and parsing multiple pages</a></li>
+<li><a href="#saving-our-data">Saving our data</a></li>
+</ul></li>
+<li><a href="#brief-data-analysis">Brief Data Analysis</a>
+<ul>
+<li><a href="#making-analysis-easier-with-pandas">Making analysis easier with Pandas</a>
+<ul>
+<li><a href="#visualizing-the-data">Visualizing the data</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#final-words">Final words</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

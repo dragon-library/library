@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OOP in Python"><meta property="og:title" content="OOP in Python" />
+<meta property="og:description" content="Object Oriented Programming in Python  Introduction Pros and Cons of OOP Class Objects Attributes Methods Constructors Local vs Global Variables Access Modifiers Inheritance Polymorphism Encapsulation Conclusion  Introduction Object-Oriented Programming (OOP) is a programming paradigm where different components of a computer program are modeled after real-world objects. An object is anything that has some characteristics and can perform a function.
+Consider a scenario where you have to develop a Formula 1 car racing game using the object-oriented programming approach." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/oop-in-python/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>OOP in Python | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/"  class="active">
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>OOP in Python</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="object-oriented-programming-in-python">Object Oriented Programming in Python</h1>
+
+<ul>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#introduction">Introduction</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#prosandconsofoop">Pros and Cons of OOP</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#class">Class</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#objects">Objects</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#attributes">Attributes</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#methods">Methods</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#constructors">Constructors</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#localvsglobalvariables">Local vs Global Variables</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#accessmodifiers">Access Modifiers</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#inheritance">Inheritance</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#polymorphism">Polymorphism</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#encapsulation">Encapsulation</a></li>
+<li><a href="https://stackabuse.com/object-oriented-programming-in-python/#conclusion">Conclusion</a></li>
+</ul>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Object-Oriented Programming (OOP) is a programming paradigm where different components of a computer program are modeled after real-world objects. An object is anything that has some characteristics and can perform a function.</p>
+
+<p>Consider a scenario where you have to develop a Formula 1 car racing game using the object-oriented programming approach. The first thing you need to do is to identify real-world objects in the actual Formula 1 race. What are the entities in a Formula 1 race that have some characteristics and can perform any function? One of the obvious answers to this question is the car. A car can have characteristics like engine capacity, make, model, manufacturer, and so on. Similarly, a car can be started, stopped, accelerated and so on. A driver can be another object in a Formula 1 race. A driver has a nationality, age, gender, and so on, and he can perform functionalities like driving the car, moving the steering or changing the transmission.</p>
+
+<p>Just like in this example, in object-oriented programming we will create objects for the corresponding real-world entity.</p>
+
+<p>It is important to mention here that object-oriented programming is not a language-dependent concept. It is a general programming concept and most of the modern languages, such as Java, C#, C++, and Python, support object-oriented programming. In this article, we will see a detailed introduction to Object-Oriented Programming in Python, but before that, we will see some of the advantages and disadvantages of object-oriented programming.</p>
+
+<h3 id="pros-and-cons-of-oop">Pros and Cons of OOP</h3>
+
+<p>Following are some of the advantages of object-oriented programming:</p>
+
+<ul>
+<li>Object-oriented programming fosters reusability. A computer program is written in the form of objects and classes, which can be reused in other projects as well.</li>
+<li>The modular approach used in object-oriented programming results in highly maintainable code.</li>
+<li>In object-oriented programming, every class has a specific task. If an error occurs in one part of the code, you can rectify it locally without having to affect other parts of the code.</li>
+<li>Data encapsulation (which we will study later in the article) adds an extra layer of security to the program developed using the object-oriented approach.</li>
+</ul>
+
+<p>Though object-oriented programming has several advantages as discussed, it has some downsides as well, some of which have been enlisted below:</p>
+
+<ul>
+<li>Detailed domain knowledge of the software being developed is needed in order to create objects. Not every entity in software is a candidate for being implemented as an object. It can be hard for newbies to identify this fine line.</li>
+<li>As you add more and more classes to the code, the size and complexity of the program grows exponentially.</li>
+</ul>
+
+<p>In the next section, we will see some of the most important concepts of object-oriented programming.</p>
+
+<p>As the name suggests, object-oriented programming is all about objects. However, before an object can be created we need to define the class for the object.</p>
+
+<h3 id="class">Class</h3>
+
+<p>A class in object-oriented programming serves as a blueprint for the object. A class can be considered as a map for the house. You can get an idea of what the house looks like by simply seeing the map. However, a class itself is nothing. For instance, a map is not a house, it only explains how the actual house will look.</p>
+
+<p>The relationship between a class and object can be understood by looking at the relationship between a car and an Audi. An Audi is actually a car. However, there is no such thing as a car only. A car is an abstract concept, it is actually implemented in the form of Toyota, Ferrari, Honda, etc.</p>
+
+<p>The keyword  <code>class</code>  is used in order to create a class in Python. The name of the class follows the  <code>class</code>  keyword, followed by the colon character. The body of the class starts on a new line, indented one tab from the left.</p>
+
+<p>Let&rsquo;s see how we can create a very basic class in Python. Take a look at the following code:</p>
+
+<pre><code class="language-python"># Creates class Car
+class Car:
+
+    # create class attributes
+    name = &quot;c200&quot;
+    make = &quot;mercedez&quot;
+    model = 2008
+
+    # create class methods
+    def start(self):
+        print (&quot;Engine started&quot;)
+
+    def stop(self):
+        print (&quot;Engine switched off&quot;)
+
+</code></pre>
+
+<p>In the example above, we create a class named  <code>Car</code>  with three attributes:  <code>name</code>,  <code>make</code>, and  <code>model</code>. The  <code>car</code>  class also contains two methods:  <code>start()</code>  and  <code>stop()</code>.</p>
+
+<h3 id="objects">Objects</h3>
+
+<p>Earlier, we said that a class provides a blueprint. However, to actually use the objects and methods of a class, you need to create an  <em>object</em>  out of that class. There are few class methods and attributes that can be used without an object, which we will see in the later section. For now, just keep in mind that by default, we need to create an object of a class before we can use its methods and attributes.</p>
+
+<p>An object is also called an instance; therefore, the process of creating an object of a class is called  <em>instantiation</em>. In Python, to create an object of a class we simply need to write the class name followed by opening and closing parenthesis.</p>
+
+<p>Let&rsquo;s create an object of the  <code>Car</code>  class that we created in the last section.</p>
+
+<pre><code class="language-python"># Creates car_a object of Car class
+car_a = Car()
+
+# Creates car_b object of car class
+car_b = Car()
+
+</code></pre>
+
+<p>In the script above, we created two objects of the car class:  <code>car_a</code>  and  <code>car_b</code>. To check the type of the objects we created, we can use the  <code>type</code>  method and pass it the name of our object. Execute the following script:</p>
+
+<pre><code class="language-python">print(type(car_b))
+
+</code></pre>
+
+<p>In the output, you will see:</p>
+
+<pre><code>&lt;class '__main__.Car'&gt;
+
+</code></pre>
+
+<p>Which says that the type of  <code>car_b</code>  object is a class  <code>Car</code>.</p>
+
+<p>At this point we&rsquo;ve created our class and the corresponding objects. Now is the time to access class attributes and call class method using the class object. To do so, you simply have to write the object name, followed by dot operator and the name of the attribute or the method that you want to access or call, respectively. Take a look at the following example:</p>
+
+<pre><code class="language-python">car_b.start()
+
+</code></pre>
+
+<p>In the script above, we call the  <code>start()</code>  method via the  <code>car_b</code>  object. The output will be as follows:</p>
+
+<pre><code>Engine started
+
+</code></pre>
+
+<p>Similarly, you can access an attribute using the following syntax:</p>
+
+<pre><code class="language-python">print(car_b.model)
+
+</code></pre>
+
+<p>In the output, you will see the value of the  <code>model</code>  attribute, as shown below:</p>
+
+<pre><code>2008
+
+</code></pre>
+
+<h3 id="attributes">Attributes</h3>
+
+<p>In the previous section, we saw how we can create objects of a class and can use those objects to access the attributes of a class.</p>
+
+<p>In Python, every object has some default attributes and methods in addition to user-defined attributes. To see all the attributes and methods of an object, the built-in  <code>dir()</code>  function can be used. Let&rsquo;s try to see all the attributes of the  <code>car_b</code>  object that we created in the last section. Execute the following script:</p>
+
+<pre><code class="language-python">dir(car_b)
+
+</code></pre>
+
+<p>In the output, you will see the following attributes:</p>
+
+<pre><code>['__class__',
+ '__delattr__',
+ '__dict__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__le__',
+ '__lt__',
+ '__module__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__weakref__',
+ 'make',
+ 'model',
+ 'name',
+ 'start',
+ 'stop']
+
+</code></pre>
+
+<p>This built-in function is useful for inspecting all of the attributes and functions of an object, especially when used via Python&rsquo;s REPL.</p>
+
+<h4 id="class-vs-instance-attributes">Class vs Instance Attributes</h4>
+
+<p>Attributes can be broadly categorized into two types: Class attributes and Instance attributes. Class attributes are shared by all the objects of a class while instance attributes are the exclusive property of the instance.</p>
+
+<p>Remember, an instance is just another name for the object. Instance attributes are declared inside any method while class attributes are declared outside of any method. The following example clarifies the difference:</p>
+
+<pre><code class="language-python">class Car:
+
+    # create class attributes
+    car_count = 0
+
+    # create class methods
+    def start(self, name, make, model):
+        print (&quot;Engine started&quot;)
+        self.name = name
+        self.make = make
+        self.model = model
+        Car.car_count += 1
+
+</code></pre>
+
+<p>In the script above, we create a class  <code>Car</code>  with one class attribute  <code>car_count</code>  and three instance attributes  <code>name</code>,  <code>make</code>  and  <code>mode</code>. The class contains one method  <code>start()</code>  which contains the three instance attributes. The values for the instance attributes are passed as arguments to the  <code>start()</code>  method. Inside the  <code>start</code>  method, the  <code>car_count</code>  attribute is incremented by one.</p>
+
+<p>It is important to mention that inside the method, the instance attributes are referred using the  <code>self</code>  keyword, while class attributes are referred by the class name.</p>
+
+<p>Let&rsquo;s create an object of the  <code>Car</code>  class and call the  <code>start()</code>  method.</p>
+
+<pre><code class="language-python">car_a = Car()
+car_a.start(&quot;Corrola&quot;, &quot;Toyota&quot;, 2015)
+print(car_a.name)
+print(car_a.car_count)
+
+</code></pre>
+
+<p>In the above script we print the instance attribute  <code>name</code>  and class attribute  <code>car_count</code>. You will see in the output that the  <code>car_count</code>  attribute will have a value of 1, as shown below:</p>
+
+<pre><code>Engine started
+Corrola
+1
+
+</code></pre>
+
+<p>Now, let&rsquo;s create another object of the  <code>car</code>  class and call the  <code>start()</code>  method.</p>
+
+<pre><code class="language-python">car_b = Car()
+car_b.start(&quot;City&quot;, &quot;Honda&quot;, 2013)
+print(car_b.name)
+print(car_b.car_count)
+
+</code></pre>
+
+<p>Now if you print the value of the  <code>car_count</code>  attribute, you will see 2 in the output. This is because the  <code>car_count</code>  attribute is a class attribute and hence it is shared between the instances. The  <code>car_a</code>  object incremented its value to 1, while  <code>car_b</code>  object incremented it again, hence the final value became 2. The output looks like this:</p>
+
+<pre><code>Engine started
+City
+2
+
+</code></pre>
+
+<h3 id="methods">Methods</h3>
+
+<p>As we described earlier, in object-oriented programming, the methods are used to implement the functionalities of an object. In the previous section, we created  <code>start()</code>  and  <code>stop()</code>  methods for the  <code>Car</code>  class. Till now, we have been using the objects of a class in order to call the methods. However, there is a type of method that can be called directly using the class name. Such a method is called a  <em>static</em>  method.</p>
+
+<h4 id="static-methods">Static Methods</h4>
+
+<p>To declare a static method, you have to specify the  <code>@staticmethod</code>  descriptor before the name of the method as shown below:</p>
+
+<pre><code class="language-python">class Car:
+
+    @staticmethod
+    def get_class_details():
+        print (&quot;This is a car class&quot;)
+
+Car.get_class_details()
+
+</code></pre>
+
+<p>In the above script, we create a class  <code>Car</code>  with one static method  <code>get_class_details()</code>. Let&rsquo;s call this method using the class name.</p>
+
+<pre><code class="language-python">Car.get_class_details()
+
+</code></pre>
+
+<p>You can see that we did not need to create an instance of the  <code>Car</code>  class in order to call the  <code>get_class_details()</code>  method, rather we simply used the class name. It is important to mention that static methods can only access  <em>class</em>  attributes in Python.</p>
+
+<h4 id="returning-multiple-values-from-a-method">Returning Multiple Values from a Method</h4>
+
+<p>One of the best features of the Python language is the ability of class methods to return multiple values. Take a look at the following example:</p>
+
+<pre><code class="language-python">class Square:
+
+    @staticmethod
+    def get_squares(a, b):
+        return a*a, b*b
+
+print(Square.get_squares(3, 5))
+
+</code></pre>
+
+<p>In the above script, we created a class named  <code>Square</code>  with one static method  <code>get_squares()</code>. The method takes two parameters; multiply each parameter with itself and returns both the results using  <code>return</code>  statement. In the output of the script above, you will see the squares of 3 and 5.</p>
+
+<h4 id="the-str-method">The  <strong>str</strong>  Method</h4>
+
+<p>Till now we have been printing attributes using the  <code>print()</code>  method. Let&rsquo;s see what happens if we print the object of a class.</p>
+
+<p>To do so we&rsquo;ll create a simple  <code>Car</code>  class with one method and try to print the object of the class to the console. Execute the following script:</p>
+
+<pre><code>class Car:
+
+    # create class methods
+    def start(self):
+        print (&quot;Engine started&quot;)
+
+car_a = Car()
+print(car_a)
+
+</code></pre>
+
+<p>In the script above we create  <code>car_a</code>  object of the  <code>Car</code>  class and print its value on the screen. Basically here we are treating  <code>car_a</code>  object as a string. The output looks likes this:</p>
+
+<pre><code>&lt;__main__.Car object at 0x000001CCCF4335C0&gt;
+
+</code></pre>
+
+<p>The output shows the memory location where our object is stored. Every Python object has a  <code>__str__</code>  method by default. When you use the object as a string, the  <code>__str__</code>  method is called, which by default prints the memory location of the object. However, you can provide your own definition for the  <code>__str__</code>  method as well. For instance, look at the following example:</p>
+
+<pre><code class="language-python"># Creates class Car
+class Car:
+
+    # create class methods
+
+    def __str__(self):
+        return &quot;Car class Object&quot;
+
+    def start(self):
+        print (&quot;Engine started&quot;)
+
+car_a = Car()
+print(car_a)
+
+</code></pre>
+
+<p>In the script above, we override the  <code>__str__</code>  method by providing our own custom definition for the method. Now, if you print the  <code>car_a</code>  object, you will see the message &ldquo;Car class Object&rdquo; on the console. This is the message that we printed inside our custom the  <code>__str__</code>  method.</p>
+
+<p>Using this method you can create custom and more meaningful descriptions for when an object is printed. You could even display some of the data within the class, like the  <code>name</code>  of a  <code>Person</code>  class.</p>
+
+<h3 id="constructors">Constructors</h3>
+
+<p>A constructor is a special method that is called by default whenever you create an object of a class.</p>
+
+<p>To create a constructor, you have to create a method with keyword  <code>__init__</code>. Take a look at the following example:</p>
+
+<pre><code class="language-python">class Car:
+
+    # create class attributes
+    car_count = 0
+
+    # create class methods
+    def __init__(self):
+        Car.car_count +=1
+        print(Car.car_count)
+
+</code></pre>
+
+<p>In the script above, we create a  <code>Car</code>  class with one class attribute  <code>car_count</code>. The class contains a constructor which increments the value of  <code>car_count</code>  and prints the resultant value on screen.</p>
+
+<p>Now, whenever an object of the  <code>Car</code>  class will be created the constructor will be called, the value of the  <code>car_count</code>  will be incremented and displayed on the screen. Let&rsquo;s create a simple object and see what happens:</p>
+
+<pre><code class="language-python">car_a = Car()
+car_b = Car()
+car_c = Car()
+
+</code></pre>
+
+<h4 id="subscribe-to-our-newsletter">Subscribe to our Newsletter</h4>
+
+<p>Get occassional tutorials, guides, and reviews in your inbox. No spam ever. Unsubscribe at any time.</p>
+
+<p>Subscribe</p>
+
+<p>In the output, you will see a value of 1, 2, and 3 printed since with every object the value of  <code>car_count</code>  variable is incremented and displayed on the screen.</p>
+
+<p>Except for the name, the constructor can be used as an ordinary method. You can pass and receive values from a constructor. It is usually used in this way when you want to initialize attribute values upon instantiating the class.</p>
+
+<h3 id="local-vs-global-variables">Local vs Global Variables</h3>
+
+<p>We know that there are two types of Python attributes, instance attributes, and class attributes. The attributes of a class are also referred to as variables. Depending on the scope, variables can also be categorized into two types: Local variables and Global variables.</p>
+
+<h4 id="local-variables">Local Variables</h4>
+
+<p>A local variable in a class is a variable that can only be accessed inside the code block where it is defined. For instance, if you define a variable inside a method, it cannot be accessed anywhere outside that method. Look at the following script:</p>
+
+<pre><code class="language-python"># Creates class Car
+class Car:
+    def start(self):
+        message = &quot;Engine started&quot;
+        return message
+
+</code></pre>
+
+<p>In the script above we create a local variable  <code>message</code>  inside the  <code>start()</code>  method of the  <code>Car</code>  class. Now let&rsquo;s create an object of the  <code>Car</code>  class and try to access the local variable  <code>message</code>  as shown below:</p>
+
+<pre><code class="language-python">car_a = Car()
+print(car_a.message)
+
+</code></pre>
+
+<p>The above script will return the following error:</p>
+
+<pre><code>AttributeError: 'Car' object has no attribute 'message'
+
+</code></pre>
+
+<p>This is because we cannot access the local variable outside the block in which the local variable is defined.</p>
+
+<h4 id="global-variable">Global Variable</h4>
+
+<p>A global variable is defined outside of any code block e.g method, if-statements, etc. A global variable can be accessed anywhere in the class. Take a look at the following example.</p>
+
+<pre><code class="language-python"># Creates class Car
+class Car:
+    message1 = &quot;Engine started&quot;
+
+    def start(self):
+        message2 = &quot;Car started&quot;
+        return message2
+
+car_a = Car()
+print(car_a.message1)
+
+</code></pre>
+
+<p>In the script above, we created a global variable  <code>message1</code>  and printed its value on the screen. In the output, you will see the value of the  <code>message1</code>  variable, printed without an error.</p>
+
+<p>It is important to mention that there is a difference between class and instance attributes, and local vs global variables. The class and instance attributes differ in the way they are accessed i.e. using class name and using instance name. On the other hand, local vs global variables differ in their scope, or in other words the place where they can be accessed. A local variable can only be accessed inside the method. Though in this article, both the local variable and instance attributes are defined inside the method, local attribute is defined with the self-keyword.</p>
+
+<h3 id="access-modifiers">Access Modifiers</h3>
+
+<p>The access modifiers in Python are used to modify the default scope of variables. There are three types of access modifiers in Python: public, private, and protected.</p>
+
+<p>Variables with the public access modifiers can be accessed anywhere inside or outside the class, the private variables can only be accessed inside the class, while protected variables can be accessed within the same package.</p>
+
+<p>To create a private variable, you need to prefix double underscores with the name of the variable. To create a protected variable, you need to prefix a single underscore with the variable name. For public variables, you do not have to add any prefixes at all.</p>
+
+<p>Let&rsquo;s see public, private, and protected variables in action. Execute the following script:</p>
+
+<pre><code class="language-python">class Car:
+    def __init__(self):
+        print (&quot;Engine started&quot;)
+        self.name = &quot;corolla&quot;
+        self.__make = &quot;toyota&quot;
+        self._model = 1999
+
+</code></pre>
+
+<p>In the script above, we create a simple  <code>Car</code>  class with a constructor and three variables  <code>name</code>,  <code>make</code>, and  <code>model</code>. The  <code>name</code>  variable is public while the  <code>make</code>  and  <code>model</code>  variables have been declared private and protected, respectively.</p>
+
+<p>Let&rsquo;s create an object of the  <code>Car</code>  class and try to access the  <code>name</code>  variable. Execute the following script:</p>
+
+<pre><code class="language-python">car_a = Car()
+print(car_a.name)
+
+</code></pre>
+
+<p>Since  <code>name</code>  is a public variable, therefore we can access it outside the class. In the output, you will see the value for the  <code>name</code>  printed on the console.</p>
+
+<p>Now let&rsquo;s try to print the value of the  <code>make</code>  variable. Execute the following script:</p>
+
+<pre><code class="language-python">print(car_a.make)
+
+</code></pre>
+
+<p>In the output, you will see the following error message:</p>
+
+<pre><code>AttributeError: 'Car' object has no attribute 'make'
+
+</code></pre>
+
+<p>We have covered most of the basic object-oriented programming concepts in the last few sections. Now, let&rsquo;s talk about the pillars of the object-oriented programming: Polymorphism, Inheritance, and Encapsulation, collectively referred to as PIE.</p>
+
+<h3 id="inheritance">Inheritance</h3>
+
+<p>Inheritance in object-oriented programming is pretty similar to real-world inheritance where a child inherits some of the characteristics from his parents, in addition to his/her own unique characteristics.</p>
+
+<p>In object-oriented programming, inheritance signifies an IS-A relation. For instance, a car  <em>is a</em>  vehicle. Inheritance is one of the most amazing concepts of object-oriented programming as it fosters code re-usability.</p>
+
+<p>The basic idea of inheritance in object-oriented programming is that a class can inherit the characteristics of another class. The class which inherits another class is called the  <em>child class</em>  or derived class, and the class which is inherited by another class is called  <em>parent</em>  or base class.</p>
+
+<p>Let&rsquo;s take a look at a very simple example of inheritance. Execute the following script:</p>
+
+<pre><code class="language-python"># Create Class Vehicle
+class Vehicle:
+    def vehicle_method(self):
+        print(&quot;This is parent Vehicle class method&quot;)
+
+# Create Class Car that inherits Vehicle
+class Car(Vehicle):
+    def car_method(self):
+        print(&quot;This is child Car class method&quot;)
+
+</code></pre>
+
+<p>In the script above, we create two classes  <code>Vehicle</code>  class, and the  <code>Car</code>  class which inherits the  <code>Vehicle</code>  class. To inherit a class, you simply have to write the parent class name inside the parenthesis that follows the child class name. The  <code>Vehicle</code>  class contains a method  <code>vehicle_method()</code>  and the child class contains a method  <code>car_method()</code>. However, since the  <code>Car</code>  class inherits the  <code>Vehicle</code>  class, it will  <em>also</em>  inherit the  <code>vehicle_method()</code>.</p>
+
+<p>Let&rsquo;s see this in action. Execute the following script:</p>
+
+<pre><code class="language-python">car_a = Car()
+car_a.vehicle_method() # Calling parent class method
+
+</code></pre>
+
+<p>In the script above, we create an object of the  <code>Car</code>  class and call the  <code>vehicle_method()</code>  using that  <code>Car</code>  class object. You can see that the  <code>Car</code>  class doesn&rsquo;t have any  <code>vehicle_method()</code>  but since it has inherited the  <code>Vehicle</code>  class that contains the  <code>vehicle_method()</code>, the car class can also use it. The output looks likes this:</p>
+
+<pre><code>This is parent Vehicle class method
+
+</code></pre>
+
+<p>In Python, a parent class can have multiple children and similarly, a child class can have multiple parent classes. Let&rsquo;s take a look at the first scenario. Execute the following script:</p>
+
+<pre><code class="language-python"># Create Class Vehicle
+class Vehicle:
+    def vehicle_method(self):
+        print(&quot;This is parent Vehicle class method&quot;)
+
+# Create Class Car that inherits Vehicle
+class Car(Vehicle):
+    def car_method(self):
+        print(&quot;This is child Car class method&quot;)
+
+# Create Class Cycle that inherits Vehicle
+class Cycle(Vehicle):
+    def cycleMethod(self):
+        print(&quot;This is child Cycle class method&quot;)
+
+</code></pre>
+
+<p>In the script above the parent  <code>Vehicle</code>  class is inherited by two child classes  <code>Car</code>  and  <code>Cycle</code>. Both the child classes will have access to the  <code>vehicle_method()</code>  of the parent class. Execute the following script to see that:</p>
+
+<pre><code class="language-python">car_a = Car()
+car_a.vehicle_method() # Calling parent class method
+car_b = Cycle()
+car_b.vehicle_method() # Calling parent class method
+
+</code></pre>
+
+<p>In the output, you will see the output of the  <code>vehicle_method()</code>  method twice as shown below:</p>
+
+<pre><code>This is parent Vehicle class method
+This is parent Vehicle class method
+
+</code></pre>
+
+<p>You can see how a parent class can be inherited by two child classes. In the same way, a child can have multiple parents. Let&rsquo;s take a look at the example:</p>
+
+<pre><code class="language-python">class Camera:
+    def camera_method(self):
+        print(&quot;This is parent Camera class method&quot;)
+
+class Radio:
+    def radio_method(self):
+        print(&quot;This is parent Radio class method&quot;)
+
+class CellPhone(Camera, Radio):
+     def cell_phone_method(self):
+        print(&quot;This is child CellPhone class method&quot;)
+
+</code></pre>
+
+<p>In the script above, we create three classes:  <code>Camera</code>,  <code>Radio</code>, and  <code>CellPhone</code>. The  <code>Camera</code>  class and the  <code>Radio</code>  classes are inherited by the  <code>CellPhone</code>class which means that the  <code>CellPhone</code>  class will have access to the methods of both  <code>Camera</code>  and  <code>Radio</code>  classes. The following script verifies this:</p>
+
+<pre><code class="language-python">cell_phone_a = CellPhone()
+cell_phone_a.camera_method()
+cell_phone_a.radio_method()
+
+</code></pre>
+
+<p>The output looks likes this:</p>
+
+<pre><code>This is parent Camera class method
+This is parent Radio class method
+
+</code></pre>
+
+<h3 id="polymorphism">Polymorphism</h3>
+
+<p>The term polymorphism literally means having multiple forms. In the context of object-oriented programming, polymorphism refers to the ability of an object to behave in multiple ways.</p>
+
+<p>Polymorphism in programming is implemented via method-overloading and method overriding.</p>
+
+<h4 id="method-overloading">Method Overloading</h4>
+
+<p>Method overloading refers to the property of a method to behave in different ways depending upon the number or types of the parameters. Take a look at a very simple example of method overloading. Execute the following script:</p>
+
+<pre><code class="language-python"># Creates class Car
+class Car:
+   def start(self, a, b=None):
+        if b is not None:
+            print (a + b)
+        else:
+            print (a)
+
+</code></pre>
+
+<p>In the script above, if the  <code>start()</code>  method is called by passing a single argument, the parameter will be printed on the screen. However, if we pass 2 arguments to the  <code>start()</code>  method, it will add both the arguments and will print the result of the sum.</p>
+
+<p>Let&rsquo;s try with single argument first:</p>
+
+<pre><code class="language-python">car_a = Car()
+car_a.start(10)
+
+</code></pre>
+
+<p>In the output, you will see 10. Now let&rsquo;s try to pass 2 arguments:</p>
+
+<pre><code class="language-python">car_a.start(10,20)
+
+</code></pre>
+
+<p>In the output, you will see 30.</p>
+
+<h4 id="method-overriding">Method Overriding</h4>
+
+<p>Method overriding refers to having a method with the same name in the child class as in the parent class. The definition of the method differs in parent and child classes but the name remains the same. Let&rsquo;s take a simple example method overriding in Python.</p>
+
+<pre><code class="language-python"># Create Class Vehicle
+class Vehicle:
+    def print_details(self):
+        print(&quot;This is parent Vehicle class method&quot;)
+
+# Create Class Car that inherits Vehicle
+class Car(Vehicle):
+    def print_details(self):
+        print(&quot;This is child Car class method&quot;)
+
+# Create Class Cycle that inherits Vehicle
+class Cycle(Vehicle):
+    def print_details(self):
+        print(&quot;This is child Cycle class method&quot;)
+
+</code></pre>
+
+<p>In the script above the  <code>Car</code>  and  <code>Cycle</code>  classes inherit the  <code>Vehicle</code>  class. The vehicle class has  <code>print_details()</code>  method, which is overridden by the child classes. Now if you call the  <code>print_details()</code>  method, the output will depend upon the object through which the method is being called. Execute the following script to see this concept in action:</p>
+
+<pre><code class="language-python">car_a = Vehicle()
+car_a. print_details()
+
+car_b = Car()
+car_b.print_details()
+
+car_c = Cycle()
+car_c.print_details()
+
+</code></pre>
+
+<p>The output will look like this:</p>
+
+<pre><code>This is parent Vehicle class method
+This is child Car class method
+This is child Cycle class method
+
+</code></pre>
+
+<p>You can see that the output is different, although the  <code>print_details()</code>  method is being called through derived classes of the same base class. However, since the child classes have overridden the parent class method, the methods behave differently.</p>
+
+<h3 id="encapsulation">Encapsulation</h3>
+
+<p>Encapsulation is the third pillar of object-oriented programming. Encapsulation simply refers to data hiding. As a general principle, in object-oriented programming, one class should not have direct access to the data of the other class. Rather, the access should be controlled via class methods.</p>
+
+<p>To provide controlled access to class data in Python, the access modifiers and properties are used. We have already seen access modifiers, in this section, we will see properties in action.</p>
+
+<p>Suppose we want to ensure that the car model should always be between 2000 and 2018. If a user tries to enter a value less than 2000 for the car model, the value is automatically set to 2000 and if the entered value is greater than 2018, it should be set to 2018. If the value is between 2000 and 2018, it should not be changed. We can create a property for the model attribute which implements this logic as follows:</p>
+
+<pre><code class="language-python"># Creates class Car
+class Car:
+
+    # Creates Car class constructor
+    def __init__(self, model):
+        # initialize instance variables
+        self.model = model
+
+    # Creates model property
+    @property
+    def model(self):
+        return self.__model
+
+    # Create property setter
+    @model.setter
+    def model(self, model):
+        if model &lt; 2000:
+            self.__model = 2000
+        elif model &gt; 2018:
+            self.__model = 2018
+        else:
+            self.__model = model
+
+    def getCarModel(self):
+        return &quot;The car model is &quot; + str(self.model)
+    
+carA = Car(2088)
+print(carA.getCarModel())
+
+</code></pre>
+
+<p>A property has three parts. You have to define the attribute, which is  <code>model</code>  in the above script. Next, you have to define the property for the attribute using the  <a href="https://stackabuse.com/the-python-property-decorator/">@property decorator</a>. Finally, you have to create property setter which is  <code>@model.setter</code>  descriptor in the above script.</p>
+
+<p>Now, if you try to enter a value greater than 2018 for the model attribute, you will see that the value is set to 2018. Let&rsquo;s test this. Execute the following script:</p>
+
+<pre><code class="language-python">car_a = Car(2088)
+print(car_a.get_car_model())
+
+</code></pre>
+
+<p>Here we are passing 2088 as the value for  <code>model</code>, however if you print the value for the  <code>model</code>  attribute via  <code>get_car_model()</code>  function, you will see 2018 in the output.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In this article, we studied some of the most important object-oriented programming concepts. Object-oriented programming is one of the most famous and commonly used programming paradigms. The importance of object-oriented programming is reflected by the fact that most of the modern programming languages are either fully object-oriented or support object-oriented programming.</p>
+
+<p>Ref : <a href="https://stackabuse.com/object-oriented-programming-in-python/">https://stackabuse.com/object-oriented-programming-in-python/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5coop-in-python.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#object-oriented-programming-in-python">Object Oriented Programming in Python</a>
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#pros-and-cons-of-oop">Pros and Cons of OOP</a></li>
+<li><a href="#class">Class</a></li>
+<li><a href="#objects">Objects</a></li>
+<li><a href="#attributes">Attributes</a>
+<ul>
+<li><a href="#class-vs-instance-attributes">Class vs Instance Attributes</a></li>
+</ul></li>
+<li><a href="#methods">Methods</a>
+<ul>
+<li><a href="#static-methods">Static Methods</a></li>
+<li><a href="#returning-multiple-values-from-a-method">Returning Multiple Values from a Method</a></li>
+<li><a href="#the-str-method">The  <strong>str</strong>  Method</a></li>
+</ul></li>
+<li><a href="#constructors">Constructors</a>
+<ul>
+<li><a href="#subscribe-to-our-newsletter">Subscribe to our Newsletter</a></li>
+</ul></li>
+<li><a href="#local-vs-global-variables">Local vs Global Variables</a>
+<ul>
+<li><a href="#local-variables">Local Variables</a></li>
+<li><a href="#global-variable">Global Variable</a></li>
+</ul></li>
+<li><a href="#access-modifiers">Access Modifiers</a></li>
+<li><a href="#inheritance">Inheritance</a></li>
+<li><a href="#polymorphism">Polymorphism</a>
+<ul>
+<li><a href="#method-overloading">Method Overloading</a></li>
+<li><a href="#method-overriding">Method Overriding</a></li>
+</ul></li>
+<li><a href="#encapsulation">Encapsulation</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

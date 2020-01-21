@@ -17,11 +17,20 @@ Config basics Every Flask application has a global config object which can be ac
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
 
 
-<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -92,6 +101,78 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
     
       
         
@@ -267,14 +348,34 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
-  </ul>
-  
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
-  </li>
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
       
     
   </ul>
@@ -290,21 +391,21 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/library/tutorials/docs/python/pythonthailand/" >
-      Python Thailand
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
   </a>
 
 </li>
       
     
-      
-        <li>
+  </ul>
+  
 
-  <a href="/library/tutorials/docs/python/awesome/" >
-      Awesome Python
-  </a>
 
-</li>
+
+  </li>
+
+
       
     
       
@@ -399,6 +500,32 @@ https://github.com/alex-shpak/hugo-book
 
       
     
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
   </ul>
   
 
@@ -466,36 +593,36 @@ https://github.com/alex-shpak/hugo-book
 
 <p>You&rsquo;ll see:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">{<span style="color:#e6db74">&#39;APPLICATION_ROOT&#39;</span>: <span style="color:#e6db74">&#39;/&#39;</span>,
- <span style="color:#e6db74">&#39;DEBUG&#39;</span>: True,
- <span style="color:#e6db74">&#39;ENV&#39;</span>: <span style="color:#e6db74">&#39;development&#39;</span>,
- <span style="color:#e6db74">&#39;EXPLAIN_TEMPLATE_LOADING&#39;</span>: False,
- <span style="color:#e6db74">&#39;JSONIFY_MIMETYPE&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
- <span style="color:#e6db74">&#39;JSONIFY_PRETTYPRINT_REGULAR&#39;</span>: False,
- <span style="color:#e6db74">&#39;JSON_AS_ASCII&#39;</span>: True,
- <span style="color:#e6db74">&#39;JSON_SORT_KEYS&#39;</span>: True,
- <span style="color:#e6db74">&#39;MAX_CONTENT_LENGTH&#39;</span>: None,
- <span style="color:#e6db74">&#39;MAX_COOKIE_SIZE&#39;</span>: <span style="color:#ae81ff">4093</span>,
- <span style="color:#e6db74">&#39;PERMANENT_SESSION_LIFETIME&#39;</span>: datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">31</span>),
- <span style="color:#e6db74">&#39;PREFERRED_URL_SCHEME&#39;</span>: <span style="color:#e6db74">&#39;http&#39;</span>,
- <span style="color:#e6db74">&#39;PRESERVE_CONTEXT_ON_EXCEPTION&#39;</span>: None,
- <span style="color:#e6db74">&#39;PROPAGATE_EXCEPTIONS&#39;</span>: None,
- <span style="color:#e6db74">&#39;SECRET_KEY&#39;</span>: None,
- <span style="color:#e6db74">&#39;SEND_FILE_MAX_AGE_DEFAULT&#39;</span>: datetime<span style="color:#f92672">.</span>timedelta(seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">43200</span>),
- <span style="color:#e6db74">&#39;SERVER_NAME&#39;</span>: None,
- <span style="color:#e6db74">&#39;SESSION_COOKIE_DOMAIN&#39;</span>: None,
- <span style="color:#e6db74">&#39;SESSION_COOKIE_HTTPONLY&#39;</span>: True,
- <span style="color:#e6db74">&#39;SESSION_COOKIE_NAME&#39;</span>: <span style="color:#e6db74">&#39;session&#39;</span>,
- <span style="color:#e6db74">&#39;SESSION_COOKIE_PATH&#39;</span>: None,
- <span style="color:#e6db74">&#39;SESSION_COOKIE_SAMESITE&#39;</span>: None,
- <span style="color:#e6db74">&#39;SESSION_COOKIE_SECURE&#39;</span>: False,
- <span style="color:#e6db74">&#39;SESSION_REFRESH_EACH_REQUEST&#39;</span>: True,
- <span style="color:#e6db74">&#39;TEMPLATES_AUTO_RELOAD&#39;</span>: None,
- <span style="color:#e6db74">&#39;TESTING&#39;</span>: False,
- <span style="color:#e6db74">&#39;TRAP_BAD_REQUEST_ERRORS&#39;</span>: None,
- <span style="color:#e6db74">&#39;TRAP_HTTP_EXCEPTIONS&#39;</span>: False,
- <span style="color:#e6db74">&#39;USE_X_SENDFILE&#39;</span>: False}
- </code></pre></div>
+<pre><code class="language-py">{'APPLICATION_ROOT': '/',
+ 'DEBUG': True,
+ 'ENV': 'development',
+ 'EXPLAIN_TEMPLATE_LOADING': False,
+ 'JSONIFY_MIMETYPE': 'application/json',
+ 'JSONIFY_PRETTYPRINT_REGULAR': False,
+ 'JSON_AS_ASCII': True,
+ 'JSON_SORT_KEYS': True,
+ 'MAX_CONTENT_LENGTH': None,
+ 'MAX_COOKIE_SIZE': 4093,
+ 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31),
+ 'PREFERRED_URL_SCHEME': 'http',
+ 'PRESERVE_CONTEXT_ON_EXCEPTION': None,
+ 'PROPAGATE_EXCEPTIONS': None,
+ 'SECRET_KEY': None,
+ 'SEND_FILE_MAX_AGE_DEFAULT': datetime.timedelta(seconds=43200),
+ 'SERVER_NAME': None,
+ 'SESSION_COOKIE_DOMAIN': None,
+ 'SESSION_COOKIE_HTTPONLY': True,
+ 'SESSION_COOKIE_NAME': 'session',
+ 'SESSION_COOKIE_PATH': None,
+ 'SESSION_COOKIE_SAMESITE': None,
+ 'SESSION_COOKIE_SECURE': False,
+ 'SESSION_REFRESH_EACH_REQUEST': True,
+ 'TEMPLATES_AUTO_RELOAD': None,
+ 'TESTING': False,
+ 'TRAP_BAD_REQUEST_ERRORS': None,
+ 'TRAP_HTTP_EXCEPTIONS': False,
+ 'USE_X_SENDFILE': False}
+</code></pre>
 
 <p>These are the default built-in configuration variables, which we can modify and change.</p>
 
@@ -530,19 +657,21 @@ print(app.config[&quot;SECRET_KEY&quot;])</code></p>
 
 <p><strong>config.py</strong></p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Config</span>(object):
-    DEBUG <span style="color:#f92672">=</span> False
-    TESTING <span style="color:#f92672">=</span> False
+<pre><code class="language-py">class Config(object):
+    DEBUG = False
+    TESTING = False
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductionConfig</span>(Config):
-    <span style="color:#66d9ef">pass</span>
+class ProductionConfig(Config):
+    pass
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DevelopmentConfig</span>(Config):
-    DEBUG <span style="color:#f92672">=</span> True
+class DevelopmentConfig(Config):
+    DEBUG = True
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestingConfig</span>(Config):
-    TESTING <span style="color:#f92672">=</span> True</code></pre></div>
-We first create the  <code>Config</code>  class and set some default attributes. In this case, we&rsquo;ve set  <code>DEBUG</code>  and  <code>TESTING</code>  to  <code>False</code>.</p>
+class TestingConfig(Config):
+    TESTING = True
+</code></pre>
+
+<p>We first create the  <code>Config</code>  class and set some default attributes. In this case, we&rsquo;ve set  <code>DEBUG</code>  and  <code>TESTING</code>  to  <code>False</code>.</p>
 
 <p>We then create 3 more classes, each of which inherits the  <code>Config</code>  class and attributes.</p>
 
@@ -556,42 +685,44 @@ We first create the  <code>Config</code>  class and set some default attributes.
 
 <p>Let&rsquo;s populate our config file with some attributes:</p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Config</span>(object):
-    DEBUG <span style="color:#f92672">=</span> False
-    TESTING <span style="color:#f92672">=</span> False
-    SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;B</span><span style="color:#ae81ff">\xb2</span><span style="color:#e6db74">?.</span><span style="color:#ae81ff">\xdf\x9f\xa7</span><span style="color:#e6db74">m</span><span style="color:#ae81ff">\xf8\x8a</span><span style="color:#e6db74">%,</span><span style="color:#ae81ff">\xf7\xc4\xfa\x91</span><span style="color:#e6db74">&#34;</span>
+<pre><code class="language-py">class Config(object):
+    DEBUG = False
+    TESTING = False
+    SECRET_KEY = &quot;B\xb2?.\xdf\x9f\xa7m\xf8\x8a%,\xf7\xc4\xfa\x91&quot;
 
-    DB_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;production-db&#34;</span>
-    DB_USERNAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;admin&#34;</span>
-    DB_PASSWORD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;example&#34;</span>
+    DB_NAME = &quot;production-db&quot;
+    DB_USERNAME = &quot;admin&quot;
+    DB_PASSWORD = &quot;example&quot;
 
-    IMAGE_UPLOADS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/home/username/app/app/static/images/uploads&#34;</span>
+    IMAGE_UPLOADS = &quot;/home/username/app/app/static/images/uploads&quot;
 
-    SESSION_COOKIE_SECURE <span style="color:#f92672">=</span> True
+    SESSION_COOKIE_SECURE = True
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductionConfig</span>(Config):
-    <span style="color:#66d9ef">pass</span>
+class ProductionConfig(Config):
+    pass
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DevelopmentConfig</span>(Config):
-    DEBUG <span style="color:#f92672">=</span> True
+class DevelopmentConfig(Config):
+    DEBUG = True
 
-    DB_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;development-db&#34;</span>
-    DB_USERNAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;admin&#34;</span>
-    DB_PASSWORD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;example&#34;</span>
+    DB_NAME = &quot;development-db&quot;
+    DB_USERNAME = &quot;admin&quot;
+    DB_PASSWORD = &quot;example&quot;
 
-    IMAGE_UPLOADS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/home/username/projects/my_app/app/static/images/uploads&#34;</span>
+    IMAGE_UPLOADS = &quot;/home/username/projects/my_app/app/static/images/uploads&quot;
 
-    SESSION_COOKIE_SECURE <span style="color:#f92672">=</span> False
+    SESSION_COOKIE_SECURE = False
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestingConfig</span>(Config):
-    TESTING <span style="color:#f92672">=</span> True
+class TestingConfig(Config):
+    TESTING = True
 
-    DB_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;development-db&#34;</span>
-    DB_USERNAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;admin&#34;</span>
-    DB_PASSWORD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;example&#34;</span>
+    DB_NAME = &quot;development-db&quot;
+    DB_USERNAME = &quot;admin&quot;
+    DB_PASSWORD = &quot;example&quot;
 
-    SESSION_COOKIE_SECURE <span style="color:#f92672">=</span> False</code></pre></div>
-We&rsquo;ve assigned new values to some of the built-in config variables and created some of our own.</p>
+    SESSION_COOKIE_SECURE = False
+</code></pre>
+
+<p>We&rsquo;ve assigned new values to some of the built-in config variables and created some of our own.</p>
 
 <p>Production level attributes have been placed in the parent  <code>Config</code>  class which will be inherited by the  <code>ProductionConfig</code>  class, hence the  <code>pass</code>.</p>
 
@@ -607,21 +738,32 @@ We&rsquo;ve assigned new values to some of the built-in config variables and cre
 
 <p><code>app.config.from_object(&quot;config_filename.ConfigClass&quot;)</code></p>
 
-<p>For example, if we want to load the  <code>DevelopmentConfig</code>  class, we would do the following:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">app<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>from_object(<span style="color:#e6db74">&#34;config.DevelopmentConfig&#34;</span>)</code></pre></div>
-For  <code>ProductionConfig</code>:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">app<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>from_object(<span style="color:#e6db74">&#34;config.ProductionConfig&#34;</span>) </code></pre></div>
-In our case, we&rsquo;ve placed this line in our  <code>__init__.py</code>  file, just underneath creating our  <code>app</code>  object:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">app <span style="color:#f92672">=</span> Flask(__name__)
-app<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>from_object(<span style="color:#e6db74">&#34;config.DevelopmentConfig&#34;</span>)</code></pre></div>
-The config has now been registered on the app and is now accessible from any part of your application.</p>
+<p>For example, if we want to load the  <code>DevelopmentConfig</code>  class, we would do the following:</p>
 
-<p>For example, you may want to connect to a local database using the  <code>DevelopmentConfig</code>  settings in a different part or file in your app:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">connect(
-    name<span style="color:#f92672">=</span>app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;DB_NAME&#34;</span>],
-    username<span style="color:#f92672">=</span>app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;DB_USERNAME&#34;</span>],
-    password<span style="color:#f92672">=</span>app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;DB_PASSWORD&#34;</span>]
-)</code></pre></div></p>
+<pre><code class="language-py">app.config.from_object(&quot;config.DevelopmentConfig&quot;)
+</code></pre>
+
+<p>For  <code>ProductionConfig</code>:</p>
+
+<pre><code class="language-py">app.config.from_object(&quot;config.ProductionConfig&quot;) 
+</code></pre>
+
+<p>In our case, we&rsquo;ve placed this line in our  <code>__init__.py</code>  file, just underneath creating our  <code>app</code>  object:</p>
+
+<pre><code class="language-py">app = Flask(__name__)
+app.config.from_object(&quot;config.DevelopmentConfig&quot;)
+</code></pre>
+
+<p>The config has now been registered on the app and is now accessible from any part of your application.</p>
+
+<p>For example, you may want to connect to a local database using the  <code>DevelopmentConfig</code>  settings in a different part or file in your app:</p>
+
+<pre><code class="language-py">connect(
+    name=app.config[&quot;DB_NAME&quot;],
+    username=app.config[&quot;DB_USERNAME&quot;],
+    password=app.config[&quot;DB_PASSWORD&quot;]
+)
+</code></pre>
 
 <h3 id="flask-env">Flask ENV</h3>
 
@@ -633,46 +775,56 @@ The config has now been registered on the app and is now accessible from any par
 
 <p>Setting  <code>FLASK_ENV=development</code>  enables the debugger, which should never, ever be done in production!</p>
 
-<p>I&rsquo;ve found a nice pattern is to load a config based on the  <code>ENV</code>  environment variable. We can do so with the following:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">app <span style="color:#f92672">=</span> Flask(__name__)
+<p>I&rsquo;ve found a nice pattern is to load a config based on the  <code>ENV</code>  environment variable. We can do so with the following:</p>
 
-<span style="color:#66d9ef">if</span> app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;ENV&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;production&#34;</span>:
-    app<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>from_object(<span style="color:#e6db74">&#34;config.ProductionConfig&#34;</span>)
-<span style="color:#66d9ef">else</span>:
-    app<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>from_object(<span style="color:#e6db74">&#34;config.DevelopmentConfig&#34;</span>)</code></pre></div></p>
+<pre><code class="language-py">app = Flask(__name__)
+
+if app.config[&quot;ENV&quot;] == &quot;production&quot;:
+    app.config.from_object(&quot;config.ProductionConfig&quot;)
+else:
+    app.config.from_object(&quot;config.DevelopmentConfig&quot;)
+</code></pre>
 
 <p>This pattern allows us to leave our code alone and control the config environment outside the application by setting the  <code>FLASK_ENV</code>  environment variable in the terminal.</p>
 
-<p>To illustrate this, we&rsquo;ll change our  <code>FLASK_ENV</code>  and print it after loading the config:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">if</span> app<span style="color:#f92672">.</span>config[<span style="color:#e6db74">&#34;ENV&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;production&#34;</span>:
-    app<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>from_object(<span style="color:#e6db74">&#34;config.ProductionConfig&#34;</span>)
-<span style="color:#66d9ef">else</span>:
-    app<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>from_object(<span style="color:#e6db74">&#34;config.DevelopmentConfig&#34;</span>)
+<p>To illustrate this, we&rsquo;ll change our  <code>FLASK_ENV</code>  and print it after loading the config:</p>
 
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;ENV is set to: {app.config[&#34;ENV&#34;]}&#39;</span>)</code></pre></div>
-In the terminal, run the following to set  <code>FLASK_ENV</code>  to  <code>development</code></p>
+<pre><code class="language-py">if app.config[&quot;ENV&quot;] == &quot;production&quot;:
+    app.config.from_object(&quot;config.ProductionConfig&quot;)
+else:
+    app.config.from_object(&quot;config.DevelopmentConfig&quot;)
+
+print(f'ENV is set to: {app.config[&quot;ENV&quot;]}')
+</code></pre>
+
+<p>In the terminal, run the following to set  <code>FLASK_ENV</code>  to  <code>development</code></p>
 
 <p><code>export FLASK_ENV=development</code></p>
 
-<p>Run  <code>flask run</code>  and watch your terminal, you&rsquo;ll see:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#960050;background-color:#1e0010">$</span> flask run
+<p>Run  <code>flask run</code>  and watch your terminal, you&rsquo;ll see:</p>
 
- <span style="color:#f92672">*</span> Serving Flask app <span style="color:#e6db74">&#34;run.py&#34;</span> (lazy loading)
- <span style="color:#f92672">*</span> Environment: development
- <span style="color:#f92672">*</span> Debug mode: on
-ENV <span style="color:#f92672">is</span> set to: development</code></pre></div>
-Now repeat the process, changing  <code>FLASK_ENV</code>  to production:</p>
+<pre><code class="language-py">$ flask run
+
+ * Serving Flask app &quot;run.py&quot; (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ENV is set to: development
+</code></pre>
+
+<p>Now repeat the process, changing  <code>FLASK_ENV</code>  to production:</p>
 
 <p><code>export FLASK_ENV=production</code></p>
 
-<p>Run  <code>flask run</code>  again and you&rsquo;ll see:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#960050;background-color:#1e0010">$</span> flask run
- <span style="color:#f92672">*</span> Serving Flask app <span style="color:#e6db74">&#34;run.py&#34;</span>
- <span style="color:#f92672">*</span> Environment: production
-   WARNING: Do <span style="color:#f92672">not</span> use the development server <span style="color:#f92672">in</span> a production environment<span style="color:#f92672">.</span>
-   Use a production WSGI server instead<span style="color:#f92672">.</span>
- <span style="color:#f92672">*</span> Debug mode: off
-ENV <span style="color:#f92672">is</span> set to: production</code></pre></div></p>
+<p>Run  <code>flask run</code>  again and you&rsquo;ll see:</p>
+
+<pre><code class="language-py">$ flask run
+ * Serving Flask app &quot;run.py&quot;
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ENV is set to: production
+</code></pre>
 
 <p>Flask gives us a big red warning when the environment is set to production, just to drill home the importance of not running the development server in a production environment.</p>
 

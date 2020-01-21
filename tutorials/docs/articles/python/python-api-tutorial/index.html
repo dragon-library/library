@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Getting Started with APIs"><meta property="og:title" content="Getting Started with APIs" />
+<meta property="og:description" content="Python API Tutorial: Getting Started with APIs In this Python API tutorial, we’ll learn how to retrieve data for data science projects. There are millions of APIs online which provide access to data. Websites like Reddit, Twitter, and Facebook all offer certain data through their APIs.
+To use an API, you make a request to a remote web server, and retrieve the data you need.
+But why use an API instead of a static CSV dataset you can download from the web?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-api-tutorial/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Getting Started with APIs | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/"  class="active">
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Getting Started with APIs</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-api-tutorial-getting-started-with-apis">Python API Tutorial: Getting Started with APIs</h1>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2015/09/iss056e201262.jpg" alt="enter image description here" /></p>
+
+<p>In this Python API tutorial, we’ll learn how to retrieve data for data science projects. There are millions of APIs online which provide access to data. Websites like  <a href="https://www.reddit.com/dev/api/">Reddit</a>,  <a href="https://developer.twitter.com/en/docs.html">Twitter</a>, and  <a href="https://developers.facebook.com/">Facebook</a>  all offer certain data through their APIs.</p>
+
+<p>To use an API, you make a request to a remote web server, and retrieve the data you need.</p>
+
+<p>But why use an API instead of a static CSV dataset you can download from the web? APIs are useful in the following cases:</p>
+
+<ul>
+<li><strong>The data is changing quickly</strong>. An example of this is stock price data. It doesn’t really make sense to regenerate a dataset and download it every minute — this will take a lot of bandwidth, and be pretty slow.</li>
+<li><strong>You want a small piece of a much larger set of data</strong>. Reddit comments are one example. What if you want to just pull your own comments on Reddit? It doesn’t make much sense to download the entire Reddit database, then filter just your own comments.</li>
+<li><strong>There is repeated computation involved</strong>. Spotify has an API that can tell you the genre of a piece of music. You could theoretically create your own classifier, and use it to compute music categories, but you’ll never have as much data as Spotify does.</li>
+</ul>
+
+<p>In cases like the ones above, an API is the right solution. In this blog post, we’ll be querying a simple API to retrieve data about the  <a href="https://en.wikipedia.org/wiki/International_Space_Station">International Space Station</a>  (ISS).</p>
+
+<h2 id="about-this-python-api-tutorial-https-www-dataquest-io-blog-python-api-tutorial-about-this-python-api-tutorial"><a href="https://www.dataquest.io/blog/python-api-tutorial/#About-this-Python-API-Tutorial">About this Python API Tutorial</a></h2>
+
+<p>This tutorial is based on part of our interactive course on APIs and Webscraping in Python, which you can  <a href="https://www.dataquest.io/course/apis-and-scraping/">start for free</a>.</p>
+
+<p>For this tutorial, we assume that you know some of the fundamentals of working with data in Python. If you don’t, you might like to try our  <a href="https://www.dataquest.io/course/python-for-data-science-fundamentals/">free Python Fundamentals course</a>.</p>
+
+<h2 id="what-is-an-api-https-www-dataquest-io-blog-python-api-tutorial-what-is-an-api"><a href="https://www.dataquest.io/blog/python-api-tutorial/#What-is-an-API?">What is an API?</a></h2>
+
+<p>An API, or Application Programming Interface, is a server that you can use to retrieve and send data to using code. APIs are most commonly used to retrieve data, and that will be the focus of this beginner tutorial.</p>
+
+<p>When we want to receive data from an API, we need to make a  <strong>request</strong>. Requests are used all over the web. For instance, when you visited this blog post, your web browser made a request to the Dataquest web server, which responded with the content of this web page</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2019/09/page-request.svg" alt="python api tutorial - page requests" /></p>
+
+<p>API requests work in exactly the same way – you make a request to an API server for data, and it responds to your request.</p>
+
+<h2 id="making-api-requests-in-python-https-www-dataquest-io-blog-python-api-tutorial-making-api-requests-in-python"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Making-API-Requests-in-Python">Making API Requests in Python</a></h2>
+
+<p>In order to work with APIs in Python, we need tools that will make those requests. In Python, the most common library for making requests and working with APIs is the  <a href="https://2.python-requests.org/en/master/"><strong>requests</strong>  library</a>. The requests library isn’t part of the standard Python library, so you’ll need to install it to get started.</p>
+
+<p>If you use pip to manage your Python packages, you can install requests using the following command:</p>
+
+<pre><code class="language-py">pip install requests
+</code></pre>
+
+<p>If you use conda, the command you’ll need is:</p>
+
+<pre><code class="language-py">conda install requests
+</code></pre>
+
+<p>Once you’ve installed the library, you’ll need to import it. Let’s start with that important step:</p>
+
+<pre><code class="language-py">import requests
+</code></pre>
+
+<p>Now that we’ve installed and imported the requests library, let’s start using it.</p>
+
+<h2 id="making-our-first-api-request-https-www-dataquest-io-blog-python-api-tutorial-making-our-first-api-request"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Making-Our-First-API-Request">Making Our First API Request</a></h2>
+
+<p>There are many different types of requests. The most commonly used one, a  <strong>GET</strong>  request, is used to retrieve data. Because we’ll just be working with retrieving data, our focus will be on making ‘get’ requests.</p>
+
+<p>When we make a request, the response from the API comes with a  <strong>response code</strong>  which tells us whether our request was successful. Response codes are important because they immediately tell us if something went wrong.</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2019/09/api-request.svg" alt="" /></p>
+
+<p>To make a ‘GET’ request, we’ll use the  <a href="https://2.python-requests.org/en/master/user/quickstart/#make-a-request"><code>requests.get()</code>  function</a>, which requires one argument — the URL we want to make the request to. We’ll start by making a request to an API endpoint that doesn’t exist, so we can see what that response code looks like.</p>
+
+<pre><code class="language-python">response = requests.get(&quot;http://api.open-notify.org/this-api-doesnt-exist&quot;)
+</code></pre>
+
+<p>The  <code>get()</code>  function returns a  <a href="https://2.python-requests.org/en/master/user/advanced/#request-and-response-objects"><code>response</code>  object</a>. We can use the  <a href="https://2.python-requests.org/en/master/user/quickstart/#response-status-codes"><code>response.status_code</code></a>  attribute to receive the status code for our request:</p>
+
+<pre><code class="language-python">print(response.status_code)
+</code></pre>
+
+<pre><code>404
+</code></pre>
+
+<p>The ‘404’ status code might be familiar to you — it’s the status code that a server returns if it can’t find the file we requested. In this case, we asked for  <code>this-api-doesnt-exist</code>  which (surprise, surprise) didn’t exist!</p>
+
+<p>Let’s learn a little more about common status codes.</p>
+
+<h2 id="api-status-codes-https-www-dataquest-io-blog-python-api-tutorial-api-status-codes"><a href="https://www.dataquest.io/blog/python-api-tutorial/#API-Status-Codes">API Status Codes</a></h2>
+
+<p>Status codes are returned with every request that is made to a web server. Status codes indicate information about what happened with a request. Here are some codes that are relevant to  <em>GET</em>  requests:</p>
+
+<ul>
+<li><code>200</code>: Everything went okay, and the result has been returned (if any).</li>
+<li><code>301</code>: The server is redirecting you to a different endpoint. This can happen when a company switches domain names, or an endpoint name is changed.</li>
+<li><code>400</code>: The server thinks you made a bad request. This can happen when you don’t send along the right data, among other things.</li>
+<li><code>401</code>: The server thinks you’re not authenticated. Many APIs require login ccredentials, so this happens when you don’t send the right credentials to access an API.</li>
+<li><code>403</code>: The resource you’re trying to access is forbidden: you don’t have the right permissions to see it.</li>
+<li><code>404</code>: The resource you tried to access wasn’t found on the server.</li>
+<li><code>503</code>: The server is not ready to handle the request.</li>
+</ul>
+
+<p>You might notice that all of the status codes that begin with a ‘4’ indicate some sort of error. The first number of status codes indicate their categorization. This is useful — you can know that if your status code starts with a ‘2’ it was successful and if it starts with a ‘4’ or ‘5’ there was an error. If you’re interested you can  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">read more about status codes</a></p>
+
+<h2 id="api-documentation-https-www-dataquest-io-blog-python-api-tutorial-api-documentation"><a href="https://www.dataquest.io/blog/python-api-tutorial/#API-Documentation">API Documentation</a></h2>
+
+<p>In order to ensure we make a succesful request, when we work with APIs it’s important to consult the documentation. Documentation can seem scary at first, but as you use documentation more and more you’ll find it gets easier.</p>
+
+<p>We’ll be working with the  <a href="http://open-notify.org/">Open Notify</a>  API, which gives access to data about the international space station. It’s a great API for learning because it has a very simple design, and doesn’t require authentication. We’ll teach you how to use an API that requires authentication in a later post.</p>
+
+<p>Often there will be multiple APIs available on a particular server. Each of these APIs are commonly called  <strong>endpoints</strong>. The first endpoint we’ll use is  <a href="http://open-notify.org/Open-Notify-API/People-In-Space/"><code>http://api.open-notify.org/astros.json</code></a>, which returns data about astronauts currently in space.</p>
+
+<p>If you click the link above to look at the documentation for this endpoint, you’ll see that it says  <em>This API takes no inputs.</em>  This makes it a simple API for us to get started with. We’ll start by making a GET request to the endpoint using the requests library:</p>
+
+<pre><code class="language-python">response = requests.get(&quot;http://api.open-notify.org/astros.json&quot;)
+print(response.status_code)
+</code></pre>
+
+<pre><code>200
+</code></pre>
+
+<p>We received a ‘200’ code which tells us our request was successful. The documentation tells us that the API response we’ll get is in JSON format. In the next section we’ll learn about JSON, but first let’s use the  <a href="https://2.python-requests.org/en/master/user/quickstart/#json-response-content"><code>response.json()</code>  method</a>  to see the data we received back from the API:</p>
+
+<pre><code class="language-python">print(response.json())
+</code></pre>
+
+<pre><code>{'message': 'success', 'people': [{'name': 'Alexey Ovchinin', 'craft': 'ISS'}, {'name': 'Nick Hague', 'craft': 'ISS'}, {'name': 'Christina Koch', 'craft': 'ISS'}, {'name': 'Alexander Skvortsov', 'craft': 'ISS'}, {'name': 'Luca Parmitano', 'craft': 'ISS'}, {'name': 'Andrew Morgan', 'craft': 'ISS'}], 'number': 6}
+</code></pre>
+
+<h2 id="working-with-json-data-in-python-https-www-dataquest-io-blog-python-api-tutorial-working-with-json-data-in-python"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Working-with-JSON-Data-in-Python">Working with JSON Data in Python</a></h2>
+
+<p><a href="http://json.org/">JSON</a>  (JavaScript Object Notation) is the language of APIs. JSON is a way to encode data structures that ensures that they are easily readable by machines. JSON is the primary format in which data is passed back and forth to APIs, and most API servers will send their responses in JSON format.</p>
+
+<p>You might have noticed that the JSON output we received from the API looked like it contained Python dictionaries, lists, strings and integers. You can think of JSON as being a combination of these objects represented as strings. Let’s look at a simple example:</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2019/09/json.svg" alt="" /></p>
+
+<p>Python has great JSON support with the  <a href="https://docs.python.org/3/library/json.html"><code>json</code>  package</a>. The  <code>json</code>  package is part of the standard library, so we don’t have to install anything to use it. We can both convert  <em>lists</em>  and  <em>dictionaries</em>  to JSON, and convert strings to  <em>lists</em>  and  <em>dictionaries</em>. In the case of our ISS Pass data, it is a dictionary encoded to a string in JSON format.</p>
+
+<p>The json library has two main functions:</p>
+
+<ul>
+<li><a href="https://docs.python.org/3/library/json.html#json.dumps"><code>json.dumps()</code></a>  — Takes in a Python object, and converts (dumps) it to a string.</li>
+<li><a href="https://docs.python.org/3/library/json.html#json.loads"><code>json.loads()</code></a>  — Takes a JSON string, and converts (loads) it to a Python object.</li>
+</ul>
+
+<p>The  <code>dumps()</code>  function is particularly useful as we can use it to print a formatted string which makes it easier to understand the JSON output, like in the diagram we saw above:</p>
+
+<pre><code class="language-python">import json
+
+def jprint(obj):
+    # create a formatted string of the Python JSON object
+    text = json.dumps(obj, sort_keys=True, indent=4)
+    print(text)
+
+jprint(response.json())
+</code></pre>
+
+<pre><code>{
+    &quot;message&quot;: &quot;success&quot;,
+    &quot;number&quot;: 6,
+    &quot;people&quot;: [
+        {
+            &quot;craft&quot;: &quot;ISS&quot;,
+            &quot;name&quot;: &quot;Alexey Ovchinin&quot;
+        },
+        {
+            &quot;craft&quot;: &quot;ISS&quot;,
+            &quot;name&quot;: &quot;Nick Hague&quot;
+        },
+        {
+            &quot;craft&quot;: &quot;ISS&quot;,
+            &quot;name&quot;: &quot;Christina Koch&quot;
+        },
+        {
+            &quot;craft&quot;: &quot;ISS&quot;,
+            &quot;name&quot;: &quot;Alexander Skvortsov&quot;
+        },
+        {
+            &quot;craft&quot;: &quot;ISS&quot;,
+            &quot;name&quot;: &quot;Luca Parmitano&quot;
+        },
+        {
+            &quot;craft&quot;: &quot;ISS&quot;,
+            &quot;name&quot;: &quot;Andrew Morgan&quot;
+        }
+    ]
+}
+</code></pre>
+
+<p>Immediately we can understand the structure of the data more easily – we can see that their are six people currently in space, with their names existing as dictionaries inside a list.</p>
+
+<p>If we compare this to  <a href="http://open-notify.org/Open-Notify-API/People-In-Space/#json">the documentation for the endpoint</a>  we’ll see that this matches the specified output for the endpoint.</p>
+
+<h2 id="using-an-api-with-query-parameters-https-www-dataquest-io-blog-python-api-tutorial-using-an-api-with-query-parameters"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Using-an-API-with-Query-Parameters">Using an API with Query Parameters</a></h2>
+
+<p>The  <code>http://api.open-notify.org/astros.json</code>  endpoint we used earlier does not take any parameters. We just send a GET request and the API sends back data about the number of people currently in space.</p>
+
+<p>It’s very common, however, to have an API endpoint that requires us to specify parameters. An example of this the  <a href="http://open-notify.org/Open-Notify-API/ISS-Pass-Times/"><code>http://api.open-notify.org/iss-pass.json</code>  endpoint</a>. This endpoint tells us the next times that the international space station will pass over a given location on the earth.</p>
+
+<p>If we look at the documentation, it specifies required  <code>lat</code>  (latitude) and  <code>long</code>  (longitude) parameters.</p>
+
+<p>We can do this by adding an optional keyword argument,  <code>params</code>, to our request. We can make a dictionary with these parameters, and then pass them into the  <code>requests.get</code>  function. Here’s what our dictionary would look like, using coordinates for New York City:</p>
+
+<pre><code class="language-python">parameters = {
+    &quot;lat&quot;: 40.71,
+    &quot;lon&quot;: -74
+}
+</code></pre>
+
+<p>We can also do the same thing directly by adding the parameters directly to the URL. like this:  <code>http://api.open-notify.org/iss-pass.json?lat=40.71&amp;lon=-74</code>.</p>
+
+<p>It’s almost always preferable to setup the parameters as a dictionary, because  <code>requests</code>  takes care of some things that come up, like properly formatting the query parameters, and we don’t need to worry about inserting the values into the URL string.</p>
+
+<p>Let’s make a request using these coordinates and see what response we get.</p>
+
+<pre><code class="language-python">response = requests.get(&quot;http://api.open-notify.org/iss-pass.json&quot;, params=parameters)
+
+jprint(response.json())
+</code></pre>
+
+<pre><code>{
+    &quot;message&quot;: &quot;success&quot;,
+    &quot;request&quot;: {
+        &quot;altitude&quot;: 100,
+        &quot;datetime&quot;: 1568062811,
+        &quot;latitude&quot;: 40.71,
+        &quot;longitude&quot;: -74.0,
+        &quot;passes&quot;: 5
+    },
+    &quot;response&quot;: [
+        {
+            &quot;duration&quot;: 395,
+            &quot;risetime&quot;: 1568082479
+        },
+        {
+            &quot;duration&quot;: 640,
+            &quot;risetime&quot;: 1568088118
+        },
+        {
+            &quot;duration&quot;: 614,
+            &quot;risetime&quot;: 1568093944
+        },
+        {
+            &quot;duration&quot;: 555,
+            &quot;risetime&quot;: 1568099831
+        },
+        {
+            &quot;duration&quot;: 595,
+            &quot;risetime&quot;: 1568105674
+        }
+    ]
+}
+</code></pre>
+
+<h2 id="understanding-the-pass-times-https-www-dataquest-io-blog-python-api-tutorial-understanding-the-pass-times"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Understanding-the-Pass-Times">Understanding the Pass Times</a></h2>
+
+<p>The JSON response matches what the documentation specified:</p>
+
+<ul>
+<li>A dictionary with three keys</li>
+<li>The third key,  <code>response</code>, contains a list of pass times</li>
+<li>Each pass time is a dictionary with  <code>risetime</code>  (pass start time) and  <code>duration</code>  keys.</li>
+</ul>
+
+<p>Let’s extract the pass times from our JSON object:</p>
+
+<pre><code class="language-python">pass_times = response.json()['response']
+jprint(pass_times)
+</code></pre>
+
+<pre><code>[
+    {
+        &quot;duration&quot;: 395,
+        &quot;risetime&quot;: 1568082479
+    },
+    {
+        &quot;duration&quot;: 640,
+        &quot;risetime&quot;: 1568088118
+    },
+    {
+        &quot;duration&quot;: 614,
+        &quot;risetime&quot;: 1568093944
+    },
+    {
+        &quot;duration&quot;: 555,
+        &quot;risetime&quot;: 1568099831
+    },
+    {
+        &quot;duration&quot;: 595,
+        &quot;risetime&quot;: 1568105674
+    }
+]
+</code></pre>
+
+<p>Next we’ll usea loop to extract just the five  <code>risetime</code>  values:</p>
+
+<pre><code class="language-python">risetimes = []
+
+for d in pass_times:
+    time = d['risetime']
+    risetimes.append(time)
+
+print(risetimes)
+</code></pre>
+
+<pre><code>[1568082479, 1568088118, 1568093944, 1568099831, 1568105674]
+</code></pre>
+
+<p>These times are difficult to understand – they are in a format known as timestamp or  <a href="https://en.wikipedia.org/wiki/Unix_time">epoch</a>. Essentially the time is measured in the number of seconds since January 1st 1970. We can use the Python  <a href="https://docs.python.org/3/library/datetime.html#datetime.date.fromtimestamp"><code>datetime.fromtimestamp()</code>  method</a>  to convert these into easier to understand times:</p>
+
+<pre><code class="language-python">from datetime import datetime
+
+times = []
+
+for rt in risetimes:
+    time = datetime.fromtimestamp(rt)
+    times.append(time)
+    print(time)
+</code></pre>
+
+<pre><code>2019-09-09 21:27:59
+2019-09-09 23:01:58
+2019-09-10 00:39:04
+2019-09-10 02:17:11
+2019-09-10 03:54:34
+</code></pre>
+
+<p>It looks like the ISS passes over New York City often – the next five times happen within a seven hour period!</p>
+
+<h2 id="python-api-tutorial-next-steps-https-www-dataquest-io-blog-python-api-tutorial-python-api-tutorial-next-steps"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Python-API-Tutorial:-Next-Steps">Python API Tutorial: Next Steps</a></h2>
+
+<p>In this tutorial, we learned:</p>
+
+<ul>
+<li>What an API is</li>
+<li>Types of requests and response codes</li>
+<li>How to make a get request</li>
+<li>How to make a request with parameters</li>
+<li>How to display and extract JSON data from an API</li>
+</ul>
+
+<p>These fundamental steps will help you to start working with APIs. Remember that key to each time we used the API was to carefully read the API documentation and use that to understand what request to make and what parameters to provide.</p>
+
+<p>Now you’ve completed our Python API tutorial, you might like to:</p>
+
+<ul>
+<li>Complete our interactive Dataquest APIs and scraping course,  <a href="https://www.dataquest.io/course/apis-and-scraping">which you can start for free</a>.</li>
+<li>Try working with some data from this list of  <a href="https://github.com/public-apis/public-apis">Free Public APIs</a>  — we recommend selecting an API that doesn’t require authentication as a good first step.</li>
+</ul>
+
+<p>Ref : <a href="https://www.dataquest.io/blog/python-api-tutorial/">https://www.dataquest.io/blog/python-api-tutorial/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-api-tutorial.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-api-tutorial-getting-started-with-apis">Python API Tutorial: Getting Started with APIs</a>
+<ul>
+<li><a href="#about-this-python-api-tutorial-https-www-dataquest-io-blog-python-api-tutorial-about-this-python-api-tutorial"><a href="https://www.dataquest.io/blog/python-api-tutorial/#About-this-Python-API-Tutorial">About this Python API Tutorial</a></a></li>
+<li><a href="#what-is-an-api-https-www-dataquest-io-blog-python-api-tutorial-what-is-an-api"><a href="https://www.dataquest.io/blog/python-api-tutorial/#What-is-an-API?">What is an API?</a></a></li>
+<li><a href="#making-api-requests-in-python-https-www-dataquest-io-blog-python-api-tutorial-making-api-requests-in-python"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Making-API-Requests-in-Python">Making API Requests in Python</a></a></li>
+<li><a href="#making-our-first-api-request-https-www-dataquest-io-blog-python-api-tutorial-making-our-first-api-request"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Making-Our-First-API-Request">Making Our First API Request</a></a></li>
+<li><a href="#api-status-codes-https-www-dataquest-io-blog-python-api-tutorial-api-status-codes"><a href="https://www.dataquest.io/blog/python-api-tutorial/#API-Status-Codes">API Status Codes</a></a></li>
+<li><a href="#api-documentation-https-www-dataquest-io-blog-python-api-tutorial-api-documentation"><a href="https://www.dataquest.io/blog/python-api-tutorial/#API-Documentation">API Documentation</a></a></li>
+<li><a href="#working-with-json-data-in-python-https-www-dataquest-io-blog-python-api-tutorial-working-with-json-data-in-python"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Working-with-JSON-Data-in-Python">Working with JSON Data in Python</a></a></li>
+<li><a href="#using-an-api-with-query-parameters-https-www-dataquest-io-blog-python-api-tutorial-using-an-api-with-query-parameters"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Using-an-API-with-Query-Parameters">Using an API with Query Parameters</a></a></li>
+<li><a href="#understanding-the-pass-times-https-www-dataquest-io-blog-python-api-tutorial-understanding-the-pass-times"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Understanding-the-Pass-Times">Understanding the Pass Times</a></a></li>
+<li><a href="#python-api-tutorial-next-steps-https-www-dataquest-io-blog-python-api-tutorial-python-api-tutorial-next-steps"><a href="https://www.dataquest.io/blog/python-api-tutorial/#Python-API-Tutorial:-Next-Steps">Python API Tutorial: Next Steps</a></a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

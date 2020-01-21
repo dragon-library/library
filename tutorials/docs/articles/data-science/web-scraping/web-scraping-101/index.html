@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web Scraping 101"><meta property="og:title" content="Web Scraping 101" />
+<meta property="og:description" content="Web Scraping 101 in Python : overview of the tools &amp; the pros and cons of each Summary:  Web Fundamentals Manually opening a socket and sending the HTTP request urllib3 &amp; LXML requests &amp; BeautifulSoup Scrapy Selenium &amp; Chrome —headless Conclusion  Web Fundamentals The internet is really complex–there are many underlying technologies and concepts involved to view a simple web page in your browser. I&rsquo;m not going to explain everything, but I will show you the most important things you have to understand in order to extract data from the web." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/" />
+
+<title>Web Scraping 101 | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/" >
+      Building a Stock Screener - Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/" >
+      Building a Stock Screener - Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/" >
+      How to scrape Yahoo Finance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/" >
+      Requests and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/"  class="active">
+      Web Scraping 101
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Web Scraping 101</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="web-scraping-101-in-python-overview-of-the-tools-the-pros-and-cons-of-each">Web Scraping 101 in Python : overview of the tools &amp; the pros and cons of each</h1>
+
+<h3 id="summary">Summary:</h3>
+
+<ul>
+<li><a href="# Web Fundamentals">Web Fundamentals</a></li>
+<li>Manually opening a socket and sending the HTTP request</li>
+<li>urllib3 &amp; LXML</li>
+<li>requests &amp; BeautifulSoup</li>
+<li><a href="#Scrapy">Scrapy</a></li>
+<li><a href="#selenium-&amp;-chrome">Selenium &amp; Chrome —headless</a></li>
+<li>Conclusion</li>
+</ul>
+
+<h2 id="web-fundamentals">Web Fundamentals</h2>
+
+<p>The internet is  <strong>really complex</strong>–there are many underlying technologies and concepts involved to view a simple web page in your browser. I&rsquo;m not going to explain everything, but I will show you the most important things you have to understand in order to extract data from the web.</p>
+
+<h2 id="hypertext-transfer-protocol">HyperText Transfer Protocol</h2>
+
+<p>HTTP uses a  <strong>client/server</strong>  model, where an HTTP client (a browser, your Python program, curl, Requests, and so on) opens a connection and sends a message (“I want to see the /product page”) to an HTTP server (like Nginx, Apache, and others).</p>
+
+<p>Then the server answers with a response (the HTML code, for example) and closes the connection. HTTP is called a stateless protocol, because each transaction (request/response) is independent. FTP, for example, is stateful.</p>
+
+<p>Basically, when you type a website address in your browser, the HTTP request looks like this:</p>
+
+<pre><code class="language-python">GET /product/ HTTP/1.1
+Host: example.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/web\
+p,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch, br
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit\
+/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+</code></pre>
+
+<p>In the first line of this request, you can see multiples things:</p>
+
+<ul>
+<li>The GET verb or method being used, meaning we request data from the specific path,  <code>/product/</code>. There are other HTTP verbs, and you can see the full list  <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">here</a>.</li>
+<li>The version of the HTTP protocol. In this tutorial we will focus on HTTP 1.</li>
+<li>Multiple headers fields.</li>
+</ul>
+
+<p>Here are the most important header fields:</p>
+
+<ul>
+<li><strong>Host:</strong>  The domain name of the server. If no port number is given, it is assumed to be 80<em><em>.</em></em></li>
+<li><strong>User-Agent:</strong>  Contains information about the client originating the request, including the OS information. In this case, it is my web-browser (Chrome), on OSX. This header is important because it is either used for statistics (how many users visit my website on mobile vs. desktop) or to prevent any violations by bots. Because these headers are sent by the clients, it can be modified with a technique called “Header Spoofing”. This is exactly what we will do with our scrapers to make them look like a normal web browser.</li>
+<li><strong>Accept:</strong>  The content types that are acceptable as a response. There are lots of different content types and sub-types:  <strong>text/plain, text/html, image/jpeg, application/json</strong>  &hellip;</li>
+<li><strong>Cookie</strong>  : name1=value1;name2=value2&hellip; This header field contains a list of name-value pairs. These are called session cookies, and are what websites use to authenticate users and store data in your browser. For example, when you fill in a login form, the server will check if the credentials you entered are correct. If so, it will redirect you and inject a session cookie in your browser. Your browser will then send this cookie with every subsequent request to that server.</li>
+<li><strong>Referrer</strong>: The Referrer header contains the URL from which the actual URL has been requested. This header is important because websites use this header to change their behavior based on where the user came from. For example, lots of news websites have a paying subscription and let you view only 10% of a post. But if the user came from a news aggregator like Reddit, they let you view the full content. Sites use the referrer to check this. Sometimes we will have to spoof this header to get to the content we want to extract.</li>
+</ul>
+
+<p>And the list goes on. You can find the full header list  <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">here</a>.</p>
+
+<p>A server will respond with something like this:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu) Content-Type: text/html; charset=utf-8 &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot; /&gt; ...[HTML CODE]
+</code></pre>
+
+<p>On the first line, we have a new piece of information, the HTTP code  <code>200 OK</code>. This means the request has succeeded. As for the request headers, there are lots of HTTP codes, split into four common classes: 2XX for successful requests, 3XX for redirects, 4XX for bad requests (the most famous being 404 Not found), and 5XX for server errors.</p>
+
+<p>If you are sending an HTTP request with your web browser, it will parse the HTML code, fetch all the eventual assets (JavaScript, CSS, and image files) and render the result into the main window.</p>
+
+<p>In the next section we will see the different ways to perform HTTP requests with Python and extract the data we want from the responses.</p>
+
+<h1 id="manually-opening-a-socket-and-sending-the-http-request">Manually opening a socket and sending the HTTP request</h1>
+
+<h2 id="socket">Socket</h2>
+
+<p>The most basic way to perform an HTTP request in Python is to open a  <a href="https://docs.python.org/3/howto/sockets.html">socket</a>  and manually send the HTTP request:</p>
+
+<pre><code class="language-python">import socket
+
+HOST = 'www.google.com'  # Server hostname or IP address
+PORT = 80        # Port
+
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_address = (HOST, PORT)
+client_socket.connect(server_address)
+
+request_header = b'GET / HTTP/1.0\r\nHost: www.google.com\r\n\r\n'
+client_socket.sendall(request_header)
+
+response = ''
+while True:
+    recv = client_socket.recv(1024)
+    if not recv:
+        break
+    response += str(recv)
+
+print(response)
+client_socket.close()  
+</code></pre>
+
+<p>Now that we have the HTTP response, the most basic way to extract data from it is to use regular expressions.</p>
+
+<h2 id="regular-expressions">Regular Expressions</h2>
+
+<p>A regular expression (RE, or Regex) is a search pattern for strings. With regex, you can search for a particular character or word inside a bigger body of text.</p>
+
+<p>For example, you could identify all the phone numbers on a web page. You can also replace items easily. For example, you can replace all the uppercase tags in poorly formatted HTML with lowercase ones. You can also validate some inputs.</p>
+
+<p>You may be wondering, why it is important to know about regular expressions when doing web scraping? After all, there are all kinds of different Python modules to parse HTML, XPath, and CSS selectors.</p>
+
+<p>In an ideal  <a href="https://en.wikipedia.org/wiki/Semantic_Web">semantic world,</a>  data is easily machine-readable, and information is embedded inside relevant HTML elements with meaningful attributes.</p>
+
+<p>But the real world is messy. You will often find huge amounts of text inside a p element. When you want to extract specific data inside this huge block of text like a price, date, or name, you will have to use regular expressions.</p>
+
+<p><strong>Note:</strong>  <a href="https://regex101.com/">Here</a>  is a great website to test your regex, and  <a href="https://www.rexegg.com/">one awesome blog</a>  to learn more about them. This post will only cover a small fraction of what you can do with regular expressions.</p>
+
+<p>Regular expressions can be useful when you have this kind of data:</p>
+
+<pre><code>&lt;p&gt;Price : 19.99$&lt;/p&gt;
+</code></pre>
+
+<p>We could select this text node with an Xpath expression, and then use this kind of regex to extract the price. Remember that regex patterns are applied from left to right, and each source character is only used once.:</p>
+
+<pre><code>^Price\s:\s(\d+\.\d{2})\$
+</code></pre>
+
+<p>To extract the text inside an HTML tag, it is annoying to use a regex, but doable:</p>
+
+<pre><code class="language-py">import re
+
+html_content = '&lt;p&gt;Price : 19.99$&lt;/p&gt;'
+
+m = re.match('&lt;p&gt;(.+)&lt;\/p&gt;', html_content)
+if m:
+	print(m.group(1))
+</code></pre>
+
+<p>As you can see, manually sending the HTTP request with a socket and parsing the response with regular expressions can be done, but it&rsquo;s complicated. There are higher-level APIs that can make this task a lot easier.</p>
+
+<h2 id="urllib3-lxml">urllib3 &amp; LXML</h2>
+
+<p><strong>Disclaimer</strong>: It is easy to get lost in the urllib universe in Python. You have urllib and urllib2 that are parts of the standard library, but there&rsquo;s also urllib3. urllib2 was split into multiple modules in Python 3, and urllib3 should not be a part of the standard library anytime soon. All of these confusing details will be the subject of its own blog post. In this section, I chose to only talk about urllib3 as it widely used in the Python world.</p>
+
+<p>urllib3 is a high-level package that allows you to do pretty much whatever you want with an HTTP request. We can do what we did with socket above with way fewer lines of code:</p>
+
+<pre><code class="language-python">import urllib3
+http = urllib3.PoolManager()
+r = http.request('GET', 'http://www.google.com')
+print(r.data)
+</code></pre>
+
+<p>Much more concise than the socket version, isn&rsquo;t it? Not only that, but the API is straightforward, and you can do many things easily like adding HTTP headers, using a proxy, POSTing forms, and so on.</p>
+
+<p>For example, if we had to set some headers to use a proxy, we would only have to do this:</p>
+
+<pre><code class="language-python">import urllib3
+user_agent_header = urllib3.make_headers(user_agent=&quot;&lt;USER AGENT&gt;&quot;)
+pool = urllib3.ProxyManager(f'&lt;PROXY IP&gt;', headers=user_agent_header)
+r = pool.request('GET', 'https://www.google.com/')
+</code></pre>
+
+<p>See? Exactly the same number of lines.</p>
+
+<p>However, there are some things that urllib3 does not handle very easily. If we want to add a cookie, we have to manually create the corresponding headers and add it to the request.</p>
+
+<p>There are also things that urllib3 can do that requests can&rsquo;t, like creation and management of pool and proxy pool, and control of retry strategy.</p>
+
+<p>To put it simply, urllib3 falls between requests and socket in terms of abstraction, although it&rsquo;s way closer to requests than socket.</p>
+
+<p>To parse the response, we are going to use the lxml package and XPath expressions.</p>
+
+<h2 id="xpath">XPath</h2>
+
+<p>Xpath is a technology that uses path expressions to select nodes or node sets in an XML or HTML document. As with the Document Object Model, Xpath is a W3C standard since 1999. Even if Xpath is not a programming language in itself, it allows you to write expressions that can directly access a specific node or node-set without having to go through the entire XML or HTML tree.</p>
+
+<p>Think of XPath as a sort of regular expression, but specifically for XML or HMTL.</p>
+
+<p>To extract data from an HTML document with XPath we need 3 things:</p>
+
+<ul>
+<li>an HTML document</li>
+<li>some XPath expressions</li>
+<li>an XPath engine that will run those expressions</li>
+</ul>
+
+<p>To begin, we will use the HTML that we got thanks to urllib3. We just want to extract all the links from the Google homepage, so we will use one simple XPath expression,  <code>//a</code>, and use LXML to run it. LXML is a fast and easy to use XML and HTML processing library that supports XPATH.</p>
+
+<p><em>Installation</em>:</p>
+
+<pre><code>pip install lxml
+
+</code></pre>
+
+<p>Below is the code that comes just after the previous snippet:</p>
+
+<pre><code class="language-python">from lxml import html
+
+# We reuse the reponse from urllib3
+data_string = r.data.decode('utf-8', errors='ignore')
+# We instantiate a tree object from the HTML
+tree = html.fromstring(data_string)
+# We run the XPath against this HTML
+# This returns an array of element
+links = tree.xpath('//a')
+for link in links:
+    # For each element we can easily get back the URL
+    print(link.get('href'))
+</code></pre>
+
+<p>And the output should look like this:</p>
+
+<pre><code class="language-python">https://books.google.fr/bkshp?hl=fr&amp;tab=wp
+https://www.google.fr/shopping?hl=fr&amp;source=og&amp;tab=wf
+https://www.blogger.com/?tab=wj
+https://photos.google.com/?tab=wq&amp;pageId=none
+http://video.google.fr/?hl=fr&amp;tab=wv
+https://docs.google.com/document/?usp=docs_alc
+...
+https://www.google.fr/intl/fr/about/products?tab=wh
+</code></pre>
+
+<p>Keep in mind that this example is really, really simple, and doesn&rsquo;t really show you how powerful XPath can be. (Note: this XPath expression should have been changed to  <code>//a/@href</code>  to avoid having to iterate through  <code>links</code>  to get their  <code>href</code>).</p>
+
+<p>If you want to learn more about XPath you can read  <a href="https://librarycarpentry.org/lc-webscraping/02-xpath/index.html">this good introduction</a>. The LXML documentation is also  <a href="https://lxml.de/tutorial.html">well written and is a good starting point</a>.</p>
+
+<p>XPath expresions, like regexp, are really powerful and one of the fastest ways to extract information from HTML. Though also like regexp, XPath can quickly become messy, hard to read, and hard to maintain.</p>
+
+<h1 id="requests-beautifulsoup">requests &amp; BeautifulSoup</h1>
+
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--HrgsYR9Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://raw.githubusercontent.com/requests/requests/master/docs/_static/requests-logo-small.png" alt="" /></p>
+
+<p><a href="https://github.com/psf/requests">Requests</a>  is the king of Python packages–with more than 11,000,000 downloads, it is the most widely used package for Python.</p>
+
+<p>Installation:</p>
+
+<pre><code>pip install requests
+
+</code></pre>
+
+<p>Making a request with Requests (no comment) is really easy:</p>
+
+<pre><code class="language-python">import requests
+
+r = requests.get('https://www.scrapingbee.com')
+print(r.text)
+</code></pre>
+
+<p>With Requests it is easy to do things like perform POST requests, handle cookies, and query parameters.</p>
+
+<h3 id="authentication-to-hacker-news">Authentication to Hacker News</h3>
+
+<p>Let&rsquo;s say we want to create a tool to automatically submit our blog post to Hacker News or any other forums like Buffer. We would need to authenticate to those websites before posting our link. That&rsquo;s what we are going to do with Requests and BeautifulSoup!</p>
+
+<p>Here is the Hacker News login form and the associated DOM:</p>
+
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Dr2y7j7F--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://ksah.in/content/images/2016/02/screenshot_hn_login_form.png" alt="" /></p>
+
+<p>There are three  <code>&lt;input&gt;</code>  tags on this form. The first one has a type hidden with the name &ldquo;goto&rdquo;, and the two others are the username and password.</p>
+
+<p>If you submit the form inside your Chrome browser, you will see that there is a lot going on: a redirect and a cookie is being set. This cookie will be sent by Chrome on each subsequent request in order for the server to know that you are authenticated.</p>
+
+<p>Doing this with Requests is easy–it will handle redirects automatically for us, and handling cookies can be done with the  <em>Session</em>  object.</p>
+
+<p>The next thing we will need is BeautifulSoup, which is a Python library that will help us parse the HTML returned by the server to find out if we are logged in or not.</p>
+
+<p>Installation:</p>
+
+<pre><code>pip install beautifulsoup4
+
+</code></pre>
+
+<p>So all we have to do is to POST these three inputs with our credentials to the /login endpoint and check for the presence of an element that is only displayed once logged in:</p>
+
+<pre><code class="language-python">import requests
+from bs4 import BeautifulSoup
+
+BASE_URL = 'https://news.ycombinator.com'
+USERNAME = &quot;&quot;
+PASSWORD = &quot;&quot;
+
+s = requests.Session()
+
+data = {&quot;gogo&quot;: &quot;news&quot;, &quot;acct&quot;: USERNAME, &quot;pw&quot;: PASSWORD}
+r = s.post(f'{BASE_URL}/login', data=data)
+
+soup = BeautifulSoup(r.text, 'html.parser')
+if soup.find(id='logout') is not None:
+	print('Successfuly logged in')
+else:
+	print('Authentication Error')
+
+</code></pre>
+
+<p>In order to learn more about BeautifulSoup, we could try to extract every link on the homepage.</p>
+
+<p><em>By the way, Hacker News offers a  <a href="https://github.com/HackerNews/API">powerful API</a>, so we&rsquo;re doing this as an example. You should really use the API instead of scraping it!</em></p>
+
+<p>The first thing we need to do is to inspect the Hacker News home page to understand the structure and the different CSS classes that we will have to select:</p>
+
+<p>We can see that all posts are inside a  <code>&lt;tr class=&quot;athing&quot;&gt;</code>  , so the first thing we will need to do is to select all these tags. This can be easily done with:</p>
+
+<pre><code>links = soup.findAll('tr', class_='athing')
+
+</code></pre>
+
+<p>Then for each link, we will extract its id, title, url and rank:</p>
+
+<pre><code class="language-python">import requests
+from bs4 import BeautifulSoup
+
+r = requests.get('https://news.ycombinator.com')
+soup = BeautifulSoup(r.text, 'html.parser')
+links = soup.findAll('tr', class_='athing')
+
+formatted_links = []
+
+for link in links:
+	data = {
+		'id': link['id'],
+		'title': link.find_all('td')[2].a.text,
+		&quot;url&quot;: link.find_all('td')[2].a['href'],
+		&quot;rank&quot;: int(links[0].td.span.text.replace('.', ''))
+	}
+	formatted_links.append(data)
+
+print(formatted_links)
+</code></pre>
+
+<p>As you saw, Requests and BeautifulSoup are great libraries to extract data and automate different things like filling out forms. If you want to do large-scale web scraping projects, you could still use Requests, but you would need to handle lots of things yourself.</p>
+
+<p>When you need to scrape a lots of webpages, there are many things you have to take care of:</p>
+
+<ul>
+<li>finding a way of parallelizing your code to make it faster</li>
+<li>handling errors</li>
+<li>storing results</li>
+<li>filtering results</li>
+<li>throttling your requests so you don&rsquo;t overload the server</li>
+</ul>
+
+<p>Fortunately for us, tools exist that can handle all of those things for us.</p>
+
+<h1 id="Scrapy">Scrapy</h1>
+
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VIvNnTuY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://secure.meetupstatic.com/photos/event/1/b/6/6/600_468367014.jpeg" alt="" /></p>
+
+<p>Scrapy is a powerful Python web scraping framework. It provides many features to download web pages asynchronously, process, and save it. It handles multithreading, crawling (the process of going from link to link to find every URL in a website), sitemap crawling, and much more.</p>
+
+<p>Scrapy has also an interactive mode called the Scrapy Shell. With Scrapy Shell, you can test your things in your scraping code really quickly like XPath expression or CSS selectors.</p>
+
+<p>The downside of Scrapy is that the learning curve is steep–there is a lot to learn.</p>
+
+<p>To follow up on our example about Hacker News, we are going to write a Scrapy Spider that scrapes the first 15 pages of results and saves everything in a CSV file.</p>
+
+<p>You can easily install Scrapy with pip:</p>
+
+<pre><code>pip install Scrapy
+
+</code></pre>
+
+<p>Then you can use the scrapy cli to generate the boilerplate code for our project:</p>
+
+<pre><code>scrapy startproject hacker_news_scraper
+
+</code></pre>
+
+<p>Inside  <code>hacker_news_scraper/spider</code>  we will create a new Python file with our Spider&rsquo;s code:</p>
+
+<pre><code class="language-python">from bs4 import BeautifulSoup
+import scrapy
+
+
+class HnSpider(scrapy.Spider):
+    name = &quot;hacker-news&quot;
+    allowed_domains = [&quot;news.ycombinator.com&quot;]
+    start_urls = [f'https://news.ycombinator.com/news?p={i}' for i in range(1,16)]
+
+    def parse(self, response):
+        soup = BeautifulSoup(response.text, 'html.parser')
+        links = soup.findAll('tr', class_='athing')
+
+        for link in links:
+        	yield {
+        		'id': link['id'],
+        		'title': link.find_all('td')[2].a.text,
+        		&quot;url&quot;: link.find_all('td')[2].a['href'],
+        		&quot;rank&quot;: int(link.td.span.text.replace('.', ''))
+        	}
+</code></pre>
+
+<p>There is a lot of convention in Scrapy. Here we define an Array of starting URLs. The attribute name will be used to call our Spider with the Scrapy command line.</p>
+
+<p>The parse method will be called on each URL in the  <code>start_urls</code>  array</p>
+
+<p>We then need to tune Scrapy a little bit in order for our Spider to behave nicely against the target website.</p>
+
+<pre><code class="language-py"># Enable and configure the AutoThrottle extension (disabled by default)
+# See https://doc.scrapy.org/en/latest/topics/autothrottle.html
+AUTOTHROTTLE_ENABLED = True
+# The initial download delay
+AUTOTHROTTLE_START_DELAY = 5
+</code></pre>
+
+<p>You should always turn this on. It will make sure the target website will not slow down because of your spiders by analyzing the response time and adapting the number of concurrent threads.</p>
+
+<p>You can run this code with the Scrapy CLI and with different output format (CSV, JSON, XML, and so on):</p>
+
+<pre><code class="language-py">scrapy crawl hacker-news -o links.json
+
+</code></pre>
+
+<p>And that&rsquo;s it! You will now have all your links in a nicely formatted JSON file.</p>
+
+<h2 id="selenium-&-chrome">Selenium &amp; Chrome</h2>
+
+<p>Scrapy is really nice for large-scale web scraping tasks. But it is not enough if you need to scrape Single Page Applications written with JavaScript frameworks because it won&rsquo;t be able to render the JavaScript code.</p>
+
+<p>It can be challenging to scrape these SPAs because there are often lots of AJAX calls and websockets connections involved. If performance is an issue, you should always try to reproduce the JavaScript code, meaning manually inspecting all the network calls with your browser inspector and replicating the AJAX calls containing the interesting data.</p>
+
+<p>In some cases, there are just too many asynchronous HTTP calls involved to get the data you want, and it can be easier to just render the page in a headless browser.</p>
+
+<p>Another great use case would be to take a screenshot of a page. This is what we are going to do with the Hacker News homepage (again !)</p>
+
+<p>You can install the Selenium package with pip:</p>
+
+<pre><code>pip install selenium
+
+</code></pre>
+
+<p>You will also need  <a href="http://chromedriver.chromium.org/">Chromedriver</a>:</p>
+
+<pre><code>brew install chromedriver
+
+</code></pre>
+
+<p>Then we just have to import the Webdriver from the Selenium package, configure Chrome with headless=True, and set a window size (otherwise it is really small):</p>
+
+<pre><code class="language-python">from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.headless = True
+options.add_argument(&quot;--window-size=1920,1200&quot;)
+driver = webdriver.Chrome(options=options, executable_path=r'/usr/local/bin/chromedriver')
+driver.get(&quot;https://news.ycombinator.com/&quot;)
+driver.save_screenshot('hn_homepage.png')
+driver.quit()
+</code></pre>
+
+<p>You should then get a nice screenshot of the homepage:</p>
+
+<p><img src="https://landen.imgix.net/blog_pkzRugQgwaDvAtAE/assets/kfyrFQpXOyHUbqzq.png" alt="" /></p>
+
+<p>You can do many more things with the Selenium API and Chrome like:</p>
+
+<ul>
+<li>Executing JavaScript</li>
+<li>Filling out forms</li>
+<li>Clicking on elements</li>
+<li>Extracting elements with CSS selectors or XPath expressions</li>
+</ul>
+
+<p>Selenium and Chrome in headless mode is really the ultimate combination to scrape anything you want. You can automate anything that you could do with your regular Chrome browser.</p>
+
+<p>The big drawback is that Chrome needs lots of memory / CPU power. With some fine-tuning you can reduce the memory footprint to 300-400mb per Chrome instance, but you still need 1 CPU core per instance.</p>
+
+<p>If you want to run several Chrome instances concurrently, you will need powerful servers (the cost of which goes up quickly) and constant monitoring of resources.</p>
+
+<blockquote>
+<p><a href="https://www.freecodecamp.org/news/web-scraping-101-in-python/?fbclid=IwAR3NQnIccNopJwhBiiGZ3sgqmcWjwt4gkMniP2V9h0Vm0xSvu7wVgvcKO8A">Source :</a></p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cweb-scraping%5cweb-scraping-101.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

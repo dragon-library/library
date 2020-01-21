@@ -5,10 +5,62 @@
     <link>https://dragon-library.github.io/library/tutorials/</link>
     <description>Recent content in e-Library on Tutorials</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 26 Nov 2019 17:04:13 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jan 2020 10:42:26 +0600</lastBuildDate>
     
 	<atom:link href="https://dragon-library.github.io/library/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Simple Example-Based Guide</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/</guid>
+      <description>NumPy Tutorial: A Simple Example-Based Guide  Introduction Advantages of NumPy NumPy Operations Creating a NumPy Array  The array Method The arange Method The zeros Method The ones Method The linspace Method The eye Method The random Method  Reshaping NumPy Array Finding Max/Min Values Array Indexing in NumPy  Indexing with 1-D Arrays Indexing with 2-D Arrays  Arithmetic Operations with NumPy Arrays  The log Function The exp Function The sqrt Function The sin Function  Linear Algebra Operations with NumPy Arrays  Finding the Vector Dot Product Matrix Multiplication Finding the Inverse of a Matrix Finding the Determinant of a Matrix Finding the Trace of a Matrix  Conclusion  Introduction The NumPy library is a popular Python library used for scientific computing applications, and is an acronym for &amp;ldquo;Numerical Python&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>10 Pandas tips</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/</guid>
+      <description>10 Python Pandas tips to make data analysis faster Source
+1. Styling Have you ever complained about the table output looks boring when you do .head() in Jupyter notebooks? Is there a way not to display indexes (especially when there is already an ID column)? There’re ways to fix these issues.
+A. Highlight all negative values in a dataframe. (example revised from https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html)
+import pandas as pd def color_negative_red(val): color = &#39;red&#39; if val &amp;lt; 0 else &#39;black&#39; return &#39;color: %s&#39; % colordf = pd.</description>
+    </item>
+    
+    <item>
+      <title>24 เคล็ดลับ การใช้งาน Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/24-trick-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/24-trick-python/</guid>
+      <description>24 เคล็ดลับ การใช้งาน Python Python เป็นอีกหนึ่งภาษา Programming ที่ได้รับความนิยม ถูกนำไปใช้ในการเขียน Program ได้หลากหลายประเภท โดยไม่ได้จำกัดอยู่ที่งานเฉพาะทางใดทางหนึ่ง ไม่ว่าจะเป็นการพัฒนา Web หรือด้าน Data Science และ Machine Learning เป็นต้น จึงทำให้มีการนำไปใช้กันอย่างแพร่หลาย วันนี้เรามาดู 24 เคล็ดลับ การใช้งาน Python ที่จะช่วยให้คุณประหยัดเวลาและทำงานได้สะดวกขึ้น โดยดูตัวอย่างการใช้งานในแต่ละหัวข้อกันได้เลย
+1. Unpacking Array Items (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/01.png)
+2. Swapping Variables 3. Profile And Stats Of Your Code
+3. Profile And Stats Of Your Code
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png)
+4. Repeat String
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png)
+5. Slicing
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png)
+6. Reversing
+
+7. Negative Index
+ถ้าคุณต้องการที่จะเริ่มต้นจาก Character ตัวสุดท้าย สามารถใช้ Negative Index ได้</description>
+    </item>
+    
+    <item>
+      <title>Automate the Boring Stuff</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/e-book/automate-the-boring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/e-book/automate-the-boring/</guid>
+      <description>Automate the Boring Stuff with Python By Al Sweigart. Free to read under a Creative Commons license.
+Table of Contents  Chapter 0 – Introduction Chapter 1 – Python Basics Chapter 2 – Flow Control Chapter 3 – Functions Chapter 4 – Lists Chapter 5 – Dictionaries and Structuring Data Chapter 6 – Manipulating Strings Chapter 7 – Pattern Matching with Regular Expressions Chapter 8 – Input Validation Chapter 9 – Reading and Writing Files Chapter 10 – Organizing Files Chapter 11 – Debugging Chapter 12 – Web Scraping Chapter 13 – Working with Excel Spreadsheets Chapter 14 – Working with Google Spreadsheets Chapter 15 – Working with PDF and Word Documents Chapter 16 – Working with CSV Files and JSON Data Chapter 17 – Keeping Time, Scheduling Tasks, and Launching Programs Chapter 18 – Sending Email and Text Messages Chapter 19 – Manipulating Images Chapter 20 – Controlling the Keyboard and Mouse with GUI Automation Appendix A – Installing Third-Party Modules Appendix B – Running Programs Appendix C – Answers to the Practice Questions  (Read the 1st edition book.</description>
+    </item>
     
     <item>
       <title>Bootstrap 4 แบบพื้นฐาน ตอนที่ 1</title>
@@ -47,6 +99,29 @@ Creating a project directory and virtual environment First of all, we need to cr
     </item>
     
     <item>
+      <title>Primer on Jinja Templating</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/</guid>
+      <description>Primer on Jinja Templating Flask comes packaged with the powerful Jinja templating language.
+For those who have not been exposed to a templating language before, such languages essentially contain variables as well as some programming logic, which when evaluated (or rendered into HTML) are replaced with actual values.
+The variables and/or logic are placed between tags or delimiters. For example, Jinja templates use {% ... %} for expressions or logic (like for loops), while {{ .</description>
+    </item>
+    
+    <item>
+      <title>Python 101</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101/</guid>
+      <description>Python 101 ฉบับรวบลัด การแสดงผล และรับข้อมูล เริ่มแรกลอง print “hello world” กันก่อน
+print(&amp;quot;hello_world&amp;quot;)  Data type (ประเภทข้อมูล) 1. String String ก็เป็นตัวแปรที่เก็ยตัวอักษร หรือข้อความ คราวนี้เรามาลองรับ input เป็นชื่อเก็บใส่ตัวแปรที่ชื่อว่า name แล้ว print ออกมากันครับ
+ในที่นี้ตัวแปร name ก็จะมี data type คือ string นั้นเอง
+name = input(&amp;quot;What is your name? &amp;quot;) print(&amp;quot;Hello &amp;quot;,name)  2. Numeric    Type Description     Integer จำนวนเต็ม เช่น 10, 20   Float ทศนิยม เช่น 10.0, 20.5    ต่อมาลองรับ input เป็น integer 1 ตัว และ float 1 ตัว แล้วเอามาบวกกันแสดงผลรับเป็น integer</description>
+    </item>
+    
+    <item>
       <title>Python Thailand</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/pythonthailand/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -56,6 +131,29 @@ Creating a project directory and virtual environment First of all, we need to cr
 ด้วยเนื้อหาที่รวบรวมในเว็บไซต์นี้ คุณจะสามารถเขียนโปรแกรมด้วยภาษาไพธอนได้ เริ่มตั้งแต่การสร้างแอพพลิเคชันอย่างง่ายไปจนถึงโปรแกรมการคำนวณที่ซับซ้อน คุณจะเข้าใจหลักการสำคัญในการเขียนโปรแกรมทั้งในพื้นฐานทั้งหมดและในขั้นสูงที่เป็นการเขียนโปรแกรมแบบเชิงวัตถุ คุณจะได้รู้จักกับเครื่องมือที่ใช้ในการพัฒนาโปรแกรมหลากหลายรูปแบบ ซึ่งเนื้อหาเหล่านี้เป็นพื้นฐานที่สำคัญที่จะทำให้คุณสามารถนำไปพัฒนาทักษะการเขียนโปรแกรมภาษาไพธอน ของคุณในขั้นสูงต่อไป เช่น การพัฒนาเว็บไซต์ การสร้างเกม ฐานข้อมูล เน็ตเวิร์ค การจัดการกราฟฟิค
 ภาษาไพธอน  ประวัติและต้นกำเนิด ตราสัญลักษณ์ของภาษาไพธอน ปรัชญาของไพธอน เกร็ดความรู้เกี่ยวกับไพธอน ทำไมต้องไพธอน ความสำเร็จของไพธอน   ดาวน์โหลดไพธอนและเครื่องมืออื่น ๆ  เริ่มต้นใช้งานไพธอน ระบบปฏิบัติการที่รองรับ ดาวน์โหลดไพธอน การติดตั้งไพธอน โปรแกรมแก้ไขข้อความสำหรับเขียนภาษาไพธอน ไลบรารี่และแพคเกจ   เนื้อหาไพธอน เลือกระดับความยากของเนื้อหา
  เริ่มต้น (Beginner) ปานกลาง (Intermediate) ขั้นสูง (Advanced)   โจทย์และการแก้ปัญหา  ระดับพื้นฐาน ระดับปานกลาง ระดับยาก โจทย์แข่งขัน คำถามสอบสัมภาษณ์งาน   หนังสือแนะนำ  Python ๑๐๑ คณะวิศวกรรมศาสตร์ จุฬา ฯ เชี่ยวชาญการเขียนโปรแกรมด้วยไพธอน ผศ.</description>
+    </item>
+    
+    <item>
+      <title>ตัวแปรและประเภทข้อมูล</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/</guid>
+      <description>Variable &amp;amp; Data Types (ตัวแปรและประเภทข้อมูล) ตัวแปรและประข้อมูลในภาษา Python เราจะพูดถึงการประกาศตัวแปรและการนำตัวแปรไปใช้งานในโปรแกรม และเราจะอธิบายถึงข้อมูลประเภทต่างๆ ที่เป็น Primitive datatype ในภาษา Python และรวมทั้งฟังก์ชันสำหรับการใช้งานกับตัวแปร
+ตัวแปร ตัวแปร (variable) คือชื่อหรือเครื่องหมายที่กำหนดขึ้นสำหรับใช้เก็บค่าในหน่วยความจำ ตัวแปรจะมีชื่อ (identifier) สำหรับใช้ในการอ้างถึงข้อมูลของมัน ในการเขียนโปรแกรม ค่าของตัวแปรสามารถที่จะกำหนดได้ใน run-time หรือเปลี่ยนแปลงอยู่ตลอดเวลาในขณะที่โปรแกรมทำงาน (executing)
+ในการเขียนโปรแกรมคอมพิวเตอร์นั้น ตัวแปรจะแตกต่างจากตัวแปรในทางคณิตศาสตร์ ค่าของตัวแปรนั้นไม่จำเป็นต้องประกอบไปด้วยสูตรหรือสมการที่สมบูรณ์เหมือนกับในคณิตศาสตร์ ในคอมพิวเตอร์ ตัวแปรนั้นอาจจะมีการทำงานซ้ำๆ เช่น การกำหนดค่าในที่หนึ่ง และนำไปใช้อีกที่หนึ่งในโปรแกรม และนอกจากนี้ยังสามารถกำหนดค่าใหม่ให้กับตัวแปรได้ตลอดเวลา ต่อไปเป็นตัวอย่างของการประกาศตัวแปรในภาษา Python
+a = 3 b = 4.92 c = &amp;quot;marcuscode.com&amp;quot; c = 10.5  ในตัวอย่าง เราได้ทำการประกาศ 3 ตัวแปร ในการประกาศตัวแปรในภาษา Python คุณไม่จำเป็นต้องระบุประเภทของตัวแปรในตอนที่ประกาศเหมือนในภาษา C ในตัวแปร a มีค่าเป็น 3 และเป็นประเภทเป็น Integer ตัวแปร b มีค่าเป็น 4.92 และเป็นประเภทเป็น Float และตัวแปร c มีค่าเป็น &amp;ldquo;marcuscode.</description>
+    </item>
+    
+    <item>
+      <title>From Zero to Hero</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/from-zero/</link>
+      <pubDate>Fri, 17 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/from-zero/</guid>
+      <description>Learning Python: From Zero to Hero First of all, what is Python? According to its creator, Guido van Rossum, Python is a:
+ “high-level programming language, and its core design philosophy is all about code readability and a syntax which allows programmers to express concepts in a few lines of code.”
+ For me, the first reason to learn Python was that it is, in fact, a beautiful programming language.</description>
     </item>
     
     <item>
@@ -90,6 +188,41 @@ Inspired by awesome-php.
       <description>Flask application structure | Learning Flask Ep. 2 Structuring your Flask application for
 In this part of the Learning Flask series, you&amp;rsquo;ll learn how to structure files and directories in your Flask application.
 Flask is a very flexible framework and doesn&amp;rsquo;t enforce that you follow any specific pattern for structuring your application. However there are some best practices and tips to make sure you don&amp;rsquo;t run into issues down the line as your application grows!</description>
+    </item>
+    
+    <item>
+      <title>Lists</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</guid>
+      <description>Lists ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูลแบบ List ในภาษา Python เราจะพูดถึงการสร้างและใช้งาน List ในเบื้องต้น การใช้งานเมธอดและฟังก์ชันเพื่อจัดการข้อมูลภายใน List และการใช้งานคำสั่ง For loop กับ List รวมถึงการ slicing
+List (ลิสต์) คือโครงสร้างข้อมูลชนิดหนึ่งในภาษา Python ที่ใช้เก็บข้อมูลแบบลำดับ (Sequence) โดยมี Index เป็นตัวระบุตำแหน่งในการเข้าถึงข้อมูล เราสามารถใช้ List เพื่อเก็บข้อมูลจำนวนมากและหลากหลายประเภทในเวลาเดียวกัน List เป็นประเภทข้อมูลที่ใช้อย่างหลากหลายในการเขียนโปรแกรม นอกจากนี้ ในภาษา Python ยังมี built-in function ที่สามารถทำงานกับ List และใน List ออบเจ็คเองก็มีเมธอดต่างๆ เป็นจำนวนมากที่ช่วยอำนวยความสะดวกในการเขียนโปรแกรม
+การประกาศและใช้งาน List List นั้นเป็นตัวแปรประเภทหนึ่ง การใช้งานของมันจะเหมือนกันอาเรย์ในภาษาอื่นๆ ในการประกาศ List นั้นข้อมูลของมันจะอยู่ภายในเครื่องหมาย [] และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา , มาดูตัวอย่างการประกาศ List ในภาษา Python
+numbers = [-1, 2, 5, 8, 10, 13] names = [&#39;Mateo&#39;, &#39;Danny&#39;, &#39;James&#39;, &#39;Thomas&#39;, &#39;Luke&#39;] mixed_type = [-2, 5, 84.</description>
+    </item>
+    
+    <item>
+      <title>Dictionaries</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</link>
+      <pubDate>Fri, 17 Jan 2020 11:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</guid>
+      <description>Python Dictionaries Data structures are basically containers that store data in predefined layouts, optimized for certain operations — like apples in a box, ready for picking😉.
+The Python programming language natively implements a number of data structures. Lists, tuples, sets, dictionaries are but some of them. We will be looking at the dictionary data type in subsequent sections.
+What are dictionaries ? key-value mapping  A dictionary in python is a mapping object that maps keys to values, where the keys are unique within a collection and the values can hold any arbitrary value.</description>
+    </item>
+    
+    <item>
+      <title>Dictionary</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</guid>
+      <description>Dictionary ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูล Dictionary ในภาษา Python เราจะแนะนำให้คุณรู้จักกับ Dictionary คืออะไร และการประกาศและใช้งานสำหรับเก็บข้อมูลในการเขียนโปรแกรม นอกจากนี้ เรายังจะพูดถึงการใช้งานเมธอดและ built-in functions ของ Dictionary และตัวอย่างการใช้งานกับการเขียนโปรแกรมใบรูปแบบต่างๆ ในภาษา Python
+Dictionary คือประเภทข้อมูลที่เก็บข้อมูลในรูปแบบคู่ของ Key และ Value โดยที่ Key ใช้สำหรับเป็น Index ในการเข้าถึงข้อมูลและ Value เป็นค่าข้อมูลที่สอดคล้องกับ Key ของมัน การเข้าถึงข้อมูลใน Dictionary นั้นรวดเร็วเพราะว่าข้อมูลได้ถูกทำ Index ไว้อัตโนมัติโดยใช้ Key นอกจากนี้ Dictionary ยังมีเมธอดและฟังก์ชันอำนวยความสะดวกสำหรับการทำงานทั่วไป
+การประกาศ Dictionary ในภาษา Python ในการใช้งาน Dictionary เรามักจะใช้เก็บข้อมูลที่สามารถใช้บางอย่างที่สามารถจำแนกข้อมูลออกจากกันได้ โดยกำหนดให้สิ่งนั้นเป็น Key ในการประกาศ Dictionary สมาชิกของมันจะอยู่ภายในวงเล็บปีกกา {} มาดูตัวอย่างในการประกาศ Dictionary ในภาษา Python
+scores = {&#39;james&#39;: 1828, &#39;thomas&#39;: 3628, &#39;danny&#39;: 9310} scores[&#39;bobby&#39;] = 4401 numbers = {1: &#39;One&#39;, 2: &#39;Two&#39;, 3: &#39;Three&#39;} print(scores) print(numbers)  ในตัวอย่าง เราได้ประกาศตัวแปร Dictionary ที่มีชื่อว่า scores สำหรับเก็บคะแนนของแต่ละคนโดยใช้ชื่อเป็น Key และค่าของมันก็คือคะแนน สมาชิกของ Dictionary แต่ละตัวจะถูกกำหนดในรูปแบบ key: value และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา เราได้กำหนดค่าเริ่มต้นสามค่าให้กับ Dictionary และสามารถกำหนดค่าให้กับ Dictionary ในรูปแบบ scores[&#39;bobby&#39;] ได้หลังจากที่ตัวแปรถูกสร้างแล้ว สังเกตว่าเราสามารถใช้ Key เป็น String หรือประเภทข้อมูลอื่นๆ ได้ ต่อมาตัวแปร numbers เป็น Dictionary ที่มี Key เป็นตัวเลข</description>
     </item>
     
     <item>
@@ -298,12 +431,324 @@ We&amp;rsquo;re using Bootstrap 4 CSS in this example but feel free to use any o
     </item>
     
     <item>
-      <title>Newfunction</title>
-      <link>https://dragon-library.github.io/library/tutorials/functions/newfunction/</link>
-      <pubDate>Tue, 26 Nov 2019 17:04:13 +0700</pubDate>
+      <title>Ep.14 Sending files with Flask</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/library/tutorials/functions/newfunction/</guid>
-      <description></description>
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-14/</guid>
+      <description>Sending files with Flask | Learning Flask Ep. 14 How to send and allow users to download files with Flask
+Allowing users to download files from your website of application is an often required feature of any website or application and Flask provides us with some useful function to do so.
+In this example, we&amp;rsquo;re going to allow our users to download 3 types of files, images, CSV&amp;rsquo;s and PDF&amp;rsquo;s simply by accessing a route and providing a unique id to the resource.</description>
+    </item>
+    
+    <item>
+      <title>Ep.15 Flask cookies</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-15/</guid>
+      <description>Flask cookies | Learning Flask Ep. 15 Setting, getting and working with cookies in Flask
+Cookies play an important role in most modern websites and web applications, allowing us leave small strings of key/value pairs on the clients browser to help both developers and users by temporarily preserving inportant information such as preferences, unique identifiers, state etc..
+Fortunately for us, Flask makes working with cookies very simple.
+Let&amp;rsquo;s get started.</description>
+    </item>
+    
+    <item>
+      <title>Ep.16 The Flask session object</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-16/</guid>
+      <description>The Flask session object | Learning Flask Ep. 16 Using, understanding and decoding the Flask session object, the globally available signed &amp;amp; encoded cookie
+Sessions in Flask are a way to store information about a specific user from one request to the next. They work by storing a cryptographically signed cookie on the users browser and decoding it on every request.
+The sesison object can be treated just like a dictionary that persists across requests, making it an ideal place to store non sensitive user data.</description>
+    </item>
+    
+    <item>
+      <title>21 Pandas operations</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</guid>
+      <description>21 Pandas operations for absolute beginners  Source  Prerequisites: Python and NumPy basics.
+A CSV file is comma-separated so in order to read a CSV file, do:
+df = pd.read_csv(file_path, sep=’,’, header = 0, index_col=False,names=None)  Explanation:
+read_csv function has a plethora of parameters and I have specified only a few, ones that you may use most often. A few key points:
+a) - header=0 means you have the names of columns in the first row in the file and if you don’t you will have to specify header=None b)  - index_col = False means to not use the first column of the data as an index in the data frame, you might want to set it to true if the first column is really an index.</description>
+    </item>
+    
+    <item>
+      <title>An A-Z of useful Python tricks</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/useful-python-tricks/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/useful-python-tricks/</guid>
+      <description>An A-Z of useful Python tricks Source : FreeCodeCamp.org
+Python is one of the world’s most popular, in-demand programming languages. This is for many reasons:
+ it’s easy to learn it’s super versatile it has a huge range of modules and libraries  I use Python daily as an integral part of my job as a data scientist. Along the way, I’ve picked up a few useful tricks and tips.</description>
+    </item>
+    
+    <item>
+      <title>Basic Data Analysis</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/</guid>
+      <description>Introduction to basic data analysis with Pandas (Private Munich Housemarket data set) Source
+This article is the continuation from a previous article (here link to medium) where I explained my goal of identifying the value of House Market in Munich in order to buy a house.
+Since I get the data, buying a house in Munich is out the question, I don’t (and probably will never) earn enough to actually realize that but the data are still interesting in order to do a quick look at data analysis with pandas.</description>
+    </item>
+    
+    <item>
+      <title>Code Examples</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-code-example/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-code-example/</guid>
+      <description>Python Code Examples By : freeCodeCamp
+Python is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles.
+Python Data Structures Example Some general information about floating point numbers and how they work in Python, can be found here.
+Nearly all implementations of Python follow the IEEE 754 specification: Standard for Binary Floating-Point Arithmetic. More information found on the IEEE site.</description>
+    </item>
+    
+    <item>
+      <title>Converting Strings using datetime</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/onverting-strings-to-datetime/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/onverting-strings-to-datetime/</guid>
+      <description>Converting Strings using datetime The datetime module consists of three different object types: date, time and datetime. As you may have guessed, date holds the date, time holds the time, and datetime holds both date and time.
+For example, the following example will print the current date and time:
+import datetime print (&#39;Current date/time: {}&#39;.format(datetime.datetime.now()))  Running this code will print an output similar to below:
+$ python3 datetime-print-1.py Current date/time: 2018-06-29 08:15:27.</description>
+    </item>
+    
+    <item>
+      <title>Datetime</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/date-time/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/date-time/</guid>
+      <description>Datetime import datetime x = datetime.datetime.now() print(x)  2019-09-26 00:21:06.668559  Date Output import datetime x = datetime.datetime.now() print(x.year) print(x.strftime(&amp;quot;%A&amp;quot;))  2019 Thursday  Creating Date Objects import datetime x = datetime.datetime(2020, 5, 17) print(x)  2020-05-17 00:00:00  The strftime() Method import datetime x = datetime.datetime(2018, 6, 1) print(x.strftime(&amp;quot;%B&amp;quot;))  June  A reference of all the legal format codes:    Directive Description Example     %a Weekday, short version Wed   %A Weekday, full version Wednesday   %w Weekday as a number 0-6, 0 is Sunday 3   %d Day of month 01-31 31   %b Month name, short version Dec   %B Month name, full version December   %m Month as a number 01-12 12   %y Year, short version, without century 18   %Y Year, full version 2018   %H Hour 00-23 17   %I Hour 00-12 05   %p AM/PM PM   %M Minute 00-59 41   %S Second 00-59 08   %f Microsecond 000000-999999 548513   %z UTC offset +0100   %Z Timezone CST   %j Day number of year 001-366 365   %U Week number of year, Sunday as the first day of week, 00-53 52   %W Week number of year, Monday as the first day of week, 00-53 52   %c Local version of date and time Mon Dec 31 17:41:00 2018   %x Local version of date 12/31/18   %X Local version of time 17:41:00   %% A % character %    timedelta ตัวอย่างการหาผลต่างของวันที่</description>
+    </item>
+    
+    <item>
+      <title>Exploration of S&amp;P 500 Index</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/</guid>
+      <description>Exploration of S&amp;amp;P 500 Index Using Pandas and Matplotlib In this article we want to explore whether it is true that staying in the market over a longer duration can be lucrative.
+Import the Python libraries that are commonly used for data analysis and data exploration such as Pandas and Matplotlib.
+In [1]:
+import pandas as pd import numpy as np import matplotlib.pyplot as plt  Read the files with S&amp;amp;P 500 data into Pandas dataframes.</description>
+    </item>
+    
+    <item>
+      <title>Extract table from PDF</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-02/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-02/</guid>
+      <description>tabula-py: Extract table from PDF into Python DataFrame As of Oct. 2019, I launched a documentation site and Google Colab notebook for tabula-py. The FAQ would be good place to execute accurate extraction.
+It is simple wrapper of tabula-java and it enables you to extract table into DataFrame or JSON with Python. You also can extract tables from PDF into CSV, TSV or JSON file.
+tabula is a tool to extract tables from PDFs.</description>
+    </item>
+    
+    <item>
+      <title>Functions and Functional Programming</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-functions_and-functional-programming/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-functions_and-functional-programming/</guid>
+      <description>Tutorial: Python Functions and Functional Programming  https://www.dataquest.io/blog/introduction-functional-programming-python/  Most of us have been introduced to Python as an object-oriented language, but Python functions are also useful tools for data scientists and programmers alike. While classes, and objects, are easy to start working with, there are other ways to write your Python code. Languages like Java can make it hard to move away from object-oriented thinking, but Python makes it easy.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with APIs</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-api-tutorial/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-api-tutorial/</guid>
+      <description>Python API Tutorial: Getting Started with APIs In this Python API tutorial, we’ll learn how to retrieve data for data science projects. There are millions of APIs online which provide access to data. Websites like Reddit, Twitter, and Facebook all offer certain data through their APIs.
+To use an API, you make a request to a remote web server, and retrieve the data you need.
+But why use an API instead of a static CSV dataset you can download from the web?</description>
+    </item>
+    
+    <item>
+      <title>House Market Analysis 1</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</guid>
+      <description>Python Pandas : House Market Analysis – Munich (2016-2017) (1&amp;frasl;2) Source
+I started to use python for other things than Data Analysis at the beginning. I was a technical SEO consultant and wanted to use a crawler (or built one) and not knowing any programming language, python looked as the perfect language to start with…
+Flash forward to nowadays, I am even more fan of python now because of its versatility to do what I just mentioned and also to realize data analysis easily.</description>
+    </item>
+    
+    <item>
+      <title>Introduction Pickle Module</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-pickle-module/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-pickle-module/</guid>
+      <description>Introduction to the Python Pickle Module Introduction Pickling is a popular method of preserving food. According to Wikipedia, it is also a pretty ancient procedure – although the origins of pickling are unknown, the ancient Mesopotamians probably used the process 4400 years ago. By placing a product in a specific solution, it is possible to drastically increase its shelf life. In other words, it&amp;rsquo;s a method that lets us store food for later consumption.</description>
+    </item>
+    
+    <item>
+      <title>OOP in Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/oop-in-python/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/oop-in-python/</guid>
+      <description>Object Oriented Programming in Python  Introduction Pros and Cons of OOP Class Objects Attributes Methods Constructors Local vs Global Variables Access Modifiers Inheritance Polymorphism Encapsulation Conclusion  Introduction Object-Oriented Programming (OOP) is a programming paradigm where different components of a computer program are modeled after real-world objects. An object is anything that has some characteristics and can perform a function.
+Consider a scenario where you have to develop a Formula 1 car racing game using the object-oriented programming approach.</description>
+    </item>
+    
+    <item>
+      <title>Optimizations</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-optimizations/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-optimizations/</guid>
+      <description>Python Optimizations Peephole is a way Python optimizes certain things of your program at compile time by either pre-calculating constant expressions or transforming certain data structures. Constant Expressions Optimizing constant expressions is really simple. What Python does is basically pre-calculate constants. Suppose that along your program you have the following multiplication for some reason,
+secondsInADay = 60*60*24  What python will do is pre-calculate that multiplication and will replace it for 86400 .</description>
+    </item>
+    
+    <item>
+      <title>Overloading Functions and Operators</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/overloading-functions/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/overloading-functions/</guid>
+      <description>Overloading Functions and Operators in Python What is Overloading? Overloading, in the context of programming, refers to the ability of a function or an operator to behave in different ways depending on the parameters that are passed to the function, or the operands that the operator acts on. In this article, we will see how we can perform function overloading and operator overloading in Python.
+Overloading a method fosters reusability.</description>
+    </item>
+    
+    <item>
+      <title>Pandas Cheatsheet</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/</guid>
+      <description>Cheatsheet วิธีใช้ และเทคนิคใน Pandas (Python) ฉบับสมบูรณ์ Pandas คืออะไร? Pandas เป็น Library ใน Python ที่ทำให้เราเล่นกับข้อมูลได้ง่ายขึ้น เหมาะมากสำหรับทำ Data Cleaning / Wrangling ครับผม
+วิธีการใช้งาน Pandas คือ โหลดไฟล์ข้อมูล เช่น CSV เข้าไป แล้วเราจะได้ข้อมูลในรูปแบบตาราง (DataFrame) ที่แบ่งข้อมูลตามแถวและคอลัมน์ หรือเหมือน Excel ที่เราใช้กันนั่นเอง
+
+ตัวอย่าง DataFrame ของ Pandas เป็นตารางเหมือน Excel เลยครับ
+ป.ล. Pandas ไม่เกี่ยวกับหมีแพนด้านะฮะ จริง ๆ แล้วมาจากคำว่า PANel DAta ซึ่งหมายถึงข้อมูลที่มีหลายมิตินั่นเอง
+เทคนิคการใช้ Pandas อย่างที่แอดมินเคยเล่า ว่าการทำ Data Wrangling เป็นงานที่ค่อนข้างถึกครับ วันนี้เลยรวบรวมโค้ดต่าง ๆ ในการใช้ Pandas มาให้ ซึ่งน่าจะครอบคลุมการใช้งานประมาณ 80 – 90% แล้วครับผม
+โค้ดบางส่วนมาจากคลาส Data Wrangling ที่แอดมินเรียน และจากเว็บไซต์ MyCheatSheet ครับ</description>
+    </item>
+    
+    <item>
+      <title>Python Dictionary Tutorial</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionary-tutorial/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionary-tutorial/</guid>
+      <description>Python Dictionary Tutorial  Introduction Creating a Dictionary Accessing Elements Adding Elements Updating Elements Removing Elements Other Common Methods Conclusion  Introduction Python comes with a variety of built-in data structures, capable of storing different types of data. A Python dictionary is one such data structure that can store data in the form of key-value pairs. The values in a Python dictionary can be accessed using the keys. In this article, we will be discussing the Python dictionary in detail.</description>
+    </item>
+    
+    <item>
+      <title>Python for PDF</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-01/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-01/</guid>
+      <description>Python for Pdf Why Python for PDF processing PDF processing comes under text analytics. Most of the Text Analytics Library or frameworks are designed in Python only. This gives leverage on text analytics. Once you extract the useful information from PDF you can easily use that data into any Machine Learning or Natural Language Processing Model.
+Common Python Libraries Here is the list of some Python Libraries could be used to handle PDF files</description>
+    </item>
+    
+    <item>
+      <title>Python Programming in R</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-programming-in-r/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-programming-in-r/</guid>
+      <description>Python Programming in R  All code used in this tutorial can be found here: https://github.com/joelalcedo/Python_in_R
+ I am a Data Scientist working in New York. I have worked on a number of different projects spanning data visualization, machine learning and software development all in hopes to better understand the complexities associated with the financial markets. I started learning how to program about 10 years ago in visual basic. One thing led to another (as it does) and I learned SQL, R, Python, JavaScript (regrettably), C++ and others.</description>
+    </item>
+    
+    <item>
+      <title>Python Time Module</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-time-module./</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-time-module./</guid>
+      <description>A Beginner’s Guide to the Python time Module Table of Contents
+ Dealing With Python Time Using Seconds  The Epoch Python Time in Seconds as a Floating Point Number Python Time in Seconds as a String Representing Local Time  Understanding Time Zones  UTC and Time Zones Daylight Savings Time  Dealing With Python Time Using Data Structures  Python Time as a Tuple Python Time as an Object  Converting Python Time in Seconds to an Object  Coordinated Universal Time (UTC) Local Time  Converting a Local Time Object to Seconds Converting a Python Time Object to a String  asctime() strftime()  Converting a Python Time String to an Object Suspending Execution Measuring Performance Conclusion Further Reading  The Python time module provides many ways of representing time in code, such as objects, numbers, and strings.</description>
+    </item>
+    
+    <item>
+      <title>Python vs. Scala  (Part I)</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-1/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-1/</guid>
+      <description>Python vs. Scala: a comparison of the basic commands (Part I) Source :
+I recently started playing a little bit with Scala, and I have to say it has been kind of traumatic. I love learning new things but after months of programming with Python, it is just not natural to set that aside and switch mode while solving Data Science problems. When learning a new language, whether it is a coding or a spoken one, it is normal for this to happen.</description>
+    </item>
+    
+    <item>
+      <title>Python vs. Scala  (Part II)</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-2/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-2/</guid>
+      <description>Pandas vs. Spark: how to handle dataframes (Part II) “Panda statues on gray concrete stairs during daytime” by chuttersnap on Unsplash. “Scala” means “stairway” in Italian, my native language: hence the choice of the picture. It just seemed appropriate.
+A few days ago I published a post comparing the basic commands of Python and Scala: how to deal with lists and arrays, functions, loops, dictionaries and so on. As I continue practicing with Scala, it seemed appropriate to follow-up with a second part, comparing how to handle dataframes in the two programming languages, in order to get the data ready before the modeling process.</description>
+    </item>
+    
+    <item>
+      <title>Selecting Subsets of Data 1</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/</guid>
+      <description>Selecting Subsets of Data in Pandas Part 1  Source  This article is available as a Jupyter Notebook complete with exercises at the bottom to practice and detailed solutions in another notebook.
+Become an Expert  My book Master Data Analysis with Python is the most comprehensive text on the market to learn data analysis using Python and comes with 300+ exercises and projects. Sign-up for the FREE Intro to Pandas class Follow me on Twitter @TedPetrou for my daily data science tricks  Part 1: Selection with [ ], .</description>
+    </item>
+    
+    <item>
+      <title>Send email using SMTP</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/use-python-send-email/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/use-python-send-email/</guid>
+      <description>Use Python to send email using SMTP Use Python to send emails
+In this tutorial, we will learn to use python to send emails. If you are new to python, you can see our beginner’s series. In case you are having trouble installing Python, you can see our posts on installing python on MacOS and Windows.
+We will start with sending plain email using python and then learn to send advanced automated emails, HTML emails, emails with attachments etc.</description>
+    </item>
+    
+    <item>
+      <title>Set Passwords and Secret Keys</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/</guid>
+      <description>Set Passwords and Secret Keys in Environment Variables (Mac/Linux/Windows) Hide Passwords and Secret Keys in Environment Variables
+If you are into python , there is a fair chance that you would have contributed to open-source or had your code snippets/projects on Github or BitBucket.Some time your code involves some important credentials like passwords or secret keys etc. like the code for our post on how to send emails using python uses google/app password.</description>
+    </item>
+    
+    <item>
+      <title>Stock Analysis in Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-analysis-in-python/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-analysis-in-python/</guid>
+      <description>Stock Analysis in Python Exploring financial data with object-oriented programming and additive models
+It’s easy to get carried away with the wealth of data and free open-source tools available for data science. After spending a little bit of time with the quandl financial library and the prophet modeling library, I decided to try some simple stock data exploration. Several days and 1000 lines of Python later, I ended up with a complete stock analysis and prediction tool.</description>
+    </item>
+    
+    <item>
+      <title>การใช้งาน Virtualenv</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/virtualenv/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/virtualenv/</guid>
+      <description>การใช้งาน Virtualenv Virtualenv คืออะไร Virtualenv(ironment) คือ environment ของ python เช่น คุณทำโปรแกรมอยู่ 2 ตัว A กับ B แล้วเวลาคุณจะติดตั้ง library ถ้าคุณ pip install ลงไปเลย
+ library ที่คุณใช้กับงาน A กับปนมั่วกับงาน B  เช่น เวลาจะทำไฟล์ requirement เพื่อให้คนอื่น สามารถติดตั้ง library ที่ใช้กับงานเราได้สะดวกมากขึ้นก็กลับกลายเป็นว่า งาน A ใช้ 5 library งาน B ใช้ 10 Libray สรุป คนที่เอาโปรแกรมเราไม่ไปใช้ก็ไม่รู้ว่า โปรแกรมเราใช้ library อะไรบ้างก็ต้องติดตั้งทั้งหมด 15 library
+ หรือแบบไม่สามารถแยก version ของ library กันได้  เช่น งาน A ใช้ OpenCV 3 แต่ งาน B ใช้ OpenCV 4 ทำไงให้ลง 2 version พร้อมกันได้ละ ก็ต้องให้เจ้า Virtualenv ช่วยเราไง</description>
     </item>
     
     <item>
@@ -328,6 +773,96 @@ More complete instructions are available at Install Hugo
 Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
 Follow the following steps:
  Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+    <item>
+      <title>Building a Stock Screener - Part 1</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</guid>
+      <description>Building a Stock Screener in Python- Part 1  ที่มาบทความ .
+ In this post, I’ll share how to create a stock screener — a program which can filter stocks based on user preferences — from scratch (and for free) using python. This project will be broken into 3 parts-
+ Scraping data Storing data Screening data  Before we dive into programming, let’s start by asking why anyone would want to build a stock screener.</description>
+    </item>
+    
+    <item>
+      <title>Building a Stock Screener - Part 2</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/</guid>
+      <description>Building a Stock Screener in Python- Part 2 In this series, I’ll share how to create a stock screener — a program which can filter stocks based on user preferences — from scratch (and for free) using python. This project will be broken into 3 parts-
+ Scraping data Storing data Screening data  If you haven’t already, check out Part 1 where I talk about scraping stock information from Yahoo Finance in under 10 minutes!</description>
+    </item>
+    
+    <item>
+      <title>Dash by Plotly</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/</guid>
+      <description>Python for Finance: Dash by Plotly  Source.
+ Part 2 of Leveraging Python for Stock Portfolio Analyses. In part 1 of this series I discussed how, since I’ve become more accustomed to using pandas, that I have signficantly increased my use of Python for financial analyses. During the part 1 post, we reviewed how to largely automate the tracking and benchmarking of a stock portfolio’s performance leveraging pandas and the Yahoo Finance API.</description>
+    </item>
+    
+    <item>
+      <title>How to scrape Yahoo Finance</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/</guid>
+      <description>How to scrape Yahoo Finance and extract fundamental stock market data using Python, LXML, and Pandas In this blog post I’ll show you how to scrape Income Statement, Balance Sheet, and Cash Flow data for companies from Yahoo Finance using Python, LXML, and Pandas.
+I’ll use data from Mainfreight NZ (MFT.NZ) as an example, but the code will work for any stock symbol on Yahoo Finance.
+The screenshot below shows a Pandas DataFrame with MFT.</description>
+    </item>
+    
+    <item>
+      <title>Quantitative Trading Strategies</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/</guid>
+      <description>Python for Finance, Part 2: Intro to Quantitative Trading Strategies In Python for Finance, Part I, we focused on using Python and Pandas to
+ retrieve financial time-series from free online sources (Yahoo), format the data by filling missing observations and aligning them, calculate some simple indicators such as rolling moving averages and visualise the final time-series.  As a reminder, the dataframe containing the three “cleaned” price timeseries has the following format:</description>
+    </item>
+    
+    <item>
+      <title>Requests and BeautifulSoup</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/</guid>
+      <description>Ultimate Guide to Web Scraping with Python Part 1: Requests and BeautifulSoup After the 2016 election I became much more interested in media bias and the manipulation of individuals through advertising. This series will be a walkthrough of a web scraping project that monitors political news from both left and right wing media outlets and performs an analysis on the rhetoric being used, the ads being displayed, and the sentiment of certain topics.</description>
+    </item>
+    
+    <item>
+      <title>Stock Portfolio Analyses</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/</guid>
+      <description>Python for Finance: Stock Portfolio Analyses  Written with StackEdit.
+ My two most recent blog posts were about Scaling Analytical Insights with Python; part 1 can be found here and part 2 can be found here. It has been several months since I wrote those, largely due to the fact that I relocated my family to Seattle to join Amazon in November; I’ve spent most of the time on my primary project determining our global rollout plan and related business intelligence roadmap.</description>
+    </item>
+    
+    <item>
+      <title>Web Scraping 101</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</guid>
+      <description>Web Scraping 101 in Python : overview of the tools &amp;amp; the pros and cons of each Summary:  Web Fundamentals Manually opening a socket and sending the HTTP request urllib3 &amp;amp; LXML requests &amp;amp; BeautifulSoup Scrapy Selenium &amp;amp; Chrome —headless Conclusion  Web Fundamentals The internet is really complex–there are many underlying technologies and concepts involved to view a simple web page in your browser. I&amp;rsquo;m not going to explain everything, but I will show you the most important things you have to understand in order to extract data from the web.</description>
+    </item>
+    
+    <item>
+      <title>Yahoo &amp; Google Finance API</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</guid>
+      <description>Python for Finance, Part I: Yahoo &amp;amp; Google Finance API, pandas, and matplotlib Getting the Data Pandas and matplotlib are included in the more popular distributions of Python for Windows, such as Anaconda.
+In case it&amp;rsquo;s not included in your Python distribution, just simply use pip or conda install. Once installed, to use pandas, all one needs to do is import it. We will also need the pandas_datareader package (pip install pandas-datareader), as well as matplotlib for visualizing our results.</description>
     </item>
     
   </channel>

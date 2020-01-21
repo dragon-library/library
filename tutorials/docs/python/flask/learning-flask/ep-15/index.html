@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.15 Flask cookies"><meta property="og:title" content="Ep.15 Flask cookies" />
+<meta property="og:description" content="Flask cookies | Learning Flask Ep. 15 Setting, getting and working with cookies in Flask
+Cookies play an important role in most modern websites and web applications, allowing us leave small strings of key/value pairs on the clients browser to help both developers and users by temporarily preserving inportant information such as preferences, unique identifiers, state etc..
+Fortunately for us, Flask makes working with cookies very simple.
+Let&rsquo;s get started." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-15/" />
+
+<title>Ep.15 Flask cookies | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/"  class="active">
+      Ep.15 Flask cookies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.15 Flask cookies</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="flask-cookies-learning-flask-ep-15">Flask cookies | Learning Flask Ep. 15</h1>
+
+<p>Setting, getting and working with cookies in Flask</p>
+
+<p>Cookies play an important role in most modern websites and web applications, allowing us leave small strings of key/value pairs on the clients browser to help both developers and users by temporarily preserving inportant information such as preferences, unique identifiers, state etc..</p>
+
+<p>Fortunately for us, Flask makes working with cookies very simple.</p>
+
+<p>Let&rsquo;s get started.</p>
+
+<h3 id="flask-imports">Flask imports</h3>
+
+<p>Working with cookies requires a couple of imports from Flask.</p>
+
+<ul>
+<li><code>request</code>  To set and get cookies</li>
+<li><code>make_response</code>  - To build a response to attach cookies to</li>
+</ul>
+
+<p>Go ahead and import them at the top of your Flask app:</p>
+
+<pre><code class="language-py">from flask import request, make_response
+</code></pre>
+
+<h3 id="create-a-new-route">Create a new route</h3>
+
+<p>For this example, we&rsquo;re going to create a simple route with the URL  <code>/cookies</code>:</p>
+
+<pre><code class="language-py">@app.route(&quot;/cookies&quot;)
+def cookies():
+
+    resp = make_response(&quot;Cookies&quot;)
+
+    return resp
+</code></pre>
+
+<p>We&rsquo;ve create a response by passing a simple string to the  <code>make_response</code>  function  <code>resp = make_response(&quot;Cookies&quot;)</code>  which is then returned.</p>
+
+<p>The exact same thing would be achieved with:</p>
+
+<pre><code class="language-py">@app.route(&quot;/cookies&quot;)
+def cookies():
+
+    return &quot;Cookies&quot;
+</code></pre>
+
+<p>We&rsquo;re not covering  <code>make_response</code>  in detail in this part, just know that you can build your response ahead of time and modify it before returning it!</p>
+
+<p>If you wanted to return a template, you would do the following:</p>
+
+<pre><code class="language-py">@app.route(&quot;/cookies&quot;)
+def cookies():
+
+    resp = make_response(render_template(&quot;cookies.html&quot;))
+
+    return resp 
+</code></pre>
+
+<p>It&rsquo;s exactly the same as:</p>
+
+<pre><code class="language-py">@app.route(&quot;/cookies&quot;)
+def cookies():
+
+    return render_template(&quot;cookies.html&quot;) 
+</code></pre>
+
+<p>The difference is that by using  <code>make_response</code>  we can build and modify our request ahead of sending it.</p>
+
+<h3 id="setting-cookies">Setting cookies</h3>
+
+<p>Setting cookies is a simple affair. We simply attach them to our response object.</p>
+
+<p>The syntax for setting a cookie is:</p>
+
+<pre><code class="language-py">response.set_cookie(&quot;key&quot;, &quot;value&quot;)
+</code></pre>
+
+<p>For example, let&rsquo;s set a cookie with the key of  <code>flavor</code>  and the  <code>value</code>  of  <code>chocolate chip</code>:</p>
+
+<pre><code class="language-py">@app.route(&quot;/cookies&quot;)
+def cookies():
+
+    resp = make_response(&quot;Cookies&quot;)
+
+    resp.set_cookie(&quot;flavor&quot;, &quot;chocolate chip&quot;)
+
+    return resp
+</code></pre>
+
+<p>If you open the developer tools in your browser, head to the  <code>storage</code>  tab and select  <code>cookies</code>  from the navigation on the left, you&rsquo;ll see that the  <code>flavour</code>  cookie has been set!</p>
+
+<h3 id="cookie-parameters">Cookie parameters</h3>
+
+<p>You might notice in the developer tools, cookies have several parameters including  <code>key</code>,  <code>value</code>,  <code>domain</code>,  <code>path</code>  and more, all of which can be set using Flask.</p>
+
+<p>The  <code>set_cookie</code>  function takes the following parameters:</p>
+
+<pre><code class="language-py">set_cookie(
+    key, 
+    value='', 
+    max_age=None, 
+    expires=None, 
+    path='/', 
+    domain=None, 
+    secure=False, 
+    httponly=False, 
+    samesite=None
+)
+</code></pre>
+
+<p>See the table below for a breakdown of the cookie parameters available:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>key</td>
+<td>required</td>
+<td>The key (name) of the cookie</td>
+</tr>
+
+<tr>
+<td>value</td>
+<td>&rdquo;&rdquo;</td>
+<td>The value of the cookie</td>
+</tr>
+
+<tr>
+<td>max_age</td>
+<td>None</td>
+<td>Number of seconds or None (default)</td>
+</tr>
+
+<tr>
+<td>expires</td>
+<td>None</td>
+<td>The date of then the cookie expires, must be a datetime object</td>
+</tr>
+
+<tr>
+<td>path</td>
+<td>None</td>
+<td>Limits the cookie to a given path</td>
+</tr>
+
+<tr>
+<td>domain</td>
+<td>None</td>
+<td>specify a domain able to read the cookie (default is the domain that set it)</td>
+</tr>
+
+<tr>
+<td>secure</td>
+<td>False</td>
+<td>If True, the cookie will only be available over HTTPS</td>
+</tr>
+
+<tr>
+<td>httponly</td>
+<td>False</td>
+<td>Disallow JavaScript to access the cookie (Limited browser support)</td>
+</tr>
+
+<tr>
+<td>samesite</td>
+<td>False</td>
+<td>Limits the scope of where the cookie is accessible to the same site</td>
+</tr>
+</tbody>
+</table>
+
+<p>These options give us a great deal of control of how our cookies work and provide plenty of ways to manage them.</p>
+
+<p>Let&rsquo;s set the  <code>max_age</code>  and  <code>path</code>  keys with  <code>30</code>  seconds and the  <code>/cookies</code>  path:</p>
+
+<pre><code>resp.set_cookie(
+    &quot;flavor&quot;, 
+    value=&quot;chocolate chip&quot;,
+    max_age=10,
+    path=request.path
+)
+</code></pre>
+
+<p>We&rsquo;ve used  <code>request.path</code>  to access the path of the current route</p>
+
+<p>If you check your browsers developer tools console, you&rsquo;ll see our  <code>flavor</code>  cookie now has an  <code>Expires on</code>  date along with a value for  <code>Path</code>  of  <code>/cookies</code>.</p>
+
+<p>We&rsquo;re going to come back to  <code>max_age</code>  in a minute with another example, but now let&rsquo;s talk through how to access cookies.</p>
+
+<h3 id="accessing-cookies">Accessing cookies</h3>
+
+<p>Just like we&rsquo;ve used the  <code>request</code>  object to access many different request values including  <code>request.form</code>,  <code>request.args</code>,  <code>request.files</code>  and  <code>request.get_json()</code>..</p>
+
+<p>We use  <code>request.cookies</code>  to access the cookies with the following syntax:</p>
+
+<pre><code class="language-py">cookies = request.cookies
+</code></pre>
+
+<p>If you run  <code>print(request.cookies)</code>  you&rsquo;ll see we get a nicely serialized Python disctionary:</p>
+
+<pre><code class="language-py">print(request.cookies)
+</code></pre>
+
+<pre><code class="language-py">{'flavor': 'chocolate chip'}
+</code></pre>
+
+<p>As we&rsquo;re now working with a dictionary, we can access the individual values by key:</p>
+
+<pre><code class="language-py">flavor = cookies.get(&quot;flavor&quot;)
+</code></pre>
+
+<blockquote>
+<p>Tip - Use  <code>cookies.get(&quot;key&quot;)</code>  to access keys in order to mute any key errors when trying to access the dictionary values by key</p>
+</blockquote>
+
+<p>Let&rsquo;s set a few more cookies:</p>
+
+<pre><code class="language-py">resp.set_cookie(&quot;chocolate type&quot;, &quot;dark&quot;)
+resp.set_cookie(&quot;chewy&quot;, &quot;yes&quot;)
+</code></pre>
+
+<p>If we now print  <code>request.cookies</code>, we see:</p>
+
+<pre><code class="language-py">{'flavor': 'chocolate chip', 'chocolate type': 'dark', 'chewy': 'yes'}
+</code></pre>
+
+<h3 id="max-age">max age</h3>
+
+<p>You may notice that even after setting  <code>max_age</code>  in our  <code>flavor</code>  cookie, it still hangs around in the developer tools.</p>
+
+<p>Go ahead and comment out the first cookie we set:</p>
+
+<pre><code class="language-py">@app.route(&quot;/cookies&quot;)
+def cookies():
+    resp = make_response(&quot;Set cookies&quot;)
+    cookies = request.cookies
+    print(cookies)
+
+    # resp.set_cookie(
+    #     &quot;flavor&quot;, 
+    #     value=&quot;chocolate chip&quot;,
+    #     max_age=10,
+    #     path=request.path
+    # )
+
+    resp.set_cookie(&quot;chocolate type&quot;, &quot;dark&quot;)
+    resp.set_cookie(&quot;chewy&quot;, &quot;yes&quot;)
+
+    return resp
+</code></pre>
+
+<p>Refresh the page and give it 10 seconds or so. You&rsquo;ll notice we get the following in the terminal output:</p>
+
+<pre><code class="language-py">{'chocolate type': 'dark', 'chewy': 'yes'}
+</code></pre>
+
+<p>Even though the  <code>flavor</code>  cookie persists in the browser, it&rsquo;s not send to the server as we explicitly set the  <code>max_age</code>  variable in the cookie to 10 seconds. It will be deleted when the browser is closed.</p>
+
+<blockquote>
+<p>Tip - To delete cookies from your browser, right click on the domain in the  <code>cookies</code>  tab in the developer tools and click on  <code>delete</code></p>
+</blockquote>
+
+<h3 id="setting-cookies-from-the-client">Setting cookies from the client</h3>
+
+<p>Setting cookies using JavaScript is also very simple.</p>
+
+<pre><code class="language-py">document.cookie = &quot;key=value&quot;;
+</code></pre>
+
+<p>This will set the most basic type of cookie with no other meta information.</p>
+
+<p>We can also provide the cookie with some more parameters like so:</p>
+
+<pre><code class="language-py">document.cookie = &quot;key=value; expires=DDD, DD MMM YYYY HH:MM:SS UTC&quot;;
+</code></pre>
+
+<p>You can also add a path with the following:</p>
+
+<pre><code class="language-py">document.cookie = &quot;key=value; expires=DDD, DD MMM YYYY HH:MM:SS UTC; path=/path&quot;;
+</code></pre>
+
+<p>You&rsquo;ll then be able to access any of the cookies set client-side using</p>
+
+<pre><code class="language-py">request.cookies
+</code></pre>
+
+<h3 id="sessions">Sessions</h3>
+
+<p>Sessions use a special type of signed cookie, but you&rsquo;ll have to read the next episode in this series to learn more!</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="https://pythonise.com/series/learning-flask/flask-cookies">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-15.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#flask-cookies-learning-flask-ep-15">Flask cookies | Learning Flask Ep. 15</a>
+<ul>
+<li>
+<ul>
+<li><a href="#flask-imports">Flask imports</a></li>
+<li><a href="#create-a-new-route">Create a new route</a></li>
+<li><a href="#setting-cookies">Setting cookies</a></li>
+<li><a href="#cookie-parameters">Cookie parameters</a></li>
+<li><a href="#accessing-cookies">Accessing cookies</a></li>
+<li><a href="#max-age">max age</a></li>
+<li><a href="#setting-cookies-from-the-client">Setting cookies from the client</a></li>
+<li><a href="#sessions">Sessions</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

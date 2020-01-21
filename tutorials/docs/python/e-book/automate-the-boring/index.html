@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Automate the Boring Stuff"><meta property="og:title" content="Automate the Boring Stuff" />
+<meta property="og:description" content="Automate the Boring Stuff with Python By Al Sweigart. Free to read under a Creative Commons license.
+Table of Contents  Chapter 0 – Introduction Chapter 1 – Python Basics Chapter 2 – Flow Control Chapter 3 – Functions Chapter 4 – Lists Chapter 5 – Dictionaries and Structuring Data Chapter 6 – Manipulating Strings Chapter 7 – Pattern Matching with Regular Expressions Chapter 8 – Input Validation Chapter 9 – Reading and Writing Files Chapter 10 – Organizing Files Chapter 11 – Debugging Chapter 12 – Web Scraping Chapter 13 – Working with Excel Spreadsheets Chapter 14 – Working with Google Spreadsheets Chapter 15 – Working with PDF and Word Documents Chapter 16 – Working with CSV Files and JSON Data Chapter 17 – Keeping Time, Scheduling Tasks, and Launching Programs Chapter 18 – Sending Email and Text Messages Chapter 19 – Manipulating Images Chapter 20 – Controlling the Keyboard and Mouse with GUI Automation Appendix A – Installing Third-Party Modules Appendix B – Running Programs Appendix C – Answers to the Practice Questions  (Read the 1st edition book." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/e-book/automate-the-boring/" />
+
+<title>Automate the Boring Stuff | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/e-book/automate-the-boring/"  class="active">
+      Automate the Boring Stuff
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Automate the Boring Stuff</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="automate-the-boring-stuff-with-python-https-automatetheboringstuff-com-2e-fbclid-iwar0psb75axl5vmtjr7snw965poswqckpbg42gqk-eot2l3-ndig8hi8bkws"><a href="https://automatetheboringstuff.com/2e/?fbclid=IwAR0PsB75aXl5VMTjr7SNW965pOsWqckPBG42Gqk-EOT2l3-ndiG8Hi8BkWs">Automate the Boring Stuff with Python</a></h1>
+
+<p><img src="https://images-na.ssl-images-amazon.com/images/I/51SYS7OOBkL._SX376_BO1,204,203,200_.jpg" alt="enter image description here" /></p>
+
+<p>By Al Sweigart. Free to read under a  <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons license</a>.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+<li><a href="https://automatetheboringstuff.com/2e/chapter0/">Chapter 0 – Introduction</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter1/">Chapter 1 – Python Basics</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter2/">Chapter 2 – Flow Control</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter3/">Chapter 3 – Functions</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter4/">Chapter 4 – Lists</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter5/">Chapter 5 – Dictionaries and Structuring Data</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter6/">Chapter 6 – Manipulating Strings</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter7/">Chapter 7 – Pattern Matching with Regular Expressions</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter8/">Chapter 8 – Input Validation</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter9/">Chapter 9 – Reading and Writing Files</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter10/">Chapter 10 – Organizing Files</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter11/">Chapter 11 – Debugging</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter12/">Chapter 12 – Web Scraping</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter13/">Chapter 13 – Working with Excel Spreadsheets</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter14/">Chapter 14 – Working with Google Spreadsheets</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter15/">Chapter 15 – Working with PDF and Word Documents</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter16/">Chapter 16 – Working with CSV Files and JSON Data</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter17/">Chapter 17 – Keeping Time, Scheduling Tasks, and Launching Programs</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter18/">Chapter 18 – Sending Email and Text Messages</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter19/">Chapter 19 – Manipulating Images</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/chapter20/">Chapter 20 – Controlling the Keyboard and Mouse with GUI Automation</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/appendixa/">Appendix A – Installing Third-Party Modules</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/appendixb/">Appendix B – Running Programs</a></li>
+<li><a href="https://automatetheboringstuff.com/2e/appendixc/">Appendix C – Answers to the Practice Questions</a></li>
+</ul>
+
+<p><a href="https://automatetheboringstuff.com/chapter0/">(Read the 1st edition book.)</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5ce-Book%5cAutomate-the-Boring.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

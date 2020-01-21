@@ -15,11 +15,20 @@ Query strings are essentially a string of key/value pairs sent by the client to 
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
 
 
-<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -90,6 +99,78 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
     
       
         
@@ -265,14 +346,34 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
-  </ul>
-  
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
-  </li>
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
       
     
   </ul>
@@ -288,21 +389,21 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/library/tutorials/docs/python/pythonthailand/" >
-      Python Thailand
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
   </a>
 
 </li>
       
     
-      
-        <li>
+  </ul>
+  
 
-  <a href="/library/tutorials/docs/python/awesome/" >
-      Awesome Python
-  </a>
 
-</li>
+
+  </li>
+
+
       
     
       
@@ -380,6 +481,32 @@ https://github.com/alex-shpak/hugo-book
 
   <a href="/library/tutorials/docs/front-end/javascript/" >
       JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
   </a>
 
 
@@ -494,9 +621,10 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No query string received&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+<pre><code class="language-py">@app.route(&quot;/query&quot;)
+def query():
+    return &quot;No query string received&quot;, 200
+</code></pre>
 
 <p>If you got to  <code>/query</code>  in your browser, you&rsquo;ll see  <code>No query string received</code>  in your window.</p>
 
@@ -510,7 +638,8 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request</code></pre></div>
+<pre><code class="language-py">from flask import request
+</code></pre>
 
 <p>Just like we&rsquo;ve used  <code>request.form</code>  for serializing form data and  <code>request.get_json()</code>  to serialize incoming JSON data, we use  <code>request.args</code>  to parse and serialize the query string into a Python object.</p>
 
@@ -518,14 +647,15 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+<pre><code class="language-py">@app.route(&quot;/query&quot;)
+def query():
 
-    args <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>args
+    args = request.args
 
-    <span style="color:#66d9ef">print</span>(args)
+    print(args)
 
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No query string received&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+    return &quot;No query string received&quot;, 200
+</code></pre>
 
 <p>Save and reload that same URL with the query string, you&rsquo;ll see the following in your terminal:</p>
 
@@ -535,60 +665,64 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> args<span style="color:#f92672">.</span>items():
-    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{k}: {v}&#34;</span>)<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+<pre><code class="language-py">for k, v in args.items():
+    print(f&quot;{k}: {v}&quot;)` 
+</code></pre>
 
 <p>You&rsquo;ll see our keys and values printed out to the console:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">foo: foo
+<pre><code class="language-py">foo: foo
 bar: bar
 baz: baz
-title: query strings <span style="color:#66d9ef">with</span> flask<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+title: query strings with flask` 
+</code></pre>
 
 <p>Just like a dictionary, we can now pluck out values by their key:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+<pre><code class="language-py">@app.route(&quot;/query&quot;)
+def query():
 
-    args <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>args
+    args = request.args
 
-    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;foo&#34;</span> <span style="color:#f92672">in</span> args:
-        foo <span style="color:#f92672">=</span> args[<span style="color:#e6db74">&#34;foo&#34;</span>]
+    if &quot;foo&quot; in args:
+        foo = args[&quot;foo&quot;]
 
-    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;bar&#34;</span> <span style="color:#f92672">in</span> args:
-        bar <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;bar&#34;</span>)
+    if &quot;bar&quot; in args:
+        bar = args.get(&quot;bar&quot;)
 
-    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;baz&#34;</span> <span style="color:#f92672">in</span> args:
-        baz <span style="color:#f92672">=</span> args[<span style="color:#e6db74">&#34;baz&#34;</span>]
+    if &quot;baz&quot; in args:
+        baz = args[&quot;baz&quot;]
 
-    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;title&#34;</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>args:
-        title <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>args<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;title&#34;</span>)
+    if &quot;title&quot; in request.args:
+        title = request.args.get(&quot;title&quot;)
 
-    <span style="color:#66d9ef">print</span>(foo, bar, baz, title)
+    print(foo, bar, baz, title)
 
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No query string received&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+    return &quot;No query string received&quot;, 200
+</code></pre>
 
 <p>However at this point we&rsquo;ll get an error if we don&rsquo;t send a query string with values for  <code>foo</code>,  <code>bar</code>,  <code>baz</code>  and  <code>title</code>.</p>
 
 <p>Let&rsquo;s refactor our code to mitigate any potantial errors and return a formatted query string to the client:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+<pre><code class="language-py">@app.route(&quot;/query&quot;)
+def query():
 
-    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>args:
+    if request.args:
 
-        <span style="color:#75715e"># We have our query string nicely serialized as a Python dictionary</span>
-        args <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>args
+        # We have our query string nicely serialized as a Python dictionary
+        args = request.args
 
-        <span style="color:#75715e"># We&#39;ll create a string to display the parameters &amp; values</span>
-        serialized <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">.</span>join(f<span style="color:#e6db74">&#34;{k}: {v}&#34;</span> <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>args<span style="color:#f92672">.</span>items())
+        # We'll create a string to display the parameters &amp; values
+        serialized = &quot;, &quot;.join(f&quot;{k}: {v}&quot; for k, v in request.args.items())
 
-        <span style="color:#75715e"># Display the query string to the client in a different format</span>
-        <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;(Query) {serialized}&#34;</span>, <span style="color:#ae81ff">200</span>
+        # Display the query string to the client in a different format
+        return f&quot;(Query) {serialized}&quot;, 200
 
-    <span style="color:#66d9ef">else</span>:
+    else:
 
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;No query string received&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+        return &quot;No query string received&quot;, 200
+</code></pre>
 
 <p>If you re-submit the URL, you&rsquo;ll see:</p>
 
@@ -602,12 +736,13 @@ title: query strings <span style="color:#66d9ef">with</span> flask<span style="c
 
 <p><code>request.query_string</code>  will return the query string, for example:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+<pre><code class="language-py">@app.route(&quot;/query&quot;)
+def query():
 
-    <span style="color:#66d9ef">print</span>(request<span style="color:#f92672">.</span>query_string)
+    print(request.query_string)
 
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+    return &quot;Thanks&quot;, 200
+</code></pre>
 
 <p>Will return:</p>
 
@@ -615,16 +750,19 @@ title: query strings <span style="color:#66d9ef">with</span> flask<span style="c
 
 <p><code>request.values</code>  will return a  <code>CombinedMultiDict</code>  which comines  <code>args</code>  with  <code>form</code>, for example:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/query&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">query</span>():
+<pre><code class="language-py">@app.route(&quot;/query&quot;)
+def query():
 
-    <span style="color:#66d9ef">print</span>(request<span style="color:#f92672">.</span>values)
+    print(request.values)
 
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks&#34;</span>, <span style="color:#ae81ff">200</span><span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
+    return &quot;Thanks&quot;, 200` 
+</code></pre>
 
 <p>Returns:</p>
 
-<p><code>CombinedMultiDict([ImmutableMultiDict([('foo', 'foo'), ('bar', 'bar'), ('baz', 'baz'), ('title', 'query strings with flask')]), ImmutableMultiDict([])])</code></p>
+<pre><code>CombinedMultiDict([ImmutableMultiDict([('foo', 'foo'), ('bar', 'bar'), ('baz', 'baz'),   
+('title', 'query strings with flask')]), ImmutableMultiDict([])]) 
+</code></pre>
 
 <p>Not something I&rsquo;ve used in the past but can imagine it would be useful to submit a form with query string parameters in the URL.</p>
 

@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.16 The Flask session object"><meta property="og:title" content="Ep.16 The Flask session object" />
+<meta property="og:description" content="The Flask session object | Learning Flask Ep. 16 Using, understanding and decoding the Flask session object, the globally available signed &amp; encoded cookie
+Sessions in Flask are a way to store information about a specific user from one request to the next. They work by storing a cryptographically signed cookie on the users browser and decoding it on every request.
+The sesison object can be treated just like a dictionary that persists across requests, making it an ideal place to store non sensitive user data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-16/" />
+
+<title>Ep.16 The Flask session object | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/"  class="active">
+      Ep.16 The Flask session object
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.16 The Flask session object</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="the-flask-session-object-learning-flask-ep-16">The Flask session object | Learning Flask Ep. 16</h1>
+
+<p>Using, understanding and decoding the Flask session object, the globally available signed &amp; encoded cookie</p>
+
+<p>Sessions in Flask are a way to store information about a specific user from one request to the next. They work by storing a cryptographically signed cookie on the users browser and decoding it on every request.</p>
+
+<p>The sesison object can be treated just like a dictionary that persists across requests, making it an ideal place to store non sensitive user data.</p>
+
+<p><strong>Important</strong></p>
+
+<blockquote>
+<p>The session object is NOT a secure way to store data. It&rsquo;s a base64 encoded string and can easily be decoded, thus not making it a secure way to save or access sensitive information.</p>
+</blockquote>
+
+<p>We&rsquo;ll demonstrate decoding a session cookie shortly.</p>
+
+<p>In this example, we&rsquo;re going to create a very unsecure system to allow users to log in and view their profile.</p>
+
+<p>The purpose is to demonstrate the session object, not a secure user management system! This guide doesn&rsquo;t include any password hashing, user feedback or even a real database, it&rsquo;s purely for the demonstration of working with sessions.</p>
+
+<h3 id="login-page">Login page</h3>
+
+<p>Let&rsquo;s start by creating a template allowing our user to login by providing a username and password:</p>
+
+<pre><code class="language-py">{% extends &quot;public/templates/public_template.html&quot; %}
+{% block title %}sign up{% endblock %}
+{% block main %}
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;h1&gt;Sign in&lt;/h1&gt;
+      &lt;hr&gt;
+      &lt;form action=&quot;/sign-in&quot; method=&quot;POST&quot;&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+          &lt;label&gt;Username&lt;/label&gt;
+          &lt;input class=&quot;form-control&quot; type=&quot;text&quot; name=&quot;username&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+          &lt;label&gt;Password&lt;/label&gt;
+          &lt;input class=&quot;form-control&quot; type=&quot;password&quot; name=&quot;password&quot;&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Sign in&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+{% endblock %}
+</code></pre>
+
+<h3 id="flask-imports">Flask imports</h3>
+
+<p>We need to import a few things from Flask for this example:</p>
+
+<p><code>from flask import render_template, request, session, redirect, url_for</code></p>
+
+<ul>
+<li><code>render_template</code>  - Allows us to render a template to the browser</li>
+<li><code>request</code>  - To handle the incoming form data and URL</li>
+<li><code>session</code>  - The session object</li>
+<li><code>redirect</code>  - Allows us to redirect users to various parts of our app</li>
+<li><code>url_for</code>  - Constructs URL&rsquo;s from arguments</li>
+</ul>
+
+<h3 id="mock-database">Mock database</h3>
+
+<p>We&rsquo;ll also need a mock database containing a couple of users (Feel free to change the values to something more familiar!):</p>
+
+<pre><code class="language-py">users = {
+    &quot;julian&quot;: {
+        &quot;username&quot;: &quot;julian&quot;,
+        &quot;email&quot;: &quot;julian@gmail.com&quot;,
+        &quot;password&quot;: &quot;example&quot;,
+        &quot;bio&quot;: &quot;Some guy from the internet&quot;
+    },
+    &quot;clarissa&quot;: {
+        &quot;username&quot;: &quot;clarissa&quot;,
+        &quot;email&quot;: &quot;clarissa@icloud.com&quot;,
+        &quot;password&quot;: &quot;sweetpotato22&quot;,
+        &quot;bio&quot;: &quot;Sweet potato is life&quot;
+    }
+}
+</code></pre>
+
+<p>We&rsquo;re just using a dictionary containing 2 dictionaries to represent our users database.</p>
+
+<h3 id="secret-key">Secret Key</h3>
+
+<p>The session object requires your app to have a value set for the  <code>SECRET_KEY</code>  variable. You can either set it in your application config file or provide it somewhere in the file containing your views.</p>
+
+<p>Whatever decision you make, it&rsquo;s best to declare it as soon as you assign the  <code>app</code>  variable.</p>
+
+<p>The secret key is used to encode the session cookie, so it&rsquo;s advised to use something relitively complex.</p>
+
+<p>A good place to generate a secret key is with  <code>secrets.token_urlsafe()</code>  and pass it an integer:</p>
+
+<pre><code class="language-py">import secrets
+secrets.token_urlsafe(16)
+
+OCML3BRawWEUeaxcuKHLpw
+
+Go ahead and create the  `SECRET_KEY`:
+
+app.config[&quot;SECRET_KEY&quot;] = &quot;OCML3BRawWEUeaxcuKHLpw&quot;
+</code></pre>
+
+<p>Now that we&rsquo;ve got our imports, database and secret key, let&rsquo;s go ahead and build our routes.</p>
+
+<h3 id="sign-in-route">Sign in route</h3>
+
+<p>We need a route to handle signing our users in and setting up the session object:</p>
+
+<pre><code class="language-py">@app.route(&quot;/sign-in&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_in():
+
+    if request.method == &quot;POST&quot;:
+        req = request.form
+        username = req.get(&quot;username&quot;)
+        password = req.get(&quot;password&quot;)
+        if not username in users:
+            print(&quot;Username not found&quot;)
+            return redirect(request.url)
+        else:
+            user = users[username]
+        if not password == user[&quot;password&quot;]:
+            print(&quot;Incorrect password&quot;)
+            return redirect(request.url)
+        else:
+            session[&quot;USERNAME&quot;] = user[&quot;username&quot;]
+            print(&quot;session username set&quot;)
+            return redirect(url_for(&quot;profile&quot;))
+
+    return render_template(&quot;public/sign_in.html&quot;)
+</code></pre>
+
+<p>As you can see, it&rsquo;s a relitively simple route, just for demostration.</p>
+
+<ul>
+<li>We check if the username is in the database with  <code>if not username in users:</code></li>
+<li>If the user exists, we assign the user to  <code>user</code>  with  <code>user = users[username]</code></li>
+<li>We check the users password matches the password for the user in the database with  <code>if not password == user[&quot;password&quot;]:</code></li>
+<li>If either checks fail, we redirect back to the URL of the request using  <code>redirect(request.url)</code></li>
+</ul>
+
+<p>If both checks pass, we assign the users username to the session key  <code>USERNAME</code>.</p>
+
+<p>We can treat the session object just like a Python dictionary.</p>
+
+<h3 id="updating-the-session">Updating the session</h3>
+
+<p>To set a key &amp; value:</p>
+
+<pre><code class="language-py">session[&quot;KEY&quot;] = &quot;VALUE&quot;
+</code></pre>
+
+<p>In this case, we&rsquo;ve assigned the session  <code>USERNAME</code>  key to the users username:</p>
+
+<pre><code class="language-py">session[&quot;USERNAME&quot;] = user[&quot;username&quot;]
+</code></pre>
+
+<p>If you were to  <code>print(session)</code>  just after we set the  <code>USERNAME</code>  key, you would see (Assuming the username of &ldquo;julian&rdquo;):</p>
+
+<pre><code class="language-py">&lt;SecureCookieSession {'USERNAME': 'julian'}&gt;
+</code></pre>
+
+<p>You&rsquo;ll also notice the redirect to  <code>profile</code>, using:</p>
+
+<pre><code class="language-py">return redirect(url_for(&quot;profile&quot;))
+</code></pre>
+
+<p>Redirect takes a URL and redirects the client to it. In this case we&rsquo;ve passed it  <code>url_for(&quot;profile&quot;)</code>.</p>
+
+<p><code>url_for</code>  takes arguments and builds an endpoint, in this case we&rsquo;ve just passed the name of a function,  <code>&quot;profile&quot;</code>, to which it builds a URL.</p>
+
+<p>We havent&rsquo;s created the profile route yet so let&rsquo;s go ahead and do so:</p>
+
+<h3 id="getting-the-session-object">Getting the session object</h3>
+
+<pre><code class="language-py">@app.route(&quot;/profile&quot;)
+def profile():
+
+    if not session.get(&quot;USERNAME&quot;) is None:
+        username = session.get(&quot;USERNAME&quot;)
+        user = users[username]
+        return render_template(&quot;public/profile.html&quot;, user=user)
+    else:
+        print(&quot;No username found in session&quot;)
+        return redirect(url_for(&quot;sign_in&quot;))
+</code></pre>
+
+<p>The session object is global, meaning we can access it from any part of our application and treat it like a dictionary.</p>
+
+<p>In the  <code>profile</code>  route, we do the following:</p>
+
+<p><code>if not session.get(&quot;USERNAME&quot;) is None:</code></p>
+
+<ul>
+<li>We use  <code>session.get(&quot;KEY&quot;)</code>  to check if the key exists in the session.</li>
+<li>If the key doesn&rsquo;t exist,  <code>session.get(&quot;KEY&quot;)</code>  returns  <code>None</code></li>
+</ul>
+
+<p><code>user = users[session.get(&quot;USERNAME&quot;)]</code></p>
+
+<ul>
+<li><code>username = session.get(&quot;USERNAME&quot;)</code>  assigns the  <code>username</code>  variable to the value saved in the session  <code>USERNAME</code>  key</li>
+<li>We then assign the user from the  <code>users</code>  dictionary with  <code>user = users[username]</code></li>
+</ul>
+
+<p><code>return render_template(&quot;public/profile.html&quot;, user=user)</code></p>
+
+<ul>
+<li>If the user is found in the session, we call  <code>render_template</code>  and pass it the  <code>profile.html</code>  file, along with the  <code>user</code></li>
+</ul>
+
+<p><code>else:
+    print(&quot;No username found in session&quot;)
+    return redirect(url_for(&quot;sign_in&quot;))</code></p>
+
+<ul>
+<li>If the  <code>USERNAME</code>  key is not in the session, we redirect back to the sign in page</li>
+</ul>
+
+<p>Now we need to create the profile page!</p>
+
+<h3 id="profile-page">Profile page</h3>
+
+<p>Create a new file called  <code>profile.html</code>  and add the following:</p>
+
+<pre><code class="language-html">{% extends &quot;public/templates/public_template.html&quot; %}
+{% block title %}Profile{% endblock %}
+{% block main %}
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;h1&gt;Profile&lt;/h1&gt;
+      &lt;hr&gt;
+      &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;card-body&quot;&gt;
+          &lt;h4&gt;{{ user[&quot;username&quot;] }}&lt;/h4&gt;
+          &lt;hr&gt;
+          &lt;p&gt;{{ user[&quot;email&quot;] }}&lt;/p&gt;
+          &lt;p class=&quot;text-muted&quot;&gt;{{ user[&quot;bio&quot;] }}&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+{% endblock %}
+</code></pre>
+
+<p>It&rsquo;s a very simple page containing some of the users details pulled from the database.</p>
+
+<p>Before we go ahead and test any of our code, let&rsquo;s create a route to allow our user to logout.</p>
+
+<h3 id="popping-sessions">Popping sessions</h3>
+
+<p>We need to create a route that clears the  <code>USERNAME</code>  from the session object.</p>
+
+<p>As  <code>session</code>  is just a Python object, we can pop a key from it!</p>
+
+<p>Let&rsquo;s create a simple sign out route:</p>
+
+<pre><code class="language-py">@app.route(&quot;/sign-out&quot;)
+def sign_out():
+
+    session.pop(&quot;USERNAME&quot;, None)
+
+    return redirect(url_for(&quot;sign_in&quot;))
+</code></pre>
+
+<p>To pop a key from the session object:</p>
+
+<p><code>session.pop(&quot;KEY&quot;, None)</code></p>
+
+<p>If a user who&rsquo;s been signed in visits this route, their  <code>USERNAME</code>  variable will be removed from the session and they&rsquo;ll be redirected to the sign in page.</p>
+
+<p>We pass  <code>None</code>  to  <code>session.pop</code>  to make sure if a user who isn&rsquo;t signed in visits the sign out route, they will also be redirected to the sign in route without the application throwing an error.</p>
+
+<p>Without  <code>None</code>, the application throws a  <code>KeyError</code>.</p>
+
+<p>Let&rsquo;s test our app!</p>
+
+<h3 id="testing-it-out">Testing it out</h3>
+
+<p>Before you sign in, open up the developer tools in your browser and head over to the session storage.</p>
+
+<p>For Chrome users:</p>
+
+<ul>
+<li>Open the developer tools with  <code>Ctrl + Shift + i</code></li>
+<li>Select the  <code>Application</code>  tab along the top of the toolbar</li>
+<li>Select  <code>Cookies</code>  from the sidebar on the left</li>
+</ul>
+
+<p>For Firefox users:</p>
+
+<ul>
+<li>Open the developer tools with  <code>Ctrl + Shift + i</code></li>
+<li>Select the  <code>Storage</code>  tab along the top of the toolbar</li>
+<li>Select  <code>Cookies</code>  from the sidebar on the left</li>
+</ul>
+
+<p>Go to  <code>/sign-in</code>, enter one of the usernames and passwords in the database and submit the form.</p>
+
+<p>You should see a cookie appear with the name  <code>session</code>  and an encoded string in the value entry.</p>
+
+<p><img src="https://pythonise.com/static/img/uploads/flask-session-devtools.PNG" alt="Flask session cookie" title="Flask session cookie" /></p>
+
+<p>If all went as it should, you&rsquo;ll be at the profile page for the user and see some of their details.</p>
+
+<p>Now go to  <code>/sign-out</code>  in the browser and you should be redirected to the sign in page. The session cookie should also be removed and you&rsquo;ll no longer see it in the developer tools.</p>
+
+<h3 id="session-best-practices">Session best practices</h3>
+
+<p>As mentioned before, the session object is NOT a secure place to store data as it can be easily decoded.</p>
+
+<p>Some examples of what you&rsquo;d store in the session object:</p>
+
+<ul>
+<li>Unique user ID&rsquo;s</li>
+<li>Publicly visible usernames</li>
+<li>Tracking ID&rsquo;s</li>
+<li>User preferences</li>
+</ul>
+
+<p>Ideally, you&rsquo;d store as much as you can in a database or local cache, such as Redis.</p>
+
+<p>NEVER put passwords or ANY sensitive information in the session object! As we&rsquo;ll now demonstrate why&hellip;</p>
+
+<h3 id="decoding-the-session">Decoding the session</h3>
+
+<p>Log back into the application and open up the developer tools.</p>
+
+<p>In the developer tools, head to the  <code>Network</code>  tab and look for the  <code>POST</code>  request to the  <code>/sign-in</code>  route. Click on it.</p>
+
+<p>Under  <code>Response headers</code>, you&rsquo;ll see  <code>Set-Cookie:</code>  with a value similar to the following:</p>
+
+<pre><code class="language-py">session=eyJVU0VSTkFNRSI6Imp1bGlhbiJ9.XGxnkw.0-dtOEX9rJYS9MqYgnM9reWr7dY; HttpOnly; Path=/
+</code></pre>
+
+<p>Copy this string and start an instance of the Python interpreter in your terminal or console.</p>
+
+<p><code>python</code></p>
+
+<p>Import base64:</p>
+
+<p><code>&gt;&gt;&gt; import base64</code></p>
+
+<p>We&rsquo;re going to pass the session tookie to  <code>base64.b64decode()</code>  which requires the string to not be 1 more than a multiple of 4 in character length.</p>
+
+<p>You may have to delete a character or 2 from the string until you get the right number of characters.</p>
+
+<p>Decode the string using  <code>base64.b64decode(&quot;session_cookie&quot;)</code>:</p>
+
+<p><code>&gt;&gt;&gt; base64.b64decode(&quot;eyJVU0VSTkFNRSI6Imp1bGlhbiJ9.XGxnkw.0-dtOEX9rJYS9MqYgnM9reWr7dY; HttpOnly; Path=&quot;)</code></p>
+
+<p>After stripping  <code>session=</code>  and the trailing  <code>/</code>  from the string, we got the following output:</p>
+
+<pre><code class="language-py">b'{&quot;USERNAME&quot;:&quot;julian&quot;}\\lg\x93\r\x1d\xb4\xe1\x17\xf6\xb2XK\xd3*b\t\xcc\xf6\xb7\x96\xaf\xb7X\x1e\xdbi:yr=\xaba'
+</code></pre>
+
+<p>As you can clearly see, we&rsquo;ve decoded the string and revealed the  <code>USERNAME</code>  value. The rest is just padding.</p>
+
+<p>I hope this illustrated why you should never store anything sensitive in the session!</p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>The session object in Flask is an extremely useful tool for remembering and sharing state across an application and should be used with care.</p>
+
+<p>It can be accessed globally across your application and in templates using the Jinja  <code>{{ session[&quot;KEY&quot;] }}</code>  syntax.</p>
+
+<p>Just remember to set a secret key and keep it safe. Ideally in an app config file and out of version control!</p>
+
+<p><strong>views.py</strong></p>
+
+<pre><code class="language-py">from flask import render_template, request, session, redirect, url_for
+
+app.config[&quot;SECRET_KEY&quot;] = &quot;OCML3BRawWEUeaxcuKHLpw&quot;
+
+users = {
+    &quot;julian&quot;: {
+        &quot;username&quot;: &quot;julian&quot;,
+        &quot;email&quot;: &quot;julian@gmail.com&quot;,
+        &quot;password&quot;: &quot;example&quot;,
+        &quot;bio&quot;: &quot;Some guy from the internet&quot;
+    },
+    &quot;clarissa&quot;: {
+        &quot;username&quot;: &quot;clarissa&quot;,
+        &quot;email&quot;: &quot;clarissa@icloud.com&quot;,
+        &quot;password&quot;: &quot;sweetpotato22&quot;,
+        &quot;bio&quot;: &quot;Sweet potato is life&quot;
+    }
+}
+
+@app.route(&quot;/sign-in&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_in():
+
+    if request.method == &quot;POST&quot;:
+
+        req = request.form
+
+        username = req.get(&quot;username&quot;)
+        password = req.get(&quot;password&quot;)
+
+        if not username in users:
+            print(&quot;Username not found&quot;)
+            return redirect(request.url)
+        else:
+            user = users[username]
+
+        if not password == user[&quot;password&quot;]:
+            print(&quot;Incorrect password&quot;)
+            return redirect(request.url)
+
+        else:
+            session[&quot;USERNAME&quot;] = user[&quot;username&quot;]
+            print(session)
+            print(&quot;session username set&quot;)
+            return redirect(url_for(&quot;profile&quot;))
+
+    return render_template(&quot;public/sign_in.html&quot;)
+
+@app.route(&quot;/profile&quot;)
+def profile():
+
+    if not session.get(&quot;USERNAME&quot;) is None:
+        username = session.get(&quot;USERNAME&quot;)
+        user = users[username]
+        return render_template(&quot;public/profile.html&quot;, user=user)
+    else:
+        print(&quot;No username found in session&quot;)
+        return redirect(url_for(&quot;sign_in&quot;))
+
+@app.route(&quot;/sign-out&quot;)
+def sign_out():
+
+    session.pop(&quot;USERNAME&quot;, None)
+
+    return redirect(url_for(&quot;sign_in&quot;))
+</code></pre>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p>Written with <a href="https://pythonise.com/series/learning-flask/flask-session-object">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-16.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#the-flask-session-object-learning-flask-ep-16">The Flask session object | Learning Flask Ep. 16</a>
+<ul>
+<li>
+<ul>
+<li><a href="#login-page">Login page</a></li>
+<li><a href="#flask-imports">Flask imports</a></li>
+<li><a href="#mock-database">Mock database</a></li>
+<li><a href="#secret-key">Secret Key</a></li>
+<li><a href="#sign-in-route">Sign in route</a></li>
+<li><a href="#updating-the-session">Updating the session</a></li>
+<li><a href="#getting-the-session-object">Getting the session object</a></li>
+<li><a href="#profile-page">Profile page</a></li>
+<li><a href="#popping-sessions">Popping sessions</a></li>
+<li><a href="#testing-it-out">Testing it out</a></li>
+<li><a href="#session-best-practices">Session best practices</a></li>
+<li><a href="#decoding-the-session">Decoding the session</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

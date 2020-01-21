@@ -15,11 +15,20 @@ Creating a project directory and virtual environment First of all, we need to cr
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
 
 
-<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -90,6 +99,78 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
     
       
         
@@ -265,14 +346,34 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
-  </ul>
-  
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
-  </li>
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
       
     
   </ul>
@@ -288,21 +389,21 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/library/tutorials/docs/python/pythonthailand/" >
-      Python Thailand
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
   </a>
 
 </li>
       
     
-      
-        <li>
+  </ul>
+  
 
-  <a href="/library/tutorials/docs/python/awesome/" >
-      Awesome Python
-  </a>
 
-</li>
+
+  </li>
+
+
       
     
       
@@ -380,6 +481,32 @@ https://github.com/alex-shpak/hugo-book
 
   <a href="/library/tutorials/docs/front-end/javascript/" >
       JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
   </a>
 
 
@@ -480,14 +607,16 @@ https://github.com/alex-shpak/hugo-book
 
 <p><code>pip install --upgrade pip</code></p>
 
-<p>You should see a success message like the following
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Collecting pip
-  Using cached https:<span style="color:#f92672">//</span>files<span style="color:#f92672">.</span>pythonhosted<span style="color:#f92672">.</span>org<span style="color:#f92672">/</span>packages<span style="color:#f92672">/</span><span style="color:#ae81ff">46</span><span style="color:#f92672">/</span>dc<span style="color:#f92672">/</span><span style="color:#ae81ff">7</span>fd5df840efb3e56c8b4f768793a237ec4ee59891959d6a215d63f727023<span style="color:#f92672">/</span>pip<span style="color:#f92672">-</span><span style="color:#ae81ff">19.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>py2<span style="color:#f92672">.</span>py3<span style="color:#f92672">-</span>none<span style="color:#f92672">-</span>any<span style="color:#f92672">.</span>whl
+<p>You should see a success message like the following</p>
+
+<pre><code class="language-py">Collecting pip
+Using cached https://files.pythonhosted.org/packages/46/dc/7fd5df840efb3e56c8b4f768793a237ec4ee59891959d6a215d63f727023/pip-19.0.1-py2.py3-none-any.whl
 Installing collected packages: pip
-  Found existing installation: pip <span style="color:#ae81ff">18.1</span>
-    Uninstalling pip<span style="color:#f92672">-</span><span style="color:#ae81ff">18.1</span>:
-      Successfully uninstalled pip<span style="color:#f92672">-</span><span style="color:#ae81ff">18.1</span>
-Successfully installed pip<span style="color:#f92672">-</span><span style="color:#ae81ff">19.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span></code></pre></div></p>
+Found existing installation: pip 18.1
+Uninstalling pip-18.1:
+Successfully uninstalled pip-18.1
+Successfully installed pip-19.0.1
+</code></pre>
 
 <p>Now we&rsquo;re ready to install Flask!</p>
 
@@ -499,16 +628,17 @@ Successfully installed pip<span style="color:#f92672">-</span><span style="color
 
 <p>If we now run  <code>pip list</code>, you&rsquo;ll see the following:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Package      Version
-<span style="color:#f92672">------------</span> <span style="color:#f92672">-------</span>
-Click        <span style="color:#ae81ff">7.0</span>
-Flask        <span style="color:#ae81ff">1.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span>
-itsdangerous <span style="color:#ae81ff">1.1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>
-Jinja2       <span style="color:#ae81ff">2.10</span>
-MarkupSafe   <span style="color:#ae81ff">1.1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>
-pip          <span style="color:#ae81ff">19.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>
-setuptools   <span style="color:#ae81ff">40.6</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span>
-Werkzeug     <span style="color:#ae81ff">0.14</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span></code></pre></div>
+<pre><code class="language-py">Package      Version
+------------ -------
+Click        7.0
+Flask        1.0.2
+itsdangerous 1.1.0
+Jinja2       2.10
+MarkupSafe   1.1.0
+pip          19.0.1
+setuptools   40.6.2
+Werkzeug     0.14.1
+</code></pre>
 
 <blockquote>
 <p>Note - Flask comes with several other packages so don&rsquo;t be alarmed when you see  <code>MarkupSafe</code>  or  <code>itsdangerous</code>!</p>
@@ -532,21 +662,27 @@ Werkzeug     <span style="color:#ae81ff">0.14</span><span style="color:#f92672">
 
 <p>Now we need to create our  <code>Flask</code>  application. We&rsquo;re going to pass  <code>__name__</code>  to  <code>Flask</code>  and assign it to the variable  <code>app</code></p>
 
-<p>Don&rsquo;t worry about exactly why we&rsquo;re doing this. We&rsquo;ll cover it in a more advanced episode in this series.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+<p>Don&rsquo;t worry about exactly why we&rsquo;re doing this. We&rsquo;ll cover it in a more advanced episode in this series.</p>
 
-app <span style="color:#f92672">=</span> Flask(__name__)</code></pre></div>
-Next up, we need to create a route or view (route and view are used interchangeably)</p>
+<pre><code class="language-py">from flask import Flask
 
-<p>Let&rsquo;s create a route and explain it line by line after:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+app = Flask(__name__)
+</code></pre>
 
-app <span style="color:#f92672">=</span> Flask(__name__)
+<p>Next up, we need to create a route or view (route and view are used interchangeably)</p>
 
-<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello world!&#34;</span></code></pre></div>
-Let&rsquo;s talk through the 3 lines we just added:</p>
+<p>Let&rsquo;s create a route and explain it line by line after:</p>
+
+<pre><code class="language-py">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;)
+def index():
+    return &quot;Hello world!&quot;
+</code></pre>
+
+<p>Let&rsquo;s talk through the 3 lines we just added:</p>
 
 <p><code>@app.route(&quot;/&quot;)</code></p>
 
@@ -563,21 +699,27 @@ Let&rsquo;s talk through the 3 lines we just added:</p>
 
 <p>Flask will return whatever we pass to the  <code>return</code>  statement! In this case, just a short  <code>&quot;Hello world!&quot;</code>  string.</p>
 
-<p>We need to add 2 more lines of code before we can run our app. Add the following:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+<p>We need to add 2 more lines of code before we can run our app. Add the following:</p>
 
-app <span style="color:#f92672">=</span> Flask(__name__)
+<pre><code class="language-py">from flask import Flask
 
-<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello world!&#34;</span>
+app = Flask(__name__)
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-    app<span style="color:#f92672">.</span>run()<span style="color:#960050;background-color:#1e0010">`</span> </code></pre></div>
-Let&rsquo;s take a look at what we added:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-    app<span style="color:#f92672">.</span>run()</code></pre></div>
-Again, I don&rsquo;t want you to worry too much about what&rsquo;s happening here. For now just know that  <code>__name__</code>  is a special variable used by the Python interpreter to understand if a file is the main program.</p>
+@app.route(&quot;/&quot;)
+def index():
+    return &quot;Hello world!&quot;
+
+if __name__ == &quot;__main__&quot;:
+    app.run()` 
+</code></pre>
+
+<p>Let&rsquo;s take a look at what we added:</p>
+
+<pre><code class="language-py">if __name__ == &quot;__main__&quot;:
+    app.run()
+</code></pre>
+
+<p>Again, I don&rsquo;t want you to worry too much about what&rsquo;s happening here. For now just know that  <code>__name__</code>  is a special variable used by the Python interpreter to understand if a file is the main program.</p>
 
 <p>Just as we passed  <code>__name__</code>  into the  <code>Flask()</code>  class, the special variable  <code>__name__</code>  is equal to  <code>__main__</code>. You&rsquo;ll learn more about this principle as you advance through the series.</p>
 
@@ -589,16 +731,19 @@ Again, I don&rsquo;t want you to worry too much about what&rsquo;s happening her
 
 <p><code>python app.py</code></p>
 
-<p>You&rsquo;ll see the following message in your terminal to let you know Flask is running:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> <span style="color:#f92672">*</span> Serving Flask app <span style="color:#e6db74">&#34;app&#34;</span> (lazy loading)
- <span style="color:#f92672">*</span> Environment: production
-   WARNING: Do <span style="color:#f92672">not</span> use the development server <span style="color:#f92672">in</span> a production environment<span style="color:#f92672">.</span>
-   Use a production WSGI server instead<span style="color:#f92672">.</span>
- <span style="color:#f92672">*</span> Debug mode: off
- <span style="color:#f92672">*</span> Running on http:<span style="color:#f92672">//</span><span style="color:#ae81ff">127.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.1</span>:<span style="color:#ae81ff">5000</span><span style="color:#f92672">/</span> (Press CTRL<span style="color:#f92672">+</span>C to quit)
-<span style="color:#ae81ff">127.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.1</span> <span style="color:#f92672">-</span> <span style="color:#f92672">-</span> [<span style="color:#ae81ff">03</span><span style="color:#f92672">/</span>Feb<span style="color:#f92672">/</span><span style="color:#ae81ff">2019</span> <span style="color:#ae81ff">14</span>:<span style="color:#ae81ff">35</span>:<span style="color:#ae81ff">04</span>] <span style="color:#e6db74">&#34;GET / HTTP/1.1&#34;</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672">-</span>
-<span style="color:#ae81ff">127.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.1</span> <span style="color:#f92672">-</span> <span style="color:#f92672">-</span> [<span style="color:#ae81ff">03</span><span style="color:#f92672">/</span>Feb<span style="color:#f92672">/</span><span style="color:#ae81ff">2019</span> <span style="color:#ae81ff">14</span>:<span style="color:#ae81ff">35</span>:<span style="color:#ae81ff">04</span>] <span style="color:#e6db74">&#34;GET /favicon.ico HTTP/1.1&#34;</span> <span style="color:#ae81ff">404</span> </code></pre></div>
-Great, our app is running! Ignore any of the warning messages in your terminal and open up a new browser tab and head to the following URL:</p>
+<p>You&rsquo;ll see the following message in your terminal to let you know Flask is running:</p>
+
+<pre><code class="language-py"> * Serving Flask app &quot;app&quot; (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [03/Feb/2019 14:35:04] &quot;GET / HTTP/1.1&quot; 200 -
+127.0.0.1 - - [03/Feb/2019 14:35:04] &quot;GET /favicon.ico HTTP/1.1&quot; 404 
+</code></pre>
+
+<p>Great, our app is running! Ignore any of the warning messages in your terminal and open up a new browser tab and head to the following URL:</p>
 
 <p><a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a></p>
 
@@ -610,10 +755,13 @@ Great, our app is running! Ignore any of the warning messages in your terminal a
 
 <h3 id="flask-environment-variables">Flask environment variables</h3>
 
-<p>To make running our app even easier, we&rsquo;re going to set a couple of environment variables in our shell. Run the following commands and we&rsquo;ll talk through them after:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">export FLASK_APP<span style="color:#f92672">=</span>app<span style="color:#f92672">.</span>py
-export FLASK_ENV<span style="color:#f92672">=</span>development </code></pre></div>
-Running  <code>export FLASK_APP=app.py</code>  will set the  <code>FLASK_APP</code>  variable to  <code>app.py</code></p>
+<p>To make running our app even easier, we&rsquo;re going to set a couple of environment variables in our shell. Run the following commands and we&rsquo;ll talk through them after:</p>
+
+<pre><code class="language-py">export FLASK_APP=app.py
+export FLASK_ENV=development 
+</code></pre>
+
+<p>Running  <code>export FLASK_APP=app.py</code>  will set the  <code>FLASK_APP</code>  variable to  <code>app.py</code></p>
 
 <p>Running  <code>export FLASK_ENV=development</code>  tells Flask we want to run our app in development mode</p>
 
@@ -627,15 +775,18 @@ Running  <code>export FLASK_APP=app.py</code>  will set the  <code>FLASK_APP</co
 
 <p><code>flask run</code></p>
 
-<p>You&rsquo;ll see:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> <span style="color:#f92672">*</span> Serving Flask app <span style="color:#e6db74">&#34;app.py&#34;</span> (lazy loading)
- <span style="color:#f92672">*</span> Environment: development
- <span style="color:#f92672">*</span> Debug mode: on
- <span style="color:#f92672">*</span> Running on http:<span style="color:#f92672">//</span><span style="color:#ae81ff">127.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.1</span>:<span style="color:#ae81ff">5000</span><span style="color:#f92672">/</span> (Press CTRL<span style="color:#f92672">+</span>C to quit)
- <span style="color:#f92672">*</span> Restarting <span style="color:#66d9ef">with</span> stat
- <span style="color:#f92672">*</span> Debugger <span style="color:#f92672">is</span> active<span style="color:#960050;background-color:#1e0010">!</span>
- <span style="color:#f92672">*</span> Debugger PIN: <span style="color:#ae81ff">201</span><span style="color:#f92672">-</span><span style="color:#ae81ff">167</span><span style="color:#f92672">-</span><span style="color:#ae81ff">879</span></code></pre></div>
-You&rsquo;ll notice we don&rsquo;t get any of the warnings and that  <code>Environment</code>  is set to  <code>development</code></p>
+<p>You&rsquo;ll see:</p>
+
+<pre><code class="language-py"> * Serving Flask app &quot;app.py&quot; (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 201-167-879
+</code></pre>
+
+<p>You&rsquo;ll notice we don&rsquo;t get any of the warnings and that  <code>Environment</code>  is set to  <code>development</code></p>
 
 <p>Head back to  <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>  and you&rsquo;ll see the same  <code>Hello world!</code>  message as before.</p>
 

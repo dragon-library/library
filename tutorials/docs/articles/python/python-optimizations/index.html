@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Optimizations"><meta property="og:title" content="Optimizations" />
+<meta property="og:description" content="Python Optimizations Peephole is a way Python optimizes certain things of your program at compile time by either pre-calculating constant expressions or transforming certain data structures. Constant Expressions Optimizing constant expressions is really simple. What Python does is basically pre-calculate constants. Suppose that along your program you have the following multiplication for some reason,
+secondsInADay = 60*60*24  What python will do is pre-calculate that multiplication and will replace it for 86400 ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-optimizations/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Optimizations | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/"  class="active">
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Optimizations</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-optimizations">Python Optimizations</h1>
+
+<p><img src="https://miro.medium.com/max/1600/1*VXi1sWm5p5_90KXYu6tJ5w.jpeg" alt="enter image description here" /></p>
+
+<p>Peephole is a way Python optimizes certain things of your program at compile time by either pre-calculating constant expressions or transforming certain data structures.
+Constant Expressions
+Optimizing constant expressions is really simple. What Python does is basically pre-calculate constants. Suppose that along your program you have the following multiplication for some reason,</p>
+
+<pre><code class="language-py">secondsInADay = 60*60*24
+</code></pre>
+
+<p>What python will do is pre-calculate that multiplication and will replace it for 86400 . You might be wondering why not just write directly 86400 in code, the answer is clarity. On the expression above you can see that in order to calculate how many seconds a day has, you have to multiply 60 seconds time 60 minutes of an hour times 24 hours of a day. This way your code might look clearer. Python won’t make that calculation each time that multiplication appears, it will just pre-calculate it and replace it for the final value.
+Short sequences also get pre-calculated. Imagine you have this code,</p>
+
+<pre><code class="language-py">myTuple = (2, 4)*5      # -&gt; (2, 4, 2, 4, 2, 4, 2, 4, 2, 4)
+myString = &quot;qwerty &quot;*2  # -&gt; &quot;qwerty qwerty &quot;
+</code></pre>
+
+<p>As you can see on the code above we have two variables, the first one is a tuple multiplied by 5 and the second one is a short string multiplied by 2, this short sequences will be pre-calculated and Python will replace the original expression with the value on the comments. It is worth to mention that Python has to balance between storage and computation, if it pre-calculates long sequences the program might be faster but it will end up using a lot of memory.
+In order to see that this is happening you can simply open a Python console and write the following code,</p>
+
+<pre><code class="language-py">def my_func():
+    a = 60*60*24
+    myString = (&quot;querty &quot;) * 2
+    myTupple = (2, 4) *5
+    myString = (&quot;This is a sequence with a lot of characters&quot;) * 100
+</code></pre>
+
+<p>Once this function is declared you can write the following code to access all the constants declared on the scope of that funcion,</p>
+
+<pre><code class="language-py">my_func.__code__.co_consts
+</code></pre>
+
+<p>The output should be the following,</p>
+
+<pre><code class="language-py">my_func.__code__.co_consts(None, 86400, 
+'querty querty ', 
+(2, 4, 2, 4, 2, 4, 2, 4, 2, 4), 
+'This is a sequence with a lot of characters', 
+100)
+</code></pre>
+
+<p>As you can see, on the output above Python has already pre-calculated the constant values and short sequences, instead of having 60*60*24 the function has already the constant value 86400 , the same thing happens with the tuple and the short string, but as you can see the long sequence didn’t get pre-calculated and instead we get two different constants, &lsquo;This is a sequence with a lot of characters&rsquo; and 100 . As mentioned above, Python has to balance between storage and computation.
+Membership Tests: Replacing mutable data structures for inmutable data structures
+What Python does here is basically transforming mutable data structures to its inmutable version. Lists get transformed into tuples and sets to frozensets.
+For instance,</p>
+
+<pre><code class="language-py">def my_func(element):
+    if element in [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]:
+        print(element)
+</code></pre>
+
+<p>The code above will be transformed to this,</p>
+
+<pre><code class="language-py">def my_func(element):
+    if element in (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;):
+        print(element)
+</code></pre>
+
+<p>This is done just because accessing to the inmutable version of a data structure is faster than accessing the mutable one. You can check this doing the same thing as before running the follwing code,</p>
+
+<pre><code class="language-py">my_func.__code__.co_consts
+</code></pre>
+
+<p>The output should be the following,</p>
+
+<pre><code class="language-py">my_func.__code__.co_consts
+</code></pre>
+
+<pre><code class="language-py">(None, ('a', 'b', 'c'))
+</code></pre>
+
+<p>As you can see, the function has a constant value which is the inmutable version (a tuple) of the declared list.
+Finally doing the same as before but with a set you will see that it will be transformed into a frozenset,</p>
+
+<pre><code class="language-py">def my_func(element):
+    if element in {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}:
+        print(element)
+ my_func.__code__.co_consts
+</code></pre>
+
+<pre><code class="language-py">(None, frozenset({'a', 'b', 'c'}))
+</code></pre>
+
+<p>If you are interested on Python optimizations you could check out my article about Python optimizations (Intering).</p>
+
+<blockquote>
+<p>Written with <a href="https://medium.com/@gmotzespina/python-optimizations-a822db1f6bf5">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-optimizations.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-optimizations">Python Optimizations</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

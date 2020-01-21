@@ -15,11 +15,20 @@ For example, let&rsquo;s say our application allows users to create an account a
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
 
 
-<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -90,6 +99,78 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
     
       
         
@@ -265,14 +346,34 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
-  </ul>
-  
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
-  </li>
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
       
     
   </ul>
@@ -288,21 +389,21 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/library/tutorials/docs/python/pythonthailand/" >
-      Python Thailand
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
   </a>
 
 </li>
       
     
-      
-        <li>
+  </ul>
+  
 
-  <a href="/library/tutorials/docs/python/awesome/" >
-      Awesome Python
-  </a>
 
-</li>
+
+  </li>
+
+
       
     
       
@@ -397,6 +498,32 @@ https://github.com/alex-shpak/hugo-book
 
       
     
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
   </ul>
   
 
@@ -458,33 +585,36 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/profile&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">profile</span>():
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/profile.html&#34;</span>)</code></pre></div>
-We&rsquo;ll also create a new template for this route. Go ahead and create a file named  <code>profile.html</code>  in the  <code>templates/public</code>  directory (Or whatever directory contains your HTML files)</p>
+<pre><code class="language-py">@app.route(&quot;/profile&quot;)
+def profile():
+    return render_template(&quot;public/profile.html&quot;)
+</code></pre>
+
+<p>We&rsquo;ll also create a new template for this route. Go ahead and create a file named  <code>profile.html</code>  in the  <code>templates/public</code>  directory (Or whatever directory contains your HTML files)</p>
 
 <p>Let&rsquo;s just create a simple page for now:</p>
 
 <p><strong>app/app/templates/public/dynamic.html</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{<span style="color:#f92672">%</span> extends <span style="color:#e6db74">&#34;public/templates/public_template.html&#34;</span> <span style="color:#f92672">%</span>}
+<pre><code class="language-html">{% extends &quot;public/templates/public_template.html&quot; %}
 
-{<span style="color:#f92672">%</span> block title <span style="color:#f92672">%</span>}Profile{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}
+{% block title %}Profile{% endblock %}
 
-{<span style="color:#f92672">%</span> block main <span style="color:#f92672">%</span>}
+{% block main %}
 
-<span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span><span style="color:#f92672">&gt;</span>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
 
-      <span style="color:#f92672">&lt;</span>h1<span style="color:#f92672">&gt;</span>Profile<span style="color:#f92672">&lt;/</span>h1<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;</span>
+      &lt;h1&gt;Profile&lt;/h1&gt;
+      &lt;hr&gt;
 
-    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}</code></pre></div>
+{% endblock %}
+</code></pre>
 
 <blockquote>
 <p>Tip - We&rsquo;re using the Bootstrap CSS library but feel free to use your own or leave it out completely</p>
@@ -496,7 +626,9 @@ We&rsquo;ll also create a new template for this route. Go ahead and create a fil
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/profile/&lt;username&gt;&#34;</span>)</code></pre></div>
+<pre><code class="language-py">
+@app.route(&quot;/profile/&lt;username&gt;&quot;)
+</code></pre>
 
 <ul>
 <li>We&rsquo;ve added trailing slash to  <code>/profile/</code></li>
@@ -517,10 +649,12 @@ We&rsquo;ll also create a new template for this route. Go ahead and create a fil
 
 <p>For clarity, our route now looks like this:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/profile/&lt;username&gt;&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">profile</span>(username):
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/profile.html&#34;</span>)</code></pre></div></p>
+<p><strong>app/app/views.py</strong></p>
+
+<pre><code class="language-py">@app.route(&quot;/profile/&lt;username&gt;&quot;)
+def profile(username):
+    return render_template(&quot;public/profile.html&quot;)
+</code></pre>
 
 <p>At this point, if you try to access the  <code>/profile</code>  route in your browser, Flask will throw an error because the  <code>profile</code>  function is expecting an value!</p>
 
@@ -536,72 +670,79 @@ We&rsquo;ll also create a new template for this route. Go ahead and create a fil
 
 <p>We&rsquo;ll search the dictonary for the  <code>username</code>  variable and return some basic information about that user. Let&rsquo;s create our  <code>users</code>  dictionary:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">users <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#34;mitsuhiko&#34;</span>: {
-        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Armin Ronacher&#34;</span>,
-        <span style="color:#e6db74">&#34;bio&#34;</span>: <span style="color:#e6db74">&#34;Creatof of the Flask framework&#34;</span>,
-        <span style="color:#e6db74">&#34;twitter_handle&#34;</span>: <span style="color:#e6db74">&#34;@mitsuhiko&#34;</span>
+<p><strong>app/app/views.py</strong></p>
+
+<pre><code class="language-py">users = {
+    &quot;mitsuhiko&quot;: {
+        &quot;name&quot;: &quot;Armin Ronacher&quot;,
+        &quot;bio&quot;: &quot;Creatof of the Flask framework&quot;,
+        &quot;twitter_handle&quot;: &quot;@mitsuhiko&quot;
     },
-    <span style="color:#e6db74">&#34;gvanrossum&#34;</span>: {
-        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Guido Van Rossum&#34;</span>,
-        <span style="color:#e6db74">&#34;bio&#34;</span>: <span style="color:#e6db74">&#34;Creator of the Python programming language&#34;</span>,
-        <span style="color:#e6db74">&#34;twitter_handle&#34;</span>: <span style="color:#e6db74">&#34;@gvanrossum&#34;</span>
+    &quot;gvanrossum&quot;: {
+        &quot;name&quot;: &quot;Guido Van Rossum&quot;,
+        &quot;bio&quot;: &quot;Creator of the Python programming language&quot;,
+        &quot;twitter_handle&quot;: &quot;@gvanrossum&quot;
     },
-    <span style="color:#e6db74">&#34;elonmusk&#34;</span>: {
-        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Elon Musk&#34;</span>,
-        <span style="color:#e6db74">&#34;bio&#34;</span>: <span style="color:#e6db74">&#34;technology entrepreneur, investor, and engineer&#34;</span>,
-        <span style="color:#e6db74">&#34;twitter_handle&#34;</span>: <span style="color:#e6db74">&#34;@elonmusk&#34;</span>
+    &quot;elonmusk&quot;: {
+        &quot;name&quot;: &quot;Elon Musk&quot;,
+        &quot;bio&quot;: &quot;technology entrepreneur, investor, and engineer&quot;,
+        &quot;twitter_handle&quot;: &quot;@elonmusk&quot;
     }
-}</code></pre></div></p>
+}
+</code></pre>
 
 <p>We&rsquo;ll add some logic to our  <code>profile</code>  route to look up the user and return their information:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/profile/&lt;username&gt;&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">profile</span>(username):
+<p><strong>app/app/views.py</strong></p>
 
-    user <span style="color:#f92672">=</span> None
+<pre><code class="language-py">@app.route(&quot;/profile/&lt;username&gt;&quot;)
+def profile(username):
 
-    <span style="color:#66d9ef">if</span> username <span style="color:#f92672">in</span> users:
-        user <span style="color:#f92672">=</span> users[username]
+    user = None
 
-    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#34;public/profile.html&#34;</span>, username<span style="color:#f92672">=</span>username, user<span style="color:#f92672">=</span>user)</code></pre></div>
-Lastly, let&rsquo;s refactor our  <code>profile.html</code>  to display our user information:</p>
+    if username in users:
+        user = users[username]
 
-<p><strong>app/app/templates/public/dynamic.html</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{<span style="color:#f92672">%</span> extends <span style="color:#e6db74">&#34;public/templates/public_template.html&#34;</span> <span style="color:#f92672">%</span>}
+    return render_template(&quot;public/profile.html&quot;, username=username, user=user)
+</code></pre>
 
-{<span style="color:#f92672">%</span> block title <span style="color:#f92672">%</span>}Profile{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}
+<p>Lastly, let&rsquo;s refactor our  <code>profile.html</code>  to display our user information:</p>
 
-{<span style="color:#f92672">%</span> block main <span style="color:#f92672">%</span>}
+<p><strong>app/app/templates/public/dynamic.html</strong></p>
 
-<span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span><span style="color:#f92672">&gt;</span>
+<pre><code class="language-html">{% extends &quot;public/templates/public_template.html&quot; %}
 
-      <span style="color:#f92672">&lt;</span>h1<span style="color:#f92672">&gt;</span>Profile<span style="color:#f92672">&lt;/</span>h1<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;</span>
+{% block title %}Profile{% endblock %}
 
-      <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-body&#34;</span><span style="color:#f92672">&gt;</span>
-          {<span style="color:#f92672">%</span> <span style="color:#66d9ef">if</span> user <span style="color:#f92672">%</span>}
-          <span style="color:#f92672">&lt;</span>h5 class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-title&#34;</span><span style="color:#f92672">&gt;</span>{{ username }}<span style="color:#f92672">&lt;/</span>h5<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span>hr<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;&lt;</span>strong<span style="color:#f92672">&gt;</span>{{ user[<span style="color:#e6db74">&#34;name&#34;</span>] }}<span style="color:#f92672">&lt;/</span>strong<span style="color:#f92672">&gt;&lt;/</span>p<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span>p style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: blue&#34;</span><span style="color:#f92672">&gt;</span>{{ user[<span style="color:#e6db74">&#34;twitter_handle&#34;</span>] }}<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span>p class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-muted&#34;</span><span style="color:#f92672">&gt;</span>{{ user[<span style="color:#e6db74">&#34;bio&#34;</span>] }}<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
-          {<span style="color:#f92672">%</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">%</span>}
-          <span style="color:#f92672">&lt;</span>p<span style="color:#f92672">&gt;</span>User {{ username }} <span style="color:#f92672">not</span> found<span style="color:#f92672">&lt;/</span>p<span style="color:#f92672">&gt;</span>
-          {<span style="color:#f92672">%</span> endif <span style="color:#f92672">%</span>}
-        <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+{% block main %}
 
-    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
 
-{<span style="color:#f92672">%</span> endblock <span style="color:#f92672">%</span>}</code></pre></div></p>
+      &lt;h1&gt;Profile&lt;/h1&gt;
+      &lt;hr&gt;
+
+      &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;card-body&quot;&gt;
+          {% if user %}
+          &lt;h5 class=&quot;card-title&quot;&gt;{{ username }}&lt;/h5&gt;
+          &lt;hr&gt;
+          &lt;p&gt;&lt;strong&gt;{{ user[&quot;name&quot;] }}&lt;/strong&gt;&lt;/p&gt;
+          &lt;p style=&quot;color: blue&quot;&gt;{{ user[&quot;twitter_handle&quot;] }}&lt;/p&gt;
+          &lt;p class=&quot;text-muted&quot;&gt;{{ user[&quot;bio&quot;] }}&lt;/p&gt;
+          {% else %}
+          &lt;p&gt;User {{ username }} not found&lt;/p&gt;
+          {% endif %}
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+{% endblock %}
+</code></pre>
 
 <h3 id="requesting-a-dynamic-route">Requesting a dynamic route</h3>
 
@@ -619,15 +760,17 @@ Lastly, let&rsquo;s refactor our  <code>profile.html</code>  to display our user
 
 <p>Let&rsquo;s create a new route with multiple variables that just prints the variables and returns a simple string to the client:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/multiple/&lt;foo&gt;/&lt;bar&gt;/&lt;baz&gt;&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multiple</span>(foo, bar, baz):
+<p><strong>app/app/views.py</strong></p>
 
-    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;foo is {foo}&#34;</span>)
-    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;bar is {bar}&#34;</span>)
-    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;baz is {baz}&#34;</span>)
+<pre><code class="language-py">@app.route(&quot;/multiple/&lt;foo&gt;/&lt;bar&gt;/&lt;baz&gt;&quot;)
+def multiple(foo, bar, baz):
 
-    <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;foo is {foo}, bar is {bar}, baz is {baz}&#34;</span></code></pre></div></p>
+    print(f&quot;foo is {foo}&quot;)
+    print(f&quot;bar is {bar}&quot;)
+    print(f&quot;baz is {baz}&quot;)
+
+    return f&quot;foo is {foo}, bar is {bar}, baz is {baz}&quot;
+</code></pre>
 
 <p>Go to  <code>/multiple/foo/bar/baz</code>  in your browser, you&rsquo;ll see:</p>
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>e-Book on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/python/e-book/</link>
+    <description>Recent content in e-Book on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/python/e-book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automate the Boring Stuff</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/e-book/automate-the-boring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/e-book/automate-the-boring/</guid>
+      <description>Automate the Boring Stuff with Python By Al Sweigart. Free to read under a Creative Commons license.
+Table of Contents  Chapter 0 – Introduction Chapter 1 – Python Basics Chapter 2 – Flow Control Chapter 3 – Functions Chapter 4 – Lists Chapter 5 – Dictionaries and Structuring Data Chapter 6 – Manipulating Strings Chapter 7 – Pattern Matching with Regular Expressions Chapter 8 – Input Validation Chapter 9 – Reading and Writing Files Chapter 10 – Organizing Files Chapter 11 – Debugging Chapter 12 – Web Scraping Chapter 13 – Working with Excel Spreadsheets Chapter 14 – Working with Google Spreadsheets Chapter 15 – Working with PDF and Word Documents Chapter 16 – Working with CSV Files and JSON Data Chapter 17 – Keeping Time, Scheduling Tasks, and Launching Programs Chapter 18 – Sending Email and Text Messages Chapter 19 – Manipulating Images Chapter 20 – Controlling the Keyboard and Mouse with GUI Automation Appendix A – Installing Third-Party Modules Appendix B – Running Programs Appendix C – Answers to the Practice Questions  (Read the 1st edition book.</description>
+    </item>
+    
+  </channel>
+</rss>

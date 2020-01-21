@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction Pickle Module"><meta property="og:title" content="Introduction Pickle Module" />
+<meta property="og:description" content="Introduction to the Python Pickle Module Introduction Pickling is a popular method of preserving food. According to Wikipedia, it is also a pretty ancient procedure – although the origins of pickling are unknown, the ancient Mesopotamians probably used the process 4400 years ago. By placing a product in a specific solution, it is possible to drastically increase its shelf life. In other words, it&rsquo;s a method that lets us store food for later consumption." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-pickle-module/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Introduction Pickle Module | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/"  class="active">
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Introduction Pickle Module</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="introduction-to-the-python-pickle-module">Introduction to the Python Pickle Module</h1>
+
+<h3 id="introduction">Introduction</h3>
+
+<p><strong>Pickling</strong>  is a popular method of preserving food. According to  <a href="https://en.wikipedia.org/wiki/Pickling">Wikipedia</a>, it is also a pretty ancient procedure – although the origins of pickling are unknown, the ancient Mesopotamians probably used the process 4400 years ago. By placing a product in a specific solution, it is possible to drastically increase its shelf life. In other words, it&rsquo;s a method that lets us store food for later consumption.</p>
+
+<p>If you&rsquo;re a Python developer, you might one day find yourself in need of a way to store your Python objects for later use. Well, what if I told you, you can pickle Python objects too?</p>
+
+<h3 id="serialization">Serialization</h3>
+
+<p>Serialization is a process of transforming objects or data structures into  <strong>byte streams</strong>  or strings. A byte stream is, well, a stream of bytes – one byte is composed of 8 bits of zeros and ones. These byte streams can then be stored or transferred easily. This allows the developers to save, for example, configuration data or user&rsquo;s progress, and then store it (on disk or in a database) or send it to another location.</p>
+
+<p>Python objects can also be serialized using a module called  <a href="https://docs.python.org/3/library/pickle.html">Pickle</a>.</p>
+
+<p>One of the main differences between pickling Python objects and pickling vegetables is the inevitable and irreversible change of the pickled food&rsquo;s flavor and texture. Meanwhile, pickled Python objects can be easily unpickled back to their original form. This process, by the way, is universally known as  <strong>deserialization</strong>.</p>
+
+<p>Pickling (or  <strong>serialization</strong>  in general) should not be confused with compression. The purpose of pickling is to translate data into a format that can be transferred from RAM to disk. Compression, on the other hand, is a process of encoding data using fewer bits (in order to save disk space).</p>
+
+<p>Serialization is especially useful in any software where it&rsquo;s important to be able to save some progress on disk, quit the program and then load the progress back after reopening the program. Video games might be the most intuitive example of serialization&rsquo;s usefulness, but there are many other programs where saving and loading a user&rsquo;s progress or data is crucial.</p>
+
+<h3 id="pickle-vs-json">Pickle vs JSON</h3>
+
+<p>There is a chance that you have heard of  <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>  (JavaScript Object Notation), which is a popular format that also lets developers save and transmit objects encoded as strings. This method of serialization has some advantages over pickling. JSON format is human-readable, language-independent, and faster than pickle.</p>
+
+<p>It does have, however, some important limitations as well. Most importantly, by default, only a limited subset of Python built-in types can be represented by JSON. With Pickle, we can easily serialize a very large spectrum of Python types, and, importantly, custom classes. This means we don&rsquo;t need to create a custom schema (like we do for JSON) and write error-prone serializers and parsers. All of the heavy liftings is done for you with Pickle.</p>
+
+<h3 id="what-can-be-pickled-and-unpickled">What can be Pickled and Unpickled</h3>
+
+<p>The following types can be serialized and deserialized using the Pickle module:</p>
+
+<ul>
+<li>All native datatypes supported by Python (booleans, None, integers, floats, complex numbers, strings, bytes, byte arrays)</li>
+<li>Dictionaries, sets, lists, and tuples - as long as they contain pickleable objects</li>
+<li>Functions and classes that are defined at the top level of a module</li>
+</ul>
+
+<p>It is important to remember that pickling is not a language-independent serialization method, therefore your pickled data can only be unpickled using Python. Moreover, it&rsquo;s  <em>important to make sure that objects are pickled using the same version of Python that is going to be used to unpickle them</em>. Mixing Python versions, in this case, can cause many problems.</p>
+
+<p>Additionally, functions are pickled by their name references, and not by their value. The resulting pickle does not contain information on the function&rsquo;s code or attributes. Therefore, you have to make sure that the environment where the function is unpickled is able to import the function. In other words, if we pickle a function and then unpickle it in an environment where it&rsquo;s either not defined or not imported, an exception will be raised.</p>
+
+<p>It is also very important to note that pickled objects can be used in malevolent ways. For instance, unpickling data from an untrusted source can result in the execution of a malicious piece of code.</p>
+
+<h3 id="pickling-a-python-list">Pickling a Python List</h3>
+
+<p>The following very simple example shows the basics of using the Pickle module in  <a href="https://www.python.org/download/releases/3.0/">Python 3</a>:</p>
+
+<pre><code class="language-python">import pickle
+
+test_list = ['cucumber', 'pumpkin', 'carrot']
+
+with open('test_pickle.pkl', 'wb') as pickle_out:
+    pickle.dump(test_list, pickle_out)
+
+</code></pre>
+
+<p>First, we have to import the  <code>pickle</code>  module, which is done in line 1. In line 3 we define a simple, three element list that will be pickled.</p>
+
+<p>In line 5 we state that our output pickle file&rsquo;s name will be  <code>test_pickle.pkl</code>. By using the  <code>wb</code>  option, we tell the program that we want to write (<code>w</code>) binary data (<code>b</code>) inside of it (because we want to create a byte stream). Note that the  <code>pkl</code>  extension is not necessary – we&rsquo;re using it in this tutorial because that&rsquo;s the extension included in Python&rsquo;s documentation.</p>
+
+<p>In line 6 we use the  <code>pickle.dump()</code>  method to pickle our test list and store it inside the  <code>test_pickle.pkl</code>  file.</p>
+
+<h4 id="subscribe-to-our-newsletter">Subscribe to our Newsletter</h4>
+
+<p>Get occassional tutorials, guides, and reviews in your inbox. No spam ever. Unsubscribe at any time.</p>
+
+<p>Subscribe</p>
+
+<p>I encourage you to try and open the generated pickle file in your text editor. You&rsquo;ll quickly notice that a byte stream is definitely not a human-readable format.</p>
+
+<h3 id="unpickling-a-python-list">Unpickling a Python List</h3>
+
+<p>Now, let&rsquo;s unpickle the contents of the test pickle file and bring our object back to its original form.</p>
+
+<pre><code class="language-python">import pickle
+
+with open('test_pickle.pkl', 'rb') as pickle_in:
+    unpickled_list = pickle.load(pickle_in)
+
+print(unpickled_list)
+
+</code></pre>
+
+<p>As you can see, this procedure is not more complicated than when we pickled the object. In line 3 we open our  <code>test_pickle.pkl</code>  file again, but this time our goal is to read (<code>r</code>) the binary data (<code>b</code>) stored within it.</p>
+
+<p>Next, in line 5, we use the  <code>pickle.load()</code>  method to unpickle our list and store it in the  <code>unpickled_list</code>  variable.</p>
+
+<p>You can then print the contents of the list to see for yourself that it is identical to the list we pickled in the previous example. Here is the output from running the code above:</p>
+
+<pre><code>$ python unpickle.py
+['cucumber', 'pumpkin', 'carrot']
+
+</code></pre>
+
+<h3 id="pickling-and-unpickling-custom-objects">Pickling and Unpickling Custom Objects</h3>
+
+<p>As I mentioned before, using Pickle, you can serialize your own custom objects. Take a look at the following example:</p>
+
+<pre><code class="language-python">import pickle
+
+class Veggy():
+    def __init__(self):
+        self.color = ''
+    def set_color(self, color):
+        self.color = color
+
+cucumber = Veggy()
+cucumber.set_color('green')
+
+with open('test_pickle.pkl', 'wb') as pickle_out:
+    pickle.dump(cucumber, pickle_out)
+
+with open('test_pickle.pkl', 'rb') as pickle_in:
+    unpickled_cucumber = pickle.load(pickle_in)
+
+print(unpickled_cucumber.color)
+
+</code></pre>
+
+<p>As you can see, this example is almost as simple as the previous one. Between the lines 3 and 7 we define a simple class that contains one attribute and one method that changes this attribute. In line 9 we create an instance of that class and store it in the  <code>cucumber</code>  variable, and in line 10 we set its attribute  <code>color</code>  to &ldquo;green&rdquo;.</p>
+
+<p>Then, using the exact same functions as in the previous example, we pickle and unpickle our freshly created  <code>cucumber</code>  object. Running the code above results in the following output:</p>
+
+<pre><code class="language-sh">$ python unpickle_custom.py
+green
+
+</code></pre>
+
+<p>Remember, that we can only unpickle the object in an environment where the class  <code>Veggy</code>  is either defined or imported. If we create a new script and try to unpickle the object without importing the  <code>Veggy</code>  class, we&rsquo;ll get an &ldquo;AttributeError&rdquo;. For example, execute the following script:</p>
+
+<pre><code class="language-python">import pickle
+
+with open('test_pickle.pkl', 'rb') as pickle_in:
+    unpickled_cucumber = pickle.load(pickle_in)
+
+print(unpickled_cucumber.color)
+
+</code></pre>
+
+<p>In the output of the script above, you will see the following error:</p>
+
+<pre><code class="language-sh">$ python unpickle_simple.py
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#40&gt;&quot;, line 2, in &lt;module&gt;
+    unpickled_cucumber = pickle.load(pickle_in)
+AttributeError: Can't get attribute 'Veggy' on &lt;module '__main__' (built-in)&gt;
+
+</code></pre>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>As you can see, thanks to the Pickle module, serialization of Python objects is pretty simple. In our examples, we pickled a simple Python list – but you can use the exact same method to save a large spectrum of Python data types, as long as you make sure your objects contain only other pickleable objects.</p>
+
+<p>Pickling has some disadvantages, the biggest of which might be the fact that you can only unpickle your data using Python – if you need a cross-language solution, JSON is definitely a better option. And finally, remember that pickles can be used to carry the code that you don&rsquo;t necessarily want to execute. Similarly to pickled food, as long as you get your pickles from trusted sources, you should be fine.</p>
+
+<p>Reference : <a href="https://stackabuse.com/introduction-to-the-python-pickle-module/">https://stackabuse.com/introduction-to-the-python-pickle-module/</a></p>
+
+<p>ศึกษาเพิ่มเติม : <a href="https://python3.wannaphong.com/2016/07/pickle-python.html">https://python3.wannaphong.com/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-pickle-module.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#introduction-to-the-python-pickle-module">Introduction to the Python Pickle Module</a>
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#serialization">Serialization</a></li>
+<li><a href="#pickle-vs-json">Pickle vs JSON</a></li>
+<li><a href="#what-can-be-pickled-and-unpickled">What can be Pickled and Unpickled</a></li>
+<li><a href="#pickling-a-python-list">Pickling a Python List</a>
+<ul>
+<li><a href="#subscribe-to-our-newsletter">Subscribe to our Newsletter</a></li>
+</ul></li>
+<li><a href="#unpickling-a-python-list">Unpickling a Python List</a></li>
+<li><a href="#pickling-and-unpickling-custom-objects">Pickling and Unpickling Custom Objects</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

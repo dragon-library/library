@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="10 Pandas tips"><meta property="og:title" content="10 Pandas tips" />
+<meta property="og:description" content="10 Python Pandas tips to make data analysis faster Source
+1. Styling Have you ever complained about the table output looks boring when you do .head() in Jupyter notebooks? Is there a way not to display indexes (especially when there is already an ID column)? There’re ways to fix these issues.
+A. Highlight all negative values in a dataframe. (example revised from https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html)
+import pandas as pd def color_negative_red(val): color = &#39;red&#39; if val &lt; 0 else &#39;black&#39; return &#39;color: %s&#39; % colordf = pd." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/" />
+
+<title>10 Pandas tips | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/" >
+      A Simple Example-Based Guide
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/"  class="active">
+      10 Pandas tips
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/" >
+      21 Pandas operations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/" >
+      Basic Data Analysis
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/" >
+      House Market Analysis 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/" >
+      Pandas Cheatsheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/" >
+      Selecting Subsets of Data 1
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>10 Pandas tips</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="10-python-pandas-tips-to-make-data-analysis-faster">10 Python Pandas tips to make data analysis faster</h1>
+
+<p><a href="https://towardsdatascience.com/10-python-pandas-tricks-to-make-data-analysis-more-enjoyable-cb8f55af8c30">Source</a></p>
+
+<h2 id="1-styling">1. Styling</h2>
+
+<p>Have you ever complained about the table output looks boring when you do  <code>.head()</code>  in Jupyter notebooks? Is there a way not to display indexes (especially when there is already an ID column)? There’re ways to fix these issues.</p>
+
+<p><strong>A. Highlight all negative values in a dataframe.</strong>  (example revised from  <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html</a>)</p>
+
+<pre><code class="language-py">import pandas as pd  
+def color_negative_red(val):  
+    color = 'red' if val &lt; 0 else 'black'  
+ return 'color: %s' % colordf = pd.DataFrame(dict(col_1=[1.53,-2.5,3.53],   
+                       col_2=[-4.1,5.9,0])  
+                 )  
+df.style.applymap(color_negative_red)
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/116/1*5bo6KYcrLL-M94WCAkh0cQ.png" alt="" /></p>
+
+<p><strong>B. Hide the index.</strong>  Try  <code>df.head().style.hide_index()</code>!<br />
+<strong>C. Add hovering effects.</strong>  (example revised from  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.formats.style.Styler.set_table_styles.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.formats.style.Styler.set_table_styles.html</a>)</p>
+
+<pre><code class="language-py">df = pd.DataFrame(np.random.randn(5, 3))  
+df.style.set_table_styles(  
+[{'selector': 'tr:hover',  
+  'props': [('background-color', 'yellow')]}]  
+)
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/251/1*QJljhjp-loj8ZChihhK7EA.png" alt="" /></p>
+
+<p><strong>D. More CSS styles.</strong> You can use CSS to change the appearance of the table.</p>
+
+<pre><code class="language-py">df = pd.DataFrame(  
+dict(departure=['SFO', 'SFO', 'LAX', 'LAX', 'JFK', 'SFO'],  
+     arrival=['ORD', 'DFW', 'DFW', 'ATL', 'ATL', 'ORD'],  
+     airlines=['Delta','JetBlue','Delta',’AA','SouthWest',    
+               'Delta']),  
+columns=['airlines', 'departure','arrival'])
+df.style.set_table_styles(  
+[{'selector': 'tr:nth-of-type(odd)',  
+  'props': [('background', '#eee')]},   
+ {'selector': 'tr:nth-of-type(even)',  
+  'props': [('background', 'white')]},  
+ {'selector': 'th',  
+  'props': [('background', '#606060'),   
+            ('color', 'white'),  
+            ('font-family', 'verdana')]},  
+ {'selector': 'td',  
+  'props': [('font-family', 'verdana')]},  
+]  
+).hide_index()
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/251/1*cCPVfB6_nbh6WT99DMgduA.png" alt="" /></p>
+
+<h2 id="2-pandas-options">2. Pandas options</h2>
+
+<p>The reader may have experienced the following issues when using  <code>.head(n)</code>  to check the dataframe:<br />
+(1) There’re too many columns / rows in the dataframe and some columns / rows in the middle are omitted.<br />
+(2) Columns containing long texts get truncated.<br />
+(3) Columns containing floats display too many / too few digits.</p>
+
+<p>One can set</p>
+
+<pre><code class="language-py">import pandas as pd   
+pd.options.display.max_columns = 50  # None -&gt; No Restrictions  
+pd.options.display.max_rows = 200    # None -&gt; Be careful with this   
+pd.options.display.max_colwidth = 100  
+pd.options.display.precision = 3
+</code></pre>
+
+<p>to solve these issues.</p>
+
+<h2 id="3-group-by-with-multiple-aggregations">3. Group by with multiple aggregations</h2>
+
+<p>In SQL we can do aggregations like</p>
+
+<pre><code class="language-py">SELECT A, B, max(A), avg(A), sum(B), min(B), count(*)  
+FROM table  
+GROUP BY A, B
+</code></pre>
+
+<p>In Pandas it can be done with  <code>.groupby()</code>  and  <code>.agg()</code>:</p>
+
+<pre><code class="language-py">import pandas as pd  
+import numpy as np   
+df = pd.DataFrame(dict(A=['coke', 'sprite', 'coke', 'sprite',  
+                          'sprite', 'coke', 'coke'],  
+                       B=['alpha','gamma', 'alpha', 'beta',  
+                          'gamma', 'beta', 'beta'],  
+                       col_1=[1,2,3,4,5,6,7],  
+                       col_2=[1,6,2,4,7,9,3]))
+tbl = df.groupby(['A','B']).agg({'col_1': ['max', np.mean],  
+                                 'col_2': ['sum','min','count']})
+# 'count' will always be the count for number of rows in each group.
+</code></pre>
+
+<p>And the result will look like this:</p>
+
+<p><img src="https://miro.medium.com/max/326/1*KVE7ixZmoTuG42El5SSh7A.png" alt="" /></p>
+
+<p>Both the rows and columns are multi-indexed. A quick solution to change it to a dataframe without multi-indices is</p>
+
+<pre><code class="language-py">tbl = tbl.reset_index()  
+tbl.columns = ['A', 'B', 'col_1_max', 'col_2_sum', 'col_2_min', 'count']
+</code></pre>
+
+<p>If you would like to have the column renaming process automated, you can do  <code>tbl.columns.get_level_values(0)</code>  and  <code>tbl.columns.get_level_values(1)</code>  to extract the indices in each level and combine them.</p>
+
+<h2 id="4-column-slicing">4. Column slicing</h2>
+
+<p>Some of you might be familiar with this already, but I still find it very useful when handling a dataframe with a ton of columns.</p>
+
+<pre><code class="language-py">df.iloc[:,2:5].head()             # select the 2nd to the 4th column  
+df.loc[:,'column_x':].head()     
+# select all columns starting from 'column_x'
+</code></pre>
+
+<h2 id="5-add-row-id-random-row-id-to-each-group">5. Add row ID / random row ID to each group</h2>
+
+<p>To add a row ID / random row ID for each group by A, B, one can first append an ID / random ID to all rows:</p>
+
+<pre><code class="language-py">import numpy as np  
+# df: target dataframe np.random.seed(0)   # set random seed  
+df['random_ID_all'] = np.random.permutation(df.shape[0])  
+df['ID_all'] = [i for i in range(1, df.shape[0]+1)]
+</code></pre>
+
+<p>To add a random ID to each group (by A, B), one can then do</p>
+
+<pre><code class="language-py">df['ID'] = df.groupby(['A', 'B'])['ID_all'].rank(method='first',ascending=True).astype(int)
+df['random_ID'] = df.groupby(['A', 'B'])'random_ID_all'].rank(method='first',ascending=True).astype(int)
+</code></pre>
+
+<p>to get</p>
+
+<p><img src="https://miro.medium.com/max/331/1*Z1elLpesz3V6ZM-C-v3VHA.png" alt="" /></p>
+
+<h2 id="6-list-all-unique-values-in-a-group">6. List all unique values in a group</h2>
+
+<p>Sometimes after we performed group by, we’d like to aggregate the values in the target column as a list of unique values instead of max, min, …etc. This is how it’s done.</p>
+
+<pre><code class="language-py">df = pd.DataFrame(dict(A=['A','A','A','A','A','B','B','B','B'],  
+                       B=[1,1,1,2,2,1,1,1,2],  
+                       C=['CA','NY','CA','FL','FL',       
+                          'WA','FL','NY','WA']))
+tbl = df[['A', 'B', 'C']].drop_duplicates()\  
+                         .groupby(['A','B'])['C']\  
+                         .apply(list)\  
+                         .reset_index() # list to string (separated by commas)   
+tbl['C'] = tbl.apply(lambda x: (','.join([str(s) for s in x['C']])), axis = 1)
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/140/1*4efJCJxBpjhaYnQ4tTAfoQ.png" alt="" /></p>
+
+<p>If you’d like to save the result, don’t forget to change the separator to anything other than commas.</p>
+
+<h2 id="7-add-row-total-and-column-total-to-a-numerical-dataframe">7. Add row total and column total to a numerical dataframe</h2>
+
+<p>This is another common data manipulation. All you need is  <code>.apply()</code>.</p>
+
+<pre><code class="language-py">df = pd.DataFrame(dict(A=[2,6,3],  
+                       B=[2,2,6],   
+                       C=[3,2,3]))
+df['col_total']     = df.apply(lambda x: x.sum(), axis=1)  
+df.loc['row_total'] = df.apply(lambda x: x.sum())
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/225/1*Y_ZDUlCwPfLdEXBZGXKPnQ.png" alt="" /></p>
+
+<h2 id="8-check-memory-usage">8. Check memory usage</h2>
+
+<p>**<code>.memory_usage(deep=True)**</code>  can be used on Pandas dataframes to see the amount of memory used (in bytes) for each column. It’s useful when building machine learning models which may require a lot memory in training.</p>
+
+<h2 id="9-cumulative-sum">9. Cumulative sum</h2>
+
+<p>From time to time, cumulative sum is required when you generate some statistical outcomes. Simply do  `</p>
+
+<pre><code class="language-py">df['cumulative_sum'] = df['target_column'].cumsum()`  .
+</code></pre>
+
+<h2 id="10-crosstab">10. Crosstab</h2>
+
+<p>When you need to count the frequencies for groups formed by 3+ features,  <code>pd.crosstab()</code>  can make your life easier.</p>
+
+<p><img src="https://miro.medium.com/max/750/1*HudH3sdzlrnempURsvWbwg.png" alt="" /></p>
+
+<p>Thanks for reading! Comment below if you find bugs / better solutions.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cpandas%5c10_pandas_tip.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#10-python-pandas-tips-to-make-data-analysis-faster">10 Python Pandas tips to make data analysis faster</a>
+<ul>
+<li><a href="#1-styling">1. Styling</a></li>
+<li><a href="#2-pandas-options">2. Pandas options</a></li>
+<li><a href="#3-group-by-with-multiple-aggregations">3. Group by with multiple aggregations</a></li>
+<li><a href="#4-column-slicing">4. Column slicing</a></li>
+<li><a href="#5-add-row-id-random-row-id-to-each-group">5. Add row ID / random row ID to each group</a></li>
+<li><a href="#6-list-all-unique-values-in-a-group">6. List all unique values in a group</a></li>
+<li><a href="#7-add-row-total-and-column-total-to-a-numerical-dataframe">7. Add row total and column total to a numerical dataframe</a></li>
+<li><a href="#8-check-memory-usage">8. Check memory usage</a></li>
+<li><a href="#9-cumulative-sum">9. Cumulative sum</a></li>
+<li><a href="#10-crosstab">10. Crosstab</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

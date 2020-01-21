@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Primer on Jinja Templating"><meta property="og:title" content="Primer on Jinja Templating" />
+<meta property="og:description" content="Primer on Jinja Templating Flask comes packaged with the powerful Jinja templating language.
+For those who have not been exposed to a templating language before, such languages essentially contain variables as well as some programming logic, which when evaluated (or rendered into HTML) are replaced with actual values.
+The variables and/or logic are placed between tags or delimiters. For example, Jinja templates use {% ... %} for expressions or logic (like for loops), while {{ ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/" />
+
+<title>Primer on Jinja Templating | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/"  class="active">
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Primer on Jinja Templating</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="primer-on-jinja-templating">Primer on Jinja Templating</h1>
+
+<p>Flask comes packaged with the powerful  <a href="http://jinja.pocoo.org/docs/">Jinja</a>  templating language.</p>
+
+<p>For those who have not been exposed to a templating language before, such languages essentially contain variables as well as some programming logic, which when evaluated (or rendered into HTML) are replaced with  <strong>actual values</strong>.</p>
+
+<p>The variables and/or logic are placed between tags or delimiters. For example, Jinja templates use  <code>{% ... %}</code>  for expressions or logic (like for loops), while  <code>{{ ... }}</code>  is used for outputting the results of an expression or a variable to the end user. The latter tag, when rendered, is replaced with a value or values, and is seen by the end user.</p>
+
+<p><strong>Note:</strong>  Jinja Templates are just  <code>.html</code>  files. By convention, they live in the  <code>/templates</code>  directory in a Flask project. If you’re familiar with  <a href="https://realpython.com/python-string-formatting/">string formatting or interpolation</a>, templating languages follow a similar type of logic—just on the scale of an entire HTML page.</p>
+
+<p><strong>Free Bonus:</strong>  <a href="https://realpython.com/primer-on-jinja-templating/">Click here to get access to a free Jinja Templating Resources Guide (PDF)</a>  that shows you tips and tricks as well as common pitfalls to avoid when working with the Jinja 2 templating language.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h2 id="quick-examples">Quick Examples</h2>
+
+<p>Make sure you have Jinja installed before running these examples (<code>pip install jinja2</code>):</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">thon
+<span style="color:#f92672">from</span> jinja2 <span style="color:#f92672">import</span> Template
+t <span style="color:#f92672">=</span> Template(<span style="color:#e6db74">&#34;Hello {{ something }}!&#34;</span>)
+t<span style="color:#f92672">.</span>render(something<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;World&#34;</span>)</code></pre></div>
+
+<p>Hello World!&rsquo;</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">t <span style="color:#f92672">=</span> Template(<span style="color:#e6db74">&#34;My favorite numbers: {</span><span style="color:#e6db74">% f</span><span style="color:#e6db74">or n in range(1,10) %}{{n}} &#34;</span> <span style="color:#e6db74">&#34;{</span><span style="color:#e6db74">% e</span><span style="color:#e6db74">ndfor %}&#34;</span>)
+t<span style="color:#f92672">.</span>render()</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">My favorite numbers: <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">9</span> <span style="color:#e6db74">&#39;</span></code></pre></div></p>
+
+<p>Notice how the actual output rendered to the user falls within the  tags.</p>
+
+<h2 id="flask-examples">Flask Examples</h2>
+
+<p>The code can be found  <a href="https://github.com/mjhea0/thinkful-mentor/tree/master/python/jinja/flask_example">here</a>.</p>
+
+<p>Create the following project structure:</p>
+
+<p>├── requirements.txt
+├── run.py
+└── templates</p>
+
+<p>Activate a virtualenv, then install flask:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#960050;background-color:#1e0010">$</span> pip install flask</code></pre></div>
+Add the following code to  <em>run.py</em>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask, render_template
+app <span style="color:#f92672">=</span> Flask(__name__)
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">template_test</span>():
+    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#39;template.html&#39;</span>, my_string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Wheeeee!&#34;</span>, my_list<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>])
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    app<span style="color:#f92672">.</span>run(debug<span style="color:#f92672">=</span>True)</code></pre></div>
+Here, we are establishing the route  <code>/</code>, which renders the template  <em>template.html</em>  via the function  <code>render_template()</code>. This function must have a template name. Optionally, you can pass in keyword arguments to the template, like in the example with  <code>my_string</code>  and  <code>my_list</code>.</p>
+
+<p>Add the template:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Flask Template Example&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;screen&#34;</span>&gt;
+    &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+      .<span style="color:#a6e22e">container</span> {
+        <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">padding-top</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+      }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+      &lt;<span style="color:#f92672">p</span>&gt;My string: {{my_string}}&lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;<span style="color:#f92672">p</span>&gt;Value from the list: {{my_list[3]}}&lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;<span style="color:#f92672">p</span>&gt;Loop through the list:&lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;<span style="color:#f92672">ul</span>&gt;
+        {% for n in my_list %}
+        &lt;<span style="color:#f92672">li</span>&gt;{{n}}&lt;/<span style="color:#f92672">li</span>&gt;
+        {% endfor %}
+      &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+Save this as  <em>template.html</em>  in the templates directory. Notice the template tags. Can you guess the output before you run the app?</p>
+
+<p>Run the following:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#960050;background-color:#1e0010">$</span> python run<span style="color:#f92672">.</span>py</code></pre></div>
+You should see the following:</p>
+
+<p><a href="https://files.realpython.com/media/flask-jinja-example-basic.57f2955f4a35.png"><img src="https://files.realpython.com/media/flask-jinja-example-basic.57f2955f4a35.png" alt="Basic Flask + Jinja templating example screenshot" /></a></p>
+
+<p><strong>Note:</strong>  It’s worth noting that Jinja only supports a few  <a href="http://jinja.pocoo.org/docs/templates/#list-of-control-structures">control structures</a>:  <code>if</code>-statements and  <code>for</code>-loops are the two primary structures.</p>
+
+<p>The syntax is similar to Python, differing in that no colon is required and that termination of the block is done using an  <code>endif</code>  or  <code>endfor</code>  instead of whitespace.</p>
+
+<p>You can also complete the logic within your controller or views and then pass each value to the template using the template tags. However, it is much easier to perform such logic within the templates themselves.</p>
+
+<h2 id="template-inheritance">Template Inheritance</h2>
+
+<p>Templates usually take advantage of  <a href="http://jinja.pocoo.org/docs/templates/#template-inheritance">inheritance</a>, which includes a single base template that defines the basic structure of all subsequent child templates. You use the tags  <code>{% extends %}</code>  and  <code>{% block %}</code>  to implement inheritance.</p>
+
+<p>The use case for this is simple: as your application grows, and you continue adding new templates, you will need to keep common code (like an HTML navigation bar, Javascript libraries, CSS stylesheets, and so forth) in sync, which can be a lot of work. Using inheritance, we can move those common pieces to a parent/base template so that we can create or edit such code once, and all child templates will inherent that code.</p>
+
+<p><strong>Note:</strong>  You should always add as much recurring code as possible to your base template to save yourself time in the future, which will far outweigh the initial time investment.</p>
+
+<p>Let’s add inheritance to our example.</p>
+
+<p>Create the base (or parent) template:</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Flask Template Example&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;screen&#34;</span>&gt;
+    &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+      .<span style="color:#a6e22e">container</span> {
+        <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">padding-top</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+      }
+      <span style="color:#f92672">h2</span> {<span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;}
+    &lt;/<span style="color:#f92672">style</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h2</span>&gt;This is part of my base template&lt;/<span style="color:#f92672">h2</span>&gt;
+      &lt;<span style="color:#f92672">br</span>&gt;
+      {% block content %}{% endblock %}
+      &lt;<span style="color:#f92672">br</span>&gt;
+      &lt;<span style="color:#f92672">h2</span>&gt;This is part of my base template&lt;/<span style="color:#f92672">h2</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+Save this as  <em>layout.html</em>.</p>
+
+<p>Did you notice the  <code>{% block %}</code>  tags? This defines a block (or area) that child templates can fill in. Further, this just informs the templating engine that a child template may override the block of the template.</p>
+
+<p><strong>Note:</strong>  Think of these as placeholders to be filled in by code from the child template(s).</p>
+
+<p>Let’s do that.</p>
+
+<p>Update  <em>template.html</em>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% extends &#34;layout.html&#34; %}
+{% block content %}
+  &lt;<span style="color:#f92672">h3</span>&gt; This is the start of my child template&lt;/<span style="color:#f92672">h3</span>&gt;
+  &lt;<span style="color:#f92672">br</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;My string: {{my_string}}&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;Value from the list: {{my_list[3]}}&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;Loop through the list:&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">ul</span>&gt;
+    {% for n in my_list %}
+    &lt;<span style="color:#f92672">li</span>&gt;{{n}}&lt;/<span style="color:#f92672">li</span>&gt;
+    {% endfor %}
+  &lt;/<span style="color:#f92672">ul</span>&gt;
+  &lt;<span style="color:#f92672">h3</span>&gt; This is the end of my child template&lt;/<span style="color:#f92672">h3</span>&gt;
+{% endblock %}</code></pre></div>
+So, the  <code>{% extends %}</code>  informs the templating engine that this template “extends” another template,  <em>layout.html</em>. This establishes the link between the templates.</p>
+
+<p>Run it. You should see this:</p>
+
+<p><a href="https://files.realpython.com/media/flask-jinja-example-inheritance.3773d26c6ed9.png"><img src="https://files.realpython.com/media/flask-jinja-example-inheritance.3773d26c6ed9.png" alt="Flask + Jinja templating example showing inheritance" /></a></p>
+
+<p>One common use case is to add a navigation bar.</p>
+
+<p>Add the following code to the base template, just after the opening  <code>&lt;body&gt;</code>  tag:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">nav</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar navbar-inverse&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navigation&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container-fluid&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-header&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-toggle&#34;</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">-</span><span style="color:#a6e22e">toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse&#34;</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">-</span><span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#bs-example-navbar-collapse-1&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">span</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sr-only&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Toggle</span> <span style="color:#a6e22e">navigation</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/span&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">span</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon-bar&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/span&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">span</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon-bar&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/span&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">span</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon-bar&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/span&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-brand&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Jinja</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse navbar-collapse&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bs-example-navbar-collapse-1&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav navbar-nav&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Link</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Link</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-form navbar-left&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;search&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Search&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-default&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/form&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav navbar-nav navbar-right&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Link</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-toggle&#34;</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">-</span><span style="color:#a6e22e">toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Dropdown</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">b</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;caret&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/b&gt;&lt;/a&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dropdown-menu&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Action</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Another</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Something</span> <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">here</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;divider&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Separated</span> <span style="color:#a6e22e">link</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#e6db74">/div&gt;&lt;!-- /</span>.<span style="color:#a6e22e">navbar</span><span style="color:#f92672">-</span><span style="color:#a6e22e">collapse</span> <span style="color:#f92672">--&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#e6db74">/div&gt;&lt;!-- /</span>.<span style="color:#a6e22e">container</span><span style="color:#f92672">-</span><span style="color:#a6e22e">fluid</span> <span style="color:#f92672">--&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/nav&gt;</span>
+</code></pre></div>
+Now, every single child template that extends from the base will have the same navigation bar. To steal a line from Java philosophy: “Write once, use anywhere.”</p>
+
+<p><a href="https://files.realpython.com/media/flask-jinja-example-navbar.a1829e2751b0.png"><img src="https://files.realpython.com/media/flask-jinja-example-navbar.a1829e2751b0.png" alt="Flask + Jinja templating example showing a reusable navigation bar" /></a></p>
+
+<h2 id="super-blocks">Super Blocks</h2>
+
+<p>If you need to render a block from the base template, use a  <a href="http://jinja.pocoo.org/docs/templates/#super-blocks">super block</a>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ super() }}</code></pre></div>
+Add a footer to the base template:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span><span style="color:#f92672">&gt;</span>
+  {<span style="color:#f92672">%</span> <span style="color:#a6e22e">block</span> <span style="color:#a6e22e">footer</span> <span style="color:#f92672">%</span>}
+    <span style="color:#a6e22e">Watch</span><span style="color:#f92672">!</span> <span style="color:#a6e22e">This</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">added</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">my</span> <span style="color:#a6e22e">base</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">child</span> <span style="color:#a6e22e">templates</span> <span style="color:#a6e22e">using</span> <span style="color:#a6e22e">the</span> <span style="color:#66d9ef">super</span> <span style="color:#a6e22e">powerful</span> <span style="color:#66d9ef">super</span> <span style="color:#a6e22e">block</span><span style="color:#f92672">!</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
+  {<span style="color:#f92672">%</span> <span style="color:#a6e22e">endblock</span> <span style="color:#f92672">%</span>}
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</code></pre></div>
+Here’s the updated code:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Flask Template Example&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;screen&#34;</span>&gt;
+    &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+      .<span style="color:#a6e22e">container</span> {
+        <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">padding-top</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+      }
+      <span style="color:#f92672">h2</span> {<span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;}
+    &lt;/<span style="color:#f92672">style</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h2</span>&gt;This is part of my base template&lt;/<span style="color:#f92672">h2</span>&gt;
+      &lt;<span style="color:#f92672">br</span>&gt;
+      {% block content %}{% endblock %}
+      &lt;<span style="color:#f92672">br</span>&gt;
+      &lt;<span style="color:#f92672">h2</span>&gt;This is part of my base template&lt;/<span style="color:#f92672">h2</span>&gt;
+      &lt;<span style="color:#f92672">br</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
+        {% block footer %}
+          Watch! This will be added to my base and child templates using the super powerful super block!
+          &lt;<span style="color:#f92672">br</span>&gt;
+          &lt;<span style="color:#f92672">br</span>&gt;
+          &lt;<span style="color:#f92672">br</span>&gt;
+        {% endblock %}
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://code.jquery.com/jquery-1.10.2.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+Run the app. You should see that the footer is just part of the base:</p>
+
+<p><a href="https://files.realpython.com/media/flask-jinja-example-super.a71254fdfdc7.png"><img src="https://files.realpython.com/media/flask-jinja-example-super.a71254fdfdc7.png" alt="Jinja templating example defining a footer block" /></a></p>
+
+<p>Now, add the super block to  <em>template.html</em>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% extends &#34;layout.html&#34; %}
+{% block content %}
+  &lt;<span style="color:#f92672">h3</span>&gt; This is the start of my child template&lt;/<span style="color:#f92672">h3</span>&gt;
+  &lt;<span style="color:#f92672">br</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;My string: {{my_string}}&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;Value from the list: {{my_list[3]}}&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;Loop through the list:&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">ul</span>&gt;
+    {% for n in my_list %}
+    &lt;<span style="color:#f92672">li</span>&gt;{{n}}&lt;/<span style="color:#f92672">li</span>&gt;
+    {% endfor %}
+  &lt;/<span style="color:#f92672">ul</span>&gt;
+  &lt;<span style="color:#f92672">h3</span>&gt; This is the end of my child template&lt;/<span style="color:#f92672">h3</span>&gt;
+  {% block footer %}
+  {{super()}}
+  {% endblock %}
+{% endblock %}</code></pre></div>
+Check it out in your browser:</p>
+
+<p><a href="https://files.realpython.com/media/flask-jinja-example-super-2.853f387a8867.png"><img src="https://files.realpython.com/media/flask-jinja-example-super-2.853f387a8867.png" alt="Jinja templating example defining a footer block – step 2" /></a></p>
+
+<p>The super block is used for  <a href="https://realpython.com/python-super/">common code that both the parent and child templates share</a>, such as the  <code>&lt;title&gt;</code>, where both templates share part of the title. Then, you would just need to pass in the other part. It could also be used for a heading.</p>
+
+<p>Here’s an example:</p>
+
+<p><strong>Parent</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% block heading %}
+  &lt;<span style="color:#f92672">h1</span>&gt;{% block page %}{% endblock %} - Flask Super Example&lt;/<span style="color:#f92672">h1</span>&gt;
+{% endblock %}
+
+**Child**
+
+{% block page %}Home{% endblock %}
+{% block heading %}
+  {{ super() }}
+{% endblock %}</code></pre></div>
+Let’s see that in action:</p>
+
+<p><a href="https://files.realpython.com/media/flask-jinja-example-super-3.57e27ebe8c9b.png"><img src="https://files.realpython.com/media/flask-jinja-example-super-3.57e27ebe8c9b.png" alt="Jinja templating example showing the footer block included in the final HTML output" /></a></p>
+
+<p>See what happens when you remove  <code>{% block page %}Home{% endblock %}</code>  from the child template.</p>
+
+<p><strong>Challenge</strong>: Try to update the  <code>&lt;title&gt;</code>  using the same method with the super block. Check out my code if you need help.</p>
+
+<p>Instead of hard coding the name of the template, let’s make it dynamic.</p>
+
+<p>Update the two code snippets in  <em>template.html</em>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% block title %}{{title}}{% endblock %}
+
+{% block page %}{{title}}{% endblock %}</code></pre></div>
+Now, we need to pass in a  <code>title</code>  variable to our template from our controller,  <em>run.py</em>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">template_test</span>():
+    <span style="color:#66d9ef">return</span> render_template(
+        <span style="color:#e6db74">&#39;template.html&#39;</span>, my_string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Wheeeee!&#34;</span>, 
+        my_list<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>], title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Home&#34;</span>)</code></pre></div></p>
+
+<h2 id="macros">Macros</h2>
+
+<p>In Jinja, we can use macros to abstract commonly used code snippets that are used over and over to not repeat ourselves. For example, it’s common to highlight the link of the current page on the navigation bar (active link). Otherwise, we’d have to use  <code>if</code>/<code>elif</code>/<code>else</code>  statements to determine the active link. Using  <a href="http://jinja.pocoo.org/docs/templates/#macros">macros</a>, we can abstract out such code into a separate file.</p>
+
+<p>Add a  <em>macros.html</em>  file to the  <code>templates</code>  directory:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{<span style="color:#f92672">%</span> <span style="color:#a6e22e">macro</span> <span style="color:#a6e22e">nav_link</span>(<span style="color:#a6e22e">endpoint</span>, <span style="color:#a6e22e">name</span>) <span style="color:#f92672">%</span>}
+{<span style="color:#f92672">%</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">endpoint</span>.<span style="color:#a6e22e">endswith</span>(<span style="color:#a6e22e">endpoint</span>) <span style="color:#f92672">%</span>}
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(endpoint) }}&#34;</span><span style="color:#f92672">&gt;</span>{{<span style="color:#a6e22e">name</span>}}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+{<span style="color:#f92672">%</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">%</span>}
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(endpoint) }}&#34;</span><span style="color:#f92672">&gt;</span>{{<span style="color:#a6e22e">name</span>}}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/li&gt;</span>
+{<span style="color:#f92672">%</span> <span style="color:#a6e22e">endif</span> <span style="color:#f92672">%</span>}
+{<span style="color:#f92672">%</span> <span style="color:#a6e22e">endmacro</span> <span style="color:#f92672">%</span>}
+</code></pre></div>
+Here, we’re using Flask’s  <a href="http://flask.pocoo.org/docs/reqcontext/">request object</a>, which is part of Jinja by default, to check the requested endpoint, and then assigning the  <code>active</code>  class to that endpoint.</p>
+
+<p>Update the unordered list with the  <code>nav navbar-nav</code>  class in the base template:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav navbar-nav&#34;</span><span style="color:#f92672">&gt;</span>
+  {{ <span style="color:#a6e22e">nav_link</span>(<span style="color:#e6db74">&#39;home&#39;</span>, <span style="color:#e6db74">&#39;Home&#39;</span>) }}
+  {{ <span style="color:#a6e22e">nav_link</span>(<span style="color:#e6db74">&#39;about&#39;</span>, <span style="color:#e6db74">&#39;About&#39;</span>) }}
+  {{ <span style="color:#a6e22e">nav_link</span>(<span style="color:#e6db74">&#39;contact&#39;</span>, <span style="color:#e6db74">&#39;Contact Us&#39;</span>) }}
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+</code></pre></div>
+Also, make sure to add the import at the top of the template:  <code>{% from &quot;macros.html&quot; import nav_link with context %}</code>.</p>
+
+<p>Notice how we’re calling the  <code>nav-link</code>  macro and passing it two arguments: the endpoint (which comes from our controller) and the text we want displayed.</p>
+
+<p>Finally, let’s add three new endpoints to the controller:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/home&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">home</span>():
+    <span style="color:#66d9ef">return</span> render_template(
+        <span style="color:#e6db74">&#39;template.html&#39;</span>, my_string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Wheeeee!&#34;</span>, 
+        my_list<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>], title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Home&#34;</span>)
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/about&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">about</span>():
+    <span style="color:#66d9ef">return</span> render_template(
+        <span style="color:#e6db74">&#39;template.html&#39;</span>, my_string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Wheeeee!&#34;</span>, 
+        my_list<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>], title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;About&#34;</span>)
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/contact&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">contact</span>():
+    <span style="color:#66d9ef">return</span> render_template(
+        <span style="color:#e6db74">&#39;template.html&#39;</span>, my_string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Wheeeee!&#34;</span>, 
+        my_list<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>], title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Contact Us&#34;</span>)</code></pre></div>
+Refresh the page. Test out the links at the top. Does the current page get highlighted? It should.</p>
+
+<p><a href="https://files.realpython.com/media/flask-jinja-example-macros.a563706b0663.png"><img src="https://files.realpython.com/media/flask-jinja-example-macros.a563706b0663.png" alt="Jinja templating example showing macros" /></a></p>
+
+<h2 id="custom-filters">Custom Filters</h2>
+
+<p>Jinja uses  <a href="http://jinja.pocoo.org/docs/templates/#filters">filters</a>  to modify variables, mostly for formatting purposes.</p>
+
+<p>Here’s an example:</p>
+
+<p>{{ num | round }}</p>
+
+<p>This will round the  <code>num</code>  variable. So, if we pass the argument  <code>num=46.99</code>  into the template, then  <code>47.0</code>  will be outputted.</p>
+
+<p>As you can tell, you specify the variable and then a pipe (|), followed by the filter. Check out this  <a href="http://jinja.pocoo.org/docs/templates/#builtin-filters">link</a>  for the list of filters already included within Jinja. In some cases, you can specify optional arguments in parentheses.</p>
+
+<p>Here’s an example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{{ <span style="color:#a6e22e">list</span><span style="color:#f92672">|</span><span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;, &#39;</span>) }}
+
+<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">join</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">list</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">comma</span> <span style="color:#a6e22e">delimiter</span>.
+
+<span style="color:#a6e22e">Test</span> <span style="color:#66d9ef">this</span> <span style="color:#a6e22e">out</span>. <span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">following</span> <span style="color:#a6e22e">line</span> <span style="color:#a6e22e">to</span>  <span style="color:#a6e22e">_template</span>.<span style="color:#a6e22e">html_</span>
+
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Same</span> <span style="color:#a6e22e">list</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">filter</span><span style="color:#f92672">:</span> {{ <span style="color:#a6e22e">my_list</span><span style="color:#f92672">|</span><span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;, &#39;</span>) }}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+</code></pre></div>
+Now, besides the built-in filters, we can create our  <a href="http://jinja.pocoo.org/docs/api/#custom-filters">own</a>.</p>
+
+<p>Let’s add one of our own. One common example is a custom datetime filter.</p>
+
+<p>Add the following code to our controller after we create the app,  <code>app = Flask(__name__)</code>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@app.template_filter</span>()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">datetimefilter</span>(value, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%Y/%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M&#39;</span>):
+    <span style="color:#e6db74">&#34;&#34;&#34;Convert a datetime to a different format.&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">return</span> value<span style="color:#f92672">.</span>strftime(format)
+
+app<span style="color:#f92672">.</span>jinja_env<span style="color:#f92672">.</span>filters[<span style="color:#e6db74">&#39;datetimefilter&#39;</span>] <span style="color:#f92672">=</span> datetimefilter</code></pre></div>
+Using the  <code>@app.template_filter()</code>  decorator, we are registering the  <code>datetimefilter()</code>  function as a filter.</p>
+
+<p><strong>Note:</strong>  The default name for the filter is just the name of the function. However, you can customize it by passing in an argument to the function, such as  <code>@app.template_filter(formatdate)</code>.</p>
+
+<p>Next, we are adding the filter to the Jinja environment, making it accessible. Now it’s ready for use.</p>
+
+<p>Add the following code to our child template:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h4</span>&gt;Current date/time: {{ current_time | datetimefilter }}&lt;/<span style="color:#f92672">h4</span>&gt;</code></pre></div>
+Finally, just pass in the datetime to our template:</p>
+
+<p>current_time = datetime.datetime.now()</p>
+
+<p>Test it.</p>
+
+<p><a href="https://files.realpython.com/media/flask-jinja-example-filter.2e9ae41d5de9.png"><img src="https://files.realpython.com/media/flask-jinja-example-filter.2e9ae41d5de9.png" alt="Jinja templating &quot;filter&quot; example" /></a></p>
+
+<p>Ref : <a href="https://realpython.com/primer-on-jinja-templating/">https://realpython.com/primer-on-jinja-templating/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cprimer-jinja-templating.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#primer-on-jinja-templating">Primer on Jinja Templating</a>
+<ul>
+<li><a href="#quick-examples">Quick Examples</a></li>
+<li><a href="#flask-examples">Flask Examples</a></li>
+<li><a href="#template-inheritance">Template Inheritance</a></li>
+<li><a href="#super-blocks">Super Blocks</a></li>
+<li><a href="#macros">Macros</a></li>
+<li><a href="#custom-filters">Custom Filters</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

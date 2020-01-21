@@ -15,11 +15,20 @@ Template inheritance works by creating a series of &ldquo;base templates&rdquo; 
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
 
 
-<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -90,6 +99,78 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
     
       
         
@@ -265,14 +346,34 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
-  </ul>
-  
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
-  </li>
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
       
     
   </ul>
@@ -288,21 +389,21 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/library/tutorials/docs/python/pythonthailand/" >
-      Python Thailand
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
   </a>
 
 </li>
       
     
-      
-        <li>
+  </ul>
+  
 
-  <a href="/library/tutorials/docs/python/awesome/" >
-      Awesome Python
-  </a>
 
-</li>
+
+  </li>
+
+
       
     
       
@@ -397,6 +498,32 @@ https://github.com/alex-shpak/hugo-book
 
       
     
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
   </ul>
   
 
@@ -458,8 +585,9 @@ https://github.com/alex-shpak/hugo-book
 
 <p>If you&rsquo;ve been following along with this series, you&rsquo;ll be familiar enough with the concept of breaking up our Flask app into sub-directories and seperate files to maintain good readibility and create a clear separation of the different elements of our app.</p>
 
-<p>Let&rsquo;s take a quick at our application structure:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`app
+<p>Let&rsquo;s take a quick at our application structure:</p>
+
+<pre><code class="language-html">`app
 ├── app
 │   ├── __init__.py
 │   ├── admin_views.py
@@ -477,8 +605,12 @@ https://github.com/alex-shpak/hugo-book
 │   │       └── index.html
 │   └── views.py
 ├── requirements.txt
-└── run.py` </code></pre></div>
-&gt; Tip - I&rsquo;m generating these directory maps using the  <code>tree</code>  command in my terminal</p>
+└── run.py` 
+</code></pre>
+
+<blockquote>
+<p>Tip - I&rsquo;m generating these directory maps using the  <code>tree</code>  command in my terminal</p>
+</blockquote>
 
 <p>We&rsquo;re going to create 2 new  <code>templates</code>  directories.</p>
 
@@ -497,8 +629,9 @@ mkdir app/templates/public/templates</code></p>
 <p><code>touch app/templates/admin/templates/admin_template.html
 touch app/templates/public/templates/admin_template.html</code></p>
 
-<p>Now let&rsquo;s take a quick glance at our file structure:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`app
+<p>Now let&rsquo;s take a quick glance at our file structure:</p>
+
+<pre><code class="language-html">`app
 ├── app
 │   ├── __init__.py
 │   ├── admin_views.py
@@ -520,8 +653,10 @@ touch app/templates/public/templates/admin_template.html</code></p>
 │   │           └── public_template.html
 │   └── views.py
 ├── requirements.txt
-└── run.py` </code></pre></div>
-We&rsquo;ve added our 2 base HTML template files to the 2 directories.</p>
+└── run.py` 
+</code></pre>
+
+<p>We&rsquo;ve added our 2 base HTML template files to the 2 directories.</p>
 
 <blockquote>
 <p>Note - To make things a little more interesting, we&rsquo;re going to use the Bootstrap CSS &amp; JS library. Head over to the the Bootstrap webside to download the source files or feel free to use the Bootstrap CDN (Recommended).</p>
@@ -539,40 +674,43 @@ We&rsquo;ve added our 2 base HTML template files to the 2 directories.</p>
 
 <p>Go ahead and open up  <code>public_template.html</code>  in your editor and add the following:</p>
 
-<p><strong>app/app/templates/public/templates/public_template.html</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`<span style="color:#75715e">&lt;!doctype html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+<p><strong>app/app/templates/public/templates/public_template.html</strong></p>
 
-&lt;<span style="color:#f92672">head</span>&gt;
-  <span style="color:#75715e">&lt;!-- Required meta tags --&gt;</span>
-  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;</span>&gt;
+<pre><code class="language-html">`&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
-  <span style="color:#75715e">&lt;!-- Import the Bootstrap stylesheet --&gt;</span>
-  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;css/bootstrap.min.css&#39;) }}&#34;</span>&gt;
-  <span style="color:#75715e">&lt;!-- Import our custom stylesheet --&gt;</span>
-  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;css/style.css&#39;) }}&#34;</span>&gt;
+&lt;head&gt;
+  &lt;!-- Required meta tags --&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
 
-  &lt;<span style="color:#f92672">title</span>&gt;{% block title %}{% endblock %}&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;!-- Import the Bootstrap stylesheet --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for('static', filename='css/bootstrap.min.css') }}&quot;&gt;
+  &lt;!-- Import our custom stylesheet --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for('static', filename='css/style.css') }}&quot;&gt;
 
-&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;title&gt;{% block title %}{% endblock %}&lt;/title&gt;
+&lt;/head&gt;
 
-  &lt;<span style="color:#f92672">main</span>&gt;
+&lt;body&gt;
+
+  &lt;main&gt;
     {% block main %}{% endblock %}
-  &lt;/<span style="color:#f92672">main</span>&gt;
+  &lt;/main&gt;
 
-  <span style="color:#75715e">&lt;!-- Import jquery 3.3.1 slim min --&gt;</span>
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/jquery.slim.min.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-  <span style="color:#75715e">&lt;!-- Import Bootstrap bundle --&gt;</span>
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/bootstrap.bundle.min.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-  <span style="color:#75715e">&lt;!-- Import our custom JavaScript --&gt;</span>
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/app.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;!-- Import jquery 3.3.1 slim min --&gt;
+  &lt;script src=&quot;{{ url_for('static', filename='js/jquery.slim.min.js') }}&quot;&gt;&lt;/script&gt;
+  &lt;!-- Import Bootstrap bundle --&gt;
+  &lt;script src=&quot;{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}&quot;&gt;&lt;/script&gt;
+  &lt;!-- Import our custom JavaScript --&gt;
+  &lt;script src=&quot;{{ url_for('static', filename='js/app.js') }}&quot;&gt;&lt;/script&gt;
   {% block script %}{% endblock %}
-&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/body&gt;
 
-&lt;/<span style="color:#f92672">html</span>&gt;` </code></pre></div>
-Ok so we&rsquo;ve added quite a lot of new code to this HTML file. Let&rsquo;s step through what we&rsquo;ve done:</p>
+&lt;/html&gt;` 
+</code></pre>
+
+<p>Ok so we&rsquo;ve added quite a lot of new code to this HTML file. Let&rsquo;s step through what we&rsquo;ve done:</p>
 
 <blockquote>
 <p>Tip - If you used the Bootstrap starter template, don&rsquo;t worry about importing any of the Bootstrap or jQuery CSS or JS files as they&rsquo;ll be delivered through the CDN</p>
@@ -597,34 +735,37 @@ Ok so we&rsquo;ve added quite a lot of new code to this HTML file. Let&rsquo;s s
 
 <p>We should add a navigation bar to our  <code>public_template.html</code>  template. Add the following just below the opening  <code>&lt;body&gt;</code>  tag:</p>
 
-<p><strong>app/app/templates/public/templates/public_template.html</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar navbar-expand-lg navbar-light bg-light mb-3&#34;</span>&gt;
-  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-brand&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Flask&lt;/<span style="color:#f92672">a</span>&gt;
-  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-toggler&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse&#34;</span> <span style="color:#a6e22e">data-target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#navbarNav&#34;</span> <span style="color:#a6e22e">aria-controls</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbarNav&#34;</span> <span style="color:#a6e22e">aria-expanded</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Toggle navigation&#34;</span>&gt;
-    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-toggler-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-  &lt;/<span style="color:#f92672">button</span>&gt;
+<p><strong>app/app/templates/public/templates/public_template.html</strong></p>
 
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse navbar-collapse&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbarNav&#34;</span>&gt;
-    &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-nav&#34;</span>&gt;
-      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
-        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;Home&lt;/<span style="color:#f92672">a</span>&gt;
-      &lt;/<span style="color:#f92672">li</span>&gt;
-      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
-        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/about&#34;</span>&gt;About&lt;/<span style="color:#f92672">a</span>&gt;
-      &lt;/<span style="color:#f92672">li</span>&gt;
-    &lt;/<span style="color:#f92672">ul</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
+<pre><code class="language-html">`&lt;nav class=&quot;navbar navbar-expand-lg navbar-light bg-light mb-3&quot;&gt;
+  &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Flask&lt;/a&gt;
+  &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;&gt;
+    &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
 
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse navbar-collapse&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbarNav&#34;</span>&gt;
-    &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-nav ml-auto&#34;</span>&gt;
-      &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
-        &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/dashboard&#34;</span>&gt;Admin&lt;/<span style="color:#f92672">a</span>&gt;
-      &lt;/<span style="color:#f92672">li</span>&gt;
-    &lt;/<span style="color:#f92672">ul</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;&gt;
+    &lt;ul class=&quot;navbar-nav&quot;&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;/&quot;&gt;Home&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;/about&quot;&gt;About&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
 
-&lt;/<span style="color:#f92672">nav</span>&gt;` </code></pre></div>
-Ok great, now we&rsquo;ve got a nice navbar! Let&rsquo;s create a child template and put our blocks to use.</p>
+  &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;&gt;
+    &lt;ul class=&quot;navbar-nav ml-auto&quot;&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;/admin/dashboard&quot;&gt;Admin&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+
+&lt;/nav&gt;` 
+</code></pre>
+
+<p>Ok great, now we&rsquo;ve got a nice navbar! Let&rsquo;s create a child template and put our blocks to use.</p>
 
 <h3 id="child-templates">Child templates</h3>
 
@@ -632,23 +773,26 @@ Ok great, now we&rsquo;ve got a nice navbar! Let&rsquo;s create a child template
 
 <p>Let&rsquo;s refactor  <code>index.html</code>  to be our first child template. Go ahead and open it up in an your editor and enter the following:</p>
 
-<p><strong>app/app/templates/public/index.html</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`{% extends &#34;public/templates/public_template.html&#34; %}
+<p><strong>app/app/templates/public/index.html</strong></p>
+
+<pre><code class="language-html">`{% extends &quot;public/templates/public_template.html&quot; %}
 
 {% block title %}Home{% endblock %}
 
 {% block main %}
 
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
-      &lt;<span style="color:#f92672">h1</span>&gt;Home&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;h1&gt;Home&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-{% endblock %}` </code></pre></div>
-Let&rsquo;s look at what we&rsquo;ve done.</p>
+{% endblock %}` 
+</code></pre>
+
+<p>Let&rsquo;s look at what we&rsquo;ve done.</p>
 
 <ul>
 <li>We use the  <code>{% extends &quot;path/to/our/template.html&quot; %}</code>  syntax to import a base template</li>
@@ -660,13 +804,16 @@ Let&rsquo;s look at what we&rsquo;ve done.</p>
 
 <p>Let&rsquo;s throw in some JavaScript into the  <code>{% block script %}</code>  tags and see what happens.</p>
 
-<p>At the bottom of  <code>index.html</code>  add the following:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`{% block script %}
-&lt;<span style="color:#f92672">script</span>&gt;
-  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Template inheritance is awesome&#34;</span>);
-&lt;/<span style="color:#f92672">script</span>&gt;
-{% endblock %}` </code></pre></div>
-Save the file and reload your browser window.</p>
+<p>At the bottom of  <code>index.html</code>  add the following:</p>
+
+<pre><code class="language-html">`{% block script %}
+&lt;script&gt;
+  alert(&quot;Template inheritance is awesome&quot;);
+&lt;/script&gt;
+{% endblock %}` 
+</code></pre>
+
+<p>Save the file and reload your browser window.</p>
 
 <p>You should see the JavaScript alert dialogue pop up! Go ahead and close it and remove the  <code>{% block script %}</code>  and containing JavaScript we just added.</p>
 
@@ -684,66 +831,68 @@ Save the file and reload your browser window.</p>
 
 <p><strong>app/app/templates/admin/templates/admin_template.html</strong></p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!doctype html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
-&lt;<span style="color:#f92672">head</span>&gt;
-  <span style="color:#75715e">&lt;!-- Required meta tags --&gt;</span>
-  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-  &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1, shrink-to-fit=no&#34;</span>&gt;
+&lt;head&gt;
+  &lt;!-- Required meta tags --&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
 
-  <span style="color:#75715e">&lt;!-- Import the Bootstrap stylesheet --&gt;</span>
-  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;css/bootstrap.min.css&#39;) }}&#34;</span>&gt;
-  <span style="color:#75715e">&lt;!-- Import our custom stylesheet --&gt;</span>
-  &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;css/style.css&#39;) }}&#34;</span>&gt;
+  &lt;!-- Import the Bootstrap stylesheet --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for('static', filename='css/bootstrap.min.css') }}&quot;&gt;
+  &lt;!-- Import our custom stylesheet --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for('static', filename='css/style.css') }}&quot;&gt;
 
-  &lt;<span style="color:#f92672">title</span>&gt;{% block title %}{% endblock title %}&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;title&gt;{% block title %}{% endblock title %}&lt;/title&gt;
+&lt;/head&gt;
 
-&lt;<span style="color:#f92672">body</span>&gt;
+&lt;body&gt;
 
-  &lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar navbar-expand-lg navbar-light bg-light mb-3&#34;</span>&gt;
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-brand&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Admin&lt;/<span style="color:#f92672">a</span>&gt;
-    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-toggler&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse&#34;</span> <span style="color:#a6e22e">data-target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#navbarNav&#34;</span> <span style="color:#a6e22e">aria-controls</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbarNav&#34;</span> <span style="color:#a6e22e">aria-expanded</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Toggle navigation&#34;</span>&gt;
-      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-toggler-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;/<span style="color:#f92672">button</span>&gt;
+  &lt;nav class=&quot;navbar navbar-expand-lg navbar-light bg-light mb-3&quot;&gt;
+    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Admin&lt;/a&gt;
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;&gt;
+      &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
 
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse navbar-collapse&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbarNav&#34;</span>&gt;
-      &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-nav&#34;</span>&gt;
-        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
-          &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/dashboard&#34;</span>&gt;Dashboard&lt;/<span style="color:#f92672">a</span>&gt;
-        &lt;/<span style="color:#f92672">li</span>&gt;
-        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
-            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/admin/profile&#34;</span>&gt;Profile&lt;/<span style="color:#f92672">a</span>&gt;
-          &lt;/<span style="color:#f92672">li</span>&gt;
-      &lt;/<span style="color:#f92672">ul</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;&gt;
+      &lt;ul class=&quot;navbar-nav&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;/admin/dashboard&quot;&gt;Dashboard&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+            &lt;a class=&quot;nav-link&quot; href=&quot;/admin/profile&quot;&gt;Profile&lt;/a&gt;
+          &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
 
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;collapse navbar-collapse&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbarNav&#34;</span>&gt;
-      &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-nav ml-auto&#34;</span>&gt;
-        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
-          &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;Return to site&lt;/<span style="color:#f92672">a</span>&gt;
-        &lt;/<span style="color:#f92672">li</span>&gt;
-      &lt;/<span style="color:#f92672">ul</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;&gt;
+      &lt;ul class=&quot;navbar-nav ml-auto&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;/&quot;&gt;Return to site&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
 
-  &lt;/<span style="color:#f92672">nav</span>&gt;
+  &lt;/nav&gt;
 
-  &lt;<span style="color:#f92672">main</span>&gt;
+  &lt;main&gt;
     {% block main %}{% endblock main %}
-  &lt;/<span style="color:#f92672">main</span>&gt;
+  &lt;/main&gt;
 
-  <span style="color:#75715e">&lt;!-- Import jquery 3.3.1 slim min --&gt;</span>
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/jquery.slim.min.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-  <span style="color:#75715e">&lt;!-- Import Bootstrap bundle --&gt;</span>
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/bootstrap.bundle.min.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-  <span style="color:#75715e">&lt;!-- Import our custom JavaScript --&gt;</span>
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;static&#39;, filename=&#39;js/app.js&#39;) }}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;!-- Import jquery 3.3.1 slim min --&gt;
+  &lt;script src=&quot;{{ url_for('static', filename='js/jquery.slim.min.js') }}&quot;&gt;&lt;/script&gt;
+  &lt;!-- Import Bootstrap bundle --&gt;
+  &lt;script src=&quot;{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}&quot;&gt;&lt;/script&gt;
+  &lt;!-- Import our custom JavaScript --&gt;
+  &lt;script src=&quot;{{ url_for('static', filename='js/app.js') }}&quot;&gt;&lt;/script&gt;
   {% block script %}{% endblock %}
-&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/body&gt;
 
-&lt;/<span style="color:#f92672">html</span>&gt;` </code></pre></div>
-We haven&rsquo;t changed much here, just a few tweaks to the navbar.</p>
+&lt;/html&gt;` 
+</code></pre>
+
+<p>We haven&rsquo;t changed much here, just a few tweaks to the navbar.</p>
 
 <p>Now we need to refactor our  <code>dashboard.html</code>  file in the  <code>templates/admin</code>  directory to become a new child template.</p>
 
@@ -751,22 +900,24 @@ We haven&rsquo;t changed much here, just a few tweaks to the navbar.</p>
 
 <p><strong>app/app/templates/admin/templates/admin_template.html</strong></p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">`{% extends &#34;admin/templates/admin_template.html&#34; %}
+<pre><code class="language-html">`{% extends &quot;admin/templates/admin_template.html&quot; %}
 
 {% block title %}Admin dashboard{% endblock %}
 
 {% block main %}
 
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
-      &lt;<span style="color:#f92672">h1</span>&gt;Admin dashboard&lt;/<span style="color:#f92672">h1</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+      &lt;h1&gt;Admin dashboard&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-{% endblock %}` </code></pre></div>
-Save the file and head back to your browser window.</p>
+{% endblock %}` 
+</code></pre>
+
+<p>Save the file and head back to your browser window.</p>
 
 <p>If you now click on the  <code>Admin</code>  link in the top right of the navbar, you&rsquo;ll be taken to the admin dashboard page where you&rsquo;ll see our new base and child templates in action!</p>
 

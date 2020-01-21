@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python 101"><meta property="og:title" content="Python 101" />
+<meta property="og:description" content="Python 101 ฉบับรวบลัด การแสดงผล และรับข้อมูล เริ่มแรกลอง print “hello world” กันก่อน
+print(&quot;hello_world&quot;)  Data type (ประเภทข้อมูล) 1. String String ก็เป็นตัวแปรที่เก็ยตัวอักษร หรือข้อความ คราวนี้เรามาลองรับ input เป็นชื่อเก็บใส่ตัวแปรที่ชื่อว่า name แล้ว print ออกมากันครับ
+ในที่นี้ตัวแปร name ก็จะมี data type คือ string นั้นเอง
+name = input(&quot;What is your name? &quot;) print(&quot;Hello &quot;,name)  2. Numeric    Type Description     Integer จำนวนเต็ม เช่น 10, 20   Float ทศนิยม เช่น 10.0, 20.5    ต่อมาลองรับ input เป็น integer 1 ตัว และ float 1 ตัว แล้วเอามาบวกกันแสดงผลรับเป็น integer" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101/" />
+
+<title>Python 101 | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/"  class="active">
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python 101</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-101-ฉบ-บรวบล-ด">Python 101 ฉบับรวบลัด</h1>
+
+<h2 id="การแสดงผล-และร-บข-อม-ล">การแสดงผล และรับข้อมูล</h2>
+
+<p>เริ่มแรกลอง print “hello world” กันก่อน</p>
+
+<pre><code class="language-python">print(&quot;hello_world&quot;)
+</code></pre>
+
+<h2 id="data-type-ประเภทข-อม-ล">Data type (ประเภทข้อมูล)</h2>
+
+<h3 id="1-string">1. String</h3>
+
+<p>String ก็เป็นตัวแปรที่เก็ยตัวอักษร หรือข้อความ คราวนี้เรามาลองรับ input เป็นชื่อเก็บใส่ตัวแปรที่ชื่อว่า name แล้ว print ออกมากันครับ</p>
+
+<p>ในที่นี้ตัวแปร name ก็จะมี data type คือ string นั้นเอง</p>
+
+<pre><code class="language-python">name = input(&quot;What is your name? &quot;)
+print(&quot;Hello &quot;,name)
+</code></pre>
+
+<h3 id="2-numeric">2. Numeric</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Integer</td>
+<td>จำนวนเต็ม เช่น 10, 20</td>
+</tr>
+
+<tr>
+<td align="center">Float</td>
+<td>ทศนิยม เช่น 10.0, 20.5</td>
+</tr>
+</tbody>
+</table>
+
+<p>ต่อมาลองรับ input เป็น integer 1 ตัว และ float 1 ตัว แล้วเอามาบวกกันแสดงผลรับเป็น integer</p>
+
+<pre><code class="language-python">num1 = input()
+
+# Cast string to integer
+num1 = int(num1)
+
+num2 = input()
+
+# Cast string to float
+num2 = float(num2)
+
+total  = num1 + num2
+
+# Cast to integer
+total = int(total)
+
+print(&quot;total:&quot;,total)
+</code></pre>
+
+<h3 id="3-list">3. List</h3>
+
+<p>List ก็คือตัวแปรที่คล้ายๆกับ array ใน C/C++ หรือภาษาอื่นๆนั้นเอง สำหรับใครที่เขียน python เป็นภาษาแรก ให้นึกถึง ตารางที่เก็บข้อมูล</p>
+
+<p>สมมติ เรามีข้อมูลคะแนนนักเรียนอยู่ 5 คน ดังนี้ 20, 40, 30, 50, 35 เราก็จะสร้างตัวแปรชื่อ score ขึ้นมา</p>
+
+<p>โดยที่ List จะเก็บค่าไว้ใน [] แต่ละข้อมูลคั่นด้วย comma (,)</p>
+
+<pre><code class="language-python">score = [20, 40, 30, 50, 35]
+</code></pre>
+
+<p>แล้วถ้าเรา อยากเก็บว่าเพื่อนในห้องเรียนนั่งตรงไหนกันบ้าง ให้เรามีเพื่อน 12 คน</p>
+
+<p>มีเก้าอี้อยู่ 4 แถว แถวละ 3 ตัว เราก็วาดตารางขึ้นมาก่อน</p>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">คอลัมน์ 1</th>
+<th align="center">คอลัมน์ 2</th>
+<th align="center">คอลัมน์ 3</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">แถว1</td>
+<td align="center">A</td>
+<td align="center">J</td>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td align="center">แถว2</td>
+<td align="center">F</td>
+<td align="center">B</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="center">แถว3</td>
+<td align="center">D</td>
+<td align="center">C</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="center">แถว4</td>
+<td align="center">G</td>
+<td align="center">E</td>
+</tr>
+</tbody>
+</table>
+
+<p>เราก็จะสร้าง List แบบนี้</p>
+
+<pre><code class="language-python">table = [
+    ['A','J','L'],  # row 1 
+    ['F','B','I'],  # row 2 
+    ['D','C','H'],  # row 3 
+    ['G','E','K'],  # row 4         
+]
+
+print(table)
+</code></pre>
+
+<p>แต่ในการเขียน Program เราจะเริ่มนับแถว กับคอลัมน์ ตั้งแต่ 0 ใช้คำว่า Index ในการบอกตำแน่ง</p>
+
+<p>่เช่น อยากรู้ว่า K นั่งอยู่ตรงไหน ก็คือ แถว 4 คอลัมน์ 3 พอเป็นในทาง programming เราก็จะบอกว่า K อยู่ที่ Index 3,2</p>
+
+<p>และถ้าทุกคนสังเกต 2 ตัวอย่างผ่านมาจะรู้ว่า List สามารถเก็บตัวแปรประเภทใดก็ได้ สามารถเก็บตัวแปรคนละชนิด ไว้ใน List เดียวกันก็ได้ เช่น</p>
+
+<pre><code class="language-python">person = [&quot;sk&quot;, &quot;conan&quot;, &quot;20&quot;]
+
+print(&quot;Name:&quot;, person[0], &quot; Lastname:&quot;, person[1], &quot; Age:&quot;, person[2])
+</code></pre>
+
+<h3 id="4-numpy-array">4. Numpy array</h3>
+
+<p>อันนี้ผมอยากให้ทุกคนได้รู้จักเพราะว่า blog ของผมก็เป็น blog เกี่ยวกับ image processing กับ Computer vision เนอะ แล้วมันเกี่ยวกันยังไงใช่มั้ยครับ</p>
+
+<p>เพราะว่า Library OpenCV ที่เราใช้ในการทำ Image processing กันเนี่ยมันจะเก็บข้อมูลรูปภาพไว้ใน Numpy array</p>
+
+<p>Numpy array คือ ตารางหรือ array ที่เก็บค่าข้อมูลที่มี Data type เหมือนกัน ถ้าเป็นรูป ก็จะต้องมี Data type เป็น uint8 มาลองใช้งานกันเลยดีกว่าครับ</p>
+
+<pre><code class="language-python">import numpy as np
+
+# Covert list to numpy array that have a datatype is uint8
+a = np.array([1,2,3,4], np.uint8)
+print(a)
+
+# Show type of variable a
+print(type(a))
+
+# Show Data type in variable a
+print(a.dtype)
+</code></pre>
+
+<h2 id="operators-ต-วดำเน-นการ">Operators (ตัวดำเนินการ)</h2>
+
+<p>มันก็จะถูกแบ่งแยกย่อยไปอีก เราจะดูเฉพาะตัวที่สำคัญๆนะครับ</p>
+
+<h3 id="1-arithmetic-operators">1. Arithmetic Operators</h3>
+
+<p>จะเป็นตัวดำเนินเกี่ยวกับ Math โดยจะสรุปไว้ตามตารางข้างล่างนะครับ กำหนดให้ a = 10, b = 7</p>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Operator</th>
+<th align="center">Description</th>
+<th align="center">Example</th>
+<th align="right">Result</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">+</td>
+<td align="center">การบวก</td>
+<td align="center">a + b</td>
+<td align="right">17.0</td>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td align="center">-</td>
+<td align="center">การลบ</td>
+<td align="center">a - b</td>
+<td align="right">3.0</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="center">*</td>
+<td align="center">การคูณ</td>
+<td align="center">a * b</td>
+<td align="right">70.0</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="center">/</td>
+<td align="center">การหาร</td>
+<td align="center">a / b</td>
+<td align="right">1.4285714</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="center">%</td>
+<td align="center">การหาเศษ จากการหาร</td>
+<td align="center">a % b</td>
+<td align="right">3.0</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="center">**</td>
+<td align="center">การยกกำลัง</td>
+<td align="center">a**b</td>
+<td align="right">10000000.0</td>
+</tr>
+
+<tr>
+<td align="center">6</td>
+<td align="center">//</td>
+<td align="center">การหารแบบไม่เอาเศษ</td>
+<td align="center">a//b</td>
+<td align="right">1.0</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="2-assignment-operators">2. Assignment Operators</h3>
+
+<p>จะเป็นการให้ค่าตัวแปร กำหนดให้ a = 10</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th align="center">Example</th>
+<th align="right">Result of a</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">+=</td>
+<td align="center">a += 3</td>
+<td align="right">13.0</td>
+</tr>
+
+<tr>
+<td align="center">-=</td>
+<td align="center">a -= 3</td>
+<td align="right">7.0</td>
+</tr>
+
+<tr>
+<td align="center">*=</td>
+<td align="center">a *= 3</td>
+<td align="right">30.0</td>
+</tr>
+
+<tr>
+<td align="center">/</td>
+<td align="center">a / b</td>
+<td align="right">1.4285714</td>
+</tr>
+
+<tr>
+<td align="center">%</td>
+<td align="center">a %= 3</td>
+<td align="right">1.0</td>
+</tr>
+
+<tr>
+<td align="center">** =</td>
+<td align="center">a** = 3</td>
+<td align="right">1000.0</td>
+</tr>
+
+<tr>
+<td align="center">//=</td>
+<td align="center">a//=3</td>
+<td align="right">1.0</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="3-comparison-operators">3. Comparison Operators</h3>
+
+<p>จะเป็นการเปรียบเทียบ กำหนดให้ a = 10, b = 10
+|  |Operator|Description|Example|Result|
+|:&mdash;&ndash;:|:&mdash;&mdash;-:|:&mdash;&mdash;&mdash;:|:&mdash;&mdash;&mdash;:|:&mdash;&mdash;&mdash;:|
+|0|==|ความเท่ากัน|a == b|True|
+|1|!=|ความไม่เท่ากัน|a != b|False|
+|2|&gt;|มากกว่า|a &gt; b|False|
+|3|&lt;|น้อยกว่า|a &lt; b|False|
+|4|&gt;=|มากกว่าเท่ากับ|a &gt;= b|True|
+|5|&lt;=|น้อยกว่าเท่ากับ|a &lt;= b|True|</p>
+
+<h3 id="4-logical-operators">4. Logical Operators</h3>
+
+<p>เป็นการเปรียบเทียบทางตรรกศาสตร์ กำหนดให้ a = True, b = False</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th>Description</th>
+<th align="center">Example</th>
+<th align="center">Result</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">and</td>
+<td>ต้องจริงทั้ง 2 ค่า ถึงจะเป็นจริง นอกนั้นเป็นเท็จ</td>
+<td align="center">a and b</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">or</td>
+<td>ต้องเท็จ 2 ค่า ถึงจะเป็นเท็จ นอกนั้นเป็นจริง</td>
+<td align="center">a or b</td>
+<td align="center">True</td>
+</tr>
+
+<tr>
+<td align="center">not</td>
+<td>ให้ค่าตรงข้าม</td>
+<td align="center">not (a and a)</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="if-else-condition">If-Else Condition</h2>
+
+<p>เป็นการเขียนเพื่อควบคุมการทำงานของโปรแกรมให้เป็นไปตาม ทางเลือก ที่เราตั้งไว้ เช่น ตัวอย่างที่ฮิตก็เป็นการตัดเกรด 80 มากกว่าเท่ากับได้ A, 70 -&gt; B, 60 -&gt; C, 40 -&gt; D และต่ำกว่า 40 ได้ F</p>
+
+<p>โดยรูปแบบการเขียนก็มี 3 แบบ</p>
+
+<h3 id="1-if-condition">1. if condition</h3>
+
+<p>ถ้า if เป็นจริงก็ทำ statement1</p>
+
+<pre><code class="language-python">if condition:
+    statement 1
+</code></pre>
+
+<h3 id="2-if-else-condition">2. if-else condition</h3>
+
+<p>ในส่วนของ if else ก็แปลตรงตัวเลยครับ ถ้า if เป็นจริงก็ทำ statement1 ถ้าไม่จริงก็ทำ statement2 ใน else</p>
+
+<pre><code class="language-python">if condition:
+    statement 1
+else:
+    statement 2
+</code></pre>
+
+<h3 id="3-if-elif-else-condition">3. if-elif-else condition</h3>
+
+<p>ในส่วนนี้ก็ถ้า if เป็นจริงก็ทำ statement1 ถ้าไม่จริงก็ไล่ check ทีละ elif ถ้า codition ไหนเป็นจริงก็เข้าไปทำ statement นั้น โดย elif จะมีมากกว่า 2 อันก็ได้ สุดท้ายถ้าไม่มี condition ไหนที่เป็นจริงเลยก็ทำ else</p>
+
+<pre><code class="language-python">if condition 1:
+    statement 1
+elif condition 2:
+    statement 2
+elif condition 3:
+    statement 3
+else:
+    statement 4
+</code></pre>
+
+<p>มาดูโค้ดตัดเกรดกันครับ</p>
+
+<pre><code class="language-python">    score = int(input())
+    if score &gt;= 80:
+        print(&quot;You got A&quot;)
+    elif  score &gt;= 70:
+        print(&quot;You got B&quot;)
+    elif  score &gt;= 60:    
+        print(&quot;You got C&quot;)
+    elif  score &gt;= 40:
+        print(&quot;You got D&quot;)
+    else:
+        print(&quot;You got F&quot;)
+</code></pre>
+
+<h2 id="while-loop">While Loop</h2>
+
+<p>เป็นการทำอะไรที่ต้องวนหลายๆรอบจน กระทั่ง เงื่อนไขที่ตั้งไว้เป็น False เช่น ให้แสดงเลข 1 ถึง n</p>
+
+<pre><code class="language-python">n = int(input())
+
+i = 1
+
+while i &lt;= n:
+    print(i)
+    i += 1
+</code></pre>
+
+<p>จากโค้ดข้างบนเราจะเห็นว่ามีการตั้ง Condition ไว้ว่า ถ้า i &lt;= n ก็ยังให้ loop ทำงานอยู่ ซึ่งในการทำงานแต่ละรอบ ค่า i ก็จะถูกเพิ่มค่าทีละ 1 เราจะเห็นว่าเมื่อค่า i เพิ่มค่าเป็น n+1 Loop ก็จะไม่ทำงาน</p>
+
+<h2 id="for-loops">For Loops</h2>
+
+<p>การทำงานคล้ายๆ กับ while loop ต่างกันที่ for มีการกำหนดตัวแปร และเพิ่มค่าตรงส่วนของ Condition เลย โดยการเขียน for มีลักษณะ ดังนี้</p>
+
+<pre><code class="language-python"># Loop 1 
+for i in range(start, stop, step):
+    statement
+
+# Loop 2 
+for i in range(start, stop)
+    statement
+</code></pre>
+
+<p>อันนี้เป็นการสรุปคร่าวๆนะครับ เนื่องจากว่าช่วงนี้ต้องสอน Python ในรุ่นน้องด้วยเวลาที่จำกัดก็เลยลองเขียนบทความนี้ขึ้นมา เดี๋ยวจะมาอัพเดทเรื่อยๆครับ</p>
+
+<blockquote class="book-hint info">
+  ที่มาบทความ : <a href="https://www.skconan.com/python-cheat-101/">skconan.com</a>.
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-101.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-101-ฉบ-บรวบล-ด">Python 101 ฉบับรวบลัด</a>
+<ul>
+<li><a href="#การแสดงผล-และร-บข-อม-ล">การแสดงผล และรับข้อมูล</a></li>
+<li><a href="#data-type-ประเภทข-อม-ล">Data type (ประเภทข้อมูล)</a>
+<ul>
+<li><a href="#1-string">1. String</a></li>
+<li><a href="#2-numeric">2. Numeric</a></li>
+<li><a href="#3-list">3. List</a></li>
+<li><a href="#4-numpy-array">4. Numpy array</a></li>
+</ul></li>
+<li><a href="#operators-ต-วดำเน-นการ">Operators (ตัวดำเนินการ)</a>
+<ul>
+<li><a href="#1-arithmetic-operators">1. Arithmetic Operators</a></li>
+<li><a href="#2-assignment-operators">2. Assignment Operators</a></li>
+<li><a href="#3-comparison-operators">3. Comparison Operators</a></li>
+<li><a href="#4-logical-operators">4. Logical Operators</a></li>
+</ul></li>
+<li><a href="#if-else-condition">If-Else Condition</a>
+<ul>
+<li><a href="#1-if-condition">1. if condition</a></li>
+<li><a href="#2-if-else-condition">2. if-else condition</a></li>
+<li><a href="#3-if-elif-else-condition">3. if-elif-else condition</a></li>
+</ul></li>
+<li><a href="#while-loop">While Loop</a></li>
+<li><a href="#for-loops">For Loops</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

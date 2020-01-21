@@ -16,11 +16,20 @@ In this guide, we&rsquo;re going to quickly cover how to handle incoming JSON da
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.1d746970b49dc587625360ff0736847825f2a3eb3e927d89e878500c194f34a0.css" integrity="sha256-HXRpcLSdxYdiU2D/BzaEeCXyo&#43;s&#43;kn2J6HhQDBlPNKA=">
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
 
 
-<script defer src="/library/tutorials/en.search.min.1bf556a2db272ff465f76ea44df384650a214635a7f8311016ce98d265523d71.js" integrity="sha256-G/VWotsnL/Rl926kTfOEZQohRjWn&#43;DEQFs6Y0mVSPXE="></script>
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -91,6 +100,78 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
     
       
         
@@ -266,14 +347,34 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
-  </ul>
-  
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
-  </li>
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
 
+</li>
+      
+    
+      
+        <li>
 
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
       
     
   </ul>
@@ -289,21 +390,21 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/library/tutorials/docs/python/pythonthailand/" >
-      Python Thailand
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
   </a>
 
 </li>
       
     
-      
-        <li>
+  </ul>
+  
 
-  <a href="/library/tutorials/docs/python/awesome/" >
-      Awesome Python
-  </a>
 
-</li>
+
+  </li>
+
+
       
     
       
@@ -398,6 +499,32 @@ https://github.com/alex-shpak/hugo-book
 
       
     
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
   </ul>
   
 
@@ -457,23 +584,26 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks!&#34;</span></code></pre></div>
+<pre><code class="language-py">@app.route(&quot;/json&quot;)
+def json_example():
+    return &quot;Thanks!&quot;
+</code></pre>
 
 <p>We&rsquo;re going to be POSTing data to the server so we need to pass the  <code>methods</code>  argument to the  <code>@app.route()</code>  decorator, along with the HTTP methods we want to allow for this route:</p>
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks!&#34;</span> </code></pre></div>
+<pre><code class="language-py">@app.route(&quot;/json&quot;, methods=[&quot;POST&quot;])
+def json_example():
+    return &quot;Thanks!&quot; 
+</code></pre>
 
 <p>Working with any kind of request in Flask requires importing the  <code>request</code>  object. Go ahead and import it:</p>
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> request</code></pre></div>
+<pre><code class="language-py">from flask import request
+</code></pre>
 
 <p>Now we need a method to handle the incoming JSON. Flask provides the handy  <code>request.get_json()</code>  method, which parses any incoming JSON data into a Python dictionary.</p>
 
@@ -481,27 +611,29 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+<pre><code class="language-py">@app.route(&quot;/json&quot;, methods=[&quot;POST&quot;])
+def json_example():
 
-    req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+    req = request.get_json()
 
-    <span style="color:#66d9ef">print</span>(req)
+    print(req)
 
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks!&#34;</span></code></pre></div>
+    return &quot;Thanks!&quot;
+</code></pre>
 
 <p>Whilst we&rsquo;re here, let&rsquo;s explicitly set an HTTP response by passing it to  <code>return</code>:</p>
 
 <p><strong>app/app/views.py</strong></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+<pre><code class="language-py">@app.route(&quot;/json&quot;, methods=[&quot;POST&quot;])
+def json_example():
 
-    req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+    req = request.get_json()
 
-    <span style="color:#66d9ef">print</span>(req)
+    print(req)
 
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Thanks!&#34;</span>, <span style="color:#ae81ff">200</span></code></pre></div>
+    return &quot;Thanks!&quot;, 200
+</code></pre>
 
 <h3 id="posting-json">POSTing JSON</h3>
 
@@ -560,26 +692,28 @@ https://github.com/alex-shpak/hugo-book
 
 <p><strong>app/app/views.py</strong></p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+<pre><code class="language-py">@app.route(&quot;/json&quot;, methods=[&quot;POST&quot;])
+def json_example():
 
-    <span style="color:#75715e"># Validate the request body contains JSON</span>
-    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>is_json:
+    # Validate the request body contains JSON
+    if request.is_json:
 
-        <span style="color:#75715e"># Parse the JSON into a Python dictionary</span>
-        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+        # Parse the JSON into a Python dictionary
+        req = request.get_json()
 
-        <span style="color:#75715e"># Print the dictionary</span>
-        <span style="color:#66d9ef">print</span>(req)
+        # Print the dictionary
+        print(req)
 
-        <span style="color:#75715e"># Return a string along with an HTTP status code</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;JSON received!&#34;</span>, <span style="color:#ae81ff">200</span>
+        # Return a string along with an HTTP status code
+        return &quot;JSON received!&quot;, 200
 
-    <span style="color:#66d9ef">else</span>:
+    else:
 
-        <span style="color:#75715e"># The request body wasn&#39;t JSON so return a 400 HTTP status code</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Request was not JSON&#34;</span>, <span style="color:#ae81ff">400</span></code></pre></div>
-We perform a conditional check using the  <code>if</code>  statement on the incoming request object to determine if the request body contains JSON or not.</p>
+        # The request body wasn't JSON so return a 400 HTTP status code
+        return &quot;Request was not JSON&quot;, 400
+</code></pre>
+
+<p>We perform a conditional check using the  <code>if</code>  statement on the incoming request object to determine if the request body contains JSON or not.</p>
 
 <p>If the request contains JSON, we&rsquo;re printing it and returning the  <code>JSON received!</code>  string along with a  <code>200</code>  status code to indicate a successful transaction.</p>
 
@@ -611,27 +745,30 @@ We perform a conditional check using the  <code>if</code>  statement on the inco
 
 <p>Let&rsquo;s refactor our  <code>/json</code>  route to use  <code>jsonify</code>  and  <code>make_response</code>. We&rsquo;ll discuss them after:</p>
 
-<p><strong>app/app/views.py</strong>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/json&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">json_example</span>():
+<p><strong>app/app/views.py</strong></p>
 
-    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>is_json:
+<pre><code class="language-py">@app.route(&quot;/json&quot;, methods=[&quot;POST&quot;])
+def json_example():
 
-        req <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+    if request.is_json:
 
-        response_body <span style="color:#f92672">=</span> {
-            <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;JSON received!&#34;</span>,
-            <span style="color:#e6db74">&#34;sender&#34;</span>: req<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;name&#34;</span>)
+        req = request.get_json()
+
+        response_body = {
+            &quot;message&quot;: &quot;JSON received!&quot;,
+            &quot;sender&quot;: req.get(&quot;name&quot;)
         }
 
-        res <span style="color:#f92672">=</span> make_response(jsonify(response_body), <span style="color:#ae81ff">200</span>)
+        res = make_response(jsonify(response_body), 200)
 
-        <span style="color:#66d9ef">return</span> res
+        return res
 
-    <span style="color:#66d9ef">else</span>:
+    else:
 
-        <span style="color:#66d9ef">return</span> make_response(jsonify({<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Request body must be JSON&#34;</span>}), <span style="color:#ae81ff">400</span>)</code></pre></div>
-We&rsquo;ve created a new  <code>response_body</code>  object using a dictionary and passed it some values.</p>
+        return make_response(jsonify({&quot;message&quot;: &quot;Request body must be JSON&quot;}), 400)
+</code></pre>
+
+<p>We&rsquo;ve created a new  <code>response_body</code>  object using a dictionary and passed it some values.</p>
 
 <p>We then use the  <code>make_response()</code>  function to prepare a response, to which we&rsquo;ve provided 2 arguments:</p>
 
@@ -654,17 +791,20 @@ We&rsquo;ve created a new  <code>response_body</code>  object using a dictionary
 
 <p><strong>Postman response body</strong></p>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;JSON received!&#34;</span>,
-    <span style="color:#f92672">&#34;sender&#34;</span>: <span style="color:#e6db74">&#34;Julian&#34;</span>
-} </code></pre></div>
-Changing the dropdown to  <code>Text</code>  and posting will return:</p>
+<pre><code class="language-json">{
+    &quot;message&quot;: &quot;JSON received!&quot;,
+    &quot;sender&quot;: &quot;Julian&quot;
+} 
+</code></pre>
+
+<p>Changing the dropdown to  <code>Text</code>  and posting will return:</p>
 
 <p><strong>Postman response body</strong></p>
 
-<p><code>{
+<pre><code class="language-json">{
     &quot;message&quot;: &quot;Request body must be JSON&quot;
-}</code></p>
+}
+</code></pre>
 
 <h3 id="wrapping-up">Wrapping up</h3>
 

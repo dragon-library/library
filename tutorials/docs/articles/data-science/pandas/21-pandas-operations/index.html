@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="21 Pandas operations"><meta property="og:title" content="21 Pandas operations" />
+<meta property="og:description" content="21 Pandas operations for absolute beginners  Source  Prerequisites: Python and NumPy basics.
+A CSV file is comma-separated so in order to read a CSV file, do:
+df = pd.read_csv(file_path, sep=’,’, header = 0, index_col=False,names=None)  Explanation:
+read_csv function has a plethora of parameters and I have specified only a few, ones that you may use most often. A few key points:
+a) - header=0 means you have the names of columns in the first row in the file and if you don’t you will have to specify header=None b)  - index_col = False means to not use the first column of the data as an index in the data frame, you might want to set it to true if the first column is really an index." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>21 Pandas operations | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/" >
+      A Simple Example-Based Guide
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/" >
+      10 Pandas tips
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/"  class="active">
+      21 Pandas operations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/" >
+      Basic Data Analysis
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/" >
+      House Market Analysis 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/" >
+      Pandas Cheatsheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/" >
+      Selecting Subsets of Data 1
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>21 Pandas operations</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="21-pandas-operations-for-absolute-beginners">21 Pandas operations for absolute beginners</h1>
+
+<ul>
+<li><a href="https://towardsdatascience.com/21-pandas-operations-for-absolute-beginners-5653e54f4cda">Source</a></li>
+</ul>
+
+<p><strong>Prerequisites: Python and NumPy basics.</strong></p>
+
+<p>A CSV file is comma-separated so in order to read a CSV file, do:</p>
+
+<pre><code class="language-python">df = pd.read_csv(file_path, sep=’,’, header = 0, index_col=False,names=None)
+</code></pre>
+
+<p><strong>Explanation:</strong></p>
+
+<p><code>read_csv</code> function has a plethora of parameters and I have specified only a few, ones that you may use most often.
+A few key points:</p>
+
+<p>a) <code>- header=0</code> means you have the names of columns in the first row in the file and if you don’t you will have to specify <code>header=None</code>
+b) <code>
+- index_col = False</code> means to not use the first column of the data as an index in the data frame, you might want to set it to true if the first column is really an index.
+c) <code>names = None</code> implies you are not specifying the column- names and want it to be inferred from csv file, which means that your <code>header = some_number</code>contains column names. Otherwise, you can specify the names in here in the same order as you have the data in the csv file.
+If you are reading a text file separated by space or tab, you could simply change the sep to be:</p>
+
+<pre><code class="language-python">sep = &quot; &quot;` or `sep='\t'`
+</code></pre>
+
+<ol>
+<li><p>How to create a data frame using a dictionary of pre-existing columns or NumPy 2D arrays?
+Using the dictionary</p>
+
+<pre><code class="language-python"># c1, c2, c3, c4 are column names. 
+d_dic ={'first_col_name':c1,'second_col_names':c2,'3rd_col_name':c3} 
+df = pd.DataFrame(data = d_dic)
+</code></pre>
+
+<p>Using NumPy arrays</p>
+
+<pre><code class="language-python">np_data = np.zeros((no_of_samples,no_of_features)) 
+</code></pre>
+
+<p>any_numpy_array</p>
+
+<pre><code class="language-python">df = pd.DataFrame(data=np_data, columns = list_of_Col_names)
+</code></pre></li>
+
+<li><p>How to visualize the top and bottom x values in a data frame?</p>
+
+<pre><code class="language-python">df.head(num_of_rows_to_view) #top_values
+df.tail(num_of_rows_to_view) #bottom_values
+col = list_of_columns_to_view 
+df[col].head(num_of_rows_to_view)
+df[col].tail(num_of_rows_to_view)
+</code></pre></li>
+
+<li><p>How to rename one or more columns?</p>
+
+<pre><code class="language-python">df = pd.DataFrame(data={'a':[1,2,3,4,5],'b':[0,1,5,10,15]})
+new_df = df.rename({'a':'new_a','b':'new_b'})
+</code></pre>
+
+<p>It is important to store the return data frame to a new data frame #as the renaming is not in-place.</p></li>
+
+<li><p>How to get column names in a list?
+df.columns.tolist()
+Not using tolist() function also does the job if you only want to iterate over the names but it returns everything as an index object.</p></li>
+
+<li><p>How to get the frequency of values in a series?</p>
+
+<pre><code class="language-python">df[col].value_counts() 
+#returns a mapper of key,frequency pair
+df[col].value_counts()[key]
+#to get frequency of a key value
+</code></pre></li>
+
+<li><p>How to reset an index to an existing column or another list or array?</p>
+
+<pre><code class="language-python">new_df = df.reset_index(drop=True,inplace=False)
+</code></pre>
+
+<p>If you do inplace=True, there is no need to store it to a new_df. Also, when you are resetting the index to pandas RangeIndex(), you have the option to either keep the old index or drop it with ‘drop’ parameter. You may want to keep it, especially when it was one of the columns originally and you temporarily set it as the newindex.</p></li>
+
+<li><p>How to remove a column?</p>
+
+<pre><code class="language-python">df.drop(columns = list_of_cols_to_drop)
+</code></pre></li>
+
+<li><p>How to change the index in a data frame?</p>
+
+<pre><code class="language-python">df.set_index(col_name,inplace=True)
+</code></pre>
+
+<p>This will set col_name col as the index. You could pass more than one column to set them as index. inplace keyword serves the same purpose like before.</p></li>
+
+<li><p>How to remove rows or columns if they have nan values?</p>
+
+<pre><code class="language-python">df.dropna(axis=0,inplace=True)
+</code></pre>
+
+<p>axis= 0 will drop any column that has nan values, which you might not want most times. axis = 1 will drop only the rows that have nan values in any of the columns. inplace is same like above.</p></li>
+
+<li><p>How to slice a data frame given a condition?
+You always need to specify a mask in the form of logical conditions.</p></li>
+</ol>
+
+<p>For eg, if you have column age and you would want to select the data frame where age column has a particular value or lies in a list. Then you can achieve the slicing as follows:</p>
+
+<pre><code class="language-python">mask = df['age'] == age_value 
+</code></pre>
+
+<p><strong>or</strong></p>
+
+<pre><code class="language-python">mask = df['age].isin(list_of_age_values)
+result = df[mask]
+</code></pre>
+
+<p>with multiple conditions: Eg. Choosing rows where both height and age correspond to particular values.</p>
+
+<pre><code class="language-python">mask = (df['age']==age_value) &amp; (df['height'] == height_value)
+result = df[mask]
+</code></pre>
+
+<ol>
+<li><p>How to slice a data frame given names of columns or index values of rows?
+There are 4 options here: <code>at</code>,<code>iat</code>, <code>loc</code> and <code>iloc</code>. Among these ‘iat’ and ‘iloc’ are similar in the sense they provide integer-based indexing while ‘loc’ and ‘at’ provide name-based indexing.
+Another thing to note here is that <code>iat</code> at ‘provide’ indexing for single element while using ‘loc’ and <code>iloc</code> one can slice more than one element.
+Examples:
+a) <code>df.iat[1,2]</code> provides the element at 1th row and 2nd column. Here it&rsquo;s important to note that number 1 doesn&rsquo;t correspond to 1 in index column of dataframe. It&rsquo;s totally possible that index in df does not have 1 at all. It&rsquo;s like python array indexing.
+b) <code>df.at[first,col_name]</code> provides the value in the row where index value is first and column name is col_name
+c)</p>
+
+<pre><code class="language-python">df.loc[list_of_indices,list_of_cols] 
+eg df.loc[[4,5],['age','height']]
+</code></pre>
+
+<p>Slices dataframe for matching indices and column names
+d) <code>df.iloc[[0,1],[5,6]]</code> used for interger based indexing will return 0 and 1st row for 5th and 6th column.</p></li>
+
+<li><p>How to iterate over rows?</p>
+
+<pre><code class="language-python">iterrows() and itertuples()
+for i,row in df.iterrows():
+sum+=row['hieght']
+</code></pre>
+
+<p><code>iterrows()</code> passess an iterators over rows which are returned as series. If a change is made to any of the data element of a row, it may reflect upon the dataframe as it does not return a copy of rows.
+<code>itertuples()</code> returns named tuples</p>
+
+<pre><code class="language-python">for row in df.itertuples():
+print(row.age)
+</code></pre></li>
+
+<li><p>How to sort by a column?</p>
+
+<pre><code class="language-python">df.sort_values(by = list_of_cols,ascending=True) 
+</code></pre></li>
+
+<li><p>How to apply a function to each element to a series?</p>
+
+<pre><code class="language-python">df['series_name'].apply(f) 
+</code></pre>
+
+<p>where f is the function you want to apply to each element of the series. If you also want to pass arguments to the custom function, you could modify it like this.</p>
+
+<pre><code class="language-python">def f(x,**kwargs):
+#do_somthing
+return value_to_store
+df['series_name'].apply(f, a= 1, b=2,c =3)
+</code></pre>
+
+<p>If you want to apply a function to more than a series, then:</p>
+
+<pre><code class="language-python">def f(row):
+age = row['age']
+height = row['height']
+df[['age','height']].apply(f,axis=1)
+</code></pre>
+
+<p>If you don&rsquo;t use <code>axis=1</code>, f will be applied to each element of both the series. <code>axis=1</code> helps to pass age and height of each row for any manipulation you want.</p></li>
+
+<li><p>How to apply a function to all elements in a data frame?</p>
+
+<pre><code class="language-python">new_df = df.applymap(f)
+</code></pre></li>
+
+<li><p>How to slice a data frame if values of a series lie in a list?
+Use masking and isin. To choose data samples where age lies in the list:</p>
+
+<pre><code class="language-python">df[df['age'].isin(age_list)]
+</code></pre>
+
+<p>To chose the opposite, data samples where age does not lie in the list use:</p>
+
+<pre><code class="language-python">df[~df['age'].isin(age_list)]
+</code></pre></li>
+
+<li><p>How to group-by column values and aggregate over another column or apply a function to it?</p>
+
+<pre><code class="language-python">df.groupby(['age']).agg({'height':'mean'})
+</code></pre>
+
+<p>This will group the data frame by series ‘age’ and for the height column, it will apply the mean of the grouped values. Sometimes it may happen, that you would want to group-by a certain column and convert all the corresponding grouped elements for other columns into a list. You may achieve this by:</p>
+
+<pre><code class="language-python">df.groupby(['age']).agg(list)
+</code></pre></li>
+
+<li><p>How to create duplicates for other columns for each element in a list of a particular column?
+The question may be a little confusing. What I actually mean is, suppose you have the following data frame df:</p>
+
+<pre><code>Age Height(in cm)
+20  180
+20  175
+18  165
+18  163
+16  170
+</code></pre>
+
+<p>After applying group-by with a list aggregator, you may get something like:</p>
+
+<pre><code>Age Height(in cm)
+20  [180,175]
+18  [165,163]
+16  [170]
+</code></pre>
+
+<p>Now, what if you want to go back to the original data frame by undoing the last operation? You could achieve that using the newly introduced operation called explode in pandas version 0.25.
+<code>df['height'].explode()</code> will give the desired outcome.</p></li>
+
+<li><p>How to concatenate two data frames?
+Suppose you have two data-frames df1 and df2 with the given columns name, age, and height and you would want to achieve the concatenation of the two columns. <code>axis=0</code> is the vertical axis. Here, the result data-frame will have the columns appended from the data-frames:</p>
+
+<pre><code class="language-python">df1 --&gt; name,age,height
+df2---&gt; name,age,height
+result = pd.concat([df1,df2],axis=0)
+</code></pre>
+
+<p>For horizontal concatenation,</p>
+
+<pre><code class="language-python">df1--&gt; name,age
+df2---&gt;height,salary
+result = pd.concat([df1,df2], axis=1) 
+</code></pre></li>
+
+<li><p>How to merge two data frames?
+For the previous example, assume you have an employee database forming two dataframes like</p>
+
+<pre><code class="language-python">df1--&gt; name, age, height
+df2---&gt; name, salary, pincode, sick_leaves_taken
+</code></pre>
+
+<p>You may want to combine these two dataframe such that each row has all details of an employee. In order to acheive this, you would have to perform a merge operation.</p>
+
+<pre><code class="language-python">df1.merge(df2, on=['name'],how='inner')
+</code></pre>
+
+<p>This operation will provide a dataframe where each row will comprise of name, age, height, salary, pincode, <code>sick_leaves_taken.</code>
+<code>how = 'inner'</code> means include the row in result if there is a matching name in both the data frames. For more read: <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html?highlight=merge#pandas.DataFrame.merge">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html?highlight=merge#pandas.DataFrame.merge</a></p></li>
+</ol>
+
+<p><strong>Wrap-up</strong>
+For any data analysis project as a beginner, you may require to know these operations very well. I have always found Pandas to be a very useful library and now you can integrate with various other data analytics tools and languages. Knowing pandas operations may even help while learning languages that support distributed algorithms.</p>
+
+<p><strong>Contact</strong>
+If you liked this post, please clap and share it with others who might find it useful. I really love data science and if you are interested in it too, let’s connect on LinkedIn or follow me here on towards data science platform.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cpandas%5c21-pandas-operations.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#21-pandas-operations-for-absolute-beginners">21 Pandas operations for absolute beginners</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

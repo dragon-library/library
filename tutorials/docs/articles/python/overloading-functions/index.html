@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overloading Functions and Operators"><meta property="og:title" content="Overloading Functions and Operators" />
+<meta property="og:description" content="Overloading Functions and Operators in Python What is Overloading? Overloading, in the context of programming, refers to the ability of a function or an operator to behave in different ways depending on the parameters that are passed to the function, or the operands that the operator acts on. In this article, we will see how we can perform function overloading and operator overloading in Python.
+Overloading a method fosters reusability." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/overloading-functions/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Overloading Functions and Operators | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/"  class="active">
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Overloading Functions and Operators</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="overloading-functions-and-operators-in-python">Overloading Functions and Operators in Python</h1>
+
+<h3 id="what-is-overloading">What is Overloading?</h3>
+
+<p>Overloading, in the context of programming, refers to the ability of a function or an operator to behave in different ways depending on the parameters that are passed to the function, or the operands that the operator acts on. In this article, we will see how we can perform function overloading and operator overloading in Python.</p>
+
+<p>Overloading a method fosters reusability. For instance, instead of writing multiple methods that differ only slightly, we can write one method and overload it. Overloading also improves code clarity and eliminates complexity.</p>
+
+<p>Overloading is a very useful concept. However, it has a number of disadvantages associated with it. Overloading can cause confusion when used across inheritance boundaries. When used excessively, it becomes cumbersome to manage overloaded functions.</p>
+
+<p>In the remaining section of this article, we will be discussing the function and operator overloading in detail.</p>
+
+<h3 id="function-overloading-in-python">Function Overloading in Python</h3>
+
+<p>Depending on how the function has been defined, we can call it with zero, one, two, or even many parameters. This is referred to as &ldquo;function overloading&rdquo;.</p>
+
+<p>Function overloading is further divided into two types: overloading built-in functions and overloading custom functions. We will look at both the types in the upcoming sections.</p>
+
+<h4 id="overloading-built-in-functions">Overloading Built-in Functions</h4>
+
+<p>It is possible for us to change the default behavior of Python&rsquo;s built-in functions. We only have to define the corresponding special method in our class.</p>
+
+<p>Let us demonstrate this using Python&rsquo;s  <code>len()</code>  function on our Purchase class:</p>
+
+<pre><code class="language-python">class Purchase:
+    def __init__(self, basket, buyer):
+        self.basket = list(basket)
+        self.buyer = buyer
+
+    def __len__(self):
+        return len(self.basket)
+
+purchase = Purchase(['pen', 'book', 'pencil'], 'Python')
+print(len(purchase))
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>3
+</code></pre>
+
+<p>To change how the  <code>len()</code>  function behaves, we defined a special method named  <code>_len_()</code>  in our class. Anytime we pass an object of our class to  <code>len()</code>, the result will be obtained by calling our custom defined function, that is,  <code>_len_()</code>.</p>
+
+<p>The output shows that we are able to use  <code>len()</code>  to get the length of the basket.</p>
+
+<p>If we call  <code>len()</code>  on the object without the  <code>__len__()</code>  function overloaded, we will get a TypeError as shown below:</p>
+
+<pre><code class="language-python">class Purchase:
+    def __init__(self, basket, buyer):
+        self.basket = list(basket)
+        self.buyer = buyer
+
+purchase = Purchase(['pen', 'book', 'pencil'], 'Python')
+print(len(purchase))
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>Traceback (most recent call last):
+  File &quot;C:/Users/admin/func.py&quot;, line 8, in &lt;module&gt;
+    print(len(purchase))
+TypeError: object of type 'Purchase' has no len()
+</code></pre>
+
+<p>Note: Python expects the  <code>len()</code>  function to return an integer, hence this should be put into consideration when overloading the function. If your overloaded function is expected to return anything else other than an integer, you will get a TypeError.</p>
+
+<p>We can change the behavior of the  <code>len()</code>  method in the above example from within the definition of its implementation, that is,  <code>__len__()</code>. Instead of returning the length of the basket, let us make it return something else:</p>
+
+<pre><code class="language-python">class Purchase:
+    def __init__(self, basket, buyer):
+        self.basket = list(basket)
+        self.buyer = buyer
+
+    def __len__(self):
+        return 10;
+
+purchase = Purchase(['pen', 'book', 'pencil'], 'Python')
+print(len(purchase))
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>10
+</code></pre>
+
+<p>Instead of returning the length of the basket, it now returns the value that we have specified.</p>
+
+<h4 id="overloading-user-defined-functions">Overloading User-Defined Functions</h4>
+
+<p>To overload a user-defined function in Python, we need to write the function logic in such a way that depending upon the parameters passed, a different piece of code executes inside the function. Take a look at the following example:</p>
+
+<pre><code class="language-python">class Student:
+    def hello(self, name=None):
+        if name is not None:
+            print('Hey ' + name)
+        else:
+            print('Hey ')
+
+# Creating a class instance
+std = Student()
+
+# Call the method
+std.hello()
+
+# Call the method and pass a parameter
+std.hello('Nicholas')
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>Hey
+Hey Nicholas
+</code></pre>
+
+<p>We have created the class  <code>Student</code>  with one function named  <code>hello()</code>. The class takes the parameter  <code>name</code>  which has been set to  <code>None</code>. This means the method can be called with or without a parameter.</p>
+
+<p>We have created an instance of the class which has been used to call the function twice, first with zero parameters and secondly with one parameter. We have implemented function overloading since there are two ways to call the function.</p>
+
+<p>Now we know how function overloading works, the next section focusses on operator overloading.</p>
+
+<h3 id="operator-overloading">Operator Overloading</h3>
+
+<p>Python allows us to change the default behavior of an operator depending on the operands that we use. This practice is referred to as &ldquo;operator overloading&rdquo;.</p>
+
+<p>The functionality of Python operators depends on built-in classes. However, the same operator will behave differently when applied to different types. A good example is the &ldquo;+&rdquo; operator. This operator will perform an arithmetic operation when applied on two numbers, will concatenate two strings, and will merge two lists.</p>
+
+<h4 id="examples-of-operator-overloading">Examples of Operator Overloading</h4>
+
+<p>To see Python&rsquo;s operator overloading in action, launch the Python terminal and run the following commands:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; 4 + 4
+8
+&gt;&gt;&gt; &quot;Py&quot; + &quot;thon&quot;
+'Python'
+</code></pre>
+
+<p>In the first command, we have used the &ldquo;+&rdquo; operator to add two numbers. In the second command, we used the same operator to concatenate two strings.</p>
+
+<p>In this case, the &ldquo;+&rdquo; operator has two interpretations. When used to add numbers, it is referred to as an &ldquo;addition operator&rdquo;. When used to add strings, it is referred to as &ldquo;concatenation operator&rdquo;. In short, we can say that the &ldquo;+&rdquo; operator has been overloaded for  <code>int</code>  and  <code>str</code>  classes.</p>
+
+<p>To achieve operator overloading, we define a special method in a class definition. The name of the method should begin and end with a double underscore (__). The + operator is overloaded using a special method named  <code>__add__()</code>. This method is implemented by both the  <code>int</code>  and  <code>str</code>  classes.</p>
+
+<p>Consider the following expression:</p>
+
+<pre><code class="language-python">x + y
+</code></pre>
+
+<p>Python will interpret the expression as  <code>x.__add__(y)</code>. The version of  <code>__add__()</code>  that is called will depend on the types of  <code>x</code>  and  <code>y</code>. For example:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; x, y = 5, 7
+
+&gt;&gt;&gt; x + y
+
+12
+&gt;&gt;&gt; x.__add__(y)
+12
+&gt;&gt;&gt;
+
+</code></pre>
+
+<p>The above example demonstrates how to use the + operator as well as its special method.</p>
+
+<p>The following example demonstrates how to overload various operators in Python:</p>
+
+<pre><code class="language-python">import math
+
+class Point:
+
+    def __init__(self, xCoord=0, yCoord=0):
+        self.__xCoord = xCoord
+        self.__yCoord = yCoord
+
+    # get x coordinate
+    def get_xCoord(self):
+        return self.__xCoord
+
+    # set x coordinate
+    def set_xCoord(self, xCoord):
+        self.__xCoord = xCoord
+
+    # get y coordinate
+    def get_yCoord(self):
+        return self.__yCoord
+
+    # set y coordinate
+    def set_yCoord(self, yCoord):
+        self.__yCoord = yCoord
+
+    # get current position
+    def get_position(self):
+        return self.__xCoord, self.__yCoord
+
+    # change x &amp; y coordinates by p &amp; q
+    def move(self, p, q):
+        self.__xCoord += p
+        self.__yCoord += q
+
+    # overload + operator
+    def __add__(self, point_ov):
+        return Point(self.__xCoord + point_ov.__xCoord, self.__yCoord + point_ov.__yCoord)
+
+    # overload - operator
+    def __sub__(self, point_ov):
+        return Point(self.__xCoord - point_ov.__xCoord, self.__yCoord - point_ov.__yCoord)
+
+    # overload &lt; (less than) operator
+    def __lt__(self, point_ov):
+        return math.sqrt(self.__xCoord ** 2 + self.__yCoord ** 2) &lt; math.sqrt(point_ov.__xCoord ** 2 + point_ov.__yCoord ** 2)
+
+    # overload &gt; (greater than) operator
+    def __gt__(self, point_ov):
+        return math.sqrt(self.__xCoord ** 2 + self.__yCoord ** 2) &gt; math.sqrt(point_ov.__xCoord ** 2 + point_ov.__yCoord ** 2)
+
+    # overload &lt;= (less than or equal to) operator
+    def __le__(self, point_ov):
+        return math.sqrt(self.__xCoord ** 2 + self.__yCoord ** 2) &lt;= math.sqrt(point_ov.__xCoord ** 2 + point_ov.__yCoord ** 2)
+
+    # overload &gt;= (greater than or equal to) operator
+    def __ge__(self, point_ov):
+        return math.sqrt(self.__xCoord ** 2 + self.__yCoord ** 2) &gt;= math.sqrt(point_ov.__xCoord ** 2 + point_ov.__yCoord ** 2)
+
+    # overload == (equal to) operator
+    def __eq__(self, point_ov):
+        return math.sqrt(self.__xCoord ** 2 + self.__yCoord ** 2) == math.sqrt(point_ov.__xCoord ** 2 + point_ov.__yCoord ** 2)
+
+point1 = Point(2, 4)
+point2 = Point(12, 8)
+
+print(&quot;point1 &lt; point2:&quot;, point1 &lt; point2)
+print(&quot;point1 &gt; point2:&quot;, point1 &gt; point2)
+print(&quot;point1 &lt;= point2:&quot;, point1 &lt;= point2)
+print(&quot;point1 &gt;= point2:&quot;, point1 &gt;= point2)
+print(&quot;point1 == point2:&quot;, point1 == point2)```
+</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<pre><code>point1 &lt; point2: True
+point1 &gt; point2: False
+point1 &lt;= point2: True
+point1 &gt;= point2: False
+point1 == point2: False
+</code></pre>
+
+<p>We have two private attributes in the Point class, namely,  <code>__xCoord</code>  and  <code>__yCoord</code>  representing cartesian plain coordinates named  <code>xCoord</code>  and  <code>yCoord</code>. We have defined the setter and getter methods for these attributes. The  <code>get_position()</code>  method helps us get the current position while the  <code>move()</code>  method helps us change the coordinates.</p>
+
+<p>Consider the following line extracted from the code:</p>
+
+<pre><code class="language-python">    def __add__(self, point_ov):
+</code></pre>
+
+<p>The line helps us overload the + operator for our class. The  <code>__add__()</code>  method should create a new Point object by adding the individual coordinates of a single Point object to another Point object. It finally returns the newly created object to the caller. This helps us write expressions such as:</p>
+
+<pre><code class="language-python">point3 = point1 + point2
+</code></pre>
+
+<p>Python will interpret the above as  <code>point3 = point1.__add__(point2)</code>. It will then call the  <code>__add__()</code>  method to add two Point objects. The result will be assigned to &ldquo;point3&rdquo;.</p>
+
+<p>Note that once the  <code>__add__()</code>  method is called, the value of  <code>point1</code>  will be assigned to  <code>self</code>  parameter while the value of  <code>point2</code>  will be assigned to  <code>point_ov</code>parameter. All the other special methods will work in a similar way.</p>
+
+<h4 id="operators-to-overload">Operators to Overload</h4>
+
+<p>The following table shows some of the more commonly overloaded mathematical operators, and the class method to overload:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th>Method</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">+</td>
+<td><code>__add__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">-</td>
+<td><code>__sub__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">*</td>
+<td><code>__mul__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">/</td>
+<td><code>__truediv__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">%</td>
+<td><code>__mod__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">&lt;</td>
+<td><code>__lt__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">&lt;=</td>
+<td><code>__le__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">==</td>
+<td><code>__eq__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">!=</td>
+<td><code>__ne__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">&gt;</td>
+<td><code>__gt__(self, other)</code></td>
+</tr>
+
+<tr>
+<td align="center">&gt;=</td>
+<td><code>__ge__(self, other)</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Python supports both function and operator overloading. In function overloading, we can use the same name for many Python functions but with the different number or types of parameters. With operator overloading, we are able to change the meaning of a Python operator within the scope of a class.</p>
+
+<p>Reference : <a href="https://stackabuse.com/overloading-functions-and-operators-in-python/">https://stackabuse.com/overloading-functions-and-operators-in-python/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5coverloading-functions.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#overloading-functions-and-operators-in-python">Overloading Functions and Operators in Python</a>
+<ul>
+<li>
+<ul>
+<li><a href="#what-is-overloading">What is Overloading?</a></li>
+<li><a href="#function-overloading-in-python">Function Overloading in Python</a>
+<ul>
+<li><a href="#overloading-built-in-functions">Overloading Built-in Functions</a></li>
+<li><a href="#overloading-user-defined-functions">Overloading User-Defined Functions</a></li>
+</ul></li>
+<li><a href="#operator-overloading">Operator Overloading</a>
+<ul>
+<li><a href="#examples-of-operator-overloading">Examples of Operator Overloading</a></li>
+<li><a href="#operators-to-overload">Operators to Overload</a></li>
+</ul></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

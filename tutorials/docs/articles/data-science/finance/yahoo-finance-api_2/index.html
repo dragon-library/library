@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quantitative Trading Strategies"><meta property="og:title" content="Quantitative Trading Strategies" />
+<meta property="og:description" content="Python for Finance, Part 2: Intro to Quantitative Trading Strategies In Python for Finance, Part I, we focused on using Python and Pandas to
+ retrieve financial time-series from free online sources (Yahoo), format the data by filling missing observations and aligning them, calculate some simple indicators such as rolling moving averages and visualise the final time-series.  As a reminder, the dataframe containing the three “cleaned” price timeseries has the following format:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/" />
+
+<title>Quantitative Trading Strategies | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/" >
+      Exploration of S&amp;P 500 Index
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-analysis-in-python/" >
+      Stock Analysis in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/" >
+      Dash by Plotly
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/"  class="active">
+      Quantitative Trading Strategies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/" >
+      Stock Portfolio Analyses
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/" >
+      Yahoo &amp; Google Finance API
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Quantitative Trading Strategies</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-for-finance-part-2-intro-to-quantitative-trading-strategies">Python for Finance, Part 2: Intro to Quantitative Trading Strategies</h1>
+
+<p>In  <a href="http://www.learndatasci.com/python-finance-part-yahoo-finance-api-pandas-matplotlib/">Python for Finance, Part I</a>, we focused on using Python and Pandas to</p>
+
+<ol>
+<li>retrieve financial time-series from free online sources (Yahoo),</li>
+<li>format the data by filling missing observations and aligning them,</li>
+<li>calculate some simple indicators such as rolling moving averages and</li>
+<li>visualise the final time-series.</li>
+</ol>
+
+<p>As a reminder, the dataframe containing the three “cleaned” price timeseries has the following format:</p>
+
+<pre><code class="language-py">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set(style='darkgrid', context='talk', palette='Dark2')
+
+data = pd.read_pickle('./data.pkl')
+data.head(10)
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>AAPL</th>
+<th>MSFT</th>
+<th>^GSPC</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>03/01/2000</td>
+<td>3.625643</td>
+<td>39.33463</td>
+<td>1455.219971</td>
+</tr>
+
+<tr>
+<td>04/01/2000</td>
+<td>3.319964</td>
+<td>38.0059</td>
+<td>1399.420044</td>
+</tr>
+
+<tr>
+<td>05/01/2000</td>
+<td>3.36854</td>
+<td>38.406628</td>
+<td>1402.109985</td>
+</tr>
+
+<tr>
+<td>06/01/2000</td>
+<td>3.077039</td>
+<td>37.12008</td>
+<td>1403.449951</td>
+</tr>
+
+<tr>
+<td>07/01/2000</td>
+<td>3.222794</td>
+<td>37.60517</td>
+<td>1441.469971</td>
+</tr>
+
+<tr>
+<td>10/01/2000</td>
+<td>3.166112</td>
+<td>37.879354</td>
+<td>1457.599976</td>
+</tr>
+
+<tr>
+<td>11/01/2000</td>
+<td>3.004162</td>
+<td>36.90917</td>
+<td>1438.560059</td>
+</tr>
+
+<tr>
+<td>12/01/2000</td>
+<td>2.823993</td>
+<td>35.706986</td>
+<td>1432.25</td>
+</tr>
+
+<tr>
+<td>13/01/2000</td>
+<td>3.133722</td>
+<td>36.381896</td>
+<td>1449.680054</td>
+</tr>
+
+<tr>
+<td>14/01/2000</td>
+<td>3.253159</td>
+<td>37.879354</td>
+<td>1465.150024</td>
+</tr>
+</tbody>
+</table>
+
+<p>has the following format:</p>
+
+<pre><code class="language-py"># Calculating the short-window moving average
+short_rolling = data.rolling(window=20).mean()
+short_rolling.head()
+has the following format:
+</code></pre>
+
+<pre><code class="language-py"># Calculating the short-window moving average
+long_rolling = data.rolling(window=100).mean()
+long_rolling.tail()
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>AAPL</th>
+<th>MSFT</th>
+<th>^GSPC</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>26/12/2016</td>
+<td>110.958205</td>
+<td>58.41818</td>
+<td>2176.628791</td>
+</tr>
+
+<tr>
+<td>27/12/2016</td>
+<td>111.047874</td>
+<td>58.476117</td>
+<td>2177.50018</td>
+</tr>
+
+<tr>
+<td>28/12/2016</td>
+<td>111.1405889</td>
+<td>58.532936</td>
+<td>2178.24449</td>
+</tr>
+
+<tr>
+<td>29/12/2016</td>
+<td>111.233698</td>
+<td>58.586112</td>
+<td>2178.879189</td>
+</tr>
+
+<tr>
+<td>30/12/2016</td>
+<td>111.31527</td>
+<td>58.63526</td>
+<td>2179.42699</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="general-considerations-about-trading-strategies">General considerations about trading strategies</h2>
+
+<p>There are several ways one can go about when a trading strategy is to be developed. One approach would be to use the price time-series directly and work with numbers that correspond to some monetary value.</p>
+
+<p>For example, a researcher could be working with time-series expressing the price of a given stock, like the time-series we used in the previous article. Similarly, if working with fixed income instruments, e.g. bonds, one could be using a time-series expressing the price of the bond as a percentage of a given reference value, in this case the par value of the bond. Working with this type of time-series can be more intuitive as people are used to thinking in terms of prices. However, price time-series have some drawbacks. Prices are usually only positive, which makes it harder to use models and approaches which require or produce negative numbers. In addition, price time-series are usually non-stationary, that is their statistical properties are less stable over time.</p>
+
+<p>Both of these are trivially calculated using Pandas:</p>
+
+<pre><code class="language-py"># Relative returns 
+returns = data.pct_change(1) 
+returns.head()
+</code></pre>
+
+<pre><code class="language-py"># Log returns - First the logarithm of the prices is taken and the the difference of consecutive (log) observations
+log_returns = np.log(data).diff()
+log_returns.head()
+</code></pre>
+
+<pre><code class="language-py">fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(16,12))
+
+for c in log_returns:
+    ax1.plot(log_returns.index, log_returns[c].cumsum(), label=str(c))
+
+ax1.set_ylabel('Cumulative log returns')
+ax1.legend(loc='best')
+
+for c in log_returns:
+    ax2.plot(log_returns.index, 100*(np.exp(log_returns[c].cumsum()) - 1), label=str(c))
+
+ax2.set_ylabel('Total relative returns (%)')
+ax2.legend(loc='best')
+
+plt.show()
+</code></pre>
+
+<p><img src="https://storage.googleapis.com/lds-media/images/aapl_msft_gspc_returns.width-1200.png" alt="enter image description here" /></p>
+
+<p>So this simple investing strategy would yield a total return of more than 325% in the course of almost 16 years.</p>
+
+<p>How does this translate to a yearly performance? Since we have kept all weekdays in our portfolio, there are 52×5=260 weekdays each year. There are 4435 days in our simulation which corresponds roughly to 16.92 years. We will be calculating the average geometric return, that is an average return r¯ which when compounded for 16.92 years will produce the total relative return of 325.14%. So we need to solve:</p>
+
+<pre><code class="language-py"># Calculating the time-related parameters of the simulation
+days_per_year = 52 * 5
+total_days_in_simulation = data.shape[0]
+number_of_years = total_days_in_simulation / days_per_year
+
+# The last data point will give us the total portfolio return
+total_portfolio_return = total_relative_returns[-1]
+# Average portfolio return assuming compunding of returns
+average_yearly_return = (1 + total_portfolio_return)**(1 / number_of_years) - 1
+
+print('Total portfolio return is: ' +
+      '{:5.2f}'.format(100 * total_portfolio_return) + '%')
+print('Average yearly return is: ' +
+      '{:5.2f}'.format(100 * average_yearly_return) + '%')
+</code></pre>
+
+<p>Total portfolio return is: 325.14% Average yearly return is: <strong>8.85%</strong></p>
+
+<p>What next?
+Our strategy is a very simple example of a buy-and-hold strategy. The investor simply splits up the available funds in the three assets and keeps the same position throughout the period under investigation. Although simple, the strategy does produce a healthy 8.85% per year.</p>
+
+<p>However, the simulation is not completely accurate. Let us not forget that we have used ALL weekdays in our example, but we do know that on some days the markets are not trading. This will not affect the strategy we presented as the returns on the days the markets are closed are 0, but it may potentially affect other types of strategies. Furthermore, the weights here are constant over time. Ideally, we would like weights that change over time so that we can take advantage of price swings and other market events.</p>
+
+<p>Also, we have said nothing at all about the risk of this strategy. Risk is the most important consideration in any investment strategy and is closely related to the expected returns. In what follows, we will start designing a more complex strategy, the weights of which will not be constant over time. At the same time we will start looking into the risk of the strategy and present appropriate metrics to measure it. Finally, we will look into the issue of optimizing the strategy parameters and how this can improve our return to risk profile.</p>
+
+<p>See Part 3 of this series: Moving Average Trading Strategies.
+&gt; Written with <a href="https://www.learndatasci.com/tutorials/python-finance-part-2-intro-quantitative-trading-strategies/">StackEdit</a>.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cfinance%5cyahoo-finance-API_2.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-for-finance-part-2-intro-to-quantitative-trading-strategies">Python for Finance, Part 2: Intro to Quantitative Trading Strategies</a>
+<ul>
+<li><a href="#general-considerations-about-trading-strategies">General considerations about trading strategies</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

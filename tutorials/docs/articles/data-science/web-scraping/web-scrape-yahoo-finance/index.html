@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to scrape Yahoo Finance"><meta property="og:title" content="How to scrape Yahoo Finance" />
+<meta property="og:description" content="How to scrape Yahoo Finance and extract fundamental stock market data using Python, LXML, and Pandas In this blog post I’ll show you how to scrape Income Statement, Balance Sheet, and Cash Flow data for companies from Yahoo Finance using Python, LXML, and Pandas.
+I’ll use data from Mainfreight NZ (MFT.NZ) as an example, but the code will work for any stock symbol on Yahoo Finance.
+The screenshot below shows a Pandas DataFrame with MFT." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/" />
+
+<title>How to scrape Yahoo Finance | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/" >
+      Building a Stock Screener - Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/" >
+      Building a Stock Screener - Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/"  class="active">
+      How to scrape Yahoo Finance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/" >
+      Requests and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/" >
+      Web Scraping 101
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>How to scrape Yahoo Finance</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="how-to-scrape-yahoo-finance-and-extract-fundamental-stock-market-data-using-python-lxml-and-pandas">How to scrape Yahoo Finance and extract fundamental stock market data using Python, LXML, and Pandas</h1>
+
+<p>In this blog post I’ll show you how to scrape  <a href="https://finance.yahoo.com/quote/MFT.NZ/financials?p=MFT.NZ">Income Statement</a>,  <a href="https://finance.yahoo.com/quote/MFT.NZ/balance-sheet?p=MFT.NZ">Balance Sheet</a>, and  <a href="https://finance.yahoo.com/quote/MFT.NZ/cash-flow?p=MFT.NZ">Cash Flow</a>  data for companies from Yahoo Finance using  <a href="https://www.python.org/">Python</a>,  <a href="https://lxml.de/">LXML</a>, and  <a href="https://pandas.pydata.org/">Pandas</a>.</p>
+
+<p>I’ll use data from  <a href="https://finance.yahoo.com/quote/MFT.NZ/financials?p=MFT.NZ">Mainfreight NZ (MFT.NZ)</a>  as an example, but the code will work for any stock symbol on Yahoo Finance.</p>
+
+<p>The screenshot below shows a Pandas DataFrame with MFT.NZ balance sheet data, which you can expect to get by following the steps in this blog post:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-dataframe-balance-sheet-final-oct-2019.png" alt="" /></p>
+
+<p>After taking you step by step on how to fetch data from the balance sheet, I’ll show you how to generalise the code to also generate a DataFrame containing data from the Income Statement, and Cash Flow statement.</p>
+
+<p>After creating the Pandas DataFrames, I’ll then show you how to export everything to an Excel file, so you’ll have output that looks something like this:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-nz-scraped-oct-2019.png" alt="" /></p>
+
+<p>This post was last updated in October, 2019. Prior to this, Yahoo Finance conveniently had all this data in a regular HTML table, which made extracting the data super easy. Since then, they’ve updated the page with a new structure, which was a wee bit tricker to get the data from. Fortunately, it’s still possible. Read on to find out how.</p>
+
+<h3 id="disclaimers">Disclaimers</h3>
+
+<p>Before we start, a few disclaimers:</p>
+
+<ul>
+<li>This code doesn’t come with any guarantee or warranty.</li>
+<li>I’m not a financial advisor. This blog post doesn’t represent financial advice.</li>
+<li>I don’t recommend the use of this code for any investment decisions.</li>
+<li>This code is designed for personal use, and isn’t designed for high-volume extractions.</li>
+<li>Use the code at your own risk.</li>
+</ul>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>Make sure you have installed the  <a href="https://www.anaconda.com/download/">Anaconda distribution of Python</a>  .. this includes  <a href="https://jupyter.org/">Jupyter Notebook</a>, which we’ll use throughout this blog post.</p>
+
+<p>Now we begin!</p>
+
+<h3 id="find-the-ticker-symbol">Find the ticker symbol</h3>
+
+<p>In this case, we’ll be scraping data for Mainfreight NZ.</p>
+
+<p>In Yahoo Finance, the symbol for Mainfreight is  <a href="https://finance.yahoo.com/quote/MFT.NZ/balance-sheet?p=MFT.NZ">MFT.NZ</a>:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-symbol-oct-2019.png" alt="" /></p>
+
+<h3 id="take-a-look-at-the-balance-sheet-data-that-we-re-going-to-scrape">Take a look at the Balance Sheet data that we’re going to scrape.</h3>
+
+<p>Here’s an example of some of the financial data we’ll be wanting to extract. Take note of the data displayed. Once we’ve scraped the data, we’ll cross-check it to ensure the scraping was accurate.</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-balance-sheet-top-oct-2019.png" alt="" /></p>
+
+<h3 id="inspect-the-page-source">Inspect the page source</h3>
+
+<p>Open up the Chrome developer tools, and inspect the page source. If you inspect the “Cash And Cash Equivalents” row, you’ll see something like this:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-balance-sheet-table-oct-2019.png" alt="" /></p>
+
+<p>Note that:</p>
+
+<ul>
+<li>Table rows in the table have the class  <code>D(tbr)</code></li>
+<li>Values such as  <code>Cash And Cash Equivalents</code>  and  <code>115,184</code>  are within a  <code>span</code>  within each row</li>
+<li>This is true for all rows in the table, including the first row titled  <code>Breakdown</code>  with dates such as  <code>3/31/2019</code></li>
+</ul>
+
+<p>Because of this, we can use XPath queries to extract the data that we want.</p>
+
+<h3 id="scrape-some-balance-sheet-data">Scrape some balance sheet data</h3>
+
+<p>Open up  <a href="https://jupyter.org/">Jupyter Notebook</a>, and execute the following code block:</p>
+
+<pre><code class="language-python">from datetime import datetime
+import lxml
+from lxml import html
+import requests
+import numpy as np
+import pandas as pd
+
+symbol = 'MFT.NZ'
+
+url = 'https://finance.yahoo.com/quote/' + symbol + '/balance-sheet?p=' + symbol
+
+# Set up the request headers that we're going to use, to simulate
+# a request by the Chrome browser. Simulating a request from a browser
+# is generally good practice when building a scraper
+headers = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Cache-Control': 'max-age=0',
+    'Pragma': 'no-cache',
+    'Referrer': 'https://google.com',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'
+}
+
+# Fetch the page that we're going to parse, using the request headers
+# defined above
+page = requests.get(url, headers)
+
+# Parse the page with LXML, so that we can start doing some XPATH queries
+# to extract the data that we want
+tree = html.fromstring(page.content)
+
+# Smoke test that we fetched the page by fetching and displaying the H1 element
+tree.xpath(&quot;//h1/text()&quot;)
+</code></pre>
+
+<p>You should see some output which looks like the following:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-balance-sheet-h1-oct-2019.png" alt="" /></p>
+
+<h3 id="reading-the-financial-data">Reading the financial data</h3>
+
+<p>Add a new cell to your Jupyter notebook, and add the following:</p>
+
+<pre><code class="language-python">table_rows = tree.xpath(&quot;//div[contains(@class, 'D(tbr)')]&quot;)
+
+# Ensure that some table rows are found; if none are found, then it's possible
+# that Yahoo Finance has changed their page layout, or have detected
+# that you're scraping the page.
+assert len(table_rows) &gt; 0
+
+parsed_rows = []
+
+for table_row in table_rows:
+    parsed_row = []
+    el = table_row.xpath(&quot;./div&quot;)
+    
+    none_count = 0
+    
+    for rs in el:
+        try:
+            (text,) = rs.xpath('.//span/text()[1]')
+            parsed_row.append(text)
+        except ValueError:
+            parsed_row.append(np.NaN)
+            none_count += 1
+
+    if (none_count &lt; 4):
+        parsed_rows.append(parsed_row)
+
+df = pd.DataFrame(parsed_rows)
+df
+</code></pre>
+
+<p>After executing the code, you should see output which looks like:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-balance-sheet-initial-scrape-oct-2019.png" alt="" /></p>
+
+<p>There are a few observations to be taken from the screenshot of the Pandas DataFrame above:</p>
+
+<ul>
+<li>The header row contains index values (0, 1, 2, 3, etc), rather than useful column names.</li>
+<li>The first row of the table contains dates.</li>
+<li>The first column contains account names.</li>
+<li>Rows such as  <strong>Short Term Investments</strong>  contain “None” where there are dashes (which represent no value) in Yahoo Finance, and 0’s when there are 0’s.</li>
+</ul>
+
+<p>Cross-check this output with the Balance Sheet in Yahoo Finance. The data should match. For example:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-balance-sheet-table-oct-2019.png" alt="" /></p>
+
+<p>Next, we’ll do some data cleanups and transformations to make the data more useful.</p>
+
+<h3 id="clean-up-the-data">Clean up the data</h3>
+
+<p>Because we’re using Pandas, it’ll be more convenient if the columns are the account names, and the rows are indexed by Date, so let’s do that now:</p>
+
+<pre><code class="language-python">df = pd.DataFrame(parsed_rows)
+df = df.set_index(0) # Set the index to the first column: 'Period Ending'.
+df = df.transpose() # Transpose the DataFrame, so that our header contains the account names
+
+# Rename the &quot;Breakdown&quot; column to &quot;Date&quot;
+cols = list(df.columns)
+cols[0] = 'Date'
+df = df.set_axis(cols, axis='columns', inplace=False)
+
+df
+</code></pre>
+
+<p>You should now see output which looks like:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-transposed-oct-2019.png" alt="" /></p>
+
+<p>Much better!</p>
+
+<p>Now, let’s look at the data types of these columns:</p>
+
+<pre><code class="language-python">df.dtypes
+</code></pre>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-raw-dtypes-oct-2019.png" alt="" /></p>
+
+<p>A few observations:</p>
+
+<ul>
+<li><strong>Period Ending</strong>  is of type ‘object’ when it should be a date type. We’re not going to be able to convert this to a date column since Income Statement and Statement of Cash Flows have “ttm” as the date value of the first column.</li>
+<li>All other columns such as  <strong>Cash and Cash Equivalents</strong>  are also of type ‘object’ when they should be numeric.</li>
+</ul>
+
+<p>Let’s do the conversion to numeric:</p>
+
+<pre><code class="language-python">numeric_columns = list(df.columns)[1::] # Take all columns, except the first (which is the 'Date' column)
+
+for column_name in numeric_columns:
+    df[column_name] = df[column_name].str.replace(',', '') # Remove the thousands separator
+    df[column_name] = df[column_name].astype(np.float64) # Convert the column to float64
+
+df.dtypes
+</code></pre>
+
+<p>The numeric columns should be now of type  <strong>float64</strong>:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-float-columns-oct-2019.png" alt="" /></p>
+
+<p>Let’s have another look at the DataFrame,:</p>
+
+<pre><code class="language-python">df
+</code></pre>
+
+<p>Which should output something something like:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-dataframe-balance-sheet-final-oct-2019.png" alt="" /></p>
+
+<p>Looking good! Now the Balance Sheet data has been fully scraped, with correct data types, in a form that’s ready to use.</p>
+
+<h2 id="scraping-income-statement-data-from-yahoo-finance">Scraping Income Statement data from Yahoo Finance</h2>
+
+<p>Now we’ll create a more generalised form of the code above, by combining the code into a method.</p>
+
+<pre><code class="language-python">from datetime import datetime
+import lxml
+from lxml import html
+import requests
+import numpy as np
+import pandas as pd
+
+def get_page(url):
+    # Set up the request headers that we're going to use, to simulate
+    # a request by the Chrome browser. Simulating a request from a browser
+    # is generally good practice when building a scraper
+    headers = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Cache-Control': 'max-age=0',
+        'Pragma': 'no-cache',
+        'Referrer': 'https://google.com',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'
+    }
+
+    return requests.get(url, headers)
+
+def parse_rows(table_rows):
+    parsed_rows = []
+
+    for table_row in table_rows:
+        parsed_row = []
+        el = table_row.xpath(&quot;./div&quot;)
+
+        none_count = 0
+
+        for rs in el:
+            try:
+                (text,) = rs.xpath('.//span/text()[1]')
+                parsed_row.append(text)
+            except ValueError:
+                parsed_row.append(np.NaN)
+                none_count += 1
+
+        if (none_count &lt; 4):
+            parsed_rows.append(parsed_row)
+            
+    return pd.DataFrame(parsed_rows)
+
+def clean_data(df):
+    df = df.set_index(0) # Set the index to the first column: 'Period Ending'.
+    df = df.transpose() # Transpose the DataFrame, so that our header contains the account names
+    
+    # Rename the &quot;Breakdown&quot; column to &quot;Date&quot;
+    cols = list(df.columns)
+    cols[0] = 'Date'
+    df = df.set_axis(cols, axis='columns', inplace=False)
+    
+    numeric_columns = list(df.columns)[1::] # Take all columns, except the first (which is the 'Date' column)
+
+    for column_name in numeric_columns:
+        df[column_name] = df[column_name].str.replace(',', '') # Remove the thousands separator
+
+        df[column_name] = df[column_name].astype(np.float64) # Convert the column to
+        
+    return df
+
+def scrape_table(url):
+    # Fetch the page that we're going to parse
+    page = get_page(url);
+
+    # Parse the page with LXML, so that we can start doing some XPATH queries
+    # to extract the data that we want
+    tree = html.fromstring(page.content)
+
+    # Fetch all div elements which have class 'D(tbr)'
+    table_rows = tree.xpath(&quot;//div[contains(@class, 'D(tbr)')]&quot;)
+    
+    # Ensure that some table rows are found; if none are found, then it's possible
+    # that Yahoo Finance has changed their page layout, or have detected
+    # that you're scraping the page.
+    assert len(table_rows) &gt; 0
+    
+    df = parse_rows(table_rows)
+    df = clean_data(df)
+        
+    return df
+
+symbol = 'MFT.NZ'
+balance_sheet_url = 'https://finance.yahoo.com/quote/' + symbol + '/balance-sheet?p=' + symbol
+
+df_balance_sheet = scrape_table(balance_sheet_url)
+df_balance_sheet
+</code></pre>
+
+<p>You should get the same output as the final balance sheet above. The only change will be that the ‘Period Ending’ column is now called ‘Date’.</p>
+
+<p>Now, let’s try the same method with the URL for income statement:</p>
+
+<pre><code class="language-python">df_income_statement = scrape_table('https://finance.yahoo.com/quote/' + symbol + '/financials?p=' + symbol)
+df_income_statement
+</code></pre>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-income-statement.png" alt="" /></p>
+
+<p>Cross check these values with the income statement on yahoo finance:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-yahoo-income-statement.png" alt="" /></p>
+
+<p>and they match!</p>
+
+<h2 id="scraping-statement-of-cash-flows-data-from-yahoo-finance">Scraping Statement of Cash Flows data from Yahoo Finance</h2>
+
+<p>Now that we’ve got a generic method that can be used on the Balance Sheet, and Income Statement, let’s try it on the Cash Flow statement.</p>
+
+<pre><code class="language-python">df_cash_flow = scrape_table('https://finance.yahoo.com/quote/' + symbol + '/cash-flow?p=' + symbol)
+df_cash_flow
+</code></pre>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-cash-flow.png" alt="" /></p>
+
+<p>Cross check these values with the cash flow statement on Yahoo Finance:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-yahoo-cash-flow.png" alt="" /></p>
+
+<p>and they match!</p>
+
+<p>Now you’ve got the following Pandas  <a href="https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.DataFrame.html">DataFrames</a>:</p>
+
+<ul>
+<li><strong>df_cash_flow</strong>, containing data scraped from the Statement of Cash Flows</li>
+<li><strong>df_income_statement</strong>, containing data scraped from the Income Statement</li>
+<li><strong>df_balance_sheet</strong>, containing data scraped from the Balance Sheet</li>
+</ul>
+
+<h2 id="exporting-to-excel">Exporting to Excel</h2>
+
+<p>It’s possible to export the Pandas DataFrame to Excel via ExcelWriter.</p>
+
+<p>Below is the code to export to an Excel file with three worksheets; Income Statement, Balance Sheet, and Statement of Cash Flows</p>
+
+<pre><code class="language-python">date = datetime.today().strftime('%Y-%m-%d')
+writer = pd.ExcelWriter(symbol + '-' + date + '-scraped.xlsx')
+df_income_statement.to_excel(writer,'Income Statement')
+df_balance_sheet.to_excel(writer,'Balance Sheet')
+df_cash_flow.to_excel(writer,'Statement of Cash Flows')
+writer.save()
+</code></pre>
+
+<p>I imported the file into Google Sheets, and got the following:</p>
+
+<p><img src="https://www.mattbutton.com/images/2019/mft-nz-scraped.png" alt="" /></p>
+
+<blockquote>
+<p>Source: <a href="https://www.mattbutton.com/2019/01/24/how-to-scrape-yahoo-finance-and-extract-fundamental-stock-market-data-using-python-lxml-and-pandas/?fbclid=IwAR1BxGgqEpZHsgm5s_XbH_WsfKt1tAhdWBrvx1xMwiXS3_zXhJVSsfhLnHs">MattButton.com</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cweb-scraping%5cweb-scrape-yahoo-finance.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#how-to-scrape-yahoo-finance-and-extract-fundamental-stock-market-data-using-python-lxml-and-pandas">How to scrape Yahoo Finance and extract fundamental stock market data using Python, LXML, and Pandas</a>
+<ul>
+<li>
+<ul>
+<li><a href="#disclaimers">Disclaimers</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#find-the-ticker-symbol">Find the ticker symbol</a></li>
+<li><a href="#take-a-look-at-the-balance-sheet-data-that-we-re-going-to-scrape">Take a look at the Balance Sheet data that we’re going to scrape.</a></li>
+<li><a href="#inspect-the-page-source">Inspect the page source</a></li>
+<li><a href="#scrape-some-balance-sheet-data">Scrape some balance sheet data</a></li>
+<li><a href="#reading-the-financial-data">Reading the financial data</a></li>
+<li><a href="#clean-up-the-data">Clean up the data</a></li>
+</ul></li>
+<li><a href="#scraping-income-statement-data-from-yahoo-finance">Scraping Income Statement data from Yahoo Finance</a></li>
+<li><a href="#scraping-statement-of-cash-flows-data-from-yahoo-finance">Scraping Statement of Cash Flows data from Yahoo Finance</a></li>
+<li><a href="#exporting-to-excel">Exporting to Excel</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Functions and Functional Programming"><meta property="og:title" content="Functions and Functional Programming" />
+<meta property="og:description" content="Tutorial: Python Functions and Functional Programming  https://www.dataquest.io/blog/introduction-functional-programming-python/  Most of us have been introduced to Python as an object-oriented language, but Python functions are also useful tools for data scientists and programmers alike. While classes, and objects, are easy to start working with, there are other ways to write your Python code. Languages like Java can make it hard to move away from object-oriented thinking, but Python makes it easy." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Functions and Functional Programming | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/"  class="active">
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Functions and Functional Programming</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="tutorial-python-functions-and-functional-programming">Tutorial: Python Functions and Functional Programming</h1>
+
+<ul>
+<li><a href="https://www.dataquest.io/blog/introduction-functional-programming-python/">https://www.dataquest.io/blog/introduction-functional-programming-python/</a></li>
+</ul>
+
+<p><img src="https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://www.dataquest.io/wp-content/uploads/2019/01/fp-python.png" alt="" title="fp-python" /></p>
+
+<p>Most of us have been introduced to Python as an  <strong>object-oriented</strong>  language, but Python functions are also useful tools for data scientists and programmers alike. While classes, and objects, are easy to start working with, there are other ways to write your Python code. Languages like Java can make it hard to move away from object-oriented thinking, but Python makes it easy.</p>
+
+<p>Given that Python facilitates different approaches to writing code, a logical follow-up question is: what  <em>is</em>  a different way to write code? While there are several answers to this question, the most common alternative style of writing code is called  <strong>functional programming</strong>. Functional programming gets its name from writing functions which provides the main source of logic in a program.</p>
+
+<p>In this post, we will:</p>
+
+<ul>
+<li>Explain the basics of functional programming by comparing it to object-oriented programming.</li>
+<li>Cover why you might want to incorporate functional programming in your own code.</li>
+<li>Show you how Python allows you to switch between the two.</li>
+</ul>
+
+<h2 id="comparing-object-oriented-to-functional">Comparing object-oriented to functional</h2>
+
+<p>The easiest way to introduce functional programming is to compare it to something we’re already aware of: object-oriented programming. Suppose we wanted to create a line counter class that takes in a file, reads each line, then counts the total amount of lines in the file. Using a  <em>class</em>, it could look something like the following:</p>
+
+<pre><code class="language-python">class LineCounter:
+    def __init__(self, filename):
+        self.file = open(filename, 'r')
+        self.lines = []
+
+        def read(self):
+            self.lines = [line for line in self.file]
+
+        def count(self):
+            return len(self.lines)
+</code></pre>
+
+<p>While not the best implementation, it does provide an insight into object-oriented design. Within the class, there are the familiar concepts of methods and properties. The properties set and retrieve the  <em>state</em>  of the object, and the methods manipulate that state.</p>
+
+<p>For both these concepts to work, the object’s state must change over time. This change of state is evident in the  <code>lines</code>  property after calling the  <code>read()</code>  method. As an example, here’s how we would use this class:</p>
+
+<pre><code class="language-python"># example_file.txt contains 100 lines.
+lc = LineCounter('example_file.txt')
+print(lc.lines)
+&gt;&gt; []
+print(lc.count())
+&gt;&gt; 0
+
+# The lc object must read the file to
+# set the lines property.
+lc.read()
+# The `lc.lines` property has been changed.
+# This is called changing the state of the lc
+# object.
+print(lc.lines)
+&gt;&gt; [['Hello world!', ...]]
+print(lc.count())
+&gt;&gt; 100
+</code></pre>
+
+<p>The ever-changing state of an object is both its blessing and curse. To understand why a changing state can be seen as a negative, we have to introduce an alternative. The alternative is to build the line counter as a series of independent functions.</p>
+
+<pre><code class="language-python">def read(filename):
+    with open(filename, 'r') as f:
+        return [line for line in f]
+
+def count(lines):
+    return len(lines)
+
+example_lines = read('example_log.txt')
+lines_count = count(example_lines)
+</code></pre>
+
+<h2 id="working-with-pure-functions">Working with pure functions</h2>
+
+<p>In the previous example, we were able to count the lines only with the use of functions. When we only use functions, we are applying a functional approach to programming which is, non-excitingly, called  <a href="https://docs.python.org/3.6/howto/functional.html"><em>functional programming</em></a>. The concepts behind functional programming requires functions to be  <strong>stateless</strong>, and rely  <em>only on</em>  their given inputs to produce an output.</p>
+
+<p>The functions that meet the above criteria are called  <strong>pure functions</strong>. Here’s an example to highlight the difference between pure functions, and non-pure:</p>
+
+<pre><code class="language-python"># Create a global variable `A`.
+A = 5
+
+def impure_sum(b):
+    # Adds two numbers, but uses the
+    # global `A` variable.
+    return b + A
+
+def pure_sum(a, b):
+    # Adds two numbers, using
+    # ONLY the local function inputs.
+    return a + b
+
+print(impure_sum(6))
+&gt;&gt; 11
+
+print(pure_sum(4, 6))
+&gt;&gt; 10
+</code></pre>
+
+<p>The benefit of using pure functions over impure (non-pure) functions is the reduction of  <strong>side effects</strong>. Side effects occur when there are changes performed within a function’s operation that are outside its scope. For example, they occur when we change the state of an object, perform any I/O operation, or even call  <code>print()</code>:</p>
+
+<pre><code class="language-python">def read_and_print(filename):
+    with open(filename) as f:
+        # Side effect of opening a
+        # file outside of function.
+        data = [line for line in f]
+    for line in data:
+        # Call out to the operating system
+        # &quot;println&quot; method (side effect).
+        print(line)
+</code></pre>
+
+<p>Programmers reduce side effects in their code to make it easier to follow, test, and debug. The more side effects a codebase has, the harder it is to step through a program and understand its sequence of execution.</p>
+
+<p>While it’s convienent to try and eliminate all side effects, they’re often used to make programming easier. If we were to ban all side effects, then you wouldn’t be able to read in a file, call print, or even assign a variable within a function. Advocates for functional programming understand this tradeoff, and try to eliminate side effects where possible without sacrificing development implementation time.</p>
+
+<h2 id="the-lambda-expression">The Lambda Expression</h2>
+
+<p>Instead of the  <code>def</code>  syntax for function declaration, we can use a  <a href="https://docs.python.org/3.5/tutorial/controlflow.html#lambda-expressions"><code>lambda</code>  expression</a>  to write Python functions. The lambda syntax closely follows the  <code>def</code>  syntax, but it’s not a 1-to-1 mapping. Here’s an example of building a function that adds two integers:</p>
+
+<pre><code class="language-python"># Using `def` (old way).
+def old_add(a, b):
+    return a + b
+
+# Using `lambda` (new way).
+new_add = lambda a, b: a + bold_add(10, 5) == new_add(10, 5)
+&gt;&gt; True
+</code></pre>
+
+<p>The  <code>lambda</code>  expression takes in a comma seperated sequences of inputs (like  <code>def</code>). Then, immediately following the colon, it returns the expression without using an explicit return statement. Finally, when assigning the  <code>lambda</code>  expression to a variable, it acts exactly like a Python function, and can be called using the the function call syntax:  <code>new_add()</code>.</p>
+
+<p>If we didn’t assign  <code>lambda</code>  to a variable name, it would be called an  <strong>anonymous function</strong>. These anonymous functions are extremely helpful, especially when using them as an input for another function. For example, the  <code>sorted()</code>  <a href="https://docs.python.org/3/howto/sorting.html#key-functions">function</a>  takes in an optional  <code>key</code>  argument (a function) that describes how the items in a list should be sorted.</p>
+
+<pre><code class="language-python">unsorted = [('b', 6), ('a', 10), ('d', 0), ('c', 4)]
+
+# Sort on the second tuple value (the integer).
+print(sorted(unsorted, key=lambda x: x[1]))
+&gt;&gt; [('d', 0), ('c', 4), ('b', 6), ('a', 10)]
+</code></pre>
+
+<h2 id="the-map-function">The Map Function</h2>
+
+<p>While the ability to pass in functions as arguments is not unique to Python, it is a recent development in programming languages. Functions that allow for this type of behavior are called  <strong>first-class functions</strong>. Any language that contains first-class functions  <em>can be written</em>  in a functional style.</p>
+
+<p>There are a set of important first-class functions that are commonly used within the functional paradigm. These functions take in a  <a href="https://docs.python.org/3/glossary.html#term-iterable">Python iterable</a>, and, like  <code>sorted()</code>, apply a function for each element in the list. Over the next few sections, we will examine each of these functions, but they all follow the general form of  <code>function_name(function_to_apply, iterable_of_elements)</code>.</p>
+
+<p>The first function we’ll work with is the  <code>map()</code>  function. The  <code>map()</code>  function takes in an iterable (ie.  <code>list</code>), and creates a new iterable object, a special  <code>map</code>  object. The new object has the first-class function applied to every element.</p>
+
+<pre><code class="language-python"># Pseudocode for map.
+def map(func, seq):
+    # Return `Map` object with
+    # the function applied to every
+    # element.
+    return Map(
+        func(x)
+        for x in seq
+    )
+</code></pre>
+
+<p>Here’s how we could use map to add  <code>10</code>  or  <code>20</code>  to every element in a list:</p>
+
+<pre><code class="language-python">values = [1, 2, 3, 4, 5]
+
+# Note: We convert the returned map object to
+# a list data structure.
+add_10 = list(map(lambda x: x + 10, values))
+add_20 = list(map(lambda x: x + 20, values))
+
+print(add_10)
+&gt;&gt; [11, 12, 13, 14, 15]
+
+print(add_20)
+&gt;&gt; [21, 22, 23, 24, 25]
+</code></pre>
+
+<p>Note that it’s important to cast the return value from  <code>map()</code>  as a  <code>list</code>  object. Using the returned  <code>map</code>  object is difficult to work with if you’re expecting it to function like a  <code>list</code>. First, printing it does not show each of its items, and secondly, you can only iterate over it once.</p>
+
+<h2 id="the-filter-function">The Filter Function</h2>
+
+<p>The second function we’ll work with is the  <code>filter()</code>  function. The  <code>filter()</code>  function takes in an iterable, creates a new iterable object (again, a special  <code>map</code>  object), and a first-class function that must return a  <code>bool</code>  value. The new  <code>map</code>  object is a filtered iterable of all elements that returned  <code>True</code>.</p>
+
+<pre><code class="language-python"># Pseudocode for filter.
+def filter(evaluate, seq):
+    # Return `Map` object with
+    # the evaluate function applied to every
+    # element.
+    return Map(
+        x for x in seq
+        if evaluate(x) is True
+    )
+</code></pre>
+
+<p>Here’s how we could filter odd or even values from a list:</p>
+
+<pre><code class="language-python">values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Note: We convert the returned filter object to
+# a list data structure.
+even = list(filter(lambda x: x % 2 == 0, values))
+odd = list(filter(lambda x: x % 2 == 1, values))
+
+print(even)
+&gt;&gt; [2, 4, 6, 8, 10]
+
+print(odd)
+&gt;&gt; [1, 3, 5, 7, 9]
+</code></pre>
+
+<h2 id="the-reduce-function">The Reduce Function</h2>
+
+<p>The last function we’ll look at is the  <code>reduce()</code>  function from the  <a href="https://docs.python.org/3/library/functools.html"><code>functools</code>  package</a>. The  <code>reduce()</code>  function takes in an iterable, and then reduces the iterable to a single value. Reduce is different from  <code>filter()</code>  and  <code>map()</code>, because  <code>reduce()</code>  takes in a function that has two input values.</p>
+
+<p>Here’s an example of how we can use  <code>reduce()</code>  to sum all elements in a list.</p>
+
+<pre><code class="language-python">from functools import reduce
+
+values = [1, 2, 3, 4]
+
+summed = reduce(lambda a, b: a + b, values)
+print(summed)
+&gt;&gt; 10
+</code></pre>
+
+<p><img src="https://dq-content.s3.amazonaws.com/263/s5_reduce_function.svg" alt="diagram of reduce" /></p>
+
+<p>An interesting note to make is that you do  <strong>not</strong>  have to operate on the second value in the  <code>lambda</code>  expression. For example, you can write a function that always returns the first value of an iterable:</p>
+
+<pre><code class="language-python">from functools import reduce
+
+values = [1, 2, 3, 4, 5]
+
+# By convention, we add `_` as a placeholder for an input
+# we do not use.
+first_value = reduce(lambda a, _: a, values)
+print(first_value)
+&gt;&gt; 1
+</code></pre>
+
+<h2 id="rewriting-with-list-comprehensions">Rewriting with list comprehensions</h2>
+
+<p>Because we eventually convert to lists, we should rewrite the  <code>map()</code>  and  <code>filter()</code>  functions using list comprehension instead. This is the more  <em>pythonic</em>  way of writing them, as we are taking advantage of the Python syntax for making lists. Here’s how you could translate the previous examples of  <code>map()</code>  and  <code>filter()</code>  to list comprehensions:</p>
+
+<pre><code class="language-python">values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Map.
+add_10 = [x + 10 for x in values]
+print(add_10)
+&gt;&gt; [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+# Filter.
+even = [x for x in values if x % 2 == 0]
+print(even)
+&gt;&gt; [2, 4, 6, 8, 10]
+</code></pre>
+
+<p>From the examples, you can see that we don’t need to add the lambda expressions. If you are looking to add  <code>map()</code>, or  <code>filter()</code>  functions to your own code, this is usually the recommended way. However, in the next section, we’ll provide a case to still use the  <code>map()</code>  and  <code>filter()</code>  functions.</p>
+
+<h2 id="writing-function-partials">Writing Function Partials</h2>
+
+<p>Sometimes we want to use the behavior of a function, but decrease the number of arguments it takes. The purpose is to “save” one of the inputs, and create a new function that defaults the behavior using the saved input. Suppose we wanted to write a function that would always add 2 to any number:</p>
+
+<pre><code class="language-python">def add_two(b):
+    return 2 + b
+
+print(add_two(4))
+&gt;&gt; 6
+</code></pre>
+
+<p>The  <code>add_two</code>  function is similar to the general function, $f(a,b) = a + b$, only it defaults one of the arguments ($a = 2$). In Python, we can use the  <a href="https://docs.python.org/3.6/library/functools.html#functools.partial"><code>partial</code>  module</a>  from the  <code>functools</code>  package to set these argument defaults. The  <code>partial</code>  module takes in a function, and “freezes” any number of args (or kwargs), starting from the first argument, then returns a new function with the default inputs.</p>
+
+<pre><code class="language-python">from functools import partialdef add(a, b):
+    return a + b
+
+add_two = partial(add, 2)
+add_ten = partial(add, 10)
+
+print(add_two(4))
+&gt;&gt; 6
+print(add_ten(4))
+&gt;&gt; 14
+</code></pre>
+
+<p>Partials can take in any function, including ones from the standard library.</p>
+
+<pre><code class="language-python"># A partial that grabs IP addresses using
+# the `map` function from the standard library.
+extract_ips = partial(
+    map,
+    lambda x: x.split(' ')[0]
+)
+lines = read('example_log.txt')
+ip_addresses = list(extract_ip(lines))
+</code></pre>
+
+<h2 id="next-steps">Next steps</h2>
+
+<p>In this post, we introduced the paradigm of functional programming. We learned about the lambda expression in Python, important functional functions, and the concept of partials. Overall, we showed that Python provides a programmer with the tools to easily switch between functional programming and object-oriented programming.</p>
+
+<p>If you’ve enjoyed functional programming, our newest course:  <a href="https://www.dataquest.io/course/building-a-data-pipeline">Building a Data Pipeline</a>  uses functional programming concepts to build a data pipeline. In this course, you’ll find more advanced Python concepts, examples of good API design, and a final project that uses your own data pipeline built from scratch!</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-functions_and-functional-programming.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#tutorial-python-functions-and-functional-programming">Tutorial: Python Functions and Functional Programming</a>
+<ul>
+<li><a href="#comparing-object-oriented-to-functional">Comparing object-oriented to functional</a></li>
+<li><a href="#working-with-pure-functions">Working with pure functions</a></li>
+<li><a href="#the-lambda-expression">The Lambda Expression</a></li>
+<li><a href="#the-map-function">The Map Function</a></li>
+<li><a href="#the-filter-function">The Filter Function</a></li>
+<li><a href="#the-reduce-function">The Reduce Function</a></li>
+<li><a href="#rewriting-with-list-comprehensions">Rewriting with list comprehensions</a></li>
+<li><a href="#writing-function-partials">Writing Function Partials</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

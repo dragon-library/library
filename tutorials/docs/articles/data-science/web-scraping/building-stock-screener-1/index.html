@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Building a Stock Screener - Part 1"><meta property="og:title" content="Building a Stock Screener - Part 1" />
+<meta property="og:description" content="Building a Stock Screener in Python- Part 1  ที่มาบทความ .
+ In this post, I’ll share how to create a stock screener — a program which can filter stocks based on user preferences — from scratch (and for free) using python. This project will be broken into 3 parts-
+ Scraping data Storing data Screening data  Before we dive into programming, let’s start by asking why anyone would want to build a stock screener." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/" />
+
+<title>Building a Stock Screener - Part 1 | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/"  class="active">
+      Building a Stock Screener - Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/" >
+      Building a Stock Screener - Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/" >
+      How to scrape Yahoo Finance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/" >
+      Requests and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/" >
+      Web Scraping 101
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Building a Stock Screener - Part 1</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="building-a-stock-screener-in-python-part-1">Building a Stock Screener in Python- Part 1</h1>
+
+<blockquote>
+<p><a href="https://medium.com/@hr23232323/building-a-stock-screener-for-free-in-python-1d1d334eb76d">ที่มาบทความ </a>.</p>
+</blockquote>
+
+<p>In this post, I’ll share how to create a stock screener — a program which can filter stocks based on user preferences — from scratch (and for free) using python. This project will be broken into 3 parts-</p>
+
+<ol>
+<li>Scraping data</li>
+<li>Storing data</li>
+<li>Screening data</li>
+</ol>
+
+<p>Before we dive into programming, let’s start by asking why anyone would want to build a stock screener.</p>
+
+<h1 id="why">Why</h1>
+
+<p>Let’s think about personal finance and investments for a second:  <strong>why</strong>  would someone strategically pick healthy stocks which provide a high return-on-investment while maintaining relatively low levels of risk?</p>
+
+<p><img src="https://miro.medium.com/max/1155/1*ndXh58yaLS5IOFRULrbEsg.jpeg" alt="" /></p>
+
+<p>Difference between growing your money at 6%, 8% and 10%</p>
+
+<p>Because your choice of stocks directly impacts your portfolio’s returns and can be the difference between becoming a  <strong>Millionaire at age 35 vs 55</strong>. Even a few bad stocks in your portfolio can greatly decrease performance, so it’s important to carefully analyze and filter companies.</p>
+
+<h1 id="how">How</h1>
+
+<p>So now that you know why, let’s talk about <strong>how</strong> someone could strategically pick healthy stocks which provide a high return-on-investment while maintaining relatively low levels of risk? There’s a few methods out there for people wondering, but one of the most common analysis strategies for picking companies is  <strong>Technical Analysis</strong>.</p>
+
+<p>Technical Analysis is a method by which analysts use data to find patterns and trends to generate predictions about company performance. The key word in the previous statement is data. Sources like Yahoo Finance, Bloomberg, Market Watch etc. act like central hubs for stock data. They collect, visualize and share this information with the rest of the world. Investors use these websites to analyse companies and pick the ones they see fit; thus the terminology, filtering. While individually looking through hundreds of web-pages and picking companies is a perfectly acceptable method of building a portfolio, computer scientists know better. This is a where a stock screener comes into play.</p>
+
+<h1 id="stock-screeners">Stock Screeners</h1>
+
+<p>A stock screener is a program which can filter stocks based on certain criteria. It can be used to analyze a large volume of companies in a relatively short period of time. Keep in mind that a stock screener is not a program that can (or should) replace religious analysis of a company’s performance before any personal investment decision is made, but rather is a way to effectively decrease the number of companies which need to be analyzed. A trivial, but important example is shown below-</p>
+
+<p><strong>Without any filter</strong></p>
+
+<p>Approximately  <strong>13,547 companies</strong>  are listed on Yahoo Finance. This is a huge number of companies to filter through for individual examination</p>
+
+<p><img src="https://miro.medium.com/max/1200/1*ldOvcJhdf3zPqGwRwJf5uw.png" alt="" /></p>
+
+<p>Screen without any filters</p>
+
+<p><strong>With a basic filter</strong></p>
+
+<p>Even a basic screen (companies which have seen a percent change in price greater than 10%, thus have a highly positive price change)  <strong>decreases the number of companies by over 90%</strong>, making individual examination a possibility.</p>
+
+<p><img src="https://miro.medium.com/max/1200/1*KShIlbJBrK2WQDo3hU7Ndw.png" alt="" /></p>
+
+<p>Screen with a basic filter</p>
+
+<p><strong>With a selective filter</strong></p>
+
+<p>The following filter is fairly selective: it is only looking at Mega Cap companies (Market Cap over $100B), with a current ratio greater than 1 (indicating good liquidity health), and an expected PEG ratio greater than 2 (indicating very good expected growth over 5 years). The  <strong>list of companies is down to 9</strong>, which is a very manageable number to individually inspect.</p>
+
+<p><img src="https://miro.medium.com/max/1525/1*Hk-pcarqCFv0wcOKCvsrrw.png" alt="" /></p>
+
+<p>Screen with a fairly selective filter</p>
+
+<p>By now I’m sure you understand the importance of having a stock screener and hope you’re excited to build one from scratch! While there are a few paid and free stock screeners available online, building one from scratch enables you to really customize your screens, implement more complicated/personalized methods and take your filtering abilities to the next level. Now let’s get down to business.</p>
+
+<hr />
+
+<h1 id="part-1-scraping-data">Part 1: Scraping Data</h1>
+
+<p>Part 1, and arguably the most important part of building a stock screener, is the ability to get your hands on the data. There are many stock data API’s available out there, but do not be fooled, most of them are fairly expensive or limit the number of requests, making them severely infeasible for a stock screener. That is why I will show you how to scrape stock information in this part. You can use the framework discussed below on different websites/data based on your needs.</p>
+
+<p>The following are the main steps taken to scrape the data.</p>
+
+<ol>
+<li>Find a reliable source</li>
+<li>Determine data to be scraped</li>
+<li>Create scraping methodology</li>
+<li>Build algorithm</li>
+</ol>
+
+<p><strong>Find a reliable source</strong></p>
+
+<p>This is a website that publishes the stock information that you’re trying to scrape. Be sure to check the website’s terms and conditions regarding data scraping to avoid unnecessary problems. In this case, I’m collecting the data for educational and research purposes only, and do not wish to sell this information elsewhere. I decided to use  <a href="https://finance.yahoo.com/">Yahoo Finance</a>, as it is a very reliable source of data. Additionally, they also keep their information well organized as we’ll discuss below.</p>
+
+<p><strong>Determine Data to be scraped</strong></p>
+
+<p>This step is very important, as it constraints the data that the scraper will be collecting. In order to do this, we’ll be taking a look at the typical Yahoo Finance page of a company and decide what data is relevant to us. Here’s what the main Yahoo page of Apple Inc. looks like (as of December 30, 2018):</p>
+
+<p><img src="https://miro.medium.com/max/1788/1*OsvtQfQIrANi30-irYfaBA.jpeg" alt="" /></p>
+
+<p><strong>Yahoo Finance page for Apple Inc. (AAPL)</strong></p>
+
+<p>While the summary tab contains some very useful information about this stock, we’re interested in indicators which tell us more about the health of this company. For this, we’ll turn to the statistics tab, which looks like so-</p>
+
+<p><img src="https://miro.medium.com/max/886/1*dMCVWx5C3Ic7N5tKMPB6Yw.png" alt="" /></p>
+
+<p>Statistics page of Yahoo Finance for Apple Inc. (AAPL)</p>
+
+<p>As you can see, this page contains a myriad of data and is neatly arranged into tables, making it perfect for our program. We note the URL (which is shown below) and move on to the scraping methodology. You can check out the web page for Apple yourself using the link too.</p>
+
+<p><a href="http://finance.yahoo.com/q/ks?s=aapl">http://finance.yahoo.com/q/ks?s=aapl</a></p>
+
+<p><strong>Create Scraping Methodology</strong></p>
+
+<p>Before we can talk about the scraping methodology, you need to understand Beautiful Soup. If you already know the basics feel free to move on, but if you need a refresher, check out  <a href="https://code.tutsplus.com/tutorials/scraping-webpages-in-python-with-beautiful-soup-the-basics--cms-28211">this article</a>.</p>
+
+<p>The scraping methodology refers to the method by which beautiful soup finds the relevant  <code>&lt;div&gt;'s &lt;table&gt;'s</code>  etc. inside the web page’s HTML source code. This is usually achieved by inspecting the different elements (right click -&gt; inspect element) inside a web page, till you can find a consistent class, attribute etc. which captures all the data you want. Here’s some photos of me inspecting elements in the Yahoo Finance pages to further show this point.</p>
+
+<p><img src="https://miro.medium.com/max/1639/1*ZPePjyqGLeYBkuQCERxfdw.jpeg" alt="" /></p>
+
+<p>Inspecting elements on the Yahoo Finance web page for Apple Inc. (AAPL)</p>
+
+<p>As you can (barely) tell from the above photo, each of the name-value pairs, like  <em>Market Cap (intraday), 741.37B</em>  are displayed using  <code>&lt;span&gt; and &lt;td&gt;</code>  tags inside the same  <code>&lt;tr&gt;</code>  tag. Further, all of these  <code>&lt;tr&gt;</code>  are within the same  <code>&lt;table&gt;</code>  tag with a special class:  <strong>table-qsp-stats</strong>. This class gives us a way to distinguish the data-tables from all other elements on the web page. On further inspection, you can also see that  <strong>the class is attached to every table tag that contains relevant data</strong>.</p>
+
+<p>This is perfect for us, as we can easily use Beautiful Soup to navigate to the table (which contains our special class name), iterate through the rows and capture relevant information. Now, we can start coding this algorithm.</p>
+
+<p><strong>Build Algorithm</strong></p>
+
+<p>Now we start with our actual python program. Here’s our algorithm, laid out step-by-step-</p>
+
+<ol>
+<li>Create URL for given stock</li>
+<li>Extract HTML from web page</li>
+<li>Find all tables that contain class  <code>table-qsp-stats</code></li>
+<li>For each table, iterate through rows</li>
+<li>For each row store  <code>&lt;span&gt;</code>text as key and  <code>&lt;td&gt;</code>  text as corresponding value in dictionary</li>
+</ol>
+
+<p>Here’s the syntax of the function, which accepts a stock symbol (for reference):</p>
+
+<pre><code class="language-py">def scrape_yahoo(stock):
+</code></pre>
+
+<p>Now building on this, we need to create the URL (using the stock symbol) and extract the HTML from the web page using urllib2 and Beautiful Soup-</p>
+
+<pre><code class="language-py"> url = ('http://finance.yahoo.com/q/ks?s=' + stock)  
+  page = urllib2.urlopen(url)  
+  soup = BeautifulSoup(page, 'html.parser')
+</code></pre>
+
+<p>Now we move on to finding the relevant tables and processing each of the rows.</p>
+
+<p><em>Note: technicals is an empty dictionary initialized earlier.</em></p>
+
+<pre><code class="language-py"> tables = soup.findAll('table', {&quot;class&quot; : 'table-qsp-stats'}) for table in tables:  
+    table_body = table.find('tbody')  
+    rows = table_body.find_all('tr') for row in rows:  
+      # span tags contain the indicator name  
+      col_name = row.find_all('span')  
+      col_name = [cell.text.strip() for cell in col_name]  
+        
+      # td tags contain the indicator values  
+      col_val = row.find_all('td')  
+      col_val = [cell.text.strip() for cell in col_val]  
+      technicals[col_name[0]] = col_val[1]
+</code></pre>
+
+<p>The full code for this data scraper can be found  <a href="https://github.com/hr23232323/stock_data_scraper">on this github repository</a>.</p>
+
+<h1 id="wrap-up-and-what-next">Wrap up and what next?</h1>
+
+<p>So now you have it! A way to scrape stock data off of Yahoo Finance for use in your very own stock screener. If you want to continue on in this series, feel free to check out  <a href="https://medium.com/@hr23232323/building-a-stock-screener-in-python-part-2-f40b64889293"><strong>Part 2</strong></a>. In part 2 we build upon this algorithm to store the data collected and then we’ll be ready to create filtering queries to wrap up the stock screener.</p>
+
+<p>If you have any questions, feedback or comments, feel free to get in touch with me through  <a href="https://www.linkedin.com/in/harshrana1997/">LinkedIn</a>, or my  <a href="http://www.harshrana.com/">website</a>.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cweb-scraping%5cBuilding-Stock-Screener-1.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#building-a-stock-screener-in-python-part-1">Building a Stock Screener in Python- Part 1</a></li>
+<li><a href="#why">Why</a></li>
+<li><a href="#how">How</a></li>
+<li><a href="#stock-screeners">Stock Screeners</a></li>
+<li><a href="#part-1-scraping-data">Part 1: Scraping Data</a></li>
+<li><a href="#wrap-up-and-what-next">Wrap up and what next?</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

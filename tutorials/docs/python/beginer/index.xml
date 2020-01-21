@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beginners on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/</link>
+    <description>Recent content in Beginners on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/python/beginer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ตัวแปรและประเภทข้อมูล</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/</guid>
+      <description>Variable &amp;amp; Data Types (ตัวแปรและประเภทข้อมูล) ตัวแปรและประข้อมูลในภาษา Python เราจะพูดถึงการประกาศตัวแปรและการนำตัวแปรไปใช้งานในโปรแกรม และเราจะอธิบายถึงข้อมูลประเภทต่างๆ ที่เป็น Primitive datatype ในภาษา Python และรวมทั้งฟังก์ชันสำหรับการใช้งานกับตัวแปร
+ตัวแปร ตัวแปร (variable) คือชื่อหรือเครื่องหมายที่กำหนดขึ้นสำหรับใช้เก็บค่าในหน่วยความจำ ตัวแปรจะมีชื่อ (identifier) สำหรับใช้ในการอ้างถึงข้อมูลของมัน ในการเขียนโปรแกรม ค่าของตัวแปรสามารถที่จะกำหนดได้ใน run-time หรือเปลี่ยนแปลงอยู่ตลอดเวลาในขณะที่โปรแกรมทำงาน (executing)
+ในการเขียนโปรแกรมคอมพิวเตอร์นั้น ตัวแปรจะแตกต่างจากตัวแปรในทางคณิตศาสตร์ ค่าของตัวแปรนั้นไม่จำเป็นต้องประกอบไปด้วยสูตรหรือสมการที่สมบูรณ์เหมือนกับในคณิตศาสตร์ ในคอมพิวเตอร์ ตัวแปรนั้นอาจจะมีการทำงานซ้ำๆ เช่น การกำหนดค่าในที่หนึ่ง และนำไปใช้อีกที่หนึ่งในโปรแกรม และนอกจากนี้ยังสามารถกำหนดค่าใหม่ให้กับตัวแปรได้ตลอดเวลา ต่อไปเป็นตัวอย่างของการประกาศตัวแปรในภาษา Python
+a = 3 b = 4.92 c = &amp;quot;marcuscode.com&amp;quot; c = 10.5  ในตัวอย่าง เราได้ทำการประกาศ 3 ตัวแปร ในการประกาศตัวแปรในภาษา Python คุณไม่จำเป็นต้องระบุประเภทของตัวแปรในตอนที่ประกาศเหมือนในภาษา C ในตัวแปร a มีค่าเป็น 3 และเป็นประเภทเป็น Integer ตัวแปร b มีค่าเป็น 4.92 และเป็นประเภทเป็น Float และตัวแปร c มีค่าเป็น &amp;ldquo;marcuscode.</description>
+    </item>
+    
+    <item>
+      <title>Lists</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</guid>
+      <description>Lists ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูลแบบ List ในภาษา Python เราจะพูดถึงการสร้างและใช้งาน List ในเบื้องต้น การใช้งานเมธอดและฟังก์ชันเพื่อจัดการข้อมูลภายใน List และการใช้งานคำสั่ง For loop กับ List รวมถึงการ slicing
+List (ลิสต์) คือโครงสร้างข้อมูลชนิดหนึ่งในภาษา Python ที่ใช้เก็บข้อมูลแบบลำดับ (Sequence) โดยมี Index เป็นตัวระบุตำแหน่งในการเข้าถึงข้อมูล เราสามารถใช้ List เพื่อเก็บข้อมูลจำนวนมากและหลากหลายประเภทในเวลาเดียวกัน List เป็นประเภทข้อมูลที่ใช้อย่างหลากหลายในการเขียนโปรแกรม นอกจากนี้ ในภาษา Python ยังมี built-in function ที่สามารถทำงานกับ List และใน List ออบเจ็คเองก็มีเมธอดต่างๆ เป็นจำนวนมากที่ช่วยอำนวยความสะดวกในการเขียนโปรแกรม
+การประกาศและใช้งาน List List นั้นเป็นตัวแปรประเภทหนึ่ง การใช้งานของมันจะเหมือนกันอาเรย์ในภาษาอื่นๆ ในการประกาศ List นั้นข้อมูลของมันจะอยู่ภายในเครื่องหมาย [] และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา , มาดูตัวอย่างการประกาศ List ในภาษา Python
+numbers = [-1, 2, 5, 8, 10, 13] names = [&#39;Mateo&#39;, &#39;Danny&#39;, &#39;James&#39;, &#39;Thomas&#39;, &#39;Luke&#39;] mixed_type = [-2, 5, 84.</description>
+    </item>
+    
+    <item>
+      <title>Dictionary</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</guid>
+      <description>Dictionary ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูล Dictionary ในภาษา Python เราจะแนะนำให้คุณรู้จักกับ Dictionary คืออะไร และการประกาศและใช้งานสำหรับเก็บข้อมูลในการเขียนโปรแกรม นอกจากนี้ เรายังจะพูดถึงการใช้งานเมธอดและ built-in functions ของ Dictionary และตัวอย่างการใช้งานกับการเขียนโปรแกรมใบรูปแบบต่างๆ ในภาษา Python
+Dictionary คือประเภทข้อมูลที่เก็บข้อมูลในรูปแบบคู่ของ Key และ Value โดยที่ Key ใช้สำหรับเป็น Index ในการเข้าถึงข้อมูลและ Value เป็นค่าข้อมูลที่สอดคล้องกับ Key ของมัน การเข้าถึงข้อมูลใน Dictionary นั้นรวดเร็วเพราะว่าข้อมูลได้ถูกทำ Index ไว้อัตโนมัติโดยใช้ Key นอกจากนี้ Dictionary ยังมีเมธอดและฟังก์ชันอำนวยความสะดวกสำหรับการทำงานทั่วไป
+การประกาศ Dictionary ในภาษา Python ในการใช้งาน Dictionary เรามักจะใช้เก็บข้อมูลที่สามารถใช้บางอย่างที่สามารถจำแนกข้อมูลออกจากกันได้ โดยกำหนดให้สิ่งนั้นเป็น Key ในการประกาศ Dictionary สมาชิกของมันจะอยู่ภายในวงเล็บปีกกา {} มาดูตัวอย่างในการประกาศ Dictionary ในภาษา Python
+scores = {&#39;james&#39;: 1828, &#39;thomas&#39;: 3628, &#39;danny&#39;: 9310} scores[&#39;bobby&#39;] = 4401 numbers = {1: &#39;One&#39;, 2: &#39;Two&#39;, 3: &#39;Three&#39;} print(scores) print(numbers)  ในตัวอย่าง เราได้ประกาศตัวแปร Dictionary ที่มีชื่อว่า scores สำหรับเก็บคะแนนของแต่ละคนโดยใช้ชื่อเป็น Key และค่าของมันก็คือคะแนน สมาชิกของ Dictionary แต่ละตัวจะถูกกำหนดในรูปแบบ key: value และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา เราได้กำหนดค่าเริ่มต้นสามค่าให้กับ Dictionary และสามารถกำหนดค่าให้กับ Dictionary ในรูปแบบ scores[&#39;bobby&#39;] ได้หลังจากที่ตัวแปรถูกสร้างแล้ว สังเกตว่าเราสามารถใช้ Key เป็น String หรือประเภทข้อมูลอื่นๆ ได้ ต่อมาตัวแปร numbers เป็น Dictionary ที่มี Key เป็นตัวเลข</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aticles Python on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/</link>
+    <description>Recent content in Aticles Python on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Jan 2020 10:42:26 +0600</lastBuildDate>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>24 เคล็ดลับ การใช้งาน Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/24-trick-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/24-trick-python/</guid>
+      <description>24 เคล็ดลับ การใช้งาน Python Python เป็นอีกหนึ่งภาษา Programming ที่ได้รับความนิยม ถูกนำไปใช้ในการเขียน Program ได้หลากหลายประเภท โดยไม่ได้จำกัดอยู่ที่งานเฉพาะทางใดทางหนึ่ง ไม่ว่าจะเป็นการพัฒนา Web หรือด้าน Data Science และ Machine Learning เป็นต้น จึงทำให้มีการนำไปใช้กันอย่างแพร่หลาย วันนี้เรามาดู 24 เคล็ดลับ การใช้งาน Python ที่จะช่วยให้คุณประหยัดเวลาและทำงานได้สะดวกขึ้น โดยดูตัวอย่างการใช้งานในแต่ละหัวข้อกันได้เลย
+1. Unpacking Array Items (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/01.png)
+2. Swapping Variables 3. Profile And Stats Of Your Code
+3. Profile And Stats Of Your Code
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png)
+4. Repeat String
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png)
+5. Slicing
+(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png)
+6. Reversing
+
+7. Negative Index
+ถ้าคุณต้องการที่จะเริ่มต้นจาก Character ตัวสุดท้าย สามารถใช้ Negative Index ได้</description>
+    </item>
+    
+    <item>
+      <title>Python 101</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101/</guid>
+      <description>Python 101 ฉบับรวบลัด การแสดงผล และรับข้อมูล เริ่มแรกลอง print “hello world” กันก่อน
+print(&amp;quot;hello_world&amp;quot;)  Data type (ประเภทข้อมูล) 1. String String ก็เป็นตัวแปรที่เก็ยตัวอักษร หรือข้อความ คราวนี้เรามาลองรับ input เป็นชื่อเก็บใส่ตัวแปรที่ชื่อว่า name แล้ว print ออกมากันครับ
+ในที่นี้ตัวแปร name ก็จะมี data type คือ string นั้นเอง
+name = input(&amp;quot;What is your name? &amp;quot;) print(&amp;quot;Hello &amp;quot;,name)  2. Numeric    Type Description     Integer จำนวนเต็ม เช่น 10, 20   Float ทศนิยม เช่น 10.0, 20.5    ต่อมาลองรับ input เป็น integer 1 ตัว และ float 1 ตัว แล้วเอามาบวกกันแสดงผลรับเป็น integer</description>
+    </item>
+    
+    <item>
+      <title>From Zero to Hero</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/from-zero/</link>
+      <pubDate>Fri, 17 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/from-zero/</guid>
+      <description>Learning Python: From Zero to Hero First of all, what is Python? According to its creator, Guido van Rossum, Python is a:
+ “high-level programming language, and its core design philosophy is all about code readability and a syntax which allows programmers to express concepts in a few lines of code.”
+ For me, the first reason to learn Python was that it is, in fact, a beautiful programming language.</description>
+    </item>
+    
+    <item>
+      <title>Dictionaries</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</link>
+      <pubDate>Fri, 17 Jan 2020 11:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</guid>
+      <description>Python Dictionaries Data structures are basically containers that store data in predefined layouts, optimized for certain operations — like apples in a box, ready for picking😉.
+The Python programming language natively implements a number of data structures. Lists, tuples, sets, dictionaries are but some of them. We will be looking at the dictionary data type in subsequent sections.
+What are dictionaries ? key-value mapping  A dictionary in python is a mapping object that maps keys to values, where the keys are unique within a collection and the values can hold any arbitrary value.</description>
+    </item>
+    
+    <item>
+      <title>An A-Z of useful Python tricks</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/useful-python-tricks/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/useful-python-tricks/</guid>
+      <description>An A-Z of useful Python tricks Source : FreeCodeCamp.org
+Python is one of the world’s most popular, in-demand programming languages. This is for many reasons:
+ it’s easy to learn it’s super versatile it has a huge range of modules and libraries  I use Python daily as an integral part of my job as a data scientist. Along the way, I’ve picked up a few useful tricks and tips.</description>
+    </item>
+    
+    <item>
+      <title>Code Examples</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-code-example/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-code-example/</guid>
+      <description>Python Code Examples By : freeCodeCamp
+Python is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles.
+Python Data Structures Example Some general information about floating point numbers and how they work in Python, can be found here.
+Nearly all implementations of Python follow the IEEE 754 specification: Standard for Binary Floating-Point Arithmetic. More information found on the IEEE site.</description>
+    </item>
+    
+    <item>
+      <title>Converting Strings using datetime</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/onverting-strings-to-datetime/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/onverting-strings-to-datetime/</guid>
+      <description>Converting Strings using datetime The datetime module consists of three different object types: date, time and datetime. As you may have guessed, date holds the date, time holds the time, and datetime holds both date and time.
+For example, the following example will print the current date and time:
+import datetime print (&#39;Current date/time: {}&#39;.format(datetime.datetime.now()))  Running this code will print an output similar to below:
+$ python3 datetime-print-1.py Current date/time: 2018-06-29 08:15:27.</description>
+    </item>
+    
+    <item>
+      <title>Datetime</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/date-time/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/date-time/</guid>
+      <description>Datetime import datetime x = datetime.datetime.now() print(x)  2019-09-26 00:21:06.668559  Date Output import datetime x = datetime.datetime.now() print(x.year) print(x.strftime(&amp;quot;%A&amp;quot;))  2019 Thursday  Creating Date Objects import datetime x = datetime.datetime(2020, 5, 17) print(x)  2020-05-17 00:00:00  The strftime() Method import datetime x = datetime.datetime(2018, 6, 1) print(x.strftime(&amp;quot;%B&amp;quot;))  June  A reference of all the legal format codes:    Directive Description Example     %a Weekday, short version Wed   %A Weekday, full version Wednesday   %w Weekday as a number 0-6, 0 is Sunday 3   %d Day of month 01-31 31   %b Month name, short version Dec   %B Month name, full version December   %m Month as a number 01-12 12   %y Year, short version, without century 18   %Y Year, full version 2018   %H Hour 00-23 17   %I Hour 00-12 05   %p AM/PM PM   %M Minute 00-59 41   %S Second 00-59 08   %f Microsecond 000000-999999 548513   %z UTC offset +0100   %Z Timezone CST   %j Day number of year 001-366 365   %U Week number of year, Sunday as the first day of week, 00-53 52   %W Week number of year, Monday as the first day of week, 00-53 52   %c Local version of date and time Mon Dec 31 17:41:00 2018   %x Local version of date 12/31/18   %X Local version of time 17:41:00   %% A % character %    timedelta ตัวอย่างการหาผลต่างของวันที่</description>
+    </item>
+    
+    <item>
+      <title>Extract table from PDF</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-02/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-02/</guid>
+      <description>tabula-py: Extract table from PDF into Python DataFrame As of Oct. 2019, I launched a documentation site and Google Colab notebook for tabula-py. The FAQ would be good place to execute accurate extraction.
+It is simple wrapper of tabula-java and it enables you to extract table into DataFrame or JSON with Python. You also can extract tables from PDF into CSV, TSV or JSON file.
+tabula is a tool to extract tables from PDFs.</description>
+    </item>
+    
+    <item>
+      <title>Functions and Functional Programming</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-functions_and-functional-programming/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-functions_and-functional-programming/</guid>
+      <description>Tutorial: Python Functions and Functional Programming  https://www.dataquest.io/blog/introduction-functional-programming-python/  Most of us have been introduced to Python as an object-oriented language, but Python functions are also useful tools for data scientists and programmers alike. While classes, and objects, are easy to start working with, there are other ways to write your Python code. Languages like Java can make it hard to move away from object-oriented thinking, but Python makes it easy.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with APIs</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-api-tutorial/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-api-tutorial/</guid>
+      <description>Python API Tutorial: Getting Started with APIs In this Python API tutorial, we’ll learn how to retrieve data for data science projects. There are millions of APIs online which provide access to data. Websites like Reddit, Twitter, and Facebook all offer certain data through their APIs.
+To use an API, you make a request to a remote web server, and retrieve the data you need.
+But why use an API instead of a static CSV dataset you can download from the web?</description>
+    </item>
+    
+    <item>
+      <title>Introduction Pickle Module</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-pickle-module/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-pickle-module/</guid>
+      <description>Introduction to the Python Pickle Module Introduction Pickling is a popular method of preserving food. According to Wikipedia, it is also a pretty ancient procedure – although the origins of pickling are unknown, the ancient Mesopotamians probably used the process 4400 years ago. By placing a product in a specific solution, it is possible to drastically increase its shelf life. In other words, it&amp;rsquo;s a method that lets us store food for later consumption.</description>
+    </item>
+    
+    <item>
+      <title>OOP in Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/oop-in-python/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/oop-in-python/</guid>
+      <description>Object Oriented Programming in Python  Introduction Pros and Cons of OOP Class Objects Attributes Methods Constructors Local vs Global Variables Access Modifiers Inheritance Polymorphism Encapsulation Conclusion  Introduction Object-Oriented Programming (OOP) is a programming paradigm where different components of a computer program are modeled after real-world objects. An object is anything that has some characteristics and can perform a function.
+Consider a scenario where you have to develop a Formula 1 car racing game using the object-oriented programming approach.</description>
+    </item>
+    
+    <item>
+      <title>Optimizations</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-optimizations/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-optimizations/</guid>
+      <description>Python Optimizations Peephole is a way Python optimizes certain things of your program at compile time by either pre-calculating constant expressions or transforming certain data structures. Constant Expressions Optimizing constant expressions is really simple. What Python does is basically pre-calculate constants. Suppose that along your program you have the following multiplication for some reason,
+secondsInADay = 60*60*24  What python will do is pre-calculate that multiplication and will replace it for 86400 .</description>
+    </item>
+    
+    <item>
+      <title>Overloading Functions and Operators</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/overloading-functions/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/overloading-functions/</guid>
+      <description>Overloading Functions and Operators in Python What is Overloading? Overloading, in the context of programming, refers to the ability of a function or an operator to behave in different ways depending on the parameters that are passed to the function, or the operands that the operator acts on. In this article, we will see how we can perform function overloading and operator overloading in Python.
+Overloading a method fosters reusability.</description>
+    </item>
+    
+    <item>
+      <title>Python Dictionary Tutorial</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionary-tutorial/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionary-tutorial/</guid>
+      <description>Python Dictionary Tutorial  Introduction Creating a Dictionary Accessing Elements Adding Elements Updating Elements Removing Elements Other Common Methods Conclusion  Introduction Python comes with a variety of built-in data structures, capable of storing different types of data. A Python dictionary is one such data structure that can store data in the form of key-value pairs. The values in a Python dictionary can be accessed using the keys. In this article, we will be discussing the Python dictionary in detail.</description>
+    </item>
+    
+    <item>
+      <title>Python for PDF</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-01/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-01/</guid>
+      <description>Python for Pdf Why Python for PDF processing PDF processing comes under text analytics. Most of the Text Analytics Library or frameworks are designed in Python only. This gives leverage on text analytics. Once you extract the useful information from PDF you can easily use that data into any Machine Learning or Natural Language Processing Model.
+Common Python Libraries Here is the list of some Python Libraries could be used to handle PDF files</description>
+    </item>
+    
+    <item>
+      <title>Python Programming in R</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-programming-in-r/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-programming-in-r/</guid>
+      <description>Python Programming in R  All code used in this tutorial can be found here: https://github.com/joelalcedo/Python_in_R
+ I am a Data Scientist working in New York. I have worked on a number of different projects spanning data visualization, machine learning and software development all in hopes to better understand the complexities associated with the financial markets. I started learning how to program about 10 years ago in visual basic. One thing led to another (as it does) and I learned SQL, R, Python, JavaScript (regrettably), C++ and others.</description>
+    </item>
+    
+    <item>
+      <title>Python Time Module</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-time-module./</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-time-module./</guid>
+      <description>A Beginner’s Guide to the Python time Module Table of Contents
+ Dealing With Python Time Using Seconds  The Epoch Python Time in Seconds as a Floating Point Number Python Time in Seconds as a String Representing Local Time  Understanding Time Zones  UTC and Time Zones Daylight Savings Time  Dealing With Python Time Using Data Structures  Python Time as a Tuple Python Time as an Object  Converting Python Time in Seconds to an Object  Coordinated Universal Time (UTC) Local Time  Converting a Local Time Object to Seconds Converting a Python Time Object to a String  asctime() strftime()  Converting a Python Time String to an Object Suspending Execution Measuring Performance Conclusion Further Reading  The Python time module provides many ways of representing time in code, such as objects, numbers, and strings.</description>
+    </item>
+    
+    <item>
+      <title>Python vs. Scala  (Part I)</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-1/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-1/</guid>
+      <description>Python vs. Scala: a comparison of the basic commands (Part I) Source :
+I recently started playing a little bit with Scala, and I have to say it has been kind of traumatic. I love learning new things but after months of programming with Python, it is just not natural to set that aside and switch mode while solving Data Science problems. When learning a new language, whether it is a coding or a spoken one, it is normal for this to happen.</description>
+    </item>
+    
+    <item>
+      <title>Python vs. Scala  (Part II)</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-2/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-2/</guid>
+      <description>Pandas vs. Spark: how to handle dataframes (Part II) “Panda statues on gray concrete stairs during daytime” by chuttersnap on Unsplash. “Scala” means “stairway” in Italian, my native language: hence the choice of the picture. It just seemed appropriate.
+A few days ago I published a post comparing the basic commands of Python and Scala: how to deal with lists and arrays, functions, loops, dictionaries and so on. As I continue practicing with Scala, it seemed appropriate to follow-up with a second part, comparing how to handle dataframes in the two programming languages, in order to get the data ready before the modeling process.</description>
+    </item>
+    
+    <item>
+      <title>Send email using SMTP</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/use-python-send-email/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/use-python-send-email/</guid>
+      <description>Use Python to send email using SMTP Use Python to send emails
+In this tutorial, we will learn to use python to send emails. If you are new to python, you can see our beginner’s series. In case you are having trouble installing Python, you can see our posts on installing python on MacOS and Windows.
+We will start with sending plain email using python and then learn to send advanced automated emails, HTML emails, emails with attachments etc.</description>
+    </item>
+    
+    <item>
+      <title>Set Passwords and Secret Keys</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/</guid>
+      <description>Set Passwords and Secret Keys in Environment Variables (Mac/Linux/Windows) Hide Passwords and Secret Keys in Environment Variables
+If you are into python , there is a fair chance that you would have contributed to open-source or had your code snippets/projects on Github or BitBucket.Some time your code involves some important credentials like passwords or secret keys etc. like the code for our post on how to send emails using python uses google/app password.</description>
+    </item>
+    
+    <item>
+      <title>การใช้งาน Virtualenv</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/virtualenv/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/virtualenv/</guid>
+      <description>การใช้งาน Virtualenv Virtualenv คืออะไร Virtualenv(ironment) คือ environment ของ python เช่น คุณทำโปรแกรมอยู่ 2 ตัว A กับ B แล้วเวลาคุณจะติดตั้ง library ถ้าคุณ pip install ลงไปเลย
+ library ที่คุณใช้กับงาน A กับปนมั่วกับงาน B  เช่น เวลาจะทำไฟล์ requirement เพื่อให้คนอื่น สามารถติดตั้ง library ที่ใช้กับงานเราได้สะดวกมากขึ้นก็กลับกลายเป็นว่า งาน A ใช้ 5 library งาน B ใช้ 10 Libray สรุป คนที่เอาโปรแกรมเราไม่ไปใช้ก็ไม่รู้ว่า โปรแกรมเราใช้ library อะไรบ้างก็ต้องติดตั้งทั้งหมด 15 library
+ หรือแบบไม่สามารถแยก version ของ library กันได้  เช่น งาน A ใช้ OpenCV 3 แต่ งาน B ใช้ OpenCV 4 ทำไงให้ลง 2 version พร้อมกันได้ละ ก็ต้องให้เจ้า Virtualenv ช่วยเราไง</description>
+    </item>
+    
+  </channel>
+</rss>

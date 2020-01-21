@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pandas on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/</link>
+    <description>Recent content in Pandas on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Jan 2020 10:42:26 +0600</lastBuildDate>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Simple Example-Based Guide</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/</guid>
+      <description>NumPy Tutorial: A Simple Example-Based Guide  Introduction Advantages of NumPy NumPy Operations Creating a NumPy Array  The array Method The arange Method The zeros Method The ones Method The linspace Method The eye Method The random Method  Reshaping NumPy Array Finding Max/Min Values Array Indexing in NumPy  Indexing with 1-D Arrays Indexing with 2-D Arrays  Arithmetic Operations with NumPy Arrays  The log Function The exp Function The sqrt Function The sin Function  Linear Algebra Operations with NumPy Arrays  Finding the Vector Dot Product Matrix Multiplication Finding the Inverse of a Matrix Finding the Determinant of a Matrix Finding the Trace of a Matrix  Conclusion  Introduction The NumPy library is a popular Python library used for scientific computing applications, and is an acronym for &amp;ldquo;Numerical Python&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>10 Pandas tips</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/</guid>
+      <description>10 Python Pandas tips to make data analysis faster Source
+1. Styling Have you ever complained about the table output looks boring when you do .head() in Jupyter notebooks? Is there a way not to display indexes (especially when there is already an ID column)? There’re ways to fix these issues.
+A. Highlight all negative values in a dataframe. (example revised from https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html)
+import pandas as pd def color_negative_red(val): color = &#39;red&#39; if val &amp;lt; 0 else &#39;black&#39; return &#39;color: %s&#39; % colordf = pd.</description>
+    </item>
+    
+    <item>
+      <title>21 Pandas operations</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</guid>
+      <description>21 Pandas operations for absolute beginners  Source  Prerequisites: Python and NumPy basics.
+A CSV file is comma-separated so in order to read a CSV file, do:
+df = pd.read_csv(file_path, sep=’,’, header = 0, index_col=False,names=None)  Explanation:
+read_csv function has a plethora of parameters and I have specified only a few, ones that you may use most often. A few key points:
+a) - header=0 means you have the names of columns in the first row in the file and if you don’t you will have to specify header=None b)  - index_col = False means to not use the first column of the data as an index in the data frame, you might want to set it to true if the first column is really an index.</description>
+    </item>
+    
+    <item>
+      <title>Basic Data Analysis</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/</guid>
+      <description>Introduction to basic data analysis with Pandas (Private Munich Housemarket data set) Source
+This article is the continuation from a previous article (here link to medium) where I explained my goal of identifying the value of House Market in Munich in order to buy a house.
+Since I get the data, buying a house in Munich is out the question, I don’t (and probably will never) earn enough to actually realize that but the data are still interesting in order to do a quick look at data analysis with pandas.</description>
+    </item>
+    
+    <item>
+      <title>House Market Analysis 1</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</guid>
+      <description>Python Pandas : House Market Analysis – Munich (2016-2017) (1&amp;frasl;2) Source
+I started to use python for other things than Data Analysis at the beginning. I was a technical SEO consultant and wanted to use a crawler (or built one) and not knowing any programming language, python looked as the perfect language to start with…
+Flash forward to nowadays, I am even more fan of python now because of its versatility to do what I just mentioned and also to realize data analysis easily.</description>
+    </item>
+    
+    <item>
+      <title>Pandas Cheatsheet</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/</guid>
+      <description>Cheatsheet วิธีใช้ และเทคนิคใน Pandas (Python) ฉบับสมบูรณ์ Pandas คืออะไร? Pandas เป็น Library ใน Python ที่ทำให้เราเล่นกับข้อมูลได้ง่ายขึ้น เหมาะมากสำหรับทำ Data Cleaning / Wrangling ครับผม
+วิธีการใช้งาน Pandas คือ โหลดไฟล์ข้อมูล เช่น CSV เข้าไป แล้วเราจะได้ข้อมูลในรูปแบบตาราง (DataFrame) ที่แบ่งข้อมูลตามแถวและคอลัมน์ หรือเหมือน Excel ที่เราใช้กันนั่นเอง
+
+ตัวอย่าง DataFrame ของ Pandas เป็นตารางเหมือน Excel เลยครับ
+ป.ล. Pandas ไม่เกี่ยวกับหมีแพนด้านะฮะ จริง ๆ แล้วมาจากคำว่า PANel DAta ซึ่งหมายถึงข้อมูลที่มีหลายมิตินั่นเอง
+เทคนิคการใช้ Pandas อย่างที่แอดมินเคยเล่า ว่าการทำ Data Wrangling เป็นงานที่ค่อนข้างถึกครับ วันนี้เลยรวบรวมโค้ดต่าง ๆ ในการใช้ Pandas มาให้ ซึ่งน่าจะครอบคลุมการใช้งานประมาณ 80 – 90% แล้วครับผม
+โค้ดบางส่วนมาจากคลาส Data Wrangling ที่แอดมินเรียน และจากเว็บไซต์ MyCheatSheet ครับ</description>
+    </item>
+    
+    <item>
+      <title>Selecting Subsets of Data 1</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/</link>
+      <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/</guid>
+      <description>Selecting Subsets of Data in Pandas Part 1  Source  This article is available as a Jupyter Notebook complete with exercises at the bottom to practice and detailed solutions in another notebook.
+Become an Expert  My book Master Data Analysis with Python is the most comprehensive text on the market to learn data analysis using Python and comes with 300+ exercises and projects. Sign-up for the FREE Intro to Pandas class Follow me on Twitter @TedPetrou for my daily data science tricks  Part 1: Selection with [ ], .</description>
+    </item>
+    
+  </channel>
+</rss>

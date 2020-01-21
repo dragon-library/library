@@ -3,15 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/24-trick-python/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/e-book/automate-the-boring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-1/</loc>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-1/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/</loc>
   </url>
   
   <url>
@@ -23,11 +50,33 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/</loc>
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/pythonthailand/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/from-zero/</loc>
+    <lastmod>2020-01-05T10:42:26+06:00</lastmod>
   </url>
   
   <url>
@@ -39,7 +88,32 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/e-book/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</loc>
+    <lastmod>2020-01-05T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</loc>
   </url>
   
   <url>
@@ -48,6 +122,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/cheat-sheet/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/</loc>
   </url>
   
   <url>
@@ -117,18 +195,155 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-14/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-15/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-16/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/useful-python-tricks/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-code-example/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/onverting-strings-to-datetime/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/date-time/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/</loc>
-    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/functions/</loc>
-    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/functions/newfunction/</loc>
-    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-02/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-functions_and-functional-programming/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-api-tutorial/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-pickle-module/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/oop-in-python/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-optimizations/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/overloading-functions/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionary-tutorial/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-for-pdf-01/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-programming-in-r/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-time-module./</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-1/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-2/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/use-python-send-email/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-analysis-in-python/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/virtualenv/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
   
   <url>
@@ -147,7 +362,47 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</loc>
   </url>
   
 </urlset>

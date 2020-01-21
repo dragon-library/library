@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python vs. Scala  (Part I)"><meta property="og:title" content="Python vs. Scala  (Part I)" />
+<meta property="og:description" content="Python vs. Scala: a comparison of the basic commands (Part I) Source :
+I recently started playing a little bit with Scala, and I have to say it has been kind of traumatic. I love learning new things but after months of programming with Python, it is just not natural to set that aside and switch mode while solving Data Science problems. When learning a new language, whether it is a coding or a spoken one, it is normal for this to happen." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Python vs. Scala  (Part I) | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" >
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/"  class="active">
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python vs. Scala  (Part I)</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-vs-scala-a-comparison-of-the-basic-commands-part-i">Python vs. Scala: a comparison of the basic commands (Part I)</h1>
+
+<p><a href="https://towardsdatascience.com/python-vs-scala-a-comparison-of-the-basic-commands-fae23b3ede23"><strong>Source :</strong></a></p>
+
+<p><img src="https://miro.medium.com/max/6000/0*MQCagguIxVmU3ucb" alt="enter image description here" /></p>
+
+<p>I recently started playing a little bit with Scala, and I have to say it has been kind of traumatic. I  <strong>love</strong>  learning new things but after months of programming with Python, it is just not natural to set that aside and switch mode while solving Data Science problems. When learning a new language, whether it is a coding or a spoken one, it is normal for this to happen. We tend to fill in the gaps of the things we don’t know with the things we know, even if they don’t belong to the language we are trying to write/speak! When trying to learn a new language, it is important to be completely surrounded by the language you want to learn, but first of all, it is important to have well established parallelisms between the known and the new language, at least in the beginning. This works for me, a bilingual person who learned a second language really quickly, at an adult age. At the beginning, I needed connections between Italian (the language I knew) and English (the language I was learning), but as I became more and more fluent in English, I started to forget the parallelisms because it was just becoming natural and I didn’t need to translate it in my head first, anymore. The reason why I decided to write this post is, in fact, to establish parallelisms between Python and Scala, for people who are fluent in one of the two, and are starting to learn the other one, like myself.</p>
+
+<p>I initially wanted to focus on Pandas/Sklearn and Spark, but I realized that it doesn’t make much sense without covering the foundations first. This is why in this post we’ll look at the basics of Python and Scala: how to handle strings, lists, dictionaries and so on. I intend in the near future to publish a second part, where I will cover how to handle dataframes and build predictive models in both languages.</p>
+
+<hr />
+
+<h2 id="1-first-things-first">1. First things first</h2>
+
+<p>The first difference is the convention used when coding is these two languages: this will not throw an error or anything like that if you don’t follow it, but it’s just a non-written rule that coders follow.</p>
+
+<p>When defining a new variable, function or whatever, we always pick a name that makes sense to us, that most likely will be composed by two or more words. If this is the case, in Python we will use  <code>snake_case</code>, while in Scala<code>camelCase</code>: the difference is immediately noticeable. In snake case, all words all lower-case and we use  <code>_</code>  to separate them, in camel case there is no separation, and all words are capitalized except for the first one.</p>
+
+<p>Another striking difference is how we define the variables in the two languages. In Python we just make up a name and assign it to the value we need it to be, while in Scala, we need to specify whether we are defining a variable or a value, and we do this by placing  <code>var</code>  or  <code>val</code>  respectively, before the name (notice that this is valid whether we are assigning numerical values or strings).</p>
+
+<p><img src="https://miro.medium.com/max/30/1*Sbm5O0hKW2_qpHhcG62A2w.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/700/1*Sbm5O0hKW2_qpHhcG62A2w.png" alt="" /></p>
+
+<p>Initializing values and variables in Scala.</p>
+
+<p>The difference between  <code>var</code>  and  <code>val</code>  is simple: variables can be modified, while values cannot. In the example represented in the image, I instantiated a<code>var</code>  string and then changed it: all good. Then, I assigned the same string to a  <code>val</code>  and tried to change it again: not doable.</p>
+
+<p>In Python there is no need to specify: if you want to change something you previously assigned, it’s up to you. In Python’s case I would just do<code>string = 'my_string'</code>.</p>
+
+<p>Another general difference regards commenting. In Python there is only one way to do it, whether it’s a single or multi-line, and that is putting a  <code>#</code>  before the comment, on each line:</p>
+
+<p><code># this is a commented line in Python</code></p>
+
+<p>Scala offers a couple of ways to comment, and these are either putting  <code>//</code>  on each line, or wrap the comment between  <code>/*</code>  and  <code>*/</code>:</p>
+
+<pre><code>// this is a commented line in Scala  
+/* and this is a multiline comment, still in Scala...  
+...just choose! */
+</code></pre>
+
+<p>Now that the very basics are explained, let’s see dive deeper.</p>
+
+<h2 id="2-lists-and-arrays">2. Lists and arrays</h2>
+
+<p>List (in Python) or Array (in Scala) are among the most important objects: they can contain strings and/or numbers, we can manipulate them, iterate over them, add or subtract elements and so on. They can basically serve any purposes, and I don’t think I have ever coded anything without using them, so let’s see what we can do with them, and how.</p>
+
+<h3 id="2-1-define">2.1. Define</h3>
+
+<p>Let’s create a list containing a mix of numbers and strings.</p>
+
+<pre><code class="language-py">my_list = [2, 5, 'apple', 78]  **# Python**
+
+var myArray = Array(2, 5, &quot;apple&quot;, 78) **// Scala**  
+</code></pre>
+
+<p><strong>/* notice that in Scala I wrapped the string between &ldquo;&rdquo;, and that is the only way to do it! In python you can use both &ldquo;&rdquo; and &ldquo; indifferently */</strong></p>
+
+<h3 id="2-2-indexing">2.2. Indexing</h3>
+
+<p>Both lists and arrays are zero indexed, which means that the first element is placed at the index 0. So, if we want to extract the second element:</p>
+
+<pre><code class="language-py">my_list[1]  **# Python** uses [] to index
+myArray(1)  **// Scala**  uses () to index
+</code></pre>
+
+<h3 id="2-3-slicing">2.3. Slicing</h3>
+
+<p>In both languages, the second index will not be counted when slicing. So, if we want to extract the first 3 elements:</p>
+
+<p><code>my_list[0:3]  **# Python** slicing works like indexing</code></p>
+
+<p><code>myArray.slice(0,3)  **// Scala** needs the .slice()</code></p>
+
+<h3 id="2-4-checking-first-last-maximum-and-minimum-element">2.4. Checking first, last, maximum and minimum element</h3>
+
+<pre><code class="language-py">**# Python**my_list[0]     # first element  
+my_list[-1]    # last element  
+max(my_list)   # maximum element  
+min(my_list)   # minimum element# 
+</code></pre>
+
+<p>NOTE: min() and max() will work exclusively if the list contains</p>
+
+<pre><code class="language-py"># numbers only!**// Scala**myArray.head    // first element  
+myArray(0)      // other way to check the first element  
+myArray.last    // last element  
+myArray.max     // maximum element  
+myArray.min     // minimum element/* 
+</code></pre>
+
+<p>NOTE: .min and .max will work exclusively if the array contains numbers only!*/</p>
+
+<h3 id="2-5-sum-and-product">2.5. Sum and product</h3>
+
+<p>These operations, as for min and max, will be supported only if the lists/arrays contain exclusively numbers. Also, to multiply all the elements in a Python’s list, we will need to set up a  <code>for</code>  loop, which will be covered further down in the post. There is no preloaded function for that, as opposed to Scala.</p>
+
+<pre><code class="language-py">sum(my_list) # summing elements in  **Python**'s list
+
+// **Scala**  
+myArray.sum   // summing elements in array  
+myArray.product  // multiplying elements in array
+</code></pre>
+
+<h3 id="2-6-adding-elements">2.6. Adding elements</h3>
+
+<p>Lists and arrays are not ordered, so it’s common practice to add elements at the end. Let’s say we want to add the string  <code>&quot;last words&quot;</code>:</p>
+
+<pre><code class="language-py">my_list.append('last words') # adding at the end of  **Python**'s list
+
+myArray :+= &quot;last words&quot; // adding at the end of  **Scala**'s array
+</code></pre>
+
+<p>If, for some reason, we want to add something at the very beginning, let’s say the number  <code>99</code>:</p>
+
+<pre><code class="language-py">my_list.insert(0, 99) 
+
+# this is a generic method in **Python**. The   
+# first number you specify in the parenthesis is the index of the   
+# position where you want to add the element.  
+# 0 means that you want the element to be added at the very   
+# beginningmyArray +:= 99 /* adding an element at the beginning of **Scala**'s array */
+</code></pre>
+
+<h2 id="3-print">3. Print</h2>
+
+<p>This is also something that we use all the time while coding, luckily there is a only a slight difference between the two languages.</p>
+
+<pre><code class="language-py">print(&quot;whatever you want&quot;) # printing in  **Python**
+
+println(&quot;whatever you want&quot;) // printing in  **Scala**
+</code></pre>
+
+<h2 id="4-for-loop">4. For loop</h2>
+
+<p>Quite a few differences here: while Python requires indentation to create a block and colon after the statement, Scala wants the for conditions in parenthesis, and the block in curly brackets with no indentation needed. I like to use indentation anyway though, it makes the code look neater.</p>
+
+<pre><code class="language-py"># for loop in **Python** 
+
+for i in my_list:  
+    print(i)// for loop in **Scala**  
+for (i &lt;- myArray){  
+    println(i)  
+}
+</code></pre>
+
+<h2 id="5-mapping-and-or-filtering">5. Mapping and/or filtering</h2>
+
+<p>All things that, in Python, can be done by using list comprehensions. In Scala we will have to use functions.</p>
+
+<h3 id="5-1-mapping">5.1. Mapping</h3>
+
+<p>Let’s say we have a list/array with only numeric values and we want to triple all of them.</p>
+
+<pre><code class="language-py">[i*3 for i in my_list] # mapping in  **Python**
+
+myArray.map(i =&gt; i*3) // mapping in  **Scala**
+</code></pre>
+
+<h3 id="5-2-filtering">5.2. Filtering</h3>
+
+<p>Let’s say we have a list/array with only numeric values and we want to filter only those divisible by 3.</p>
+
+<pre><code class="language-py">[i for i in my_list if i%3 == 0] # filtering in  **Python**
+
+myArray.filter(i =&gt; i%3 == 0) // filtering in  **Scala**
+</code></pre>
+
+<h3 id="5-3-filtering-and-mapping">5.3. Filtering and mapping</h3>
+
+<p>What if we want to find the even numbers and multiply only them by 3?</p>
+
+<pre><code class="language-py">[i*3 for i in my_list if i%2 == 0] #  **Python**
+
+myArray.filter(i =&gt; i%2 == 0).map(i =&gt; i*3) //  **Scala**
+</code></pre>
+
+<h2 id="6-dictionaries-maps">6. Dictionaries/Maps</h2>
+
+<p>Although they have different names in the two languages, they are exactly the same thing. They both have  <code>keys</code>  to which we assign  <code>values</code>.</p>
+
+<h3 id="6-1-create-dictionary-map">6.1. Create dictionary/map</h3>
+
+<p>Let’s create one storing my first, last name and age… and let’s also pretend I am 18.</p>
+
+<pre><code class="language-py"># **Python**  
+
+my_dict = {  
+'first_name': 'Emma',  
+'last_name': 'Grimaldi',  
+'age': 18  
+}
+</code></pre>
+
+<p>In Scala we can do this in two different ways.</p>
+
+<pre><code class="language-scala">// **Scala** mode 1  
+var myMap = (  
+&quot;firstName&quot; -&gt; &quot;Emma&quot;,  
+&quot;lastName&quot; -&gt; &quot;Grimaldi&quot;,  
+&quot;age&quot; -&gt; 18  
+)// Scala mode 2  
+var myMap = (  
+(&quot;firstName&quot;, &quot;Emma&quot;),  
+(&quot;lastName&quot;, &quot;Grimaldi&quot;),  
+(&quot;age&quot;, 18)  
+)
+</code></pre>
+
+<h3 id="6-2-adding-to-dictionary-map">6.2. Adding to dictionary/map</h3>
+
+<p>Let’s add my Country of origin to my dictionary/map.</p>
+
+<pre><code class="language-py">my_dict['country_of_origin'] = 'Italy' # creating new key in  **Python**
+
+myMap += (&quot;countryOfOrigin&quot; -&gt; &quot;Italy&quot;) /* creating new key in  **Scala**  */
+</code></pre>
+
+<h3 id="6-3-indexing">6.3. Indexing</h3>
+
+<p>This works the same way as indexing lists/array, but instead of positions, we are using keys. If I want to see my first name:</p>
+
+<pre><code class="language-py"># **Python**  
+
+my_dict['first_name']/
+</code></pre>
+
+<pre><code>/ **Scala**  
+myMap(&quot;firstName&quot;)
+</code></pre>
+
+<h3 id="6-4-looping">6.4. Looping</h3>
+
+<p>If we want to print the dictionary/map, we will have to for loop in both cases, over keys and values.</p>
+
+<pre><code class="language-py"># Python  
+
+for key, value in my_dict.items():  
+    print(key)  
+    print(value)// Scala  
+for ((key, value) &lt;- myMap){  
+    println(key)  
+    println(value)  
+}
+</code></pre>
+
+<p>#</p>
+
+<h1 id="7-tuples">7. Tuples</h1>
+
+<p>Yes, they are called the same in both languages! But, while they are zero-index in Python, they are not in Scala. Let’s create a tuple  <code>(1, 2, 3)</code>  and then call the first value.</p>
+
+<pre><code class="language-py"># Python  
+
+my_tup = (1, 2, 3)  
+my_tup[0]
+</code></pre>
+
+<pre><code># the indexing is the same as lists// Scala  
+myTup = (1, 2, 3)  
+myTup._1  
+// the indexing is way different than arrays!
+</code></pre>
+
+<h2 id="8-sets">8. Sets</h2>
+
+<p>Yes, another name in common! In both examples below, the sets will contain only  <code>1, 3, 5</code>  because sets don’t accept duplicates.</p>
+
+<pre><code class="language-py">my_set = {1, 3, 5, 1} # in  **Python**, sets are defined by curly braces
+
+mySet = Set(1, 3, 5, 1) //  **Scala**
+</code></pre>
+
+<h2 id="9-functions">9. Functions</h2>
+
+<p>We have covered a lot so far, good job if you made it down here! This is the last thing paragraph of this post, and luckily defining a function is not that different between Python and Scala. They both start with  <code>def</code>  and while the former requires a  <code>return</code>  statement, the latter does not. On the other hand, Scala wants to know what types of variables we are going to input and output, while Python doesn’t care. Let’s write a very simple function that takes a string as input and returns the first 5 characters.</p>
+
+<pre><code class="language-py"># **Python**  
+
+def chop_string(input_string):  
+    return input_string[0:5]
+</code></pre>
+
+<p>Indentation is also important in Python, or the function will not work. Scala instead just likes its curly braces.</p>
+
+<pre><code class="language-scala">// **Scala**  
+def chopString(inputString: String): String = {  
+    inputString.slice(0, 5)  
+}
+</code></pre>
+
+<hr />
+
+<p>That’s it! I hope you found this helpful as an immediate reference for those of you who are just starting to get familiar with either Python or Scala. The following step will be to build a similar guide to explore the differences between pandas/sklearn and sparks, looking forward to it! I hope you do as well!</p>
+
+<hr />
+
+<p>If you are wondering why you should use Python rather than Scala, or vice versa, I found the image below rather helpful in clarifying the immediate differences between the two.</p>
+
+<p><img src="https://miro.medium.com/max/550/1*ViBVUplkI1_XZtQghucv6A.jpeg" alt="" /></p>
+
+<p><a href="https://www.kdnuggets.com/2018/05/apache-spark-python-scala.html">source link</a></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/30/1*-3XTARCS1twqTj73tB78wg.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/288/1*-3XTARCS1twqTj73tB78wg.png" alt="" /></p>
+
+<p>Feel free to check out:</p>
+
+<p><a href="https://medium.com/@emmagrimaldi/python-pandas-vs-scala-how-to-handle-dataframes-part-ii-d3e5efe8287d">part II of this post</a></p>
+
+<p><a href="https://medium.com/@emmagrimaldi">my other Medium posts.</a></p>
+
+<p><a href="https://www.linkedin.com/in/emmagrimaldi/">my LinkedIn profile.</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5cpython-scala-comparison-part-1.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-vs-scala-a-comparison-of-the-basic-commands-part-i">Python vs. Scala: a comparison of the basic commands (Part I)</a>
+<ul>
+<li><a href="#1-first-things-first">1. First things first</a></li>
+<li><a href="#2-lists-and-arrays">2. Lists and arrays</a>
+<ul>
+<li><a href="#2-1-define">2.1. Define</a></li>
+<li><a href="#2-2-indexing">2.2. Indexing</a></li>
+<li><a href="#2-3-slicing">2.3. Slicing</a></li>
+<li><a href="#2-4-checking-first-last-maximum-and-minimum-element">2.4. Checking first, last, maximum and minimum element</a></li>
+<li><a href="#2-5-sum-and-product">2.5. Sum and product</a></li>
+<li><a href="#2-6-adding-elements">2.6. Adding elements</a></li>
+</ul></li>
+<li><a href="#3-print">3. Print</a></li>
+<li><a href="#4-for-loop">4. For loop</a></li>
+<li><a href="#5-mapping-and-or-filtering">5. Mapping and/or filtering</a>
+<ul>
+<li><a href="#5-1-mapping">5.1. Mapping</a></li>
+<li><a href="#5-2-filtering">5.2. Filtering</a></li>
+<li><a href="#5-3-filtering-and-mapping">5.3. Filtering and mapping</a></li>
+</ul></li>
+<li><a href="#6-dictionaries-maps">6. Dictionaries/Maps</a>
+<ul>
+<li><a href="#6-1-create-dictionary-map">6.1. Create dictionary/map</a></li>
+<li><a href="#6-2-adding-to-dictionary-map">6.2. Adding to dictionary/map</a></li>
+<li><a href="#6-3-indexing">6.3. Indexing</a></li>
+<li><a href="#6-4-looping">6.4. Looping</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#7-tuples">7. Tuples</a>
+<ul>
+<li><a href="#8-sets">8. Sets</a></li>
+<li><a href="#9-functions">9. Functions</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

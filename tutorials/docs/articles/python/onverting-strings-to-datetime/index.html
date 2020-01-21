@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Converting Strings using datetime"><meta property="og:title" content="Converting Strings using datetime" />
+<meta property="og:description" content="Converting Strings using datetime The datetime module consists of three different object types: date, time and datetime. As you may have guessed, date holds the date, time holds the time, and datetime holds both date and time.
+For example, the following example will print the current date and time:
+import datetime print (&#39;Current date/time: {}&#39;.format(datetime.datetime.now()))  Running this code will print an output similar to below:
+$ python3 datetime-print-1.py Current date/time: 2018-06-29 08:15:27." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/python/onverting-strings-to-datetime/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Converting Strings using datetime | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/24-trick-python/" >
+      24 เคล็ดลับ การใช้งาน Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-101/" >
+      Python 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/from-zero/" >
+      From Zero to Hero
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/useful-python-tricks/" >
+      An A-Z of useful Python tricks
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-code-example/" >
+      Code Examples
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/onverting-strings-to-datetime/"  class="active">
+      Converting Strings using datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/date-time/" >
+      Datetime
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-02/" >
+      Extract table from PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-functions_and-functional-programming/" >
+      Functions and Functional Programming
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-api-tutorial/" >
+      Getting Started with APIs
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-pickle-module/" >
+      Introduction Pickle Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/oop-in-python/" >
+      OOP in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-optimizations/" >
+      Optimizations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/overloading-functions/" >
+      Overloading Functions and Operators
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-dictionary-tutorial/" >
+      Python Dictionary Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-for-pdf-01/" >
+      Python for PDF
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-programming-in-r/" >
+      Python Programming in R
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-time-module./" >
+      Python Time Module
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-1/" >
+      Python vs. Scala  (Part I)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/python-scala-comparison-part-2/" >
+      Python vs. Scala  (Part II)
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/use-python-send-email/" >
+      Send email using SMTP
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/set-passwords-and-secret-keys/" >
+      Set Passwords and Secret Keys
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/python/virtualenv/" >
+      การใช้งาน Virtualenv
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Converting Strings using datetime</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="converting-strings-using-datetime">Converting Strings using datetime</h1>
+
+<p>The  <a href="https://docs.python.org/3/library/datetime.html">datetime</a>  module consists of three different object types:  <code>date</code>,  <code>time</code>  and  <code>datetime</code>. As you may have guessed,  <code>date</code>  holds the date,  <code>time</code>  holds the time, and  <code>datetime</code>  holds both date and time.</p>
+
+<p>For example, the following example will print the current date and time:</p>
+
+<pre><code class="language-python">import datetime
+
+print ('Current date/time: {}'.format(datetime.datetime.now()))
+
+</code></pre>
+
+<p>Running this code will print an output similar to below:</p>
+
+<pre><code class="language-sh">$ python3 datetime-print-1.py
+Current date/time: 2018-06-29 08:15:27.243860
+
+</code></pre>
+
+<p>When no custom formatting is given, the default string format is used, i.e. the format for &ldquo;2018-06-29 08:15:27.243860&rdquo; is in  <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>  format (YYYY-MM-DDTHH:MM:SS.mmmmmm). If our input string to create a  <code>datetime</code>  object is in the same ISO 8601 format, we can easily parse it to a  <code>datetime</code>  object.</p>
+
+<p>Let&rsquo;s take a look at the code below:</p>
+
+<pre><code class="language-python">import datetime
+
+date_time_str = '2018-06-29 08:15:27.243860'
+date_time_obj = datetime.datetime.strptime(date_time_str, '%Y-%m-%d %H:%M:%S.%f')
+
+print('Date:', date_time_obj.date())
+print('Time:', date_time_obj.time())
+print('Date-time:', date_time_obj)
+
+</code></pre>
+
+<p>Running it will print the below output:</p>
+
+<pre><code class="language-sh">$ python3 datetime-print-2.py
+Date: 2018-06-29
+Time: 08:15:27.243860
+Date-time: 2018-06-29 08:15:27.243860
+
+</code></pre>
+
+<p>In this example, we are using a new method called  <code>strptime</code>. This method takes two arguments: the first one is the string representation of the date-time and the second one is the format of the input string. The return value is of the type  <code>datetime</code>. In our example,  <code>&quot;2018-06-29 08:15:27.243860&quot;</code>  is the input string and  <code>&quot;%Y-%m-%d %H:%M:%S.%f&quot;</code>  is the format of this date string. The returned  <code>datetime</code>  value is stored in  <code>date_time_obj</code>  variable. Since this is a  <code>datetime</code>  variable, we can call  <code>date()</code>  and  <code>time()</code>  methods directly on it. As you can see from the output, it prints the &lsquo;date&rsquo; and &lsquo;time&rsquo; part of the input string.</p>
+
+<p>You might be wondering what is the meaning of the format  <code>&quot;%Y-%m-%d %H:%M:%S.%f&quot;</code>. These are known as  <em>format tokens</em>  with different meaning for each token. Check out the  <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">strptime documentation</a>  for the list of all different types of format code supported in Python.</p>
+
+<p>So, if the format of a string is known, it can be easily parsed to a  <code>datetime</code>  object using  <code>strptime</code>. Let me show you one more non-trivial example:</p>
+
+<pre><code class="language-python">import datetime
+
+date_time_str = 'Jun 28 2018  7:40AM'
+date_time_obj = datetime.datetime.strptime(date_time_str, '%b %d %Y %I:%M%p')
+
+print('Date:', date_time_obj.date())
+print('Time:', date_time_obj.time())
+print('Date-time:', date_time_obj)
+
+</code></pre>
+
+<p>From the following output you can see that the string was successfully parsed since it is being properly printed by the  <code>datetime</code>  object here.</p>
+
+<pre><code class="language-sh">$ python3 datetime-print-3.py
+Date: 2018-06-28
+Time: 07:40:00
+Date-time: 2018-06-28 07:40:00
+
+</code></pre>
+
+<p>Here are a few more examples of commonly used time formats and the tokens used for parsing:</p>
+
+<pre><code>&quot;Jun 28 2018 at 7:40AM&quot; -&gt; &quot;%b %d %Y at %I:%M%p&quot;
+&quot;September 18, 2017, 22:19:55&quot; -&gt; &quot;%B %d, %Y, %H:%M:%S&quot;
+&quot;Sun,05/12/99,12:30PM&quot; -&gt; &quot;%a,%d/%m/%y,%I:%M%p&quot;
+&quot;Mon, 21 March, 2015&quot; -&gt; &quot;%a, %d %B, %Y&quot;
+&quot;2018-03-12T10:12:45Z&quot; -&gt; &quot;%Y-%m-%dT%H:%M:%SZ&quot;
+
+</code></pre>
+
+<p>You can parse a date-time string of any format using the table mentioned in the  <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">strptime documentation</a>.</p>
+
+<h3 id="dealing-with-timezones-and-datetime">Dealing with Timezones and datetime</h3>
+
+<p>Handling date-times becomes more complex while dealing with timezones. All above examples we have discussed are naive  <code>datetime</code>  objects, i.e. these objects don&rsquo;t contain any timezone-related data. The  <code>datetime</code>  object has one variable  <code>tzinfo</code>, that holds the timezone information.</p>
+
+<pre><code class="language-python">import datetime as dt
+
+dtime = dt.datetime.now()
+print(dtime)
+print(dtime.tzinfo)
+
+</code></pre>
+
+<p>This code will print:</p>
+
+<pre><code class="language-sh">$ python3 datetime-tzinfo-1.py
+2018-06-29 22:16:36.132767
+None
+
+</code></pre>
+
+<p>The output of  <code>tzinfo</code>  is  <code>None</code>  since it is a naive  <code>datetime</code>  object. For timezone conversion, one library called  <code>pytz</code>  is available for Python. You can install it as described in  <a href="http://pytz.sourceforge.net/">these instructions</a>. Now, let&rsquo;s use the  <code>pytz</code>  library to convert the above timestamp to  <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC</a>.</p>
+
+<pre><code class="language-python">import datetime as dt
+import pytz
+
+dtime = dt.datetime.now(pytz.utc)
+print(dtime)
+print(dtime.tzinfo)
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">$ python3 datetime-tzinfo-2.py
+2018-06-29 17:08:00.586525+00:00
+UTC
+
+</code></pre>
+
+<p><code>+00:00</code>  is the difference between the displayed time and the UTC time. In this example the value of  <code>tzinfo</code>  happens to be UTC as well, hence the  <code>00:00</code>  offset. In this case, the  <code>datetime</code>  object is a  <em>timezone-aware object</em>.</p>
+
+<p>Similarly, we can convert date-time strings to any other timezone. For example, we can convert the string &ldquo;2018-06-29 17:08:00.586525+00:00&rdquo; to &ldquo;America/New_York&rdquo; timezone, as shown below:</p>
+
+<pre><code class="language-python">import datetime as dt
+import pytz
+
+date_time_str = '2018-06-29 17:08:00'
+date_time_obj = dt.datetime.strptime(date_time_str, '%Y-%m-%d %H:%M:%S')
+
+timezone = pytz.timezone('America/New_York')
+timezone_date_time_obj = timezone.localize(date_time_obj)
+
+print(timezone_date_time_obj)
+print(timezone_date_time_obj.tzinfo)
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">$ python3 datetime-tzinfo-3.py
+2018-06-29 17:08:00-04:00
+America/New_York
+
+</code></pre>
+
+<p>First, we have converted the string to a  <code>datetime</code>  object,  <code>date_time_obj</code>. Then we converted it to a timezone-enabled  <code>datetime</code>  object,  <code>timezone_date_time_obj</code>. Since we have mentioned the timezone as &ldquo;America/New_York&rdquo;, the output time shows that it is  <em>4 hours</em>  behind than UTC time. You can check  <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">this Wikipedia page</a>  to find the full list of available time zones.</p>
+
+<h3 id="converting-timezones">Converting Timezones</h3>
+
+<p>We can convert timezone of a  <code>datetime</code>  object from one region to another, as shown in the example below:</p>
+
+<pre><code class="language-python">import datetime as dt
+import pytz
+
+timezone_nw = pytz.timezone('America/New_York')
+nw_datetime_obj = dt.datetime.now(timezone_nw)
+
+timezone_london = pytz.timezone('Europe/London')
+london_datetime_obj = nw_datetime_obj.astimezone(timezone_london)
+
+
+print('America/New_York:', nw_datetime_obj)
+print('Europe/London:', london_datetime_obj)
+
+</code></pre>
+
+<p>First, it created one datetime object with the current time on &ldquo;America/New_York&rdquo; timezone. Then using  <code>astimezone()</code>  method, we have converted this  <code>datetime</code>  to &ldquo;Europe/London&rdquo; timezone. Both  <code>datetime</code>s will print different values like:</p>
+
+<pre><code class="language-sh">$ python3 datetime-tzinfo-4.py
+America/New_York: 2018-06-29 22:21:41.349491-04:00
+Europe/London: 2018-06-30 03:21:41.349491+01:00
+
+</code></pre>
+
+<h3 id="using-third-party-libraries">Using Third Party Libraries</h3>
+
+<p>Python&rsquo;s  <code>datetime</code>  module can convert all different types of strings to a  <code>datetime</code>  object. But the main problem is that in order to do this you need to create the appropriate formatting code string that  <code>strptime</code>  can understand. Creating this string takes time and it makes the code harder to read. Instead, we can use other third-party libraries to make it easier.</p>
+
+<p>In some cases these third party libraries also have better built-in support for manipulating and comparing date-times, and some even have timezones built-in, so you don&rsquo;t need to include an extra package.</p>
+
+<p>Let&rsquo;s take a look at few of these libraries in the following sections.</p>
+
+<h4 id="dateutil">dateutil</h4>
+
+<p>The  <a href="https://dateutil.readthedocs.io/en/stable/">dateutil module</a>  is an extension to the  <code>datetime</code>  module. We don&rsquo;t need to pass any parsing code to parse a string. For example:</p>
+
+<pre><code class="language-python">from dateutil.parser import parse
+
+datetime = parse('2018-06-29 22:21:41')
+
+print(datetime)
+
+</code></pre>
+
+<p>This  <code>parse</code>  function will parse the string automatically and store it in the  <code>datetime</code>  variable. Parsing is done automatically. You don&rsquo;t have to mention any format string. Let&rsquo;s try to parse different types of strings using  <code>dateutil</code>:</p>
+
+<pre><code class="language-python">from dateutil.parser import parse
+
+date_array = [
+    '2018-06-29 08:15:27.243860',
+    'Jun 28 2018  7:40AM',
+    'Jun 28 2018 at 7:40AM',
+    'September 18, 2017, 22:19:55',
+    'Sun, 05/12/1999, 12:30PM',
+    'Mon, 21 March, 2015',
+    '2018-03-12T10:12:45Z',
+    '2018-06-29 17:08:00.586525+00:00',
+    '2018-06-29 17:08:00.586525+05:00',
+    'Tuesday , 6th September, 2017 at 4:30pm'
+]
+
+for date in date_array:
+    print('Parsing: ' + date)
+    dt = parse(date)
+    print(dt.date())
+    print(dt.time())
+    print(dt.tzinfo)
+    print('\n')
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">$ python3 dateutil-1.py
+Parsing: 2018-06-29 08:15:27.243860
+2018-06-29
+08:15:27.243860
+None
+
+Parsing: Jun 28 2018  7:40AM
+2018-06-28
+07:40:00
+None
+
+Parsing: Jun 28 2018 at 7:40AM
+2018-06-28
+07:40:00
+None
+
+Parsing: September 18, 2017, 22:19:55
+2017-09-18
+22:19:55
+None
+
+Parsing: Sun, 05/12/1999, 12:30PM
+1999-05-12
+12:30:00
+None
+
+Parsing: Mon, 21 March, 2015
+2015-03-21
+00:00:00
+None
+
+Parsing: 2018-03-12T10:12:45Z
+2018-03-12
+10:12:45
+tzutc()
+
+Parsing: 2018-06-29 17:08:00.586525+00:00
+2018-06-29
+17:08:00.586525
+tzutc()
+
+Parsing: 2018-06-29 17:08:00.586525+05:00
+2018-06-29
+17:08:00.586525
+tzoffset(None, 18000)
+
+Parsing: Tuesday , 6th September, 2017 at 4:30pm
+2017-09-06
+16:30:00
+None
+
+</code></pre>
+
+<p>You can see that almost any type of string can be parsed easily using the  <code>dateutil</code>  module.</p>
+
+<h4 id="maya">Maya</h4>
+
+<p><a href="https://github.com/kennethreitz/maya">Maya</a>  also makes it very easy to parse a string and for changing timezones. Some simple examples are shown below:</p>
+
+<pre><code class="language-python">import maya
+
+dt = maya.parse('2018-04-29T17:45:25Z').datetime()
+print(dt.date())
+print(dt.time())
+print(dt.tzinfo)
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">$ python3 maya-1.py
+2018-04-29
+17:45:25
+UTC
+
+</code></pre>
+
+<p>For converting the time to a different timezone:</p>
+
+<pre><code class="language-python">import maya
+
+dt = maya.parse('2018-04-29T17:45:25Z').datetime(to_timezone='America/New_York', naive=False)
+print(dt.date())
+print(dt.time())
+print(dt.tzinfo)
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">$ python3 maya-2.py
+2018-04-29
+13:45:25
+America/New_York
+
+</code></pre>
+
+<p>Now isn&rsquo;t that easy to use? Let&rsquo;s try out  <code>maya</code>  with the same set of strings we have used with  <code>dateutil</code>:</p>
+
+<pre><code class="language-python">import maya
+
+date_array = [
+    '2018-06-29 08:15:27.243860',
+    'Jun 28 2018  7:40AM',
+    'Jun 28 2018 at 7:40AM',
+    'September 18, 2017, 22:19:55',
+    'Sun, 05/12/1999, 12:30PM',
+    'Mon, 21 March, 2015',
+    '2018-03-12T10:12:45Z',
+    '2018-06-29 17:08:00.586525+00:00',
+    '2018-06-29 17:08:00.586525+05:00',
+    'Tuesday , 6th September, 2017 at 4:30pm'
+]
+
+for date in date_array:
+    print('Parsing: ' + date)
+    dt = maya.parse(date).datetime()
+    print(dt)
+    print(dt.date())
+    print(dt.time())
+    print(dt.tzinfo)
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">$ python3 maya-3.py
+Parsing: 2018-06-29 08:15:27.243860
+2018-06-29 08:15:27.243860+00:00
+2018-06-29
+08:15:27.243860
+UTC
+
+Parsing: Jun 28 2018  7:40AM
+2018-06-28 07:40:00+00:00
+2018-06-28
+07:40:00
+UTC
+
+Parsing: Jun 28 2018 at 7:40AM
+2018-06-28 07:40:00+00:00
+2018-06-28
+07:40:00
+UTC
+
+Parsing: September 18, 2017, 22:19:55
+2017-09-18 22:19:55+00:00
+2017-09-18
+22:19:55
+UTC
+
+Parsing: Sun, 05/12/1999, 12:30PM
+1999-05-12 12:30:00+00:00
+1999-05-12
+12:30:00
+UTC
+
+Parsing: Mon, 21 March, 2015
+2015-03-21 00:00:00+00:00
+2015-03-21
+00:00:00
+UTC
+
+Parsing: 2018-03-12T10:12:45Z
+2018-03-12 10:12:45+00:00
+2018-03-12
+10:12:45
+UTC
+
+Parsing: 2018-06-29 17:08:00.586525+00:00
+2018-06-29 17:08:00.586525+00:00
+2018-06-29
+17:08:00.586525
+UTC
+
+Parsing: 2018-06-29 17:08:00.586525+05:00
+2018-06-29 12:08:00.586525+00:00
+2018-06-29
+12:08:00.586525
+UTC
+
+Parsing: Tuesday , 6th September, 2017 at 4:30pm
+2017-09-06 16:30:00+00:00
+2017-09-06
+16:30:00
+UTC
+
+</code></pre>
+
+<p>As you can see, all date formats were parsed, but did you notice the difference? If we are not providing the timezone info it automatically converts it to UTC. So, it is important to note that we need to provide  <code>to_timezone</code>  and  <code>naive</code>  parameters if the time is not in UTC.</p>
+
+<h4 id="arrow">Arrow</h4>
+
+<p><a href="https://arrow.readthedocs.io/en/latest/">Arrow</a>  is another library for dealing with datetime in Python. We can get the Python  <code>datetime</code>  object from an  <code>arrow</code>  object. Let&rsquo;s try this with the same example string we have used for  <code>maya</code>:</p>
+
+<pre><code class="language-python">import arrow
+
+dt = arrow.get('2018-04-29T17:45:25Z')
+print(dt.date())
+print(dt.time())
+print(dt.tzinfo)
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">$ python3 arrow-1.py
+2018-04-29
+17:45:25
+tzutc()
+
+</code></pre>
+
+<p>Timezone conversion:</p>
+
+<pre><code class="language-python">import arrow
+
+dt = arrow.get('2018-04-29T17:45:25Z').to('America/New_York')
+print(dt)
+print(dt.date())
+print(dt.time())
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-sh">$ python3 arrow-2.py
+2018-04-29T13:45:25-04:00
+2018-04-29
+13:45:25
+
+</code></pre>
+
+<p>As you can see the date-time string is converted to the &ldquo;America/New_York&rdquo; region.</p>
+
+<p>Now, let&rsquo;s again use the same set of strings we have used above:</p>
+
+<pre><code class="language-python">import arrow
+
+date_array = [
+    '2018-06-29 08:15:27.243860',
+    #'Jun 28 2018  7:40AM',
+    #'Jun 28 2018 at 7:40AM',
+    #'September 18, 2017, 22:19:55',
+    #'Sun, 05/12/1999, 12:30PM',
+    #'Mon, 21 March, 2015',
+    '2018-03-12T10:12:45Z',
+    '2018-06-29 17:08:00.586525+00:00',
+    '2018-06-29 17:08:00.586525+05:00',
+    #'Tuesday , 6th September, 2017 at 4:30pm'
+]
+
+for date in date_array:
+    dt = arrow.get(date)
+    print('Parsing: ' + date)
+    print(dt)
+    print(dt.date())
+    print(dt.time())
+    print(dt.tzinfo)
+
+</code></pre>
+
+<p>This code will fail for the date-time strings that have been commented out. The output for other strings will be:</p>
+
+<pre><code class="language-sh">$ python3 arrow-3.py
+Parsing: 2018-06-29 08:15:27.243860
+2018-06-29T08:15:27.243860+00:00
+2018-06-29
+08:15:27.243860
+tzutc()
+
+Parsing: 2018-03-12T10:12:45Z
+2018-03-12T10:12:45+00:00
+2018-03-12
+10:12:45
+tzutc()
+
+Parsing: 2018-06-29 17:08:00.586525+00:00
+2018-06-29T17:08:00.586525+00:00
+2018-06-29
+17:08:00.586525
+tzoffset(None, 0)
+
+Parsing: 2018-06-29 17:08:00.586525+05:00
+2018-06-29T17:08:00.586525+05:00
+2018-06-29
+17:08:00.586525
+tzoffset(None, 18000)
+
+</code></pre>
+
+<p>In order to correctly parse the date-time strings that I have commented out, you&rsquo;ll need to pass the corresponding format tokens. For example, &ldquo;MMM&rdquo; for months name, like &ldquo;Jan, Feb, Mar&rdquo; etc. You can check  <a href="https://arrow.readthedocs.io/en/latest/">this guide</a>  for all available tokens.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>We have checked different ways to parse a string to a  <code>datetime</code>  object in Python. You can either opt for the default Python  <code>datetime</code>  library or any of the third party library mentioned in this article, among many others. The main problem with default  <code>datetime</code>  package is that we need to specify the parsing code manually for almost all date-time string formats. So, if your string format changes in the future, you will likely have to change your code as well. But many third-party libraries, like the ones mentioned here, handle it automatically.</p>
+
+<p>One more problem we face is dealing with timezones. The best way to handle them is always to store the time in UTC format on the server and convert it to the user&rsquo;s local timezone while parsing. Not only for parsing string, these libraries can be used for a lot of different types of date-time related operations. I&rsquo;d encourage you to go through the documents to learn the functionalities in detail.</p>
+
+<blockquote>
+<p>Source <a href="https://stackabuse.com/converting-strings-to-datetime-in-python/">stackabuse.com</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cpython%5converting-strings-to-datetime.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#converting-strings-using-datetime">Converting Strings using datetime</a>
+<ul>
+<li>
+<ul>
+<li><a href="#dealing-with-timezones-and-datetime">Dealing with Timezones and datetime</a></li>
+<li><a href="#converting-timezones">Converting Timezones</a></li>
+<li><a href="#using-third-party-libraries">Using Third Party Libraries</a>
+<ul>
+<li><a href="#dateutil">dateutil</a></li>
+<li><a href="#maya">Maya</a></li>
+<li><a href="#arrow">Arrow</a></li>
+</ul></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

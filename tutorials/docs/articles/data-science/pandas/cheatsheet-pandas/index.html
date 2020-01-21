@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pandas Cheatsheet"><meta property="og:title" content="Pandas Cheatsheet" />
+<meta property="og:description" content="Cheatsheet วิธีใช้ และเทคนิคใน Pandas (Python) ฉบับสมบูรณ์ Pandas คืออะไร? Pandas เป็น Library ใน Python ที่ทำให้เราเล่นกับข้อมูลได้ง่ายขึ้น เหมาะมากสำหรับทำ Data Cleaning / Wrangling ครับผม
+วิธีการใช้งาน Pandas คือ โหลดไฟล์ข้อมูล เช่น CSV เข้าไป แล้วเราจะได้ข้อมูลในรูปแบบตาราง (DataFrame) ที่แบ่งข้อมูลตามแถวและคอลัมน์ หรือเหมือน Excel ที่เราใช้กันนั่นเอง
+
+ตัวอย่าง DataFrame ของ Pandas เป็นตารางเหมือน Excel เลยครับ
+ป.ล. Pandas ไม่เกี่ยวกับหมีแพนด้านะฮะ จริง ๆ แล้วมาจากคำว่า PANel DAta ซึ่งหมายถึงข้อมูลที่มีหลายมิตินั่นเอง
+เทคนิคการใช้ Pandas อย่างที่แอดมินเคยเล่า ว่าการทำ Data Wrangling เป็นงานที่ค่อนข้างถึกครับ วันนี้เลยรวบรวมโค้ดต่าง ๆ ในการใช้ Pandas มาให้ ซึ่งน่าจะครอบคลุมการใช้งานประมาณ 80 – 90% แล้วครับผม
+โค้ดบางส่วนมาจากคลาส Data Wrangling ที่แอดมินเรียน และจากเว็บไซต์ MyCheatSheet ครับ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/" />
+<meta property="article:published_time" content="2020-01-18T10:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-18T10:42:26+06:00" />
+<title>Pandas Cheatsheet | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.c538e6be9cf7060c81b8d97c36e4a240b268758a0c5a9e13cfa89a8c11460686.css" integrity="sha256-xTjmvpz3BgyBuNl8NuSiQLJodYoMWp4Tz6iajBFGBoY=">
+
+
+<script defer src="/library/tutorials/en.search.min.41ce41af473a9c62944edb0804fbf0950dffd37864b5f20021f6313bca1f1448.js" integrity="sha256-Qc5Br0c6nGKUTtsIBPvwlQ3/03hktfIAIfYxO8ofFEg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Aticles Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/" >
+      A Simple Example-Based Guide
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/" >
+      10 Pandas tips
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/" >
+      21 Pandas operations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/" >
+      Basic Data Analysis
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/" >
+      House Market Analysis 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/"  class="active">
+      Pandas Cheatsheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/" >
+      Selecting Subsets of Data 1
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Pandas Cheatsheet</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="cheatsheet-ว-ธ-ใช-และเทคน-คใน-pandas-python-ฉบ-บสมบ-รณ">Cheatsheet วิธีใช้ และเทคนิคใน Pandas (Python) ฉบับสมบูรณ์</h1>
+
+<h2 id="pandas-ค-ออะไร">Pandas คืออะไร?</h2>
+
+<p>Pandas เป็น Library ใน Python ที่ทำให้เราเล่นกับข้อมูลได้ง่ายขึ้น เหมาะมากสำหรับทำ  <a href="https://www.facebook.com/datasciencechill/photos/a.251751741876557.1073741828.250303472021384/388914871493576/?type=3">Data Cleaning / Wrangling</a>  ครับผม</p>
+
+<p>วิธีการใช้งาน Pandas คือ โหลดไฟล์ข้อมูล เช่น CSV เข้าไป แล้วเราจะได้ข้อมูลในรูปแบบตาราง (DataFrame) ที่แบ่งข้อมูลตามแถวและคอลัมน์ หรือเหมือน Excel ที่เราใช้กันนั่นเอง</p>
+
+<p><a href="https://blog.datath.com/cheatsheet-pandas/example-dataframe-pandas/"><img src="https://blog.datath.com/wp-content/uploads/2017/11/example-dataframe-pandas.jpg" alt="Cheatsheet วิธีใช้ และเทคนิคใน Pandas (Python) ฉบับสมบูรณ์ 1" /></a></p>
+
+<p>ตัวอย่าง DataFrame ของ Pandas เป็นตารางเหมือน Excel เลยครับ</p>
+
+<p>ป.ล. Pandas ไม่เกี่ยวกับหมีแพนด้านะฮะ จริง ๆ แล้วมาจากคำว่า PANel DAta ซึ่งหมายถึงข้อมูลที่มีหลายมิตินั่นเอง</p>
+
+<h2 id="เทคน-คการใช-pandas">เทคนิคการใช้ Pandas</h2>
+
+<p>อย่างที่<a href="https://www.facebook.com/datasciencechill/photos/a.251751741876557.1073741828.250303472021384/388914871493576/?type=3">แอดมินเคยเล่า</a> ว่าการทำ Data Wrangling เป็นงานที่ค่อนข้างถึกครับ วันนี้เลยรวบรวมโค้ดต่าง ๆ ในการใช้ Pandas มาให้ ซึ่งน่าจะครอบคลุมการใช้งานประมาณ 80 – 90% แล้วครับผม</p>
+
+<p>โค้ดบางส่วนมาจากคลาส Data Wrangling ที่แอดมินเรียน และจากเว็บไซต์ <a href="https://mycheatsheets.com/pandas">MyCheatSheet</a> ครับ</p>
+
+<h3 id="ว-ธ-เช-ค-version-pandas">วิธีเช็ค Version Pandas</h3>
+
+<p>โค้ดนี้เหมือนไม่สำคัญ แต่จริง ๆ แล้วสำคัญมากเวลาเราอ่าน Documentation ครับ เพราะถ้าเกิดมีอะไรพัง เราจะเทียบได้ว่า Pandas ของเราเป็นเวอร์ชั่นตามใน Documentation มั้ย</p>
+
+<pre><code class="language-py">print (&quot;Pandas version&quot;,pandas.__version__)
+</code></pre>
+
+<h3 id="ว-ธ-การโหลดไฟล-csv-import">วิธีการโหลดไฟล์ CSV (Import)</h3>
+
+<p>จุดเริ่มต้นของการทำ Data Exploration &amp; Analysis ใน Pandas ก็คือการโหลดไฟล์ข้อมูลแบบ CSV มาใช้งานนั่นเองครับ</p>
+
+<p>เราสามารถใช้คำสั่ง .head หรือ .tail เพื่อดูข้อมูลแถวบนสุด หรือแถวล่างสุดได้</p>
+
+<pre><code class="language-py"># Read DF
+csvdf = pd.read_csv('data.csv')
+# Sometimes reading CSV for Excel need encoding
+csvdf = pd.read_csv('data.csv',encoding = &quot;ISO-8859-1&quot;)
+# Print head and tail
+csvdf.head()
+csvdf.tail()
+</code></pre>
+
+<h3 id="ว-ธ-ส-มข-อม-ลสำหร-บเช-ค-sample">วิธีสุ่มข้อมูลสำหรับเช็ค (Sample)</h3>
+
+<p>ปกติเราเช็คข้อมูลว่าถูกต้องมั้ยด้วย head กับ tail ซึ่งเป็นการเช็คจากด้านบนหรือด้านล่าง อีกวิธีที่น่าสนใจ คือ เช็คแบบสุ่มข้อมูลขึ้นมานั่นเองครับ ทำได้ง่าย ๆ โดยใช้</p>
+
+<pre><code class="language-py">csvdf.sample()
+</code></pre>
+
+<h3 id="ว-ธ-เช-คข-อม-ลหาความผ-ดปกต-ใน-dataframe-เบ-องต-น">วิธีเช็คข้อมูลหาความผิดปกติใน DataFrame เบื้องต้น</h3>
+
+<p>หลังจากโหลดข้อมูลมาแล้ว เราอยากรู้ว่าข้อมูลมีกี่แถว, Missing value เท่าไหร่, แต่ละคอลัมน์เป็น Data Type อะไรบ้าง ก็รันคำสั่งนี้ได้เลย มีประโยชน์มากครับ</p>
+
+<pre><code class="language-py">df.info()
+</code></pre>
+
+<p><img src="https://blog.datath.com/wp-content/uploads/2017/11/sample-info-pandas.jpg" alt="Cheatsheet วิธีใช้ และเทคนิคใน Pandas (Python) ฉบับสมบูรณ์ 2" /></p>
+
+<pre><code class="language-py">df.info() # จะแสดงสรุปข้อมูลมาให้
+</code></pre>
+
+<p>นอกจากนั้นยังมีคำสั่ง df.dtypes (ไม่มีวงเล็บ) สำหรับดู Data Type แต่ละคอลัมน์อย่างเดียว</p>
+
+<h3 id="ว-ธ-แปลงประเภทข-อม-ล-data-type-ใน-data-frame">วิธีแปลงประเภทข้อมูล (Data Type) ใน Data Frame</h3>
+
+<p>บางครั้งประเภทข้อมูลของคอลัมน์เป็น String แต่เราต้องการ Integer หรือเราต้องการ Date เราสามารถแปลงข้อมูลได้ง่าย ๆ ดังนี้เลยครับ</p>
+
+<pre><code class="language-py">df['hour'] = pd.to_numeric(df['hour']) # แปลงเป็น Numeric
+df['hour'] = df['hour'].astype('int') # อีกวิธีในการแปลงค่า สามารถใช้วิธีนี้แปลงเป็น float ได้
+</code></pre>
+
+<h3 id="ว-ธ-เช-ค-summary-ของแต-ละคอล-มน-count-min-max-mean">วิธีเช็ค Summary ของแต่ละคอลัมน์ (count, min, max, mean)</h3>
+
+<p>ถ้าเราอยากรู้ Distribution คร่าว ๆ ของแต่ละคอลัมน์ว่าเป็นอย่างไร สามารถใช้คำสั่ง describe() ได้</p>
+
+<pre><code class="language-py">df.describe()
+</code></pre>
+
+<h3 id="ว-ธ-เช-ค-summary-count-min-max-mean-แบบแยกกล-ม">วิธีเช็ค Summary (count, min, max, mean) แบบแยกกลุ่ม</h3>
+
+<p>บางครั้งเราไม่ได้ต้องการรู้ Summary ของทั้งคอลัมน์ แต่อยากให้แยกตามแต่ละค่าในคอลัมน์นั้น ๆ ครับ ซึ่งมีประโยชน์มากเวลาเราทำ Data Analysis แล้วอยากรู้ว่าบางกลุ่มมีอะไรผิดปกติหรือเปล่า</p>
+
+<pre><code class="language-py">test = df.groupby(['Gender'])
+test.describe()
+</code></pre>
+
+<h3 id="ว-ธ-สร-าง-dataframe-ใหม">วิธีสร้าง DataFrame ใหม่</h3>
+
+<p>วิธีสร้างแบบง่ายที่สุด ถ้าต้องการข้อมูลหลายรูปแบบ เราสามารถใช้ Dictionary แบบนี้เลยครับ</p>
+
+<pre><code class="language-py">dataframe = pandas.DataFrame({
+    'C1': pandas.date_range('20170101', periods=4),
+    'C2' : [10,20,30,40],
+    'C3': pandas.Categorical(['A','B','C','D']),
+    'C4': 1})
+</code></pre>
+
+<p>แต่ถ้าเราต้องการแค่เป็นแบบตัวเลขทั่วไป ใช้ Numpy แบบนี้ได้เลย</p>
+
+<pre><code class="language-py">array = numpy.array([(1,2,3), (4,5,6),(7,8,9)])
+dataframe = pandas.DataFrame(array,columns=['C1','C2','C3'])
+</code></pre>
+
+<h3 id="ว-ธ-เล-อกหลายคอล-มน-จาก-dataframe">วิธีเลือกหลายคอลัมน์จาก DataFrame</h3>
+
+<p>ปกติถ้าเราต้องการเลือกแค่ 1 Column ก็เขียนแบบนี้ได้เลย</p>
+
+<pre><code class="language-py">df['C1']
+</code></pre>
+
+<p>แต่ถ้าต้องการเลือกหลายคอลัมน์ ให้ทำแบบนี้</p>
+
+<pre><code class="language-py">df[['C1','C2']]
+</code></pre>
+
+<h3 id="ว-ธ-เล-อกคอล-มน-ตามเง-อนไขท-ต-องการ">วิธีเลือกคอลัมน์ตามเงื่อนไขที่ต้องการ</h3>
+
+<p>บางทีเราอยาก Filter เฉพาะคอลัมน์ที่มีค่าตามที่เราต้องการโดยใช้ .loc ได้ โดยสามารถเลือก Filter แบบ .all() (ทุกค่าในคอลัมน์ต้องตรงตามเงื่อนไข) หรือ .any() (บางค่าในคอลัมน์ต้องตรงตามเงื่อนไข)</p>
+
+<pre><code class="language-py">dataframe2 = dataframe.loc[:,(dataframe&gt;50).any()]
+dataframe3 = dataframe.loc[:,(dataframe&gt;50).all()]
+</code></pre>
+
+<p>เราสามารถใช้หาคอลัมน์ที่มี Missing Values หรือหาคอลัมน์ที่ไม่มี Missing Values เลยก็ได้</p>
+
+<pre><code class="language-py">dataframe2 = dataframe.loc[:,dataframe.isnull().any()]
+dataframe3 = dataframe.loc[:,dataframe.notnull().all()]
+</code></pre>
+
+<h3 id="ว-ธ-เล-อกแถวตามเง-อนไขท-ต-องการ">วิธีเลือกแถวตามเงื่อนไขที่ต้องการ</h3>
+
+<pre><code class="language-py">dataframe[dataframe['C1']&gt;50] # เงื่อนไขแบบง่าย ๆ
+dataframe2 = dataframe.loc[dataframe.C1.isin([1,2,3])] # เงื่อนไขแบบซับซ้อน
+</code></pre>
+
+<p>ถ้ามีหลายเงื่อนไขเราสามารถใช้ <strong>&amp; (and)</strong> หรือ <strong>| (or)</strong> ได้</p>
+
+<pre><code class="language-py">dataframe[(dataframe['C1']&gt;50) &amp; ((dataframe['C2']&lt;25) | (dataframe['C2']&gt;75))]
+</code></pre>
+
+<p>หรือใช้ Query เป็นเงื่อนไขได้ด้วย มีประโยชน์มากเวลาเรามีเงื่อนไขแปลก ๆ ไม่ต้องเขียนลูปขึ้นมาเองเลยครับ</p>
+
+<pre><code class="language-py">dataframe2 = dataframe.query('C1 &gt; C2')
+</code></pre>
+
+<h3 id="ว-ธ-เพ-มคอล-มน-ใหม">วิธีเพิ่มคอลัมน์ใหม่</h3>
+
+<p>สามารถเพิ่มคอลัมน์ใหม่ได้ 2 แบบ คือ</p>
+
+<ol>
+<li>เพิ่มโดยอิงจากคอลัมน์เดิม (เช่น เอาคอลัมน์เดิม + 10 หรือ เอาคอลัมน์ A – คอลัมน์ B มีประโยชน์มากตอนทำ Feature Engineering)</li>
+
+<li><p>เพิ่มคอลัมน์โดยตั้งค่า Fix ไปเลยสำหรับทุกแถว ส่วนใหญ่จะใช้วิธีนี้เวลาเราอยากได้ค่าอะไรแปลก ๆ ที่ต้องเขียนลูปเพื่อใส่ค่า ก็สร้างคอลัมน์แบบ Fix ค่าก่อน แล้วต่อด้วยลูป</p>
+
+<pre><code class="language-py">df['new'] = dataframe['old'] + 10 # use old values
+df['new2'] = 5 # apply the same value
+</code></pre>
+
+<h3 id="การสล-บ-row-column-transpose">การสลับ Row &lt;-&gt; Column (Transpose)</h3></li>
+</ol>
+
+<p>ถ้าเราต้องการ Transpose (อารมณ์เหมือน Vector) เราสามารถใช้คำสั่งนี้ได้เลย</p>
+
+<pre><code class="language-py">dataframe.T
+</code></pre>
+
+<h3 id="การต-อ-dataframe">การต่อ DataFrame</h3>
+
+<p>การต่อ Data Frame คือการเอา Data Set 2 ชุดมาต่อกันในแถวตั้งหรือแนวนอน สำหรับการต่อแบบปะติดไปเลย</p>
+
+<p>มี 2 คำสั่งที่เหมือนกัน คือ concat กับ append แต่ให้ใช้ concat ไปเลย เพราะ append เป็นคำสั่งที่ไม่ Memory Efficient</p>
+
+<pre><code class="language-py">pd.concat([df1,df2], axis=1) # รวมกัน 2 คอลัมน์ (axis = 0 คือแถว, axis = 1 คือคอลัมน์)
+pd.concat([df1,df2,df3)] # รวมมากกว่า 2 คอลัมน์ก็ได้
+pd.concat(…, ignore_index=True) # รวมเสร็จแล้ว reset index ให้ด้วย ควรใช้ ไม่งั้นจะเจอ row ID ซ้ำกันตอนรวมร่าง
+pd.concat(…, join='inner') # รวมร่างเฉพาะคอลัมน์ที่ df1 กับ df2 มีทั้งคู่
+pd.concat(…, keys=['source1', 'source2']) # เพิ่มคอลัมน์เข้าไปด้วยเพื่อระบุว่า Row แต่ละอันมาจาก Data Frame อันไหน
+pd.concat(…, join_axes=[df2.index]) # เลือกรวมร่างเฉพาะ row index ที่เรากำหนดได้
+</code></pre>
+
+<h3 id="การต-อ-dataframe-แบบ-join">การต่อ DataFrame แบบ Join</h3>
+
+<p>ถ้าต้องการต่อ DataFrame แบบ Advance หน่อย เราก็สามารถ Join DataFrame ได้เหมือน Join Table ใครเขียน SQL มาก่อนน่าจะถนัดเลย</p>
+
+<pre><code class="language-py">pd.merge(df1, df2, left_on=&quot;col1&quot;, right_on=&quot;col2&quot;, how=&quot;inner&quot;)
+</code></pre>
+
+<p>เราสามารถเปลี่ยนตรง how=”inner” เป็น “outer”, “left”, “right” เพื่อเปลี่ยนเป็น Outer Join, Left Join, Right Join ได้อีกด้วย</p>
+
+<h3 id="การหาค-า-mean-sum-max-aggregate-แบบท-ง-dataframe">การหาค่า Mean, Sum, Max (Aggregate) แบบทั้ง DataFrame</h3>
+
+<p>Pandas สามารถสั่ง Aggregate เพื่อหาค่า Mean, Sum, และ Max ได้เลย เหมาะมากเวลาเราต้องการรวบข้อมูลก่อนเอาไป Visualize หรือต้องการทำ Feature Engineering ก็ได้</p>
+
+<pre><code class="language-py">newdf = df.agg(['sum', 'max','mean'])
+</code></pre>
+
+<h3 id="การ-aggregate-แบบตามกล-มท-ต-องการ">การ Aggregate แบบตามกลุ่มที่ต้องการ</h3>
+
+<p>บางทีเราอยาก Aggregate ข้อมูลตามการจัดกลุ่มในคอลัมน์อื่น เช่น เราอยากได้รายจ่ายทั้งหมดของแต่ละคน (ต้อง aggregate sum ของคอลัมน์รายจ่าย โดยแบ่งกลุ่มตามคอลัมน์ User ID) ใช้แบบนี้</p>
+
+<pre><code class="language-py">aggregate = dataframe.groupby('C1').sum()
+</code></pre>
+
+<h3 id="การร-น-function-เด-ยวก-นท-กแถว-หร-อท-กคอล-มน">การรัน Function เดียวกันทุกแถว หรือทุกคอลัมน์</h3>
+
+<p>เวลาเราอยากรันคำสั่งอะไรสักอย่างสำหรับทุกแถว หรือทุกคอลัมน์ เราสามารถเขียนได้แบบนี้</p>
+
+<pre><code class="language-py"># sum for columns
+sum_columns = dataframe[['C1','C2']].apply(sum,axis=0)
+# sum for rows
+sum_rows = dataframe[['C1','C2']].apply(sum,axis=1)
+</code></pre>
+
+<p>เหมือนกับฟังก์ชั่น apply() ใน R นั่นเอง</p>
+
+<h3 id="ร-นคำส-งท-เข-ยนเองก-บท-กแถวใน-1-คอล-มน">รันคำสั่งที่เขียนเองกับทุกแถวใน 1 คอลัมน์</h3>
+
+<p>ถ้าต้องการรันคำสั่ง (Function) ที่เขียนเอง สำหรับทุกแถวในคอลัมน์อันใดอันหนึ่ง ใช้แบบนี้ได้</p>
+
+<pre><code class="language-py">dataframe['C1'] = dataframe['C1'].map(lambda x: x-100)
+</code></pre>
+
+<h3 id="ร-นคำส-งท-เข-ยนเองก-บท-กค-า">รันคำสั่งที่เขียนเองกับทุกค่า</h3>
+
+<p>ถ้าต้องการรันคำสั่งที่เขียนเองกับทุกค่าใน DataFrame ใช้โค้ดนี้</p>
+
+<pre><code class="language-py">function_result = dataframe.applymap(lambda x: x*10)
+</code></pre>
+
+<p>หรือใช้ transform ก็ได้</p>
+
+<pre><code class="language-py">new_dataframe = dataframe.transform(lambda x: x*100)
+</code></pre>
+
+<h3 id="คำนวณ-correlation-covariance">คำนวณ Correlation &amp; Covariance</h3>
+
+<p>เวลาเราอยากรู้ว่าค่าต่าง ๆ ใน Data Set เรา Correlate กันมั้ย</p>
+
+<pre><code class="language-py">dataframe.corr() # Correlation
+dataframe.cov() # Covariance
+</code></pre>
+
+<p>แต่ค่าที่ออกมาเป็นตัวเลขอาจจะดูยากนิดนึง เราสามารถพลอตสวย ๆ ด้วย Seaborn ได้ครับ สามารถใช้โค้ดด้านล่างนี้ได้เลย</p>
+
+<pre><code class="language-py">import seaborn as sns
+
+corr = modeldf.corr()
+
+# Set up the matplotlib figure
+f, ax = plt.subplots(figsize=(15, 8))
+
+# Generate a custom diverging colormap
+cmap = sns.diverging_palette(10, 10, as_cmap=True)
+
+# Draw the heatmap with the mask and correct aspect ratio
+sns.heatmap(corr, annot=True)
+</code></pre>
+
+<p><img src="https://blog.datath.com/wp-content/uploads/2017/11/seaborn-correlation-heatmap.jpg" alt="Cheatsheet วิธีใช้ และเทคนิคใน Pandas (Python) ฉบับสมบูรณ์ 3" /></p>
+
+<p>Correlation Plot สวย ๆ ด้วย Seaborn</p>
+
+<h3 id="คำนวณ-cross-tabulation">คำนวณ Cross Tabulation</h3>
+
+<p>Cross Tabulation มีประโยชน์มากเวลาเราอยากรู้ว่ามี Data ที่ตรงกับกรุ๊ป A ของคอลัมน์ 1 และกรุ๊ป B ของคอลัมน์ 2 เท่าไหร่ เช่น มีนักเรียนผู้ชาย (คอลัมน์ gender) กี่คนในมัธยมปลาย (คอลัมน์ education) แบบนี้เป็นต้น</p>
+
+<p>หรือถ้าใครใช้ PivotTable ใน Excel มาก่อน ก็เหมือนกันเลยครับ</p>
+
+<pre><code class="language-py">aggregate = pandas.crosstab(dataframe.C1, dataframe.C2)
+</code></pre>
+
+<h3 id="ว-ธ-หาค-า-unique-ในแต-ละคอล-มน">วิธีหาค่า Unique ในแต่ละคอลัมน์</h3>
+
+<p>คำสั่งนี้มีประโยชน์มาก เอาไว้ใช้เช็คว่าแต่ละคอลัมน์มีค่าแปลก ๆ มั้ย</p>
+
+<p>ตัวอย่างการใช้งานก็คือ เราอยากรู้ว่า มีบ้านไหนที่มีจำนวนห้องนอนแปลก ๆ มั้ย (เช่น 50 ห้องนอน หรือ -5 ห้องนอน) ก็หาค่า unique จากคอลัมน์ “bedrooms”</p>
+
+<pre><code class="language-py">dataframe['C1'].unique()
+</code></pre>
+
+<h3 id="ว-ธ-เช-คว-าม-แถวไหนข-อม-ลซ-ำม-ย-duplicated">วิธีเช็คว่ามีแถวไหนข้อมูลซ้ำมั้ย (Duplicated)</h3>
+
+<p>อันนี้มีประโยชน์มาก เอาไว้ใช้เช็คว่ามีข้อมูลแปลก ๆ มั้ย เช่น ทุกคอลัมน์ซ้ำกันหมด (อันนี้มีโอกาสว่าเป็นข้อมูลซ้ำ อาจจะต้องลบออก) หรือซ้ำกันบางคอลัมน์ (อันนี้ต้องเช็คอีกทีว่าคืออะไร)</p>
+
+<pre><code class="language-py">dataframe.duplicated() # หาอันที่เหมือนกันทุกคอลัมน์
+dataframe.duplicated('C1') # หาอันที่ซ้ำกันเฉพาะคอลัมน์ C1
+dataframe.duplicated(['C1', 'C2']) # หาอันที่ซ้ำกันเฉพาะคอลัมน์ C1 และ C2
+</code></pre>
+
+<p>ปกติแล้วถ้ามีไอเทมซ้ำ คำสั่งนี้จะไม่แสดงไอเทมแรกในกลุ่มที่ซ้ำ (เช่น ถ้า C1=5 มี 2 แถว มันจะแสดงเฉพาะแถวที่ 2) เราสามารถใส่ Argument  <strong>keep=False</strong>  เข้าไปเพื่อบังคับให้มันแสดงทุกแถวได้</p>
+
+<p>นอกจากนั้นเรายังสามารถนับจำนวนแถวที่ Duplicate และลบทิ้งได้ด้วย</p>
+
+<h3 id="ว-ธ-การน-บจำนวน-duplicate">วิธีการนับจำนวน Duplicate</h3>
+
+<pre><code class="language-py">len(df[ df.duplicated(['A', 'B', 'C'], keep = False) ])
+</code></pre>
+
+<h3 id="ว-ธ-การลบ-duplicate">วิธีการลบ Duplicate</h3>
+
+<p>เอาไว้ใช้ตอนเราเจอว่าทุกคอลัมน์ซ้ำกันหมดเลย ซึ่งเป็นเคสที่บอกว่าข้อมูลน่าจะซ้ำ ลบออกได้ (ขึ้นอยู่กับข้อมูลด้วยนะครับ บางข้อมูลอาจจะไม่ได้แปลว่าซ้ำแล้วลบได้):</p>
+
+<pre><code class="language-py"># Remove the duplicates
+df.drop_duplicates(['A', 'B', 'C'], inplace=True)
+
+# Reset dataframe index after drop_duplicates.
+df.reset_index(drop=True, inplace=True)
+
+len(df)
+</code></pre>
+
+<p>สำหรับโค้ดข้างบน จะเห็นว่าเราต้อง reset index หลังลบ duplicate ด้วยนะครับ</p>
+
+<h3 id="ว-ธ-การลบแถว-และลบคอล-มน">วิธีการลบแถว และลบคอลัมน์</h3>
+
+<p>ลบคอลัมน์สามารถทำได้แบบนี้</p>
+
+<pre><code class="language-py">dataframe = dataframe.drop('C1', axis=1)
+df.drop(['C1'], axis=1, inplace=True) # แบบนี้ก็ได้
+df.drop(['C1', 'C2', 'C3'], 1, inplace=True) # ลบทีละหลายคอลัมน์ก็ได้
+</code></pre>
+
+<p>ส่วนการลบแถวจะลำบากหน่อย เพราะต้องใส่ Row Index (เลขที่อยู่ซ้ายสุดเวลาเราปรินท์ DataFrame)</p>
+
+<pre><code class="language-py">dataframe = dataframe.drop(5, axis=0)
+dataframe.reset_index(drop=True) # Reset index
+</code></pre>
+
+<p>ลบแถวแล้วอย่าลืมเช็คด้วยว่าที่ลบไปถูกต้องมั้ย และหลังจากลบแถวต้อง Reset Index ด้วย</p>
+
+<h3 id="ว-ธ-การลบแถวท-ม-missing-value">วิธีการลบแถวที่มี Missing Value</h3>
+
+<p><strong>ข้อควรระวัง:</strong>  การที่อยู่ ๆ เราลบแถวที่มี Missing Value ทิ้งไปเลยอาจจะไม่ใช่วิธีที่ดีที่สุดในการทำ Data Analysis เสมอไปนะครับ บางเคสการ Impute (คำนวณหาค่าไปใส่) จะดีกว่าครับ</p>
+
+<pre><code class="language-py">dataframe2 = dataframe.dropna(axis=0)
+</code></pre>
+
+<h3 id="ว-ธ-แทนค-า-missing-value-ด-วยค-าเฉล-ย-mean-imputation">วิธีแทนค่า Missing Value ด้วยค่าเฉลี่ย (Mean Imputation)</h3>
+
+<p>วิธีหนึ่งในการแทนค่าที่หายไป คือการทำสิ่งที่เรียกว่า Mean Imputation หรือหาค่าเฉลี่ยของคอลัมน์นั้น แล้วเอามาแทนค่าที่หายไปนั่นเองครับ</p>
+
+<p>ข้อดีของการทำ Mean Imputation คือ สามารถทำได้ง่าย แต่ก็ต้องระวังเรื่องข้อเสีย เช่น ทำแบบนี้จะเป็นการไม่สนใจความสัมพันธ์ระหว่างตัวแปร ทำให้เกิด Bias สูง ควรใช้เฉพาะเวลา Missing Value ไม่เยอะเท่านั้นครับ</p>
+
+<p>สามารถรันโค้ดด้านล่างเพื่อทำ Mean Imputation ได้ง่าย ๆ เลย</p>
+
+<pre><code class="language-py">import numpy as np
+meanAge = np.mean(df.Age) # Get mean value
+df.Age = df.Age.fillna(meanAge) # Fill missing values with mean
+</code></pre>
+
+<h3 id="การล-ปข-อม-ลแต-ละคอล-มน-และแต-ละแถว">การลูปข้อมูลแต่ละคอลัมน์ และแต่ละแถว</h3>
+
+<p>การลูปมีประโยชน์มากถ้าเราต้องการเขียนฟังก์ชั่นแปลก ๆ ใช้เองที่ Pandas ไม่รองรับ (หรืออาจจะรองรับแต่เราหาไม่เจอ เขียนเองง่ายกว่า) สามารถลูปได้ทั้งแต่ละคอลัมน์ และแต่ละแถว</p>
+
+<pre><code class="language-py">for col_idx,data in dataframe.iteritems():
+    print (&quot;column:&quot;,col_idx)
+    print (&quot;column data:&quot;)
+    print (data,&quot;\n&quot;)
+</code></pre>
+
+<p>การลูปข้อมูลแต่ละแถว</p>
+
+<pre><code class="language-py">for col_idx,data in dataframe.iterrows():
+    print (&quot;row:&quot;,col_idx)
+    print (&quot;row data:&quot;)
+    print (data,&quot;\n&quot;)
+</code></pre>
+
+<h3 id="ว-ธ-เปล-ยน-dataframe-จากแบบ-wide-เป-น-long-melt">วิธีเปลี่ยน DataFrame จากแบบ Wide เป็น Long (Melt)</h3>
+
+<p>การ Melt Data มีประโยชน์มากเวลาเราต้องการเอาข้อมูลไปพลอต Data Visualization หรือเราต้องการ Aggregate ครับ</p>
+
+<pre><code class="language-py">dataframe2 = dataframe.melt()
+</code></pre>
+
+<h3 id="ว-ธ-การเปล-ยนช-อคอล-มน-rename">วิธีการเปลี่ยนชื่อคอลัมน์ (Rename)</h3>
+
+<p>บางทีเราต้องการเปลี่ยนชื่อเพื่อให้สั้นลง ให้พิมพ์สะดวกขึ้น สามารถทำได้ดังนี้</p>
+
+<pre><code class="language-py">dataframe.rename(columns={'old':'new'},inplace=True)
+</code></pre>
+
+<h3 id="ว-ธ-การใส-คำนำหน-าคอล-มน-prefix">วิธีการใส่คำนำหน้าคอลัมน์ (Prefix)</h3>
+
+<p>อันนี้มีประโยชน์มากตอนเรามีข้อมูลหลาย ๆ ชุด และต้องการ Merge โดยอยากให้ชื่อคอลัมน์ไม่ซ้ำกัน</p>
+
+<pre><code class="language-py">thisdata = thisdata.add_prefix('data_')
+</code></pre>
+
+<h3 id="ว-ธ-การแทนค-าใน-dataframe">วิธีการแทนค่าใน DataFrame</h3>
+
+<p>เหมาะมากเวลาต้องการแก้ Typo Error เช่น เราอยากได้ค่า Bangkok แต่เรารู้ว่ามีคนเขียนเป็น BKK อะไรแบบนี้ (รันคำสั่ง .unique เพื่อดูก่อน)</p>
+
+<p>เราสามารถ Replace ทั้ง DataFrame ได้เลยแบบนี้</p>
+
+<pre><code class="language-py">dataframe2 = dataframe.replace(1, -100)
+</code></pre>
+
+<p>เราสามารถ Replace หลายค่าพร้อมกันได้ด้วยครับ และสามารถกำหนด Column ที่ต้องการให้แทนค่าได้ด้วย</p>
+
+<pre><code class="language-py">df['city'].replace({
+        'BKK':'Bangkok',
+        'BNK':'Bangkok'
+    }, inplace=True)
+</code></pre>
+
+<h3 id="ว-ธ-การ-export-dataframe-เป-นไฟล-csv">วิธีการ Export DataFrame เป็นไฟล์ CSV</h3>
+
+<p>หลังจากที่เราจัดการ Data เรียบร้อยแล้ว ก็สามารถ Export เป็น CSV เอาไปใช้ต่อกับโปรแกรมอื่น หรืองานส่วนอื่น ๆ ได้ (แอดทำบ่อยเพราะบางทีต้องสลับ Python &lt;-&gt; R รัว ๆ)</p>
+
+<pre><code class="language-py">dataframe.to_csv('dataframe.csv')
+</code></pre>
+
+<blockquote>
+<p>Source: <a href="https://blog.datath.com/cheatsheet-pandas/">Data TH.com - Data Science ชิลชิล</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cpandas%5ccheatsheet-pandas.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#cheatsheet-ว-ธ-ใช-และเทคน-คใน-pandas-python-ฉบ-บสมบ-รณ">Cheatsheet วิธีใช้ และเทคนิคใน Pandas (Python) ฉบับสมบูรณ์</a>
+<ul>
+<li><a href="#pandas-ค-ออะไร">Pandas คืออะไร?</a></li>
+<li><a href="#เทคน-คการใช-pandas">เทคนิคการใช้ Pandas</a>
+<ul>
+<li><a href="#ว-ธ-เช-ค-version-pandas">วิธีเช็ค Version Pandas</a></li>
+<li><a href="#ว-ธ-การโหลดไฟล-csv-import">วิธีการโหลดไฟล์ CSV (Import)</a></li>
+<li><a href="#ว-ธ-ส-มข-อม-ลสำหร-บเช-ค-sample">วิธีสุ่มข้อมูลสำหรับเช็ค (Sample)</a></li>
+<li><a href="#ว-ธ-เช-คข-อม-ลหาความผ-ดปกต-ใน-dataframe-เบ-องต-น">วิธีเช็คข้อมูลหาความผิดปกติใน DataFrame เบื้องต้น</a></li>
+<li><a href="#ว-ธ-แปลงประเภทข-อม-ล-data-type-ใน-data-frame">วิธีแปลงประเภทข้อมูล (Data Type) ใน Data Frame</a></li>
+<li><a href="#ว-ธ-เช-ค-summary-ของแต-ละคอล-มน-count-min-max-mean">วิธีเช็ค Summary ของแต่ละคอลัมน์ (count, min, max, mean)</a></li>
+<li><a href="#ว-ธ-เช-ค-summary-count-min-max-mean-แบบแยกกล-ม">วิธีเช็ค Summary (count, min, max, mean) แบบแยกกลุ่ม</a></li>
+<li><a href="#ว-ธ-สร-าง-dataframe-ใหม">วิธีสร้าง DataFrame ใหม่</a></li>
+<li><a href="#ว-ธ-เล-อกหลายคอล-มน-จาก-dataframe">วิธีเลือกหลายคอลัมน์จาก DataFrame</a></li>
+<li><a href="#ว-ธ-เล-อกคอล-มน-ตามเง-อนไขท-ต-องการ">วิธีเลือกคอลัมน์ตามเงื่อนไขที่ต้องการ</a></li>
+<li><a href="#ว-ธ-เล-อกแถวตามเง-อนไขท-ต-องการ">วิธีเลือกแถวตามเงื่อนไขที่ต้องการ</a></li>
+<li><a href="#ว-ธ-เพ-มคอล-มน-ใหม">วิธีเพิ่มคอลัมน์ใหม่</a></li>
+<li><a href="#การสล-บ-row-column-transpose">การสลับ Row &lt;-&gt; Column (Transpose)</a></li>
+<li><a href="#การต-อ-dataframe">การต่อ DataFrame</a></li>
+<li><a href="#การต-อ-dataframe-แบบ-join">การต่อ DataFrame แบบ Join</a></li>
+<li><a href="#การหาค-า-mean-sum-max-aggregate-แบบท-ง-dataframe">การหาค่า Mean, Sum, Max (Aggregate) แบบทั้ง DataFrame</a></li>
+<li><a href="#การ-aggregate-แบบตามกล-มท-ต-องการ">การ Aggregate แบบตามกลุ่มที่ต้องการ</a></li>
+<li><a href="#การร-น-function-เด-ยวก-นท-กแถว-หร-อท-กคอล-มน">การรัน Function เดียวกันทุกแถว หรือทุกคอลัมน์</a></li>
+<li><a href="#ร-นคำส-งท-เข-ยนเองก-บท-กแถวใน-1-คอล-มน">รันคำสั่งที่เขียนเองกับทุกแถวใน 1 คอลัมน์</a></li>
+<li><a href="#ร-นคำส-งท-เข-ยนเองก-บท-กค-า">รันคำสั่งที่เขียนเองกับทุกค่า</a></li>
+<li><a href="#คำนวณ-correlation-covariance">คำนวณ Correlation &amp; Covariance</a></li>
+<li><a href="#คำนวณ-cross-tabulation">คำนวณ Cross Tabulation</a></li>
+<li><a href="#ว-ธ-หาค-า-unique-ในแต-ละคอล-มน">วิธีหาค่า Unique ในแต่ละคอลัมน์</a></li>
+<li><a href="#ว-ธ-เช-คว-าม-แถวไหนข-อม-ลซ-ำม-ย-duplicated">วิธีเช็คว่ามีแถวไหนข้อมูลซ้ำมั้ย (Duplicated)</a></li>
+<li><a href="#ว-ธ-การน-บจำนวน-duplicate">วิธีการนับจำนวน Duplicate</a></li>
+<li><a href="#ว-ธ-การลบ-duplicate">วิธีการลบ Duplicate</a></li>
+<li><a href="#ว-ธ-การลบแถว-และลบคอล-มน">วิธีการลบแถว และลบคอลัมน์</a></li>
+<li><a href="#ว-ธ-การลบแถวท-ม-missing-value">วิธีการลบแถวที่มี Missing Value</a></li>
+<li><a href="#ว-ธ-แทนค-า-missing-value-ด-วยค-าเฉล-ย-mean-imputation">วิธีแทนค่า Missing Value ด้วยค่าเฉลี่ย (Mean Imputation)</a></li>
+<li><a href="#การล-ปข-อม-ลแต-ละคอล-มน-และแต-ละแถว">การลูปข้อมูลแต่ละคอลัมน์ และแต่ละแถว</a></li>
+<li><a href="#ว-ธ-เปล-ยน-dataframe-จากแบบ-wide-เป-น-long-melt">วิธีเปลี่ยน DataFrame จากแบบ Wide เป็น Long (Melt)</a></li>
+<li><a href="#ว-ธ-การเปล-ยนช-อคอล-มน-rename">วิธีการเปลี่ยนชื่อคอลัมน์ (Rename)</a></li>
+<li><a href="#ว-ธ-การใส-คำนำหน-าคอล-มน-prefix">วิธีการใส่คำนำหน้าคอลัมน์ (Prefix)</a></li>
+<li><a href="#ว-ธ-การแทนค-าใน-dataframe">วิธีการแทนค่าใน DataFrame</a></li>
+<li><a href="#ว-ธ-การ-export-dataframe-เป-นไฟล-csv">วิธีการ Export DataFrame เป็นไฟล์ CSV</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
