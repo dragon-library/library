@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CSS Animation — Part 2"><meta property="og:title" content="CSS Animation — Part 2" />
+<meta property="og:description" content="A Guide to CSS Animation — Part 2 animation-iteration-count Let’s pick up from where we left off with by modifying our first animation. If you need a little refresher, this is what we had.
+But the animation only ran once. What if we wanted the animation to run many times or not even stop? In the case of loading animations, we may want the animation to be infinite. This is where animation-iteration-count comes into play." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-2/" />
+
+<title>CSS Animation — Part 2 | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.d7931d740642e656222bfe71c31926bed24ceb9fafa2d9069a7a83fa55070bb9.css" integrity="sha256-15MddAZC5lYiK/5xwxkmvtJM65&#43;votkGmnqD&#43;lUHC7k=">
+
+
+<script defer src="/library/tutorials/en.search.min.cea1133e9b29e4d856c65970fdf9c3648003a14ab3aa47858673822782b70898.js" integrity="sha256-zqETPpsp5NhWxllw/fnDZIADoUqzqkeFhnOCJ4K3CJg="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/website/" >
+      Website
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/website/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/website/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-1/" >
+      CSS Animation — Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-2/"  class="active">
+      CSS Animation — Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-3/" >
+      CSS Animation — Part 3
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/website/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/website/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>CSS Animation — Part 2</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="a-guide-to-css-animation-part-2">A Guide to CSS Animation — Part 2</h1>
+
+<p><img src="https://miro.medium.com/max/4752/1*8VI1jY60cMT8ij5lHr6Ydw.jpeg" alt="enter image description here" /></p>
+
+<h1 id="animation-iteration-count">animation-iteration-count</h1>
+
+<p>Let’s pick up from where we left off with by modifying our first animation. If you need a little refresher, this is what we had.</p>
+
+<p><img src="https://miro.medium.com/max/480/1*-Ip2pjgEccC_u8_jszRNSw.gif" alt="" /></p>
+
+<p>But the animation only ran once. What if we wanted the animation to run many times or not even stop? In the case of loading animations, we may want the animation to be infinite. This is where  <code>animation-iteration-count</code>  comes into play.</p>
+
+<p>Let’s say we wanted the animation to run five times.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*jI6tr2c3WxzefQtv8gQs8w.png" alt="" /></p>
+
+<p>It’s as easy as that. Let’s turn our spinning square into a loading spinner. To do this,  <code>animation-iteration-count</code>  also accepts the keyword  <code>infinite</code>  👍</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*Kjxi4yjkLLU_XYq-0HgsAg.png" alt="" /></p>
+
+<p>Which gives us the following 🎉</p>
+
+<h1 id="animation-timing-function">animation-timing-function</h1>
+
+<p>Let’s take another look at that spinning square. The square does keep on spinning. But not without a little break after every spin. This is due to the  <code>animation-timing-function</code>.</p>
+
+<p><img src="https://miro.medium.com/max/480/1*ZLekwO4QthfAWlBgM-9vpA.gif" alt="" /></p>
+
+<p>The  <code>animation-timing-function</code>  property defines the speed characteristics of an animation. It accepts a few different values.</p>
+
+<ul>
+<li><code>cubic-bezier(x1, y1, x2, y2)</code>  - provides ability to define custom speed</li>
+<li><code>ease</code>  - start and end slowly but speedier in the middle(default)</li>
+<li><code>ease-in</code>- start slowly</li>
+<li><code>ease-in-out</code>  - start and end slowly but not the same as  <code>ease</code></li>
+<li><code>ease-out</code>  - end slowly</li>
+<li><code>linear</code>  - maintain speed throughout</li>
+<li><code>steps(number, direction &lt;optional&gt;)</code>  - provides a way to split the animation into equal steps.  <code>direction</code>  values can either be  <code>start</code>  or  <code>end</code>.  <code>start</code>  means that the first step happens at the start of the animation.  <code>end</code>  means that the last step happens at the end of the animation.  <code>end</code>  is the default value.</li>
+</ul>
+
+<p>So which one do you choose? Different scenarios will call for different easing. The following is a nice short resource about the basics of easing.
+<blockquote class="book-hint danger">
+  <h2 id="the-basics-of-easing-web-fundamentals-google-developers-https-developers-google-com-web-fundamentals-design-and-ux-animations-the-basics-of-easing"><a href="https://developers.google.com/web/fundamentals/design-and-ux/animations/the-basics-of-easing">The Basics of Easing | Web Fundamentals | Google Developers</a></h2>
+</blockquote>
+
+You can experiment with different easings to find what feels right in your applications. This pen shows how  <code>animation-timing-function</code>  can affect the same animation.</p>
+
+<p>The only ease that might be trickier to grasp is  <code>cubic-bezier</code>.
+<blockquote class="book-hint danger">
+  <h2 id="cubic-bézier-curves-wikipedia-https-en-wikipedia-org-wiki-b-c3-a9zier-curve-cubic-b-c3-a9zier-curves"><a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B%C3%A9zier_curves">Cubic Bézier curves - Wikipedia</a></h2>
+</blockquote>
+</p>
+
+<p>In essence the  <code>cubic-bezier</code>  function defines a cubic bezier curve. There is a good explanation about the  <code>cubic-bezier</code>  function in this article
+<blockquote class="book-hint danger">
+  <h2 id="single-transition-timing-function-mdn-https-developer-mozilla-org-en-us-docs-web-css-single-transition-timing-function"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function">Single Transition Timing Function | MDN</a></h2>
+</blockquote>
+</p>
+
+<p>Or, you may prefer to play with the  <code>cubic-bezier</code>  function and compare it to the other easing values.  <a href="http://cubic-bezier.com/">cubic-bezier.com</a>  has you covered 👍</p>
+
+<hr />
+
+<p>So returning to our spinning square. How do we remove that little break? We can apply a  <code>linear</code>  timing. This replaces the default  <code>ease</code>  timing.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*ITaERJZnx5Gix2wV1djZ8w.png" alt="" /></p>
+
+<p>This would give us</p>
+
+<p><img src="https://miro.medium.com/max/480/1*itA_VOJEAGwgdUSJFCVckQ.gif" alt="" /></p>
+
+<p>Sweet 🍭</p>
+
+<h1 id="animation-play-state">animation-play-state</h1>
+
+<p>Play state is pretty simple. You can pause animations or have them running. You do this with the  <code>animation-play-state</code>  property. For our spinning square we could introduce a checkbox that toggles the play state. Using the sibling selector, we can toggle the play state 👍</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*WkJUXh31d-XxMKYiBKsv3Q.png" alt="" /></p>
+
+<p>When it’s  <code>:checked</code>  we set the play state to  <code>running</code>  👟</p>
+
+<h1 id="animation-delay">animation-delay</h1>
+
+<p>Next up is delaying animations. Like  <code>animation-duration</code>,  <code>animation-delay</code>  takes a time value in milliseconds or seconds.</p>
+
+<p>Let’s add some extra squares and have them all spin side by side  <strong>once</strong>. Note we’ve changed the  <code>animation-timing-function</code>  value to  <code>ease-out</code>.</p>
+
+<p><img src="https://miro.medium.com/max/480/1*r_w4OO-aSm4qeu-WxuDeyg.gif" alt="" /></p>
+
+<p>If we add a delay to each square could we create a staggered effect?</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*7DTrcNdqSOcQT3yimOPSoQ.png" alt="" /></p>
+
+<p>The answer is yes! 👍</p>
+
+<p>But, if we then wanted the squares to keep spinning we would lose the staggered effect. This is because  <code>animation-delay</code>  is only applied once before an animation begins 👎 It does not apply to every iteration of an animation. At this point we have two choices. We could experiment with different delays using the Animations Inspector. Or we could try stalling the first half of the animation by delaying the spin.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*eF33-X5vMbwtM8FlE6mlAg.png" alt="" /></p>
+
+<h1 id="animation-fill-mode">animation-fill-mode</h1>
+
+<p>Next up is  <code>animation-fill-mode</code>. This one’s magic 🎩</p>
+
+<p>By default, when we apply an animation to an element, it has no affect before or after it has ran.  <code>animation-fill-mode</code>  changes that.</p>
+
+<p>The values for  <code>animation-fill-mode</code>  that will interest us are;</p>
+
+<ul>
+<li><code>forwards</code>  - element retains animation styling</li>
+<li><code>backwards</code>- element retains style from first keyframe during  <code>animation-delay</code></li>
+<li><code>both</code>  - element retains styling in both directions</li>
+</ul>
+
+<p>Let’s consider an animation where we shrink an element to half its size.</p>
+
+<p><img src="https://miro.medium.com/max/480/1*VUOlV2x_ttxTNnVCAPDAXg.gif" alt="" /></p>
+
+<p>Without using  <code>animation-fill-mode</code>  the element returns to normal size at the end of the animation. But using  <code>animation-fill-mode</code>  means we can keep the element at half size once the animation ends.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*5fYAMthgl7D0KGKYGRRx0Q.png" alt="" /></p>
+
+<p>Now a more common scenario for using  <code>animation-fill-mode</code>  is when showing and hiding elements. Consider a scenario where we have three elements that we want to fade in.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*RDzvBINfWRW-ayw9plJh0g.png" alt="" /></p>
+
+<p>We’d prefer a staggered effect so we give each element a different  <code>animation-delay</code>.</p>
+
+<p><img src="https://miro.medium.com/max/480/1*frFfGF2sru6RyHlyj3_uAw.gif" alt="" /></p>
+
+<p>But the outcome is not quite as desired because we didn’t use  <code>animation-fill-mode</code>  👎 Applying  <code>animation-fill-mode: backwards</code>  will fix it!</p>
+
+<p>For another demo consider this walk sign using  <code>animation-fill-mode</code>  🚶</p>
+
+<h1 id="animation-direction">animation-direction</h1>
+
+<p>Last but not least is animation-direction. No surprises that this property allows you to define the direction of your animation. There are four main keywords;</p>
+
+<ul>
+<li><code>alternate</code>- the direction of the animation alternates on each iteration</li>
+<li><code>alternate-reverse</code>- same as  <code>alternate</code>  but starts in  <code>reverse</code></li>
+<li><code>normal</code>  - self explanatory</li>
+<li><code>reverse</code>  - the animation is played in reverse</li>
+</ul>
+
+<p>For an example we could use  <code>alternate</code>  for something that opens and closes.</p>
+
+<p>How about a clapper board?</p>
+
+<p><img src="https://miro.medium.com/max/480/1*YS2mQVJYJKKTdA5tKY3JzQ.gif" alt="" /></p>
+
+<p>Using an  <code>animation-iteration-count</code>  of  <code>2</code>  with  <code>animation-direction</code>  <code>alternate</code>  saves us writing separate animations.</p>
+
+<h1 id="animation-shorthand">animation shorthand</h1>
+
+<p>If you’ve got this far, that’s all the animation properties 🎉 You know them all now 🤓 There’s now an opportunity to tidy up your animation code by using the shorthand property. That’s right, you don’t need to write out all the properties each time.</p>
+
+<p>This</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*M-li0KTmg0QpkwuzKdkoVg.png" alt="" /></p>
+
+<p>Is equivalent to this</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*H358682oCimDg_z4N4mFPg.png" alt="" /></p>
+
+<p>Sweet 🍭</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*08nwrxY4gHU2uT2iz-gHtg.png" alt="" /></p>
+
+<p>Those properties are also optional so you can use whichever combination you need 👍</p>
+
+<p>But that’s not all. Using the  <code>animation</code>  property makes it a little easier to apply many animations to an element.</p>
+
+<p>Consider an element that we make come in from below and then rotate by 45 degrees.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*oOPotWMrPIhx-WUCrj9z6A.png" alt="" /></p>
+
+<p>You can use comma separated values for your  <code>animation</code>  properties. But you could also do this</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*v8v0Xpj91Yo08mIij91uZQ.png" alt="" /></p>
+
+<hr />
+
+<blockquote>
+<p>Written with <a href="https://codeburst.io/a-guide-to-css-animation-part-2-2cd422f78567">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebsite%5cCSS%5cguide-to-css-animation-part-2.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#a-guide-to-css-animation-part-2">A Guide to CSS Animation — Part 2</a></li>
+<li><a href="#animation-iteration-count">animation-iteration-count</a></li>
+<li><a href="#animation-timing-function">animation-timing-function</a></li>
+<li><a href="#animation-play-state">animation-play-state</a></li>
+<li><a href="#animation-delay">animation-delay</a></li>
+<li><a href="#animation-fill-mode">animation-fill-mode</a></li>
+<li><a href="#animation-direction">animation-direction</a></li>
+<li><a href="#animation-shorthand">animation shorthand</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

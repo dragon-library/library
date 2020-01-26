@@ -8,12 +8,12 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/</loc>
     <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/</loc>
     <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
   
@@ -42,6 +42,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/javascript/cheatsheet/</loc>
   </url>
   
@@ -63,6 +67,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/pythonthailand/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/start-django-framework/</loc>
   </url>
   
   <url>
@@ -88,6 +96,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/</loc>
   </url>
   
@@ -101,6 +113,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/</loc>
   </url>
   
   <url>
@@ -142,6 +158,14 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/modules-list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/</loc>
   </url>
   
   <url>
@@ -362,6 +386,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/10-knowledge-javascript/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/</loc>
   </url>
   
@@ -371,6 +399,26 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/circle-progress/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/creating-the-layout/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-3/</loc>
   </url>
   
   <url>
@@ -394,7 +442,15 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/django-rest-framework/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/javascript-use-map/</loc>
   </url>
   
   <url>
@@ -403,6 +459,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/api-for-javascript/</loc>
   </url>
   
 </urlset>

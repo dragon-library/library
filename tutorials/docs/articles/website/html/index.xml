@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/</link>
+    <description>Recent content in HTML on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/website/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating the Layout in HTML</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/creating-the-layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/creating-the-layout/</guid>
+      <description>Website Design: Creating the Layout in HTML For this you need to be aware of the different layout options available in HTML/CSS and which of those is the right fit for your website design. Let us go through the options one by one.
+Photo by Pankaj Patel on Unsplash
+Tables — Do Not Do This! This was used earlier when the web was still in its infancy, and there wasn’t much you could do with a website except display text.</description>
+    </item>
+    
+  </channel>
+</rss>

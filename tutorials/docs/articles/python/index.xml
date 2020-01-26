@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aticles Python on Tutorials</title>
+    <title>Python on Tutorials</title>
     <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/</link>
-    <description>Recent content in Aticles Python on Tutorials</description>
+    <description>Recent content in Python on Tutorials</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 18 Jan 2020 10:42:26 +0600</lastBuildDate>
     

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/</link>
+    <description>Recent content in CSS on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/website/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS Animation — Part 1</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-1/</guid>
+      <description>A Guide to CSS Animation — Part 1 This post assumes you’ve never created a CSS animation before. But even if you have, there may be things you were not aware of. It does assume you have some familiarity with HTML and CSS. We’ll explore creating your first animation through to things like chaining animations.
+CSS animation can be a quick concept to grasp but a big topic to cover once we really dig in.</description>
+    </item>
+    
+    <item>
+      <title>CSS Animation — Part 2</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-2/</guid>
+      <description>A Guide to CSS Animation — Part 2 animation-iteration-count Let’s pick up from where we left off with by modifying our first animation. If you need a little refresher, this is what we had.
+But the animation only ran once. What if we wanted the animation to run many times or not even stop? In the case of loading animations, we may want the animation to be infinite. This is where animation-iteration-count comes into play.</description>
+    </item>
+    
+    <item>
+      <title>CSS Animation — Part 3</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-3/</guid>
+      <description>A Guide to CSS Animation — Part 3 CSS Variables CSS variables are awesome. But you can’t animate them just yet. So what can we do with them? We can use their values to create dynamic animations.
+Consider an example where we have three squares. We want to animate them all growing to different scales. Do we need three different animations for this? We could use animation-fill-mode backwards and scale them all from the same start size?</description>
+    </item>
+    
+  </channel>
+</rss>

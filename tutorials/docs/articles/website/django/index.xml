@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/</link>
+    <description>Recent content in Django on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/website/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Start Web Application</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/start-django-framework/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/start-django-framework/</guid>
+      <description>เริ่มพัฒนา Web Application กับภาษา Python ด้วย Django Framework ภาษา Python เริ่มถูกใช้งานอย่างแพร่หลายมากขึ้นเรื่อยๆ ในช่วงนี้เนื่องจากความง่ายในการเรียนรู้ และความสะดวกในการทดสอบโปรแกรม เนื่องจาก Python เป็นภาษาประเภท Script ซึ่งจะแตกต่างกับภาษาประเภท Java หรือ C ที่ต้อง compile code ให้ออกมาเป็น binary ก่อนนำไปรันได้จริง เช่น หากต้องการทดสอบ function substring ว่าจะสามารถตัดคำให้เราถูกต้องหรือไม่ กรณีใช้ภาษา Java หรือ C ก็ต้องเขียน class, main function หรืออื่นๆ อีกมากมายกว่าจะเริ่มทดสอบ function เล็กๆ นี้ได้ แต่ใน Python นั้น เพียงแค่เข้า Python console ก็สามารถทดสอบ function เหล่านี้ได้ทันที
+Django (อ่านว่าจังโก้ หรือแจงโก้ โดยไม่ออกเสียงตัว D) เป็น framework ที่ใช้ในการสร้าง Web Application ในฝั่งของ Back End ที่พัฒนาด้วยภาษา Python โดยในตัว framework จะมีส่วนประกอบทุกอย่างที่จำเป็นตั้งแต่การเชื่อมต่อฐานข้อมูล ไปจนถึงการ render ข้อมูลออกมาให้ฝั่ง Front End แสดงผลข้อมูลเหล่านั้นได้ ซึ่ง framework ในรูปแบบนี้ในภาษาอื่นๆ เช่น Ruby on rails สำหรับภาษา Ruby, Play Framework สำหรับภาษา Java หรือ Scala, Groovy on Grails สำหรับภาษา Groovy, Laravel สำหรับภาษา PHP, หรือ Express สำหรับภาษา Javascript ของ Node.</description>
+    </item>
+    
+    <item>
+      <title>Start Django RestFramework</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/django-rest-framework/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/django-rest-framework/</guid>
+      <description>เริ่มต้นใช้งาน Django RestFramework ปัจจุบันการพัฒนาเวปไซด์จะแยกการพัฒนาออกเป็น FrontEnd (เช่น React, Angular, Vue) และ BackEnd ( เช่น Django ) ซึ่งสิ่งที่ใช้เป็นสื่อกลางในการแลกเปลี่ยนข้อมูลกันระหว่าง FrontEnd และ BackEnd คือ Rest API นั่นเอง ในบทความนี้จะเป็นการอธิบายการสร้าง BackEnd ให้รองรับ Rest API ด้วย Django โดยได้มีการเลือกใช้ Library ชื่อ Django Rest framework เพื่อช่วยให้การพัฒนา REST API ทำได้อย่างง่ายดายและรวดเร็ว
+สิ่งที่ต้องเตรียม  Python 3.7 ความรู้ด้านการเขียน Django ขั้นพื้นฐาน ( สร้าง model และเขียน view ได้ ) ติดตั้ง package พื้นฐานด้วยคำสั่งต่อไปนี้
+$ pip install -r requirements.txt  ทำความรู้จักกับ REST API REST API คือข้อกำหนดที่ใช้ในการแลกเปลี่ยนข้อมูลระหว่าง FrontEnd และ BackEnd โดยทั่วไปข้อกำหนดนี้จะถูกใช้งานอยู่บน HTTP Protocol</description>
+    </item>
+    
+  </channel>
+</rss>
