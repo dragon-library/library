@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Share+Tech+Mono'>
+
+    <style>
+        body {
+            background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+            
+            font-family: 'Share Tech Mono', monospace; /*'Share Tech Mono', monospace; */
+        }
+
+        /* The device with borders */
+        .tablet {
+            position: relative;
+            width: 768px;
+            height: 1024px;
+            margin: auto;
+            border: 16px white solid;
+            border-top-width: 60px;
+            border-bottom-width: 60px;
+            border-radius: 36px;
+            background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+            
+        }
+
+        /* The horizontal line on the top of the device */
+        .tablet:before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1e2730;
+            border-radius: 10px;
+        }
+
+        /* The circle on the bottom of the device */
+        .tablet:after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            left: 50%;
+            bottom: -65px;
+            transform: translate(-50%, -50%);
+            background: #1e2730;
+            border-radius: 50%;
+        }
+
+        /* The screen (or content) of the device */
+        .tablet .content {
+            width: 768px;
+            height: 965px;
+            background: #1e2730;
+            margin: -1px;
+            
+        }
+
+        .container {
+            position: absolute;
+
+            width: auto;
+        }
+
+        /* The navbar */
+        .topnav {
+            overflow: hidden;
+            
+
+        }
+
+        /* Navbar links */
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 1em 1em;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+
+        .topnav a:hover {
+
+            color: red;
+            
+        }
+
+        
+        
+
+        /* Black */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="tablet">
+        <div class="container">
+            <div class="topnav">
+                <a onclick="document.getElementById('showme').src=('video-title.html')">Home</a>
+                <a onclick="document.getElementById('showme').src=('digital-clock/index.html')">Digital</a>
+                <a onclick="document.getElementById('showme').src=('analog/index.html')">Analog</a>
+                <a onclick="document.getElementById('showme').src=('smart-watch/index.html')">Smart Watch</a>
+                <a onclick="document.getElementById('showme').src=('two-in-one/index.html')">2IN1</a>
+                <a onclick="document.getElementById('showme').src=('pacific/index.html')">Pacific</a>
+            </div>
+        </div>
+        <div class="content">
+            <iframe id="showme" src="video-title.html" style="width:100%;border:none;height:100%">
+
+              
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+    <!-- Flib :  https://codepen.io/sarawut-wongsanga/full/qBEQEwP 
+    analog : https://codepen.io/sarawut-wongsanga/full/VwYVYVy
+    big_flib : https://codepen.io/sarawut-wongsanga/full/zYxaOJO
+    svg : https://codepen.io/sarawut-wongsanga/full/mdyQyNz
+    digital-clock/index.html
+    -->
+
+    <script src="./script.js"></script>
+
+    <script>
+
+    </script>
+
+
+
+</body>
+
+</html>
