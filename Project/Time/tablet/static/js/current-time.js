@@ -44,14 +44,12 @@ document.onmousemove = event => {
 function zeroPad(n) {	return (n > 9 ? '' : '0') + n;	}
 function showtime() {
 	var d = new Date();
-	var months = ["January", "February", "March",
+	var months = ["มกราคม", "February", "March",
 								"April", "May", "June", "July",
 								"August", "September", "October", 
 								"November", "December"];
-	var days = ["Sunday", "Monday", "Tuesday", 
-							"Wednesday", "Thursday", "Friday", 
-							"Saturday"];
+	var days = ["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"];
 	$time.innerText = zeroPad(d.getHours()) + ':' + zeroPad(d.getMinutes());
-	$date.innerText = days[d.getDay()] + ", " + d.getDate() 
+	$date.innerText = "วัน"+days[d.getDay()] + "ที่ " + d.getDate() 
 											+ " " + months[d.getMonth()];
 }
