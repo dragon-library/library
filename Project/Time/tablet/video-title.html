@@ -1,98 +1,116 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
-  width: 100%;
-  background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
-}
+    body {
+      margin: 0;
+      font-family: Arial;
+      font-size: 17px;
+      width: 100%;
+      background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+    }
 
-#myVideo {
-    position: absolute;
-    top:50%;
-    left: 50%;
-  min-width: 100%; 
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-}
+    #myVideo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+    }
 
-.content {
-  position: fixed;
-  bottom: 0;
-  background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
+    .content {
+      position: fixed;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+      color: #f1f1f1;
+      width: 100%;
+      padding: 20px;
+    }
 
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
+    #myBtn {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
 
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-.clock {
-  position:relative;
-  margin-top:7em;
-  text-align:center;
-}
+    #myBtn:hover {
+      background: #ddd;
+      color: black;
+    }
 
-.clock #time {
-  font-size:3.7em;
-  font-weight:100;
-  color:#fff;
-/* 	background:red; */
-}
+    .clock {
+      position: relative;
+      
+      text-align: center;
+    }
 
-.clock #date {
-  color:#fff;
-}
+    .clock #time {
+      font-size: 3.7em;
+      font-weight: 100;
+      color: #fff;
+      /* 	background:red; */
+    }
 
+    .clock #date {
+      color: #fff;
+    }
 
-</style>
+    /* Blowing Text */
+
+    .lowerRight {
+      text-align: center;
+      margin: 2px;
+
+      font-size: 3em;
+      color: #1f7;
+
+      right: 0;
+      bottom: 0;
+    }
+
+    /* Blowing Text */
+  </style>
 </head>
+
 <body>
 
-<video autoplay muted  id="myVideo">
-  <source src="static/media/Atoms.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+  <video autoplay muted id="myVideo">
+    <source src="static/media/Atoms.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 
-<div class="clock">
-  <div id="time">12:37</div>
-  <div id="date">Sunday, 11 June</div>
-</div>
+  <!-- Blowing Text -->
 
-<script>
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("myBtn");
+  <canvas id="canvas"></canvas>
 
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
-</script>
-<script src="static/js/current-time.js"></script>
+
+  <!-- Blowing Text -->
+
+  <div class="clock" id='clocks'>
+    <div id="time">12:37</div>
+    <div id="date">Sunday, 11 June</div>
+  </div>
+
+
+
+  
+ <!-- <script src="static/js/current-time.js"></script>  -->
+  <script src="static/js/bolwer.js"></script>
+ 
+    <script src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js'></script>
+
 </body>
+
 </html>
