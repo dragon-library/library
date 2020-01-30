@@ -3,16 +3,24 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Share+Tech+Mono'>
+<<<<<<< HEAD
  <script src="./current-time.js"></script>
+=======
+
+    <link rel="stylesheet" href="static/css/main.css">
+
+>>>>>>> 37565b083b42ae218e5d09c96368aa897f40dee9
     <style>
         body {
             background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
-            
-            font-family: 'Share Tech Mono', monospace; /*'Share Tech Mono', monospace; */
+
+            font-family: 'Share Tech Mono', monospace;
+            /*'Share Tech Mono', monospace; */
         }
 
         /* The device with borders */
@@ -26,7 +34,8 @@
             border-bottom-width: 60px;
             border-radius: 36px;
             background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
-            
+            overflow: hidden;
+
         }
 
         /* The horizontal line on the top of the device */
@@ -63,14 +72,17 @@
             height: 965px;
             background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
             margin: -1px;
+            overflow: hidden;
             
         }
 
         .container {
             position: absolute;
+            margin: 0 auto;
 
             width: auto;
         }
+<<<<<<< HEAD
 
         /* The navbar */
         .topnav {
@@ -101,6 +113,8 @@
         
 
         /* Black */
+=======
+>>>>>>> 37565b083b42ae218e5d09c96368aa897f40dee9
     </style>
 
 </head>
@@ -109,24 +123,80 @@
 
     <div class="tablet">
         <div class="container">
-            <div class="topnav">
+            <div class="navbar">
                 <a onclick="document.getElementById('showme').src=('video-title.html')">Home</a>
-                <a onclick="document.getElementById('showme').src=('digital-clock/index.html')">Digital</a>
-                <a onclick="document.getElementById('showme').src=('analog/index.html')">Analog</a>
-                <a onclick="document.getElementById('showme').src=('smart-watch/index.html')">Smart Watch</a>
-                <a onclick="document.getElementById('showme').src=('two-in-one/index.html')">2IN1</a>
-                <a onclick="document.getElementById('showme').src=('pacific/index.html')">Pacific</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Analog
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a onclick="document.getElementById('showme').src=('analog/index.html')">Analog-01</a>
+                        <a onclick="document.getElementById('showme').src=('analog-apple-01/index.html')">Apple Watch-01</a>
+                        <a onclick="document.getElementById('showme').src=('analog-apple-02/index.html')">Apple Watch-02</a>
+                        <a onclick="document.getElementById('showme').src=('svg-clock/index.html')">SVG Clock</a>
+                        <a onclick="document.getElementById('showme').src=('pacific/index.html')">Pacific</a>
+                    </div>
+                </div>
+               
+                <div class="dropdown">
+                    <button class="dropbtn">Digital
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a onclick="document.getElementById('showme').src=('digital-clock/index.html')">Digital-01</a>
+                        <a onclick="document.getElementById('showme').src=('smart-watch/index.html')">Digital-02</a>                        <a
+                            onclick="document.getElementById('showme').src=('digital-alarm-clock/index.html')">Digital-Alarm</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Flip
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a onclick="document.getElementById('showme').src=('flip-01/index.html')">Flip-01</a>
+                        <a onclick="document.getElementById('showme').src=('flip-02/index.html')">Flip-02</a>
+                        <a onclick="document.getElementById('showme').src=('tempo-atual/index.html')">Tempo</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Hybrid
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a onclick="document.getElementById('showme').src=('two-in-one/index.html')">Hybrid-01</a>
+                        <a onclick="document.getElementById('showme').src=('hybrid-2/index.html')">Hybrid-02</a>
+                    </div>
+                </div>
+
+
+
             </div>
+<<<<<<< HEAD
         </div>
        
 
             <iframe id="showme" src="video-title.html" style="width:100%;border:none;height:100%">
+=======
+>>>>>>> 37565b083b42ae218e5d09c96368aa897f40dee9
 
-              
 
+            
+
+            <div class="content">
+                <iframe id="showme" src="video-title.html" style="width:100%;border:none;height:100%">
+
+
+
+            </div>
         </div>
+<<<<<<< HEAD
         
     </div>
+=======
+>>>>>>> 37565b083b42ae218e5d09c96368aa897f40dee9
 
 
 
@@ -139,9 +209,31 @@
     digital-clock/index.html
     -->
 
+<<<<<<< HEAD
    
 
    
+=======
+    <script src="./script.js"></script>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+>>>>>>> 37565b083b42ae218e5d09c96368aa897f40dee9
 
 
 
