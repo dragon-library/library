@@ -32,6 +32,19 @@ import pandas as pd def color_negative_red(val): color = &#39;red&#39; if val &a
     </item>
     
     <item>
+      <title>Pandas User Guide</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</guid>
+      <description>User Guide  Source : Pandas Document : .
+ The User Guide covers all of pandas by topic area. Each of the subsections introduces a topic (such as “working with missing data”), and discusses how pandas approaches the problem, with many examples throughout.
+Users brand-new to pandas should start with 10 minutes to pandas.
+Further information on any specific method can be obtained in the API reference.
+ IO tools (text, CSV, HDF5, …)  CSV &amp;amp; text files JSON HTML Excel files OpenDocument Spreadsheets Binary Excel (.</description>
+    </item>
+    
+    <item>
       <title>21 Pandas operations</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</link>
       <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>

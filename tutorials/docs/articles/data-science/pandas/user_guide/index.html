@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pandas User Guide"><meta property="og:title" content="Pandas User Guide" />
+<meta property="og:description" content="User Guide  Source : Pandas Document : .
+ The User Guide covers all of pandas by topic area. Each of the subsections introduces a topic (such as “working with missing data”), and discusses how pandas approaches the problem, with many examples throughout.
+Users brand-new to pandas should start with 10 minutes to pandas.
+Further information on any specific method can be obtained in the API reference.
+ IO tools (text, CSV, HDF5, …)  CSV &amp; text files JSON HTML Excel files OpenDocument Spreadsheets Binary Excel (." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/" />
+
+<title>Pandas User Guide | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.d7931d740642e656222bfe71c31926bed24ceb9fafa2d9069a7a83fa55070bb9.css" integrity="sha256-15MddAZC5lYiK/5xwxkmvtJM65&#43;votkGmnqD&#43;lUHC7k=">
+
+
+<script defer src="/library/tutorials/en.search.min.796a4672a7e57dd85bfb169289e29c8f7a3525f441ba5185839df98c6b0fee69.js" integrity="sha256-eWpGcqflfdhb&#43;xaSieKcj3o1JfRBulGFg535jGsP7mk="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/simple-example-based-guide/" >
+      A Simple Example-Based Guide
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/10_pandas_tip/" >
+      10 Pandas tips
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/user_guide/"  class="active">
+      Pandas User Guide
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/" >
+      21 Pandas operations
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-2/" >
+      Basic Data Analysis
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/" >
+      House Market Analysis 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/cheatsheet-pandas/" >
+      Pandas Cheatsheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/" >
+      Selecting Subsets of Data 1
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/website/" >
+      Website
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Pandas User Guide</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="user-guide">User Guide</h1>
+
+<blockquote>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html#user-guide">Source : Pandas Document : </a>.</p>
+</blockquote>
+
+<p>The User Guide covers all of pandas by topic area. Each of the subsections introduces a topic (such as “working with missing data”), and discusses how pandas approaches the problem, with many examples throughout.</p>
+
+<p>Users brand-new to pandas should start with  <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#min">10 minutes to pandas</a>.</p>
+
+<p>Further information on any specific method can be obtained in the  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/index.html#api">API reference</a>.</p>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">IO tools (text, CSV, HDF5, …)</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#csv-text-files">CSV &amp; text files</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#json">JSON</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#html">HTML</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#excel-files">Excel files</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#opendocument-spreadsheets">OpenDocument Spreadsheets</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#binary-excel-xlsb-files">Binary Excel (.xlsb) files</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#clipboard">Clipboard</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#pickling">Pickling</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#msgpack">msgpack</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#hdf5-pytables">HDF5 (PyTables)</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#feather">Feather</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#parquet">Parquet</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#orc">ORC</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#sql-queries">SQL queries</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#google-bigquery">Google BigQuery</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#stata-format">Stata format</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#sas-formats">SAS formats</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#spss-formats">SPSS formats</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#other-file-formats">Other file formats</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#performance-considerations">Performance considerations</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">Indexing and selecting data</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#different-choices-for-indexing">Different choices for indexing</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#basics">Basics</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#attribute-access">Attribute access</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#slicing-ranges">Slicing ranges</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#selection-by-label">Selection by label</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#selection-by-position">Selection by position</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#selection-by-callable">Selection by callable</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated">IX indexer is deprecated</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-with-list-with-missing-labels-is-deprecated">Indexing with list with missing labels is deprecated</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#selecting-random-samples">Selecting random samples</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#setting-with-enlargement">Setting with enlargement</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#fast-scalar-value-getting-and-setting">Fast scalar value getting and setting</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#boolean-indexing">Boolean indexing</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-with-isin">Indexing with isin</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#the-where-method-and-masking">The  <code>where()</code>  Method and Masking</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#the-query-method">The  <code>query()</code>  Method</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#duplicate-data">Duplicate data</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#dictionary-like-get-method">Dictionary-like  <code>get()</code>  method</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#the-lookup-method">The  <code>lookup()</code>  method</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#index-objects">Index objects</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#set-reset-index">Set / reset index</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy">Returning a view versus a copy</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">MultiIndex / advanced indexing</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#hierarchical-indexing-multiindex">Hierarchical indexing (MultiIndex)</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#advanced-indexing-with-hierarchical-index">Advanced indexing with hierarchical index</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#sorting-a-multiindex">Sorting a  <code>MultiIndex</code></a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#take-methods">Take methods</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#index-types">Index types</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#miscellaneous-indexing-faq">Miscellaneous indexing FAQ</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">Merge, join, and concatenate</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#concatenating-objects">Concatenating objects</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#database-style-dataframe-or-named-series-joining-merging">Database-style DataFrame or named Series joining/merging</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#timeseries-friendly-merging">Timeseries friendly merging</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">Reshaping and pivot tables</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-pivoting-dataframe-objects">Reshaping by pivoting DataFrame objects</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking">Reshaping by stacking and unstacking</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt">Reshaping by Melt</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#combining-with-stats-and-groupby">Combining with stats and GroupBy</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#pivot-tables">Pivot tables</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#cross-tabulations">Cross tabulations</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#tiling">Tiling</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#computing-indicator-dummy-variables">Computing indicator / dummy variables</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#factorizing-values">Factorizing values</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#examples">Examples</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#exploding-a-list-like-column">Exploding a list-like column</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html">Working with text data</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#text-data-types">Text Data Types</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods">String Methods</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#splitting-and-replacing-strings">Splitting and replacing strings</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#concatenation">Concatenation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#indexing-with-str">Indexing with  <code>.str</code></a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#extracting-substrings">Extracting substrings</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#testing-for-strings-that-match-or-contain-a-pattern">Testing for Strings that match or contain a pattern</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#creating-indicator-variables">Creating indicator variables</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#method-summary">Method summary</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html">Working with missing data</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#values-considered-missing">Values considered “missing”</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#inserting-missing-data">Inserting missing data</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#calculations-with-missing-data">Calculations with missing data</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#sum-prod-of-empties-nans">Sum/prod of empties/nans</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#na-values-in-groupby">NA values in GroupBy</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#filling-missing-values-fillna">Filling missing values: fillna</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#filling-with-a-pandasobject">Filling with a PandasObject</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#dropping-axis-labels-with-missing-data-dropna">Dropping axis labels with missing data: dropna</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#interpolation">Interpolation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#replacing-generic-values">Replacing generic values</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#string-regular-expression-replacement">String/regular expression replacement</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#numeric-replacement">Numeric replacement</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#experimental-na-scalar-to-denote-missing-values">Experimental  <code>NA</code>  scalar to denote missing values</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">Categorical data</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#object-creation">Object creation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#categoricaldtype">CategoricalDtype</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#description">Description</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#working-with-categories">Working with categories</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#sorting-and-order">Sorting and order</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#comparisons">Comparisons</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#operations">Operations</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#data-munging">Data munging</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#getting-data-in-out">Getting data in/out</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#missing-data">Missing data</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#differences-to-r-s-factor">Differences to R’s  factor</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html#gotchas">Gotchas</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/integer_na.html">Nullable integer data type</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/integer_na.html#construction">Construction</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/integer_na.html#operations">Operations</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/integer_na.html#scalar-na-value">Scalar NA Value</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/boolean.html">Nullable Boolean Data Type</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/boolean.html#indexing-with-na-values">Indexing with NA values</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/boolean.html#kleene-logical-operations">Kleene Logical Operations</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">Visualization</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#basic-plotting-plot">Basic plotting:  <code>plot</code></a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#other-plots">Other plots</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#plotting-with-missing-data">Plotting with missing data</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#plotting-tools">Plotting Tools</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#plot-formatting">Plot Formatting</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#plotting-directly-with-matplotlib">Plotting directly with matplotlib</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html">Computational tools</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html#statistical-functions">Statistical functions</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html#window-functions">Window Functions</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html#aggregation">Aggregation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html#expanding-windows">Expanding windows</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html#exponentially-weighted-windows">Exponentially weighted windows</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html">Group By: split-apply-combine</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#splitting-an-object-into-groups">Splitting an object into groups</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#iterating-through-groups">Iterating through groups</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#selecting-a-group">Selecting a group</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#aggregation">Aggregation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#transformation">Transformation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#filtration">Filtration</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#dispatching-to-instance-methods">Dispatching to instance methods</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#flexible-apply">Flexible  <code>apply</code></a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#other-useful-features">Other useful features</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#examples">Examples</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html">Time series / date functionality</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#overview">Overview</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timestamps-vs-time-spans">Timestamps vs. Time Spans</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#converting-to-timestamps">Converting to timestamps</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#generating-ranges-of-timestamps">Generating ranges of timestamps</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timestamp-limitations">Timestamp limitations</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#indexing">Indexing</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-date-components">Time/date components</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects">DateOffset objects</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-series-related-instance-methods">Time Series-Related Instance Methods</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#resampling">Resampling</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-span-representation">Time span representation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#converting-between-representations">Converting between representations</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#representing-out-of-bounds-spans">Representing out-of-bounds spans</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-zone-handling">Time zone handling</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timedeltas.html">Time deltas</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timedeltas.html#parsing">Parsing</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timedeltas.html#operations">Operations</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timedeltas.html#reductions">Reductions</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timedeltas.html#frequency-conversion">Frequency conversion</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timedeltas.html#attributes">Attributes</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timedeltas.html#timedeltaindex">TimedeltaIndex</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timedeltas.html#resampling">Resampling</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html">Styling</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Building-styles">Building styles</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Finer-control:-slicing">Finer control: slicing</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Finer-Control:-Display-Values">Finer Control: Display Values</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Builtin-styles">Builtin styles</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Sharing-styles">Sharing styles</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Other-Options">Other Options</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Fun-stuff">Fun stuff</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Export-to-Excel">Export to Excel</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html#Extensibility">Extensibility</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html">Options and settings</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#overview">Overview</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#getting-and-setting-options">Getting and setting options</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#setting-startup-options-in-python-ipython-environment">Setting startup options in Python/IPython environment</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#frequently-used-options">Frequently Used Options</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#available-options">Available options</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#number-formatting">Number formatting</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#unicode-formatting">Unicode formatting</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#table-schema-display">Table schema display</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html">Enhancing performance</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html#cython-writing-c-extensions-for-pandas">Cython (writing C extensions for pandas)</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html#using-numba">Using Numba</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html#expression-evaluation-via-eval">Expression evaluation via  <code>eval()</code></a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/scale.html">Scaling to large datasets</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/scale.html#load-less-data">Load less data</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/scale.html#use-efficient-datatypes">Use efficient datatypes</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/scale.html#use-chunking">Use chunking</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/scale.html#use-other-libraries">Use other libraries</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/sparse.html">Sparse data structures</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/sparse.html#sparsearray">SparseArray</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/sparse.html#sparsedtype">SparseDtype</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/sparse.html#sparse-accessor">Sparse accessor</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/sparse.html#sparse-calculation">Sparse calculation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/sparse.html#migrating">Migrating</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/sparse.html#interaction-with-scipy-sparse">Interaction with scipy.sparse</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/gotchas.html">Frequently Asked Questions (FAQ)</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/gotchas.html#dataframe-memory-usage">DataFrame memory usage</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/gotchas.html#using-if-truth-statements-with-pandas">Using if/truth statements with pandas</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/gotchas.html#nan-integer-na-values-and-na-type-promotions"><code>NaN</code>, Integer  <code>NA</code>  values and  <code>NA</code>  type promotions</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/gotchas.html#differences-with-numpy">Differences with NumPy</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/gotchas.html#thread-safety">Thread-safety</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/gotchas.html#byte-ordering-issues">Byte-Ordering issues</a></li>
+</ul></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html">Cookbook</a>
+
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#idioms">Idioms</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#selection">Selection</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#multiindexing">MultiIndexing</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#missing-data">Missing data</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#grouping">Grouping</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#timeseries">Timeseries</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#merge">Merge</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#plotting">Plotting</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#data-in-out">Data In/Out</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#computation">Computation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#timedeltas">Timedeltas</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#aliasing-axis-names">Aliasing axis names</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#creating-example-data">Creating example data</a></li>
+</ul></li>
+</ul>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cpandas%5cuser_guide.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#user-guide">User Guide</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

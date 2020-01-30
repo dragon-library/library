@@ -10,6 +10,18 @@
     
     
     <item>
+      <title>Progressive Web App คืออะไร</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/create-progressive-web-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/create-progressive-web-app/</guid>
+      <description>Progressive Web App คืออะไร และ มาลองกันแบบง่ายๆ วันเดียวเสร็จ ฮัลโหลๆ สวัสดีครับ ช่วงนี้หายไปนาน แอบไปศึกษา Front-end framework อยู่หลายตัว จนไปเจอกับของเล่นใหม่เรียกว่า Progressive Web App หรือเรียกสั้นๆว่า PWA นั่นเอง ซึ่งประจวบเหมาะกับทาง Google ผู้ผลักดันเทคโนโลยีนี้ก็ได้มา Roadshow แสดงความเทพที่กรุงเทพกันไปหยกๆ ก็เลยถือโอกาสใช้พลังความมั่วส่วนตัว ขอมาเขียนเรื่องนี้ ดีไม่ดี ผิดพลาดตรงไหน ติชมได้เน่อ เริ่มกันเลย …
+ บทความนี้เกิดจากเนื้อหาหลายๆส่วนจากทั้งในงาน Roadshow เอง รวมถึงการมั่วซั่วของผู้เขียนนะครับ ดู Reference ได้ท้ายบทความ
+ หัวข้อในวันนี้  อะไรคือ PWA ทำไมต้อง PWA เบื้องหลังการทำงานของ PWA เป็นอย่างไร มาลองทำ PWA เล่นๆกันดู  อะไรคือ เจ้า Progressive Web App ? Source: http://www.letsnurture.com/blog/progressive-web-app-an-application-in-a-webpage.html
+เจ้านี่คือเทคโนโลยีที่จะทำให้เว็บของเราเนี่ย มีความใกล้เคียงกับ App ในมือถือมากขึ้น ทั้งความลื่นไหลในการใช้งาน, เข้าเมนูต่างๆอย่างง่ายดาย, การใช้งานเมื่ออยู่ใน Mode Offline, การทำ Push Notification ฯลฯ ในขณะเดียวกันก็เก็บข้อดีของเว็บไว้อาทิเช่น ความสดใหม่ของข้อมูล(อัพเดทกันได้ทันที ไม่ต้องไปอัพ App Store), ความเข้าถึงง่ายไม่ต้อง Install ให้ยุ่งยาก</description>
+    </item>
+    
+    <item>
       <title>10 เรื่องน่ารู้ตอบข้อสงสัย JavaScript</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/10-knowledge-javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

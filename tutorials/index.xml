@@ -99,6 +99,19 @@ Creating a project directory and virtual environment First of all, we need to cr
     </item>
     
     <item>
+      <title>Pandas User Guide</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</guid>
+      <description>User Guide  Source : Pandas Document : .
+ The User Guide covers all of pandas by topic area. Each of the subsections introduces a topic (such as “working with missing data”), and discusses how pandas approaches the problem, with many examples throughout.
+Users brand-new to pandas should start with 10 minutes to pandas.
+Further information on any specific method can be obtained in the API reference.
+ IO tools (text, CSV, HDF5, …)  CSV &amp;amp; text files JSON HTML Excel files OpenDocument Spreadsheets Binary Excel (.</description>
+    </item>
+    
+    <item>
       <title>Primer on Jinja Templating</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -107,6 +120,18 @@ Creating a project directory and virtual environment First of all, we need to cr
       <description>Primer on Jinja Templating Flask comes packaged with the powerful Jinja templating language.
 For those who have not been exposed to a templating language before, such languages essentially contain variables as well as some programming logic, which when evaluated (or rendered into HTML) are replaced with actual values.
 The variables and/or logic are placed between tags or delimiters. For example, Jinja templates use {% ... %} for expressions or logic (like for loops), while {{ .</description>
+    </item>
+    
+    <item>
+      <title>Progressive Web App คืออะไร</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/create-progressive-web-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/create-progressive-web-app/</guid>
+      <description>Progressive Web App คืออะไร และ มาลองกันแบบง่ายๆ วันเดียวเสร็จ ฮัลโหลๆ สวัสดีครับ ช่วงนี้หายไปนาน แอบไปศึกษา Front-end framework อยู่หลายตัว จนไปเจอกับของเล่นใหม่เรียกว่า Progressive Web App หรือเรียกสั้นๆว่า PWA นั่นเอง ซึ่งประจวบเหมาะกับทาง Google ผู้ผลักดันเทคโนโลยีนี้ก็ได้มา Roadshow แสดงความเทพที่กรุงเทพกันไปหยกๆ ก็เลยถือโอกาสใช้พลังความมั่วส่วนตัว ขอมาเขียนเรื่องนี้ ดีไม่ดี ผิดพลาดตรงไหน ติชมได้เน่อ เริ่มกันเลย …
+ บทความนี้เกิดจากเนื้อหาหลายๆส่วนจากทั้งในงาน Roadshow เอง รวมถึงการมั่วซั่วของผู้เขียนนะครับ ดู Reference ได้ท้ายบทความ
+ หัวข้อในวันนี้  อะไรคือ PWA ทำไมต้อง PWA เบื้องหลังการทำงานของ PWA เป็นอย่างไร มาลองทำ PWA เล่นๆกันดู  อะไรคือ เจ้า Progressive Web App ? Source: http://www.letsnurture.com/blog/progressive-web-app-an-application-in-a-webpage.html
+เจ้านี่คือเทคโนโลยีที่จะทำให้เว็บของเราเนี่ย มีความใกล้เคียงกับ App ในมือถือมากขึ้น ทั้งความลื่นไหลในการใช้งาน, เข้าเมนูต่างๆอย่างง่ายดาย, การใช้งานเมื่ออยู่ใน Mode Offline, การทำ Push Notification ฯลฯ ในขณะเดียวกันก็เก็บข้อดีของเว็บไว้อาทิเช่น ความสดใหม่ของข้อมูล(อัพเดทกันได้ทันที ไม่ต้องไปอัพ App Store), ความเข้าถึงง่ายไม่ต้อง Install ให้ยุ่งยาก</description>
     </item>
     
     <item>
@@ -797,6 +822,16 @@ function run() { const myNum = 191; var one = &amp;quot;One&amp;quot;; let two =
     </item>
     
     <item>
+      <title>Build a web app with Vue</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/build-web-app-with-vue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/build-web-app-with-vue/</guid>
+      <description>How to build a web app with Vue, Vuetify and Axios Source:
+Introduction In this article, we will be building a Vue.js Application supported by Vuetify and Axios. The aim of this article is to implement a movie application which will be calling on an API. The user will be able to search for movies. The API will retrieve movies with all the search details. When a user clicks on a movie, it will give more details of each movie.</description>
+    </item>
+    
+    <item>
       <title>Building a Stock Screener - Part 1</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -892,6 +927,16 @@ Consider an example where we have three squares. We want to animate them all gro
       <description>How to scrape Yahoo Finance and extract fundamental stock market data using Python, LXML, and Pandas In this blog post I’ll show you how to scrape Income Statement, Balance Sheet, and Cash Flow data for companies from Yahoo Finance using Python, LXML, and Pandas.
 I’ll use data from Mainfreight NZ (MFT.NZ) as an example, but the code will work for any stock symbol on Yahoo Finance.
 The screenshot below shows a Pandas DataFrame with MFT.</description>
+    </item>
+    
+    <item>
+      <title>Learning Full Stack Web Development</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/learning-web-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/learning-web-development/</guid>
+      <description>The Ultimate Guide to Learning Full Stack Web Development in 6 months, for $30 Hey everyone! In this article I’m going to show you how to go from knowing little to nothing about Web Development to Junior Full Stack Developer in just six months, for under $30.
+This article will cover everything you need to know! You’ll first learn the basics of Web Development with an online coding bootcamp ($15).</description>
     </item>
     
     <item>

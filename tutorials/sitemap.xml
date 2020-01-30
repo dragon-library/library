@@ -54,7 +54,15 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/create-progressive-web-app/</loc>
   </url>
   
   <url>
@@ -196,6 +204,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-10/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/</loc>
   </url>
   
   <url>
@@ -394,6 +406,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/build-web-app-with-vue/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</loc>
   </url>
   
@@ -431,6 +447,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/learning-web-development/</loc>
   </url>
   
   <url>
