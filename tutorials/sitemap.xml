@@ -418,6 +418,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/cal-stock-return/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/circle-progress/</loc>
   </url>
   
@@ -450,7 +454,19 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/intro-stock-analysis-pandas/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/learning-web-development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/</loc>
   </url>
   
   <url>

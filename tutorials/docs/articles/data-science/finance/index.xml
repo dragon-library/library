@@ -33,6 +33,17 @@ It’s easy to get carried away with the wealth of data and free open-source too
     </item>
     
     <item>
+      <title>Calculate Stock Returns</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/cal-stock-return/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/cal-stock-return/</guid>
+      <description>How to calculate stock returns in Python  4/3/2018 Written by DD
+Source.
+ Calculating financial returns in Python One of the most important tasks in financial markets is to analyze historical returns on various investments. To perform this analysis we need historical data for the assets. There are many data providers, some are free most are paid. In this chapter we will use the data from Yahoo’s finance website.</description>
+    </item>
+    
+    <item>
       <title>Dash by Plotly</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -40,6 +51,37 @@ It’s easy to get carried away with the wealth of data and free open-source too
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/</guid>
       <description>Python for Finance: Dash by Plotly  Source.
  Part 2 of Leveraging Python for Stock Portfolio Analyses. In part 1 of this series I discussed how, since I’ve become more accustomed to using pandas, that I have signficantly increased my use of Python for financial analyses. During the part 1 post, we reviewed how to largely automate the tracking and benchmarking of a stock portfolio’s performance leveraging pandas and the Yahoo Finance API.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Stock Analysis using Pandas</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/intro-stock-analysis-pandas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/intro-stock-analysis-pandas/</guid>
+      <description>Introduction to Stock Analysis using Pandas  http://www.quantsbin.com/introduction-stock-analysis-pandas1/  As defined in Investopedia A time series is a sequence of numerical data points in successive order. Generally, observation points are successively equally spaced in time. Most of the financial data is in the time series format and hence &amp;ldquo;Financial Time Series Analysis&amp;rdquo; is an important tool for anyone trying to understand the historical movements, predict the future movements or manage the risk associated with the future movements.</description>
+    </item>
+    
+    <item>
+      <title>Portfolio Optimization in Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/</guid>
+      <description>Portfolio Optimization in Python 5/31/2018 Written by DD
+In this post we will demonstrate how to use python to calculate the optimal portfolio and visualize the efficient frontier.
+In this post we will only show the code with minor explanations.
+Lets begin with loading the modules.
+import pandas as pd import numpy as np import matplotlib.pyplot as plt import pandas_datareader as web  Next we will get the stock tickers and the price data.</description>
+    </item>
+    
+    <item>
+      <title>Portfolio Optimization Methods</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/</guid>
+      <description>Portfolio Optimization Methods When constructing a multi-asset portfolio, coming up with the strategy to allocate weights to the portfolio components is a very important step in the process. Coming up with weights for a portfolio given its components can be done in a number of ways and is a question that boggles even the most skilled managers. So what is the most optimal way to do this? in this article we will try to introduce the most widely used methods and understand the intuition behind them.</description>
     </item>
     
     <item>

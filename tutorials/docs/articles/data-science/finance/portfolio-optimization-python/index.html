@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio Optimization in Python"><meta property="og:title" content="Portfolio Optimization in Python" />
+<meta property="og:description" content="Portfolio Optimization in Python 5/31/2018 Written by DD
+In this post we will demonstrate how to use python to calculate the optimal portfolio and visualize the efficient frontier.
+In this post we will only show the code with minor explanations.
+Lets begin with loading the modules.
+import pandas as pd import numpy as np import matplotlib.pyplot as plt import pandas_datareader as web  Next we will get the stock tickers and the price data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/" />
+
+<title>Portfolio Optimization in Python | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.d7931d740642e656222bfe71c31926bed24ceb9fafa2d9069a7a83fa55070bb9.css" integrity="sha256-15MddAZC5lYiK/5xwxkmvtJM65&#43;votkGmnqD&#43;lUHC7k=">
+
+
+<script defer src="/library/tutorials/en.search.min.ae305adbb76e33dc04d8a6fa024887c3a74d2c7859eabadfda86f21c9c681c25.js" integrity="sha256-rjBa27duM9wE2Kb6AkiHw6dNLHhZ6rrf2obyHJxoHCU="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/" >
+      Exploration of S&amp;P 500 Index
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-analysis-in-python/" >
+      Stock Analysis in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/cal-stock-return/" >
+      Calculate Stock Returns
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/" >
+      Dash by Plotly
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/intro-stock-analysis-pandas/" >
+      Introduction to Stock Analysis using Pandas
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/"  class="active">
+      Portfolio Optimization in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/" >
+      Portfolio Optimization Methods
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/" >
+      Quantitative Trading Strategies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-1/" >
+      Stock Portfolio Analyses
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/" >
+      Yahoo &amp; Google Finance API
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/website/" >
+      Website
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Portfolio Optimization in Python</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="portfolio-optimization-in-python-https-www-codingfinance-com-post-2018-05-31-portfolio-opt-in-python"><a href="https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-python/">Portfolio Optimization in Python</a></h1>
+
+<p>5/31/2018 Written by DD</p>
+
+<p>In this post we will demonstrate how to use python to calculate the optimal portfolio and visualize the efficient frontier.</p>
+
+<p>In this post we will only show the code with minor explanations.</p>
+
+<p>Lets begin with loading the modules.</p>
+
+<pre><code class="language-py">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas_datareader as web
+</code></pre>
+
+<p>Next we will get the stock tickers and the price data.</p>
+
+<pre><code class="language-py">tick = ['AMZN', 'AAPL', 'NFLX', 'XOM', 'T']
+price_data = web.get_data_yahoo(tick,
+                           start = '2014-01-01',
+                           end = '2018-05-31')['Adj Close']
+</code></pre>
+
+<p>Now lets calculate the log returns.</p>
+
+<pre><code class="language-py">log_ret = np.log(price_data/price_data.shift(1))
+</code></pre>
+
+<p>Next we will calculate the covariance matrix.</p>
+
+<pre><code class="language-py">cov_mat = log_ret.cov() * 252
+print(cov_mat)
+</code></pre>
+
+<pre><code class="language-py">## Symbols      AAPL      AMZN      NFLX         T       XOM
+## Symbols                                                  
+## AAPL     0.052338  0.023844  0.026897  0.008896  0.012677
+## AMZN     0.023844  0.086810  0.048926  0.007808  0.012902
+## NFLX     0.026897  0.048926  0.175844  0.008173  0.013306
+## T        0.008896  0.007808  0.008173  0.026032  0.010989
+## XOM      0.012677  0.012902  0.013306  0.010989  0.034014
+</code></pre>
+
+<p>Next we will jump right into the for loop and simulate the portfolio returns and risk on 5000 random portfolios. If you need the further explanation, please see the code in R.</p>
+
+<pre><code class="language-py"># Simulating 5000 portfolios
+num_port = 5000
+# Creating an empty array to store portfolio weights
+all_wts = np.zeros((num_port, len(price_data.columns)))
+# Creating an empty array to store portfolio returns
+port_returns = np.zeros((num_port))
+# Creating an empty array to store portfolio risks
+port_risk = np.zeros((num_port))
+# Creating an empty array to store portfolio sharpe ratio
+sharpe_ratio = np.zeros((num_port))
+</code></pre>
+
+<p>Lets run the for loop.</p>
+
+<pre><code class="language-py">for i in range(num_port):
+  wts = np.random.uniform(size = len(price_data.columns))
+  wts = wts/np.sum(wts)
+  
+  # saving weights in the array
+  
+  all_wts[i,:] = wts
+</code></pre>
+
+<pre><code class="language-py">  # Portfolio Returns
+  
+  port_ret = np.sum(log_ret.mean() * wts)
+  port_ret = (port_ret + 1) ** 252 - 1
+</code></pre>
+
+<pre><code class="language-py">  # Saving Portfolio returns
+  
+  port_returns[i] = port_ret
+</code></pre>
+
+<pre><code class="language-py">  
+  # Portfolio Risk
+  
+  port_sd = np.sqrt(np.dot(wts.T, np.dot(cov_mat, wts)))
+  
+  port_risk[i] = port_sd
+</code></pre>
+
+<pre><code class="language-py"> # Portfolio Sharpe Ratio
+ # Assuming 0% Risk Free Rate
+ 
+ sr = port_ret / port_sd
+ sharpe_ratio[i] = sr
+</code></pre>
+
+<p>Now that all the heavy lifting has been done. We will start by getting the minimum variance portfolio and the tangency portfolio.</p>
+
+<pre><code class="language-py">names = price_data.columns
+min_var = all_wts[port_risk.argmin()]
+print(min_var)
+</code></pre>
+
+<pre><code class="language-py">## [0.1479928  0.08456108 0.01861031 0.43988479 0.30895102]
+</code></pre>
+
+<pre><code class="language-py">max_sr = all_wts[sharpe_ratio.argmax()]
+print(max_sr)
+</code></pre>
+
+<pre><code>## [0.33134387 0.38121158 0.23987104 0.04371634 0.00385717]
+</code></pre>
+
+<p>Lets see the max sharpe ratio and the minimum risk for these portfolios</p>
+
+<pre><code class="language-py">print(sharpe_ratio.max())
+</code></pre>
+
+<pre><code>## 1.5976782731708208
+</code></pre>
+
+<pre><code class="language-py">print(port_risk.min())
+</code></pre>
+
+<pre><code>## 0.13362971668665094
+</code></pre>
+
+<p>Since we are only simulating 5000 portfolio, it very likely our allocations and our sharpe ratios/risk metrics will be different than what we got on the last post in R. The point of this exercise is to demonstrate the underlying process of getting optimal portfolio. If we need more accuracy then we need to use optimization packages instead of this trial and error method described in this post.</p>
+
+<p>Now lets visualize the weights of the portfolio. First we will visualize the minimum variance portfolio.</p>
+
+<pre><code class="language-py">min_var = pd.Series(min_var, index=names)
+min_var = min_var.sort_values()
+fig = plt.figure()
+ax1 = fig.add_axes([0.1,0.1,0.8,0.8])
+ax1.set_xlabel('Asset')
+ax1.set_ylabel(&quot;Weights&quot;)
+ax1.set_title(&quot;Minimum Variance Portfolio weights&quot;)
+min_var.plot(kind = 'bar')
+plt.show();
+</code></pre>
+
+<p><img src="https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-Python_files/figure-html/unnamed-chunk-10-1.png" alt="" /></p>
+
+<p>Next we will visualize the max sharpe ratio portfolio.</p>
+
+<pre><code class="language-py">max_sr = pd.Series(max_sr, index=names)
+max_sr = max_sr.sort_values()
+fig = plt.figure()
+ax1 = fig.add_axes([0.1,0.1,0.8,0.8])
+ax1.set_xlabel('Asset')
+ax1.set_ylabel(&quot;Weights&quot;)
+ax1.set_title(&quot;Tangency Portfolio weights&quot;)
+max_sr.plot(kind = 'bar')
+plt.show();
+</code></pre>
+
+<p><img src="https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-Python_files/figure-html/unnamed-chunk-11-1.png" alt="" /></p>
+
+<p>Finally we can plot all the 5000 portfolios.</p>
+
+<pre><code class="language-py">fig = plt.figure()
+ax1 = fig.add_axes([0.1,0.1,0.8,0.8])
+ax1.set_xlabel('Risk')
+ax1.set_ylabel(&quot;Returns&quot;)
+ax1.set_title(&quot;Portfolio optimization and Efficient Frontier&quot;)
+plt.scatter(port_risk, port_returns)
+plt.show();
+</code></pre>
+
+<p><img src="https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-Python_files/figure-html/unnamed-chunk-12-1.png" alt="" /></p>
+
+<blockquote>
+<ul>
+<li><a href="https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-python/">https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-python/</a></li>
+</ul>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cfinance%5cportfolio-optimization-python.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#portfolio-optimization-in-python-https-www-codingfinance-com-post-2018-05-31-portfolio-opt-in-python"><a href="https://www.codingfinance.com/post/2018-05-31-portfolio-opt-in-python/">Portfolio Optimization in Python</a></a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
