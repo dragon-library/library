@@ -270,5 +270,22 @@ If you are into python , there is a fair chance that you would have contributed 
  หรือแบบไม่สามารถแยก version ของ library กันได้  เช่น งาน A ใช้ OpenCV 3 แต่ งาน B ใช้ OpenCV 4 ทำไงให้ลง 2 version พร้อมกันได้ละ ก็ต้องให้เจ้า Virtualenv ช่วยเราไง</description>
     </item>
     
+    <item>
+      <title>Python 101 สําหรับมือใหม่</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101-for-beginner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101-for-beginner/</guid>
+      <description>Python 101 สําหรับมือใหม่ Interpreted Language (ความหมายง่ายๆของภาษาแบบนี้คือ มันสามารถทํางานได้บนทุกแพลตฟอร์มขอให้มีแค่ interpreter ให้มันก็พอ และ อีกอย่างคือมันจะทําการแปลงจากโค้ดที่เรามีไปเป็นภาษาที่เครื่องเข้าใจแบบ on the fly)
+ถ้าเทียบกับการพัฒนาโปรแกรมด้วย Java การเขียน Python นี้จะแตกต่างแล้วก็เห็นได้ชัดเลยว่ามันเร็วกว่ามากๆ เช่นตัวอย่างนี้เลย
+public class { public static void main(String[]args) { System.out.println(&amp;quot;Hello, world!&amp;quot;); } }  ตัวอย่างภาษา Java
+print(&amp;quot;Hello, world!&amp;quot;)
+ตัวอย่างภาษา Python
+แค่เทียบก็เห็นละว่า Line of code น้อยกว่ามาก เขียนสั้นง่ายๆดี
+Basic Python Syntax Indent
+ปกติภาษาเขียนโปรแกรมทั่วไปจะต้องมี วงเล็บ (Bracket – {}) เพื่อระบุว่าอะไรคือขอบเขตของมัน แต่ Python ไม่ได้ใช้วงเล็บ แต่ใช้ Indent หรือ Space แทน
+public class { public static void main(String[]args) { System.</description>
+    </item>
+    
   </channel>
 </rss>

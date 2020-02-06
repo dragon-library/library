@@ -38,6 +38,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/csv-and-text-file/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-1/</loc>
   </url>
   
@@ -46,11 +50,19 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/javascript/cheatsheet/</loc>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/</loc>
   </url>
   
   <url>
@@ -83,6 +95,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/dictionary/</loc>
   </url>
   
   <url>
@@ -124,6 +140,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/html/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/</loc>
   </url>
   
@@ -137,11 +157,11 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-3/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-3/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/excel/</loc>
   </url>
   
   <url>
@@ -150,6 +170,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/clipboard/</loc>
   </url>
   
   <url>
@@ -446,6 +470,22 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/dictionary-beginners-tutorial/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/</loc>
   </url>
   
@@ -467,6 +507,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101-for-beginner/</loc>
   </url>
   
   <url>

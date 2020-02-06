@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Date&amp;Time on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/</link>
+    <description>Recent content in Date&amp;Time on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DateTime, TimeDelta, Strftime with Examples</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</guid>
+      <description>Python DateTime, TimeDelta, Strftime(Format) with Examples In Python, date, time and datetime classes provides a number of function to deal with dates, times and time intervals. Date and datetime are an object in Python, so when you manipulate them, you are actually manipulating objects and not string or timestamps. Whenever you manipulate dates or time, you need to import datetime function.
+The datetime classes in Python are categorized into main 5 classes.</description>
+    </item>
+    
+  </channel>
+</rss>

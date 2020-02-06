@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Clipboard"><meta property="og:title" content="Clipboard" />
+<meta property="og:description" content="Clipboard A handy way to grab data is to use the read_clipboard() method, which takes the contents of the clipboard buffer and passes them to the read_csv method. For instance, you can copy the following text to the clipboard (CTRL-C on many operating systems):
+   A B C     1 4 p   2 5 q   3 6 r    And then import the data directly to a DataFrame by calling:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/clipboard/" />
+
+<title>Clipboard | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.4df2780858f349c50826000dfc9cb938f8635f9100451ec16066d3a035500451.css" integrity="sha256-TfJ4CFjzScUIJgAN/Jy5OPhjX5EARR7BYGbToDVQBFE=">
+
+
+<script defer src="/library/tutorials/en.search.min.039c82916f12eadcd508a61e9d4cffaaffc8d37861f80a12ceb498be9eda3316.js" integrity="sha256-A5yCkW8S6tzVCKYenUz/qv/I03hh&#43;AoSzrSYvp7aMxY="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/" >
+      IO tools (text, CSV, HDF5, …)
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/csv-and-text-file/" >
+      CSV &amp; Text files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/html/" >
+      HTML
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/excel/" >
+      Excel files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/clipboard/"  class="active">
+      Clipboard
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Clipboard</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="clipboard-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-clipboard-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#clipboard" title="Permalink to this headline">Clipboard</a></h1>
+
+<p>A handy way to grab data is to use the  <code>read_clipboard()</code>  method, which takes the contents of the clipboard buffer and passes them to the  <code>read_csv</code>  method. For instance, you can copy the following text to the clipboard (CTRL-C on many operating systems):</p>
+
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>p</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>5</td>
+<td>q</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>6</td>
+<td>r</td>
+</tr>
+</tbody>
+</table>
+
+<p>And then import the data directly to a  <code>DataFrame</code>  by calling:</p>
+
+<pre><code class="language-py">clipdf = pd.read_clipboard()
+clipdf
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>p</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>5</td>
+<td>q</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>6</td>
+<td>r</td>
+</tr>
+</tbody>
+</table>
+
+<p>The  <code>to_clipboard</code>  method can be used to write the contents of a  <code>DataFrame</code>  to the clipboard. Following which you can paste the clipboard contents into other applications (CTRL-V on many operating systems). Here we illustrate writing a  <code>DataFrame</code>  into clipboard and reading it back.</p>
+
+<pre><code class="language-py">df = pd.DataFrame({'A': [1, 2, 3],
+...                    'B': [4, 5, 6],
+...                    'C': ['p', 'q', 'r']},
+...                   index=['x', 'y', 'z'])
+df
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>p</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>5</td>
+<td>q</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>6</td>
+<td>r</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-py">df.to_clipboard()
+pd.read_clipboard()
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>p</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>5</td>
+<td>q</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>6</td>
+<td>r</td>
+</tr>
+</tbody>
+</table>
+
+<p>We can see that we got the same content back, which we had earlier written to the clipboard.</p>
+
+<blockquote>
+<p><strong>Note</strong>
+You may need to install xclip or xsel (with PyQt5, PyQt4 or qtpy) on Linux to use these methods.</p>
+
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#clipboard">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cPandas%5c1_IO%5cclipboard.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
