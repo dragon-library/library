@@ -31,5 +31,15 @@ scores = {&#39;james&#39;: 1828, &#39;thomas&#39;: 3628, &#39;danny&#39;: 9310} 
  Keys will be a single element Values can be a list or list within a list, numbers, etc.</description>
     </item>
     
+    <item>
+      <title>Merge Two Dictionaries</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/</guid>
+      <description>How to Merge Two Dictionaries in Python: Dictionary Comprehensions and Unpacking POSTED ON JUNE 7, 2019 BY JEREMY GRIFSKI
+When I’m trying to find a topic for this series, I either decide to write about something I just learned, or I choose to write about something I found from the list of top Python questions on Stack Overflow. Today, I’m hitting both by covering how to merge two dictionaries in Python.</description>
+    </item>
+    
   </channel>
 </rss>

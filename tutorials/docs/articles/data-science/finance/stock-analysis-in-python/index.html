@@ -18,7 +18,7 @@ It’s easy to get carried away with the wealth of data and free open-source too
 <link rel="stylesheet" href="/library/tutorials/book.min.4df2780858f349c50826000dfc9cb938f8635f9100451ec16066d3a035500451.css" integrity="sha256-TfJ4CFjzScUIJgAN/Jy5OPhjX5EARR7BYGbToDVQBFE=">
 
 
-<script defer src="/library/tutorials/en.search.min.039c82916f12eadcd508a61e9d4cffaaffc8d37861f80a12ceb498be9eda3316.js" integrity="sha256-A5yCkW8S6tzVCKYenUz/qv/I03hh&#43;AoSzrSYvp7aMxY="></script>
+<script defer src="/library/tutorials/en.search.min.344568a8dca8d8ff4f6dba515f5f3fc0bf2a11140f21aada219a1cdea5e0da36.js" integrity="sha256-NEVoqNyo2P9PbbpRX18/wL8qERQPIaraIZoc3qXg2jY="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -639,8 +639,8 @@ plt.show()
 <pre><code class="language-py">print(microsoft.weekly_seasonality)
 microsoft.weekly_seasonality = True
 print(microsoft.weekly_seasonality)
-False 
-True
+# False 
+# True
 </code></pre>
 
 <p>The default value for  <code>weekly_seasonality</code>is False, but we changed the value to include a weekly pattern in our model. We then make another call to  <code>create_prophet_model</code>and graph the resulting components. Below is the weekly seasonality from the new model.</p>
@@ -676,18 +676,21 @@ Changepoints sorted by slope rate of change (2nd derivative):
 
 <pre><code class="language-py"># same method but with a search term
 microsoft.changepoint_date_analysis(search = 'Microsoft profit')
-Top Related Queries: 
+</code></pre>
 
-                  query  value
+<p>Top Related Queries:</p>
+
+<pre><code class="language-py">                  query  value
 0  microsoft non profit    100
 1      microsoft office     55
 2                 apple     30
 3         microsoft 365     30
 4  microsoft office 365     20
+</code></pre>
 
- Rising Related Queries: 
+<p>Rising Related Queries:</p>
 
-                   query  value
+<pre><code class="language-py">                   query  value
 0          microsoft 365    120
 1   microsoft office 365     90
 2  microsoft profit 2014     70

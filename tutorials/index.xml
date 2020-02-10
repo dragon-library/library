@@ -53,6 +53,29 @@ import pandas as pd def color_negative_red(val): color = &#39;red&#39; if val &a
     </item>
     
     <item>
+      <title>71 Python Code Snippets</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/71-python-code-snippet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/71-python-code-snippet/</guid>
+      <description>71 Python Code Snippets for Everyday Problems POSTED ON DECEMBER 27, 2019 BY JEREMY GRIFSKI
+Last Updated on February 3, 2020
+If you’ve been following me for any amount of time, you know that I regularly publish Python code snippets for everyday problems. Well, I figured I’d finally aggregate all those responses in one massive article with links to all those resources.
+As a heads up, I’m looking to start porting all of the code snippets in this article to Jupyter Notebooks.</description>
+    </item>
+    
+    <item>
+      <title>81 Python Code Snippets</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/81-pythoncodesnippets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/81-pythoncodesnippets/</guid>
+      <description>81 Python Code Snippets for Everyday Problems POSTED ON DECEMBER 27, 2019 BY JEREMY GRIFSKI
+If you’ve been following me for any amount of time, you know that I regularly publish Python code snippets for everyday problems. Well, I figured I’d finally aggregate all those responses in one massive article with links to all those resources.
+As a heads up, I’m looking to start porting all of the code snippets in this article to Jupyter Notebooks.</description>
+    </item>
+    
+    <item>
       <title>Automate the Boring Stuff</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/e-book/automate-the-boring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -75,7 +98,7 @@ Table of Contents  Chapter 0 – Introduction Chapter 1 – Python Basics Chapte
 https://code.visualstudio.com/
 เริ่มต้น เริ่มจากการพิมพ์คำสั่งลัด html:5 เพื่อให้ VS Code generate code ให้อัตโนมัติ
 คำสั่ง meta UTF-8 และ viewport สำคัญสำหรับ Bootstrap ต้องใส่ทุกครั้ง ซึ่งมันก็สร้างมาให้แล้ว
-&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; อีกอันคือพิมพ์ว่า lorem มันจะ generate ประโยคที่เรียกว่า lorem ให้ มันคือคำที่ไม่มีความหมาย เอามาวางไว้เฉยๆว่านี่คือตัวอักษรจะเห็นในงานพวก design หรือตัวอย่างโค้ดบ่อยๆ</description>
+&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot; /&amp;gt;  อีกอันคือพิมพ์ว่า lorem มันจะ generate ประโยคที่เรียกว่า lorem ให้ มันคือคำที่ไม่มีความหมาย เอามาวางไว้เฉยๆว่านี่คือตัวอักษรจะเห็นในงานพวก design หรือตัวอย่างโค้ดบ่อยๆ</description>
     </item>
     
     <item>
@@ -235,8 +258,8 @@ Inspired by awesome-php.
       <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-2/</guid>
       <description>สรุปการใช้งาน Bootstrap 4 แบบพื้นฐาน ตอนที่ 2 Table สร้างไฟล์ใหม่ชื่อ portal.html
 ใส่โค้ดพื้นฐาน html ลงไปแล้วก็เพิ่ม bootstrap.css ด้วย
-&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;&amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34;&amp;gt;&amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/bootstrap.min.css&amp;#34; /&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;col&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt; ใส่ตารางลงไปใน container
-&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;&amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;&amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34;&amp;gt;&amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/bootstrap.min.css&amp;#34; /&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;col&amp;#34;&amp;gt;&amp;lt;h1&amp;gt;Portal&amp;lt;/h1&amp;gt;&amp;lt;table&amp;gt;&amp;lt;thead&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;No.</description>
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot; /&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot; /&amp;gt; &amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;css/bootstrap.min.css&amp;quot; /&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;col&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  ใส่ตารางลงไปใน container
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot; /&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot; /&amp;gt; &amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;css/bootstrap.</description>
     </item>
     
     <item>
@@ -1025,6 +1048,16 @@ This article will cover everything you need to know! You’ll first learn the ba
     </item>
     
     <item>
+      <title>Merge Two Dictionaries</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/</guid>
+      <description>How to Merge Two Dictionaries in Python: Dictionary Comprehensions and Unpacking POSTED ON JUNE 7, 2019 BY JEREMY GRIFSKI
+When I’m trying to find a topic for this series, I either decide to write about something I just learned, or I choose to write about something I found from the list of top Python questions on Stack Overflow. Today, I’m hitting both by covering how to merge two dictionaries in Python.</description>
+    </item>
+    
+    <item>
       <title>Portfolio Optimization in Python</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1044,6 +1077,17 @@ import pandas as pd import numpy as np import matplotlib.pyplot as plt import pa
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/</guid>
       <description>Portfolio Optimization Methods When constructing a multi-asset portfolio, coming up with the strategy to allocate weights to the portfolio components is a very important step in the process. Coming up with weights for a portfolio given its components can be done in a number of ways and is a question that boggles even the most skilled managers. So what is the most optimal way to do this? in this article we will try to introduce the most widely used methods and understand the intuition behind them.</description>
+    </item>
+    
+    <item>
+      <title>Python - Date &amp; Time</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-date-and-time/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-date-and-time/</guid>
+      <description>Python - Date &amp;amp; Time A Python program can handle date and time in several ways. Converting between date formats is a common chore for computers. Python&amp;rsquo;s time and calendar modules help track dates and times.
+What is Tick? Time intervals are floating-point numbers in units of seconds. Particular instants in time are expressed in seconds since 12:00am, January 1, 1970(epoch).
+There is a popular time module available in Python which provides functions for working with times, and for converting between representations.</description>
     </item>
     
     <item>
@@ -1130,6 +1174,19 @@ If you’re starting in JavaScript, maybe you haven’t heard of .map(), .reduce
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</guid>
       <description>Python for Finance, Part I: Yahoo &amp;amp; Google Finance API, pandas, and matplotlib Getting the Data Pandas and matplotlib are included in the more popular distributions of Python for Windows, such as Anaconda.
 In case it&amp;rsquo;s not included in your Python distribution, just simply use pip or conda install. Once installed, to use pandas, all one needs to do is import it. We will also need the pandas_datareader package (pip install pandas-datareader), as well as matplotlib for visualizing our results.</description>
+    </item>
+    
+    <item>
+      <title>การจัดการวันเวลาด้วย datetime</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime/</guid>
+      <description>การจัดการวันเวลาใน python ด้วย datetime  เขียนเมื่อ 2016/06/21 19:35
+ มอดูล datetime เป็นหนึ่งในมอดูลภายในตัวของไพธอน มีหน้าที่จัดการเกี่ยวกับเรื่องวันเดือนปีและเวลาต่างๆ หน้าที่มีความคล้ายคลึงกับมอดูล time (อ่านรายละเอียดใน https://phyblas.hinaboshi.com/20160610) แต่ก็มีความต่างกันอยู่ บางครั้งก็อาจใช้ร่วมกัน datetime มักถูกใช้เมื่อต้องการจัดการกับข้อมูลที่อยู่ในรูปของวันเดือนปีหรือเวลาชั่วโมงนาทีวินาที เวลาและวันเดือนปีนั้นเป็นปริมาณที่ใช้หน่วยหลากหลายในการอธิบาย และการแปลงหน่วยก็มีความยุ่งยากเพราะมีความไม่สม่ำเสมอ เช่นจำนวนวันในหนึ่งปีหรือหนึ่งเดือนเป็นต้น
+การใช้ออบเจ็กต์พิเศษของ datetime จะทำให้การคำนวณทำได้โดยง่ายขึ้น อีกทั้งยังสามารถปรับเปลี่ยนรูปแบบการแสดงผลให้เป็นไปตามที่ต้องการได้ง่ายด้วย การใช้มอดูลนี้ก่อนอื่นต้องเริ่มจากทำการ import เรียกใช้ก่อน
+import datetime  ออบเจ็กต์พิเศษใน datetime มอดูล datetime นั้นมีการนิยามคลาสของออบเจ็กต์สำหรับเก็บค่าวันเดือนปีและเวลาโดยเฉพาะ มีอยู่ 4 ชนิดคือ
+ datetime.date ออบเจ็กต์เก็บค่าวันเดือนปี datetime.time ออบเจ็กต์เก็บค่าเวลา datetime.datetime เป็นออบเจ็กต์ที่เอา datetime.date กับ datetime.time มารวมกัน เก็บค่าทั้งวันเดือนปีและเวลา datetime.timedelta ออบเจ็กต์เก็บค่าระยะห่างระหว่างเวลาซึ่งมีหน่วยเป็นวันและวินาที   datetime.date จะเก็บค่าตัวเลขปี เดือน วัน ทั้งหมดเป็นจำนวนเต็มเอาไว้ ในการสร้าง datetime.date จะต้องใส่ค่าปี, เดือน, วัน ตามลำดับ เช่น</description>
     </item>
     
     <item>

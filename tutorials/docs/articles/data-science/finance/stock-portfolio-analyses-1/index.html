@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/library/tutorials/book.min.4df2780858f349c50826000dfc9cb938f8635f9100451ec16066d3a035500451.css" integrity="sha256-TfJ4CFjzScUIJgAN/Jy5OPhjX5EARR7BYGbToDVQBFE=">
 
 
-<script defer src="/library/tutorials/en.search.min.039c82916f12eadcd508a61e9d4cffaaffc8d37861f80a12ceb498be9eda3316.js" integrity="sha256-A5yCkW8S6tzVCKYenUz/qv/I03hh&#43;AoSzrSYvp7aMxY="></script>
+<script defer src="/library/tutorials/en.search.min.344568a8dca8d8ff4f6dba515f5f3fc0bf2a11140f21aada219a1cdea5e0da36.js" integrity="sha256-NEVoqNyo2P9PbbpRX18/wL8qERQPIaraIZoc3qXg2jY="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -510,7 +510,7 @@ https://github.com/alex-shpak/hugo-book
 
 <p>Prior to my departure at my former company, FloSports, we were in the process of overhauling our analytics reporting across the organization (data, marketing, product et al), and part of this overhaul included our financial reporting. While I left early on in that implementation, over the past several months I’ve continued using Python extensively for financial analyses, particularly  <code>pandas</code>. In this post, I will share how I leveraged some very helpful online resources, the  <code>Yahoo Finance API</code>  (requires a work around and may require a future data source replacement), and  <code>Jupyter notebook</code>  to largely automate the tracking and benchmarking of a stock portfolio’s performance.</p>
 
-<h1 id="overview-of-pme-and-benchmarking-individual-stock-performance">Overview of PME and benchmarking individual stock performance</h1>
+<h2 id="overview-of-pme-and-benchmarking-individual-stock-performance">Overview of PME and benchmarking individual stock performance</h2>
 
 <p>As a quick background, I have been investing in my own stock portfolio since 2002 and developed a financial model for my portfolio a number of years ago. For years, I would download historical prices and load the data into the financial model — while online brokers calculate realized and unrealized returns, as well as income and dividends, I like to have historical data in the model as I conduct my own analyses to evaluate positions. One view / report which I’ve never found from online brokers and services is a  <a href="https://en.wikipedia.org/wiki/Public_Market_Equivalent">“Public Market Equivalent”</a>-like analysis. In short, the  Public Market Equivalent (PME)  is a set of analyses used in the private equity industry to compare the performance of a private equity fund relative to an industry benchmark. Much more detail  <a href="http://docs.preqin.com/reports/Preqin-Special-Report-PME-July-2015.pdf">here.</a></p>
 
@@ -948,8 +948,10 @@ fig = go.Figure(data=d
   <aside class="book-toc levels-true fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#python-for-finance-stock-portfolio-analyses">Python for Finance: Stock Portfolio Analyses</a></li>
+<li><a href="#python-for-finance-stock-portfolio-analyses">Python for Finance: Stock Portfolio Analyses</a>
+<ul>
 <li><a href="#overview-of-pme-and-benchmarking-individual-stock-performance">Overview of PME and benchmarking individual stock performance</a></li>
+</ul></li>
 <li><a href="#investment-portfolio-python-notebook">Investment Portfolio Python Notebook</a></li>
 <li><a href="#data-import-and-dataframe-manipulation">Data Import and Dataframe Manipulation</a></li>
 <li><a href="#total-return-and-cumulative-return-visualizations">Total Return and Cumulative Return Visualizations</a></li>
