@@ -78,17 +78,6 @@ name = input(&amp;quot;What is your name? &amp;quot;) print(&amp;quot;Hello &amp
     </item>
     
     <item>
-      <title>Dictionaries</title>
-      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</link>
-      <pubDate>Fri, 17 Jan 2020 11:42:26 +0600</pubDate>
-      
-      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</guid>
-      <description>Python Dictionaries Data structures are basically containers that store data in predefined layouts, optimized for certain operations — like apples in a box, ready for picking😉.
-The Python programming language natively implements a number of data structures. Lists, tuples, sets, dictionaries are but some of them. We will be looking at the dictionary data type in subsequent sections.
-What are dictionaries ? key-value mapping  A dictionary in python is a mapping object that maps keys to values, where the keys are unique within a collection and the values can hold any arbitrary value.</description>
-    </item>
-    
-    <item>
       <title>An A-Z of useful Python tricks</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/useful-python-tricks/</link>
       <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>

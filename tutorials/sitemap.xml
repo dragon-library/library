@@ -70,6 +70,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/list/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/</loc>
   </url>
   
@@ -153,15 +157,6 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</loc>
-    <lastmod>2020-01-05T10:42:26+06:00</lastmod>
   </url>
   
   <url>
@@ -415,6 +410,16 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/python-dictionaries/</loc>
+    <lastmod>2020-01-05T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</loc>
+    <lastmod>2020-01-05T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/posts/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
@@ -486,15 +491,15 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</loc>
-  </url>
-  
-  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/dictionary-beginners-tutorial/</loc>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/string-format/</loc>
   </url>
   
   <url>
@@ -507,6 +512,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/learning-web-development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</loc>
   </url>
   
   <url>
@@ -546,11 +555,19 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/tutorial-for-python-lists/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/javascript-use-map/</loc>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/missing_data/</loc>
   </url>
   
   <url>

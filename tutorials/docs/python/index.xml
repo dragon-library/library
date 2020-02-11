@@ -38,7 +38,7 @@ Inspired by awesome-php.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/cheat-sheet/</guid>
-      <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit()# For 1 statement on multiple lines,  # use line continuation character (\). # Good for blog post. def __str__(self):return &amp;#34;Name={}, Title={}, Hourly rate={}.&amp;#34;\.format( self.name, self.title, self.__hourly_rate ) String # Concatenation s1 = &amp;#39;Open&amp;#39;s2 = &amp;#39;Writings.net&amp;#39;print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetimenow_str = &amp;#34;Today is &amp;#34; + str(datetime.</description>
+      <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit() # For 1 statement on multiple lines, # use line continuation character (\). # Good for blog post. def __str__(self): return &amp;quot;Name={}, Title={}, Hourly rate={}.&amp;quot;\ .format( self.name, self.title, self.__hourly_rate )  String # Concatenation s1 = &#39;Open&#39; s2 = &#39;Writings.net&#39; print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetime now_str = &amp;quot;Today is &amp;quot; + str(datetime.</description>
     </item>
     
     <item>

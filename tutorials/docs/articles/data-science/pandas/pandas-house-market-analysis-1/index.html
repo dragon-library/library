@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="House Market Analysis 1"><meta property="og:title" content="House Market Analysis 1" />
-<meta property="og:description" content="Python Pandas : House Market Analysis – Munich (2016-2017) (1&frasl;2) Source
+<meta property="og:description" content="Python Pandas : House Market Analysis – Munich (2016-2017) (1/.2) Source
 I started to use python for other things than Data Analysis at the beginning. I was a technical SEO consultant and wanted to use a crawler (or built one) and not knowing any programming language, python looked as the perfect language to start with…
 Flash forward to nowadays, I am even more fan of python now because of its versatility to do what I just mentioned and also to realize data analysis easily." />
 <meta property="og:type" content="article" />
@@ -19,7 +19,7 @@ Flash forward to nowadays, I am even more fan of python now because of its versa
 <link rel="stylesheet" href="/library/tutorials/book.min.4df2780858f349c50826000dfc9cb938f8635f9100451ec16066d3a035500451.css" integrity="sha256-TfJ4CFjzScUIJgAN/Jy5OPhjX5EARR7BYGbToDVQBFE=">
 
 
-<script defer src="/library/tutorials/en.search.min.344568a8dca8d8ff4f6dba515f5f3fc0bf2a11140f21aada219a1cdea5e0da36.js" integrity="sha256-NEVoqNyo2P9PbbpRX18/wL8qERQPIaraIZoc3qXg2jY="></script>
+<script defer src="/library/tutorials/en.search.min.434379f471b85a16d1465c6bceeee5d890bfa8fa5186d60554f9c71237964301.js" integrity="sha256-Q0N59HG4WhbRRlxrzu7l2JC/qPpRhtYFVPnHEjeWQwE="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -329,6 +329,16 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/missing_data/" >
+      Working with missing data
+  </a>
+
+</li>
+      
+    
   </ul>
   
 
@@ -480,7 +490,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h1 id="python-pandas-house-market-analysis-munich-2016-2017-1-2">Python Pandas : House Market Analysis – Munich (2016-2017) (<sup>1</sup>&frasl;<sub>2</sub>)</h1>
+<h1 id="python-pandas-house-market-analysis-munich-2016-2017-1-2">Python Pandas : House Market Analysis – Munich (2016-2017) (1/.2)</h1>
 
 <p><a href="https://www.datanalyst.info/python/python-others-ideas/python-pandas-house-market-analysis-munich-2016-2017-1-2/?camp=rf~medium~pandas-intro-2">Source</a></p>
 
@@ -562,7 +572,7 @@ In order to do that, you can use the</p>
 <pre><code class="language-py">df.dtypes  ##it will give you something like this :
 </code></pre>
 
-<pre><code class="language-bush">index0 		int64    
+<pre><code>index0 		int64    
 terrace 	object    
 bedrooms 	object    
 construction_year object    
@@ -683,7 +693,7 @@ Like this :</p>
 <pre><code class="language-py">(df.isnull().sum()  /  len(df))*100  ## result will look like this 
 </code></pre>
 
-<pre><code class="language-result">index0  0.000000
+<pre><code class="language-py">index0  0.000000
 terrace  0.000000
 bedrooms  36.708861
 construction_year  5.638665
@@ -878,7 +888,7 @@ If we can the average surface for the 2, 3 and 4 room apartment, we could assign
 ##it should give you something like :
 </code></pre>
 
-<pre><code class="language-bush">2.0  89.988924    
+<pre><code>2.0  89.988924    
  3.0  91.100000
  4.0  100.400000
 </code></pre>
@@ -944,7 +954,7 @@ As explained above, both data set (the clean one and the uncleane one) and the J
   <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#python-pandas-house-market-analysis-munich-2016-2017-1-2">Python Pandas : House Market Analysis – Munich (2016-2017) (<sup>1</sup>&frasl;<sub>2</sub>)</a>
+<li><a href="#python-pandas-house-market-analysis-munich-2016-2017-1-2">Python Pandas : House Market Analysis – Munich (2016-2017) (1/.2)</a>
 <ul>
 <li><a href="#house-market-in-munich">House Market in Munich</a></li>
 <li><a href="#understanding-the-data-with-pandas">Understanding the data with Pandas</a></li>

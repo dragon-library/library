@@ -135,6 +135,18 @@ Creating a project directory and virtual environment First of all, we need to cr
     </item>
     
     <item>
+      <title>Lists</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/list/</guid>
+      <description>Lists ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูลแบบ List ในภาษา Python เราจะพูดถึงการสร้างและใช้งาน List ในเบื้องต้น การใช้งานเมธอดและฟังก์ชันเพื่อจัดการข้อมูลภายใน List และการใช้งานคำสั่ง For loop กับ List รวมถึงการ slicing
+List (ลิสต์) คือโครงสร้างข้อมูลชนิดหนึ่งในภาษา Python ที่ใช้เก็บข้อมูลแบบลำดับ (Sequence) โดยมี Index เป็นตัวระบุตำแหน่งในการเข้าถึงข้อมูล เราสามารถใช้ List เพื่อเก็บข้อมูลจำนวนมากและหลากหลายประเภทในเวลาเดียวกัน List เป็นประเภทข้อมูลที่ใช้อย่างหลากหลายในการเขียนโปรแกรม นอกจากนี้ ในภาษา Python ยังมี built-in function ที่สามารถทำงานกับ List และใน List ออบเจ็คเองก็มีเมธอดต่างๆ เป็นจำนวนมากที่ช่วยอำนวยความสะดวกในการเขียนโปรแกรม
+การประกาศและใช้งาน List List นั้นเป็นตัวแปรประเภทหนึ่ง การใช้งานของมันจะเหมือนกันอาเรย์ในภาษาอื่นๆ ในการประกาศ List นั้นข้อมูลของมันจะอยู่ภายในเครื่องหมาย [] และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา , มาดูตัวอย่างการประกาศ List ในภาษา Python
+numbers = [-1, 2, 5, 8, 10, 13] names = [&#39;Mateo&#39;, &#39;Danny&#39;, &#39;James&#39;, &#39;Thomas&#39;, &#39;Luke&#39;] mixed_type = [-2, 5, 84.</description>
+    </item>
+    
+    <item>
       <title>Pandas User Guide</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -286,29 +298,6 @@ We highly encourage you to read the HTML Table Parsing gotchas below regarding t
     </item>
     
     <item>
-      <title>Lists</title>
-      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</guid>
-      <description>Lists ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูลแบบ List ในภาษา Python เราจะพูดถึงการสร้างและใช้งาน List ในเบื้องต้น การใช้งานเมธอดและฟังก์ชันเพื่อจัดการข้อมูลภายใน List และการใช้งานคำสั่ง For loop กับ List รวมถึงการ slicing
-List (ลิสต์) คือโครงสร้างข้อมูลชนิดหนึ่งในภาษา Python ที่ใช้เก็บข้อมูลแบบลำดับ (Sequence) โดยมี Index เป็นตัวระบุตำแหน่งในการเข้าถึงข้อมูล เราสามารถใช้ List เพื่อเก็บข้อมูลจำนวนมากและหลากหลายประเภทในเวลาเดียวกัน List เป็นประเภทข้อมูลที่ใช้อย่างหลากหลายในการเขียนโปรแกรม นอกจากนี้ ในภาษา Python ยังมี built-in function ที่สามารถทำงานกับ List และใน List ออบเจ็คเองก็มีเมธอดต่างๆ เป็นจำนวนมากที่ช่วยอำนวยความสะดวกในการเขียนโปรแกรม
-การประกาศและใช้งาน List List นั้นเป็นตัวแปรประเภทหนึ่ง การใช้งานของมันจะเหมือนกันอาเรย์ในภาษาอื่นๆ ในการประกาศ List นั้นข้อมูลของมันจะอยู่ภายในเครื่องหมาย [] และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา , มาดูตัวอย่างการประกาศ List ในภาษา Python
-numbers = [-1, 2, 5, 8, 10, 13] names = [&#39;Mateo&#39;, &#39;Danny&#39;, &#39;James&#39;, &#39;Thomas&#39;, &#39;Luke&#39;] mixed_type = [-2, 5, 84.</description>
-    </item>
-    
-    <item>
-      <title>Dictionaries</title>
-      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</link>
-      <pubDate>Fri, 17 Jan 2020 11:42:26 +0600</pubDate>
-      
-      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</guid>
-      <description>Python Dictionaries Data structures are basically containers that store data in predefined layouts, optimized for certain operations — like apples in a box, ready for picking😉.
-The Python programming language natively implements a number of data structures. Lists, tuples, sets, dictionaries are but some of them. We will be looking at the dictionary data type in subsequent sections.
-What are dictionaries ? key-value mapping  A dictionary in python is a mapping object that maps keys to values, where the keys are unique within a collection and the values can hold any arbitrary value.</description>
-    </item>
-    
-    <item>
       <title>Ep.3 Serving HTML files</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -336,7 +325,7 @@ Reading Excel files In the most basic use-case, read_excel takes a path to an Ex
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/cheat-sheet/</guid>
-      <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit()# For 1 statement on multiple lines,  # use line continuation character (\). # Good for blog post. def __str__(self):return &amp;#34;Name={}, Title={}, Hourly rate={}.&amp;#34;\.format( self.name, self.title, self.__hourly_rate ) String # Concatenation s1 = &amp;#39;Open&amp;#39;s2 = &amp;#39;Writings.net&amp;#39;print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetimenow_str = &amp;#34;Today is &amp;#34; + str(datetime.</description>
+      <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit() # For 1 statement on multiple lines, # use line continuation character (\). # Good for blog post. def __str__(self): return &amp;quot;Name={}, Title={}, Hourly rate={}.&amp;quot;\ .format( self.name, self.title, self.__hourly_rate )  String # Concatenation s1 = &#39;Open&#39; s2 = &#39;Writings.net&#39; print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetime now_str = &amp;quot;Today is &amp;quot; + str(datetime.</description>
     </item>
     
     <item>
@@ -684,7 +673,7 @@ But why use an API instead of a static CSV dataset you can download from the web
       <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</guid>
-      <description>Python Pandas : House Market Analysis – Munich (2016-2017) (1&amp;frasl;2) Source
+      <description>Python Pandas : House Market Analysis – Munich (2016-2017) (1/.2) Source
 I started to use python for other things than Data Analysis at the beginning. I was a technical SEO consultant and wanted to use a crawler (or built one) and not knowing any programming language, python looked as the perfect language to start with…
 Flash forward to nowadays, I am even more fan of python now because of its versatility to do what I just mentioned and also to realize data analysis easily.</description>
     </item>
@@ -855,6 +844,17 @@ It’s easy to get carried away with the wealth of data and free open-source too
     </item>
     
     <item>
+      <title>Dictionaries</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/python-dictionaries/</link>
+      <pubDate>Fri, 17 Jan 2020 11:42:26 +0600</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/python-dictionaries/</guid>
+      <description>Python Dictionaries Data structures are basically containers that store data in predefined layouts, optimized for certain operations — like apples in a box, ready for picking😉.
+The Python programming language natively implements a number of data structures. Lists, tuples, sets, dictionaries are but some of them. We will be looking at the dictionary data type in subsequent sections.
+What are dictionaries ? key-value mapping  A dictionary in python is a mapping object that maps keys to values, where the keys are unique within a collection and the values can hold any arbitrary value.</description>
+    </item>
+    
+    <item>
       <title>(Hu)go Template Primer</title>
       <link>https://dragon-library.github.io/library/tutorials/posts/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
@@ -1018,6 +1018,17 @@ The datetime classes in Python are categorized into main 5 classes.</description
     </item>
     
     <item>
+      <title>Format a String in Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/string-format/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/string-format/</guid>
+      <description>How to Format a String in Python: Interpolation, Concatenation, and More POSTED ON SEPTEMBER 6, 2019 BY JEREMY GRIFSKI
+Last Updated on January 31, 2020
+It’s been awhile since I’ve written one of these “how to” articles, but I’m back at it. This time, I want to talk about string formatting using techniques like interpolation and concatenation. In other words, it’s time to finally learn how to format a string in Python</description>
+    </item>
+    
+    <item>
       <title>How to scrape Yahoo Finance</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1148,6 +1159,22 @@ $ pip install -r requirements.txt  ทำความรู้จักกับ
     </item>
     
     <item>
+      <title>Tutorial for Python Lists</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/tutorial-for-python-lists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/tutorial-for-python-lists/</guid>
+      <description>Tutorial for Python Lists  Home  This tutorial goes through how to work with lists in Python, including many of the built-in methods Python makes available for these data structures. Feel free to click on any of the links below to skip to a section of interest.
+**
+Background on lists
+Referring to list elements by index
+Slicing lists
+Combining lists
+Lists are mutable
+Lists support inplace methods**</description>
+    </item>
+    
+    <item>
       <title>Use .map(), .reduce(), and .filter()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/javascript-use-map/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1164,6 +1191,17 @@ If you’re starting in JavaScript, maybe you haven’t heard of .map(), .reduce
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</guid>
       <description>Web Scraping 101 in Python : overview of the tools &amp;amp; the pros and cons of each Summary:  Web Fundamentals Manually opening a socket and sending the HTTP request urllib3 &amp;amp; LXML requests &amp;amp; BeautifulSoup Scrapy Selenium &amp;amp; Chrome —headless Conclusion  Web Fundamentals The internet is really complex–there are many underlying technologies and concepts involved to view a simple web page in your browser. I&amp;rsquo;m not going to explain everything, but I will show you the most important things you have to understand in order to extract data from the web.</description>
+    </item>
+    
+    <item>
+      <title>Working with missing data</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/missing_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/missing_data/</guid>
+      <description>Working with missing data In this section, we will discuss missing (also referred to as NA) values in pandas.
+ Note The choice of using NaN internally to denote missing data was largely for simplicity and performance reasons. Starting from pandas 1.0, some optional data types start experimenting with a native NA scalar using a mask-based approach. See here for more.
+ See the cookbook for some advanced strategies.</description>
     </item>
     
     <item>

@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dictionaries"><meta property="og:title" content="Dictionaries" />
+<meta property="og:description" content="Python Dictionaries Data structures are basically containers that store data in predefined layouts, optimized for certain operations — like apples in a box, ready for picking😉.
+The Python programming language natively implements a number of data structures. Lists, tuples, sets, dictionaries are but some of them. We will be looking at the dictionary data type in subsequent sections.
+What are dictionaries ? key-value mapping  A dictionary in python is a mapping object that maps keys to values, where the keys are unique within a collection and the values can hold any arbitrary value." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/python-dictionaries/" />
+<meta property="article:published_time" content="2020-01-17T11:42:26+06:00" />
+<meta property="article:modified_time" content="2020-01-05T10:42:26+06:00" />
+<title>Dictionaries | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.4df2780858f349c50826000dfc9cb938f8635f9100451ec16066d3a035500451.css" integrity="sha256-TfJ4CFjzScUIJgAN/Jy5OPhjX5EARR7BYGbToDVQBFE=">
+
+
+<script defer src="/library/tutorials/en.search.min.434379f471b85a16d1465c6bceeee5d890bfa8fa5186d60554f9c71237964301.js" integrity="sha256-Q0N59HG4WhbRRlxrzu7l2JC/qPpRhtYFVPnHEjeWQwE="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/variable/" >
+      ตัวแปรและประเภทข้อมูล
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/" >
+      Dictionary(Dict)
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/dictionary/" >
+      โครงสร้างข้อมูล Dictionary
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/python-dictionaries/"  class="active">
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/dictionary-beginners-tutorial/" >
+      Dictionary(Dict) with Example
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/" >
+      Merge Two Dictionaries
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/date-and-time/" >
+      Date&amp;Time
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/string-format/" >
+      Format a String in Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/list/" >
+      List
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Dictionaries</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-dictionaries">Python Dictionaries</h1>
+
+<p><img src="https://miro.medium.com/max/690/1*jsgLaIkhgF7SzQS1FWIPug.jpeg" alt="enter image description here" />
+Data structures are basically containers that store data in predefined layouts, optimized for certain operations — like apples in a box, ready for picking😉.</p>
+
+<p>The Python programming language natively implements a number of data structures. Lists, tuples, sets, dictionaries are but some of them. We will be looking at the dictionary data type in subsequent sections.</p>
+
+<h1 id="what-are-dictionaries">What are dictionaries ?</h1>
+
+<p><img src="https://miro.medium.com/max/519/1*oNuaSOlSozUchdxiOE1ieQ.jpeg" alt="" /></p>
+
+<pre><code class="language-py">key-value mapping
+</code></pre>
+
+<p>A dictionary in python is a mapping object that maps keys to values, where the keys are unique within a collection and the values can hold any arbitrary value. In addition to being unique, keys are also required to be hashable.</p>
+
+<p>An object is said to be hashable if it has a hash value (implemented by a  <code>__hash__()</code>  method) that does not change during the object’s lifetime. Most commonly, we use immutable data types such as strings, integers, and tuples (only if they contain similarly immutable types) as dictionary keys.</p>
+
+<p>A dictionary’s data is always enclosed by a pair of curly braces  <code>{ }</code>, and would normally look like this:</p>
+
+<pre><code class="language-py">my_dict = {&quot;first_name&quot;: &quot;John&quot;, &quot;last_name&quot;:&quot;Snow&quot;, &quot;age&quot;:16, &quot;gender&quot;:&quot;Male&quot;}
+</code></pre>
+
+<p>We have created a dictionary named  <code>my_dict</code>  where each key-value pair is separated by a full colon, with the key-value pairs as:</p>
+
+<pre><code class="language-py">first_name - John
+last_name - Snow
+age - 16
+gender - Male
+</code></pre>
+
+<p>Typically dictionaries store associative data, i.e data that is related. Examples of such data include the attributes of an object,  <code>SQL</code>  query results and csv-formatted information. Throughout this article, we will be using dictionaries to store job listing details from  <a href="https://www.kaggle.com/ardenn/brighter-monday-job-listings/data">Kaggle</a>.</p>
+
+<h1 id="comparisons">Comparisons</h1>
+
+<p>Dictionaries are an implementation of  <a href="https://en.wikipedia.org/wiki/Associative_array">Associative Arrays</a>. All Associative arrays have a structure of (key, value) pairs, where each key is unique for every collection. Other languages also have similar implementations, such as:</p>
+
+<pre><code class="language-py">-   Maps in Go
+-   std::map in C++
+-   Maps in Java
+-   JavaScript objects
+</code></pre>
+
+<p>Unlike sequenced data types like lists and tuples, where indexing is achieved using positional indices, dictionaries are indexed using their keys. Therefore, individual values can be accessed using these keys.</p>
+
+<h1 id="dictionary-operations">Dictionary Operations</h1>
+
+<h2 id="1-creation">1. Creation</h2>
+
+<ul>
+<li><p>We initialize an empty dictionary using a pair of curly braces. This approach is often used when we expect to store some data at later stages of our operation.</p>
+
+<pre><code class="language-py">empty_dict = {}
+</code></pre>
+
+<p>In the line above, we have created an empty dictionary named  <code>empty_dict</code>.</p></li>
+
+<li><p>For instances when we have our data beforehand, we use curly braces with the key-value pairs. We can now create a dictionary to represent the second row of data in the  <code>jobs.csv</code>  file.</p>
+
+<pre><code class="language-py">job1 = {&quot;title&quot;:&quot;Production Manager&quot;,  
+&quot;location&quot;:&quot;Rest of Kenya&quot;,  
+&quot;job_type&quot;:&quot;Full Time&quot;,  
+&quot;employer&quot;:&quot;The African Talent Company (TATC)&quot;,  
+&quot;category&quot;:&quot;Farming&quot;}
+</code></pre>
+
+<p>We just created a dictionary with the keys  <code>title</code>,<code>location</code>,  <code>job_type</code>,  <code>employer</code>,  <code>category</code>  and assigned it to the variable  <code>job1</code>.</p></li>
+
+<li><p>Dictionaries can also be created using the  <code>dict()</code>  constructor. To do this we pass the constructor a sequence of key-value pairs. We could also pass in named arguments.<br />
+Let&rsquo;s create a dictionary to represent the third row of data in the  <code>jobs.csv</code>  file, using both of these methods.</p>
+
+<pre><code class="language-py"># create an empty dictionary
+empty_property = dict()
+# create dictionary using a list of key-value tuples
+job2 = dict([
+(&quot;title&quot;,&quot;Marketing &amp; Business Development Manager&quot;),(&quot;location&quot;,&quot;Mombasa&quot;),
+(&quot;job_type&quot;,&quot;Full Time&quot;),
+(&quot;employer&quot;,&quot;KUSCCO Limited (Kenya Union of Savings &amp; Credit Co-operatives Limited)&quot;),
+(&quot;category&quot;,&quot;Marketing &amp; Communications&quot;)
+])
+</code></pre>
+
+<p>Creating dictionary with list of key-value tuples</p></li>
+</ul>
+
+<p>We passed a sequence, in this case a list of key-value tuples, to the  <code>dict()</code>  constructor to create our dictionary, and assigned it to the variable  <code>job2</code>.</p>
+
+<pre><code class="language-py"># Using keyword arguments
+dict(
+  title=&quot;Marketing &amp; Business Development Manager&quot;,
+  location=&quot;Mombasa&quot;,job_type=&quot;Full Time&quot;,
+  employer=&quot;KUSCCO Limited (Kenya Union of Savings &amp; Credit Co-operatives Limited)&quot;,
+  category=&quot;Marketing &amp; Communications&quot;
+)
+</code></pre>
+
+<p>Creating dictionary with dict( )</p>
+
+<p>Here, we created a dictionary using named arguments. The keys are the argument names, while the values are the argument values. It is however important to note that this method is only suitable when our keys are just simple strings.</p>
+
+<h2 id="2-accessing-items">2. Accessing Items</h2>
+
+<p>As we mentioned earlier on, dictionaries are indexed using their keys.<br />
+To access a particular value in a dictionary we use the indexing operator (key inside square brackets). However, to use this method, we need to make sure the key we intend to retrieve exists, lest we get a  <code>KeyError</code>. Checking for availability of a key is as easy as using the  <code>in</code>  operator.</p>
+
+<pre><code class="language-py"># Check existence of title
+&quot;title&quot; in job2 # returns True
+
+&quot;salary&quot; in job2 # returns False
+
+# Using key indexing
+job2[&quot;title&quot;] # return 'Marketing &amp; Business Development Manager'
+</code></pre>
+
+<p>Indexing</p>
+
+<ul>
+<li>In the example above we use indexing to access the  <code>title</code>  from  <code>job2</code>  after making sure it is available using  <code>in</code>.</li>
+
+<li><p>If you are like me, this is probably a lot of work. The good news, however, is that we have a better tool — the  <code>get()</code>  method. This method works by giving out a value if the key exists, or returning  <code>None</code>.  <code>None</code>  sounds better than an error, right?<br />
+What if we want to go even further, and return something, a placeholder of sorts?  <code>get()</code>  takes a second argument, a default value to be used in place of  <code>None</code>. Now let&rsquo;s use  <code>in</code>  to check if  <code>title</code>  exists in  <code>job2</code>, then we can use indexing to retrieve its value. We&rsquo;ll also go ahead and use  <code>get()</code>  to retrieve  <code>salary</code>  from  <code>job2</code>.</p>
+
+<pre><code class="language-py"># Using keyword arguments
+dict(
+title=&quot;Marketing &amp; Business Development Manager&quot;,
+location=&quot;Mombasa&quot;,job_type=&quot;Full Time&quot;,
+employer=&quot;KUSCCO Limited (Kenya Union of Savings &amp; Credit Co-operatives Limited)&quot;,
+category=&quot;Marketing &amp; Communications&quot;
+)
+</code></pre>
+
+<p>Accessing items</p></li>
+</ul>
+
+<p>Here, we use  <code>get()</code>  to access the  <code>title</code>  and  <code>salary</code>.</p>
+
+<p>However,  <code>job2</code>  doesn&rsquo;t have a  <code>salary</code>  key so the return value is  <code>None</code>. Adding a second argument, to  <code>get()</code>  now gives us  <code>5000</code>  instead of  <code>None</code>.</p>
+
+<h2 id="3-modification">3. Modification</h2>
+
+<p>Dictionaries can be modified directly using the keys or using the  <code>update()</code>  method.  <code>update()</code>  takes in a dictionary with the key-value pairs to be modified or added. For our demonstration, let&rsquo;s:</p>
+
+<ul>
+<li>Add a new item (salary) to  <code>job2</code>  with a value of 10000.</li>
+<li>Modify the  <code>job_type</code>  to be &ldquo;Part time&rdquo;.</li>
+<li>Update the  <code>salary</code>  to 20000.</li>
+
+<li><p>Update the dictionary to include a new item (available) with a value of  <code>True</code>.</p>
+
+<pre><code class="language-py"># Adding a new entry for salary using the index
+job2[&quot;salary&quot;] = 10000
+
+# Modifying the entry for job_type using the index
+job2[&quot;job_type&quot;] = &quot;Part time&quot;
+
+# Modifying the salary entry using update
+job2.update({&quot;salary&quot;:20000})
+
+# Adding the available entry using update
+job2.update({&quot;available&quot;:True})
+</code></pre></li>
+</ul>
+
+<p>Updating dictionaries</p>
+
+<p>To add a new entry, we use syntax similar to indexing. If the key exists, then the value will be modified, however, if the key doesn’t exist, a new entry will be created with the specified key and value.</p>
+
+<ul>
+<li>Initially, we assigned a value of 10000 to the  <code>salary</code>  key, but since  <code>salary</code>  doesn&rsquo;t exist, a new entry is created, with that value. For our second example, the  <code>job_type</code>  key exists, the value is modified to &ldquo;Part time&rdquo;.</li>
+<li>Next, we use the  <code>update()</code>  method to change the  <code>salary</code>  value to 20000, since  <code>salary</code>  is already a key in the dictionary. Finally, we apply  <code>update()</code>  to the dictionary, a new entry is created with a key of  <code>available</code>  and value of  <code>True</code>.</li>
+</ul>
+
+<p>A particularly nice use case for  <code>update()</code>  is when we need to merge two dictionaries. Say we have another dictionary  <code>extra_info</code>  containing extra fields for a job, and we would like to merge this with  <code>job2</code>.</p>
+
+<pre><code class="language-py">extra_info = {
+  &quot;verified&quot;:True,
+  &quot;qualification&quot;:&quot;Undergraduate Degree&quot;,
+  &quot;taxable&quot;:True}
+
+# Merge extra_info with job2
+job2.update(extra_info)
+</code></pre>
+
+<p>Merging dictionaries</p>
+
+<h2 id="4-deletion">4. Deletion</h2>
+
+<p>We can now remove the just created  <code>salary</code>  entry from  <code>job2</code>, and remove everything from  <code>job1</code>.</p>
+
+<pre><code class="language-py">del job2[&quot;salary&quot;]
+del job2[&quot;available&quot;]
+print(job2) #return a dictionary without 'salary' and 'available' entries
+
+job1.clear()
+print(job1) #return an empty dictionary
+
+del job1
+print(job1) # return NameError
+</code></pre>
+
+<p>Deletion</p>
+
+<p>To remove the entries associated with the  <code>salary</code>  and  <code>available</code>  keys from  <code>job2</code>, we use the  <code>del</code>  keyword. Now if we go ahead and print  <code>job2</code>, the  <code>salary</code>  and  <code>available</code>  entries are gone.</p>
+
+<p>Removing all items from  <code>job1</code>  entails using the  <code>clear()</code>  method, which leaves us with an empty dictionary. If we don&rsquo;t need a dictionary anymore, say  <code>job1</code>, we use the  <code>del</code>  keyword to delete it. Now if we try printing  <code>job1</code>  we&rsquo;ll get a  <code>NameError</code>since  <code>job1</code>  is no longer defined.</p>
+
+<h2 id="6-iteration">6. Iteration</h2>
+
+<p>A dictionary by itself is an iterable of its keys. Moreover, we can iterate through dictionaries in 3 different ways:</p>
+
+<ul>
+<li><code>dict.values()</code>  - this returns an iterable of the dictionary&rsquo;s values.</li>
+<li><code>dict.keys()</code>  - this returns an iterable of the dictionary&rsquo;s keys.</li>
+<li><code>dict.items()</code>  - this returns an iterable of the dictionary&rsquo;s (key,value) pairs.</li>
+</ul>
+
+<p>But why would we need to iterate over a dictionary?</p>
+
+<p>Our dataset has about 860 listings, suppose we wanted to display the properties of all these on our website, it wouldn’t make sense to write the same markup 860 times. It would be efficient to dynamically render the data using a loop.</p>
+
+<p>Let’s iterate over  <code>job2</code>  using a  <code>for-loop</code>  using all the three methods. Furthermore we&rsquo;ll use the  <code>csv</code>  module to read our csv-formatted data in to a list of dictionaries, then we&rsquo;ll iterate through all the dictionaries and print out the keys and values.</p>
+
+<pre><code class="language-py"># Iterating through the dictionary itself
+for x in job2:
+    print(x) # prints the keys of job2
+    
+# Using keys()
+for key in job2.keys():
+    print(key) # prints the keys of job2
+    
+# Using values()
+for val in job2.values():
+    print(val) # prints the values of job2
+    
+# Dictionary iteration use case
+import csv
+with open('jobs.csv','r') as csv_file:
+    reader = csv.DictReader(csv_file)
+    for job in reader:
+        
+        # Using items()
+        for key,val in job.items():
+            # Apply any additional processing
+            print(key, val) #print the keys and values of each job
+</code></pre>
+
+<p>Dictionary Iteration</p>
+
+<ul>
+<li>First, we loop through the dictionary as it is. This is similar in output to stepping through the  <code>job2.keys()</code>  iterable.</li>
+<li>Secondly, we iterate through  <code>job2.values()</code>  while printing out the value.</li>
+<li>Finally, we step through the list of dictionaries, and for each one, loop through the keys and values simultaneously.<br />
+We include both key and value in the for-loop constructor since  <code>job.items()</code>  yields a tuple of key and value during each iteration. We can now apply any kind of operation to our data at this point. Our implementation simply prints out the pair at each step.</li>
+</ul>
+
+<h2 id="7-sorting">7. Sorting</h2>
+
+<p>Borrowing from our description of dictionaries earlier, this data type is meant to be unordered, and doesn’t come with the sorting functionality baked in. Calling the  <code>sorted()</code>  function and passing it a dictionary only returns a list of the keys in a sorted order, since the dictionary is an iterable of its keys.</p>
+
+<p>If we use the  <code>items()</code>  iterable we could sort the items of our dictionary as we please. However, this doesn&rsquo;t give us our original dictionary, but a list of key-value tuples in a sorted order.</p>
+
+<p>Say we wanted to display the job details in the above example in alphabetical order, We would need to alter our iteration to give sorted results. Lets walk through the example again an see how we would achieve that functionality.</p>
+
+<pre><code class="language-py">ith open('jobs.csv','r') as csv_file:
+    reader = csv.DictReader(csv_file)
+    for job in reader:
+        
+        # Using sorted() to sort a dictionary's items on the keys
+        for key,val in sorted(job.items(),key=lambda item:item[0]):
+        
+            # Apply any additional processing
+            print(key, val) #print the keys and values of each job
+</code></pre>
+
+<p>Iteration</p>
+
+<ul>
+<li>In this example we use python’s inbuilt  <code>sorted()</code>  function which takes in an iterable (our dictionary&rsquo;s items).</li>
+<li>The  <code>key</code>  argument of the  <code>sorted()</code>function instructs  <code>sorted()</code>  to use the value at index 0 for sorting. This named argument points to a lambda function which takes in an item, say (“a”, “b”) and returns the value at the item’s first index, in this case “a”.<br />
+Similarly, to sort by the values, we use index 1 instead of index 0.</li>
+</ul>
+
+<h1 id="other-methods">Other Methods</h1>
+
+<p>Dictionaries have other methods that could be used on demand. To read up further on these, please consult the  <a href="https://docs.python.org/3/library/stdtypes.html#typesmapping">python documentation</a>. Here are some other useful methods:</p>
+
+<ul>
+<li><code>pop(key,default)</code>  - deletes the key  <code>key</code>  and returns it, or returns an optional  <code>default</code>  when the key doesn&rsquo;t exist.</li>
+<li><code>copy()</code>  - returns a shallow copy of the original. This shallow copy has similar references to the original, and not copies of the original&rsquo;s items.</li>
+<li><code>setdefault(key,default)</code>  - returns the value of  <code>key</code>  if in the dictionary, or sets the new key with an optional  <code>default</code>  as its value then returns the value.</li>
+</ul>
+
+<h1 id="speeding-up-your-code">Speeding Up your Code</h1>
+
+<p>Dictionary unpacking can greatly speed up our code. It involves destructuring a dictionary into individual keyword arguments with values.<br />
+This is especially useful for cases that involve supplying multiple keyword arguments, for example in function calls.<br />
+To implement this functionality we use the iterable unpacking operator (<code>**</code>).</p>
+
+<p>What if we needed  <code>Job</code>  objects to work with, instead of dictionaries? We shouldn&rsquo;t have to do some heavy lifting to get our data reorganized in to objects.<br />
+Let&rsquo;s see how we could translate our dictionaries into objects, by again tweaking our previous code.</p>
+
+<pre><code class="language-py">Define a Job Class
+class Job:
+    def __init__(self,
+                 title=&quot;Job Title&quot;,
+                 location=&quot;Job Location&quot;,
+                 job_type=&quot;Job Type&quot;,
+                 employer=&quot;Job Employer&quot;,
+                 category=&quot;Job Category&quot;,):       
+        self.title = title
+        self.location = location
+        self.job_type = job_type
+        self.employer = employer
+        self.category = category
+    def __str__(self):
+        return self.title
+
+# Creating a job object without unpacking
+Job(&quot;Marketing &amp; Business Development Manager&quot;,&quot;Mombasa&quot;,&quot;Full Time&quot;,
+    &quot;KUSCCO Limited (Kenya Union of Savings &amp; Credit Co-operatives Limited)&quot;,
+    &quot;Marketing &amp; Communications&quot;)
+
+with open('jobs.csv','r') as csv_file:
+    reader = csv.DictReader(csv_file)
+    for job in reader:
+        
+        # Creating a job object with unpacking
+        Job(**job)
+</code></pre>
+
+<p>Dictionary Unpacking</p>
+
+<ul>
+<li>To instantiate a new  <code>Job</code>  object, traditionally, we would need to pass in all the required arguments. However, with unpacking, we just pass in a dictionary with the  <code>**</code>  operator before it.<br />
+The operator unpacks the dictionary in to an arbitrary number of named arguments. This approach is much cleaner and involves less code.</li>
+</ul>
+
+<h2 id="8-anti-patterns-wrong-usage">8. Anti-patterns: Wrong usage</h2>
+
+<p>Compared to lists and tuples, dictionaries take up more space in memory, since they need to store both the key and value, as opposed to just values.</p>
+
+<ul>
+<li>Therefore, dictionaries should only be used in cases where we have associative data, that would lose meaning if stored in lists, or any other sequenced data type.</li>
+<li>Dictionaries are mutable, hence not suitable for storing data than shouldn’t be modified in place.</li>
+<li>Since dictionaries are unordered, it would not be sensible to store strictly arranged data in them.<br />
+A possible candidate data type for this scenario would be the  <a href="https://docs.python.org/3/library/collections.html#collections.OrderedDict">OrderedDict</a>  from the  <a href="https://docs.python.org/3/library/collections.html">collections</a>  module. An  <code>OrderedDict</code>  is a subclass of the regular  <code>dict</code>  class, with the advantage of tracking the order in which keys were added.</li>
+
+<li><p>Dictionaries are well-designed to let us find a value instantly without necessarily having to search through the entire collection, hence we should not use loops for such an operation.</p>
+
+<pre><code class="language-py"># How not to search for a value and return it
+key_i_need = &quot;location&quot;
+target = &quot;&quot;
+for key in job2:
+if key == key_i_need:
+    target = job2[key]
+        
+# How to search efficiently
+target = job2.get(&quot;location&quot;)
+</code></pre></li>
+</ul>
+
+<p>Antipatterns</p>
+
+<p>We have a variable  <code>key_i_need</code>  containing the key we want to search for. We have used a for loop to traverse the collection, comparing the key at each step with our variable. If we get a match, we assign that key&rsquo;s value to the variable  <code>target</code>.<br />
+This is the wrong approach. We should instead use  <code>get()</code>, and pass it the desired key.</p>
+
+<h1 id="performance-trade-offs">Performance Trade-offs</h1>
+
+<p>Dictionary operations are heavily optimized in python, especially since they’re also extensively used within the language.<br />
+For instance, members of a class are internally stored in dictionaries.</p>
+
+<p>Most dictionary operations have a time complexity of O(1) — implying that the operations run in constant time relative to the size of the dictionary. This simply means that the operation only runs once irregardless of the dictionary size.<br />
+Creating a dictionary runs in a linear time of O(N), where “N” is the number of key-value pairs.<br />
+Similarly, all iterations run in O(N) since the loop has to run N times.</p>
+
+<p><img src="https://miro.medium.com/max/682/1*7m8zUws--GJbd_4UorQVYQ.png" alt="" /></p>
+
+<p>Dictionary Operations —  <a href="https://www.ics.uci.edu/~brgallar/week8_2.html">https://www.ics.uci.edu/~brgallar/week8_2.html</a></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Dictionaries come in very handy for regular python usage. They are suitable for use with unordered data that relies on relations. Caution should however be exercised to ensure we do not use dictionaries in the wrong way and end up slowing down execution of our code. For further reading please refer to the official python documentation on  <a href="https://docs.python.org/3/library/stdtypes.html#typesmapping">mapping types</a>.
+&gt; Written with <a href="https://medium.com/python-pandemonium/python-dictionaries-45cacc2b76aa">StackEdit</a>.</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cBeginer%5cDictionary%5cPython-Dictionaries.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#python-dictionaries">Python Dictionaries</a></li>
+<li><a href="#what-are-dictionaries">What are dictionaries ?</a></li>
+<li><a href="#comparisons">Comparisons</a></li>
+<li><a href="#dictionary-operations">Dictionary Operations</a>
+<ul>
+<li><a href="#1-creation">1. Creation</a></li>
+<li><a href="#2-accessing-items">2. Accessing Items</a></li>
+<li><a href="#3-modification">3. Modification</a></li>
+<li><a href="#4-deletion">4. Deletion</a></li>
+<li><a href="#6-iteration">6. Iteration</a></li>
+<li><a href="#7-sorting">7. Sorting</a></li>
+</ul></li>
+<li><a href="#other-methods">Other Methods</a></li>
+<li><a href="#speeding-up-your-code">Speeding Up your Code</a>
+<ul>
+<li><a href="#8-anti-patterns-wrong-usage">8. Anti-patterns: Wrong usage</a></li>
+</ul></li>
+<li><a href="#performance-trade-offs">Performance Trade-offs</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
