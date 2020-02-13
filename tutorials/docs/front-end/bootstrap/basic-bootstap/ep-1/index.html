@@ -23,7 +23,7 @@ https://code.visualstudio.com/
 <link rel="stylesheet" href="/library/tutorials/book.min.4d9ca8ad6c40ff61517dc18a5f0e4a6f450008ca4f0ddd0a765e92473b79ae3e.css" integrity="sha256-TZyorWxA/2FRfcGKXw5Kb0UACMpPDd0Kdl6SRzt5rj4=">
 
 
-<script defer src="/library/tutorials/en.search.min.9ee92b6bd4799a090b7dea43799c8f2a2dff134fb8d0ed3c64f84034f91e7439.js" integrity="sha256-nukra9R5mgkLfepDeZyPKi3/E0&#43;40O08ZPhANPkedDk="></script>
+<script defer src="/library/tutorials/en.search.min.0d1f4093a1ad44e1777b3d95e716f0d0d0ba9a95659dbeabc58eb64d6a1c5907.js" integrity="sha256-DR9Ak6GtROF3ez2V5xbw0NC6mpVlnb6rxY62TWocWQc="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -146,6 +146,16 @@ https://github.com/alex-shpak/hugo-book
 
   <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-2/" >
       Bootstrap 4 แบบพื้นฐาน ตอนที่ 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/boostrap-4-flex-grid/" >
+      Bootstrap 4 Grid
   </a>
 
 </li>
@@ -291,9 +301,7 @@ https://github.com/alex-shpak/hugo-book
 
 <p>ใน HTML5 มียกเลิก tag บางอย่างไปแล้ว เปลี่ยนมาใช้อันใหม่ เช่น</p>
 
-<pre><code class="language-html">&lt;b&gt;
-  เปลี่ยนเป็น &lt;strong&gt; &lt;i&gt; ไม่ใช่ตัวเอียง แต่เป็น icons&lt;/i&gt;&lt;/strong&gt;&lt;/b
-&gt;
+<pre><code class="language-html">&lt;b&gt;เปลี่ยนเป็น &lt;strong&gt; &lt;i&gt; ไม่ใช่ตัวเอียง แต่เป็น icons&lt;/i&gt;&lt;/strong&gt;&lt;/b&gt;
 </code></pre>
 
 <h2 id="ทบทวน-css">ทบทวน CSS</h2>
@@ -325,7 +333,7 @@ https://github.com/alex-shpak/hugo-book
 
 <h3 id="การใช-important">การใช้ !important</h3>
 
-<p>ปกติการทำงานจะทำแบบบนลงล่าง ทำให้คำสั่งมันทับกันได้ แต่ถ้าไม่อยากให้มันอานทับ ให้เพิ่ม !important</p>
+<p>ปกติการทำงานจะทำแบบบนลงล่าง ทำให้คำสั่งมันทับกันได้ แต่ถ้าไม่อยากให้มันอานทับ ให้เพิ่ม <code>important</code></p>
 
 <pre><code class="language-css">h1 {
   color: #d14 !important;
@@ -339,8 +347,7 @@ h1 {
 
 <p>กำหนด id ให้ tag</p>
 
-<pre><code class="language-css">
-&lt;div id=&quot;first&quot;&gt;
+<pre><code class="language-css">&lt;div id=&quot;first&quot;&gt;
 </code></pre>
 
 <p>ใน CSS จะใช้สัญลักษณ์ #</p>
@@ -399,8 +406,7 @@ bootstarp.min.css จะทำ minify มาแล้ว ตัด space แล�
 <pre><code class="language-html">&lt;!-- Latest compiled and minified CSS --&gt;
 &lt;link
   rel=&quot;stylesheet&quot;
-  href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&quot;
-/&gt;
+  href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&quot;/&gt;
 
 &lt;!-- jQuery library --&gt;
 &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -464,8 +470,7 @@ bootstarp.min.css จะทำ minify มาแล้ว ตัด space แล�
 
 <p>เพิ่มรูปภาพใน grid col คือใช้ <img></p>
 
-<pre><code class="language-html">
-    &lt;body&gt;
+<pre><code class="language-html">    &lt;body&gt;
     &lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
     &lt;h1&gt;Hello World&lt;/h1&gt;
@@ -477,7 +482,6 @@ bootstarp.min.css จะทำ minify มาแล้ว ตัด space แล�
     &lt;/div&gt;
     &lt;/div&gt;
     &lt;/body&gt;
-
 </code></pre>
 
 <p>ลองเลือกรูปภาพใหญ่ๆ เมื่อเปิดดูจะเห็นว่ารูปภาพมีขนาดใหญ่จนล้นจอ ยิ่งเปิดในมือถือก็ยิ่งล้น มันไม่ responsive</p>

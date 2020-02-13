@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bootstrap 4 Grid"><meta property="og:title" content="Bootstrap 4 Grid" />
+<meta property="og:description" content="Bootstrap 4 Grid Download Source Code
+Bootstrap 4 brings many changes and new features to the grid system we are all so familiar with from version 3. The new grid is now powered by flexbox, lots of utility classes have been renamed, and a new XL breakpoint has been added.
+ When we first wrote this article, Bootstrap 4 was supposed to have two separate grids. Shortly after we published it, a new Alpha was released, making flexbox the only layout mode of the framework as well as introducing some new features." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/boostrap-4-flex-grid/" />
+
+<title>Bootstrap 4 Grid | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.4d9ca8ad6c40ff61517dc18a5f0e4a6f450008ca4f0ddd0a765e92473b79ae3e.css" integrity="sha256-TZyorWxA/2FRfcGKXw5Kb0UACMpPDd0Kdl6SRzt5rj4=">
+
+
+<script defer src="/library/tutorials/en.search.min.0d1f4093a1ad44e1777b3d95e716f0d0d0ba9a95659dbeabc58eb64d6a1c5907.js" integrity="sha256-DR9Ak6GtROF3ez2V5xbw0NC6mpVlnb6rxY62TWocWQc="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-1/" >
+      Bootstrap 4 แบบพื้นฐาน ตอนที่ 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/ep-2/" >
+      Bootstrap 4 แบบพื้นฐาน ตอนที่ 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/boostrap-4-flex-grid/"  class="active">
+      Bootstrap 4 Grid
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Bootstrap 4 Grid</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="bootstrap-4-grid">Bootstrap 4 Grid</h1>
+
+<p><a href="https://demo.tutorialzine.com/2016/11/boostrap-4-regular-vs-flex-grid/">Download Source Code</a></p>
+
+<p>Bootstrap 4 brings many changes and new features to the grid system we are all so familiar with from version 3. The new grid is now powered by flexbox, lots of utility classes have been renamed, and a new XL breakpoint has been added.</p>
+
+<blockquote>
+<p>When we first wrote this article, Bootstrap 4 was supposed to have two separate grids. Shortly after we published it, a new  <a href="https://blog.getbootstrap.com/2017/01/06/bootstrap-4-alpha-6/">Alpha</a>  was released, making flexbox the only layout mode of the framework as well as introducing some new features. We have updated the article to reflect those changes.</p>
+</blockquote>
+
+<h2 id="1-basic-grid">1. Basic Grid</h2>
+
+<p>By now everyone knows how the Bootstrap grid works. We&rsquo;ve got rows separated into 12 equal pieces, and columns that go inside the rows. Each column can take anywhere from 1 to 12 spaces:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+   &lt;div class=&quot;col-xs-2&quot;&gt;.col-xs-2&lt;/div&gt;
+   &lt;div class=&quot;col-xs-4&quot;&gt;.col-xs-4&lt;/div&gt;
+   &lt;div class=&quot;col-xs-6&quot;&gt;.col-xs-6&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Structurally nothing has changed, the grid still has rows and 12 columns. However, there are changes in the width of containers, as well as other small stuff like the lowest breakpoint tier being renamed from  <code>.col-xs-</code>  to simply  <code>.col-</code></p>
+
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+   &lt;div class=&quot;col-2&quot;&gt;.col-2&lt;/div&gt;
+   &lt;div class=&quot;col-4&quot;&gt;.col-4&lt;/div&gt;
+   &lt;div class=&quot;col-6&quot;&gt;.col-6&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>To help you better visualize the changes, we&rsquo;ve prepared side-by-side  <a href="https://demo.tutorialzine.com/2016/11/boostrap-4-regular-vs-flex-grid/?1-basic-grid">demos</a>  of both new flex and old non-flex grids. You can check them out below:</p>
+
+<p><img src="https://tutorialzine.com/media/2017/01/1-basic-grid.png" alt="1-basic-grid.png" /></p>
+
+<p>A Basic Bootstrap Grid</p>
+
+<h2 id="2-automatic-layout">2. Automatic Layout</h2>
+
+<p>A cool new feature of the Bootstrap 4 grid is the auto-layout mode. It lets developers leave out the size of columns, making them automatically distribute the space in that row.</p>
+
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;.col&lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;.col&lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;.col&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Sizeless columns share the available space equally, always filling up the entire row. If we want a column to be bigger or smaller, we can still do that with a  <code>.col-size</code>  class.</p>
+
+<p><img src="https://tutorialzine.com/media/2017/01/2-auto-layout.png" alt="2-auto-layout.png" /></p>
+
+<p>Automatic Layout</p>
+
+<h2 id="3-column-wrapping">3. Column Wrapping</h2>
+
+<p>When the sum of all columns in a row is over 12, the first extra column will move to the next line. This is known as column wrapping and works the same way it did in non-flexbox bootstrap.</p>
+
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+   &lt;div class=&quot;col-6&quot;&gt;.col-6&lt;/div&gt;
+   &lt;div class=&quot;col-6&quot;&gt;.col-6&lt;/div&gt;
+   &lt;div class=&quot;col-3&quot;&gt;.col-3, This column will move to the next line.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The only thing to note here is that when using the auto layout, a sizeless column that took up only a couple of spaces, can take up the entire row once it wraps.</p>
+
+<p><img src="https://tutorialzine.com/media/2017/01/3-column-wrapping.png" alt="3-column-wrapping.png" /></p>
+
+<p>Column Wrapping</p>
+
+<h2 id="4-responsive-grid">4. Responsive Grid</h2>
+
+<p>As we mentioned in the intro, Bootstrap 4 has a new XL grid tier on top of the old ones. Now the grid media queries look like this:</p>
+
+<ul>
+<li>Extra small (xs) - below 576px</li>
+<li>Small (sm) - between 576px and 768px</li>
+<li>Medium (md) - between 768px and 992px</li>
+<li>Large (lg) - between 992px and 1200px</li>
+<li>Extra Large (xl) - over 1200px</li>
+</ul>
+
+<p>Other than that, there haven&rsquo;t been any changes to the way responsiveness works.</p>
+
+<p><img src="https://tutorialzine.com/media/2017/01/4-responsiveness.png" alt="4-responsiveness.png" /></p>
+
+<p>Responsive Grid</p>
+
+<h2 id="5-column-height">5. Column Height</h2>
+
+<p>The old grid system was built on floated elements and because of that every column has a different height, depending on the content it holds.</p>
+
+<p><img src="https://tutorialzine.com/media/2016/11/4-column-height-reg.png" alt="4-column-height-reg.png" /></p>
+
+<p>Column Height In Bootstrap 3</p>
+
+<p>In flexbox layouts all cells in a row are aligned to be as tall as the column with most content.</p>
+
+<p><img src="https://tutorialzine.com/media/2017/01/5-column-height.png" alt="5-column-height.png" />
+Column Height in Bootstrap 4</p>
+
+<h2 id="6-horizontal-alignment">6. Horizontal Alignment</h2>
+
+<p>In old Bootstrap, positioning columns horizontally is done via an offset system. Offsets work like empty columns and allow us to move elements to the right (e.g an  <code>.col-xs-offset-3</code>  moves the column 3 spaces to the right). This can be a little annoying as we need to manually adjust the amount of spaces needed.</p>
+
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-6 col-xs-offset-3&quot;&gt;This column is now centered.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Thanks to the  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"><code>justify-content</code></a>  property, horizontal positioning in flex-strap is as easy as adding the correct class.</p>
+
+<pre><code class="language-html">&lt;div class=&quot;row justify-content-center&quot;&gt;
+    &lt;div class=&quot;col-6&quot;&gt;All columns in that row will be automatically centered.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Also, if you want to use offsets, you can still do that as well! Just keep in mind that the classes are now shortened to  <code>.offset-xs-*</code>.</p>
+
+<p><img src="https://tutorialzine.com/media/2017/01/6-horizontal-alignmenet.png" alt="6-horizontal-alignmenet.png" /></p>
+
+<p>Horizontal Alignment</p>
+
+<h2 id="7-vertical-alignment">7. Vertical Alignment</h2>
+
+<p>There are no options for vertical alignment in the Bootstrap 3 grid. The only way to do any sort of vertical positioning is using custom CSS and it is often messy.</p>
+
+<p>Flexbox, on the other hand, is great at layout alignment and gives us not one, but two ways to vertically position columns:</p>
+
+<p>Vertically align the whole row:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;row align-items-center&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;Middle&lt;/div&gt;
+&lt;/div&gt;  
+&lt;div class=&quot;row align-items-end&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;Bottom&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row align-items-start&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;Top&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Align individual columns within the row:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col align-self-start&quot;&gt;Top&lt;/div&gt;
+    &lt;div class=&quot;col align-self-center&quot;&gt;Middle&lt;/div&gt;
+    &lt;div class=&quot;col align-self-end&quot;&gt;Bottom&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img src="https://tutorialzine.com/media/2017/01/7-vertical-align.png" alt="7-vertical-align.png" /></p>
+
+<p>Vertical Alignment</p>
+
+<h2 id="8-reordering-columns">8. Reordering Columns</h2>
+
+<p>With the old grid system, if we wanted to swap around the order of columns we needed to use  <code>push</code>  and  <code>pull</code>  while manually adjusting the correct amount of places to move left and right.</p>
+
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-4 col-xs-push-8&quot;&gt; This column will move 8 spaces to the right. &lt;/div&gt;
+    &lt;div class=&quot;col-xs-8 col-xs-pull-4&quot;&gt; This column will move 4 spaces to the left.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Anyone who has used flexbox before knows that it has a built-in  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/order"><code>order</code></a>  property. The way Bootstrap devs have implemented it is via three ordering classes:</p>
+
+<ul>
+<li><code>.flex-first</code>  - Displayed first.</li>
+<li><code>.flex-last</code>  - Displayed last.</li>
+<li><code>.flex-unordered</code>  - Displayed between first and last.</li>
+</ul>
+
+<p>No manual calculations are required. If you need to order more than 3 columns (which rarely happens) you can use  <a href="https://v4-alpha.getbootstrap.com/layout/grid/#push-and-pull">push&amp;pull</a>  or the  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/order"><code>order</code></a>  property via CSS.</p>
+
+<p><img src="https://tutorialzine.com/media/2017/01/8-reordering-columns.png" alt="8-reordering-columns.png" /></p>
+
+<p>Reordering Columns</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Looking back at the points covered in the article, its pretty clear that going full flexbox brings a lot of great features and makes the grid system much more advanced and versatile. The only real drawback is the lack of support for IE9 and older browsers (all modern clients have  <a href="https://caniuse.com/#feat=flexbox">full flexbox compatibility</a>), if you don&rsquo;t have to support those you&rsquo;re good to go.</p>
+
+<p>This wraps up our introduction to the new Bootstrap 4 grid system. Feel free to bookmark the demo page for quick future reference. We hope we&rsquo;ve been helpful! Happy coding :)</p>
+
+<blockquote>
+<p><a href="https://tutorialzine.com/2016/11/boostrap-4-regular-vs-flex-grid">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cFront-End%5cbootstrap%5cbasic-bootstap%5cboostrap-4-flex-grid.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
