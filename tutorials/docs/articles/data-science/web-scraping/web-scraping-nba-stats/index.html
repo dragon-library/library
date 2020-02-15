@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web Scraping NBA Stats"><meta property="og:title" content="Web Scraping NBA Stats" />
+<meta property="og:description" content="Web Scraping NBA Stats Source:
+Every data analysis starts with an idea, hypothesis, problem, etc. The next step usually involves the most important element: data. Today, data is everywhere. For those of us who love diving into data, there are lots of resources to attain this part of the process. Whether it’s through Kaggle or UCI Machine Learning Repository, data is easily available. However, sometimes not all data is available to us." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/" />
+
+<title>Web Scraping NBA Stats | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0dcb57b098c4ff3c2404849f58947323c50fc06d682b3996ebd911c75ba53ff1.css" integrity="sha256-DctXsJjE/zwkBISfWJRzI8UPwG1oKzmW69kRx1ulP/E=">
+
+
+<script defer src="/library/tutorials/en.search.min.15218b8640d363fe4331545d6e581a910220c7e24f54e28bf14a2dafd815c071.js" integrity="sha256-FSGLhkDTY/5DMVRdblgakQIgx&#43;JPVOKL8Uotr9gVwHE="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/" >
+      Build a Web Scraper
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/" >
+      Building a Stock Screener - Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/" >
+      Building a Stock Screener - Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/" >
+      How to scrape Yahoo Finance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/" >
+      Requests and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/" >
+      Web Scraping 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-and-beautifulsoup/" >
+      Web Scraping and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-craigslist/" >
+      Web Scraping Craigslist
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/"  class="active">
+      Web Scraping NBA Stats
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/" >
+      Web Scraping Using BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/" >
+      ทำ Web Scraping ด้วย BeautifulSoup
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/website/" >
+      Website
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Web Scraping NBA Stats</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="web-scraping-nba-stats">Web Scraping NBA Stats</h1>
+
+<p><a href="https://towardsdatascience.com/web-scraping-nba-stats-4b4f8c525994">Source:</a></p>
+
+<p><img src="https://miro.medium.com/max/3543/0*PXjAd7v7y5LOwZrE" alt="enter image description here" /></p>
+
+<p>Every data analysis starts with an idea, hypothesis, problem, etc. The next step usually involves the most important element: data. Today, data is everywhere. For those of us who love diving into data, there are lots of resources to attain this part of the process. Whether it’s through Kaggle or UCI Machine Learning Repository, data is easily available. However, sometimes not all data is available to us. Sometimes, in order to continue a certain data analysis/project, we must do a bit more to get the correct, updated data we need.</p>
+
+<p>This brings us to our topic: web scraping to create a data set. A while back, I worked on a  <a href="https://towardsdatascience.com/basketball-analytics-predicting-win-shares-7c155651e7cc">basketball analytics project</a>. The project was an analysis on individual stats of NBA players, and using some of those stats to predict win shares for the 2018 NBA season. As I began the project, I realized that the NBA data sets available on Kaggle did not have all the stats I needed to continue my analysis. Therefore, I decided to do a bit more research.</p>
+
+<p>First of all, my go-to site for all NBA stats is  <a href="https://www.basketball-reference.com/">Basketball Reference</a>. This site is essentially an encyclopedia for all things NBA stats. Then came my next question: Why not get the data directly from the Basketball Reference? After further research, I discovered a great Python library that solved this portion of my project:<code>BeautifulSoup</code>  . This library is a web scraper that allows us to search through the HTML of a webpage and extract the information we need. From there, we will store the data we scraped onto a  <code>DataFrame</code>using  <code>pandas.</code></p>
+
+<hr />
+
+<p>First, let’s get all the Python libraries we will be using for this project:</p>
+
+<pre><code class="language-py">from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import pandas as pd
+</code></pre>
+
+<p>Now, we determine the HTML page we will be scraping. For this part, I used the individual per game stats of players for the current 2018–2019 NBA season. The page on Basketball Reference looks like this:</p>
+
+<p><img src="https://miro.medium.com/max/30/1*f4KVU4EOt0CA3wdIkDdEoQ.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1017/1*f4KVU4EOt0CA3wdIkDdEoQ.png" alt="" /></p>
+
+<p>As you can see, the data is already organized into a table. This makes web scraping a lot easier! Now we will use  <code>urlopen</code>  that we imported from the  <code>urllib.request</code>  library, then create a  <code>BeautifulSoup</code>  object by passing through  <code>html</code>  to  <code>BeautifulSoup().</code></p>
+
+<pre><code class="language-py">_# NBA season we will be analyzing  
+year = 2019_# URL page we will scraping (see image above)  
+url = &quot;https://www.basketball-reference.com/leagues/NBA_{}_per_game.html&quot;.format(year)_# this is the HTML from the given URL_  
+html = urlopen(url)soup = BeautifulSoup(html)
+</code></pre>
+
+<p>Here, the  <code>BeautifulSoup</code>  function passed through the entire web page in order to convert it into an object. Now we will trim the object to only include the table we need.</p>
+
+<p>The next step is to organize the column headers. We want to extract the text content of each column header and store them into a list. We do this by inspecting the HTML (right-clicking the page and selecting “Inspect Element”) we see that the 2nd table row is the one that contains the column headers we want. By looking at the table, we can see the specific HTML tags that we will be using to extract the data:</p>
+
+<p><img src="https://miro.medium.com/max/30/1*oEs1ndC166H-zy6Vt5Kh6Q.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1018/1*oEs1ndC166H-zy6Vt5Kh6Q.png" alt="" /></p>
+
+<p>Now, we go back to  <code>BeautifulSoup</code>. By using  <code>findAll()</code>, we can get the first 2 rows (limit = 2) and pass the element we want as the first argument, in this case ‘_tr_’, which is the HTML tag for table row. After using  <code>findAll()</code>, we use the  <code>getText()</code>  to extract the table header, or ‘_th_’, text we need and organize it into a list:</p>
+
+<pre><code class="language-py"># use findALL() to get the column headers  
+soup.findAll('tr', limit=2)# use getText()to extract the text we need into a list  
+headers = [th.getText() for th in soup.findAll('tr', limit=2)[0].findAll('th')]# exclude the first column as we will not need the ranking order from Basketball Reference for the analysis  
+headers = headers[1:]  
+headers
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/6/1*Bu6sTlS40pN2PzDuHXzFIQ.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/93/1*Bu6sTlS40pN2PzDuHXzFIQ.png" alt="" /></p>
+
+<p>Next step, we will extract the data from the cells of the table in order to add it to our  <code>DataFrame</code>. Although it is similar to extracting data from column header, the data within the cell, in this case player stats, is in a 2-dimensional format. Therefore, we must set up a 2-dimensional list:</p>
+
+<pre><code class="language-py"># avoid the first header row  
+rows = soup.findAll('tr')[1:]  
+player_stats = [[td.getText() for td in rows[i].findAll('td')]  
+            for i in range(len(rows))]
+</code></pre>
+
+<p>Now comes something a bit more familiar:  <code>pandas</code>. With the data and columns headers we have extracted from Basketball Reference, we create a simple  <code>DataFrame</code>:</p>
+
+<pre><code class="language-py">stats = pd.DataFrame(player_stats, columns = headers)  
+stats.head(10)
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/30/1*bCOIscuqGQHUIh7jn0StHA.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/898/1*bCOIscuqGQHUIh7jn0StHA.png" alt="" /></p>
+
+<p><strong><em>Voilà!</em></strong> We have our own data set! In a matter of minutes, we analyzed an HTML document, extracted the data from the table, and organized it onto a  <code>DataFrame</code>. For free! And without any hassle of searching for a .csv file that might not be up-to-date. We have data that comes directly from a source that is updated everyday. Of course, not every HTML document is created equally. There are pages that might require a bit more time in analyzing the HTML tags in order to extract the proper data.</p>
+
+<p>To conclude this quick walk through, web scraping can be a simple task, but for certain HTML documents, it can be difficult. There are a bunch of helpful resources out there that will help you understand HTML tags, and get the data you need. There might be a problem you want to dive into, so don’t let limited data be an issue!</p>
+
+<hr />
+
+<h2 id="helpful-resources">Helpful Resources:</h2>
+
+<ul>
+<li><strong>HTML Tags:</strong>  <a href="https://html.com/tags/">Source 1</a>  |  <a href="https://www.w3schools.com/tags/">Source 2</a></li>
+<li><strong>BeautifulSoup:</strong>  <a href="https://medium.freecodecamp.org/how-to-scrape-websites-with-python-and-beautifulsoup-5946935d93fe">Source 1</a>  |  <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Source 2</a></li>
+</ul>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cweb-scraping%5cweb-scraping-nba-stats.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#web-scraping-nba-stats">Web Scraping NBA Stats</a>
+<ul>
+<li><a href="#helpful-resources">Helpful Resources:</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>Build a Web Scraper</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/</guid>
+      <description>Beautiful Soup: Build a Web Scraper With Python The incredible amount of data on the Internet is a rich resource for any field of research or personal interest. To effectively harvest that data, you’ll need to become skilled at web scraping. The Python libraries requests and Beautiful Soup are powerful tools for the job. If you like to learn with hands-on examples and you have a basic understanding of Python and HTML, then this tutorial is for you.</description>
+    </item>
+    
+    <item>
       <title>Building a Stock Screener - Part 1</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -57,6 +66,58 @@ The screenshot below shows a Pandas DataFrame with MFT.</description>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</guid>
       <description>Web Scraping 101 in Python : overview of the tools &amp;amp; the pros and cons of each Summary:  Web Fundamentals Manually opening a socket and sending the HTTP request urllib3 &amp;amp; LXML requests &amp;amp; BeautifulSoup Scrapy Selenium &amp;amp; Chrome —headless Conclusion  Web Fundamentals The internet is really complex–there are many underlying technologies and concepts involved to view a simple web page in your browser. I&amp;rsquo;m not going to explain everything, but I will show you the most important things you have to understand in order to extract data from the web.</description>
+    </item>
+    
+    <item>
+      <title>Web Scraping and BeautifulSoup</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-and-beautifulsoup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-and-beautifulsoup/</guid>
+      <description>Web Scraping and BeautifulSoup  Source  To source data for data science projects, you’ll often rely on SQL and NoSQL databases, APIs, or ready-made CSV data sets.
+The problem is that you can’t always find a data set on your topic, databases are not kept current and APIs are either expensive or have usage limits.
+If the data you’re looking for is on an web page, however, then the solution to all these problems is web scraping.</description>
+    </item>
+    
+    <item>
+      <title>Web Scraping Craigslist</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-craigslist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-craigslist/</guid>
+      <description>Web Scraping Craigslist: A Complete Tutorial I’ve been looking to make a move recently. And what better way to know I’m getting a good price than to sample from the “population” of housing on Craigslist? Sounds like a job for…Python and web scraping!
+In this article, I’m going to walk you through my code that scrapes East Bay Area Craigslist for apartments. The code here, and/or the URI parameters rather, can be modified to pull from any region, category, property type, etc.</description>
+    </item>
+    
+    <item>
+      <title>Web Scraping NBA Stats</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/</guid>
+      <description>Web Scraping NBA Stats Source:
+Every data analysis starts with an idea, hypothesis, problem, etc. The next step usually involves the most important element: data. Today, data is everywhere. For those of us who love diving into data, there are lots of resources to attain this part of the process. Whether it’s through Kaggle or UCI Machine Learning Repository, data is easily available. However, sometimes not all data is available to us.</description>
+    </item>
+    
+    <item>
+      <title>Web Scraping Using BeautifulSoup</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/</guid>
+      <description>Tutorial: Python Web Scraping Using BeautifulSoup When performing data science tasks, it’s common to want to use data found on the internet. You’ll usually be able to access this data in csv format, or via an Application Programming Interface (API). However, there are times when the data you want can only be accessed as part of a web page. In cases like this, you’ll want to use a technique called web scraping to get the data from the web page into a format you can work with in your analysis.</description>
+    </item>
+    
+    <item>
+      <title>ทำ Web Scraping ด้วย BeautifulSoup</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/</guid>
+      <description>ทำ Web Scraping ด้วย BeautifulSoup กัน สำหรับ Blog นี้เราจะมาดูวิธีการทำ Web scraping ด้วย Python3 และ BeautifulSoup ในระดับ Basic มากกกกกกกกกกกกก กันดูนะ :)
+ก่อนที่เราจะเริ่มทำ web scraping เรามาเรียนรู้พื้นฐานเรื่อง website กันก่อนดีกว่า
+Componenet of web page เมื่อเราเข้าไปที่ web page ซัก url นึงแล้ว web browser ของเราก็จะทำการ request ไปที่ web server เราจะเรียกการ request ประเภทนี้ว่า GET request เนื่องจากเรา request ไปที่ server แล้วเราก็จะได้ file จาก server กลับมาเพื่อที่จะบอกกับ web browser นี้ว่าเราจะแสดงหน้า web page ของเราอย่างไร ซึ่งเนื้อหาใน file ที่กลับมาก็จะมีส่วนประกอบคร่าวๆ ดังนี้
+ HTML : เป็นเนื้อหาหลักของหน้านั้นๆ CSS : เป็นตัวจัดการตกแต่ง HTML ของเราให้สวยงาม ดูดีขึ้น JS : เป็นตัวจัดการ interactive ของ HTML ของเราให้ดีขึ้น Image : รูปภาพใน format เช่น JPG , PNG สำหรับแสดงบน web  หลังจาก web browser ได้รับดังกล่าวมาแล้ว ก็จะทำการ render ออกมาสวยงามตามที่เราเห็นกันเป็นปกติ</description>
     </item>
     
   </channel>

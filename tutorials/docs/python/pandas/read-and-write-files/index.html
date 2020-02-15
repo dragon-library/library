@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Read and Write Files"><meta property="og:title" content="Read and Write Files" />
+<meta property="og:description" content="Pandas: How to Read and Write Files Pandas is a powerful and flexible Python package that allows you to work with labeled and time series data. It also provides statistics methods, enables plotting, and more. One crucial feature of Pandas is its ability to write and read Excel, CSV, and many other types of files. Functions like the Pandas read_csv() method enable you to work with files effectively. You can use them to save the data and labels from Pandas objects to a file and load them later as Pandas Series or DataFrame instances." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/pandas/read-and-write-files/" />
+
+<title>Read and Write Files | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0dcb57b098c4ff3c2404849f58947323c50fc06d682b3996ebd911c75ba53ff1.css" integrity="sha256-DctXsJjE/zwkBISfWJRzI8UPwG1oKzmW69kRx1ulP/E=">
+
+
+<script defer src="/library/tutorials/en.search.min.15218b8640d363fe4331545d6e581a910220c7e24f54e28bf14a2dafd815c071.js" integrity="sha256-FSGLhkDTY/5DMVRdblgakQIgx&#43;JPVOKL8Uotr9gVwHE="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/" >
+      IO tools (text, CSV, HDF5, …)
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/read-and-write-files/"  class="active">
+      Read and Write Files
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Read and Write Files</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="pandas-how-to-read-and-write-files">Pandas: How to Read and Write Files</h1>
+
+<p><img src="https://files.realpython.com/media/Reading-and-Writing-Data-With-Pandas_Watermarked.435ef1c38466.jpg" alt="enter image description here" /></p>
+
+<p><strong><a href="https://pandas.pydata.org/">Pandas</a></strong>  is a powerful and flexible Python package that allows you to work with labeled and time series data. It also provides statistics methods, enables plotting, and more. One crucial feature of Pandas is its ability to write and read Excel, CSV, and many other types of files. Functions like the Pandas  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"><code>read_csv()</code></a>  method enable you to work with files effectively. You can use them to save the data and labels from Pandas objects to a file and load them later as Pandas  <code>Series</code>  or  <code>DataFrame</code>  instances.</p>
+
+<p><strong>In this tutorial, you’ll learn:</strong></p>
+
+<ul>
+<li>What the  <strong>Pandas IO tools</strong>  API is</li>
+<li>How to  <strong>read and write data</strong>  to and from files</li>
+<li>How to work with various  <strong>file formats</strong></li>
+<li>How to work with  <strong>big data</strong>  efficiently</li>
+</ul>
+
+<p>Let’s start reading and writing files!</p>
+
+<p><strong>Free Bonus:</strong>  <a href="https://realpython.com/pandas-read-write-files/">5 Thoughts On Python Mastery</a>, a free course for Python developers that shows you the roadmap and the mindset you&rsquo;ll need to take your Python skills to the next level.</p>
+
+<h2 id="installing-pandas">Installing Pandas</h2>
+
+<p>The code in this tutorial is executed with CPython 3.7.4 and Pandas 0.25.1. It would be beneficial to make sure you have the latest versions of Python and Pandas on your machine. You might want to create a new  <a href="https://realpython.com/python-virtual-environments-a-primer/">virtual environment</a>  and install the dependencies for this tutorial.</p>
+
+<p>First, you’ll need the Pandas library. You may already have it installed. If you don’t, then you can install it with  <a href="https://realpython.com/what-is-pip/">pip</a>:</p>
+
+<pre><code>$ pip install pandas
+</code></pre>
+
+<p>Once the installation process completes, you should have Pandas installed and ready.</p>
+
+<p><strong><a href="https://www.anaconda.com/">Anaconda</a></strong>  is an excellent Python distribution that comes with Python, many useful packages like Pandas, and a package and environment manager called  <a href="https://docs.conda.io/en/latest/">Conda</a>. To learn more about Anaconda, check out  <a href="https://realpython.com/python-windows-machine-learning-setup/">Setting Up Python for Machine Learning on Windows</a>.</p>
+
+<p>If you don’t have Pandas in your virtual environment, then you can install it with Conda:</p>
+
+<pre><code>$ conda install pandas
+</code></pre>
+
+<p>Conda is powerful as it manages the dependencies and their versions. To learn more about working with Conda, you can check out the  <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">official documentation</a>.</p>
+
+<h2 id="preparing-data">Preparing Data</h2>
+
+<p>In this tutorial, you’ll use the data related to 20 countries. Here’s an overview of the data and sources you’ll be working with:</p>
+
+<ul>
+<li><p><strong>Country</strong>  is denoted by the country name. Each country is in the top 10 list for either population, area, or gross domestic product (GDP). The row labels for the dataset are the three-letter country codes defined in  <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1</a>. The column label for the dataset is  <code>COUNTRY</code>.</p></li>
+
+<li><p><strong>Population</strong>  is expressed in millions. The data comes from a list of countries and dependencies by population on  <a href="https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population">Wikipedia</a>. The column label for the dataset is  <code>POP</code>.</p></li>
+
+<li><p><strong>Area</strong>  is expressed in thousands of kilometers squared. The data comes from a list of countries and dependencies by area on  <a href="https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area">Wikipedia</a>. The column label for the dataset is  <code>AREA</code>.</p></li>
+
+<li><p><strong>Gross domestic product</strong>  is expressed in millions of U.S. dollars, according to the United Nations data for 2017. You can find this data in the list of countries by nominal GDP on  <a href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)">Wikipedia</a>. The column label for the dataset is  <code>GDP</code>.</p></li>
+
+<li><p><strong>Continent</strong>  is either Africa, Asia, Oceania, Europe, North America, or South America. You can find this information on  <a href="https://simple.wikipedia.org/wiki/List_of_countries_by_continents">Wikipedia</a>  as well. The column label for the dataset is  <code>CONT</code>.</p></li>
+
+<li><p><strong>Independence day</strong>  is a date that commemorates a nation’s independence. The data comes from the list of national independence days on  <a href="https://en.wikipedia.org/wiki/List_of_national_independence_days">Wikipedia</a>. The dates are shown in  <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>  format. The first four digits represent the year, the next two numbers are the month, and the last two are for the day of the month. The column label for the dataset is  <code>IND_DAY</code>.</p></li>
+</ul>
+
+<p>This is how the data looks as a table:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">CODE</th>
+<th align="left">COUNTRY</th>
+<th align="right">POP</th>
+<th align="right">AREA</th>
+<th align="right">GDP</th>
+<th align="left">CONT</th>
+<th align="left">IND_DAY</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">CHN</td>
+<td align="left">China</td>
+<td align="right">1398.72</td>
+<td align="right">9596.96</td>
+<td align="right">12234.8</td>
+<td align="left">Asia</td>
+<td align="left">nan</td>
+</tr>
+
+<tr>
+<td align="left">IND</td>
+<td align="left">India</td>
+<td align="right">1351.16</td>
+<td align="right">3287.26</td>
+<td align="right">2575.67</td>
+<td align="left">Asia</td>
+<td align="left">15/08/1947</td>
+</tr>
+
+<tr>
+<td align="left">USA</td>
+<td align="left">US</td>
+<td align="right">329.74</td>
+<td align="right">9833.52</td>
+<td align="right">19485.4</td>
+<td align="left">N.America</td>
+<td align="left">1776-07-04</td>
+</tr>
+
+<tr>
+<td align="left">IDN</td>
+<td align="left">Indonesia</td>
+<td align="right">268.07</td>
+<td align="right">1910.93</td>
+<td align="right">1015.54</td>
+<td align="left">Asia</td>
+<td align="left">17/08/1945</td>
+</tr>
+
+<tr>
+<td align="left">BRA</td>
+<td align="left">Brazil</td>
+<td align="right">210.32</td>
+<td align="right">8515.77</td>
+<td align="right">2055.51</td>
+<td align="left">S.America</td>
+<td align="left">1822-09-07</td>
+</tr>
+
+<tr>
+<td align="left">PAK</td>
+<td align="left">Pakistan</td>
+<td align="right">205.71</td>
+<td align="right">881.91</td>
+<td align="right">302.14</td>
+<td align="left">Asia</td>
+<td align="left">14/08/1947</td>
+</tr>
+
+<tr>
+<td align="left">NGA</td>
+<td align="left">Nigeria</td>
+<td align="right">200.96</td>
+<td align="right">923.77</td>
+<td align="right">375.77</td>
+<td align="left">Africa</td>
+<td align="left">01/10/1960</td>
+</tr>
+
+<tr>
+<td align="left">BGD</td>
+<td align="left">Bangladesh</td>
+<td align="right">167.09</td>
+<td align="right">147.57</td>
+<td align="right">245.63</td>
+<td align="left">Asia</td>
+<td align="left">26/03/1971</td>
+</tr>
+
+<tr>
+<td align="left">RUS</td>
+<td align="left">Russia</td>
+<td align="right">146.79</td>
+<td align="right">17098.2</td>
+<td align="right">1530.75</td>
+<td align="left">nan</td>
+<td align="left">12/06/1992</td>
+</tr>
+
+<tr>
+<td align="left">MEX</td>
+<td align="left">Mexico</td>
+<td align="right">126.58</td>
+<td align="right">1964.38</td>
+<td align="right">1158.23</td>
+<td align="left">N.America</td>
+<td align="left">1810-09-16</td>
+</tr>
+
+<tr>
+<td align="left">JPN</td>
+<td align="left">Japan</td>
+<td align="right">126.22</td>
+<td align="right">377.97</td>
+<td align="right">4872.42</td>
+<td align="left">Asia</td>
+<td align="left">nan</td>
+</tr>
+
+<tr>
+<td align="left">DEU</td>
+<td align="left">Germany</td>
+<td align="right">83.02</td>
+<td align="right">357.11</td>
+<td align="right">3693.2</td>
+<td align="left">Europe</td>
+<td align="left">nan</td>
+</tr>
+
+<tr>
+<td align="left">FRA</td>
+<td align="left">France</td>
+<td align="right">67.02</td>
+<td align="right">640.68</td>
+<td align="right">2582.49</td>
+<td align="left">Europe</td>
+<td align="left">1789-07-14</td>
+</tr>
+
+<tr>
+<td align="left">GBR</td>
+<td align="left">UK</td>
+<td align="right">66.44</td>
+<td align="right">242.5</td>
+<td align="right">2631.23</td>
+<td align="left">Europe</td>
+<td align="left">nan</td>
+</tr>
+
+<tr>
+<td align="left">ITA</td>
+<td align="left">Italy</td>
+<td align="right">60.36</td>
+<td align="right">301.34</td>
+<td align="right">1943.84</td>
+<td align="left">Europe</td>
+<td align="left">nan</td>
+</tr>
+
+<tr>
+<td align="left">ARG</td>
+<td align="left">Argentina</td>
+<td align="right">44.94</td>
+<td align="right">2780.4</td>
+<td align="right">637.49</td>
+<td align="left">S.America</td>
+<td align="left">1816-07-09</td>
+</tr>
+
+<tr>
+<td align="left">DZA</td>
+<td align="left">Algeria</td>
+<td align="right">43.38</td>
+<td align="right">2381.74</td>
+<td align="right">167.56</td>
+<td align="left">Africa</td>
+<td align="left">05/07/1962</td>
+</tr>
+
+<tr>
+<td align="left">CAN</td>
+<td align="left">Canada</td>
+<td align="right">37.59</td>
+<td align="right">9984.67</td>
+<td align="right">1647.12</td>
+<td align="left">N.America</td>
+<td align="left">1867-07-01</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">AUS</td>
+<td align="right">Australia</td>
+<td align="right">25.47</td>
+<td align="right">7692.02</td>
+<td align="left">1408.68</td>
+<td align="left">Oceania</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">KAZ</td>
+<td align="right">Kazakhstan</td>
+<td align="right">18.53</td>
+<td align="right">2724.9</td>
+<td align="left">159.41</td>
+<td align="left">Asia</td>
+</tr>
+</tbody>
+</table>
+
+<p>You may notice that some of the data is missing. For example, the continent for Russia is not specified because it spreads across both Europe and Asia. There are also several missing independence days because the  <a href="https://en.wikipedia.org/wiki/List_of_national_independence_days">data source</a>  omits them.</p>
+
+<p>You can organize this data in Python using a nested  <a href="https://realpython.com/python-dicts/">dictionary</a>:</p>
+
+<pre><code class="language-py">data = {
+    'CHN': {'COUNTRY': 'China', 'POP': 1_398.72, 'AREA': 9_596.96,
+            'GDP': 12_234.78, 'CONT': 'Asia'},
+    'IND': {'COUNTRY': 'India', 'POP': 1_351.16, 'AREA': 3_287.26,
+            'GDP': 2_575.67, 'CONT': 'Asia', 'IND_DAY': '1947-08-15'},
+    'USA': {'COUNTRY': 'US', 'POP': 329.74, 'AREA': 9_833.52,
+            'GDP': 19_485.39, 'CONT': 'N.America',
+            'IND_DAY': '1776-07-04'},
+    'IDN': {'COUNTRY': 'Indonesia', 'POP': 268.07, 'AREA': 1_910.93,
+            'GDP': 1_015.54, 'CONT': 'Asia', 'IND_DAY': '1945-08-17'},
+    'BRA': {'COUNTRY': 'Brazil', 'POP': 210.32, 'AREA': 8_515.77,
+            'GDP': 2_055.51, 'CONT': 'S.America', 'IND_DAY': '1822-09-07'},
+    'PAK': {'COUNTRY': 'Pakistan', 'POP': 205.71, 'AREA': 881.91,
+            'GDP': 302.14, 'CONT': 'Asia', 'IND_DAY': '1947-08-14'},
+    'NGA': {'COUNTRY': 'Nigeria', 'POP': 200.96, 'AREA': 923.77,
+            'GDP': 375.77, 'CONT': 'Africa', 'IND_DAY': '1960-10-01'},
+    'BGD': {'COUNTRY': 'Bangladesh', 'POP': 167.09, 'AREA': 147.57,
+            'GDP': 245.63, 'CONT': 'Asia', 'IND_DAY': '1971-03-26'},
+    'RUS': {'COUNTRY': 'Russia', 'POP': 146.79, 'AREA': 17_098.25,
+            'GDP': 1_530.75, 'IND_DAY': '1992-06-12'},
+    'MEX': {'COUNTRY': 'Mexico', 'POP': 126.58, 'AREA': 1_964.38,
+            'GDP': 1_158.23, 'CONT': 'N.America', 'IND_DAY': '1810-09-16'},
+    'JPN': {'COUNTRY': 'Japan', 'POP': 126.22, 'AREA': 377.97,
+            'GDP': 4_872.42, 'CONT': 'Asia'},
+    'DEU': {'COUNTRY': 'Germany', 'POP': 83.02, 'AREA': 357.11,
+            'GDP': 3_693.20, 'CONT': 'Europe'},
+    'FRA': {'COUNTRY': 'France', 'POP': 67.02, 'AREA': 640.68,
+            'GDP': 2_582.49, 'CONT': 'Europe', 'IND_DAY': '1789-07-14'},
+    'GBR': {'COUNTRY': 'UK', 'POP': 66.44, 'AREA': 242.50,
+            'GDP': 2_631.23, 'CONT': 'Europe'},
+    'ITA': {'COUNTRY': 'Italy', 'POP': 60.36, 'AREA': 301.34,
+            'GDP': 1_943.84, 'CONT': 'Europe'},
+    'ARG': {'COUNTRY': 'Argentina', 'POP': 44.94, 'AREA': 2_780.40,
+            'GDP': 637.49, 'CONT': 'S.America', 'IND_DAY': '1816-07-09'},
+    'DZA': {'COUNTRY': 'Algeria', 'POP': 43.38, 'AREA': 2_381.74,
+            'GDP': 167.56, 'CONT': 'Africa', 'IND_DAY': '1962-07-05'},
+    'CAN': {'COUNTRY': 'Canada', 'POP': 37.59, 'AREA': 9_984.67,
+            'GDP': 1_647.12, 'CONT': 'N.America', 'IND_DAY': '1867-07-01'},
+    'AUS': {'COUNTRY': 'Australia', 'POP': 25.47, 'AREA': 7_692.02,
+            'GDP': 1_408.68, 'CONT': 'Oceania'},
+    'KAZ': {'COUNTRY': 'Kazakhstan', 'POP': 18.53, 'AREA': 2_724.90,
+            'GDP': 159.41, 'CONT': 'Asia', 'IND_DAY': '1991-12-16'}
+}
+
+columns = ('COUNTRY', 'POP', 'AREA', 'GDP', 'CONT', 'IND_DAY')
+</code></pre>
+
+<p>Each row of the table is written as an inner dictionary whose keys are the column names and values are the corresponding data. These dictionaries are then collected as the values in the outer  <code>data</code>  dictionary. The corresponding keys for  <code>data</code>  are the three-letter country codes.</p>
+
+<p>You can use this  <code>data</code>  to create an instance of a Pandas  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html"><code>DataFrame</code></a>. First, you need to import Pandas:</p>
+
+<pre><code class="language-py">import pandas as pd` 
+</code></pre>
+
+<p>Now that you have Pandas imported, you can use the  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html"><code>DataFrame</code>  constructor</a>  and  <code>data</code>  to create a  <code>DataFrame</code>  object.</p>
+
+<p><code>data</code>  is organized in such a way that the country codes correspond to columns. You can reverse the rows and columns of a  <code>DataFrame</code>  with the property  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.T.html"><code>.T</code></a>:</p>
+
+<pre><code class="language-py">df = pd.DataFrame(data=data).T
+df
+</code></pre>
+
+<pre><code> COUNTRY      POP     AREA      GDP       CONT     IND_DAY
+CHN       China  1398.72  9596.96  12234.8       Asia         NaN
+IND       India  1351.16  3287.26  2575.67       Asia  1947-08-15
+USA          US   329.74  9833.52  19485.4  N.America  1776-07-04
+IDN   Indonesia   268.07  1910.93  1015.54       Asia  1945-08-17
+BRA      Brazil   210.32  8515.77  2055.51  S.America  1822-09-07
+PAK    Pakistan   205.71   881.91   302.14       Asia  1947-08-14
+NGA     Nigeria   200.96   923.77   375.77     Africa  1960-10-01
+BGD  Bangladesh   167.09   147.57   245.63       Asia  1971-03-26
+RUS      Russia   146.79  17098.2  1530.75        NaN  1992-06-12
+MEX      Mexico   126.58  1964.38  1158.23  N.America  1810-09-16
+JPN       Japan   126.22   377.97  4872.42       Asia         NaN
+DEU     Germany    83.02   357.11   3693.2     Europe         NaN
+FRA      France    67.02   640.68  2582.49     Europe  1789-07-14
+GBR          UK    66.44    242.5  2631.23     Europe         NaN
+ITA       Italy    60.36   301.34  1943.84     Europe         NaN
+ARG   Argentina    44.94   2780.4   637.49  S.America  1816-07-09
+DZA     Algeria    43.38  2381.74   167.56     Africa  1962-07-05
+CAN      Canada    37.59  9984.67  1647.12  N.America  1867-07-01
+AUS   Australia    25.47  7692.02  1408.68    Oceania         NaN
+KAZ  Kazakhstan    18.53   2724.9   159.41       Asia  1991-12-16` 
+</code></pre>
+
+<p>Now you have your  <code>DataFrame</code>  object populated with the data about each country.</p>
+
+<p><strong>Note:</strong>  You can use  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transpose.html"><code>.transpose()</code></a>  instead of  <code>.T</code>  to reverse the rows and columns of your dataset. If you use  <code>.transpose()</code>, then you can set the optional parameter  <code>copy</code>  to specify if you want to copy the underlying data. The default behavior is  <code>False</code>.</p>
+
+<p>Versions of Python older than 3.6 did not guarantee the order of keys in dictionaries. To ensure the order of columns is maintained for older versions of Python and Pandas, you can specify  <code>index=columns</code>:</p>
+
+<pre><code class="language-py">df = pd.DataFrame(data=data, index=columns).T` 
+</code></pre>
+
+<p>Now that you’ve prepared your data, you’re ready to start working with files!</p>
+
+<h2 id="using-the-pandas-read-csv-and-to-csv-functions">Using the Pandas  <code>read_csv()</code>  and  <code>.to_csv()</code>  Functions</h2>
+
+<p>A  <a href="https://en.wikipedia.org/wiki/Comma-separated_values">comma-separated values (CSV)</a>  file is a plaintext file with a  <code>.csv</code>  extension that holds tabular data. This is one of the most popular file formats for storing large amounts of data. Each row of the CSV file represents a single table row. The values in the same row are by default separated with commas, but you could change the separator to a semicolon, tab, space, or some other character.</p>
+
+<h3 id="write-a-csv-file">Write a CSV File</h3>
+
+<p>You can save your Pandas  <code>DataFrame</code>  as a CSV file with  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html"><code>.to_csv()</code></a>:</p>
+
+<p><code>df.to_csv('data.csv')</code></p>
+
+<p>That’s it! You’ve created the file  <code>data.csv</code>  in your current working directory. You can expand the code block below to see how your CSV file should look:</p>
+
+<p>data.csvShow/Hide</p>
+
+<p>This text file contains the data separated with  <strong>commas</strong>. The first column contains the row labels. In some cases, you’ll find them irrelevant. If you don’t want to keep them, then you can pass the argument  <code>index=False</code>  to  <code>.to_csv()</code>.</p>
+
+<h3 id="read-a-csv-file">Read a CSV File</h3>
+
+<p>Once your data is saved in a CSV file, you’ll likely want to load and use it from time to time. You can do that with the Pandas  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"><code>read_csv()</code></a>  function:</p>
+
+<pre><code class="language-py">df = pd.read_csv('data.csv', index_col=0)
+df
+</code></pre>
+
+<pre><code class="language-py"> COUNTRY      POP      AREA       GDP       CONT     IND_DAY
+CHN       China  1398.72   9596.96  12234.78       Asia         NaN
+IND       India  1351.16   3287.26   2575.67       Asia  1947-08-15
+USA          US   329.74   9833.52  19485.39  N.America  1776-07-04
+IDN   Indonesia   268.07   1910.93   1015.54       Asia  1945-08-17
+BRA      Brazil   210.32   8515.77   2055.51  S.America  1822-09-07
+PAK    Pakistan   205.71    881.91    302.14       Asia  1947-08-14
+NGA     Nigeria   200.96    923.77    375.77     Africa  1960-10-01
+BGD  Bangladesh   167.09    147.57    245.63       Asia  1971-03-26
+RUS      Russia   146.79  17098.25   1530.75        NaN  1992-06-12
+MEX      Mexico   126.58   1964.38   1158.23  N.America  1810-09-16
+JPN       Japan   126.22    377.97   4872.42       Asia         NaN
+DEU     Germany    83.02    357.11   3693.20     Europe         NaN
+FRA      France    67.02    640.68   2582.49     Europe  1789-07-14
+GBR          UK    66.44    242.50   2631.23     Europe         NaN
+ITA       Italy    60.36    301.34   1943.84     Europe         NaN
+ARG   Argentina    44.94   2780.40    637.49  S.America  1816-07-09
+DZA     Algeria    43.38   2381.74    167.56     Africa  1962-07-05
+CAN      Canada    37.59   9984.67   1647.12  N.America  1867-07-01
+AUS   Australia    25.47   7692.02   1408.68    Oceania         NaN
+KAZ  Kazakhstan    18.53   2724.90    159.41       Asia  1991-12-16` 
+</code></pre>
+
+<p>In this case, the Pandas  <code>read_csv()</code>  function returns a new  <code>DataFrame</code>  with the data and labels from the file  <code>data.csv</code>, which you specified with the first argument. This string can be any valid path, including  <a href="https://en.wikipedia.org/wiki/URL">URLs</a>.</p>
+
+<p>The parameter  <code>index_col</code>  specifies the column from the CSV file that contains the row labels. You assign a zero-based column index to this parameter. You should determine the value of  <code>index_col</code>  when the CSV file contains the row labels to avoid loading them as data.</p>
+
+<p>You’ll learn more about using Pandas with CSV files  <a href="https://realpython.com/pandas-read-write-files/#csv-files">later on in this tutorial</a>. You can also check out  <a href="https://realpython.com/python-csv/">Reading and Writing CSV Files in Python</a>  to see how to handle CSV files with the built-in Python library  <a href="https://docs.python.org/3/library/csv.html">csv</a>  as well.</p>
+
+<h2 id="using-pandas-to-write-and-read-excel-files">Using Pandas to Write and Read Excel Files</h2>
+
+<p><a href="https://products.office.com/en/excel">Microsoft Excel</a>  is probably the most widely-used spreadsheet software. While older versions used binary  <a href="https://en.wikipedia.org/wiki/Microsoft_Excel#File_formats"><code>.xls</code></a>  files, Excel 2007 introduced the new XML-based  <a href="https://en.wikipedia.org/wiki/Microsoft_Office_XML_formats"><code>.xlsx</code></a>  file. You can read and write Excel files in Pandas, similar to CSV files. However, you’ll need to install the following Python packages first:</p>
+
+<ul>
+<li><a href="https://xlwt.readthedocs.io/en/latest/">xlwt</a>  to write to  <code>.xls</code>  files</li>
+<li><a href="https://openpyxl.readthedocs.io/en/stable/">openpyxl</a>  or  <a href="https://xlsxwriter.readthedocs.io/">XlsxWriter</a>  to write to  <code>.xlsx</code>  files</li>
+<li><a href="https://xlrd.readthedocs.io/en/latest/">xlrd</a>  to read Excel files</li>
+</ul>
+
+<p>You can install them using  <a href="https://realpython.com/what-is-pip/">pip</a>  with a single command:</p>
+
+<p><code>$ pip install xlwt openpyxl xlsxwriter xlrd</code></p>
+
+<p>You can also use Conda:</p>
+
+<p><code>$ conda install xlwt openpyxl xlsxwriter xlrd</code></p>
+
+<p>Please note that you don’t have to install  <em>all</em>  these packages. For example, you don’t need both openpyxl and XlsxWriter. If you’re going to work just with  <code>.xls</code>  files, then you don’t need any of them! However, if you intend to work only with  <code>.xlsx</code>  files, then you’re going to need at least one of them, but not  <code>xlwt</code>. Take some time to decide which packages are right for your project.</p>
+
+<h3 id="write-an-excel-file">Write an Excel File</h3>
+
+<p>Once you have those packages installed, you can save your  <code>DataFrame</code>  in an Excel file with  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html"><code>.to_excel()</code></a>:</p>
+
+<pre><code class="language-py">df.to_excel('data.xlsx')` 
+</code></pre>
+
+<p>The argument  <code>'data.xlsx'</code>  represents the target file and, optionally, its path. The above statement should create the file  <code>data.xlsx</code>  in your current working directory. That file should look like this:</p>
+
+<p><a href="https://files.realpython.com/media/excel.ca33ad30becb.png"><img src="https://files.realpython.com/media/excel.ca33ad30becb.png" alt="mmst-pandas-rw-files-excel" /></a></p>
+
+<p>The first column of the file contains the labels of the rows, while the other columns store data.</p>
+
+<h3 id="read-an-excel-file">Read an Excel File</h3>
+
+<p>You can load data from Excel files with  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html"><code>read_excel()</code></a>:</p>
+
+<pre><code class="language-py">df = pd.read_excel('data.xlsx', index_col=0)
+df
+</code></pre>
+
+<pre><code> COUNTRY      POP      AREA       GDP       CONT     IND_DAY
+CHN       China  1398.72   9596.96  12234.78       Asia         NaN
+IND       India  1351.16   3287.26   2575.67       Asia  1947-08-15
+USA          US   329.74   9833.52  19485.39  N.America  1776-07-04
+IDN   Indonesia   268.07   1910.93   1015.54       Asia  1945-08-17
+BRA      Brazil   210.32   8515.77   2055.51  S.America  1822-09-07
+PAK    Pakistan   205.71    881.91    302.14       Asia  1947-08-14
+NGA     Nigeria   200.96    923.77    375.77     Africa  1960-10-01
+BGD  Bangladesh   167.09    147.57    245.63       Asia  1971-03-26
+RUS      Russia   146.79  17098.25   1530.75        NaN  1992-06-12
+MEX      Mexico   126.58   1964.38   1158.23  N.America  1810-09-16
+JPN       Japan   126.22    377.97   4872.42       Asia         NaN
+DEU     Germany    83.02    357.11   3693.20     Europe         NaN
+FRA      France    67.02    640.68   2582.49     Europe  1789-07-14
+GBR          UK    66.44    242.50   2631.23     Europe         NaN
+ITA       Italy    60.36    301.34   1943.84     Europe         NaN
+ARG   Argentina    44.94   2780.40    637.49  S.America  1816-07-09
+DZA     Algeria    43.38   2381.74    167.56     Africa  1962-07-05
+CAN      Canada    37.59   9984.67   1647.12  N.America  1867-07-01
+AUS   Australia    25.47   7692.02   1408.68    Oceania         NaN
+KAZ  Kazakhstan    18.53   2724.90    159.41       Asia  1991-12-16` 
+</code></pre>
+
+<p><code>read_excel()</code>  returns a new  <code>DataFrame</code>  that contains the values from  <code>data.xlsx</code>. You can also use  <code>read_excel()</code>  with  <a href="http://www.opendocumentformat.org/aboutODF/">OpenDocument spreadsheets</a>, or  <code>.ods</code>  files.</p>
+
+<p>You’ll learn more about working with Excel files  <a href="https://realpython.com/pandas-read-write-files/#excel-files">later on in this tutorial</a>. You can also check out  <a href="https://realpython.com/working-with-large-excel-files-in-pandas/">Using Pandas to Read Large Excel Files in Python</a>.</p>
+
+<h2 id="understanding-the-pandas-io-api">Understanding the Pandas IO API</h2>
+
+<p><strong><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">Pandas IO Tools</a></strong>  is the API that allows you to save the contents of  <code>Series</code>  and  <code>DataFrame</code>  objects to the clipboard, objects, or files of various types. It also enables loading data from the clipboard, objects, or files.</p>
+
+<h3 id="write-files">Write Files</h3>
+
+<p><code>Series</code>  and  <code>DataFrame</code>  objects have methods that enable writing data and labels to the clipboard or files. They’re named with the pattern  <strong><code>.to_&lt;file-type&gt;()</code></strong>, where  <code>&lt;file-type&gt;</code>  is the type of the target file.</p>
+
+<p>You’ve learned about  <code>.to_csv()</code>  and  <code>.to_excel()</code>, but there are others, including:</p>
+
+<ul>
+<li><code>.to_json()</code></li>
+<li><code>.to_html()</code></li>
+<li><code>.to_sql()</code></li>
+<li><code>.to_pickle()</code></li>
+</ul>
+
+<p>There are still more file types that you can write to, so this list is not exhaustive.</p>
+
+<p><strong>Note:</strong>  To find similar methods, check the official documentation about serialization, IO, and conversion related to  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/series.html#serialization-io-conversion"><code>Series</code></a>  and  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#serialization-io-conversion"><code>DataFrame</code></a>  objects.</p>
+
+<p>These methods have parameters specifying the target file path where you saved the data and labels. This is mandatory in some cases and optional in others. If this option is available and you choose to omit it, then the methods return the objects (like strings or iterables) with the contents of  <code>DataFrame</code>  instances.</p>
+
+<p>The optional parameter  <code>compression</code>  decides how to compress the file with the data and labels. You’ll learn more about it  <a href="https://realpython.com/pandas-read-write-files/#compress-and-decompress-files">later on</a>. There are a few other parameters, but they’re mostly specific to one or several methods. You won’t go into them in detail here.</p>
+
+<h3 id="read-files">Read Files</h3>
+
+<p>Pandas functions for reading the contents of files are named using the pattern  <strong><code>.read_&lt;file-type&gt;()</code></strong>, where  <code>&lt;file-type&gt;</code>  indicates the type of the file to read. You’ve already seen the Pandas  <code>read_csv()</code>  and  <code>read_excel()</code>  functions. Here are a few others:</p>
+
+<ul>
+<li><code>read_json()</code></li>
+<li><code>read_html()</code></li>
+<li><code>read_sql()</code></li>
+<li><code>read_pickle()</code></li>
+</ul>
+
+<p>These functions have a parameter that specifies the target file path. It can be any valid string that represents the path, either on a local machine or in a URL. Other objects are also acceptable depending on the file type.</p>
+
+<p>The optional parameter  <code>compression</code>  determines the type of decompression to use for the compressed files. You’ll learn about it  <a href="https://realpython.com/pandas-read-write-files/#compress-and-decompress-files">later on in this tutorial</a>. There are other parameters, but they’re specific to one or several functions. You won’t go into them in detail here.</p>
+
+<h2 id="working-with-different-file-types">Working With Different File Types</h2>
+
+<p>The Pandas library offers a wide range of possibilities for saving your data to files and loading data from files. In this section, you’ll learn more about working with CSV and Excel files. You’ll also see how to use other types of files, like JSON, web pages, databases, and Python pickle files.</p>
+
+<h3 id="csv-files">CSV Files</h3>
+
+<p>You’ve already learned  <a href="https://realpython.com/pandas-read-write-files/#using-the-pandas-read_csv-and-to_csv-functions">how to read and write CSV files</a>. Now let’s dig a little deeper into the details. When you use  <code>.to_csv()</code>  to save your  <code>DataFrame</code>, you can provide an argument for the parameter  <code>path_or_buff</code>  to specify the path, name, and extension of the target file.</p>
+
+<p><code>path_or_buff</code>  is the first argument  <code>.to_csv()</code>  will get. It can be any string that represents a valid file path that includes the file name and its extension. You’ve seen this in a  <a href="https://realpython.com/pandas-read-write-files/#using-the-pandas-read_csv-and-to_csv-functions">previous example</a>. However, if you omit  <code>path_or_buff</code>, then  <code>.to_csv()</code>  won’t create any files. Instead, it’ll return the corresponding string:</p>
+
+<pre><code class="language-py">df = pd.DataFrame(data=data).T
+s = df.to_csv()
+print(s)
+</code></pre>
+
+<pre><code>COUNTRY,POP,AREA,GDP,CONT,IND_DAY
+CHN,China,1398.72,9596.96,12234.78,Asia,
+IND,India,1351.16,3287.26,2575.67,Asia,1947-08-15
+USA,US,329.74,9833.52,19485.39,N.America,1776-07-04
+IDN,Indonesia,268.07,1910.93,1015.54,Asia,1945-08-17
+BRA,Brazil,210.32,8515.77,2055.51,S.America,1822-09-07
+PAK,Pakistan,205.71,881.91,302.14,Asia,1947-08-14
+NGA,Nigeria,200.96,923.77,375.77,Africa,1960-10-01
+BGD,Bangladesh,167.09,147.57,245.63,Asia,1971-03-26
+RUS,Russia,146.79,17098.25,1530.75,,1992-06-12
+MEX,Mexico,126.58,1964.38,1158.23,N.America,1810-09-16
+JPN,Japan,126.22,377.97,4872.42,Asia,
+DEU,Germany,83.02,357.11,3693.2,Europe,
+FRA,France,67.02,640.68,2582.49,Europe,1789-07-14
+GBR,UK,66.44,242.5,2631.23,Europe,
+ITA,Italy,60.36,301.34,1943.84,Europe,
+ARG,Argentina,44.94,2780.4,637.49,S.America,1816-07-09
+DZA,Algeria,43.38,2381.74,167.56,Africa,1962-07-05
+CAN,Canada,37.59,9984.67,1647.12,N.America,1867-07-01
+AUS,Australia,25.47,7692.02,1408.68,Oceania,
+KAZ,Kazakhstan,18.53,2724.9,159.41,Asia,1991-12-16 
+</code></pre>
+
+<p>Now you have the string  <code>s</code>  instead of a CSV file. You also have some  <strong>missing values</strong>  in your  <code>DataFrame</code>  object. For example, the continent for Russia and the independence days for several countries (China, Japan, and so on) are not available. In data science and machine learning, you must handle missing values carefully. Pandas excels here! By default, Pandas uses the  <a href="https://en.wikipedia.org/wiki/NaN">NaN value</a>  to replace the missing values.</p>
+
+<p><strong>Note:</strong>  <a href="https://en.wikipedia.org/wiki/NaN"><code>nan</code></a>, which stands for “not a number,” is a particular floating-point value in Python.</p>
+
+<p>You can get a  <code>nan</code>  value with any of the following functions:</p>
+
+<ul>
+<li><a href="https://docs.python.org/3/library/functions.html#float"><code>float('nan')</code></a></li>
+<li><a href="https://docs.python.org/3/library/math.html#math.nan"><code>math.nan</code></a></li>
+<li><a href="https://docs.scipy.org/doc/numpy/reference/constants.html#numpy.nan"><code>numpy.nan</code></a></li>
+</ul>
+
+<p>The continent that corresponds to Russia in  <code>df</code>  is  <code>nan</code>:</p>
+
+<p>KAZ,Kazakhstan,18.53,2724.9,159.41,Asia,1991-12-16</p>
+
+<pre><code>df.loc['RUS', 'CONT']
+nan` 
+KAZ,Kazakhstan,18.53,2724.9,159.41,Asia,1991-12-16 
+</code></pre>
+
+<p>This example uses  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html"><code>.loc[]</code></a>  to get data with the specified row and column names.</p>
+
+<p>When you save your  <code>DataFrame</code>  to a CSV file, empty strings (<code>''</code>) will represent the missing data. You can see this both in your file  <code>data.csv</code>  and in the string  <code>s</code>. If you want to change this behavior, then use the optional parameter  <code>na_rep</code>:</p>
+
+<p>KAZ,Kazakhstan,18.53,2724.9,159.41,Asia,1991-12-16</p>
+
+<pre><code class="language-py">df.to_csv('new-data.csv', na_rep='(missing)')`
+KAZ,Kazakhstan,18.53,2724.9,159.41,Asia,1991-12-16 
+</code></pre>
+
+<p>This code produces the file  <code>new-data.csv</code>  where the missing values are no longer empty strings. You can expand the code block below to see how this file should look:
+KAZ,Kazakhstan,18.53,2724.9,159.41,Asia,1991-12-16</p>
+
+<pre><code class="language-py">new-data.csvShow/Hide
+</code></pre>
+
+<pre><code class="language-py">Now, the string  `'(missing)'`  in the file corresponds to the  `nan`  values from  `df`.
+</code></pre>
+
+<p>When Pandas reads files, it considers the empty string (<code>''</code>) and a few others as missing values by default:</p>
+
+<ul>
+<li><code>'nan'</code></li>
+<li><code>'-nan'</code></li>
+<li><code>'NA'</code></li>
+<li><code>'N/A'</code></li>
+<li><code>'NaN'</code></li>
+<li><code>'null'</code></li>
+</ul>
+
+<p>If you don’t want this behavior, then you can pass  <code>keep_default_na=False</code>  to the Pandas  <code>read_csv()</code>  function. To specify other labels for missing values, use the parameter  <code>na_values</code>:</p>
+
+<pre><code class="language-py">pd.read_csv('new-data.csv', index_col=0, na_values='(missing)')
+</code></pre>
+
+<pre><code>COUNTRY      POP      AREA       GDP       CONT     IND_DAY
+CHN       China  1398.72   9596.96  12234.78       Asia         NaN
+IND       India  1351.16   3287.26   2575.67       Asia  1947-08-15
+USA          US   329.74   9833.52  19485.39  N.America  1776-07-04
+IDN   Indonesia   268.07   1910.93   1015.54       Asia  1945-08-17
+BRA      Brazil   210.32   8515.77   2055.51  S.America  1822-09-07
+PAK    Pakistan   205.71    881.91    302.14       Asia  1947-08-14
+NGA     Nigeria   200.96    923.77    375.77     Africa  1960-10-01
+BGD  Bangladesh   167.09    147.57    245.63       Asia  1971-03-26
+RUS      Russia   146.79  17098.25   1530.75        NaN  1992-06-12
+MEX      Mexico   126.58   1964.38   1158.23  N.America  1810-09-16
+JPN       Japan   126.22    377.97   4872.42       Asia         NaN
+DEU     Germany    83.02    357.11   3693.20     Europe         NaN
+FRA      France    67.02    640.68   2582.49     Europe  1789-07-14
+GBR          UK    66.44    242.50   2631.23     Europe         NaN
+ITA       Italy    60.36    301.34   1943.84     Europe         NaN
+ARG   Argentina    44.94   2780.40    637.49  S.America  1816-07-09
+DZA     Algeria    43.38   2381.74    167.56     Africa  1962-07-05
+CAN      Canada    37.59   9984.67   1647.12  N.America  1867-07-01
+AUS   Australia    25.47   7692.02   1408.68    Oceania         NaN
+KAZ  Kazakhstan    18.53   2724.90    159.41       Asia  1991-12-16` 
+</code></pre>
+
+<p>Here, you’ve marked the string  <code>'(missing)'</code>  as a new missing data label, and Pandas replaced it with  <code>nan</code>  when it read the file.</p>
+
+<p>When you load data from a file, Pandas assigns the  <a href="https://docs.scipy.org/doc/numpy/user/basics.types.html">data types</a>  to the values of each column by default. You can check these types with  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html"><code>.dtypes</code></a>:</p>
+
+<pre><code class="language-py">df = pd.read_csv('data.csv', index_col=0)
+df.dtypes
+</code></pre>
+
+<pre><code>COUNTRY     object
+POP        float64
+AREA       float64
+GDP        float64
+CONT        object
+IND_DAY     object
+dtype: object` 
+</code></pre>
+
+<p>The columns with strings and dates (<code>'COUNTRY'</code>,  <code>'CONT'</code>, and  <code>'IND_DAY'</code>) have the data type  <code>object</code>. Meanwhile, the numeric columns contain 64-bit floating-point numbers (<code>float64</code>).</p>
+
+<p>You can use the parameter  <code>dtype</code>  to specify the desired data types and  <code>parse_dates</code>  to force use of  <a href="https://docs.scipy.org/doc/numpy/reference/arrays.datetime.html">datetimes</a>:</p>
+
+<pre><code class="language-py">dtypes = {'POP': 'float32', 'AREA': 'float32', 'GDP': 'float32'}
+df = pd.read_csv('data.csv', index_col=0, dtype=dtypes,
+                  parse_dates=['IND_DAY'])
+df.dtypes
+</code></pre>
+
+<pre><code>COUNTRY            object
+POP               float32
+AREA              float32
+GDP               float32
+CONT               object
+IND_DAY    datetime64[ns]
+dtype: object
+</code></pre>
+
+<pre><code class="language-py">df['IND_DAY']
+</code></pre>
+
+<pre><code>CHN          NaT
+IND   1947-08-15
+USA   1776-07-04
+IDN   1945-08-17
+BRA   1822-09-07
+PAK   1947-08-14
+NGA   1960-10-01
+BGD   1971-03-26
+RUS   1992-06-12
+MEX   1810-09-16
+JPN          NaT
+DEU          NaT
+FRA   1789-07-14
+GBR          NaT
+ITA          NaT
+ARG   1816-07-09
+DZA   1962-07-05
+CAN   1867-07-01
+AUS          NaT
+KAZ   1991-12-16
+Name: IND_DAY, dtype: datetime64[ns]` 
+</code></pre>
+
+<p>Now, you have 32-bit floating-point numbers ()<code>float32</code>) as specified with  <code>dtype</code>. These differ slightly from the original 64-bit numbers because of smaller  <strong>precision</strong>. The values in the last column are considered as dates and have the data type  <code>datetime64</code>. That’s why the  <code>NaN</code>  values in this column are replaced with  <code>NaT</code>.</p>
+
+<p>Now that you have real dates, you can save them in the format you like:</p>
+
+<pre><code class="language-py">df = pd.read_csv('data.csv', index_col=0, parse_dates=['IND_DAY'])
+df.to_csv('formatted-data.csv', date_format='%B %d, %Y')` 
+</code></pre>
+
+<p>Here, you’ve specified the parameter  <code>date_format</code>  to be  <code>'%B %d, %Y'</code>. You can expand the code block below to see the resulting file:</p>
+
+<p>formatted-data.csvShow/Hide</p>
+
+<p>The format of the dates is different now. The format  <code>'%B %d, %Y'</code>  means the date will first display the full name of the month, then the day followed by a comma, and finally the full year.</p>
+
+<p>There are several other optional parameters that you can use with  <code>.to_csv()</code>:</p>
+
+<ul>
+<li><strong><code>sep</code></strong>  denotes a values separator.</li>
+<li><strong><code>decimal</code></strong>  indicates a decimal separator.</li>
+<li><strong><code>encoding</code></strong>  sets the file encoding.</li>
+<li><strong><code>header</code></strong>  specifies whether you want to write column labels in the file.</li>
+</ul>
+
+<p>Here’s how you would pass arguments for  <code>sep</code>  and  <code>header</code>:</p>
+
+<pre><code class="language-py">s = df.to_csv(sep=';', header=False)
+ print(s)
+</code></pre>
+
+<pre><code>CHN;China;1398.72;9596.96;12234.78;Asia;
+IND;India;1351.16;3287.26;2575.67;Asia;1947-08-15
+USA;US;329.74;9833.52;19485.39;N.America;1776-07-04
+IDN;Indonesia;268.07;1910.93;1015.54;Asia;1945-08-17
+BRA;Brazil;210.32;8515.77;2055.51;S.America;1822-09-07
+PAK;Pakistan;205.71;881.91;302.14;Asia;1947-08-14
+NGA;Nigeria;200.96;923.77;375.77;Africa;1960-10-01
+BGD;Bangladesh;167.09;147.57;245.63;Asia;1971-03-26
+RUS;Russia;146.79;17098.25;1530.75;;1992-06-12
+MEX;Mexico;126.58;1964.38;1158.23;N.America;1810-09-16
+JPN;Japan;126.22;377.97;4872.42;Asia;
+DEU;Germany;83.02;357.11;3693.2;Europe;
+FRA;France;67.02;640.68;2582.49;Europe;1789-07-14
+GBR;UK;66.44;242.5;2631.23;Europe;
+ITA;Italy;60.36;301.34;1943.84;Europe;
+ARG;Argentina;44.94;2780.4;637.49;S.America;1816-07-09
+DZA;Algeria;43.38;2381.74;167.56;Africa;1962-07-05
+CAN;Canada;37.59;9984.67;1647.12;N.America;1867-07-01
+AUS;Australia;25.47;7692.02;1408.68;Oceania;
+KAZ;Kazakhstan;18.53;2724.9;159.41;Asia;1991-12-16` 
+</code></pre>
+
+<p>The data is separated with a semicolon (<code>';'</code>) because you’ve specified  <code>sep=';'</code>. Also, since you passed  <code>header=False</code>, you see your data without the header row of column names.</p>
+
+<p>The Pandas  <code>read_csv()</code>  function has many additional options for managing missing data, working with dates and times, quoting, encoding, handling errors, and more. For instance, if you have a file with one data column and want to get a  <code>Series</code>  object instead of a  <code>DataFrame</code>, then you can pass  <code>squeeze=True</code>  to  <code>read_csv()</code>. You’ll learn  <a href="https://realpython.com/pandas-read-write-files/#working-with-big-data">later on</a>  about data compression and decompression, as well as how to skip rows and columns.</p>
+
+<h3 id="json-files">JSON Files</h3>
+
+<p><a href="https://realpython.com/python-json/">JSON</a>  stands for JavaScript object notation. JSON files are plaintext files used for data interchange, and humans can read them easily. They follow the  <a href="https://www.iso.org/standard/71616.html">ISO/IEC 21778:2017</a>  and  <a href="https://www.ecma-international.org/publications/standards/Ecma-404.htm">ECMA-404</a>  standards and use the  <code>.json</code>  extension. Python and Pandas work well with JSON files, as Python’s  <a href="https://docs.python.org/3/library/json.html">json</a>  library offers built-in support for them.</p>
+
+<p>You can save the data from your  <code>DataFrame</code>  to a JSON file with  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html"><code>.to_json()</code></a>. Start by creating a  <code>DataFrame</code>  object again. Use the dictionary  <code>data</code>  that holds the data about countries and then apply  <code>.to_json()</code>:</p>
+
+<pre><code class="language-py">df = pd.DataFrame(data=data).T
+df.to_json('data-columns.json')` 
+</code></pre>
+
+<p>This code produces the file  <code>data-columns.json</code>. You can expand the code block below to see how this file should look:</p>
+
+<p>data-columns.jsonShow/Hide</p>
+
+<p><code>data-columns.json</code>  has one large dictionary with the column labels as keys and the corresponding inner dictionaries as values.</p>
+
+<p>You can get a different file structure if you pass an argument for the optional parameter  <code>orient</code>:</p>
+
+<pre><code class="language-py">df.to_json('data-index.json', orient='index')` 
+</code></pre>
+
+<p>The  <code>orient</code>  parameter defaults to  <code>'columns'</code>. Here, you’ve set it to  <code>index</code>.</p>
+
+<p>You should get a new file  <code>data-index.json</code>. You can expand the code block below to see the changes:</p>
+
+<p>data-index.jsonShow/Hide</p>
+
+<p><code>data-index.json</code>  also has one large dictionary, but this time the row labels are the keys, and the inner dictionaries are the values.</p>
+
+<p>There are few more options for  <code>orient</code>. One of them is  <code>'records'</code>:</p>
+
+<pre><code class="language-py">df.to_json('data-records.json', orient='records')` 
+</code></pre>
+
+<p>This code should yield the file  <code>data-records.json</code>. You can expand the code block below to see the content:</p>
+
+<p>data-records.jsonShow/Hide</p>
+
+<p><code>data-records.json</code>  holds a list with one dictionary for each row. The row labels  <em>are not</em>  written.</p>
+
+<p>You can get another interesting file structure with  <code>orient='split'</code>:</p>
+
+<pre><code class="language-py">df.to_json('data-split.json', orient='split')
+</code></pre>
+
+<p>The resulting file is  <code>data-split.json</code>. You can expand the code block below to see how this file should look:</p>
+
+<p>data-split.jsonShow/Hide</p>
+
+<p><code>data-split.json</code>  contains one dictionary that holds the following lists:</p>
+
+<ul>
+<li><strong>The names</strong>  of the columns</li>
+<li><strong>The labels</strong>  of the rows</li>
+<li><strong>The inner lists</strong>  (two-dimensional sequence) that hold data values</li>
+</ul>
+
+<p>If you don’t provide the value for the optional parameter  <code>path_or_buf</code>  that defines the file path, then  <code>.to_json()</code>  will return a JSON string instead of writing the results to a file. This behavior is consistent with  <code>.to_csv()</code>.</p>
+
+<p>There are other optional parameters you can use. For instance, you can set  <code>index=False</code>  to forego saving row labels. You can manipulate precision with  <code>double_precision</code>, and dates with  <code>date_format</code>  and  <code>date_unit</code>. These last two parameters are particularly important when you have time series among your data:</p>
+
+<pre><code class="language-py">df = pd.DataFrame(data=data).T
+df['IND_DAY'] = pd.to_datetime(df['IND_DAY'])
+df.dtypes
+</code></pre>
+
+<pre><code>COUNTRY            object
+POP                object
+AREA               object
+GDP                object
+CONT               object
+IND_DAY    datetime64[ns]
+dtype: object
+</code></pre>
+
+<pre><code class="language-py"> df.to_json('data-time.json')` 
+</code></pre>
+
+<p>In this example, you’ve created the  <code>DataFrame</code>  from the dictionary  <code>data</code>  and used  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html"><code>to_datetime()</code></a>  to convert the values in the last column to  <code>datetime64</code>. You can expand the code block below to see the resulting file:</p>
+
+<p>data-time.jsonShow/Hide</p>
+
+<p>In this file, you have large integers instead of dates for the independence days. That’s because the default value of the optional parameter  <code>date_format</code>  is  <code>'epoch'</code>  whenever  <code>orient</code>  isn’t  <code>'table'</code>. This default behavior expresses dates as an  <a href="https://www.epochconverter.com/">epoch</a>  in milliseconds relative to midnight on January 1, 1970.</p>
+
+<p>However, if you pass  <code>date_format='iso'</code>, then you’ll get the dates in the ISO 8601 format. In addition,  <code>date_unit</code>  decides the units of time:</p>
+
+<pre><code class="language-py">df = pd.DataFrame(data=data).T
+df['IND_DAY'] = pd.to_datetime(df['IND_DAY'])
+df.to_json('new-data-time.json', date_format='iso', date_unit='s')
+</code></pre>
+
+<p>This code produces the following JSON file:</p>
+
+<p>new-data-time.jsonShow/Hide</p>
+
+<p>The dates in the resulting file are in the ISO 8601 format.</p>
+
+<p>You can load the data from a JSON file with  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html"><code>read_json()</code></a>:</p>
+
+<pre><code class="language-py">df = pd.read_json('data-index.json', orient='index',
+...                   convert_dates=['IND_DAY'])
+
+files. The optional parameter  `orient`  is very important because it specifies how Pandas understands the structure of the file.
+
+There are other optional parameters you can use as well:
+
+-   **Set the encoding**  with  `encoding`.
+-   **Manipulate dates**  with  `convert_dates`  and  `keep_default_dates`.
+-   **Impact precision**  with  `dtype`  and  `precise_float`.
+-   **Decode numeric data**  directly to  [NumPy arrays](https://realpython.com/numpy-array-programming/)  with  `numpy=True`.
+
+Note that you might lose the order of rows and columns when using the JSON format to store your data.
+
+### HTML Files
+
+An  [HTML](https://html.spec.whatwg.org/multipage/)  is a plaintext file that uses hypertext markup language to help browsers render web pages. The extensions for HTML files are  `.html`  and  `.htm`. You’ll need to install an HTML parser library like  [lxml](https://lxml.de/)  or  [html5lib](https://github.com/html5lib/html5lib-python)  to be able to work with HTML files:
+</code></pre>
+
+<p>py
+<code>$pip install lxml html5lib</code></p>
+
+<pre><code>You can also use Conda to install the same packages:
+</code></pre>
+
+<p>py
+<code>$ conda install lxml html5lib</code></p>
+
+<pre><code>Once you have these libraries, you can save the contents of your  `DataFrame`  as an HTML file with  [`.to_html()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html):
+</code></pre>
+
+<p>py
+df = pd.DataFrame(data=data).T
+df.to_html(&lsquo;data.html&rsquo;)`</p>
+
+<pre><code>This code generates a file  `data.html`. You can expand the code block below to see how this file should look:
+
+data.htmlShow/Hide
+
+This file shows the  `DataFrame`  contents nicely. However, notice that you haven’t obtained an entire web page. You’ve just output the data that corresponds to  `df`  in the HTML format.
+
+`.to_html()`  won’t create a file if you don’t provide the optional parameter  `buf`, which denotes the buffer to write to. If you leave this parameter out, then your code will return a string as it did with  `.to_csv()`  and  `.to_json()`.
+
+Here are some other optional parameters:
+
+-   **`header`**  determines whether to save the column names.
+-   **`index`**  determines whether to save the row labels.
+-   **`classes`**  assigns  [cascading style sheet (CSS)](https://developer.mozilla.org/en-US/docs/Web/CSS)  classes.
+-   **`render_links`**  specifies whether to convert URLs to HTML links.
+-   **`table_id`**  assigns the CSS  `id`  to the  `table`  tag.
+-   **`escape`**  decides whether to convert the characters  `&lt;`,  `&gt;`, and  `&amp;`  to HTML-safe strings.
+
+You use parameters like these to specify different aspects of the resulting files or strings.
+
+You can create a  `DataFrame`  object from a suitable HTML file using  [`read_html()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html), which will return a  `DataFrame`  instance or a list of them:
+
+</code></pre>
+
+<p>py
+df = pd.read_html(&lsquo;data.html&rsquo;, index_col=0, parse_dates=[&lsquo;IND_DAY&rsquo;])`</p>
+
+<pre><code>This is very similar to what you did when reading CSV files. You also have parameters that help you work with dates, missing values, precision, encoding, HTML parsers, and more.
+
+### Excel Files
+
+You’ve already learned  [how to read and write Excel files with Pandas](https://realpython.com/pandas-read-write-files/#using-pandas-to-write-and-read-excel-files). However, there are a few more options worth considering. For one, when you use  `.to_excel()`, you can specify the name of the target worksheet with the optional parameter  `sheet_name`:
+
+</code></pre>
+
+<p>py
+df = pd.DataFrame(data=data).T
+df.to_excel(&lsquo;data.xlsx&rsquo;, sheet_name=&lsquo;COUNTRIES&rsquo;)`</p>
+
+<pre><code>
+Here, you create a file  `data.xlsx`  with a worksheet called  `COUNTRIES`  that stores the data. The string  `'data.xlsx'`  is the argument for the parameter  `excel_writer`  that defines the name of the Excel file or its path.
+
+The optional parameters  `startrow`  and  `startcol`  both default to  `0`  and indicate the upper left-most cell where the data should start being written:
+
+
+</code></pre>
+
+<p>py
+df.to_excel(&lsquo;data-shifted.xlsx&rsquo;, sheet_name=&lsquo;COUNTRIES&rsquo;,
+&hellip;             startrow=2, startcol=4)`</p>
+
+<pre><code>Here, you specify that the table should start in the third row and the fifth column. You also used zero-based indexing, so the third row is denoted by  `2`  and the fifth column by  `4`.
+
+Now the resulting worksheet looks like this:
+
+[![mmst-pandas-rw-files-excel-shifted](https://files.realpython.com/media/excel-shifted.404aac55d957.png)](https://files.realpython.com/media/excel-shifted.404aac55d957.png)
+
+As you can see, the table starts in the third row  `2`  and the fifth column  `E`.
+
+`.read_excel()`  also has the optional parameter  `sheet_name`  that specifies which worksheets to read when loading data. It can take on one of the following values:
+
+-   **The zero-based index**  of the worksheet
+-   **The name**  of the worksheet
+-   **The list**  of indices or names to read multiple sheets
+-   **The value  `None`**  to read all sheets
+
+Here’s how you would use this parameter in your code:
+
+
+</code></pre>
+
+<p>py
+df = pd.read_excel(&lsquo;data.xlsx&rsquo;, sheet_name=0, index_col=0,
+&hellip;                    parse_dates=[&lsquo;IND_DAY&rsquo;])
+df = pd.read_excel(&lsquo;data.xlsx&rsquo;, sheet_name=&lsquo;COUNTRIES&rsquo;, index_col=0,
+&hellip;                    parse_dates=[&lsquo;IND_DAY&rsquo;])`</p>
+
+<pre><code>
+Both statements above create the same  `DataFrame`  because the  `sheet_name`  parameters have the same values. In both cases,  `sheet_name=0`  and  `sheet_name='COUNTRIES'`  refer to the same worksheet. The argument  `parse_dates=['IND_DAY']`  tells Pandas to try to consider the values in this column as dates or times.
+
+There are other optional parameters you can use with  `.read_excel()`  and  `.to_excel()`  to determine the Excel engine, the encoding, the way to handle missing values and infinities, the method for writing column names and row labels, and so on.
+
+### SQL Files
+
+Pandas IO tools can also read and write  [databases](https://realpython.com/tutorials/databases/). In this next example, you’ll write your data to a database called  `data.db`. To get started, you’ll need the  [SQLAlchemy](https://www.sqlalchemy.org/)  package. To learn more about it, you can read the  [official ORM tutorial](https://docs.sqlalchemy.org/en/13/orm/tutorial.html). You’ll also need the database driver. Python has a built-in driver for  [SQLite](https://www.sqlite.org/index.html).
+
+You can install SQLAlchemy with pip:
+
+`$ pip install sqlalchemy` 
+
+You can also install it with Conda:
+
+`$ conda install sqlalchemy` 
+
+Once you have SQLAlchemy installed, import  `create_engine()`  and create a database engine:
+
+</code></pre>
+
+<p>py
+from sqlalchemy import create_engine
+engine = create_engine(&lsquo;sqlite:///data.db&rsquo;, echo=False)`</p>
+
+<pre><code>Now that you have everything set up, the next step is to create a  `DataFrame`  object. It’s convenient to specify the data types and apply  [`.to_sql()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html).
+
+
+</code></pre>
+
+<p>py
+dtypes = {&lsquo;POP&rsquo;: &lsquo;float64&rsquo;, &lsquo;AREA&rsquo;: &lsquo;float64&rsquo;, &lsquo;GDP&rsquo;: &lsquo;float64&rsquo;,
+&hellip;           &lsquo;IND_DAY&rsquo;: &lsquo;datetime64&rsquo;}</p>
+
+<pre><code></code></pre>
+
+<p>py
+ df = pd.DataFrame(data=data).T.astype(dtype=dtypes)
+ df.dtypes</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY            object
+POP               float64
+AREA              float64
+GDP               float64
+CONT               object
+IND_DAY    datetime64[ns]
+dtype: object`</p>
+
+<pre><code>[`.astype()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.astype.html)  is a very convenient method you can use to set multiple data types at once.
+
+Once you’ve created your  `DataFrame`, you can save it to the database with  [`.to_sql()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html):
+
+
+</code></pre>
+
+<p>py
+df.to_sql(&lsquo;data.db&rsquo;, con=engine, index_label=&lsquo;ID&rsquo;)`</p>
+
+<pre><code>
+The parameter  `con`  is used to specify the database connection or engine that you want to use. The optional parameter  `index_label`  specifies how to call the database column with the row labels. You’ll often see it take on the value  `ID`,  `Id`, or  `id`.
+
+You should get the database  `data.db`  with a single table that looks like this:
+
+[![mmst-pandas-rw-files-db](https://files.realpython.com/media/db.8b0ba5d7a2f5.png)](https://files.realpython.com/media/db.8b0ba5d7a2f5.png)
+
+The first column contains the row labels. To omit writing them into the database, pass  `index=False`  to  `.to_sql()`. The other columns correspond to the columns of the  `DataFrame`.
+
+There are a few more optional parameters. For example, you can use  `schema`  to specify the database schema and  `dtype`  to determine the types of the database columns. You can also use  `if_exists`, which says what to do if a database with the same name and path already exists:
+
+-   **`if_exists='fail'`**  raises a  [ValueError](https://docs.python.org/3/library/exceptions.html#ValueError)  and is the default.
+-   **`if_exists='replace'`**  drops the table and inserts new values.
+-   **`if_exists='append'`**  inserts new values into the table.
+
+You can load the data from the database with  [`read_sql()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html):
+
+
+</code></pre>
+
+<p>py
+df = pd.read_sql(&lsquo;data.db&rsquo;, con=engine, index_col=&lsquo;ID&rsquo;)
+df</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY      POP      AREA       GDP       CONT    IND_DAY
+ID
+CHN       China  1398.72   9596.96  12234.78       Asia        NaT
+IND       India  1351.16   3287.26   2575.67       Asia 1947-08-15
+USA          US   329.74   9833.52  19485.39  N.America 1776-07-04
+IDN   Indonesia   268.07   1910.93   1015.54       Asia 1945-08-17
+BRA      Brazil   210.32   8515.77   2055.51  S.America 1822-09-07
+PAK    Pakistan   205.71    881.91    302.14       Asia 1947-08-14
+NGA     Nigeria   200.96    923.77    375.77     Africa 1960-10-01
+BGD  Bangladesh   167.09    147.57    245.63       Asia 1971-03-26
+RUS      Russia   146.79  17098.25   1530.75       None 1992-06-12
+MEX      Mexico   126.58   1964.38   1158.23  N.America 1810-09-16
+JPN       Japan   126.22    377.97   4872.42       Asia        NaT
+DEU     Germany    83.02    357.11   3693.20     Europe        NaT
+FRA      France    67.02    640.68   2582.49     Europe 1789-07-14
+GBR          UK    66.44    242.50   2631.23     Europe        NaT
+ITA       Italy    60.36    301.34   1943.84     Europe        NaT
+ARG   Argentina    44.94   2780.40    637.49  S.America 1816-07-09
+DZA     Algeria    43.38   2381.74    167.56     Africa 1962-07-05
+CAN      Canada    37.59   9984.67   1647.12  N.America 1867-07-01
+AUS   Australia    25.47   7692.02   1408.68    Oceania        NaT
+KAZ  Kazakhstan    18.53   2724.90    159.41       Asia 1991-12-16`</p>
+
+<pre><code>The parameter  `index_col`  specifies the name of the column with the row labels. Note that this inserts an extra row after the header that starts with  `ID`. You can fix this behavior with the following line of code:
+
+
+</code></pre>
+
+<p>py
+df.index.name = None
+df</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY      POP      AREA       GDP       CONT    IND_DAY
+CHN       China  1398.72   9596.96  12234.78       Asia        NaT
+IND       India  1351.16   3287.26   2575.67       Asia 1947-08-15
+USA          US   329.74   9833.52  19485.39  N.America 1776-07-04
+IDN   Indonesia   268.07   1910.93   1015.54       Asia 1945-08-17
+BRA      Brazil   210.32   8515.77   2055.51  S.America 1822-09-07
+PAK    Pakistan   205.71    881.91    302.14       Asia 1947-08-14
+NGA     Nigeria   200.96    923.77    375.77     Africa 1960-10-01
+BGD  Bangladesh   167.09    147.57    245.63       Asia 1971-03-26
+RUS      Russia   146.79  17098.25   1530.75       None 1992-06-12
+MEX      Mexico   126.58   1964.38   1158.23  N.America 1810-09-16
+JPN       Japan   126.22    377.97   4872.42       Asia        NaT
+DEU     Germany    83.02    357.11   3693.20     Europe        NaT
+FRA      France    67.02    640.68   2582.49     Europe 1789-07-14
+GBR          UK    66.44    242.50   2631.23     Europe        NaT
+ITA       Italy    60.36    301.34   1943.84     Europe        NaT
+ARG   Argentina    44.94   2780.40    637.49  S.America 1816-07-09
+DZA     Algeria    43.38   2381.74    167.56     Africa 1962-07-05
+CAN      Canada    37.59   9984.67   1647.12  N.America 1867-07-01
+AUS   Australia    25.47   7692.02   1408.68    Oceania        NaT
+KAZ  Kazakhstan    18.53   2724.90    159.41       Asia 1991-12-16`</p>
+
+<pre><code>Now you have the same  `DataFrame`  object as before.
+
+Note that the continent for Russia is now  `None`  instead of  `nan`. If you want to fill the missing values with  `nan`, then you can use  [`.fillna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html):
+
+
+
+` df.fillna(value=float('nan'), inplace=True)` 
+
+`.fillna()`  replaces all missing values with whatever you pass to  `value`. Here, you passed  `float('nan')`, which says to fill all missing values with  `nan`.
+
+Also note that you didn’t have to pass  `parse_dates=['IND_DAY']`  to  `read_sql()`. That’s because your database was able to detect that the last column contains dates. However, you can pass  `parse_dates`  if you’d like. You’ll get the same results.
+
+There are other functions that you can use to read databases, like  [`read_sql_table()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_table.html)  and  [`read_sql_query()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_query.html). Feel free to try them out!
+
+### Pickle Files
+
+Pickling is the act of converting Python objects into  [byte streams](https://en.wikipedia.org/wiki/Bitstream). Unpickling is the inverse process.  [Python pickle files](https://docs.python.org/3/library/pickle.html)  are the binary files that keep the data and hierarchy of Python objects. They usually have the extension  `.pickle`  or  `.pkl`.
+
+You can save your  `DataFrame`  in a pickle file with  [`.to_pickle()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_pickle.html):
+
+
+</code></pre>
+
+<p>py
+dtypes = {&lsquo;POP&rsquo;: &lsquo;float64&rsquo;, &lsquo;AREA&rsquo;: &lsquo;float64&rsquo;, &lsquo;GDP&rsquo;: &lsquo;float64&rsquo;,
+&hellip;           &lsquo;IND_DAY&rsquo;: &lsquo;datetime64&rsquo;}
+ df = pd.DataFrame(data=data).T.astype(dtype=dtypes)
+ df.to_pickle(&lsquo;data.pickle&rsquo;)</p>
+
+<pre><code>Like you did with databases, it can be convenient first to specify the data types. Then, you create a file  `data.pickle`  to contain your data. You could also pass an integer value to the optional parameter  `protocol`, which specifies the  [protocol](https://docs.python.org/3/library/pickle.html#module-interface)  of the pickler.
+
+You can get the data from a pickle file with  [`read_pickle()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html):
+
+
+</code></pre>
+
+<p>py
+df = pd.read_pickle(&lsquo;data.pickle&rsquo;)
+df</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY      POP      AREA       GDP       CONT    IND_DAY
+CHN       China  1398.72   9596.96  12234.78       Asia        NaT
+IND       India  1351.16   3287.26   2575.67       Asia 1947-08-15
+USA          US   329.74   9833.52  19485.39  N.America 1776-07-04
+IDN   Indonesia   268.07   1910.93   1015.54       Asia 1945-08-17
+BRA      Brazil   210.32   8515.77   2055.51  S.America 1822-09-07
+PAK    Pakistan   205.71    881.91    302.14       Asia 1947-08-14
+NGA     Nigeria   200.96    923.77    375.77     Africa 1960-10-01
+BGD  Bangladesh   167.09    147.57    245.63       Asia 1971-03-26
+RUS      Russia   146.79  17098.25   1530.75        NaN 1992-06-12
+MEX      Mexico   126.58   1964.38   1158.23  N.America 1810-09-16
+JPN       Japan   126.22    377.97   4872.42       Asia        NaT
+DEU     Germany    83.02    357.11   3693.20     Europe        NaT
+FRA      France    67.02    640.68   2582.49     Europe 1789-07-14
+GBR          UK    66.44    242.50   2631.23     Europe        NaT
+ITA       Italy    60.36    301.34   1943.84     Europe        NaT
+ARG   Argentina    44.94   2780.40    637.49  S.America 1816-07-09
+DZA     Algeria    43.38   2381.74    167.56     Africa 1962-07-05
+CAN      Canada    37.59   9984.67   1647.12  N.America 1867-07-01
+AUS   Australia    25.47   7692.02   1408.68    Oceania        NaT
+KAZ  Kazakhstan    18.53   2724.90    159.41       Asia 1991-12-16`</p>
+
+<pre><code>`read_pickle()`  returns the  `DataFrame`  with the stored data. You can also check the data types:
+
+
+</code></pre>
+
+<p>py
+df.dtypes</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY            object
+POP               float64
+AREA              float64
+GDP               float64
+CONT               object
+IND_DAY    datetime64[ns]
+dtype: object</p>
+
+<pre><code>These are the same ones that you specified before using  `.to_pickle()`.
+
+As a word of caution, you should always beware of loading pickles from untrusted sources.  **This can be dangerous!**  When you unpickle an untrustworthy file, it could execute arbitrary code on your machine, gain remote access to your computer, or otherwise  [exploit your device](https://blog.nelhage.com/2011/03/exploiting-pickle/)  in other ways.
+
+## Working With Big Data
+
+If your files are too large for saving or processing, then there are several approaches you can take to reduce the required disk space:
+
+-   **Compress**  your files
+-   **Choose**  only the columns you want
+-   **Omit**  the rows you don’t need
+-   **Force**  the use of less precise data types
+-   **Split**  the data into chunks
+
+You’ll take a look at each of these techniques in turn.
+
+### Compress and Decompress Files
+
+You can create an  [archive file](https://en.wikipedia.org/wiki/Archive_file)  like you would a regular one, with the addition of a suffix that corresponds to the desired compression type:
+
+-   `'.gz'`
+-   `'.bz2'`
+-   `'.zip'`
+-   `'.xz'`
+
+Pandas can deduce the compression type by itself:
+
+</code></pre>
+
+<p>py
+df = pd.DataFrame(data=data).T
+df.to_csv(&lsquo;data.csv.zip&rsquo;)`</p>
+
+<pre><code>
+Here, you create a compressed  `.csv`  file as an  [archive](https://realpython.com/working-with-files-in-python/#archiving). The size of the regular  `.csv`  file is 1048 bytes, while the compressed file only has 766 bytes.
+
+You can open this compressed file as usual with the Pandas  `read_csv()`  function:
+
+
+</code></pre>
+
+<p>py
+df = pd.read_csv(&lsquo;data.csv.zip&rsquo;, index_col=0,
+&hellip;                  parse_dates=[&lsquo;IND_DAY&rsquo;])
+df</p>
+
+<pre><code>
+</code></pre>
+
+<p>COUNTRY      POP      AREA       GDP       CONT    IND_DAY
+CHN       China  1398.72   9596.96  12234.78       Asia        NaT
+IND       India  1351.16   3287.26   2575.67       Asia 1947-08-15
+USA          US   329.74   9833.52  19485.39  N.America 1776-07-04
+IDN   Indonesia   268.07   1910.93   1015.54       Asia 1945-08-17
+BRA      Brazil   210.32   8515.77   2055.51  S.America 1822-09-07
+PAK    Pakistan   205.71    881.91    302.14       Asia 1947-08-14
+NGA     Nigeria   200.96    923.77    375.77     Africa 1960-10-01
+BGD  Bangladesh   167.09    147.57    245.63       Asia 1971-03-26
+RUS      Russia   146.79  17098.25   1530.75        NaN 1992-06-12
+MEX      Mexico   126.58   1964.38   1158.23  N.America 1810-09-16
+JPN       Japan   126.22    377.97   4872.42       Asia        NaT
+DEU     Germany    83.02    357.11   3693.20     Europe        NaT
+FRA      France    67.02    640.68   2582.49     Europe 1789-07-14
+GBR          UK    66.44    242.50   2631.23     Europe        NaT
+ITA       Italy    60.36    301.34   1943.84     Europe        NaT
+ARG   Argentina    44.94   2780.40    637.49  S.America 1816-07-09
+DZA     Algeria    43.38   2381.74    167.56     Africa 1962-07-05
+CAN      Canada    37.59   9984.67   1647.12  N.America 1867-07-01
+AUS   Australia    25.47   7692.02   1408.68    Oceania        NaT
+KAZ  Kazakhstan    18.53   2724.90    159.41       Asia 1991-12-16`</p>
+
+<pre><code>`read_csv()`  decompresses the file before reading it into a  `DataFrame`.
+
+You can specify the type of compression with the optional parameter  `compression`, which can take on any of the following values:
+
+-   `'infer'`
+-   `'gzip'`
+-   `'bz2'`
+-   `'zip'`
+-   `'xz'`
+-   `None`
+
+The default value  `compression='infer'`  indicates that Pandas should deduce the compression type from the file extension.
+
+Here’s how you would compress a pickle file:
+
+
+</code></pre>
+
+<p>py
+df = pd.DataFrame(data=data).T
+df.to_pickle(&lsquo;data.pickle.compress&rsquo;, compression=&lsquo;gzip&rsquo;)</p>
+
+<pre><code>You should get the file  `data.pickle.compress`  that you can later decompress and read:
+
+
+</code></pre>
+
+<p>py
+df = pd.read_pickle(&lsquo;data.pickle.compress&rsquo;, compression=&lsquo;gzip&rsquo;)</p>
+
+<pre><code>`df`  again corresponds to the  `DataFrame`  with the same data as before.
+
+You can give the other compression methods a try, as well. If you’re using pickle files, then keep in mind that the  `.zip`  format supports reading only.
+
+### Choose Columns
+
+The Pandas  `read_csv()`  and  `read_excel()`  functions have the optional parameter  `usecols`  that you can use to specify the columns you want to load from the file. You can pass the list of column names as the corresponding argument:
+
+
+</code></pre>
+
+<p>py
+df = pd.read_csv(&lsquo;data.csv&rsquo;, usecols=[&lsquo;COUNTRY&rsquo;, &lsquo;AREA&rsquo;])
+df</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY      AREA
+0        China   9596.96
+1        India   3287.26
+2           US   9833.52
+3    Indonesia   1910.93
+4       Brazil   8515.77
+5     Pakistan    881.91
+6      Nigeria    923.77
+7   Bangladesh    147.57
+8       Russia  17098.25
+9       Mexico   1964.38
+10       Japan    377.97
+11     Germany    357.11
+12      France    640.68
+13          UK    242.50
+14       Italy    301.34
+15   Argentina   2780.40
+16     Algeria   2381.74
+17      Canada   9984.67
+18   Australia   7692.02
+19  Kazakhstan   2724.90`</p>
+
+<pre><code>Now you have a  `DataFrame`  that contains less data than before. Here, there are only the names of the countries and their areas.
+
+Instead of the column names, you can also pass their indices:
+
+
+</code></pre>
+
+<p>py
+df = pd.read_csv(&lsquo;data.csv&rsquo;,index_col=0, usecols=[0, 1, 3])
+df</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY      AREA
+CHN       China   9596.96
+IND       India   3287.26
+USA          US   9833.52
+IDN   Indonesia   1910.93
+BRA      Brazil   8515.77
+PAK    Pakistan    881.91
+NGA     Nigeria    923.77
+BGD  Bangladesh    147.57
+RUS      Russia  17098.25
+MEX      Mexico   1964.38
+JPN       Japan    377.97
+DEU     Germany    357.11
+FRA      France    640.68
+GBR          UK    242.50
+ITA       Italy    301.34
+ARG   Argentina   2780.40
+DZA     Algeria   2381.74
+CAN      Canada   9984.67
+AUS   Australia   7692.02
+KAZ  Kazakhstan   2724.90`</p>
+
+<pre><code>Expand the code block below to compare these results with the file  `'data.csv'`:
+
+data.csvShow/Hide
+
+You can see the following columns:
+
+-   The column at  **index  `0`**  contains the row labels.
+-   The column at  **index  `1`**  contains the country names.
+-   The column at  **index  `3`**  contains the areas.
+
+Simlarly,  `read_sql()`  has the optional parameter  `columns`  that takes a list of column names to read:
+
+
+</code></pre>
+
+<p>py
+df = pd.read_sql(&lsquo;data.db&rsquo;, con=engine, index_col=&lsquo;ID&rsquo;,
+&hellip;                  columns=[&lsquo;COUNTRY&rsquo;, &lsquo;AREA&rsquo;])
+df.index.name = None
+df</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY      AREA
+CHN       China   9596.96
+IND       India   3287.26
+USA          US   9833.52
+IDN   Indonesia   1910.93
+BRA      Brazil   8515.77
+PAK    Pakistan    881.91
+NGA     Nigeria    923.77
+BGD  Bangladesh    147.57
+RUS      Russia  17098.25
+MEX      Mexico   1964.38
+JPN       Japan    377.97
+DEU     Germany    357.11
+FRA      France    640.68
+GBR          UK    242.50
+ITA       Italy    301.34
+ARG   Argentina   2780.40
+DZA     Algeria   2381.74
+CAN      Canada   9984.67
+AUS   Australia   7692.02
+KAZ  Kazakhstan   2724.90`</p>
+
+<pre><code>Again, the  `DataFrame`  only contains the columns with the names of the countries and areas. If  `columns`  is  `None`  or omitted, then all of the columns will be read, as  [you saw before](https://realpython.com/pandas-read-write-files/#sql-files). The default behavior is  `columns=None`.
+
+### Omit Rows
+
+When you test an algorithm for data processing or machine learning, you often don’t need the entire dataset. It’s convenient to load only a subset of the data to speed up the process. The Pandas  `read_csv()`  and  `read_excel()`  functions have some optional parameters that allow you to select which rows you want to load:
+
+-   **`skiprows`:**  either the number of rows to skip at the beginning of the file if it’s an integer, or the zero-based indices of the rows to skip if it’s a list-like object
+-   **`skipfooter`:**  the number of rows to skip at the end of the file
+-   **`nrows`:**  the number of rows to read
+
+Here’s how you would skip rows with odd zero-based indices, keeping the even ones:
+
+
+</code></pre>
+
+<p>py
+df = pd.read_csv(&lsquo;data.csv&rsquo;, index_col=0, skiprows=range(1, 20, 2))
+df</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY      POP     AREA      GDP       CONT     IND_DAY
+IND       India  1351.16  3287.26  2575.67       Asia  1947-08-15
+IDN   Indonesia   268.07  1910.93  1015.54       Asia  1945-08-17
+PAK    Pakistan   205.71   881.91   302.14       Asia  1947-08-14
+BGD  Bangladesh   167.09   147.57   245.63       Asia  1971-03-26
+MEX      Mexico   126.58  1964.38  1158.23  N.America  1810-09-16
+DEU     Germany    83.02   357.11  3693.20     Europe         NaN
+GBR          UK    66.44   242.50  2631.23     Europe         NaN
+ARG   Argentina    44.94  2780.40   637.49  S.America  1816-07-09
+CAN      Canada    37.59  9984.67  1647.12  N.America  1867-07-01
+KAZ  Kazakhstan    18.53  2724.90   159.41       Asia  1991-12-16`</p>
+
+<pre><code>In this example,  `skiprows`  is  `range(1, 20, 2)`  and corresponds to the values  `1`,  `3`, …,  `19`. The instances of the Python built-in class  [`range`](https://docs.python.org/3/library/stdtypes.html#range)  behave like sequences. The first row of the file  `data.csv`  is the header row. It has the index  `0`, so Pandas loads it in. The second row with index  `1`  corresponds to the label  `CHN`, and Pandas skips it. The third row with the index  `2`  and label  `IND`  is loaded, and so on.
+
+If you want to choose rows randomly, then  `skiprows`  can be a list or NumPy array with  [pseudo-random](https://realpython.com/python-random/)  numbers, obtained either with  [pure Python](https://docs.python.org/3/library/random.html)  or with  [NumPy](https://docs.scipy.org/doc/numpy/reference/random/index.html).
+
+### Force Less Precise Data Types
+
+If you’re okay with less precise data types, then you can potentially save a significant amount of memory! First, get the data types with  `.dtypes`  again:
+
+
+</code></pre>
+
+<p>py
+df = pd.read_csv(&lsquo;data.csv&rsquo;, index_col=0, parse_dates=[&lsquo;IND_DAY&rsquo;])
+df.dtypes</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY            object
+POP               float64
+AREA              float64
+GDP               float64
+CONT               object
+IND_DAY    datetime64[ns]
+dtype: object`</p>
+
+<pre><code>The columns with the floating-point numbers are 64-bit floats. Each number of this type  `float64`  consumes 64 bits or 8 bytes. Each column has 20 numbers and requires 160 bytes. You can verify this with  [`.memory_usage()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.memory_usage.html):
+
+
+</code></pre>
+
+<p>py
+df.memory_usage()</p>
+
+<pre><code></code></pre>
+
+<p>Index      160
+COUNTRY    160
+POP        160
+AREA       160
+GDP        160
+CONT       160
+IND_DAY    160
+dtype: int64`</p>
+
+<pre><code>`.memory_usage()`  returns an instance of  `Series`  with the memory usage of each column in bytes. You can conveniently combine it with  `.loc[]`  and  [`.sum()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sum.html)  to get the memory for a group of columns:
+
+
+</code></pre>
+
+<p>py
+df.loc[:, [&lsquo;POP&rsquo;, &lsquo;AREA&rsquo;, &lsquo;GDP&rsquo;]].memory_usage(index=False).sum()</p>
+
+<pre><code></code></pre>
+
+<p>480</p>
+
+<pre><code>This example shows how you can combine the numeric columns  `'POP'`,  `'AREA'`, and  `'GDP'`  to get their total memory requirement. The argument  `index=False`  excludes data for row labels from the resulting  `Series`  object. For these three columns, you’ll need 480 bytes.
+
+You can also extract the data values in the form of a NumPy array with  [`.to_numpy()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_numpy.html#pandas.DataFrame.to_numpy)  or  [`.values`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.values.html). Then, use the  [`.nbytes`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.nbytes.html)  attribute to get the total bytes consumed by the items of the array:
+
+
+</code></pre>
+
+<p>py
+df.loc[:, [&lsquo;POP&rsquo;, &lsquo;AREA&rsquo;, &lsquo;GDP&rsquo;]].to_numpy().nbytes</p>
+
+<h1 id="480">480</h1>
+
+<pre><code>
+The result is the same 480 bytes. So, how do you save memory?
+
+In this case, you can specify that your numeric columns  `'POP'`,  `'AREA'`, and  `'GDP'`  should have the type  `float32`. Use the optional parameter  `dtype`  to do this:
+
+
+</code></pre>
+
+<p>py
+dtypes = {&lsquo;POP&rsquo;: &lsquo;float32&rsquo;, &lsquo;AREA&rsquo;: &lsquo;float32&rsquo;, &lsquo;GDP&rsquo;: &lsquo;float32&rsquo;}
+ df = pd.read_csv(&lsquo;data.csv&rsquo;, index_col=0, dtype=dtypes,
+&hellip;                  parse_dates=[&lsquo;IND_DAY&rsquo;])`</p>
+
+<pre><code>The dictionary  `dtypes`  specifies the desired data types for each column. It’s passed to the Pandas  `read_csv()`  function as the argument that corresponds to the parameter  `dtype`.
+
+Now you can verify that each numeric column needs 80 bytes, or 4 bytes per item:
+
+
+</code></pre>
+
+<p>py
+df.dtypes</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY            object
+POP               float32
+AREA              float32
+GDP               float32
+CONT               object
+IND_DAY    datetime64[ns]
+dtype: object</p>
+
+<pre><code></code></pre>
+
+<p>py
+df.memory_usage()</p>
+
+<pre><code></code></pre>
+
+<p>Index      160
+COUNTRY    160
+POP         80
+AREA        80
+GDP         80
+CONT       160
+IND_DAY    160
+dtype: int64</p>
+
+<pre><code></code></pre>
+
+<p>py
+ df.loc[:, [&lsquo;POP&rsquo;, &lsquo;AREA&rsquo;, &lsquo;GDP&rsquo;]].memory_usage(index=False).sum()
+240
+ df.loc[:, [&lsquo;POP&rsquo;, &lsquo;AREA&rsquo;, &lsquo;GDP&rsquo;]].to_numpy().nbytes
+240`</p>
+
+<pre><code>Each value is a floating-point number of 32 bits or 4 bytes. The three numeric columns contain 20 items each. In total, you’ll need 240 bytes of memory when you work with the type  `float32`. This is half the size of the 480 bytes you’d need to work with  `float64`.
+
+In addition to saving memory, you can significantly reduce the time required to process data by using  `float32`  instead of  `float64`  in some cases.
+
+### Use Chunks to Iterate Through Files
+
+Another way to deal with very large datasets is to split the data into smaller  **chunks**  and process one chunk at a time. If you use  `read_csv()`,  `read_json()`  or  `read_sql()`, then you can specify the optional parameter  `chunksize`:
+
+
+</code></pre>
+
+<p>py
+data_chunk = pd.read_csv(&lsquo;data.csv&rsquo;, index_col=0, chunksize=8)
+ type(data_chunk)</p>
+
+<h1 id="class-pandas-io-parsers-textfilereader"><class 'pandas.io.parsers.TextFileReader'></h1>
+
+<p>hasattr(data_chunk, &lsquo;<strong>iter</strong>&rsquo;)</p>
+
+<h1 id="true">True</h1>
+
+<p>hasattr(data_chunk, &lsquo;<strong>next</strong>&rsquo;)</p>
+
+<h1 id="true-1">True</h1>
+
+<pre><code>`chunksize`  defaults to  `None`  and can take on an integer value that indicates the number of items in a single chunk. When  `chunksize`  is an integer,  `read_csv()`  returns an iterable that you can use in a  [`for`  loop](https://realpython.com/courses/python-for-loop/)  to get and process only a fragment of the dataset in each iteration:
+
+
+</code></pre>
+
+<p>py
+for df_chunk in pd.read_csv(&lsquo;data.csv&rsquo;, index_col=0, chunksize=8):
+&hellip;     print(df_chunk, end=&rsquo;\n\n&rsquo;)
+&hellip;     print(&lsquo;memory:&lsquo;, df_chunk.memory_usage().sum(), &lsquo;bytes&rsquo;,
+&hellip;           end=&rsquo;\n\n\n&rsquo;)</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY      POP     AREA       GDP       CONT     IND_DAY
+CHN       China  1398.72  9596.96  12234.78       Asia         NaN
+IND       India  1351.16  3287.26   2575.67       Asia  1947-08-15
+USA          US   329.74  9833.52  19485.39  N.America  1776-07-04
+IDN   Indonesia   268.07  1910.93   1015.54       Asia  1945-08-17
+BRA      Brazil   210.32  8515.77   2055.51  S.America  1822-09-07
+PAK    Pakistan   205.71   881.91    302.14       Asia  1947-08-14
+NGA     Nigeria   200.96   923.77    375.77     Africa  1960-10-01
+BGD  Bangladesh   167.09   147.57    245.63       Asia  1971-03-26</p>
+
+<p>memory: 448 bytes</p>
+
+<pre><code></code></pre>
+
+<p>COUNTRY     POP      AREA      GDP       CONT     IND_DAY
+RUS     Russia  146.79  17098.25  1530.75        NaN  1992-06-12
+MEX     Mexico  126.58   1964.38  1158.23  N.America  1810-09-16
+JPN      Japan  126.22    377.97  4872.42       Asia         NaN
+DEU    Germany   83.02    357.11  3693.20     Europe         NaN
+FRA     France   67.02    640.68  2582.49     Europe  1789-07-14
+GBR         UK   66.44    242.50  2631.23     Europe         NaN
+ITA      Italy   60.36    301.34  1943.84     Europe         NaN
+ARG  Argentina   44.94   2780.40   637.49  S.America  1816-07-09</p>
+
+<p>memory: 448 bytes</p>
+
+<p>COUNTRY    POP     AREA      GDP       CONT     IND_DAY
+DZA     Algeria  43.38  2381.74   167.56     Africa  1962-07-05
+CAN      Canada  37.59  9984.67  1647.12  N.America  1867-07-01
+AUS   Australia  25.47  7692.02  1408.68    Oceania         NaN
+KAZ  Kazakhstan  18.53  2724.90   159.41       Asia  1991-12-16</p>
+
+<p>memory: 224 bytes<code>
+</code>`<code>
+In this example, the</code>chunksize<code>is</code>8<code>. The first iteration of the</code>for<code>loop returns a</code>DataFrame<code>with the first eight rows of the dataset only. The second iteration returns another</code>DataFrame`  with the next eight rows. The third and last iteration returns the remaining four rows.</p>
+
+<p><strong>Note:</strong>  You can also pass  <code>iterator=True</code>  to force the Pandas  <code>read_csv()</code>  function to return an iterator object instead of a  <code>DataFrame</code>  object.</p>
+
+<p>In each iteration, you get and process the  <code>DataFrame</code>  with the number of rows equal to  <code>chunksize</code>. It’s possible to have fewer rows than the value of  <code>chunksize</code>  in the last iteration. You can use this functionality to control the amount of memory required to process data and keep that amount reasonably small.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You now know how to  <strong>save</strong>  the data and labels from Pandas  <code>DataFrame</code>  objects to different kinds of files. You also know how to  <strong>load</strong>  your data from files and create  <code>DataFrame</code>  objects.</p>
+
+<p>You’ve used the Pandas  <code>read_csv()</code>  and  <code>.to_csv()</code>  methods to read and write CSV files. You also used similar methods to read and write Excel, JSON, HTML, SQL, and pickle files. These functions are very convenient and widely used. They allow you to save or load your data in a single function or method call.</p>
+
+<p>You’ve also learned how to save time, memory, and disk space when working with large data files:</p>
+
+<ul>
+<li><strong>Compress</strong>  or  <strong>decompress</strong>  files</li>
+<li><strong>Choose</strong>  the rows and columns you want to load</li>
+<li><strong>Use</strong>  less precise data types</li>
+<li><strong>Split</strong>  data into chunks and process them one by one</li>
+</ul>
+
+<p>You’ve mastered a significant step in the machine learning and data science process! If you have any questions or comments, then please put them in the comments section below.</p>
+
+<blockquote>
+<p><a href="https://realpython.com/pandas-read-write-files/">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cPandas%5cread-and-write-files.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#pandas-how-to-read-and-write-files">Pandas: How to Read and Write Files</a>
+<ul>
+<li><a href="#installing-pandas">Installing Pandas</a></li>
+<li><a href="#preparing-data">Preparing Data</a></li>
+<li><a href="#using-the-pandas-read-csv-and-to-csv-functions">Using the Pandas  <code>read_csv()</code>  and  <code>.to_csv()</code>  Functions</a>
+<ul>
+<li><a href="#write-a-csv-file">Write a CSV File</a></li>
+<li><a href="#read-a-csv-file">Read a CSV File</a></li>
+</ul></li>
+<li><a href="#using-pandas-to-write-and-read-excel-files">Using Pandas to Write and Read Excel Files</a>
+<ul>
+<li><a href="#write-an-excel-file">Write an Excel File</a></li>
+<li><a href="#read-an-excel-file">Read an Excel File</a></li>
+</ul></li>
+<li><a href="#understanding-the-pandas-io-api">Understanding the Pandas IO API</a>
+<ul>
+<li><a href="#write-files">Write Files</a></li>
+<li><a href="#read-files">Read Files</a></li>
+</ul></li>
+<li><a href="#working-with-different-file-types">Working With Different File Types</a>
+<ul>
+<li><a href="#csv-files">CSV Files</a></li>
+<li><a href="#json-files">JSON Files</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#480">480</a></li>
+<li><a href="#class-pandas-io-parsers-textfilereader"><class 'pandas.io.parsers.TextFileReader'></a></li>
+<li><a href="#true">True</a></li>
+<li><a href="#true-1">True</a>
+<ul>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

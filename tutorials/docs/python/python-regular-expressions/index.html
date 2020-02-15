@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Regular Expressions"><meta property="og:title" content="Regular Expressions" />
+<meta property="og:description" content="Tutorial: Python Regex (Regular Expressions) for Data Scientists Diving headlong into data sets is a part of the mission for anyone working in data science. Often, this means number-crunching, but what do we do when our data set is primarily text-based? We can use regular expressions. In this tutorial, we’re going to take a closer look at how to use regular expressions (regex) in Python.
+Regular expressions (regex) are essentially text patterns that you can use to automate searching through and replacing elements within strings of text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/python-regular-expressions/" />
+
+<title>Regular Expressions | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0dcb57b098c4ff3c2404849f58947323c50fc06d682b3996ebd911c75ba53ff1.css" integrity="sha256-DctXsJjE/zwkBISfWJRzI8UPwG1oKzmW69kRx1ulP/E=">
+
+
+<script defer src="/library/tutorials/en.search.min.15218b8640d363fe4331545d6e581a910220c7e24f54e28bf14a2dafd815c071.js" integrity="sha256-FSGLhkDTY/5DMVRdblgakQIgx&#43;JPVOKL8Uotr9gVwHE="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/"  class="active">
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Regular Expressions</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="tutorial-python-regex-regular-expressions-for-data-scientists">Tutorial: Python Regex (Regular Expressions) for Data Scientists</h1>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2017/11/books-regex2.jpg" alt="enter image description here" /></p>
+
+<p>Diving headlong into data sets is a part of the mission for anyone working in data science. Often, this means number-crunching, but what do we do when our data set is primarily text-based? We can use regular expressions. In this tutorial, we’re going to take a closer look at how to use regular expressions (regex) in Python.</p>
+
+<p>Regular expressions (regex) are essentially text patterns that you can use to automate searching through and replacing elements within strings of text. This can make cleaning and working with text-based data sets much easier, saving you the trouble of having to search through mountains of text by hand.</p>
+
+<p>Regular expressions can be used across a variety of programming languages, and they’ve been around for  <a href="http://aishack.in/tutorials/artificial-neurons-mccullochpitts-model/">a very long time!</a></p>
+
+<p>In this tutorial, though, we’ll learning about regular expressions in Python, so basic familiarity with key Python concepts like if-else statements, while and for loops, etc., is required. (If you need a refresher on any of this stuff,  <a href="https://www.dataquest.io/path/data-scientist/">our introductory Python courses</a>  cover all of the relevant topics interactively, right in your browser, and they’re free!)</p>
+
+<p>By the end of the tutorial, you’ll be familiar with how Python regex works, and be able to use the basic patterns and functions in Python’s regex module,  <code>re</code>, for to analyze text strings. You’ll also get an introduction to how regex can be used in concert with pandas to work with large text corpuses (<em>corpus</em>  means a data set of text).</p>
+
+<p>(To work through the pandas section of this tutorial, you will need to have the pandas library installed. The easiest way to do this is to download  <a href="https://docs.continuum.io/anaconda/">Anaconda</a>  and work through this tutorial in a Jupyter notebook. For other options, check out the  <a href="http://pandas.pydata.org/pandas-docs/stable/install.html">pandas installation guide</a>.)</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2020/01/spam-email-python-regex-scaled.jpg" alt="spam-email-python-regex" /></p>
+
+<p>Let&rsquo;s dig into some data about everyone&rsquo;s least favorite types of email: spam and scams.</p>
+
+<h2 id="our-task-analyze-spam-emails">Our Task: Analyze Spam Emails</h2>
+
+<p>In this tutorial, we’ll use the Fraudulent Email Corpus from Kaggle. It contains thousands of phishing emails sent between 1998 and 2007. They’re pretty entertaining to read.</p>
+
+<p>You can find the full corpus  <a href="https://www.kaggle.com/rtatman/fraudulent-email-corpus">here</a>. But we’ll start by learning basic regex commands using a few emails. If you’d like, you can use our  <a href="https://www.dataquest.io/wp-content/uploads/2020/01/test_emails.txt">test file</a>  as well, or you can try this with the full corpus.</p>
+
+<h2 id="introducing-python-s-regex-module">Introducing Python’s Regex Module</h2>
+
+<p>First, we’ll prepare the data set by opening the test file, setting it to read-only, and reading it. We’ll also assign it to a variable,  <code>fh</code>  (for “file handle”).</p>
+
+<pre><code class="language-python">fh = open(r&quot;test_emails.txt&quot;, &quot;r&quot;).read()
+</code></pre>
+
+<p>Notice that we precede the directory path with an  <code>r</code>. This technique converts a string into a raw string, which helps to avoid conflicts caused by how some machines read characters, such as backslashes in directory paths on Windows.</p>
+
+<p>Now, suppose we want to find out who the emails are from. We could try raw Python on its own:</p>
+
+<pre><code class="language-python">for line in fh.split(&quot;n&quot;):
+    if &quot;From:&quot; in line:
+        print(line)
+</code></pre>
+
+<pre><code>der.com&gt;
+Message-Id: &lt;200210311310.g9VDANt24674@bloodwork.mr.itd.UM&gt;
+From: &quot;Mr. Be
+g_715@epatra.com&gt;
+Message-Id: &lt;200210312227.g9VMQvDj017948@bluewhale.cs.CU&gt;
+From: &quot;PRINCE OBONG ELEME&quot; &lt;obo
+
+</code></pre>
+
+<p>But that’s not giving us exactly what we want. If you take a look at our test file, we could figure out why and fix it, but instead, let’s use Python’s  <code>re</code>  module and do it with regular expressions!</p>
+
+<p>We’ll start by importing Python’s  <code>re</code>  module. Then, we’ll use a function called  <code>re.findall()</code>  that returns a list of all instances of a pattern we define in the string we’re looking at.</p>
+
+<p>Here’s how it looks:</p>
+
+<pre><code class="language-python">import re
+
+for line in re.findall(&quot;From:.*&quot;, fh):
+    print(line)
+</code></pre>
+
+<pre><code>From: &quot;Mr. Ben Suleman&quot; &lt;bensul2004nng@spinfinder.com&gt;
+From: &quot;PRINCE OBONG ELEME&quot; &lt;obong_715@epatra.com&gt;
+
+</code></pre>
+
+<p>This is essentially the same length as our raw Python, but that’s because it’s a very simple example. The more you’re trying to do, the more effort Python regex is likely to save you.</p>
+
+<p>Before we move on, let’s take a closer look at  <code>re.findall()</code>. This function takes two arguments in the form of  <code>re.findall(pattern, string)</code>. Here,  <code>pattern</code>  represents the substring we want to find, and  <code>string</code>  represents the main string we want to find it in. The main string can consist of multiple lines. In this case, we’re having it search through all of  <code>fh</code>, the file with our selected emails.</p>
+
+<p>The  <code>.*</code>  is a shorthand for a string pattern. Regular expressions work by using these shorthand patterns to find specific patterns in text, so let’s take a look at some other common examples:</p>
+
+<h2 id="common-python-regex-patterns">Common Python Regex Patterns</h2>
+
+<p>The pattern we used with  <code>re.findall()</code>  above contains a fully spelled-out out string,  <code>&quot;From:&quot;</code>. This is useful when we know precisely what we’re looking for, right down to the actual letters and whether or not they’re upper or lower case. If we don’t know the exact format of the strings we want, we’d be lost. Fortunately, regex has basic patterns that account for this scenario. Let’s look at the ones we use in this tutorial:</p>
+
+<ul>
+<li><code>w</code>  matches alphanumeric characters, which means a-z, A-Z, and 0-9. It also matches the underscore, _, and the dash, -.</li>
+<li><code>d</code>  matches digits, which means 0-9.</li>
+<li><code>s</code>  matches whitespace characters, which include the tab, new line, carriage return, and space characters.</li>
+<li><code>S</code>  matches non-whitespace characters.</li>
+<li><code>.</code>  matches any character except the new line character  <code>n</code>.</li>
+</ul>
+
+<p>With these regex patterns in hand, you’ll quickly understand our code above as we go on to explain it.</p>
+
+<h2 id="working-with-regex-patterns">Working with Regex Patterns</h2>
+
+<p>We can now explain the use of  <code>.*</code>  in the line  <code>re.findall(&quot;From:.*&quot;, text)</code>  above. Let’s look at  <code>.</code>  first:</p>
+
+<pre><code class="language-python">for line in re.findall(&quot;From:.&quot;, fh):
+    print(line)
+</code></pre>
+
+<pre><code>From:
+From:
+</code></pre>
+
+<p>By adding a  <code>.</code>  next to  <code>From:</code>, we look for one additional character next to it. Because  <code>.</code>  looks for any character except  <code>n</code>, it captures the space character, which we cannot see. We can try more dots to verify this.</p>
+
+<pre><code class="language-python">for line in re.findall(&quot;From:...........&quot;, fh):
+    print(line)
+</code></pre>
+
+<pre><code>From: &quot;Mr. Ben S
+From: &quot;PRINCE OB
+
+</code></pre>
+
+<p>It looks like adding dots does acquire the rest of the line for us. But, it’s tedious and we don’t know how many dots to add. This is where the asterisk symbol,  <code>*</code>, comes in.</p>
+
+<p><code>*</code>  matches zero or more instances of a pattern on its left. This means it looks for repeating patterns. When we look for repeating patterns, we say that our search is “greedy.” If we don’t look for repeating patterns, we can call our search “non-greedy” or “lazy.”</p>
+
+<p>Let’s construct a greedy search for  <code>.</code>  with  <code>*</code>.</p>
+
+<pre><code class="language-python">for line in re.findall(&quot;From:.*&quot;, fh):
+    print(line)
+</code></pre>
+
+<pre><code>From: &quot;Mr. Ben Suleman&quot; &lt;bensul2004nng@spinfinder.com&gt;
+From: &quot;PRINCE OBONG ELEME&quot; &lt;obong_715@epatra.com&gt;
+
+</code></pre>
+
+<p>Because  <code>*</code>  matches zero or more instances of the pattern indicated on its left, and  <code>.</code>  is on its left here, we are able to acquire all the characters in the  <code>From:</code>  field until the end of the line. This prints out the full line with beautifully succinct code.</p>
+
+<p>We might even go further and isolate only the name. Let’s use  <code>re.findall()</code>  to return a list of lines containing the pattern  <code>&quot;From:.*&quot;</code>  as we’ve done before. We’ll assign it to the variable  <code>match</code>  for neatness. Next, we’ll iterate through the list. In each cycle, we’ll execute  <code>re.findall</code>  again, matching the first quotation mark to pick out just the name:</p>
+
+<pre><code class="language-python">match = re.findall(&quot;From:.*&quot;, fh)
+
+for line in match:
+    print(re.findall('\&quot;.*\&quot;', line))
+</code></pre>
+
+<pre><code>['&quot;Mr. Ben Suleman&quot;']
+['&quot;PRINCE OBONG ELEME&quot;']
+
+</code></pre>
+
+<p>Notice that we use a backslash next to the first quotation mark. The backslash is a special character used for escaping other special characters. For instance, when we want to use a quotation mark as a string literal instead of a special character, we escape it with a backslash like this:  <code>\&quot;</code>. If we do not escape the pattern above with backslashes, it would become  <code>&quot;&quot;.*&quot;&quot;</code>, which the Python interpreter would read as a period and an asterisk between two empty strings. It would produce an error and break the script. Hence, it’s crucial that we escape the quotation marks here with backslashes.</p>
+
+<p>After the first quotation mark is matched,  <code>.*</code>  acquires all the characters in the line until the next quotation mark, also escaped in the pattern. This gets us just the name, within quotation marks. The name is also printed within square brackets because  <code>re.findall</code>  returns matches in a list.</p>
+
+<p>What if we want the email address instead?</p>
+
+<pre><code class="language-python">match = re.findall(&quot;From:.*&quot;, fh)
+
+for line in match:
+    print(re.findall(&quot;\w\S*@*.\w&quot;, line))
+</code></pre>
+
+<pre><code>['bensul2004nng@spinfinder.com']
+['obong_715@epatra.com']
+</code></pre>
+
+<p>Looks simple enough, doesn’t it? Only the pattern is different. Let’s walk through it.</p>
+
+<p>Here’s how we match just the front part of the email address:</p>
+
+<pre><code class="language-python">for line in match:
+    print(re.findall(&quot;\w\S*@&quot;, line))
+</code></pre>
+
+<pre><code>['bensul2004nng@']
+['obong_715@']
+
+</code></pre>
+
+<p>Emails always contain an @ symbol, so we start with it. The part of the email before the @ symbol might contain alphanumeric characters, which means  <code>w</code>  is required. However, because some emails contain a period or a dash, that’s not enough. We add  <code>S</code>  to look for non-whitespace characters. But,  <code>w\S</code>  will get only two characters. Add  <code>*</code>  to look for repetitions. The front part of the pattern thus looks like this:  <code>\w\S*@</code>.</p>
+
+<p>Now for the pattern behind the @ symbol:</p>
+
+<pre><code class="language-python">for line in match:
+    print(re.findall(&quot;@.*&quot;, line))
+</code></pre>
+
+<pre><code>['@spinfinder.com&gt;']
+['@epatra.com&gt;']
+</code></pre>
+
+<p>The domain name usually contains alphanumeric characters, periods, and a dash sometimes, so a  <code>.</code>  will do. To make it greedy, we extend the search with a  <code>*</code>. This allows us to match any character till the end of the line.</p>
+
+<p>If we look at the line closely, we see that each email is encapsulated within angle brackets, &lt; and &gt;. Our pattern,  <code>.*</code>, includes the closing bracket, &gt;. Let’s remedy it:</p>
+
+<pre><code class="language-python">for line in match:
+    print(re.findall(&quot;@.*\w&quot;, line))
+</code></pre>
+
+<pre><code>['@spinfinder.com']
+['@epatra.com']
+</code></pre>
+
+<p>Email addresses end with an alphanumeric character, so we cap the pattern with  <code>w</code>. So, after the @ symbol we have  <code>.*\w</code>, which means that the pattern we want is a group of any type of characters ending with an alphanumeric character. This excludes &gt;.</p>
+
+<p>Our full email address pattern thus looks like this:  <code>\w\S*@.*\w</code>.</p>
+
+<p>Phew! That was quite a bit to work through. Next, we’ll run through some common  <code>re</code>  functions that will be useful when we start reorganizing our corpus.</p>
+
+<h2 id="common-python-regex-functions">Common Python Regex Functions</h2>
+
+<p><code>re.findall()</code>  is undeniably useful, but it’s not the only built-in function that’s available to us in  <code>re</code>:</p>
+
+<ul>
+<li><code>re.search()</code></li>
+<li><code>re.split()</code></li>
+<li><code>re.sub()</code></li>
+</ul>
+
+<p>Let’s look at these one by one before using them to bring some order to our data set.</p>
+
+<h3 id="re-search">re.search()</h3>
+
+<p>While  <code>re.findall()</code>  matches all instances of a pattern in a string and returns them in a list,  <code>re.search()</code>  matches the first instance of a pattern in a string, and returns it as a  <code>re</code>  match object.</p>
+
+<pre><code class="language-python">match = re.search(&quot;From:.*&quot;, fh)
+print(type(match))
+print(type(match.group()))
+print(match)
+print(match.group())
+</code></pre>
+
+<pre><code>&lt;class 're.Match'&gt;
+&lt;class 'str'&gt;
+&lt;re.Match object; span=(3590, 3644), match='From: &quot;Mr. Ben Suleman&quot; &lt;bensul2004nng@spinfinder&gt;
+From: &quot;Mr. Ben Suleman&quot; &lt;bensul2004nng@spinfinder.com&gt;
+
+</code></pre>
+
+<p>Like  <code>re.findall()</code>,  <code>re.search()</code>  also takes two arguments. The first is the pattern to match, and the second is the string to find it in. Here, we’ve assigned the results to the  <code>match</code>  variable for neatness.</p>
+
+<p>Because  <code>re.search()</code>  returns a  <code>re</code>  match object, we can’t display the name and email address by printing it directly. Instead, we have to apply the  <code>group()</code>  function to it first. We’ve printed both their types out in the code above. As we can see,  <code>group()</code>  converts the match object into a string.</p>
+
+<p>We can also see that printing  <code>match</code>  displays properties beyond the string itself, whereas printing  <code>match.group()</code>  displays only the string.</p>
+
+<h3 id="re-split">re.split()</h3>
+
+<p>Suppose we need a quick way to get the domain name of the email addresses. We could do it with three regex operations, like so:</p>
+
+<pre><code class="language-python">address = re.findall(&quot;From:.*&quot;, fh)
+for item in address:
+    for line in re.findall(&quot;\w\S*@.*\w&quot;, item):
+        username, domain_name = re.split(&quot;@&quot;, line)
+        print(&quot;{}, {}&quot;.format(username, domain_name))
+</code></pre>
+
+<pre><code>bensul2004nng, spinfinder.com
+obong_715, epatra.com
+</code></pre>
+
+<p>The first line is familiar. We return a list of strings, each containing the contents of the  <code>From:</code>  field, and assign it to a variable. Next, we iterate through the list to find the email addresses. At the same time, we iterate through the email addresses and use the  <code>re</code>  module’s  <code>split()</code>  function to snip each address in half, with the @ symbol as the delimiter. Finally, we print it.</p>
+
+<h3 id="re-sub">re.sub()</h3>
+
+<p>Another handy  <code>re</code>  function is  <code>re.sub()</code>. As the function name suggests, it substitutes parts of a string. An example:</p>
+
+<pre><code class="language-python">sender = re.search(&quot;From:.*&quot;, fh)
+address = sender.group()
+email = re.sub(&quot;From&quot;, &quot;Email&quot;, address)
+print(address)
+print(email)
+</code></pre>
+
+<pre><code>From: &quot;Mr. Ben Suleman&quot; 
+</code></pre>
+
+<blockquote>
+<p><a href="https://www.dataquest.io/blog/regular-expressions-data-scientists/">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cpython-regular-expressions.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#tutorial-python-regex-regular-expressions-for-data-scientists">Tutorial: Python Regex (Regular Expressions) for Data Scientists</a>
+<ul>
+<li><a href="#our-task-analyze-spam-emails">Our Task: Analyze Spam Emails</a></li>
+<li><a href="#introducing-python-s-regex-module">Introducing Python’s Regex Module</a></li>
+<li><a href="#common-python-regex-patterns">Common Python Regex Patterns</a></li>
+<li><a href="#working-with-regex-patterns">Working with Regex Patterns</a></li>
+<li><a href="#common-python-regex-functions">Common Python Regex Functions</a>
+<ul>
+<li><a href="#re-search">re.search()</a></li>
+<li><a href="#re-split">re.split()</a></li>
+<li><a href="#re-sub">re.sub()</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -90,5 +90,15 @@ Python lxml
 Python ConfigParser</description>
     </item>
     
+    <item>
+      <title>Regular Expressions</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/python-regular-expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/python-regular-expressions/</guid>
+      <description>Tutorial: Python Regex (Regular Expressions) for Data Scientists Diving headlong into data sets is a part of the mission for anyone working in data science. Often, this means number-crunching, but what do we do when our data set is primarily text-based? We can use regular expressions. In this tutorial, we’re going to take a closer look at how to use regular expressions (regex) in Python.
+Regular expressions (regex) are essentially text patterns that you can use to automate searching through and replacing elements within strings of text.</description>
+    </item>
+    
   </channel>
 </rss>

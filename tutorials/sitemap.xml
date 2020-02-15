@@ -451,6 +451,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/</loc>
   </url>
   
@@ -547,6 +551,14 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/read-and-write-files/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/python-regular-expressions/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/</loc>
   </url>
   
@@ -567,7 +579,27 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/flask-blueprint/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-and-beautifulsoup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-craigslist/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/</loc>
   </url>
   
   <url>
@@ -580,6 +612,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/</loc>
   </url>
   
   <url>
