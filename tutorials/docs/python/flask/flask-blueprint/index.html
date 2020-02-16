@@ -15,10 +15,10 @@ In this tutorial, you’ll learn:
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.0dcb57b098c4ff3c2404849f58947323c50fc06d682b3996ebd911c75ba53ff1.css" integrity="sha256-DctXsJjE/zwkBISfWJRzI8UPwG1oKzmW69kRx1ulP/E=">
+<link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
 
 
-<script defer src="/library/tutorials/en.search.min.15218b8640d363fe4331545d6e581a910220c7e24f54e28bf14a2dafd815c071.js" integrity="sha256-FSGLhkDTY/5DMVRdblgakQIgx&#43;JPVOKL8Uotr9gVwHE="></script>
+<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -491,13 +491,14 @@ https://github.com/alex-shpak/hugo-book
 
 <p>The following code block is your application’s full source code:</p>
 
-<p>`from flask import Flask</p>
+<pre><code class="language-py">from flask import Flask
 
-<p>app = Flask(<strong>name</strong>)</p>
+app = Flask(__name__)
 
-<p>@app.route(&lsquo;/&rsquo;)
+@app.route('/')
 def index():
-    return &ldquo;This is an example app&rdquo;`</p>
+    return &quot;This is an example app&quot;
+</code></pre>
 
 <p>This code creates the object  <code>app</code>, which belongs to the  <code>Flask</code>  class. The view function  <code>index()</code>  is linked to the route  <code>/</code>  using the  <code>app.route</code>  decorator. To learn more about decorators, check out  <a href="https://realpython.com/primer-on-python-decorators/">Primer on Python Decorators</a>  and  <a href="https://realpython.com/courses/python-decorators-101/">Python Decorators 101</a>.</p>
 
@@ -519,7 +520,7 @@ def index():
 <pre><code>app/
 |
 ├── app.py
-└── example_blueprint.py 
+└── example_blueprint.py
 </code></pre>
 
 <p><code>example_blueprint.py</code>  will contain the Flask Blueprint implementation. You’ll then modify  <code>app.py</code>  to use it.</p>
@@ -532,7 +533,7 @@ example_blueprint = Blueprint('example_blueprint', __name__)
 
 @example_blueprint.route('/')
 def index():
-    return &quot;This is an example app&quot;` 
+    return &quot;This is an example app&quot;
 </code></pre>
 
 <p>In the above code, you can see the steps common to most Flask Blueprint definitions:</p>
@@ -548,7 +549,7 @@ def index():
 from example_blueprint import example_blueprint
 
 app = Flask(__name__)
-app.register_blueprint(example_blueprint)` 
+app.register_blueprint(example_blueprint)
 </code></pre>
 
 <p>To use any Flask Blueprint, you have to import it and then  <strong>register</strong>  it in the application using  <code>register_blueprint()</code>. When a Flask Blueprint is registered, the application is extended with its contents.</p>
@@ -572,9 +573,10 @@ app.register_blueprint(example_blueprint)`
 
 <p>Let’s revisit the Flask Blueprint definition that you’ve seen previously and review it in detail. The following code shows the  <code>Blueprint</code>  object creation:</p>
 
-<p>`from flask import Blueprint</p>
+<pre><code class="language-py">from flask import Blueprint
 
-<p>example_blueprint = Blueprint(&lsquo;example_blueprint&rsquo;, <strong>name</strong>)`</p>
+example_blueprint = Blueprint('example_blueprint', __name__)
+</code></pre>
 
 <p>Note that in the above code, some arguments are specified when creating the  <code>Blueprint</code>  object. The first argument,  <code>&quot;example_blueprint&quot;</code>, is the Blueprint’s  <strong>name</strong>, which is used by Flask’s routing mechanism. The second argument,  <code>__name__</code>, is the Blueprint’s  <strong>import name</strong>, which Flask uses to locate the Blueprint’s resources.</p>
 
@@ -600,9 +602,10 @@ app.register_blueprint(example_blueprint)`
 
 <p>The  <code>Blueprint</code>  object  <code>example_blueprint</code>  has methods and decorators that allow you to record operations to be executed when registering the Flask Blueprint in an application to extend it. One of the most used decorators is  <code>route</code>. It allows you to associate a view function to a URL route. The following code block shows how this decorator is used:</p>
 
-<p>@example_blueprint.route(&lsquo;/&rsquo;)
+<pre><code class="language-py">@example_blueprint.route('/')
 def index():
-    return &ldquo;This is an example app&rdquo;`</p>
+    return &quot;This is an example app&quot;
+</code></pre>
 
 <p>You decorate  <code>index()</code>  using  <code>example_blueprint.route</code>  and associate the function to the URL  <code>/</code>.</p>
 
@@ -621,11 +624,12 @@ def index():
 
 <p>Recall that a Flask Blueprint is not actually an application. When you register the Flask Blueprint in an application, you  <strong>extend</strong>  the application with its contents. The following code shows how you can register the previously-created Flask Blueprint in an application:</p>
 
-<p>`from flask import Flask
-from example_blueprint import example_blueprint</p>
+<pre><code class="language-py">from flask import Flask
+from example_blueprint import example_blueprint
 
-<p>app = Flask(<strong>name</strong>)
-app.register_blueprint(example_blueprint)`</p>
+app = Flask(__name__)
+app.register_blueprint(example_blueprint)
+</code></pre>
 
 <p>When you call  <code>.register_blueprint()</code>, you apply all operations recorded in the Flask Blueprint  <code>example_blueprint</code>  to  <code>app</code>. Now, requests to the app for the URL  <code>/</code>  will be served using  <code>.index()</code>  from the Flask Blueprint.</p>
 
@@ -658,7 +662,7 @@ app.register_blueprint(example_blueprint)`</p>
 
 <p>Remember, Flask does not enforce any particular project layout. It’s completely feasible to organize this application’s code as follows:</p>
 
-<p><code>ecommerce/
+<pre><code>ecommerce/
 |
 ├── static/
 |   ├── logo.png
@@ -678,7 +682,8 @@ app.register_blueprint(example_blueprint)`</p>
 |
 ├── app.py
 ├── config.py
-└── models.py</code></p>
+└── models.py
+</code></pre>
 
 <p>This application’s code is organized using these directories and files:</p>
 
@@ -710,7 +715,7 @@ app.register_blueprint(example_blueprint)`</p>
 
 <p>If you use a separate directory for each Flask Blueprint and its resources, then the project layout would look as follows:</p>
 
-<p><code>ecommerce/
+<pre><code>ecommerce/
 |
 ├── api/
 |   ├── __init__.py
@@ -762,48 +767,51 @@ app.register_blueprint(example_blueprint)`</p>
 |
 ├── app.py
 ├── config.py
-└── models.py</code></p>
+└── models.py
+</code></pre>
 
 <p>To organize code in this way, you move all views from  <code>app.py</code>  into the corresponding Flask Blueprint. You also moved templates and non-global static files. This structure makes it easier for you to find the code and resources related to a given functionality. For example, if you want to find the application logic about products, then you can go to the Products Blueprint in  <code>products/products.py</code>  instead of scrolling through  <code>app.py</code>.</p>
 
 <p>Let’s see the Products Blueprint implementation in  <code>products/products.py</code>:</p>
 
-<p>`from flask import Blueprint, render_template
-from ecommerce.models import Product</p>
+<pre><code class="language-py">from flask import Blueprint, render_template
+from ecommerce.models import Product
 
-<p>products_bp = Blueprint(&lsquo;products_bp&rsquo;, <strong>name</strong>,
-    template_folder=&lsquo;templates&rsquo;,
-    static_folder=&lsquo;static&rsquo;, static_url_path=&lsquo;assets&rsquo;)</p>
+products_bp = Blueprint('products_bp', __name__,
+    template_folder='templates',
+    static_folder='static', static_url_path='assets')
 
-<p>@products_bp.route(&lsquo;/&rsquo;)
+@products_bp.route('/')
 def list():
     products = Product.query.all()
-    return render_template(&lsquo;products/list.html&rsquo;, products=products)</p>
+    return render_template('products/list.html', products=products)
 
-<p>@products_bp.route(&lsquo;/view/<a href="int:product_id">int:product_id</a>&rsquo;)
+@products_bp.route('/view/&lt;int:product_id&gt;')
 def view(product_id):
     product = Product.query.get(product_id)
-    return render_template(&lsquo;products/view.html&rsquo;, product=product)`</p>
+    return render_template('products/view.html', product=product)
+</code></pre>
 
 <p>This code defines the  <code>products_bp</code>  Flask Blueprint and contains only the code that’s related to product functionality. Since this Flask Blueprint has its own templates, you need to specify the  <code>template_folder</code>  relative to the Blueprint’s root in the  <code>Blueprint</code>  object creation. Since you specify  <code>static_folder='static'</code>  and  <code>static_url_path='assets'</code>, files in  <code>ecommerce/products/static/</code>  will be served under the  <code>/assets/</code>  URL.</p>
 
 <p>Now you can move the rest of your code’s functionality to the corresponding Flask Blueprint. In other words, you can create Blueprints for API, authentication, cart, and general functionality. Once you’ve done so, the only code left in  <code>app.py</code>  will be code that deals with application initialization and Flask Blueprint registration:</p>
 
-<p>`from flask import Flask</p>
+<pre><code class="language-py">from flask import Flask
 
-<p>from ecommmerce.api.api import api_bp
+from ecommmerce.api.api import api_bp
 from ecommmerce.auth.auth import auth_bp
 from ecommmerce.cart.cart import cart_bp
 from ecommmerce.general.general import general_bp
-from ecommmerce.products.products import products_bp</p>
+from ecommmerce.products.products import products_bp
 
-<p>app = Flask(<strong>name</strong>)</p>
+app = Flask(__name__)
 
-<p>app.register_blueprint(api_bp, url_prefix=&lsquo;/api&rsquo;)
+app.register_blueprint(api_bp, url_prefix='/api')
 app.register_blueprint(auth_bp)
-app.register_blueprint(cart_bp, url_prefix=&lsquo;/cart&rsquo;)
+app.register_blueprint(cart_bp, url_prefix='/cart')
 app.register_blueprint(general_bp)
-app.register_blueprint(products_bp, url_prefix=&lsquo;/products&rsquo;)`</p>
+app.register_blueprint(products_bp, url_prefix='/products')
+</code></pre>
 
 <p>Now,  <code>app.py</code>  simply imports and registers the Blueprints to extend the application. Since you use  <code>url_prefix</code>, you can avoid URL collisions between Flask Blueprint routes. For example, the URLs  <code>/products/</code>  and  <code>/cart/</code>  resolve to different endpoints defined in the  <code>products_bp</code>  and  <code>cart_bp</code>  Blueprints for the same route,  <code>/</code>.</p>
 
@@ -821,10 +829,10 @@ app.register_blueprint(products_bp, url_prefix=&lsquo;/products&rsquo;)`</p>
     └── templates/
         └── products/
             ├── search.html
-            └── view.html` 
-
-At first, it may look redundant to have the Flask Blueprint name appear twice:
+            └── view.html 
 </code></pre>
+
+<p>At first, it may look redundant to have the Flask Blueprint name appear twice:</p>
 
 <ol>
 <li>As the Blueprint’s  <strong>root</strong>  directory</li>
@@ -847,7 +855,7 @@ At first, it may look redundant to have the Flask Blueprint name appear twice:
 |
 └── templates/
         └── products/
-            └── view.html` 
+            └── view.html
 </code></pre>
 
 <p>When you do this, your program will use  <code>templates/products/view.html</code>  instead of  <code>products/templates/products/view.html</code>  whenever a view requires the template  <code>products/view.html</code>.</p>
@@ -865,18 +873,19 @@ At first, it may look redundant to have the Flask Blueprint name appear twice:
     |   └── save.png
     |
     ├── __init__.py
-    └── icons.py` 
+    └── icons.py
 </code></pre>
 
 <p>The  <code>static</code>  folder contains the icon files and  <code>icons.py</code>  is the Flask Blueprint definition.</p>
 
 <p>This is how  <code>icons.py</code>  might look:</p>
 
-<p>`from flask import Blueprint</p>
+<pre><code class="language-py">from flask import Blueprint
 
-<p>icons_bp = Blueprint(&lsquo;icons_bp&rsquo;, <strong>name</strong>,
-    static_folder=&lsquo;static&rsquo;,
-    static_url_path=&lsquo;icons&rsquo;)`</p>
+icons_bp = Blueprint('icons_bp', __name__,
+    static_folder='static',
+    static_url_path='icons')
+</code></pre>
 
 <p>This code defines the  <code>icons_bp</code>  Flask Blueprint that exposes the files in the static directory under the  <code>/icons/</code>  URL. Note that this Blueprint does not define any route.</p>
 

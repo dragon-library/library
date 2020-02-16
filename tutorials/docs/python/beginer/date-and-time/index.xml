@@ -10,6 +10,16 @@
     
     
     <item>
+      <title>Datetime Tutorial</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</guid>
+      <description>Python Datetime Tutorial: Manipulate Times, Dates, and Time Spans Dealing with dates and times in Python can be a hassle. Thankfully, there’s a built-in way of making it easier: the Python datetime module.
+datetime helps us identify and process time-related elements like dates, hours, minutes, seconds, days of the week, months, years, etc. It offers various services like managing time zones and daylight savings time. It can work with timestamp data.</description>
+    </item>
+    
+    <item>
       <title>DateTime, TimeDelta, Strftime with Examples</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

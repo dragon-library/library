@@ -10,12 +10,21 @@
     
     
     <item>
+      <title>Explore Your Dataset</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-explore-dataset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-explore-dataset/</guid>
+      <description>Using Pandas and Python to Explore Your Dataset Table of Contents  Setting Up Your Environment Using the Pandas Python Library Getting to Know Your Data  Displaying Data Types Showing Basics Statistics Exploring Your Dataset  Getting to Know Pandas&amp;rsquo; Data Structures  Understanding Series Objects Understanding DataFrame Objects  Accessing Series Elements  Using the Indexing Operator Using .loc and .iloc  Accessing DataFrame Elements  Using the Indexing Operator Using .</description>
+    </item>
+    
+    <item>
       <title>Read and Write Files</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/read-and-write-files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/read-and-write-files/</guid>
-      <description>Pandas: How to Read and Write Files Pandas is a powerful and flexible Python package that allows you to work with labeled and time series data. It also provides statistics methods, enables plotting, and more. One crucial feature of Pandas is its ability to write and read Excel, CSV, and many other types of files. Functions like the Pandas read_csv() method enable you to work with files effectively. You can use them to save the data and labels from Pandas objects to a file and load them later as Pandas Series or DataFrame instances.</description>
+      <description>Pandas: How to Read and Write Files Table of Contents  Installing Pandas Preparing Data Using the Pandas read_csv() and .to_csv() Functions  Write a CSV File Read a CSV File  Using Pandas to Write and Read Excel Files  Write an Excel File Read an Excel File  Understanding the Pandas IO API  Write Files Read Files  Working With Different File Types  CSV Files JSON Files HTML Files Excel Files SQL Files Pickle Files  Working With Big Data  Compress and Decompress Files Choose Columns Omit Rows Force Less Precise Data Types Use Chunks to Iterate Through Files  Conclusion  Pandas is a powerful and flexible Python package that allows you to work with labeled and time series data.</description>
     </item>
     
   </channel>

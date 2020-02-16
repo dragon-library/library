@@ -15,10 +15,10 @@ The variables and/or logic are placed between tags or delimiters. For example, J
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.0dcb57b098c4ff3c2404849f58947323c50fc06d682b3996ebd911c75ba53ff1.css" integrity="sha256-DctXsJjE/zwkBISfWJRzI8UPwG1oKzmW69kRx1ulP/E=">
+<link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
 
 
-<script defer src="/library/tutorials/en.search.min.15218b8640d363fe4331545d6e581a910220c7e24f54e28bf14a2dafd815c071.js" integrity="sha256-FSGLhkDTY/5DMVRdblgakQIgx&#43;JPVOKL8Uotr9gVwHE="></script>
+<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -472,12 +472,10 @@ t.render(something=&quot;World&quot;)
 
 <p>Hello World!&rsquo;</p>
 
-<pre><code class="language-py">
-t = Template(&quot;My favorite numbers: {% for n in range(1,10) %}{{n}} &quot; &quot;{% endfor %}&quot;)
+<pre><code class="language-py">t = Template(&quot;My favorite numbers: {% for n in range(1,10) %}{{n}} &quot; &quot;{% endfor %}&quot;)
 t.render()
-</code></pre>
 
-<pre><code class="language-py">My favorite numbers: 1 2 3 4 5 6 7 8 9 '
+# My favorite numbers: 1 2 3 4 5 6 7 8 9 '
 </code></pre>
 
 <p>Notice how the actual output rendered to the user falls within the  tags.</p>
@@ -488,9 +486,10 @@ t.render()
 
 <p>Create the following project structure:</p>
 
-<p>├── requirements.txt
+<pre><code>├── requirements.txt
 ├── run.py
-└── templates</p>
+└── templates
+</code></pre>
 
 <p>Activate a virtualenv, then install flask:</p>
 
@@ -637,7 +636,7 @@ if __name__ == '__main__':
 
 <p>Add the following code to the base template, just after the opening  <code>&lt;body&gt;</code>  tag:</p>
 
-<pre><code class="language-js">&lt;nav class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+<pre><code class="language-html">&lt;nav class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
   &lt;div class=&quot;container-fluid&quot;&gt;
     &lt;div class=&quot;navbar-header&quot;&gt;
       &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#bs-example-navbar-collapse-1&quot;&gt;
@@ -691,7 +690,7 @@ if __name__ == '__main__':
 
 <p>Add a footer to the base template:</p>
 
-<pre><code class="language-js">&lt;div class=&quot;footer&quot;&gt;
+<pre><code class="language-html">&lt;div class=&quot;footer&quot;&gt;
   {% block footer %}
     Watch! This will be added to my base and child templates using the super powerful super block!
     &lt;br&gt;

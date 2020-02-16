@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore Your Dataset"><meta property="og:title" content="Explore Your Dataset" />
+<meta property="og:description" content="Using Pandas and Python to Explore Your Dataset Table of Contents  Setting Up Your Environment Using the Pandas Python Library Getting to Know Your Data  Displaying Data Types Showing Basics Statistics Exploring Your Dataset  Getting to Know Pandas&rsquo; Data Structures  Understanding Series Objects Understanding DataFrame Objects  Accessing Series Elements  Using the Indexing Operator Using .loc and .iloc  Accessing DataFrame Elements  Using the Indexing Operator Using ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-explore-dataset/" />
+
+<title>Explore Your Dataset | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
+
+
+<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/" >
+      IO tools (text, CSV, HDF5, …)
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/pandas-explore-dataset/"  class="active">
+      Explore Your Dataset
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/read-and-write-files/" >
+      Read and Write Files
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Explore Your Dataset</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="using-pandas-and-python-to-explore-your-dataset">Using Pandas and Python to Explore Your Dataset</h1>
+
+<p><img src="https://files.realpython.com/media/Intro-to-Exploratory-Data-Analysis-With-Pandas_Watermarked.81a7d7df468f.jpg" alt="enter image description here" /></p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#setting-up-your-environment">Setting Up Your Environment</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#using-the-pandas-python-library">Using the Pandas Python Library</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#getting-to-know-your-data">Getting to Know Your Data</a>
+
+<ul>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#displaying-data-types">Displaying Data Types</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#showing-basics-statistics">Showing Basics Statistics</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#exploring-your-dataset">Exploring Your Dataset</a></li>
+</ul></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#getting-to-know-pandas-data-structures">Getting to Know Pandas&rsquo; Data Structures</a>
+
+<ul>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#understanding-series-objects">Understanding Series Objects</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#understanding-dataframe-objects">Understanding DataFrame Objects</a></li>
+</ul></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#accessing-series-elements">Accessing Series Elements</a>
+
+<ul>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#using-the-indexing-operator">Using the Indexing Operator</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#using-loc-and-iloc">Using  .loc  and  .iloc</a></li>
+</ul></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#accessing-dataframe-elements">Accessing DataFrame Elements</a>
+
+<ul>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#using-the-indexing-operator-1">Using the Indexing Operator</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#using-loc-and-iloc-1">Using  .loc  and  .iloc</a></li>
+</ul></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#querying-your-dataset">Querying Your Dataset</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#grouping-and-aggregating-your-data">Grouping and Aggregating Your Data</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#manipulating-columns">Manipulating Columns</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#specifying-data-types">Specifying Data Types</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#cleaning-data">Cleaning Data</a>
+
+<ul>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#missing-values">Missing Values</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#invalid-values">Invalid Values</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#inconsistent-values">Inconsistent Values</a></li>
+</ul></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#combining-multiple-datasets">Combining Multiple Datasets</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#visualizing-your-pandas-dataframe">Visualizing Your Pandas DataFrame</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/pandas/pandas-explore-dataset/#conclusion">Conclusion</a></li>
+</ul>
+
+<p>Do you have a large dataset that’s full of interesting insights, but you’re not sure where to start exploring it? Has your boss asked you to generate some statistics from it, but they’re not so easy to extract? These are precisely the use cases where  <strong>Pandas</strong>  and Python can help you! With these tools, you’ll be able to slice a large dataset down into manageable parts and glean insight from that information.</p>
+
+<p><strong>In this tutorial, you’ll learn how to:</strong></p>
+
+<ul>
+<li><strong>Calculate</strong>  metrics about your data</li>
+<li><strong>Perform</strong>  basic queries and aggregations</li>
+<li><strong>Discover</strong>  and handle incorrect data, inconsistencies, and missing values</li>
+<li><strong>Visualize</strong>  your data with plots</li>
+</ul>
+
+<p>You’ll also learn about the differences between the main data structures that Pandas and Python use. To follow along, you can get all of the example code in this tutorial at the link below:</p>
+
+<p><strong>Get Jupyter Notebook:</strong>  <a href="https://realpython.com/bonus/pandas-intro/">Click here to get the Jupyter Notebook you&rsquo;ll use</a>  to explore data with Pandas in this tutorial.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h2 id="setting-up-your-environment">Setting Up Your Environment</h2>
+
+<p>There are a few things you’ll need to get started with this tutorial. First is a familiarity with Python’s built-in data structures, especially  <a href="https://realpython.com/python-lists-tuples/">lists</a>  and  <a href="https://realpython.com/python-dicts/">dictionaries</a>. For more information, check out  <a href="https://realpython.com/courses/lists-tuples-python/">Lists and Tuples in Python</a>  and  <a href="https://realpython.com/courses/dictionaries-python/">Dictionaries in Python</a>.</p>
+
+<p>The second thing you’ll need is a working Python  <a href="https://realpython.com/effective-python-environment/">environment</a>. You can follow along in any terminal that has Python 3 installed. If you want to see nicer output, especially for the large NBA dataset you’ll be working with, then you might want to run the examples in a  <a href="https://realpython.com/courses/using-jupyter-notebooks/">Jupyter notebook</a>.</p>
+
+<p><strong>Note:</strong>  If you don’t have Python installed at all, then check out  <a href="https://realpython.com/installing-python/">Python 3 Installation &amp; Setup Guide</a>. You can also follow along online in a  <a href="https://jupyter.org/try">try-out Jupyter notebook</a>.</p>
+
+<p>The last thing you’ll need is the  <a href="https://pandas.pydata.org/">Pandas</a>  Python library, which you can install with  <a href="https://realpython.com/what-is-pip/">pip</a>:</p>
+
+<pre><code class="language-py">$ python -m pip install pandas
+</code></pre>
+
+<p>You can also use the  <a href="https://docs.conda.io/en/latest/">Conda</a>  package manager:</p>
+
+<pre><code class="language-py">$ conda install pandas 
+</code></pre>
+
+<p>If you’re using the  <a href="https://www.anaconda.com/">Anaconda</a>  distribution, then you’re good to go! Anaconda already comes with the Pandas Python library installed.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  Have you heard that there are multiple  <strong>package managers</strong>  in the Python world and are somewhat confused about which one to pick?  <code>pip</code>  and  <code>conda</code>  are both excellent choices, and they each have their advantages.</p>
+</blockquote>
+
+<p>If you’re going to use Python mainly for  <a href="https://realpython.com/tutorials/data-science/">data science</a>  work, then  <code>conda</code>  is perhaps the better choice. In the  <code>conda</code>  ecosystem, you have two main alternatives:</p>
+
+<ol>
+<li>If you want to get a stable data science environment up and running quickly, and you don’t mind downloading 500 MB of data, then check out the  <a href="https://www.anaconda.com/distribution/">Anaconda distribution</a>.</li>
+<li>If you prefer a more minimalist setup, then check out the section on installing Miniconda in  <a href="https://realpython.com/python-windows-machine-learning-setup/#installing-the-miniconda-python-distribution">Setting Up Python for Machine Learning on Windows</a>.</li>
+</ol>
+
+<p>The examples in this tutorial have been tested with  <a href="https://realpython.com/python37-new-features/">Python 3.7</a>  and Pandas 0.25.0, but they should also work in older versions. You can get all the code examples you’ll see in this tutorial in a  <a href="https://realpython.com/jupyter-notebook-introduction/">Jupyter notebook</a>  by clicking the link below:</p>
+
+<p><strong>Get Jupyter Notebook:</strong>  <a href="https://realpython.com/bonus/pandas-intro/">Click here to get the Jupyter Notebook you&rsquo;ll use</a>  to explore data with Pandas in this tutorial.</p>
+
+<p>Let’s get started!</p>
+
+<h2 id="using-the-pandas-python-library">Using the Pandas Python Library</h2>
+
+<p>Now that you’ve installed Pandas, it’s time to have a look at a dataset. In this tutorial, you’ll analyze NBA results provided by  <a href="https://fivethirtyeight.com/">FiveThirtyEight</a>  in a 17MB  <a href="https://realpython.com/courses/reading-and-writing-csv-files/">CSV file</a>. Create a script  <code>download_nba_all_elo.py</code>  to download the data:</p>
+
+<pre><code class="language-py">import requests
+
+download_url = &quot;https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv&quot;
+target_csv_path = &quot;nba_all_elo.csv&quot;
+
+response = requests.get(download_url)
+response.raise_for_status()    # Check that the request was successful
+with open(target_csv_path, &quot;wb&quot;) as f:
+    f.write(response.content)
+print(&quot;Download ready.&quot;)
+</code></pre>
+
+<p>When you execute the script, it will save the file  <code>nba_all_elo.csv</code>  in your current working directory.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  You could also use your web browser to download the CSV file.</p>
+</blockquote>
+
+<p>However, having a download script has several advantages:</p>
+
+<ul>
+<li>You can tell where you got your data.</li>
+<li>You can repeat the download anytime! That’s especially handy if the data is often refreshed.</li>
+<li>You don’t need to share the 17MB CSV file with your co-workers. Usually, it’s enough to share the download script.</li>
+</ul>
+
+<p>Now you can use the Pandas Python library to take a look at your data:</p>
+
+<pre><code class="language-py"> import pandas as pd
+ nba = pd.read_csv(&quot;nba_all_elo.csv&quot;)
+type(nba)
+
+# &lt;class 'pandas.core.frame.DataFrame'&gt; 
+</code></pre>
+
+<p>Here, you follow the convention of importing Pandas in Python with the  <code>pd</code>  alias. Then, you use  <code>.read_csv()</code>  to read in your dataset and store it as a  <code>DataFrame</code>  object in the variable  <code>nba</code>.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  Is your data not in CSV format? No worries! The Pandas Python library provides several similar functions like  <code>read_json()</code>,  <code>read_html()</code>, and  <code>read_sql_table()</code>. To learn how to work with these file formats, check out  <a href="https://realpython.com/pandas-read-write-files/">Reading and Writing Files With Pandas</a>  or consult the  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/io.html">docs</a>.</p>
+</blockquote>
+
+<p>You can see how much data  <code>nba</code>  contains:</p>
+
+<pre><code class="language-py">len(nba)
+# 126314
+
+nba.shape
+# (126314, 23) 
+</code></pre>
+
+<p>You use the Python built-in function  <code>len()</code>  to determine the number of rows. You also use the  <code>.shape</code>  attribute of the  <code>DataFrame</code>  to see its  <strong>dimensionality</strong>. The result is a tuple containing the number of rows and columns.</p>
+
+<p>Now you know that there are 126,314 rows and 23 columns in your dataset. But how can you be sure the dataset really contains basketball stats? You can have a look at the first five rows with  <code>.head()</code>:</p>
+
+<pre><code class="language-py">nba.head()
+</code></pre>
+
+<p>If you’re following along with a Jupyter notebook, then you’ll see a result like this:</p>
+
+<p><img src="https://files.realpython.com/media/head.7c86dafd4141.png" alt="Pandas DataFrame .head()" /></p>
+
+<p>Unless your screen is quite large, your output probably won’t display all 23 columns. Somewhere in the middle, you’ll see a column of ellipses (<code>...</code>) indicating the missing data. If you’re working in a terminal, then that’s probably more readable than wrapping long rows. However, Jupyter notebooks will allow you to scroll. You can configure Pandas to display all 23 columns like this:</p>
+
+<pre><code class="language-py">pd.set_option(&quot;display.max.columns&quot;, None) 
+</code></pre>
+
+<p>While it’s practical to see all the columns, you probably won’t need six decimal places! Change it to two:</p>
+
+<pre><code class="language-py">pd.set_option(&quot;display.precision&quot;, 2) 
+</code></pre>
+
+<p>To verify that you’ve changed the options successfully, you can execute  <code>.head()</code>  again, or you can display the last five rows with  <code>.tail()</code>  instead:</p>
+
+<pre><code class="language-py">nba.tail()
+</code></pre>
+
+<p>Now, you should see all the columns, and your data should show two decimal places:</p>
+
+<p><img src="https://files.realpython.com/media/tail.0dc48c8c2803.png" alt="Pandas DataFrame .tail()" /></p>
+
+<p>You can discover some further possibilities of  <code>.head()</code>  and  <code>.tail()</code>  with a small exercise. Can you print the last three lines of your  <code>DataFrame</code>? Expand the code block below to see the solution:</p>
+
+<p>Solution: head &amp; tailShow/Hide</p>
+
+<p>Similar to the Python standard library, functions in Pandas also come with several optional parameters. Whenever you bump into an example that looks relevant but is slightly different from your use case, check out the  <a href="https://pandas.pydata.org/pandas-docs/stable/">official documentation</a>. The chances are good that you’ll find a solution by tweaking some optional parameters!</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h2 id="getting-to-know-your-data">Getting to Know Your Data</h2>
+
+<p>You’ve imported a CSV file with the Pandas Python library and had a first look at the contents of your dataset. So far, you’ve only seen the size of your dataset and its first and last few rows. Next, you’ll learn how to  <strong>examine your data</strong>  more systematically.</p>
+
+<h3 id="displaying-data-types">Displaying Data Types</h3>
+
+<p>The first step in getting to know your data is to discover the different  <a href="https://realpython.com/python-data-types/">data types</a>  it contains. While you can put anything into a list, the columns of a  <code>DataFrame</code>  contain values of a specific data type. When you compare Pandas and Python data structures, you’ll see that this behavior makes Pandas much faster!</p>
+
+<p>You can display all columns and their data types with  <code>.info()</code>:</p>
+
+<pre><code class="language-py">nba.info()
+</code></pre>
+
+<p>This will produce the following output:</p>
+
+<p><img src="https://files.realpython.com/media/info.80fdd50f4ff7.png" alt="Pandas DataFrame .info()" /></p>
+
+<p>You’ll see a list of all the columns in your dataset and the type of data each column contains. Here, you can see the data types  <code>int64</code>,  <code>float64</code>, and  <code>object</code>. Pandas uses the  <a href="https://realpython.com/numpy-array-programming/">NumPy</a>  library to work with these types. Later, you’ll meet the more complex  <code>categorical</code>  data type, which the Pandas Python library implements itself.</p>
+
+<p>The  <code>object</code>  data type is a special one. According to the  <a href="https://realpython.com/asins/B06W2LXLQK/"><em>Pandas Cookbook</em></a>, the  <code>object</code>  data type is “a catch-all for columns that Pandas doesn’t recognize as any other specific type.” In practice, it often means that all of the values in the column are strings.</p>
+
+<p>Although you can store arbitrary Python objects in the  <code>object</code>  data type, you should be aware of the drawbacks to doing so. Strange values in an  <code>object</code>  column can harm  <a href="https://realpython.com/fast-flexible-pandas/">Pandas’ performance</a>  and its interoperability with other libraries. For more information, check out the official  <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-dtypes">getting started guide</a>.</p>
+
+<h3 id="showing-basics-statistics">Showing Basics Statistics</h3>
+
+<p>Now that you’ve seen what data types are in your dataset, it’s time to get an overview of the values each column contains. You can do this with  <code>.describe()</code>:</p>
+
+<pre><code class="language-py">nba.describe() 
+</code></pre>
+
+<p>This function shows you some basic descriptive statistics for all numeric columns:</p>
+
+<p><a href="https://files.realpython.com/media/describe.0be00956e704.png"><img src="https://files.realpython.com/media/describe.0be00956e704.png" alt="Pandas DataFrame .describe()" /></a></p>
+
+<p><code>.describe()</code>  only analyzes numeric columns by default, but you can provide other data types if you use the  <code>include</code>  parameter:</p>
+
+<pre><code class="language-py">import numpy as np
+nba.describe(include=np.object)
+</code></pre>
+
+<p><code>.describe()</code>  won’t try to calculate a mean or a standard deviation for the  <code>object</code>  columns, since they mostly include text strings. However, it will still display some descriptive statistics:</p>
+
+<p><img src="https://files.realpython.com/media/describe_object.2ec0a6039517.png" alt="Pandas DataFrame .describe() with include=np.object" /></p>
+
+<p>Take a look at the  <code>team_id</code>  and  <code>fran_id</code>  columns. Your dataset contains 104 different team IDs, but only 53 different franchise IDs. Furthermore, the most frequent team ID is  <code>BOS</code>, but the most frequent franchise ID  <code>Lakers</code>. How is that possible? You’ll need to explore your dataset a bit more to answer this question.</p>
+
+<h3 id="exploring-your-dataset">Exploring Your Dataset</h3>
+
+<p><strong>Exploratory data analysis</strong>  can help you answer questions about your dataset. For example, you can examine how often specific values occur in a column:</p>
+
+<pre><code class="language-py">nba[&quot;team_id&quot;].value_counts()
+
+## output
+BOS    5997
+NYK    5769
+LAL    5078
+...
+SDS      11
+</code></pre>
+
+<pre><code class="language-py">nba[&quot;fran_id&quot;].value_counts()
+
+## output
+Name: team_id, Length: 104, dtype: int64
+Lakers          6024
+Celtics         5997
+Knicks          5769
+...
+Huskies           60
+Name: fran_id, dtype: int64
+</code></pre>
+
+<p>It seems that a team named  <code>&quot;Lakers&quot;</code>  played 6024 games, but only 5078 of those were played by the Los Angeles Lakers. Find out who the other  <code>&quot;Lakers&quot;</code>  team is:</p>
+
+<pre><code class="language-py">nba.loc[nba[&quot;fran_id&quot;] == &quot;Lakers&quot;, &quot;team_id&quot;].value_counts()
+
+## output
+LAL    5078
+MNL     946
+Name: team_id, dtype: int64
+</code></pre>
+
+<p>Indeed, the Minneapolis Lakers (<code>&quot;MNL&quot;</code>) played 946 games. You can even find out when they played those games:</p>
+
+<pre><code class="language-py">nba.loc[nba[&quot;team_id&quot;] == &quot;MNL&quot;, &quot;date_game&quot;].min()
+
+# '1/1/1949'
+</code></pre>
+
+<pre><code class="language-py">nba.loc[nba[&quot;team_id&quot;] == &quot;MNL&quot;, &quot;date_game&quot;].max()
+# '4/9/1959'
+
+nba.loc[nba[&quot;team_id&quot;] == &quot;MNL&quot;, &quot;date_game&quot;].agg((&quot;min&quot;, &quot;max&quot;))
+# min    1/1/1949
+# max    4/9/1959
+# Name: date_game, dtype: object
+</code></pre>
+
+<p>It looks like the Minneapolis Lakers played between the years of 1949 and 1959. That explains why you might not recognize this team!</p>
+
+<p>You’ve also found out why the Boston Celtics team  <code>&quot;BOS&quot;</code>  played the most games in the dataset. Let’s analyze their history also a little bit. Find out how many points the Boston Celtics have scored during all matches contained in this dataset. Expand the code block below for the solution:</p>
+
+<p>Solution: DataFrame introShow/Hide</p>
+
+<p>You’ve got a taste for the capabilities of a Pandas  <code>DataFrame</code>. In the following sections, you’ll expand on the techniques you’ve just used, but first, you’ll zoom in and learn how this powerful data structure works.</p>
+
+<h2 id="getting-to-know-pandas-data-structures">Getting to Know Pandas’ Data Structures</h2>
+
+<p>While a  <code>DataFrame</code>  provides functions that can feel quite intuitive, the underlying concepts are a bit trickier to understand. For this reason, you’ll set aside the vast NBA  <code>DataFrame</code>  and build some smaller Pandas objects from scratch.</p>
+
+<h3 id="understanding-series-objects">Understanding Series Objects</h3>
+
+<p>Python’s most basic data structure is the  <a href="https://realpython.com/courses/lists-tuples-python/">list</a>, which is also a good starting point for getting to know  <strong><code>pandas.Series</code></strong>  objects. Create a new  <code>Series</code>  object based on a list:</p>
+
+<pre><code class="language-py">revenues = pd.Series([5555, 7000, 1980])
+revenues
+
+## output
+0    5555
+1    7000
+2    1980
+dtype: int64
+</code></pre>
+
+<p>You’ve used the list  <code>[5555, 7000, 1980]</code>  to create a  <code>Series</code>  object called  <code>revenues</code>. A  <code>Series</code>  object wraps two components:</p>
+
+<ol>
+<li>A sequence of  <strong>values</strong></li>
+<li>A sequence of  <strong>identifiers</strong>, which is the index</li>
+</ol>
+
+<p>You can access these components with  <code>.values</code>  and  <code>.index</code>, respectively:</p>
+
+<pre><code class="language-py">revenues.values
+# array([5555, 7000, 1980])
+
+revenues.index
+# RangeIndex(start=0, stop=3, step=1)
+</code></pre>
+
+<p><code>revenues.values</code>  returns the values in the  <code>Series</code>, whereas  <code>revenues.index</code>  returns the positional index.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  If you’re familiar with  <a href="https://realpython.com/how-to-use-numpy-arange/">NumPy</a>, then it might be interesting for you to note that the values of a  <code>Series</code>  object are actually n-dimensional arrays:</p>
+</blockquote>
+
+<pre><code class="language-py">type(revenues.values)
+#  &lt;class 'numpy.ndarray'&gt;
+</code></pre>
+
+<p>If you’re not familiar with NumPy, then there’s no need to worry! You can explore the ins and outs of your dataset with the Pandas Python library alone. However, if you’re curious about what Pandas does behind the scenes, then check out  <a href="https://realpython.com/numpy-array-programming/">Look Ma, No For-Loops: Array Programming With NumPy</a>.</p>
+
+<p>While Pandas builds on NumPy, a significant difference is in their  <strong>indexing</strong>. Just like a NumPy array, a Pandas  <code>Series</code>  also has an integer index that’s implicitly defined. This implicit index indicates the element’s position in the  <code>Series</code>.</p>
+
+<p>However, a  <code>Series</code>  can also have an arbitrary type of index. You can think of this explicit index as labels for a specific row:</p>
+
+<pre><code class="language-py">city_revenues = pd.Series(
+...     [4200, 8000, 6500],
+...     index=[&quot;Amsterdam&quot;, &quot;Toronto&quot;, &quot;Tokyo&quot;]
+... )
+city_revenues
+
+## output
+Amsterdam    4200
+Toronto      8000
+Tokyo        6500
+dtype: int64
+</code></pre>
+
+<p>Here, the index is a list of city names represented by strings. You may have noticed that Python dictionaries use string indices as well, and this is a handy analogy to keep in mind! You can use the code blocks above to distinguish between two types of  <code>Series</code>:</p>
+
+<ol>
+<li><strong><code>revenues</code>:</strong>  This  <code>Series</code>  behaves like a Python list because it only has a positional index.</li>
+<li><strong><code>city_revenues</code>:</strong>  This  <code>Series</code>  acts like a Python dictionary because it features both a positional and a label index.</li>
+</ol>
+
+<p>Here&rsquo;s how to construct a  <code>Series</code>  with a label index from a Python dictionary:</p>
+
+<pre><code class="language-py">city_employee_count = pd.Series({&quot;Amsterdam&quot;: 5, &quot;Tokyo&quot;: 8})
+city_employee_count
+
+## output
+Amsterdam    5
+Tokyo        8
+dtype: int64 
+</code></pre>
+
+<p>The dictionary keys become the index, and the dictionary values are the  <code>Series</code>  values.</p>
+
+<p>Just like dictionaries,  <code>Series</code>  also support  <code>.keys()</code>  and the  <code>in</code>  keyword:</p>
+
+<pre><code class="language-py">city_employee_count.keys()
+#  Index(['Amsterdam', 'Tokyo'], dtype='object')
+
+&quot;Tokyo&quot; in city_employee_count
+# True
+
+&quot;New York&quot; in city_employee_count
+#  False
+</code></pre>
+
+<p>You can use these methods to answer questions about your dataset quickly.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h3 id="understanding-dataframe-objects">Understanding DataFrame Objects</h3>
+
+<p>While a  <code>Series</code>  is a pretty powerful data structure, it has its limitations. For example, you can only store one attribute per key. As you’ve seen with the  <code>nba</code>  dataset, which features 23 columns, the Pandas Python library has more to offer with its  <strong><code>DataFrame</code></strong>. This data structure is a sequence of  <code>Series</code>  objects that share the same index.</p>
+
+<p>If you’ve followed along with the  <code>Series</code>  examples, then you should already have two  <code>Series</code>  objects with cities as keys:</p>
+
+<ol>
+<li><code>city_revenues</code></li>
+<li><code>city_employee_count</code></li>
+</ol>
+
+<p>You can combine these objects into a  <code>DataFrame</code>  by providing a dictionary in the constructor. The dictionary keys will become the column names, and the values should contain the  <code>Series</code>  objects:</p>
+
+<pre><code class="language-py">city_data = pd.DataFrame({
+...     &quot;revenue&quot;: city_revenues,
+...     &quot;employee_count&quot;: city_employee_count
+... })
+city_data
+
+## output
+revenue  employee_count
+Amsterdam     4200             5.0
+Tokyo         6500             8.0
+Toronto       8000             NaN
+</code></pre>
+
+<p>Note how Pandas replaced the missing  <code>employee_count</code>  value for Toronto with  <code>NaN</code>.</p>
+
+<p>The new  <code>DataFrame</code>  index is the union of the two  <code>Series</code>  indices:</p>
+
+<pre><code class="language-py">city_data.index
+
+#  Index(['Amsterdam', 'Tokyo', 'Toronto'], dtype='object')
+</code></pre>
+
+<p>Just like a  <code>Series</code>, a  <code>DataFrame</code>  also stores its values in a NumPy array:</p>
+
+<pre><code class="language-py">city_data.values
+
+# array([[4.2e+03, 5.0e+00],
+# [6.5e+03, 8.0e+00],
+# [8.0e+03,     nan]]) 
+</code></pre>
+
+<p>You can also refer to the 2 dimensions of a  <code>DataFrame</code>  as  <strong>axes</strong>:</p>
+
+<pre><code class="language-py">city_data.axes
+#[Index(['Amsterdam', 'Tokyo', 'Toronto'], dtype='object'),
+# Index(['revenue', 'employee_count'], dtype='object')]
+
+city_data.axes[0]
+# Index(['Amsterdam', 'Tokyo', 'Toronto'], dtype='object')
+
+city_data.axes[1]
+# Index(['revenue', 'employee_count'], dtype='object')` 
+</code></pre>
+
+<p>The axis marked with 0 is the  <strong>row index</strong>, and the axis marked with 1 is the  <strong>column index</strong>. This terminology is important to know because you’ll encounter several  <code>DataFrame</code>  methods that accept an  <code>axis</code>  parameter.</p>
+
+<p>A  <code>DataFrame</code>  is also a dictionary-like data structure, so it also supports  <code>.keys()</code>  and the  <code>in</code>  keyword. However, for a  <code>DataFrame</code>  these don’t relate to the index, but to the columns:</p>
+
+<pre><code class="language-py">city_data.keys()
+# Index(['revenue', 'employee_count'], dtype='object')
+
+&quot;Amsterdam&quot; in city_data
+# False
+
+&quot;revenue&quot; in city_data
+# True
+</code></pre>
+
+<p>You can see these concepts in action with the bigger NBA dataset. Does it contain a column called  <code>&quot;points&quot;</code>, or was it called  <code>&quot;pts&quot;</code>? To answer this question, display the index and the axes of the  <code>nba</code>  dataset, then expand the code block below for the solution:</p>
+
+<p>Solution: NBA indexShow/Hide</p>
+
+<p>As you use these methods to answer questions about your dataset, be sure to keep in mind whether you’re working with a  <code>Series</code>  or a  <code>DataFrame</code>  so that your interpretation is accurate.</p>
+
+<h2 id="accessing-series-elements">Accessing Series Elements</h2>
+
+<p>In the section above, you’ve created a Pandas  <code>Series</code>  based on a Python list and compared the two data structures. You’ve seen how a  <code>Series</code>  object is similar to lists and dictionaries in several ways. A further similarity is that you can use the  <strong>indexing operator</strong>  (<code>[]</code>) for  <code>Series</code>  as well.</p>
+
+<p>You’ll also learn how to use two Pandas-specific  <strong>access methods</strong>:</p>
+
+<ol>
+<li><code>.loc</code></li>
+<li><code>.iloc</code></li>
+</ol>
+
+<p>You’ll see that these data access methods can be much more readable than the indexing operator.</p>
+
+<h3 id="using-the-indexing-operator">Using the Indexing Operator</h3>
+
+<p>Recall that a  <code>Series</code>  has two indices:</p>
+
+<ol>
+<li><strong>A positional or implicit index</strong>, which is always a  <code>RangeIndex</code></li>
+<li><strong>A label or explicit index</strong>, which can contain any hashable objects</li>
+</ol>
+
+<p>Next, revisit the  <code>city_revenues</code>  object:</p>
+
+<pre><code class="language-py">city_revenues
+
+# Amsterdam    4200
+# Toronto      8000
+# Tokyo        6500
+# dtype: int64
+</code></pre>
+
+<p>You can conveniently access the values in a  <code>Series</code>  with both the label and positional indices:</p>
+
+<pre><code class="language-py">city_revenues[&quot;Toronto&quot;]
+
+# 8000
+
+city_revenues[1]
+
+# 8000 
+</code></pre>
+
+<p>You can also use negative indices and slices, just like you would for a list:</p>
+
+<pre><code class="language-py">city_revenues[-1]
+
+# 6500
+
+city_revenues[1:]
+
+# Toronto    8000
+# Tokyo      6500
+# dtype: int64
+
+city_revenues[&quot;Toronto&quot;:]
+
+# Toronto    8000
+# Tokyo      6500
+# dtype: int64 
+</code></pre>
+
+<p>If you want to learn more about the possibilities of the indexing operator, then check out  <a href="https://realpython.com/python-lists-tuples/">Lists and Tuples in Python</a>.</p>
+
+<h3 id="using-loc-and-iloc">Using  <code>.loc</code>  and  <code>.iloc</code></h3>
+
+<p>The indexing operator (<code>[]</code>) is convenient, but there’s a caveat. What if the labels are also numbers? Say you have to work with a  <code>Series</code>  object like this:</p>
+
+<pre><code class="language-py">colors = pd.Series(
+...     [&quot;red&quot;, &quot;purple&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;],
+...     index=[1, 2, 3, 5, 8]
+... )
+colors
+
+## output
+1       red
+2    purple
+3      blue
+5     green
+8    yellow
+dtype: object` 
+</code></pre>
+
+<p>What will  <code>colors[1]</code>  return? For a positional index,  <code>colors[1]</code>  is  <code>&quot;purple&quot;</code>. However, if you go by the label index, then  <code>colors[1]</code>  is referring to  <code>&quot;red&quot;</code>.</p>
+
+<p>The good news is, you don’t have to figure it out! Instead, to avoid confusion, the Pandas Python library provides two  <strong>data access methods</strong>:</p>
+
+<ol>
+<li><strong><code>.loc</code></strong>  refers to the  <strong>label index</strong>.</li>
+<li><strong><code>.iloc</code></strong>  refers to the  <strong>positional index</strong>.</li>
+</ol>
+
+<p>These data access methods are much more readable:</p>
+
+<pre><code class="language-py">colors.loc[1]
+# 'red'
+
+colors.iloc[1]
+# 'purple'
+</code></pre>
+
+<p><code>colors.loc[1]</code>  returned  <code>&quot;red&quot;</code>, the element with the label  <code>1</code>.  <code>colors.iloc[1]</code>  returned  <code>&quot;purple&quot;</code>, the element with the index  <code>1</code>.</p>
+
+<p>The following figure shows which elements  <code>.loc</code>  and  <code>.iloc</code>  refer to:</p>
+
+<p><img src="https://files.realpython.com/media/iloc_vs_loc_80_border20.d5280f475f4e.png" alt="Pandas Series iloc vs loc" /></p>
+
+<p>Again,  <code>.loc</code>  points to the label index on the right-hand side of the image. Meanwhile,  <code>.iloc</code>  points to the positional index on the left-hand side of the picture.</p>
+
+<p>It’s easier to keep in mind the distinction between  <code>.loc</code>  and  <code>.iloc</code>  than it is to figure out what the indexing operator will return. Even if you’re familiar with all the quirks of the indexing operator, it can be dangerous to assume that everybody who reads your code has internalized those rules as well!</p>
+
+<blockquote>
+<p><strong>Note:</strong>  In addition to being confusing for  <code>Series</code>  with numeric labels, the Python indexing operator has some  <strong>performance drawbacks</strong>. It’s perfectly okay to use it in interactive sessions for ad-hoc analysis, but for production code, the  <code>.loc</code>  and  <code>.iloc</code>  data access methods are preferable. For further details, check out the Pandas User Guide section on  <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">indexing and selecting data</a>.</p>
+</blockquote>
+
+<p><code>.loc</code>  and  <code>.iloc</code>  also support the features you would expect from indexing operators, like slicing. However, these data access methods have an important difference. While  <code>.iloc</code>  excludes the closing element,  <code>.loc</code>  includes it. Take a look at this code block:</p>
+
+<pre><code class="language-py"># Return the elements with the implicit index: 1, 2
+colors.iloc[1:3]
+
+# 2    purple
+# 3      blue
+# dtype: object 
+</code></pre>
+
+<p>If you compare this code with the image above, then you can see that  <code>colors.iloc[1:3]</code>  returns the elements with the  <strong>positional indices</strong>  of  <code>1</code>  and  <code>2</code>. The closing item  <code>&quot;green&quot;</code>  with a positional index of  <code>3</code>  is excluded.</p>
+
+<p>On the other hand,  <code>.loc</code>  includes the closing element:</p>
+
+<pre><code class="language-py"># Return the elements with the explicit index between 3 and 8
+colors.loc[3:8]
+
+## output
+3      blue
+5     green
+8    yellow
+dtype: object 
+</code></pre>
+
+<p>This code block says to return all elements with a  <strong>label index</strong>  between  <code>3</code>  and  <code>8</code>. Here, the closing item  <code>&quot;yellow&quot;</code>  has a label index of  <code>8</code>  and is included in the output.</p>
+
+<p>You can also pass a negative positional index to  <code>.iloc</code>:</p>
+
+<pre><code class="language-py">colors.iloc[-2]
+# 'green'
+</code></pre>
+
+<p>You start from the end of the  <code>Series</code>  and return the second element.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  There used to be an  <code>.ix</code>  indexer, which tried to guess whether it should apply positional or label indexing depending on the data type of the index. Because it caused a lot of confusion, it has been deprecated since Pandas version 0.20.0.</p>
+</blockquote>
+
+<p>It’s highly recommended that you  <strong>do not use  <code>.ix</code></strong>  for indexing. Instead, always use  <code>.loc</code>  for label indexing and  <code>.iloc</code>  for positional indexing. For further details, check out the  <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated">Pandas User Guide</a>.</p>
+
+<p>You can use the code blocks above to distinguish between two  <code>Series</code>  behaviors:</p>
+
+<ol>
+<li>You can use  <code>.iloc</code>  on a  <code>Series</code>  similar to using  <code>[]</code>  on a  <strong>list</strong>.</li>
+<li>You can use  <code>.loc</code>  on a  <code>Series</code>  similar to using  <code>[]</code>  on a  <strong>dictionary</strong>.</li>
+</ol>
+
+<p>Be sure to keep these distinctions in mind as you access elements of your  <code>Series</code>  objects.</p>
+
+<h2 id="accessing-dataframe-elements">Accessing DataFrame Elements</h2>
+
+<p>Since a  <code>DataFrame</code>  consists of  <code>Series</code>  objects, you can use the very same tools to access its elements. The crucial difference is the additional  <strong>dimension</strong>  of the  <code>DataFrame</code>. You’ll use the indexing operator for the columns and the access methods  <code>.loc</code>  and  <code>.iloc</code>  on the rows.</p>
+
+<h3 id="using-the-indexing-operator-1">Using the Indexing Operator</h3>
+
+<p>If you think of a  <code>DataFrame</code>  as a dictionary whose values are  <code>Series</code>, then it makes sense that you can access its columns with the indexing operator:</p>
+
+<pre><code class="language-py">city_data[&quot;revenue&quot;]
+
+# Amsterdam    4200
+# Tokyo        6500
+# Toronto      8000
+# Name: revenue, dtype: int64
+</code></pre>
+
+<pre><code class="language-py">type(city_data[&quot;revenue&quot;])
+
+# pandas.core.series.Series 
+</code></pre>
+
+<p>Here, you use the indexing operator to select the column labeled  <code>&quot;revenue&quot;</code>.</p>
+
+<p>If the column name is a string, then you can use attribute-style accessing with dot notation as well:</p>
+
+<pre><code class="language-py">city_data.revenue
+
+## output
+Amsterdam    4200
+Tokyo        6500
+Toronto      8000
+Name: revenue, dtype: int64
+</code></pre>
+
+<p><code>city_data[&quot;revenue&quot;]</code>  and  <code>city_data.revenue</code>  return the same output.</p>
+
+<p>There’s one situation where accessing  <code>DataFrame</code>  elements with dot notation may not work or may lead to surprises. This is when a column name coincides with a  <code>DataFrame</code>  attribute or method name:</p>
+
+<pre><code class="language-py">toys = pd.DataFrame([
+...     {&quot;name&quot;: &quot;ball&quot;, &quot;shape&quot;: &quot;sphere&quot;},
+...     {&quot;name&quot;: &quot;Rubik's cube&quot;, &quot;shape&quot;: &quot;cube&quot;}
+... ])
+
+toys[&quot;shape&quot;]
+
+## output
+0    sphere
+1      cube
+Name: shape, dtype: object
+</code></pre>
+
+<pre><code class="language-py">toys.shape
+
+# (2, 2)
+</code></pre>
+
+<p>The indexing operation  <code>toys[&quot;shape&quot;]</code>  returns the correct data, but the attribute-style operation  <code>toys.shape</code>  still returns the shape of the  <code>DataFrame</code>. You should only use attribute-style accessing in interactive sessions or for read operations. You shouldn’t use it for production code or for manipulating data (such as defining new columns).</p>
+
+<h3 id="using-loc-and-iloc-1">Using  <code>.loc</code>  and  <code>.iloc</code></h3>
+
+<p>Similar to  <code>Series</code>, a  <code>DataFrame</code>  also provides  <code>.loc</code>  and  <code>.iloc</code>  <strong>data access methods</strong>. Remember,  <code>.loc</code>  uses the label and  <code>.iloc</code>  the positional index:</p>
+
+<pre><code class="language-py">city_data.loccity_data.loc[&quot;Amsterdam&quot;]
+
+## output
+revenue           4200.0
+employee_count       5.0
+Name: Amsterdam, dtype: float64
+</code></pre>
+
+<pre><code class="language-py">city_data.loc[&quot;Tokyo&quot;: &quot;Toronto&quot;]
+
+# output
+revenue employee_count
+Tokyo   6500    8.0
+Toronto 8000    NaN
+
+city_data.iloc[1]
+
+# output
+revenue           6500.0
+employee_count       8.0
+Name: Tokyo, dtype: float64
+</code></pre>
+
+<p>Each line of code selects a different row from  <code>city_data</code>:</p>
+
+<ol>
+<li><strong><code>city_data.loc[&quot;Amsterdam&quot;]</code></strong>  selects the row with the label index  <code>&quot;Amsterdam&quot;</code>.</li>
+<li><strong><code>city_data.loc[&quot;Tokyo&quot;: &quot;Toronto&quot;]</code></strong>  selects the rows with label indices from  <code>&quot;Tokyo&quot;</code>  to  <code>&quot;Toronto&quot;</code>. Remember,  <code>.loc</code>  is inclusive.</li>
+<li><strong><code>city_data.iloc[1]</code></strong>  selects the row with the positional index  <code>1</code>, which is  <code>&quot;Tokyo&quot;</code>.</li>
+</ol>
+
+<p>Alright, you’ve used  <code>.loc</code>  and  <code>.iloc</code>  on small data structures. Now, it’s time to practice with something bigger! Use a data access method to display the second-to-last row of the  <code>nba</code>  dataset. Then, expand the code block below to see a solution:</p>
+
+<p>Solution: NBA accessing rowsShow/Hide</p>
+
+<p>For a  <code>DataFrame</code>, the data access methods  <code>.loc</code>  and  <code>.iloc</code>  also accept a second parameter. While the first parameter selects rows based on the indices, the second parameter selects the columns. You can use these parameters together to select a  <strong>subset</strong>  of rows and columns from your  <code>DataFrame</code>:</p>
+
+<pre><code class="language-py">city_data.loc[&quot;Amsterdam&quot;: &quot;Tokyo&quot;, &quot;revenue&quot;]
+
+# output
+Amsterdam    4200
+Tokyo        6500
+Name: revenue, dtype: int64
+</code></pre>
+
+<p>Note that you separate the parameters with a comma (<code>,</code>). The first parameter,  <code>&quot;Amsterdam&quot; : &quot;Tokyo,&quot;</code>  says to select all rows between those two labels. The second parameter comes after the comma and says to select the  <code>&quot;revenue&quot;</code>  column.</p>
+
+<p>It’s time to see the same construct in action with the bigger  <code>nba</code>  dataset. Select all games between the labels  <code>5555</code>  and  <code>5559</code>. You’re only interested in the names of the teams and the scores, so select those elements as well. Expand the code block below to see a solution:</p>
+
+<p>Solution: NBA accessing a subsetShow/Hide</p>
+
+<p>With data access methods like  <code>.loc</code>  and  <code>.iloc</code>, you can select just the right subset of your  <code>DataFrame</code>  to help you answer questions about your dataset.</p>
+
+<h2 id="querying-your-dataset">Querying Your Dataset</h2>
+
+<p>You’ve seen how to access subsets of a huge dataset based on its indices. Now, you’ll select rows based on the values in your dataset’s columns to  <strong>query</strong>  your data. For example, you can create a new  <code>DataFrame</code>  that contains only games played after 2010:</p>
+
+<pre><code class="language-py">current_decade = nba[nba[&quot;year_id&quot;] &gt; 2010]
+current_decade.shape
+
+# (12658, 23)
+</code></pre>
+
+<p>You still have all 23 columns, but your new  <code>DataFrame</code>  only consists of rows where the value in the  <code>&quot;year_id&quot;</code>  column is greater than  <code>2010</code>.</p>
+
+<p>You can also select the rows where a specific field is not null:</p>
+
+<pre><code class="language-py">games_with_notes = nba[nba[&quot;notes&quot;].notnull()]
+games_with_notes.shape
+
+# (5424, 23)
+</code></pre>
+
+<p>This can be helpful if you want to avoid any missing values in a column. You can also use  <code>.notna()</code>  to achieve the same goal.</p>
+
+<p>You can even access values of the  <code>object</code>  data type as  <code>str</code>  and perform  <a href="https://realpython.com/courses/splitting-concatenating-and-joining-strings-python/">string methods</a>  on them:</p>
+
+<pre><code class="language-py">ers = nba[nba[&quot;fran_id&quot;].str.endswith(&quot;ers&quot;)]
+ers.shape
+
+# (27797, 23) 
+</code></pre>
+
+<p>You use  <code>.str.endswith()</code>  to filter your dataset and find all games where the home team’s name ends with  <code>&quot;ers&quot;</code>.</p>
+
+<p>You can combine multiple criteria and query your dataset as well. To do this, be sure to put each one in parentheses and use the logical  <a href="https://realpython.com/python-operators-expressions/">operators</a>  <code>|</code>  and  <code>&amp;</code>  to separate them.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  The operators  <code>and</code>,  <code>or</code>,  <code>&amp;&amp;</code>, and  <code>||</code>  won’t work here. If you’re curious as to why then check out the section on how the Pandas Python library uses Boolean operators in  <a href="https://realpython.com/python-pandas-tricks/#8-understand-how-pandas-uses-boolean-operators">Python Pandas: Tricks &amp; Features You May Not Know</a>.</p>
+</blockquote>
+
+<p>Do a search for Baltimore games where both teams scored over 100 points. In order to see each game only once, you’ll need to exclude duplicates:</p>
+
+<pre><code class="language-py">nba[
+...     (nba[&quot;_iscopy&quot;] == 0) &amp;
+...     (nba[&quot;pts&quot;] &gt; 100) &amp;
+...     (nba[&quot;opp_pts&quot;] &gt; 100) &amp;
+...     (nba[&quot;team_id&quot;] == &quot;BLB&quot;)
+... ]
+</code></pre>
+
+<p>Here, you use  <code>nba[&quot;_iscopy&quot;] == 0</code>  to include only the entries that aren’t copies.</p>
+
+<p>Your output should contain five eventful games:</p>
+
+<p><img src="https://files.realpython.com/media/BLB_both_over_100_points.6fc6b6ff2d3b.png" alt="Pandas DataFrame query with multiple criteria" /></p>
+
+<p>Try to build another query with multiple criteria. In the spring of 1992, both teams from Los Angeles had to play a home game at another court. Query your dataset to find those two games. Both teams have an ID starting with  <code>&quot;LA&quot;</code>. Expand the code block below to see a solution:</p>
+
+<p>Solution: QueriesShow/Hide</p>
+
+<p>When you know how to query your dataset with multiple criteria, you’ll be able to answer more specific questions about your dataset.</p>
+
+<h2 id="grouping-and-aggregating-your-data">Grouping and Aggregating Your Data</h2>
+
+<p>You may also want to learn other features of your dataset, like the sum, mean, or average value of a group of elements. Luckily, the Pandas Python library offers  <strong>grouping and aggregation functions</strong>  to help you accomplish this task.</p>
+
+<p>A  <code>Series</code>  has more than twenty different methods for calculating descriptive statistics. Here are some examples:</p>
+
+<pre><code class="language-py">city_revenues.sum()
+# 18700
+
+city_revenues.max()
+# 8000
+</code></pre>
+
+<p>The first method returns the total of  <code>city_revenues</code>, while the second returns the max value. There are other methods you can use, like  <code>.min()</code>  and  <code>.mean()</code>.</p>
+
+<p>Remember, a column of a  <code>DataFrame</code>  is actually a  <code>Series</code>  object. For this reason, you can use these same functions on the columns of  <code>nba</code>:</p>
+
+<pre><code class="language-py">points = nba[&quot;pts&quot;]
+type(points)
+# &lt;class 'pandas.core.series.Series'&gt;
+
+points.sum()
+# 12976235
+</code></pre>
+
+<p>A  <code>DataFrame</code>  can have multiple columns, which introduces new possibilities for aggregations, like<br />
+<strong>grouping</strong>:</p>
+
+<pre><code class="language-py">nba.groupby(&quot;fran_id&quot;, sort=False)[&quot;pts&quot;].sum()
+
+# output
+fran_id
+Huskies           3995
+Knicks          582497
+Stags            20398
+Falcons           3797
+Capitols         22387
+</code></pre>
+
+<p>By default, Pandas sorts the group keys during the call to  <code>.groupby()</code>. If you don’t want to sort, then pass  <code>sort=False</code>. This parameter can lead to performance gains.</p>
+
+<p>You can also group by multiple columns:</p>
+
+<pre><code class="language-py">nba[
+...     (nba[&quot;fran_id&quot;] == &quot;Spurs&quot;) &amp;
+...     (nba[&quot;year_id&quot;] &gt; 2010)
+... ].groupby([&quot;year_id&quot;, &quot;game_result&quot;])[&quot;game_id&quot;].count()
+
+## output
+year_id  game_result
+2011     L              25
+ W              63
+2012     L              20
+ W              60
+2013     L              30
+ W              73
+2014     L              27
+ W              78
+2015     L              31
+ W              58
+Name: game_id, dtype: int64
+</code></pre>
+
+<p>You can practice these basics with an exercise. Take a look at the Golden State Warriors’ 2014-15 season (<code>year_id: 2015</code>). How many wins and losses did they score during the regular season and the playoffs? Expand the code block below for the solution:</p>
+
+<p>Solution: AggregationShow/Hide</p>
+
+<p>In the examples above, you’ve only scratched the surface of the aggregation functions that are available to you in the Pandas Python library. To see more examples of how to use them, check out  <a href="https://realpython.com/pandas-groupby/">Pandas GroupBy: Your Guide to Grouping Data in Python</a>.</p>
+
+<h2 id="manipulating-columns">Manipulating Columns</h2>
+
+<p>You’ll need to know how to  <strong>manipulate</strong>  your dataset’s columns in different phases of the data analysis process. You can add and drop columns as part of the initial  <a href="https://realpython.com/python-data-cleaning-numpy-pandas/">data cleaning</a>  phase, or later based on the insights of your analysis.</p>
+
+<p>Create a copy of your original  <code>DataFrame</code>  to work with:</p>
+
+<pre><code class="language-py">df = nba.copy()
+df.shape
+
+# (126314, 23)
+</code></pre>
+
+<p>You can define new columns based on the existing ones:</p>
+
+<pre><code class="language-py">df[&quot;difference&quot;] = df.pts - df.opp_pts
+df.shape
+
+# (126314, 24)
+</code></pre>
+
+<p>Here, you used the  <code>&quot;pts&quot;</code>  and  <code>&quot;opp_pts&quot;</code>  columns to create a new one called  <code>&quot;difference&quot;</code>. This new column has the same functions as the old ones:</p>
+
+<pre><code class="language-py">df[&quot;difference&quot;].max()
+
+# 68
+</code></pre>
+
+<p>Here, you used an aggregation function  <code>.max()</code>  to find the largest value of your new column.</p>
+
+<p>You can also rename the columns of your dataset. It seems that  <code>&quot;game_result&quot;</code>  and  <code>&quot;game_location&quot;</code>  are too verbose, so go ahead and rename them now:</p>
+
+<pre><code class="language-py">renamed_df = df.rename(
+...     columns={&quot;game_result&quot;: &quot;result&quot;, &quot;game_location&quot;: &quot;location&quot;}
+... )
+renamed_df.info()
+
+## output
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 126314 entries, 0 to 126313
+Data columns (total 24 columns):
+gameorder      126314 non-null int64
+...
+location       126314 non-null object
+result         126314 non-null object
+forecast       126314 non-null float64
+notes          5424 non-null object
+difference     126314 non-null int64
+dtypes: float64(6), int64(8), object(10)
+memory usage: 23.1+ MB 
+</code></pre>
+
+<p>Note that there’s a new object,  <code>renamed_df</code>. Like several other data manipulation methods,  <code>.rename()</code>  returns a new  <code>DataFrame</code>  by default. If you want to manipulate the original  <code>DataFrame</code>  directly, then  <code>.rename()</code>  also provides an  <code>inplace</code>  parameter that you can set to  <code>True</code>.</p>
+
+<p>Your dataset might contain columns that you don’t need. For example,  <a href="https://fivethirtyeight.com/features/how-we-calculate-nba-elo-ratings/">Elo ratings</a>  may be a fascinating concept to some, but you won’t analyze them in this tutorial. You can delete the four columns related to Elo:</p>
+
+<pre><code class="language-py">df.shape
+# (126314, 24)
+
+elo_columns = [&quot;elo_i&quot;, &quot;elo_n&quot;, &quot;opp_elo_i&quot;, &quot;opp_elo_n&quot;]
+df.drop(elo_columns, inplace=True, axis=1)
+df.shape
+# (126314, 20)
+</code></pre>
+
+<p>Remember, you added the new column  <code>&quot;difference&quot;</code>  in a previous example, bringing the total number of columns to 24. When you remove the four Elo columns, the total number of columns drops to 20.</p>
+
+<h2 id="specifying-data-types">Specifying Data Types</h2>
+
+<p>When you create a new  <code>DataFrame</code>, either by calling a constructor or reading a CSV file, Pandas assigns a  <strong>data type</strong>  to each column based on its values. While it does a pretty good job, it’s not perfect. If you choose the right data type for your columns upfront, then you can significantly improve your code’s performance.</p>
+
+<p>Take another look at the columns of the  <code>nba</code>  dataset:</p>
+
+<pre><code class="language-py">df.info()
+</code></pre>
+
+<p>You’ll see the same output as before:</p>
+
+<p><img src="https://files.realpython.com/media/info.80fdd50f4ff7.png" alt="Pandas DataFrame .info()" />
+Ten of your columns have the data type  <code>object</code>. Most of these  <code>object</code>  columns contain arbitrary text, but there are also some candidates for data type  <strong>conversion</strong>. For example, take a look at the  <code>date_game</code>  column:</p>
+
+<pre><code class="language-py">df[&quot;date_game&quot;] = pd.to_datetime(df[&quot;date_game&quot;])
+</code></pre>
+
+<p>Here, you use  <code>.to_datetime()</code>  to specify all game dates as  <code>datetime</code>  objects.</p>
+
+<p>Other columns contain text that are a bit more structured. The  <code>game_location</code>  column can have only three different values:</p>
+
+<pre><code class="language-py">df[&quot;game_location&quot;].nunique()
+# 3
+
+df[&quot;game_location&quot;].value_counts()
+
+## output
+A    63138
+H    63138
+N       38
+Name: game_location, dtype: int64
+</code></pre>
+
+<p>Which data type would you use in a  <a href="https://realpython.com/data-engineer-interview-questions-python/#questions-on-relational-databases">relational database</a>  for such a column? You would probably not use a  <code>varchar</code>  type, but rather an  <code>enum</code>. Pandas provides the  <code>categorical</code>  data type for the same purpose:</p>
+
+<pre><code class="language-py">df[&quot;game_location&quot;] = pd.Categorical(df[&quot;game_location&quot;])
+df[&quot;game_location&quot;].dtype
+
+# CategoricalDtype(categories=['A', 'H', 'N'], ordered=False)
+</code></pre>
+
+<p><strong><code>categorical</code>  data</strong>  has a few advantages over unstructured text. When you specify the  <code>categorical</code>  data type, you make validation easier and save a ton of memory, as Pandas will only use the unique values internally. The higher the ratio of total values to unique values, the more space savings you’ll get.</p>
+
+<p>Run  <code>df.info()</code>  again. You should see that changing the  <code>game_location</code>  data type from  <code>object</code>  to  <code>categorical</code>  has decreased the memory usage.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  The  <code>categorical</code>  data type also gives you access to additional methods through the  <code>.cat</code>  accessor. To learn more, check out the  <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">official docs</a>.</p>
+</blockquote>
+
+<p>You’ll often encounter datasets with too many text columns. An essential skill for data scientists to have is the ability to spot which columns they can convert to a more performant data type.</p>
+
+<p>Take a moment to practice this now. Find another column in the  <code>nba</code>  dataset that has a generic data type and convert it to a more specific one. You can expand the code block below to see one potential solution:</p>
+
+<p>Solution: Specifying Data TypesShow/Hide</p>
+
+<p>As you work with more massive datasets, memory savings becomes especially crucial. Be sure to keep  <strong>performance</strong>  in mind as you continue to explore your datasets.</p>
+
+<h2 id="cleaning-data">Cleaning Data</h2>
+
+<p>You may be surprised to find this section so late in the tutorial! Usually, you’d take a critical look at your dataset to fix any issues before you move on to a more sophisticated analysis. However, in this tutorial, you’ll rely on the techniques that you’ve learned in the previous sections to clean your dataset.</p>
+
+<h3 id="missing-values">Missing Values</h3>
+
+<p>Have you ever wondered why  <code>.info()</code>  shows how many non-null values a column contains? The reason why is that this is vital information.  <strong>Null values</strong>  often indicate a problem in the data-gathering process. They can make several analysis techniques, like different types of  <a href="https://realpython.com/tutorials/machine-learning/">machine learning</a>, difficult or even impossible.</p>
+
+<p>When you inspect the  <code>nba</code>  dataset with  <code>nba.info()</code>, you’ll see that it’s quite neat. Only the column  <code>notes</code>  contains null values for the majority of its rows:</p>
+
+<p><img src="https://files.realpython.com/media/info.80fdd50f4ff7.png" alt="Pandas DataFrame .info()" /></p>
+
+<p>This output shows that the  <code>notes</code>  column has only 5424 non-null values. That means that over 120,000 rows of your dataset have null values in this column.</p>
+
+<p>Sometimes, the easiest way to deal with records containing missing values is to ignore them. You can remove all the rows with missing values using  <code>.dropna()</code>:</p>
+
+<pre><code class="language-py">rows_without_missing_data = nba.dropna()
+rows_without_missing_data.shape
+
+# (5424, 23)
+</code></pre>
+
+<p>Of course, this kind of data cleanup doesn’t make sense for your  <code>nba</code>  dataset, because it’s not a problem for a game to lack notes. But if your dataset contains a million valid records and a hundred where relevant data is missing, then dropping the incomplete records can be a reasonable solution.</p>
+
+<p>You can also drop problematic columns if they’re not relevant for your analysis. To do this, use  <code>.dropna()</code>  again and provide the  <code>axis=1</code>  parameter:</p>
+
+<pre><code class="language-py">data_without_missing_columns = nba.dropna(axis=1)
+data_without_missing_columns.shape
+
+# (126314, 22)
+</code></pre>
+
+<p>Now, the resulting  <code>DataFrame</code>  contains all 126,314 games, but not the sometimes empty  <code>notes</code>  column.</p>
+
+<p>If there’s a meaningful default value for your use case, then you can also replace the missing values with that:</p>
+
+<pre><code class="language-py">data_with_default_notes = nba.copy()
+data_with_default_notes[&quot;notes&quot;].fillna(
+...     value=&quot;no notes at all&quot;,
+...     inplace=True
+... )
+
+data_with_default_notes[&quot;notes&quot;].describe()
+
+# output
+count              126314
+unique                232
+top       no notes at all
+freq               120890
+Name: notes, dtype: object
+</code></pre>
+
+<p>Here, you fill the empty  <code>notes</code>  rows with the string  <code>&quot;no notes at all&quot;</code>.</p>
+
+<h3 id="invalid-values">Invalid Values</h3>
+
+<p><strong>Invalid values</strong>  can be even more dangerous than missing values. Often, you can perform your data analysis as expected, but the results you get are peculiar. This is especially important if your dataset is enormous or used manual entry. Invalid values are often more challenging to detect, but you can implement some sanity checks with queries and aggregations.</p>
+
+<p>One thing you can do is validate the ranges of your data. For this,  <code>.describe()</code>  is quite handy. Recall that it returns the following output:</p>
+
+<p><img src="https://files.realpython.com/media/describe.0be00956e704.png" alt="Pandas DataFrame .describe()" /></p>
+
+<p>The  <code>year_id</code>  varies between 1947 and 2015. That sounds plausible.</p>
+
+<p>What about  <code>pts</code>? How can the minimum be  <code>0</code>? Let’s have a look at those games:</p>
+
+<pre><code class="language-py">nba[nba[&quot;pts&quot;] == 0]
+</code></pre>
+
+<p>This query returns a single row:</p>
+
+<p><img src="https://files.realpython.com/media/0_to_2_game.820df65c4193.png" alt="Pandas DataFrame query" /></p>
+
+<p>It seems the game was forfeited. Depending on your analysis, you may want to remove it from the dataset.</p>
+
+<h3 id="inconsistent-values">Inconsistent Values</h3>
+
+<p>Sometimes a value would be entirely realistic in and of itself, but it doesn’t fit with the values in the other columns. You can define some query criteria that are mutually exclusive and verify that these don’t occur together.</p>
+
+<p>In the NBA dataset, the values of the fields  <code>pts</code>,  <code>opp_pts</code>  and  <code>game_result</code>  should be consistent with each other. You can check this using the  <code>.empty</code>  attribute:</p>
+
+<pre><code class="language-py">nba[(nba[&quot;pts&quot;] &gt; nba[&quot;opp_pts&quot;]) &amp; (nba[&quot;game_result&quot;] != 'W')].empty
+# True
+
+nba[(nba[&quot;pts&quot;] &lt; nba[&quot;opp_pts&quot;]) &amp; (nba[&quot;game_result&quot;] != 'L')].empty
+# True
+</code></pre>
+
+<p>Fortunately, both of these queries return an empty  <code>DataFrame</code>.</p>
+
+<p>Be prepared for surprises whenever you’re working with raw datasets, especially if they were gathered from different sources or through a complex pipeline. You might see rows where a team scored more points than their opponent, but still didn’t win—at least, according to your dataset! To avoid situations like this, make sure you add further  <a href="https://realpython.com/python-data-cleaning-numpy-pandas/">data cleaning techniques</a>  to your Pandas and Python arsenal.</p>
+
+<h2 id="combining-multiple-datasets">Combining Multiple Datasets</h2>
+
+<p>In the previous section, you’ve learned how to clean a messy dataset. Another aspect of real-world data is that it often comes in multiple pieces. In this section, you’ll learn how to grab those pieces and  <strong>combine</strong>  them into one dataset that’s ready for analysis.</p>
+
+<p><a href="https://realpython.com/pandas-python-explore-dataset/#understanding-dataframe-objects">Earlier</a>, you combined two  <code>Series</code>  objects into a  <code>DataFrame</code>  based on their indices. Now, you’ll take this one step further and use  <code>.concat()</code>  to combine  <code>city_data</code>  with another  <code>DataFrame</code>. Say you’ve managed to gather some data on two more cities:</p>
+
+<pre><code class="language-py">further_city_data = pd.DataFrame(
+...     {&quot;revenue&quot;: [7000, 3400], &quot;employee_count&quot;:[2, 2]},
+...     index=[&quot;New York&quot;, &quot;Barcelona&quot;]
+... )
+</code></pre>
+
+<p>This second  <code>DataFrame</code>  contains info on the cities  <code>&quot;New York&quot;</code>  and  <code>&quot;Barcelona&quot;</code>.</p>
+
+<p>You can add these cities to  <code>city_data</code>  using  <code>.concat()</code>:</p>
+
+<pre><code class="language-py">all_city_data = pd.concat([city_data, further_city_data], sort=False)
+all_city_data
+
+## output
+Amsterdam   4200    5.0
+Tokyo       6500    8.0
+Toronto     8000    NaN
+New York    7000    2.0
+Barcelona   3400    2.0 
+</code></pre>
+
+<p>Now, the new variable  <code>all_city_data</code>  contains the values from both  <code>DataFrame</code>  objects.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  As of Pandas version 0.25.0, the  <code>sort</code>  parameter’s default value is  <code>True</code>, but this will change to  <code>False</code>  soon. It’s good practice to provide an explicit value for this parameter to ensure that your code works consistently in different Pandas and Python versions. For more info, consult the  <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#concatenating-objects">Pandas User Guide</a>.</p>
+</blockquote>
+
+<p>By default,  <code>concat()</code>  combines along  <code>axis=0</code>. In other words, it appends rows. You can also use it to append columns by supplying the parameter  <code>axis=1</code>:</p>
+
+<pre><code class="language-py">city_countries = pd.DataFrame({
+...     &quot;country&quot;: [&quot;Holland&quot;, &quot;Japan&quot;, &quot;Holland&quot;, &quot;Canada&quot;, &quot;Spain&quot;],
+...     &quot;capital&quot;: [1, 1, 0, 0, 0]},
+...     index=[&quot;Amsterdam&quot;, &quot;Tokyo&quot;, &quot;Rotterdam&quot;, &quot;Toronto&quot;, &quot;Barcelona&quot;]
+... )
+cities = pd.concat([all_city_data, city_countries], axis=1, sort=False)
+cities
+
+## output
+revenue  employee_count  country  capital
+Amsterdam   4200.0             5.0  Holland      1.0
+Tokyo       6500.0             8.0    Japan      1.0
+Toronto     8000.0             NaN   Canada      0.0
+New York    7000.0             2.0      NaN      NaN
+Barcelona   3400.0             2.0    Spain      0.0
+Rotterdam      NaN             NaN  Holland      0.0
+</code></pre>
+
+<p>Note how Pandas added  <code>NaN</code>  for the missing values. If you want to combine only the cities that appear in both  <code>DataFrame</code>  objects, then you can set the  <code>join</code>  parameter to  <code>inner</code>:</p>
+
+<pre><code class="language-py">pd.concat([all_city_data, city_countries], axis=1, join=&quot;inner&quot;)
+
+## output
+revenue  employee_count  country  capital
+Amsterdam     4200             5.0  Holland        1
+Tokyo         6500             8.0    Japan        1
+Toronto       8000             NaN   Canada        0
+Barcelona     3400             2.0    Spain        0
+</code></pre>
+
+<p>While it’s most straightforward to combine data based on the index, it’s not the only possibility. You can use  <code>.merge()</code>  to implement a join operation similar to the one from SQL:</p>
+
+<pre><code class="language-py">countries = pd.DataFrame({
+...     &quot;population_millions&quot;: [17, 127, 37],
+...     &quot;continent&quot;: [&quot;Europe&quot;, &quot;Asia&quot;, &quot;North America&quot;]
+... }, index= [&quot;Holland&quot;, &quot;Japan&quot;, &quot;Canada&quot;])
+
+pd.merge(cities, countries, left_on=&quot;country&quot;, right_index=True) 
+</code></pre>
+
+<p>Here, you pass the parameter  <code>left_on=&quot;country&quot;</code>  to  <code>.merge()</code>  to indicate what column you want to join on. The result is a bigger  <code>DataFrame</code>  that contains not only city data, but also the population and continent of the respective countries:</p>
+
+<p><img src="https://files.realpython.com/media/merge.2725ee7f0ea9.png" alt="Pandas merge" /></p>
+
+<p>Note that the result contains only the cities where the country is known and appears in the joined  <code>DataFrame</code>.</p>
+
+<p><code>.merge()</code>  performs an inner join by default. If you want to include all cities in the result, then you need to provide the  <code>how</code>  parameter:</p>
+
+<pre><code class="language-py">pd.merge(
+...     cities,
+...     countries,
+...     left_on=&quot;country&quot;,
+...     right_index=True,
+...     how=&quot;left&quot;
+... )
+</code></pre>
+
+<p>With this  <code>left</code>  join, you’ll see all the cities, including those without country data:</p>
+
+<p><img src="https://files.realpython.com/media/merge_left_join.ef63a7b2ad3f.png" alt="Pandas merge left join" /></p>
+
+<p>Welcome back, New York &amp; Barcelona!</p>
+
+<h2 id="visualizing-your-pandas-dataframe">Visualizing Your Pandas DataFrame</h2>
+
+<p><strong>Data visualization</strong>  is one of the things that works much better in a Jupyter notebook than in a terminal, so go ahead and fire one up. If you need help getting started, then check out  <a href="https://realpython.com/jupyter-notebook-introduction/">Jupyter Notebook: An Introduction</a>. You can also access the Jupyter notebook that contains the examples from this tutorial by clicking the link below:</p>
+
+<p><strong>Get Jupyter Notebook:</strong>  <a href="https://realpython.com/bonus/pandas-intro/">Click here to get the Jupyter Notebook you&rsquo;ll use</a>  to explore data with Pandas in this tutorial.</p>
+
+<p>Include this line to show plots directly in the notebook:</p>
+
+<pre><code class="language-py">%matplotlib inline
+</code></pre>
+
+<p>Both  <code>Series</code>  and  <code>DataFrame</code>  objects have a  <code>.plot()</code>  method, which is a wrapper around  <code>matplotlib.pyplot.plot()</code>. By default, it creates a  <strong>line plot</strong>. Visualize how many points the Knicks scored throughout the seasons:</p>
+
+<pre><code class="language-py">nba[nba[&quot;fran_id&quot;] == &quot;Knicks&quot;].groupby(&quot;year_id&quot;)[&quot;pts&quot;].sum().plot()
+</code></pre>
+
+<p>This shows a line plot with several peaks and two notable valleys around the years 2000 and 2010:</p>
+
+<p><img src="https://files.realpython.com/media/Knicks_points_sum_plot.ff35174b2854.png" alt="Pandas plot line" /></p>
+
+<p>You can also create other types of plots, like a  <strong>bar plot</strong>:</p>
+
+<pre><code class="language-py">nba[&quot;fran_id&quot;].value_counts().head(10).plot(kind=&quot;bar&quot;)
+</code></pre>
+
+<p>This will show the franchises with the most games played:</p>
+
+<p><img src="https://files.realpython.com/media/top10_franchises_bar_plot.2c8c4e458aa3.png" alt="Pandas plot bar" /></p>
+
+<p>The Lakers are leading the Celtics by a minimal edge, and there are six further teams with a game count above 5000.</p>
+
+<p>Now try a more complicated exercise. In 2013, the Miami Heat won the championship. Create a pie plot showing the count of their wins and losses during that season. Then, expand the code block to see a solution:</p>
+
+<p>Solution: PlotShow/Hide</p>
+
+<p>Sometimes, the numbers speak for themselves, but often a chart helps a lot with communicating your insights. To learn more about visualizing your data, check out  <a href="https://realpython.com/python-data-visualization-bokeh/">Interactive Data Visualization in Python With Bokeh</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this tutorial, you’ve learned how to start  <strong>exploring a dataset</strong>  with the Pandas Python library. You saw how you could access specific rows and columns to tame even the largest of datasets. Speaking of taming, you’ve also seen multiple techniques to prepare and clean your data, by specifying the data type of columns, dealing with missing values, and more. You’ve even created queries, aggregations, and plots based on those.</p>
+
+<p><strong>Now you can:</strong></p>
+
+<ul>
+<li>Work with  <code>Series</code>  and  <code>DataFrame</code>  objects</li>
+<li>Subset your data with  <code>.loc</code>,  <code>.iloc</code>, and the indexing operator</li>
+<li>Answer questions with queries, grouping, and aggregation</li>
+<li>Handle missing, invalid, and inconsistent data</li>
+<li>Visualize your dataset in a Jupyter notebook</li>
+</ul>
+
+<p>This journey using the NBA stats only scratches the surface of what you can do with the Pandas Python library. You can power up your project with  <a href="https://realpython.com/python-pandas-tricks/">Pandas tricks</a>, learn techniques to  <a href="https://realpython.com/fast-flexible-pandas/">speed up Pandas</a>  in Python, and even dive deep to see  <a href="https://realpython.com/asins/B06W2LXLQK/">how Pandas works behind the scenes</a>. There are many more features for you to discover, so get out there and tackle those datasets!</p>
+
+<p>You can get all the code examples you saw in this tutorial by clicking the link below:</p>
+
+<p><strong>Get Jupyter Notebook:</strong>  <a href="https://realpython.com/bonus/pandas-intro/">Click here to get the Jupyter Notebook you&rsquo;ll use</a>  to explore data with Pandas in this tutorial.</p>
+
+<blockquote>
+<p><a href="https://realpython.com/pandas-python-explore-dataset/">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cPandas%5cpandas-explore-dataset.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -557,6 +557,74 @@ The sesison object can be treated just like a dictionary that persists across re
     </item>
     
     <item>
+      <title>Ep.17 Flask message flashing</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-17/</guid>
+      <description>Flask message flashing | Learning Flask Ep. 17 Providing feedback and notifications to users using Flask&amp;rsquo;s flash function
+Providing feedback to users of a web application is critical, from notifications and error messages to warnings and progress alerts.
+If the application doesn&amp;rsquo;t the right level of feedback, chances are the user will become frustrated and end up having a bad experience.
+Fortunately for us, Flask provides a simple way to send messages from the server to the client using flash.</description>
+    </item>
+    
+    <item>
+      <title>Ep.18 Flask error handling</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-18/</guid>
+      <description>Flask error handling | Learning Flask Ep. 18 Manually throwing errors, creating custom error handlers and rendering error templates
+In a perfect world, our applications would never have errors and our users would use our application just as we intended, however it&amp;rsquo;s not a perfect world and there will be bugs in our code and users will always be unpredictable!
+Catching and handling errors ensures our users aren&amp;rsquo;t confused when something goes wrong, also giving them a way to get home or back to the content.</description>
+    </item>
+    
+    <item>
+      <title>Ep.19 Flask HTTP methods</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-19/</guid>
+      <description>Flask HTTP methods | Learning Flask Ep. 19 Understanding when and where to use GET, POST, PUT, PATCH, DELETE and a brief introduction to HTTP methods in Flask
+Flask supports the common HTTP methods, including GET, POST, PUT, PATCH, DELETE and working with them is extremely simple, allowing us to build URL&amp;rsquo;s and endpoints which only listen for certain HTTP methods.
+In this part of the &amp;ldquo;Learning Flask&amp;rdquo; series, we&amp;rsquo;re going to build a simple application to demonstrate working with the 5 HTTP methods listed above, along with examples of when and how to use them.</description>
+    </item>
+    
+    <item>
+      <title>Ep.20 The request object</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-20/</guid>
+      <description>The request object | Learning Flask Ep. 20 Exploring the Flask request object
+The Flask request object gives us access to all of the incoming request data, nicely parsed and ready for us to work with.
+The request object is available globally and can be accessed to get information about the current request, ensuring we only get data from the active thread.
+If you&amp;rsquo;ve been following along with the &amp;ldquo;Learning Flask&amp;rdquo; series, you&amp;rsquo;ve seen the request object in action, from parsing incoming form data and handling the various request methods, however there&amp;rsquo;s much more to explore.</description>
+    </item>
+    
+    <item>
+      <title>Ep.21 Task queues with Flask</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-21/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-21/</guid>
+      <description>Task queues with Flask| Learning Flask Ep. 21 An introduction to task queues with Flask and RQ
+Sometimes we need to run tasks in the background, outside of the HTTP request/response cycle. Long running tasks such as image, video or audio processing can take anywhere from minutes to hours, depending on the task at hand.
+Picture this scenario.
+You have a web application that allows users to upload an image, to which you&amp;rsquo;re going to produce 5 copies, all with different sizes to match the various screen sizes used on modern devices, including a thumbnail.</description>
+    </item>
+    
+    <item>
+      <title>Ep.22 Pillow, task queues &amp; the HTML picture element</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-22/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-22/</guid>
+      <description>Pillow, task queues &amp;amp; the HTML picture element| Learning Flask Ep. 22 Using Pillow and task queues to offload image resizing to a worker process and using the HTML picture tag to increase image rendering performance
+Images on the web are important and we now have access to a plethora of devices to view them - from mobile to desktop and tablet to TV screens, to get the most performance from our images, we should consider showing a peoperly sized image based on their device.</description>
+    </item>
+    
+    <item>
       <title>21 Pandas operations</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</link>
       <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
@@ -1018,6 +1086,16 @@ Consider an example where we have three squares. We want to animate them all gro
     </item>
     
     <item>
+      <title>Datetime Tutorial</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</guid>
+      <description>Python Datetime Tutorial: Manipulate Times, Dates, and Time Spans Dealing with dates and times in Python can be a hassle. Thankfully, there’s a built-in way of making it easier: the Python datetime module.
+datetime helps us identify and process time-related elements like dates, hours, minutes, seconds, days of the week, months, years, etc. It offers various services like managing time zones and daylight savings time. It can work with timestamp data.</description>
+    </item>
+    
+    <item>
       <title>DateTime, TimeDelta, Strftime with Examples</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1035,6 +1113,15 @@ The datetime classes in Python are categorized into main 5 classes.</description
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/dictionary-beginners-tutorial/</guid>
       <description>Python Dictionary(Dict): Update, Cmp, Len, Sort, Copy, Items, str with Example Dictionaries are another example of a data structure. A dictionary is used to map or associate things you want to store the keys you need to get them. A dictionary in Python is just like a dictionary in the real world. Python Dictionary are defined into two elements Keys and Values.
  Keys will be a single element Values can be a list or list within a list, numbers, etc.</description>
+    </item>
+    
+    <item>
+      <title>Explore Your Dataset</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-explore-dataset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-explore-dataset/</guid>
+      <description>Using Pandas and Python to Explore Your Dataset Table of Contents  Setting Up Your Environment Using the Pandas Python Library Getting to Know Your Data  Displaying Data Types Showing Basics Statistics Exploring Your Dataset  Getting to Know Pandas&amp;rsquo; Data Structures  Understanding Series Objects Understanding DataFrame Objects  Accessing Series Elements  Using the Indexing Operator Using .loc and .iloc  Accessing DataFrame Elements  Using the Indexing Operator Using .</description>
     </item>
     
     <item>
@@ -1154,7 +1241,7 @@ public class { public static void main(String[]args) { System.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/read-and-write-files/</guid>
-      <description>Pandas: How to Read and Write Files Pandas is a powerful and flexible Python package that allows you to work with labeled and time series data. It also provides statistics methods, enables plotting, and more. One crucial feature of Pandas is its ability to write and read Excel, CSV, and many other types of files. Functions like the Pandas read_csv() method enable you to work with files effectively. You can use them to save the data and labels from Pandas objects to a file and load them later as Pandas Series or DataFrame instances.</description>
+      <description>Pandas: How to Read and Write Files Table of Contents  Installing Pandas Preparing Data Using the Pandas read_csv() and .to_csv() Functions  Write a CSV File Read a CSV File  Using Pandas to Write and Read Excel Files  Write an Excel File Read an Excel File  Understanding the Pandas IO API  Write Files Read Files  Working With Different File Types  CSV Files JSON Files HTML Files Excel Files SQL Files Pickle Files  Working With Big Data  Compress and Decompress Files Choose Columns Omit Rows Force Less Precise Data Types Use Chunks to Iterate Through Files  Conclusion  Pandas is a powerful and flexible Python package that allows you to work with labeled and time series data.</description>
     </item>
     
     <item>

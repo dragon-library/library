@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.19 Flask HTTP methods"><meta property="og:title" content="Ep.19 Flask HTTP methods" />
+<meta property="og:description" content="Flask HTTP methods | Learning Flask Ep. 19 Understanding when and where to use GET, POST, PUT, PATCH, DELETE and a brief introduction to HTTP methods in Flask
+Flask supports the common HTTP methods, including GET, POST, PUT, PATCH, DELETE and working with them is extremely simple, allowing us to build URL&rsquo;s and endpoints which only listen for certain HTTP methods.
+In this part of the &ldquo;Learning Flask&rdquo; series, we&rsquo;re going to build a simple application to demonstrate working with the 5 HTTP methods listed above, along with examples of when and how to use them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-19/" />
+
+<title>Ep.19 Flask HTTP methods | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
+
+
+<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-17/" >
+      Ep.17 Flask message flashing
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-18/" >
+      Ep.18 Flask error handling
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-19/"  class="active">
+      Ep.19 Flask HTTP methods
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-20/" >
+      Ep.20 The request object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-21/" >
+      Ep.21 Task queues with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-22/" >
+      Ep.22 Pillow, task queues &amp; the HTML picture element
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/flask-blueprint/" >
+      Use a Flask Blueprint
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.19 Flask HTTP methods</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="flask-http-methods-learning-flask-ep-19">Flask HTTP methods | Learning Flask Ep. 19</h1>
+
+<p>Understanding when and where to use GET, POST, PUT, PATCH, DELETE and a brief introduction to HTTP methods in Flask</p>
+
+<p>Flask supports the common HTTP methods, including  <code>GET</code>,  <code>POST</code>,  <code>PUT</code>,  <code>PATCH</code>,  <code>DELETE</code>  and working with them is extremely simple, allowing us to build URL&rsquo;s and endpoints which only listen for certain HTTP methods.</p>
+
+<p>In this part of the &ldquo;Learning Flask&rdquo; series, we&rsquo;re going to build a simple application to demonstrate working with the 5 HTTP methods listed above, along with examples of when and how to use them.</p>
+
+<p>If you&rsquo;re new to programming or new to working on web, getting to know the HTTP methods and understanding the basics of HTTP is extremely valuable, so I&rsquo;d suggest reading up on it after you&rsquo;re done here.</p>
+
+<p>This guide isn&rsquo;t designed to be an in depth tutorial on HTTP, however it should give you enough information to use them in your Flask applications and hopefully you&rsquo;ll learn something new!</p>
+
+<h3 id="http-basics">HTTP basics</h3>
+
+<p>The &ldquo;Hyper text transfer protocol&rdquo; AKA HTTP is the world wide protocol for how we communicate and send/receive information on the web.</p>
+
+<p>It works on a &ldquo;Request/Response&rdquo; protocol, where a client makes a request to a web server which then returns a response.</p>
+
+<p>For example, when you clicked on this very URL, your browser (The client) made a request to the Pythonise web server, which internally triggered a series of events to return a response, which is the HTML you&rsquo;re reading now.</p>
+
+<p>Like I said, this is a very basic introduction to HTTP and we&rsquo;re not going to go into too much detail on it in this guide. For more information, the  <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia</a>  page is a good place to start.</p>
+
+<h3 id="http-status-codes">HTTP status codes</h3>
+
+<p>When something goes well, it&rsquo;s nice to get a pat on the back, likewise when something doesn&rsquo;t go as planned, it helps to know why so you can put it right.</p>
+
+<p>Feedback is very important and it&rsquo;s no different on the web!</p>
+
+<p>HTTP status codes are used as a feedback system, issued by the server in response to a request from the client to indicate the status of the request.</p>
+
+<p>If the request went well, the server returns a status code to the client to indicate that everything is OK, likewise a bad request or error will result in a different code to tell the client that something didn&rsquo;t go as expected.</p>
+
+<p>If you&rsquo;ve spend any time on the web, you&rsquo;ve most likely come across these status codes yourself.</p>
+
+<p>Ever clicked on a link and got a  <code>404 NOT FOUND</code>? That&rsquo;s the web servers way of saying &ldquo;I got your message, but whatever you&rsquo;re looking for, I don&rsquo;t have it&rdquo;. However rather than saying that it simply returns a  <code>404</code>  status code (Which is much more friendly for machines to understand 🤖)</p>
+
+<p>HTTP status codes are made up of 3 digits that fall into 5 categories, with each category representing a certain class of code.</p>
+
+<p>The first digit is the category and the 5 categories correspond to the following class:</p>
+
+<ul>
+<li><code>1xx</code>  - Informational</li>
+<li><code>2xx</code>  - Success</li>
+<li><code>3xx</code>  - Redirection</li>
+<li><code>4xx</code>  - Client errors</li>
+<li><code>5xx</code>  - Server errors</li>
+</ul>
+
+<p>The example of the  <code>404</code>  status code falls under the &ldquo;client error&rdquo; category, where the client tried to request something that doesn&rsquo;t exist on the server.</p>
+
+<p>The last 2 digits of the code don&rsquo;t fall under any kind of class or category, but are used to provide more information and context.</p>
+
+<p>Again to use the  <code>404</code>  example, the last 2 digits refer to  <code>NOT FOUND</code>, giving more context to the type of client error.</p>
+
+<p>A full list of HTTP status codes can be found  <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors">here</a>  at the Wiki.</p>
+
+<h3 id="http-methods">HTTP methods</h3>
+
+<p>The method is the type of action you want the request to perform and is sent from the client to the server on every request.</p>
+
+<p>There are several HTTP methods but we&rsquo;re only going to cover 5 in this article:</p>
+
+<ul>
+<li><code>GET</code>  - Used to fetch the specified resource</li>
+<li><code>POST</code>  - Used to create new data at the specified resource</li>
+<li><code>PUT</code>  - Used to create new data or replace existing data at the specified resource</li>
+<li><code>PATCH</code>  - Used to create new data or update/modify existing data at the specified resource</li>
+<li><code>DELETE</code>  - Used to delele existing data at the specified resource</li>
+</ul>
+
+<p>Requesting a URL is an example of a  <code>GET</code>  request, where your browser makes a request for resources at a specified location (the URL) and the server returns some HTML.  <code>GET</code>  requests are &ldquo;safe&rdquo; as they aren&rsquo;t able to modify state or data on the server.</p>
+
+<p>An example use case of a  <code>POST</code>  request would be creating a new account on a website or application, whereby the resource doesn&rsquo;t already exist.</p>
+
+<h3 id="flask-http-methods">Flask HTTP methods</h3>
+
+<p>By default, routes created with  <code>@app.route(/example)</code>  only listen and respond to  <code>GET</code>  requests and have to be instructed to listen and respond to other methods using the  <code>methods</code>  keyword &amp; passing it a list of request methods.</p>
+
+<p>Let&rsquo;s explore some common use cases for  <code>GET</code>  requests.</p>
+
+<h3 id="get-requests">GET requests</h3>
+
+<p>Ubiquitously used in Flask applications, the  <code>GET</code>  method is used to return data at a specified resource/location.</p>
+
+<h5 id="returning-text">Returning text</h5>
+
+<p>Possible one of the most simple routes you can write in a flask app simply returns a string:</p>
+
+<pre><code class="language-py">@app.route(&quot;/get-text&quot;)
+def get_text():
+    return &quot;some text&quot;` 
+</code></pre>
+
+<h5 id="rendering-templates">Rendering templates</h5>
+
+<p>A very common use case for a  <code>GET</code>  request is to return some HTML:</p>
+
+<pre><code class="language-py">from flask import render template
+
+@app.route(&quot;/&quot;)
+def index():
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<h5 id="handlinq-query-strings">Handlinq query strings</h5>
+
+<p>No different from either of the 2 previous examples, with the addition of handling a query string in the URL and returning a formatted string to the client:</p>
+
+<pre><code class="language-py">from flask import request
+
+@app.route(&quot;/qs&quot;)
+def qs():
+
+    if request.args:
+        req = request.args
+        return &quot; &quot;.join(f&quot;{k}: {v} &quot; for k, v in req.items())
+
+    return &quot;No query&quot;
+</code></pre>
+
+<p>Requesting  <code>/qs?name=john&amp;language=python</code>  returns the string  <code>name: john language: python</code>.</p>
+
+<h5 id="fetching-resources">Fetching resources</h5>
+
+<p>Again, not really any different from the previous examples, just in this case fetching and returning a resource as a JSON string. We&rsquo;ve also created a mock database called  <code>stock</code>:</p>
+
+<pre><code class="language-py">from flask import make_response, jsonify
+
+stock = {
+    &quot;fruit&quot;: {
+        &quot;apple&quot;: 30,
+        &quot;banana&quot;: 45,
+        &quot;cherry&quot;: 1000
+    }
+}
+
+@app.route(&quot;/stock&quot;)
+def get_stock():
+
+    res = make_response(jsonify(stock), 200)
+
+    return res 
+</code></pre>
+
+<p>Extending the previous example with some URL variables, ding a lookup and returning a JSON response (Note the use of the  <code>404</code>  if the collection or member is not found):</p>
+
+<pre><code class="language-py">@app.route(&quot;/stock/&lt;collection&gt;&quot;)
+def get_collection(collection):
+
+    &quot;&quot;&quot; Returns a collection from stock &quot;&quot;&quot;
+
+    if collection in stock:
+        res = make_response(jsonify(stock[collection]), 200)
+        return res
+
+    res = res = make_response(jsonify({&quot;error&quot;: &quot;Not found&quot;}), 404)
+
+    return res
+
+@app.route(&quot;/stock/&lt;collection&gt;/&lt;member&gt;&quot;)
+def get_member(collection, member):
+
+    &quot;&quot;&quot; Returns the qty of the collection member &quot;&quot;&quot;
+
+    if collection in stock:
+        member = stock[collection].get(member)
+        if member:
+            res = make_response(jsonify(member), 200)
+            return res
+
+        res = make_response(jsonify({&quot;error&quot;: &quot;Not found&quot;}), 404)
+        return res
+
+    res = res = make_response(jsonify({&quot;error&quot;: &quot;Not found&quot;}), 404)
+    return res
+</code></pre>
+
+<p>In summary, use  <code>GET</code>  requests when you just need to return resources to the client and NOT make any changes to the state/data of your application.</p>
+
+<h3 id="get-and-post">GET and POST</h3>
+
+<p>In many cases such as rendering forms, you&rsquo;ll need a route to handle more than just  <code>GET</code>  requests.</p>
+
+<p>Making any request other than  <code>GET</code>  to a route without the  <code>methods</code>  argument and a list of methods will result in a  <code>405 METHOD NOT ALLOWED</code>  HTTP status code, as methods must be declared for the route to respond to.</p>
+
+<p>Adding multiple request methods to a route is done with the following:</p>
+
+<pre><code class="language-py">@app.route(&quot;/example&quot;, methods=[&quot;METHOD_A&quot;, &quot;METHOD_B&quot;])  
+# GET POST PUT PATCH DELETE etc.. 
+</code></pre>
+
+<p>The route will now listen and respond to both methods provided which means we have to put in some control flow to handle each type of request.</p>
+
+<p>Fortunately this is made easy using the  <code>request</code>  object, in particular the  <code>request.method</code>  attribute which returns the method for the current request.</p>
+
+<p>This verbose and silly example illustrates the logic, assuming we want to listen for  <code>GET</code>  and  <code>POST</code>  requests:</p>
+
+<pre><code class="language-py">@app.route(&quot;/log-in&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def log_in():
+
+    if request.method == &quot;POST&quot;:
+        # Attempt the login &amp; do something else
+    elif request.method == &quot;GET&quot;:
+        return render_template(&quot;log_in.html&quot;)
+</code></pre>
+
+<p>As Flask routes default to  <code>GET</code>  requests, we can remove the  <code>elif</code>  statement and let Flask return the template:</p>
+
+<pre><code class="language-py">@app.route(&quot;/log-in&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def log_in():
+
+    if request.method == &quot;POST&quot;:
+        # Only if the request method is POST
+        # attempt the login &amp; do something else
+
+    # Otherwise default to this
+    return render_template(&quot;log_in.html&quot;)` 
+</code></pre>
+
+<p>A working example can be seen below where we&rsquo;re rendering a template which a user can then use to add a new collection to our  <code>stock</code>  database:</p>
+
+<pre><code class="language-py">@app.route(&quot;/add-collection&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def add_collection():
+
+    &quot;&quot;&quot; 
+ Renders a template if request method is GET.
+ Creates a collection if request method is POST
+ and if collection doesn't exist
+ &quot;&quot;&quot;
+
+    if request.method == &quot;POST&quot;:
+
+        req = request.form
+
+        collection = req.get(&quot;collection&quot;)
+        member = req.get(&quot;member&quot;)
+        qty = req.get(&quot;qty&quot;)
+
+        if collection in stock:
+            message = &quot;Collection already exists&quot;
+            return render_template(&quot;add_collection.html&quot;, stock=stock, message=message)
+
+        stock[collection] = {member: qty}
+        message = &quot;Collection created&quot;
+
+        return render_template(&quot;add_collection.html&quot;, stock=stock, message=message)
+
+    return render_template(&quot;add_collection.html&quot;, stock=stock) 
+</code></pre>
+
+<h3 id="post-requests">POST requests</h3>
+
+<p>Flask routes listen for  <code>GET</code>  requests by default, so we must implicitly instruct them to listen for anything other than  <code>GET</code>.</p>
+
+<p>In the example below, we&rsquo;ve passed  <code>methods=[&quot;POST&quot;]</code>  to the  <code>@app.route()</code>  decorator, meaning this route will ONLY respond to  <code>POST</code>  requests:</p>
+
+<pre><code class="language-py">@app.route(&quot;/stock/&lt;collection&gt;&quot;, methods=[&quot;POST&quot;])
+def create_collection(collection):
+
+    &quot;&quot;&quot; Creates a new collection if it doesn't exist &quot;&quot;&quot;
+
+    req = request.get_json()
+
+    if collection in stock:
+        res = make_response(jsonify({&quot;error&quot;: &quot;Collection already exists&quot;}), 400)
+        return res
+
+    stock.update({collection: req})
+
+    res = make_response(jsonify({&quot;message&quot;: &quot;Collection created&quot;}), 201)
+    return res
+</code></pre>
+
+<p>We&rsquo;re checking to see if the  <code>collection</code>  variable (passed in via the URL) is in our  <code>stock</code>  database and if not, create it, otherwise return a  <code>400 BAD REQUEST</code>  to indicate the resource already exists.</p>
+
+<p><code>POST</code>  requests should be used to create NEW resources (New users, devices, posts, articles, datasets etc..)</p>
+
+<p>Again, if you tried to access this resource from the browser, you&rsquo;d be greeted with a  <code>405 METHOD NOT ALLOWED</code>  status as we&rsquo;ve not provided  <code>GET</code>  as one of the available request methods to listen for.</p>
+
+<h3 id="put-requests">PUT requests</h3>
+
+<p><code>PUT</code>  requests are similar to  <code>POST</code>  requests but serve a very different purpose.</p>
+
+<p>As we explained earlier,  <code>PUT</code>  should be used to create or replace a resource, meaning if it doesn&rsquo;t exist - create it, however if it does exist, replace it.</p>
+
+<p>Check out the example below:</p>
+
+<pre><code class="language-py">@app.route(&quot;/stock/&lt;collection&gt;&quot;, methods=[&quot;PUT&quot;])
+def put_collection(collection):
+
+    &quot;&quot;&quot; Replaces or creates a collection &quot;&quot;&quot;
+
+    req = request.get_json()
+
+    if collection in stock:
+        stock[collection] = req
+        res = make_response(jsonify({&quot;message&quot;: &quot;Collection replaced&quot;}), 200)
+        return res
+
+    stock[collection] = req
+    res = make_response(jsonify({&quot;message&quot;: &quot;Collection created&quot;}), 201)
+    return res 
+</code></pre>
+
+<p>Since  <code>PUT</code>  requests shouldn&rsquo;t care about the existing data or resource, we&rsquo;ve decided to go ahead and create the resource with no regard for any existing data. The only dirrerence in the logic is the HTTP status code.</p>
+
+<p>If the collection DIDN&rsquo;T exist, we&rsquo;re returning a  <code>201 CREATED</code>  status. Whereas if the collection DID exist, we&rsquo;re returning a  <code>200 OK</code>  to indicate that the collection has been replaced.</p>
+
+<blockquote>
+<p>It&rsquo;s probably bad design to replace an entire collection using the  <code>PUT</code>  request, but for demonstrational purposes it&rsquo;ll do. A better solution would be to use  <code>PUT</code>  to replace or create a value for one of the members in the collection.</p>
+</blockquote>
+
+<h3 id="patch-requests">PATCH requests</h3>
+
+<p>We&rsquo;re using a  <code>PATCH</code>  request to update OR create a resource in our  <code>stock</code>  database:</p>
+
+<pre><code class="language-py">@app.route(&quot;/stock/&lt;collection&gt;&quot;, methods=[&quot;PATCH&quot;])
+def patch_collection(collection):
+
+    &quot;&quot;&quot; Updates or creates a collection &quot;&quot;&quot;
+
+    req = request.get_json()
+
+    if collection in stock:
+        for k, v in req.items():
+            stock[collection][k] = v
+
+        res = make_response(jsonify({&quot;message&quot;: &quot;Collection updated&quot;}), 200)
+        return res
+
+    stock[collection] = req
+
+    res = make_response(jsonify({&quot;message&quot;: &quot;Collection created&quot;}), 201)
+    return res 
+</code></pre>
+
+<p>Rather than replace the collection entirely, we&rsquo;re iterating over the keys and values in the request body and updating the values in the collection, only creating new members if they don&rsquo;t exist.</p>
+
+<p>And just like in  <code>PUT</code>, we&rsquo;re returning a  <code>200</code>  if the collection was updated and a  <code>201</code>  if the collection was created.</p>
+
+<p>Let&rsquo;s cover the last request method in this article,  <code>DELETE</code>.</p>
+
+<h3 id="delete-requests">Delete requests</h3>
+
+<p>Just like it says on the tin,  <code>DELETE</code>  requests should be used to delete a resource.</p>
+
+<p>As per the rest of the examples, we provide  <code>methods=[&quot;DELETE&quot;]</code>  in the  <code>@app.route()</code>  decorator, meaning this route will only listen for that specific method.</p>
+
+<p>In the 2 examples below, you&rsquo;ll see we&rsquo;re deleting a collection and deleting individual members from a collection with 2 separate routes:</p>
+
+<pre><code class="language-py">@app.route(&quot;/stock/&lt;collection&gt;&quot;, methods=[&quot;DELETE&quot;])
+def delete_collection(collection):
+
+    &quot;&quot;&quot; If the collection exists, delete it &quot;&quot;&quot;
+
+    if collection in stock:
+        del stock[collection]
+        res = make_response(jsonify({}), 204)
+        return res
+
+    res = make_response(jsonify({&quot;error&quot;: &quot;Collection not found&quot;}), 404)
+    return res
+
+@app.route(&quot;/stock/&lt;collection&gt;/&lt;member&gt;&quot;, methods=[&quot;DELETE&quot;])
+def delete_member(collection, member):
+
+    &quot;&quot;&quot; If the collection exists and the member exists, delete it &quot;&quot;&quot;
+
+    if collection in stock:
+        if member in stock[collection]:
+            del stock[collection][member]
+            res = make_response(jsonify({}), 204)
+            return res
+
+        res = make_response(jsonify({&quot;error&quot;: &quot;Member not found&quot;}), 404)
+        return res
+
+    res = make_response(jsonify({&quot;error&quot;: &quot;Collection not found&quot;}), 404)
+    return res 
+</code></pre>
+
+<p>On deletion, we&rsquo;re returning a  <code>204 NO CONTENT</code>  status code to indicate a successful transaction and we have no content to return.</p>
+
+<p>If the resource isn&rsquo;t found, I/e the collection or member doesn&rsquo;t exist, we&rsquo;re returning a  <code>404 NOT FOUND</code>.</p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>The code snippets shown here were designed to demonstrate how to work with some of the common request methods in Flask, rather than be examples of how to write a REST API, so take the examples with a pinch of salt.</p>
+
+<p><a href="https://restfulapi.net/">restfulapi.net</a>  is a great place to learn more about API design and using the various request methods, along with the 2 Wikipedia links below.</p>
+
+<p>I hope you learned something new!</p>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">https://en.wikipedia.org/wiki/List_of_HTTP_status_codes</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol</a></li>
+</ul>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p><a href="https://pythonise.com/series/learning-flask/flask-http-methods">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-19.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#flask-http-methods-learning-flask-ep-19">Flask HTTP methods | Learning Flask Ep. 19</a>
+<ul>
+<li>
+<ul>
+<li><a href="#http-basics">HTTP basics</a></li>
+<li><a href="#http-status-codes">HTTP status codes</a></li>
+<li><a href="#http-methods">HTTP methods</a></li>
+<li><a href="#flask-http-methods">Flask HTTP methods</a></li>
+<li><a href="#get-requests">GET requests</a>
+<ul>
+<li>
+<ul>
+<li><a href="#returning-text">Returning text</a></li>
+<li><a href="#rendering-templates">Rendering templates</a></li>
+<li><a href="#handlinq-query-strings">Handlinq query strings</a></li>
+<li><a href="#fetching-resources">Fetching resources</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#get-and-post">GET and POST</a></li>
+<li><a href="#post-requests">POST requests</a></li>
+<li><a href="#put-requests">PUT requests</a></li>
+<li><a href="#patch-requests">PATCH requests</a></li>
+<li><a href="#delete-requests">Delete requests</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

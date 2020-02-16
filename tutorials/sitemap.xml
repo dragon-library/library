@@ -270,6 +270,30 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-17/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-18/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-19/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-20/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-21/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-22/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</loc>
     <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
@@ -495,6 +519,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</loc>
   </url>
   
@@ -504,6 +532,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-explore-dataset/</loc>
   </url>
   
   <url>

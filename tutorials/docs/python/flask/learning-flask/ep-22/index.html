@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.22 Pillow, task queues &amp; the HTML picture element"><meta property="og:title" content="Ep.22 Pillow, task queues &amp; the HTML picture element" />
+<meta property="og:description" content="Pillow, task queues &amp; the HTML picture element| Learning Flask Ep. 22 Using Pillow and task queues to offload image resizing to a worker process and using the HTML picture tag to increase image rendering performance
+Images on the web are important and we now have access to a plethora of devices to view them - from mobile to desktop and tablet to TV screens, to get the most performance from our images, we should consider showing a peoperly sized image based on their device." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-22/" />
+
+<title>Ep.22 Pillow, task queues &amp; the HTML picture element | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
+
+
+<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-17/" >
+      Ep.17 Flask message flashing
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-18/" >
+      Ep.18 Flask error handling
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-19/" >
+      Ep.19 Flask HTTP methods
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-20/" >
+      Ep.20 The request object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-21/" >
+      Ep.21 Task queues with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-22/"  class="active">
+      Ep.22 Pillow, task queues &amp; the HTML picture element
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/flask-blueprint/" >
+      Use a Flask Blueprint
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.22 Pillow, task queues &amp; the HTML picture element</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="pillow-task-queues-the-html-picture-element-learning-flask-ep-22">Pillow, task queues &amp; the HTML picture element| Learning Flask Ep. 22</h1>
+
+<p>Using Pillow and task queues to offload image resizing to a worker process and using the HTML picture tag to increase image rendering performance</p>
+
+<p>Images on the web are important and we now have access to a plethora of devices to view them - from mobile to desktop and tablet to TV screens, to get the most performance from our images, we should consider showing a peoperly sized image based on their device.</p>
+
+<p>In this guide, we&rsquo;re going to:</p>
+
+<ul>
+<li>Create a form for uploading images</li>
+<li>Create a function that creates several duplicates of the image at different sizes whilst maintaining the original aspect ratio</li>
+<li>Offload said function to a task queue to be handled by a separate worker</li>
+<li>Render an HTML template using the HTML  <code>picture</code>  tag to see the different images being loaded as the browser viewport is resized</li>
+</ul>
+
+<h3 id="tools">Tools</h3>
+
+<p>We&rsquo;re going to be using the following Python packages:</p>
+
+<ul>
+<li>Flask (Web framework)</li>
+<li>Redis (Message broker)</li>
+<li>RQ (Task queue/worker service)</li>
+<li>Pillow (Copying &amp; resizing images)</li>
+</ul>
+
+<h3 id="app-structure">App structure</h3>
+
+<p>Our application structure:</p>
+
+<pre><code>app
+├── app
+│   ├── __init__.py
+│   ├── static
+│   │   └── img
+│   │       └── uploads        &lt;- Image uploads directory
+│   ├── tasks.py               &lt;- Task queue functions
+│   ├── templates
+│   │   ├── upload_image.html  &lt;- Uploading an image
+│   │   └── view_image.html    &lt;- Viewing images with the picture tag
+│   └── views.py               &lt;- Appliaction routes
+└── run.py                     &lt;- appliation entry point 
+</code></pre>
+
+<h3 id="getting-started">Getting started</h3>
+
+<p>We&rsquo;re going to start off creating a virtual environment for our project:</p>
+
+<pre><code class="language-py">python -m venv env
+</code></pre>
+
+<p>Where  <code>env</code>  is the name of our virtual environment.</p>
+
+<p>Next, activate the env:</p>
+
+<pre><code class="language-py">source env/bin/activate
+</code></pre>
+
+<p>Install the required packages:</p>
+
+<pre><code class="language-py">pip install flask redis rq Pillow
+</code></pre>
+
+<p>Go ahead and build out the appliaction structure and add the following:</p>
+
+<h3 id="flask-entry-point">Flask entry point</h3>
+
+<p><code>run.py</code>  will be the entry point to our application:</p>
+
+<p><strong>run.py</strong></p>
+
+<p>`from app import app</p>
+
+<p>if <strong>name</strong> == &ldquo;<strong>main</strong>&ldquo;:
+    app.run()`</p>
+
+<h3 id="setting-up-the-app">Setting up the app</h3>
+
+<p>We&rsquo;ll bring our app together in  <code>__init__.py</code>  and define some new variables:</p>
+
+<p><strong><code>__init__.py</code></strong></p>
+
+<pre><code class="language-py">from flask import Flask
+import redis
+from rq import Queue
+
+app = Flask(__name__)
+
+r = redis.Redis()
+q = Queue(connection=r)
+
+from app import views
+from app import tasks
+</code></pre>
+
+<ul>
+<li><code>r = redis.Redis()</code>  - Creates a connection to the  <code>redis-server</code>  instance running locally (without auth)</li>
+<li><code>q = Queue(connection=r)</code>  - Creates our task queue, using  <code>r</code>  as the message broker</li>
+</ul>
+
+<h3 id="the-task-queue-function">The task queue function</h3>
+
+<p>We&rsquo;ll use this file to create our task queue function:</p>
+
+<p><strong>tasks.py</strong></p>
+
+<pre><code class="language-py">from PIL import Image
+
+import os
+import time
+
+def create_image_set(image_dir, image_name):
+
+    start = time.time()
+
+    thumb = 30, 30
+    small = 540, 540
+    medium = 768, 786
+    large = 1080, 1080
+    xl = 1200, 1200
+
+    image = Image.open(os.path.join(image_dir, image_name))
+
+    image_ext = image_name.split(&quot;.&quot;)[-1]
+    image_name = image_name.split(&quot;.&quot;)[0]
+
+    ### THUMBNAIL ###
+    thumbnail_image = image.copy()
+    thumbnail_image.thumbnail(thumb, Image.LANCZOS)
+    thumbnail_image.save(f&quot;{os.path.join(image_dir, image_name)}-thumbnail.{image_ext}&quot;, optimize=True, quality=95)
+
+    ### SMALL ###
+    small_image = image.copy()
+    small_image.thumbnail(small, Image.LANCZOS)
+    small_image.save(f&quot;{os.path.join(image_dir, image_name)}-540.{image_ext}&quot;, optimize=True, quality=95)
+
+    ### MEDIUM ###
+    medium_image = image.copy()
+    medium_image.thumbnail(medium, Image.LANCZOS)
+    medium_image.save(f&quot;{os.path.join(image_dir, image_name)}-768.{image_ext}&quot;, optimize=True, quality=95)
+
+    ### LARGE ###
+    large_image = image.copy()
+    large_image.thumbnail(large, Image.LANCZOS)
+    large_image.save(f&quot;{os.path.join(image_dir, image_name)}-1080.{image_ext}&quot;, optimize=True, quality=95)
+
+    ### XL ###
+    xl_image = image.copy()
+    xl_image.thumbnail(xl, Image.LANCZOS)
+    xl_image.save(f&quot;{os.path.join(image_dir, image_name)}-1200.{image_ext}&quot;, optimize=True, quality=95)
+
+    end = time.time()
+
+    time_elapsed = end - start
+
+    print(f&quot;Task complete in: {time_elapsed}&quot;)
+
+    return True 
+</code></pre>
+
+<h3 id="the-routes">The routes</h3>
+
+<p>We&rsquo;re going to have 2 routes in our application:</p>
+
+<ul>
+<li><code>/upload-image</code>  - Renders a template and handles the upload of a new image</li>
+<li><code>/image/&lt;dir&gt;/&lt;img&gt;</code>  - Will just be used to view an image after resizing</li>
+</ul>
+
+<p><strong>views.py</strong></p>
+
+<pre><code class="language-py">from app.tasks import create_image_set
+
+from flask import render_template, request, flash
+
+import os
+import secrets
+
+app.config[&quot;SECRET_KEY&quot;] = &quot;liruhfoi34uhfo8734yot8234h&quot;
+app.config[&quot;UPLOAD_DIRECTORY&quot;] = &quot;/mnt/c/wsl/projects/pythonise/tutorials/flask_series/ep_21_background_tasks/app/static/img/uploads&quot;
+
+@app.route(&quot;/upload-image&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def upload_image():
+
+    message = None
+
+    if request.method == &quot;POST&quot;:
+
+        image = request.files[&quot;image&quot;]
+
+        image_dir_name = secrets.token_hex(16)
+
+        os.mkdir(os.path.join(app.config[&quot;UPLOAD_DIRECTORY&quot;], image_dir_name))
+
+        image.save(os.path.join(app.config[&quot;UPLOAD_DIRECTORY&quot;], image_dir_name, image.filename))
+
+        image_dir = os.path.join(app.config[&quot;UPLOAD_DIRECTORY&quot;], image_dir_name)
+
+        q.enqueue(create_image_set, image_dir, image.filename)
+
+        flash(&quot;Image uploaded and sent for resizing&quot;, &quot;success&quot;)
+
+        message = f&quot;/image/{image_dir_name}/{image.filename.split('.')[0]}&quot;
+
+    return render_template(&quot;upload_image.html&quot;, message=message)    
+
+@app.route(&quot;/image/&lt;dir&gt;/&lt;img&gt;&quot;)
+def view_image(dir, img):
+    return render_template(&quot;view_image.html&quot;, dir=dir, img=img) 
+</code></pre>
+
+<h3 id="uploading-an-image">Uploading an image</h3>
+
+<p>This wile contains a section to display any flashed messages, along with a form for uploading a file:</p>
+
+<p><strong>upload_image.html</strong></p>
+
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;!-- Required meta tags --&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+
+  &lt;!-- Bootstrap CSS --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot; crossorigin=&quot;anonymous&quot;&gt;
+
+  &lt;title&gt;Upload image&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;div class=&quot;container&quot;&gt;
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    &lt;div class=&quot;alert alert-{{ category }} alert-dismissible fade show mt-3&quot; role=&quot;alert&quot;&gt;
+      {{ message }}
+      &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;
+        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;mb-3 mt-3&quot;&gt;
+
+          &lt;h2 class=&quot;mb-3&quot; style=&quot;font-weight: 300&quot;&gt;Upload image&lt;/h2&gt;
+
+          &lt;form action=&quot;/upload-image&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot; class=&quot;mb-3&quot;&gt;
+            &lt;div class=&quot;form-group mb-3&quot;&gt;
+              &lt;div class=&quot;custom-file&quot;&gt;
+                &lt;input type=&quot;file&quot; class=&quot;custom-file-input&quot; name=&quot;image&quot;&gt;
+                &lt;label id=&quot;file_input_label&quot; class=&quot;custom-file-label&quot; for=&quot;image&quot;&gt;Select file&lt;/label&gt;
+                &lt;small class=&quot;text-muted&quot;&gt;Images should be 2560px x 1440px and not contain a dot in the filename&lt;/small&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Upload&lt;/button&gt;
+          &lt;/form&gt;
+
+          {% if message %}
+          &lt;a href=&quot;{{ message }}&quot; class=&quot;mt-3&quot;&gt;View image&lt;/a&gt;
+          {% endif %}
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- import bootstrap JS here --&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="viewing-the-resized-images">Viewing the resized images</h3>
+
+<p>We&rsquo;ll use this template to render the image set to the browser:</p>
+
+<p><strong>view_image.html</strong></p>
+
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;!-- Required meta tags --&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+
+  &lt;!-- Bootstrap CSS --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot; crossorigin=&quot;anonymous&quot;&gt;
+
+  &lt;title&gt;View image&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;main&gt;
+
+    &lt;div class=&quot;container mt-3&quot;&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col&quot;&gt;
+
+          &lt;picture&gt;
+            &lt;!-- thumbnail --&gt;
+            &lt;source class=&quot;img-fluid&quot; srcset=&quot;/static/img/uploads/{{dir}}/{{img}}-thumbnail.png&quot; media=&quot;(max-width: 150px)&quot;&gt;
+            &lt;!-- small --&gt;
+            &lt;source class=&quot;img-fluid&quot; srcset=&quot;/static/img/uploads/{{dir}}/{{img}}-540.png&quot; media=&quot;(max-width: 540px)&quot;&gt;
+            &lt;!-- medium --&gt;
+            &lt;source class=&quot;img-fluid&quot; srcset=&quot;/static/img/uploads/{{dir}}/{{img}}-768.png&quot; media=&quot;(max-width: 768px)&quot;&gt;
+            &lt;!-- large --&gt;
+            &lt;source class=&quot;img-fluid&quot; srcset=&quot;/static/img/uploads/{{dir}}/{{img}}-1080.png&quot; media=&quot;(max-width: 1080px)&quot;&gt;
+            &lt;!-- xl --&gt;
+            &lt;source class=&quot;img-fluid&quot; srcset=&quot;/static/img/uploads/{{dir}}/{{img}}-1200.png&quot; media=&quot;(max-width: 1200px)&quot;&gt;
+            &lt;!-- original --&gt;
+            &lt;img class=&quot;img-fluid&quot; src=&quot;/static/img/uploads/{{dir}}/{{img}}.png&quot; /&gt;
+          &lt;/picture&gt;
+
+          &lt;picture&gt;
+            &lt;source srcset=&quot;example-thumbnail.png&quot; media=&quot;(max-width: 150px)&quot;&gt;
+            &lt;source srcset=&quot;example-540.png&quot; media=&quot;(max-width: 540px)&quot;&gt;
+            &lt;source srcset=&quot;example-768.png&quot; media=&quot;(max-width: 768px)&quot;&gt;
+            &lt;source srcset=&quot;example-1080.png&quot; media=&quot;(max-width: 1080px)&quot;&gt;
+            &lt;source srcset=&quot;example-1200.png&quot; media=&quot;(max-width: 1200px)&quot;&gt;
+            &lt;img src=&quot;/static/img/uploads/example.png&quot; /&gt;
+          &lt;/picture&gt;
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/main&gt;
+
+  &lt;!-- Import bootstrap JS here --&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt; 
+</code></pre>
+
+<h3 id="html-picture-tag">HTML picture tag</h3>
+
+<p>THe HTML  <code>picture</code>  tag allows us to provide a set of images, of which the browser will render the relevant version based on the viewport size of the users device.</p>
+
+<p>In our example, we&rsquo;ve provided 5 options using the  <code>source</code>  tag, along with a fallback using the  <code>img</code>  tag.</p>
+
+<p>Each  <code>source</code>  tag contains a  <code>srcset</code>  attribute; The path to the image we&rsquo;d like to render.</p>
+
+<p>However, the  <code>source</code>  tag will only be rendered if the browser viewport falls wihin the  <code>max-width</code>  query in the  <code>media</code>  attribute.</p>
+
+<h3 id="running-the-application">Running the application</h3>
+
+<p>Before we run the app, you&rsquo;ll need to start  <code>redis</code>.</p>
+
+<p>You can do so (depending on your OS and installation of Redis), by running the following command:</p>
+
+<pre><code class="language-py">redis-server 
+</code></pre>
+
+<p>This should start Redis and you should see a message in your terminal.</p>
+
+<p>To run the application, you&rsquo;ll need 2 more terminals open. From the root of the application (in the same directory as  <code>run.py</code>), run the following:</p>
+
+<pre><code class="language-py">rq worker 
+</code></pre>
+
+<p>You should see the RQ worker process start and a message like the following:</p>
+
+<pre><code>16:29:55 RQ worker 'rq:worker:jnwt.8633' started, version 0.13.0
+16:29:55 *** Listening on default...
+16:29:55 Cleaning registries for queue: default 
+</code></pre>
+
+<p>In another terminal (from the same directory), run the following:</p>
+
+<pre><code class="language-py">export FLASK_APP=run.py
+export FLASK_ENV=development
+flask run 
+</code></pre>
+
+<h3 id="testing-the-application">Testing the application</h3>
+
+<p>Open up a browser and head to  <code>/upload-image</code>.</p>
+
+<p>You should be able to select and upload an image and your terminal running the  <code>rq worker</code>  should also print out some information to say it&rsquo;s running a task.</p>
+
+<p>Head to the link returned by  <code>/upload-image</code>  and resize your browser viewport to see the different images being rendered by the  <code>picture</code>  tag!</p>
+
+<h3 id="tip">tip</h3>
+
+<p>Open the developer tools, select the  <code>network</code>  tab and select the  <code>IMG</code>  filter to only show images being requested.</p>
+
+<p>As you resize the viewport, you&rsquo;ll see the dirrerent images being requested and rendered!</p>
+
+<blockquote>
+<p>Last modified  ·  13 Mar 2019</p>
+
+<p><a href="https://pythonise.com/series/learning-flask/flask-resize-image-with-pillow-html-picture-element">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-22.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#pillow-task-queues-the-html-picture-element-learning-flask-ep-22">Pillow, task queues &amp; the HTML picture element| Learning Flask Ep. 22</a>
+<ul>
+<li>
+<ul>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#app-structure">App structure</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#flask-entry-point">Flask entry point</a></li>
+<li><a href="#setting-up-the-app">Setting up the app</a></li>
+<li><a href="#the-task-queue-function">The task queue function</a></li>
+<li><a href="#the-routes">The routes</a></li>
+<li><a href="#uploading-an-image">Uploading an image</a></li>
+<li><a href="#viewing-the-resized-images">Viewing the resized images</a></li>
+<li><a href="#html-picture-tag">HTML picture tag</a></li>
+<li><a href="#running-the-application">Running the application</a></li>
+<li><a href="#testing-the-application">Testing the application</a></li>
+<li><a href="#tip">tip</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

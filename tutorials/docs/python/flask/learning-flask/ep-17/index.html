@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.17 Flask message flashing"><meta property="og:title" content="Ep.17 Flask message flashing" />
+<meta property="og:description" content="Flask message flashing | Learning Flask Ep. 17 Providing feedback and notifications to users using Flask&rsquo;s flash function
+Providing feedback to users of a web application is critical, from notifications and error messages to warnings and progress alerts.
+If the application doesn&rsquo;t the right level of feedback, chances are the user will become frustrated and end up having a bad experience.
+Fortunately for us, Flask provides a simple way to send messages from the server to the client using flash." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-17/" />
+
+<title>Ep.17 Flask message flashing | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
+
+
+<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-17/"  class="active">
+      Ep.17 Flask message flashing
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-18/" >
+      Ep.18 Flask error handling
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-19/" >
+      Ep.19 Flask HTTP methods
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-20/" >
+      Ep.20 The request object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-21/" >
+      Ep.21 Task queues with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-22/" >
+      Ep.22 Pillow, task queues &amp; the HTML picture element
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/flask-blueprint/" >
+      Use a Flask Blueprint
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.17 Flask message flashing</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="flask-message-flashing-learning-flask-ep-17">Flask message flashing | Learning Flask Ep. 17</h1>
+
+<p>Providing feedback and notifications to users using Flask&rsquo;s flash function</p>
+
+<p>Providing feedback to users of a web application is critical, from notifications and error messages to warnings and progress alerts.</p>
+
+<p>If the application doesn&rsquo;t the right level of feedback, chances are the user will become frustrated and end up having a bad experience.</p>
+
+<p>Fortunately for us, Flask provides a simple way to send messages from the server to the client using  <code>flash</code>.</p>
+
+<h3 id="high-level-overview">High level overview</h3>
+
+<p>Flask&rsquo;s message flashing system allows us to record a message at any point withing a request, then display it at the start of the next request (and only the next request).</p>
+
+<p>This is ideal for cases when we want to provide the user with some feedback based on the actions of their current request, take this scenario for example:</p>
+
+<ul>
+<li>User attempts to create an account, submitting a form with a username and password</li>
+<li>The password must be at least 10 characters long, but the one submitted is only 8</li>
+<li>Our application rejects the short password and we call  <code>flash</code>, passing it a message to let the user know the password was too short</li>
+<li>We redirect the user back to the account creation page</li>
+<li>The message is flashed to the user, then destroyed. Provising them with feedback to let them know</li>
+</ul>
+
+<p>Working with  <code>flash</code>  requires 2 main components:</p>
+
+<ul>
+<li>Calling the  <code>flash</code>  function and passing it a message from a route in our application</li>
+<li>Checking for flashed messages in a template</li>
+</ul>
+
+<p>Now you know a little more about what  <code>flash</code>  does, it&rsquo;s time for an example.</p>
+
+<h3 id="using-flash-in-a-route">Using flash in a route</h3>
+
+<p>To work with  <code>flash</code>, we need to import it from Flask</p>
+
+<pre><code class="language-py">from flask import flash
+</code></pre>
+
+<p>We&rsquo;ll go ahead and create a route which we described in the scenario earlier. An account creation page:</p>
+
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_up():
+
+    if request.method == &quot;POST&quot;:
+
+        req = request.form
+
+        username = req.get(&quot;username&quot;)
+        email = req.get(&quot;email&quot;)
+        password = req.get(&quot;password&quot;)
+
+        if not len(password) &gt;= 10:
+            flash(&quot;Password length must be at least 10 characters&quot;)
+            return redirect(request.url)
+
+        flash(&quot;Account created!&quot;)
+
+        return redirect(request.url)
+
+    return render_template(&quot;public/sign_up.html&quot;)
+</code></pre>
+
+<p>This is obviously not a real account creation page! It&rsquo;s just to demonstrate message flashing (We&rsquo;re returning the user back to the sign up page, even on succcess)</p>
+
+<p>The part to pay attention to here:</p>
+
+<pre><code class="language-py">if not len(password) &gt;= 10:
+    flash(&quot;Password must be at least 10 characters&quot;)
+    return redirect(request.url)
+</code></pre>
+
+<p>We&rsquo;re performing some basic validation on the length of the password that the user submitted. If it doesn&rsquo;t pass, we call the  <code>flash</code>  function and pass it a message:</p>
+
+<pre><code class="language-py">flash(&quot;Password length must be at least 10 characters&quot;)
+</code></pre>
+
+<p>Now we need to add something to our template to check for flashed messages.</p>
+
+<p>If you&rsquo;re using a base template, it&rsquo;s the ideal place to put it. We&rsquo;re going to put the following in our  <code>public_template.html</code>  base template. If not, place it somewhere your users will notice and doesn&rsquo;t interfere with the rest of your HTML.</p>
+
+<h3 id="getting-flashed-messages">Getting flashed messages</h3>
+
+<p>Here&rsquo;s the basic Jinja syntax for getting flashed messages:</p>
+
+<pre><code class="language-py">{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            &lt;!-- Do something with the message --&gt;
+            {{ message }}
+
+        {% endfor %}
+    {% endif %}
+{% endwith %} 
+</code></pre>
+
+<ul>
+<li>We call  <code>with messages = get_flashed_messages()</code>  to register any flashed messages</li>
+<li><code>{% if messages %}</code>  then checkes to see if there are any messages in the queue</li>
+<li><code>{% for message in messages %}</code>  iterates over the messages (you can call  <code>flash</code>  more then once to register several messages)</li>
+<li>We can then do something with the contents of the message using  <code>{{ message }}</code></li>
+</ul>
+
+<p>As it is, this code isn&rsquo;t going to produce anything pretty or useful, so let&rsquo;s go ahead and add some HTML to our flashed messages.</p>
+
+<h3 id="styling-flashed-messages">Styling flashed messages</h3>
+
+<blockquote>
+<p>We&rsquo;re using Bootstrap for styling but feel free to add your own CSS.</p>
+</blockquote>
+
+<p>Any code inside the  <code>{% for message in messages %}</code>  block will be repeated for the amount of flashed messages in the queue and will persist on the page until the next request.</p>
+
+<p>Bootstrap comes with the  <code>alert</code>  class, featuring a dismissable button to clear the alert, so we&rsquo;ll go ahead and use that. Place it above the main tag of your HTML or just above the form in the  <code>sign_up.html</code>  page:</p>
+
+<pre><code class="language-py">{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            &lt;div class=&quot;alert alert-primary alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;
+                &lt;span&gt;{{ message }}&lt;/span&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;
+                &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        {% endfor %}
+    {% endif %}
+{% endwith %} 
+</code></pre>
+
+<p>If you now submit the form with less that 10 characters in the password field, you&rsquo;ll see a nice dismissable alert at the top of your page!</p>
+
+<p><img src="https://pythonise.com/static/img/uploads/flask-flash-primary.PNG" alt="Flask message flashing" title="Flask message flashing" /></p>
+
+<p>But what if we need even more control over the style of our flashed messages? The good news is there&rsquo;s a simple solution.</p>
+
+<h3 id="flash-categories">Flash categories</h3>
+
+<p>Flask&rsquo;s Flash function takes up to 2 arguments, a message and a category:</p>
+
+<pre><code class="language-py">flash(&quot;message&quot;, &quot;category&quot;)
+</code></pre>
+
+<p>Both values are not fixed and you&rsquo;ve already seen us pass a message into  <code>flash</code>, but what about  <code>category</code>?</p>
+
+<p>We can provide any value we like as the category argument and access it in our template, meaning we can style flashed messages using the category passed in and drop it into our HTML.</p>
+
+<p>Consider the following:</p>
+
+<p>You have 3 levels of alerts you&rsquo;d like to show to your user.</p>
+
+<ul>
+<li>Success (Green)</li>
+<li>Warning (Yellow)</li>
+<li>Danger (Red)</li>
+</ul>
+
+<p>Using the  <code>category</code>  argument, we can design flashes depending on the control flow and what feedback we want the user to see.</p>
+
+<p>To access the flash category, we need to refactor our previous flash:</p>
+
+<pre><code class="language-py">{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            &lt;div class=&quot;alert alert-{{ category }} alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;
+                &lt;span&gt;{{ message }}&lt;/span&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;
+                &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        {% endfor %}
+    {% endif %}
+{% endwith %} 
+</code></pre>
+
+<ul>
+<li>Passing  <code>with_categories=true</code>  to  <code>get_flashed_messages()</code>, we&rsquo;re able to access the category of that flash</li>
+<li><code>{% for category, message in messages %}</code>  unpacks the message and category, which we can then access within the for loop</li>
+</ul>
+
+<p>Depending on your CSS, you should use  <code>{{ category }}</code>  as a class in your alert. As you can see from our Bootstrap example, we&rsquo;re using it to complete the  <code>alert-{{ category }}</code>, which will trigger a different color of the alert.</p>
+
+<ul>
+<li><code>alert-success</code>  will trigger a green alert</li>
+<li><code>alert-warning</code>  will trigger an orange alert</li>
+<li><code>alert-danger</code>  will trigger a red alert</li>
+</ul>
+
+<p>Let&rsquo;s refactor our route to include a category in the flash:</p>
+
+<pre><code class="language-py">@app.route(&quot;/sign-up&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def sign_up():
+
+    if request.method == &quot;POST&quot;:
+
+        req = request.form
+
+        username = req.get(&quot;username&quot;)
+        email = req.get(&quot;email&quot;)
+        password = req.get(&quot;password&quot;)
+
+        if not len(password) &gt;= 10:
+            flash(&quot;Password must be at least 10 characters&quot;, &quot;warning&quot;)
+            return redirect(request.url)
+
+        flash(&quot;Account created!&quot;, &quot;success&quot;)
+
+        return redirect(request.url)
+
+    return render_template(&quot;public/sign_up.html&quot;)
+</code></pre>
+
+<p>We haven&rsquo;t changed much, just added the 2 classes to our  <code>flash</code>  functions:</p>
+
+<pre><code class="language-py">flash(&quot;Password must be at least 10 characters&quot;, &quot;warning&quot;)
+flash(&quot;Account created!&quot;, &quot;success&quot;)
+</code></pre>
+
+<p>If you now submit the sign up form with both less than and more than 10 characters, you&rsquo;ll see the 2 different styles of flash.</p>
+
+<p>Warning:</p>
+
+<p><img src="https://pythonise.com/static/img/uploads/flask-flash-warning.PNG" alt="Flask message flashing" title="Flask message flashing" /></p>
+
+<p>Success:</p>
+
+<p><img src="https://pythonise.com/static/img/uploads/flask-flask-success.PNG" alt="Flask message flashing" title="Flask message flashing" /></p>
+
+<h3 id="filtering-flashes">Filtering flashes</h3>
+
+<p>In many cases, you&rsquo;ll want to have more than 1 style of alert. You may have a notification section, warning section and conformation alert in different parts of your templates and in varius styles.</p>
+
+<p>Filtering flashes allows us to only trigger a flash based on the category it receives! meaning you&rsquo;re not fixed to one style of alert.</p>
+
+<p>Say you&rsquo;d like to have success notifications show up on the top right of your app and error messages pop up as a modal in the middle of your app, you can create 2 separate flash triggers in your templates to handle each instance.</p>
+
+<p>The syntax for filtering flashes is very similar, with only some minor tweaks:</p>
+
+<pre><code class="language-py">{% with success = get_flashed_messages(category_filter=[&quot;success&quot;]) %}
+    {% if success %}
+        {%- for message in success %}
+        &lt;div class=&quot;alert alert-success alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;
+            &lt;span&gt;{{ message }}&lt;/span&gt;
+            &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;
+                &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        {% endfor -%}
+    {% endif %}
+{% endwith %} 
+</code></pre>
+
+<ul>
+<li>By passing  <code>category_filter=[&quot;success&quot;]</code>  to  <code>get_flashed_messages()</code>, we only trigger the flash when a given category is passed into the  <code>flash</code>  function.</li>
+</ul>
+
+<p>Using filtering, we can create several flashes in our templates and we only need to pass in the actual message of the flash.</p>
+
+<p>In this simple example, we&rsquo;ll create 3 flash instances in our template, each with their own filter. One for success, one for warning and one for danger. We&rsquo;ll space these 3 flashes over 3 columns.</p>
+
+<pre><code class="language-py">&lt;div class=&quot;row&quot;&gt;
+
+    &lt;div class=&quot;col-sm-4&quot;&gt;
+        {% with errors = get_flashed_messages(category_filter=[&quot;success&quot;]) %}
+            {% if errors %}
+                {%- for message in errors %}
+                    &lt;div class=&quot;alert alert-success alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;
+                        &lt;span&gt;{{ message }}&lt;/span&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;
+                            &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                {% endfor -%}
+            {% endif %}
+        {% endwith %}
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col-sm-4&quot;&gt;
+        {% with errors = get_flashed_messages(category_filter=[&quot;warning&quot;]) %}
+            {% if errors %}
+                {%- for message in errors %}
+                    &lt;div class=&quot;alert alert-warning alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;
+                        &lt;span&gt;{{ message }}&lt;/span&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;
+                            &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                {% endfor -%}
+            {% endif %}
+        {% endwith %}
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col-sm-4&quot;&gt;
+        {% with errors = get_flashed_messages(category_filter=[&quot;danger&quot;]) %}
+            {% if errors %}
+                {%- for message in errors %}
+                    &lt;div class=&quot;alert alert-danger alert-dismissible fade show&quot; role=&quot;alert&quot;&gt;
+                        &lt;span&gt;{{ message }}&lt;/span&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;
+                            &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                {% endfor -%}
+            {% endif %}
+        {% endwith %}
+    &lt;/div&gt;
+&lt;/div&gt; 
+</code></pre>
+
+<p>You&rsquo;ll see, we&rsquo;re filtering the flashes using our 3 categories, with a specific flash for each category.</p>
+
+<p>Calling all 3 categories of flash in our route:</p>
+
+<pre><code class="language-py">flash(&quot;Success!&quot;, &quot;success&quot;)
+flash(&quot;This is a warning&quot;, &quot;warning&quot;)
+flash(&quot;DANGER DANGER&quot;, &quot;danger&quot;)
+</code></pre>
+
+<p>Produces the following:</p>
+
+<p><img src="https://pythonise.com/static/img/uploads/flask-flash-filters.PNG" alt="Flask message flashing" title="Flask message flashing" /></p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>Flashing provides us with a simple and flexible way to provide users with valuable feedback and can be styled freely.</p>
+
+<p>Using filters allows us to customize flashes depending on the category passed to it, keeping users happy and notified!</p>
+
+<blockquote>
+<p>Last modified  ·  28 Feb 2019</p>
+
+<p><a href="https://pythonise.com/series/learning-flask/flask-message-flashing">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-17.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#flask-message-flashing-learning-flask-ep-17">Flask message flashing | Learning Flask Ep. 17</a>
+<ul>
+<li>
+<ul>
+<li><a href="#high-level-overview">High level overview</a></li>
+<li><a href="#using-flash-in-a-route">Using flash in a route</a></li>
+<li><a href="#getting-flashed-messages">Getting flashed messages</a></li>
+<li><a href="#styling-flashed-messages">Styling flashed messages</a></li>
+<li><a href="#flash-categories">Flash categories</a></li>
+<li><a href="#filtering-flashes">Filtering flashes</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

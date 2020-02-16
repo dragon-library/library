@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.20 The request object"><meta property="og:title" content="Ep.20 The request object" />
+<meta property="og:description" content="The request object | Learning Flask Ep. 20 Exploring the Flask request object
+The Flask request object gives us access to all of the incoming request data, nicely parsed and ready for us to work with.
+The request object is available globally and can be accessed to get information about the current request, ensuring we only get data from the active thread.
+If you&rsquo;ve been following along with the &ldquo;Learning Flask&rdquo; series, you&rsquo;ve seen the request object in action, from parsing incoming form data and handling the various request methods, however there&rsquo;s much more to explore." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-20/" />
+
+<title>Ep.20 The request object | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
+
+
+<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-17/" >
+      Ep.17 Flask message flashing
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-18/" >
+      Ep.18 Flask error handling
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-19/" >
+      Ep.19 Flask HTTP methods
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-20/"  class="active">
+      Ep.20 The request object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-21/" >
+      Ep.21 Task queues with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-22/" >
+      Ep.22 Pillow, task queues &amp; the HTML picture element
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/flask-blueprint/" >
+      Use a Flask Blueprint
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.20 The request object</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="the-request-object-learning-flask-ep-20">The request object | Learning Flask Ep. 20</h1>
+
+<p>Exploring the Flask request object</p>
+
+<p>The Flask request object gives us access to all of the incoming request data, nicely parsed and ready for us to work with.</p>
+
+<p>The request object is available globally and can be accessed to get information about the current request, ensuring we only get data from the active thread.</p>
+
+<p>If you&rsquo;ve been following along with the &ldquo;Learning Flask&rdquo; series, you&rsquo;ve seen the request object in action, from parsing incoming form data and handling the various request methods, however there&rsquo;s much more to explore.</p>
+
+<p>In this part, we&rsquo;re going to create a couple of routes to take a look at some of the useful and interesting ways to work with the Flask request object.</p>
+
+<h3 id="importing-request">Importing request</h3>
+
+<p>To work with it, you&rsquo;ll first need to import it from Flask:</p>
+
+<pre><code class="language-py">from flask import request
+</code></pre>
+
+<h3 id="the-request-object">The request object</h3>
+
+<p>To take a look at the  <code>request</code>  object:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def public_index():
+
+    print(request.__dict__.items())
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<pre><code class="language-py">dict_items([('environ', {'wsgi.version': (1, 0), 
+'wsgi.url_scheme': 'http', 'wsgi.input': &lt;_io.BufferedReader name=6&gt;,
+  'wsgi.errors': &lt;_io.TextIOWrapper name='&lt;stderr&gt;' mode='w' encoding='UTF-8'&gt;,
+ 'wsgi.multithread': True, 'wsgi.multiprocess': False,  'wsgi.run_once': False, 'werkzeug.server.shutdown': &lt;function WSGIRequestHandler.make_environ.&lt;locals&gt;.shutdown_server at 0x7f0740152e18&gt;,
+    'SERVER_SOFTWARE': 'Werkzeug/0.14.1', 'REQUEST_METHOD': 'GET',
+    'SCRIPT_NAME': '', 'PATH_INFO': '/', 'QUERY_STRING': '', 'REMOTE_ADDR': '127.0.0.1',
+     'REMOTE_PORT': 52087, 'SERVER_NAME': '127.0.0.1', 'SERVER_PORT': '5000',
+      'SERVER_PROTOCOL': 'HTTP/1.1', 'HTTP_HOST': '127.0.0.1:5000', 
+      'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0', 
+      'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 
+      'HTTP_ACCEPT_LANGUAGE': 'en-GB,en;q=0.5', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate',
+       'HTTP_REFERER': 'http://127.0.0.1:5000/', 'HTTP_DNT': '1', 'HTTP_CONNECTION': 'keep-alive', 
+       'HTTP_UPGRADE_INSECURE_REQUESTS': '1', 'HTTP_PRAGMA': 'no-cache', 'HTTP_CACHE_CONTROL': 'no-cache', 
+       'werkzeug.request': &lt;Request 'http://127.0.0.1:5000/' [GET]&gt;}), ('shallow', False), ('view_args', 
+       {}), ('url_rule', &lt;Rule '/' (OPTIONS, HEAD, GET) -&gt; public_index&gt;), ('cookies', {})])
+</code></pre>
+
+<p>Thankfully for us, Flask provides a much cleaner way to work with the request object.</p>
+
+<h3 id="request-method">Request method</h3>
+
+<p><code>request.method</code>  returns the method used in the current request -  <code>GET</code>,  <code>POST</code>,  <code>PUT</code>,  <code>DELETE</code>  etc..</p>
+
+<p>Frequently used as a handler to trigger certain code blocks to run based on the type of incoming request, you&rsquo;ll often see something similar to this:</p>
+
+<pre><code class="language-py">@app.route(&quot;/log-in&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def login():
+
+    if request.method == &quot;POST&quot;:
+        # Get the form data
+        # Do something else
+
+    # Otherwise default to render_template
+    return render_template(&quot;log-in.html&quot;) 
+</code></pre>
+
+<h3 id="cookies">Cookies</h3>
+
+<p><code>request.cookies</code>  returns a dictionary with key-value pairs of any cookies sent in the request:</p>
+
+<p><strong>app.py</strong></p>
+
+<pre><code class="language-py">@app.route(&quot;/&quot;)
+def public_index():
+
+    cookies = request.cookies
+    print(cookies)
+
+    return render_template(&quot;index.html&quot;)
+</code></pre>
+
+<p><strong>Terminal</strong></p>
+
+<pre><code class="language-py">{'chocolate_chip': 'definitely'}
+</code></pre>
+
+<h3 id="query-strings">Query strings</h3>
+
+<p><code>request.args</code>  returns a parsed dictionary of keys and values, representing the query string arguments.</p>
+
+<p>We can access individual quary string values by calling  <code>request.args.get()</code>  and passing in a key:</p>
+
+<pre><code class="language-py">@app.route(&quot;/args&quot;)
+def args():
+
+    &quot;&quot;&quot; Handling query string arguments &quot;&quot;&quot;
+
+    # request.args returns an ImmutableMultidict with the quesy string values
+    args = request.args
+    print(args)
+
+    # Get an individual query string value
+    q = request.args.get(&quot;q&quot;)
+    print(q)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p>If we access this route without a query string in the URL, we get:</p>
+
+<p><code>ImmutableMultiDict([])
+None</code></p>
+
+<p>If we send a query string in the URL, including a value for the  <code>q</code>  parameter, we get:</p>
+
+<pre><code class="language-py">ImmutableMultiDict([('q', 'hello'), ('w', 'world')])
+# hello
+</code></pre>
+
+<h3 id="forms">Forms</h3>
+
+<p><code>request.form</code>  returns an  <code>ImmutableMultiDict</code>  containing key value pairs, with the  <code>name</code>  attribute of the input elements of the form as keys.</p>
+
+<p>Just like  <code>request.args</code>, we can access individual values from the form data using  <code>request.form.get()</code>  and passing in the key we want to fetch:</p>
+
+<pre><code class="language-py">@app.route(&quot;/form&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def form():
+
+    &quot;&quot;&quot; Handling form data &quot;&quot;&quot;
+
+    # Use request.method to handle the request type
+    if request.method == &quot;POST&quot;:
+
+        # request.form returns an ImmutableMultiDict of keys and values
+        req = request.form
+        print(req)
+
+        # Get individual form values based on the name attribute
+        email = request.form.get(&quot;email&quot;)
+        print(email)
+
+    return render_template(&quot;form.html&quot;) 
+</code></pre>
+
+<p>Our form has 2 input fields -  <code>email</code>  and  <code>password</code>. If we submit the form, we get the following output:</p>
+
+<pre><code class="language-py">ImmutableMultiDict([('email', 'foo@bar.com'), ('password', 'foobarred')])
+# foo@bar.com 
+</code></pre>
+
+<p>In addition to  <code>request.form</code>, we can use  <code>request.values</code>  to return a  <code>CombinedMultiDict</code>  containing any query string paramaters and the form data, both parsed as  <code>ImmutableMultiDict</code>.</p>
+
+<p>Using the HTML tag  <code>action=&quot;/form?h=hello&quot;</code>  in our form, we get the following output:</p>
+
+<pre><code class="language-py">CombinedMultiDict([ImmutableMultiDict([('h', 'hello')]),
+ ImmutableMultiDict([('email', 'foo@bar.com'), ('password', 'foobarred')])]) 
+</code></pre>
+
+<h3 id="json">JSON</h3>
+
+<p>Parsing JSON in flask is just as simple, with a few additional helper methods and attribites.</p>
+
+<ul>
+<li><code>request.is_json</code>  returns  <code>True</code>  if the request body contains JSON data.</li>
+<li><code>request.json</code>  parses the JSON and returns a dictionary of keys and values.</li>
+<li><code>request.get_json()</code>  also parses the JSON and returns a dictionary of keys and values. IT also accepts some arguments:</li>
+</ul>
+
+<p><code>request.get_json(force=False, silent=False, cache=True)</code></p>
+
+<ul>
+<li><code>force</code>  - Ignores the mimetype and always tries to parse JSON</li>
+<li><code>silent</code>  - Silence any parsing arrors and return  <code>None</code></li>
+<li><code>cache</code>- Store the parsed JSON to return for any subsequent calls</li>
+</ul>
+
+<p>In this example, we have a route that renders a template containing a form for the user to submit some JSON to the server. We have another route below it where the data gets parsed and handled.</p>
+
+<pre><code class="language-py">@app.route(&quot;/json&quot;)
+def json():
+
+    &quot;&quot;&quot; Returns an HTML template with an input to post some JSON &quot;&quot;&quot;
+
+    return render_template(&quot;json.html&quot;)
+
+@app.route(&quot;/json/handler&quot;, methods=[&quot;POST&quot;])
+def json_handler():
+
+    &quot;&quot;&quot; Handles the posted JSON data &quot;&quot;&quot;
+
+    # request.is_json returns True if the request body is JSON
+    if request.is_json:
+
+        # request.get_json returns a dictionary
+        json_data = request.get_json()
+        print(json_data)
+
+        # request.json also returns a dictionary
+        json_data = request.json
+
+        # Get individual values from the JSON
+        name = request.json.get(&quot;name&quot;)
+        print(name)
+
+        res = make_response(jsonify(json_data), 200)
+        return res
+
+    res = make_response(jsonify({}), 400)
+    return res 
+</code></pre>
+
+<p>We use  <code>request.is_json</code>  as a check before we attempt to parse the request body.</p>
+
+<p>Posting a JSON object with values for  <code>name</code>  and  <code>age</code>  gives us the following output:</p>
+
+<pre><code class="language-py">{'name': 'Foo', 'age': '29'}
+# Foo
+</code></pre>
+
+<h3 id="files">Files</h3>
+
+<p><code>request.files</code>  returns an  <code>ImmutableMultiDict</code>  containing the file as a  <code>FileStorage</code>  object, a special class from the  <code>Werkzeug</code>  library that sits underneath Flask and handles requests.</p>
+
+<p><code>request.files.get(&quot;example&quot;)</code>  returns a  <code>FileStorage</code>  object which has a few useful methods, including:</p>
+
+<ul>
+<li><code>filename</code>  - The name of the file</li>
+<li><code>name</code>  - The name of the form field</li>
+<li><code>save(destination)</code>  - Saves the file to the given destination</li>
+</ul>
+
+<p>We&rsquo;ll link at the bottom of this guide to the  <code>Werkzeug</code>  documentation on  <code>FileStorage</code>.</p>
+
+<p>In this example, we have a form containing a single file input browser, which the user can submit to the same route.</p>
+
+<p>You&rsquo;ll also notice a few more attributes of the request being called which we&rsquo;ll discuss after:</p>
+
+<pre><code class="language-py">@app.route(&quot;/file&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def single_file():
+
+    &quot;&quot;&quot; 
+ Handles a single file upload
+ Note - Forms uploading files just have enctype=&quot;multipart/form-data&quot; in the form tag
+ &quot;&quot;&quot;
+
+    # request.content_length returns the content length in bytes
+    content_length = request.content_length
+    print(f&quot;Content length: {content_length}&quot;)
+
+    # content_type
+    content_type = request.content_type
+    print(f&quot;Content type: {content_type}&quot;)
+
+    # request.mimetype returns the mimetype of the request
+    mimetype = request.mimetype
+    print(mimetype)
+
+    # Get an ImmutableMultiDict of the files
+    file = request.files
+    print(file)
+
+    # Get a specific file using the name attribute
+    if request.files.get(&quot;image&quot;):
+        image = request.files[&quot;image&quot;]
+        print(f&quot;Filename: {image.filename}&quot;)
+        print(f&quot;Name: {image.name}&quot;)
+        print(image)
+
+        # To save the image, call image.save() and provide a destination to save to
+        # image.save(&quot;/path/to/uploads/directory/filename&quot;)
+
+    return render_template(&quot;file.html&quot;) 
+</code></pre>
+
+<p>Let&rsquo;s take a look at the output. We&rsquo;ve used f strings so you can see what&rsquo;s what:</p>
+
+<pre><code class="language-py">Content length: 213671
+Content type: multipart/form-data; boundary=----WebKitFormBoundaryB33O2yBRsBxnrIWr
+mimetype: multipart/form-data
+ImmutableMultiDict([('image', &lt;FileStorage: 'flask.png' ('image/png')&gt;)])
+Filename: flask.png
+Name: image
+&lt;FileStorage: 'flask.png' ('image/png')&gt; 
+</code></pre>
+
+<ul>
+<li><code>request.content_length</code>  returns the length of the request content in bytes</li>
+<li><code>request.content_type</code>  returns the content type of the request</li>
+<li><code>request.mimetype</code>  returns the mimetype of the request</li>
+
+<li><p><code>request.files</code>  returns the  <code>ImmutableMultiDict</code>  containing any files sent in the request</p>
+
+<pre><code class="language-py">if request.files.get(&quot;image&quot;):
+image = request.files[&quot;image&quot;]
+</code></pre>
+
+<p>We used  <code>if request.files.get(&quot;image&quot;):</code>  to check for a specific file where  <code>image</code>  is the name attribute of the form input, followed by  <code>image = request.files[&quot;image&quot;]</code>  to pull out the file.</p></li>
+</ul>
+
+<h3 id="multiple-files">Multiple files</h3>
+
+<p>We can also use  <code>request.files.getlist(&quot;name&quot;)</code>  to return a list of files in the request, where  <code>name</code>  is the name attribute of the input element.</p>
+
+<p>To upload multiple files from an HTML form, you&rsquo;ll need to include the  <code>multiple</code>  attribute in the input element, for example:</p>
+
+<pre><code class="language-html">&lt;form action=&quot;/files&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+  &lt;input type=&quot;file&quot; name=&quot;files&quot; multiple&gt;
+  &lt;button type=&quot;submit&quot;&gt;Upload&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>The route:</p>
+
+<pre><code class="language-py">@app.route(&quot;/files&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])
+def files():
+
+    &quot;&quot;&quot; Upload multiple files &quot;&quot;&quot;
+
+    # request.files.getlist returns a lift of files
+    files = request.files.getlist(&quot;files&quot;)
+    print(files)
+
+    return render_template(&quot;files.html&quot;) 
+</code></pre>
+
+<p>Uploading 3 files, produces the following output:</p>
+
+<pre><code class="language-py">`[&lt;FileStorage: 'JavaScript-logo.png' ('image/png')&gt;,
+ &lt;FileStorage: 'jinja.png' ('image/png')&gt;,
+  &lt;FileStorage: 'linux_logo.png' ('image/png')&gt;] 
+</code></pre>
+
+<p>At this point, it&rsquo;s easy to iterate over the list of files with a  <code>for</code>  loop and do something with each file, like save it.</p>
+
+<p>You can read more about saving files  <a href="https://pythonise.com/feed/flask/flask-uploading-files">here</a>.</p>
+
+<h3 id="view-arguments">View arguments</h3>
+
+<p><code>request.view_args</code>  parses and returns a dictionary of any arguments passed into the route:</p>
+
+<pre><code class="language-py">@app.route(&quot;/view/args/&lt;foo&gt;/&lt;bar&gt;&quot;)
+def view_arguments(foo, bar):
+
+    &quot;&quot;&quot; Handles arguments coming in from the URL &quot;&quot;&quot;
+
+    # request.view_args  returns a dict of any arguments passed to the view
+    view_args = request.view_args
+    print(view_args)
+
+    return render_template(&quot;index.html&quot;)
+</code></pre>
+
+<p>Going to  <code>/view/args/hello/world</code>  returns the following:</p>
+
+<pre><code class="language-py">{'foo': 'hello', 'bar': 'world'}
+</code></pre>
+
+<h3 id="url-info">URL info</h3>
+
+<p>The  <code>request</code>  object also contains lots of useful data about the request URL.</p>
+
+<p>We&rsquo;ll use  <code>f</code>  strings so you can see the output for each of the  <code>request</code>  attributes:</p>
+
+<pre><code class="language-py">@app.route(&quot;/url/info&quot;)
+def url_info():
+
+    host = request.host
+    print(f&quot;host: {host}&quot;)
+
+    host_url = request.host_url
+    print(f&quot;host_url: {host_url}&quot;)
+
+    path = request.path
+    print(f&quot;path: {path}&quot;)
+
+    full_path = request.full_path
+    print(f&quot;full_path: {path}&quot;)
+
+    url = request.url
+    print(f&quot;url: {url}&quot;)
+
+    base_url = request.base_url
+    print(f&quot;base_url: {base_url}&quot;)
+
+    url_root = request.url_root
+    print(f&quot;url_root: {url_root}&quot;)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p>Going to  <code>/url/info?query=hello</code>  returns the following output:</p>
+
+<pre><code class="language-py">host: 127.0.0.1:5000
+host_url: http://127.0.0.1:5000/
+path: /url/info
+full_path: /url/info
+url: http://127.0.0.1:5000/url/info?query=hello
+base_url: http://127.0.0.1:5000/url/info
+url_root: http://127.0.0.1:5000/ 
+</code></pre>
+
+<h3 id="headers-misc">Headers &amp; misc</h3>
+
+<p>The  <code>request</code>  object contains useful information including the request headers, along with other various things.</p>
+
+<p>In this example, we&rsquo;ll create a route and run through some of the other  <code>request</code>  object attributes.</p>
+
+<p><code>request.headers</code>  returns the headers!:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    headers = request.headers
+    print(headers)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<pre><code>Host: 127.0.0.1:5000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Dnt: 1
+Connection: keep-alive
+Cookie: foo=bar
+Upgrade-Insecure-Requests: 1
+Pragma: no-cache
+Cache-Control: no-cache 
+</code></pre>
+
+<p>We can access individual headers with  <code>request.headers.get(&quot;Example&quot;)</code>, where  <code>Example</code>  is the header:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    accept_encoding = request.headers.get(&quot;Accept-Encoding&quot;)
+    print(accept_encoding)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p><code>gzip, deflate</code></p>
+
+<p><code>request.user_agent</code>  returns the user agent of the request:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    user_agent = request.user_agent
+    print(user_agent)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p><code>Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0</code></p>
+
+<p><code>request.access_route</code>  is an interesting feature. If a forwarded header exists, it returns a list of all ip addresses from the client ip to the last proxy server:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    access_route = request.access_route
+    print(access_route)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p><code>ImmutableList(['127.0.0.1'])</code></p>
+
+<p>If we expose our application using  <code>ngrok</code>, we get the following:</p>
+
+<p><code>ImmutableList(['82.2.172.100'])</code></p>
+
+<p><code>request.endpoint</code>  returns the name of the current function:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    endpoint = request.endpoint
+    print(endpoint)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p><code>the_request_object</code></p>
+
+<p><code>request.is_multiprocess</code>  returns  <code>True</code>  if the application is served by a WSGI server that spawns multiple processes:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    is_multiproc = request.is_multiprocess
+    print(is_multiproc)
+
+    return render_template(&quot;index.html&quot;) 
+
+# False
+</code></pre>
+
+<p><code>request.is_multithread</code>  returns  <code>True</code>  if the application is served by a multithreaded WSGI server:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    is_multithread = request.is_multithread
+    print(is_multithread)
+
+    return render_template(&quot;index.html&quot;) 
+
+# True 
+</code></pre>
+
+<p><code>request.is_secure</code></p>
+
+<p>Note - I assumed this would return  <code>True</code>  if the application is served over https, however after some quick testing using  <code>ngrok</code>  to expose the application over https, it still returned  <code>False</code>.</p>
+
+<p>I&rsquo;ll do some more testing on a live Flask deployment served over https and update the article after, but please feel free to let me know if I&rsquo;m &ldquo;barking up he wrong tree&rdquo; as they say. It might be something to do with running the app from the development server but I&rsquo;m happy to be corrected!</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    is_secure = request.is_secure
+    print(is_secure)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p>If we access the route from the development server:</p>
+
+<p><code>False</code></p>
+
+<p>Proxying the application through  <code>ngrok</code>  over https also returns  <code>False</code>, but we can see from the headers that the application is being served over https:</p>
+
+<p><code>X-Forwarded-Proto: https</code></p>
+
+<p>We can also look at the scheme using  <code>request.scheme</code>:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    scheme = request.scheme
+    print(scheme)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p>If we access the route from the development server:</p>
+
+<p><code>http</code></p>
+
+<p>Again, exposing the app over https using  <code>ngrok</code>  also returned  <code>http</code>  so I must be missing something here! Will update the article after testing on a live application over https.</p>
+
+<p><code>request.remote_addr</code>  returns the remote address of the client:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    remote_addr = request.remote_addr
+    print(remote_addr)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p>If we access the route from the development server:</p>
+
+<p><code>127.0.0.1</code></p>
+
+<p>If we access the route exposed over  <code>ngrok</code>:</p>
+
+<p><code>127.0.0.1</code></p>
+
+<p>If we want to see if the request has been proxied, we can check for the  <code>X-Forwarded-For</code>  and return a list of proxied IP&rsquo;s:</p>
+
+<pre><code class="language-py">if request.headers.get(&quot;X-Forwarded-For&quot;):
+    proxies = request.headers.getlist(&quot;X-Forwarded-For&quot;)
+    print(proxies) 
+</code></pre>
+
+<p>Making the same request over  <code>ngrok</code>  returns:</p>
+
+<p><code>['82.2.172.100']</code></p>
+
+<p><code>request.url_rule.methods</code>  returns a set of available request methods for the route:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;)
+def the_request_object():
+
+    url_rule = request.url_rule.methods
+    print(url_rule)
+
+    return render_template(&quot;index.html&quot;) 
+</code></pre>
+
+<p>As we haven&rsquo;t provided the  <code>method</code>  argument or values, we get:</p>
+
+<pre><code class="language-py">{'HEAD', 'GET', 'OPTIONS'} 
+</code></pre>
+
+<p>If we modify the route to include several request methods:</p>
+
+<pre><code class="language-py">@app.route(&quot;/the/request/object&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;PATCH&quot;, &quot;DELETE&quot;])
+def the_request_object():
+
+    url_rule = request.url_rule.methods
+    print(url_rule)
+
+    return render_template(&quot;index.html&quot;)
+</code></pre>
+
+<p>We get the following:</p>
+
+<pre><code class="language-py">{'OPTIONS', 'GET', 'DELETE', 'POST', 'PUT', 'PATCH', 'HEAD'} 
+</code></pre>
+
+<p>This is an exaggerated example to show the use of  <code>request.url_rule.methods</code>.</p>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+<li><a href="http://flask.pocoo.org/docs/1.0/api/#incoming-request-data">Flask request data (Flask docs)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP headers (MDN)</a></li>
+</ul>
+
+<p>Last modified  ·  07 Mar 2019</p>
+
+<blockquote>
+<p><a href="https://pythonise.com/series/learning-flask/the-flask-request-object">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-20.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#the-request-object-learning-flask-ep-20">The request object | Learning Flask Ep. 20</a>
+<ul>
+<li>
+<ul>
+<li><a href="#importing-request">Importing request</a></li>
+<li><a href="#the-request-object">The request object</a></li>
+<li><a href="#request-method">Request method</a></li>
+<li><a href="#cookies">Cookies</a></li>
+<li><a href="#query-strings">Query strings</a></li>
+<li><a href="#forms">Forms</a></li>
+<li><a href="#json">JSON</a></li>
+<li><a href="#files">Files</a></li>
+<li><a href="#multiple-files">Multiple files</a></li>
+<li><a href="#view-arguments">View arguments</a></li>
+<li><a href="#url-info">URL info</a></li>
+<li><a href="#headers-misc">Headers &amp; misc</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ep.18 Flask error handling"><meta property="og:title" content="Ep.18 Flask error handling" />
+<meta property="og:description" content="Flask error handling | Learning Flask Ep. 18 Manually throwing errors, creating custom error handlers and rendering error templates
+In a perfect world, our applications would never have errors and our users would use our application just as we intended, however it&rsquo;s not a perfect world and there will be bugs in our code and users will always be unpredictable!
+Catching and handling errors ensures our users aren&rsquo;t confused when something goes wrong, also giving them a way to get home or back to the content." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-18/" />
+
+<title>Ep.18 Flask error handling | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
+
+
+<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/" >
+      Learning Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-1/" >
+      Ep.1 Your first Flask app
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-2/" >
+      Ep.2 Flask application structure
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-3/" >
+      Ep.3 Serving HTML files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-4/" >
+      Ep.4 Serving static files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-5/" >
+      Ep.5 Jinja template inheritance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-6/" >
+      Ep.6 Jinja template design
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-7/" >
+      Ep.7 Working with forms in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-8/" >
+      Ep.8 Generating dynamic URLs in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-9/" >
+      Ep.9 Working with JSON data
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-10/" >
+      Ep.10 Flask and the Fetch API
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-11/" >
+      Ep.11 Query strings in Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-12/" >
+      Ep.12 Flask configuration files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-13/" >
+      Ep.13 Uploading files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-14/" >
+      Ep.14 Sending files with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-15/" >
+      Ep.15 Flask cookies
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-16/" >
+      Ep.16 The Flask session object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-17/" >
+      Ep.17 Flask message flashing
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-18/"  class="active">
+      Ep.18 Flask error handling
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-19/" >
+      Ep.19 Flask HTTP methods
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-20/" >
+      Ep.20 The request object
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-21/" >
+      Ep.21 Task queues with Flask
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/learning-flask/ep-22/" >
+      Ep.22 Pillow, task queues &amp; the HTML picture element
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/primer-jinja-templating/" >
+      Primer on Jinja Templating
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/flask/flask-blueprint/" >
+      Use a Flask Blueprint
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ep.18 Flask error handling</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="flask-error-handling-learning-flask-ep-18">Flask error handling | Learning Flask Ep. 18</h1>
+
+<p>Manually throwing errors, creating custom error handlers and rendering error templates</p>
+
+<p>In a perfect world, our applications would never have errors and our users would use our application just as we intended, however it&rsquo;s not a perfect world and there will be bugs in our code and users will always be unpredictable!</p>
+
+<p>Catching and handling errors ensures our users aren&rsquo;t confused when something goes wrong, also giving them a way to get home or back to the content.</p>
+
+<p>Flask provides us with a simple way to throw and catch errors, along with displaying a custom HTML template for each error. When an HTTP error is raised, for example a  <code>404 Not Found</code>  or  <code>500 Internal Server Error</code>, we can catch it, handle it and return something relevant to the exception.</p>
+
+<h3 id="throwing-errors">Throwing errors</h3>
+
+<p>There may be times when you need to manually throw an error, for example if an unauthenticated user was trying to access a protected route or if a certain request method isn&rsquo;t allowed.</p>
+
+<p>Flask provides us with the  <code>abort()</code>  function, to which we can supply the HTTP status code related to the error.</p>
+
+<p>We need to import it from Flask:</p>
+
+<pre><code class="language-py">from flask import abort
+</code></pre>
+
+<p>To use abort, simply call it and pass in the HTTP status code:</p>
+
+<pre><code class="language-py">abort(404)  # Not found
+abort(405)  # Method Not allowed
+abort(500)  # Internal Server Error
+</code></pre>
+
+<p>If a user encounters the  <code>abort</code>  function, the error will trigger and the browser will display its default page/text for that error (Which normally look quite ugly)</p>
+
+<p>A better solution is to setup an handler to let us decide what happens when one of these errors are encountered.</p>
+
+<h3 id="custom-error-handlers">Custom error handlers</h3>
+
+<p>Just as we can throw errors on demand, we can handle them using the  <code>errorhandler()</code>  decorator and attaching it to our  <code>app</code>  instance.</p>
+
+<p>The syntax for a custom error handler:</p>
+
+<pre><code class="language-py">@app.errorhandler(STATUS_CODE)
+def function_name(error):
+
+    # Do something here..
+    # Log the error..
+    # Send en email..
+    # Etc ..
+
+    return render_template(&quot;handler.html&quot;), STATUS_CODE
+</code></pre>
+
+<p>For example, an error handler for a  <code>403 Forbidden</code>  status code:</p>
+
+<pre><code class="language-py">@app.errorhandler(403)
+def forbidden(e):
+    return render_template(&quot;error_handlers/forbidden.html&quot;), 403
+</code></pre>
+
+<p><strong>Not found  <code>404</code>:</strong></p>
+
+<pre><code class="language-py">from flask import request
+
+@app.errorhandler(404)
+def page_not_found(e):
+
+    app.logger.info(f&quot;Page not found: {request.url}&quot;)
+
+    return render_template(&quot;error_handlers/404.html&quot;), 404
+</code></pre>
+
+<p>Server error  <code>500</code>:</p>
+
+<pre><code class="language-py">from flask import request
+
+@app.errorhandler(500)
+def server_error(e):
+
+    email_admin(message=&quot;Server error&quot;, url=request.url, error=e)
+
+    app.logger.error(f&quot;Server error: {request.url}&quot;)
+
+    return render_template(&quot;error_handlers/500.html&quot;), 500
+</code></pre>
+
+<h3 id="error-templates">Error templates</h3>
+
+<p>Default browser error pages aren&rsquo;t pretty:</p>
+
+<p><img src="https://pythonise.com/static/img/uploads/broswer-default-404.PNG" alt="Browser default 404 page" title="Browser default 404 page" /></p>
+
+<p>A better looking example of a 404 page from the  <a href="https://developer.mozilla.org/en-US/">Mozilla developer site</a>:</p>
+
+<p><img src="https://pythonise.com/static/img/uploads/mdn-404-page.PNG" alt="Mozilla 404 page" title="Mozilla 404 page" /></p>
+
+<p>Just as you would normally return a template in a route using  <code>render_template()</code>  and passing it an HTML file, we&rsquo;ve done the same in our custom error handlers.</p>
+
+<p>We&rsquo;ve created our error HTML files and placed them in a directory called  <code>error_handlers</code>, giving each HTML file the name corresponding to the error which we then call with  <code>render_template</code>, passing it the path to the relevant handler file.</p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>Throwing strategic errors is as simple as calling  <code>abort()</code>  and passing it an HTTP status code.</p>
+
+<p>Handling errors and creating custom error pages is also simple with  <code>@app.errorhandler(STATUS)</code>  and writing a function to handle the error and return a relevant response.</p>
+
+<p>Last modified  ·  28 Feb 2019</p>
+
+<blockquote>
+<p><a href="https://pythonise.com/series/learning-flask/flask-error-handling">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cFlask%5cLearning-Flask%5cep-18.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#flask-error-handling-learning-flask-ep-18">Flask error handling | Learning Flask Ep. 18</a>
+<ul>
+<li>
+<ul>
+<li><a href="#throwing-errors">Throwing errors</a></li>
+<li><a href="#custom-error-handlers">Custom error handlers</a></li>
+<li><a href="#error-templates">Error templates</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
