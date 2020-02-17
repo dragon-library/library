@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Datetime Tutorial"><meta property="og:title" content="Datetime Tutorial" />
-<meta property="og:description" content="Python Datetime Tutorial: Manipulate Times, Dates, and Time Spans Dealing with dates and times in Python can be a hassle. Thankfully, there’s a built-in way of making it easier: the Python datetime module.
-datetime helps us identify and process time-related elements like dates, hours, minutes, seconds, days of the week, months, years, etc. It offers various services like managing time zones and daylight savings time. It can work with timestamp data." />
+<meta property="og:description" content="Python Datetime Tutorial: Manipulate Times, Dates, and Time Spans Table of Contents  Python datetime Classes Creating Date Objects Extract Year and Month from the Date  - Handling Date and Time Strings with strptime() and strftime()  Getting Day of the Month and Day of the Week from a Date Getting Hours and Minutes From a Python Datetime Object Getting Week of the Year from a Datetime Object Converting a Date Object into Unix Timestamp and Vice Versa Measuring Time Span with Timedelta Objects Find the Difference Between Two Dates and Times Formatting Dates: More on strftime() and strptime() Handling Timezones Working with pandas Datetime Objects  - Get Year, Month, Day, Hour, Minute in pandas  Get Weekday and Day of Year  Convert Date Object into DataFrame Index  Conclusion  Dealing with dates and times in Python can be a hassle." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/" />
 
@@ -17,7 +16,7 @@ datetime helps us identify and process time-related elements like dates, hours, 
 <link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
 
 
-<script defer src="/library/tutorials/en.search.min.9f810f3be626cb553b0f797959b98185b680205146fabbe1b41755b736da7034.js" integrity="sha256-n4EPO&#43;Ymy1U7D3l5WbmBhbaAIFFG&#43;rvhtBdVtzbacDQ="></script>
+<script defer src="/library/tutorials/en.search.min.99013ed0acfb51c00943c166d086846c53e4b9537dfc6df1fb4bda7de24c3e9a.js" integrity="sha256-mQE&#43;0Kz7UcAJQ8Fm0IaEbFPkuVN9/G3x&#43;0vafeJMPpo="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -548,6 +547,37 @@ https://github.com/alex-shpak/hugo-book
 
 <p><img src="https://www.dataquest.io/wp-content/uploads/2019/10/python-datetime-tutorial-960x520.jpg" alt="enter image description here" /></p>
 
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#python-datetime-classes">Python  datetime  Classes</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#creating-date-objects">Creating Date Objects</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#extract-year-and-month-from-the-date">Extract Year and Month from the Date</a>
+
+<ul>
+<li>-   <a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#handling-date-and-time-strings-with-strptime-and-strftime">Handling Date and Time Strings with  strptime()  and  strftime()</a></li>
+</ul></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#getting-day-of-the-month-and-day-of-the-week-from-a-date">Getting Day of the Month and Day of the Week from a Date</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#getting-hours-and-minutes-from-a-python-datetime-object">Getting Hours and Minutes From a Python Datetime Object</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#getting-week-of-the-year-from-a-datetime-object">Getting Week of the Year from a Datetime Object</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#converting-a-date-object-into-unix-timestamp-and-vice-versa">Converting a Date Object into Unix Timestamp and Vice Versa</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#measuring-time-span-with-timedelta-objects">Measuring Time Span with Timedelta Objects</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#find-the-difference-between-two-dates-and-times">Find the Difference Between Two Dates and Times</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#formatting-dates-more-on-strftime-and-strptime">Formatting Dates: More on strftime() and strptime()</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#handling-timezones">Handling Timezones</a></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#working-with-pandas-datetime-objects">Working with  pandas  Datetime Objects</a>
+
+<ul>
+<li>-   <a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#get-year-month-day-hour-minute-in-pandas">Get Year, Month, Day, Hour, Minute in pandas</a>
+
+<ul>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#get-weekday-and-day-of-year">Get Weekday and Day of Year</a></li>
+</ul></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#convert-date-object-into-dataframe-index">Convert Date Object into DataFrame Index</a></li>
+</ul></li>
+<li><a href="http://localhost:1313/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/#conclusion">Conclusion</a></li>
+</ul>
+
 <p>Dealing with dates and times in Python can be a hassle. Thankfully, there’s a built-in way of making it easier: the Python datetime module.</p>
 
 <p><code>datetime</code>  helps us identify and process time-related elements like dates, hours, minutes, seconds, days of the week, months, years, etc. It offers various services like managing time zones and daylight savings time. It can work with timestamp data. It can extract the day of the week, day of the month, and other date and time formats from strings.</p>
@@ -629,7 +659,7 @@ Type :-  &lt;class 'datetime.datetime'&gt;
 
 <p>To do this, we need to do a few things.</p>
 
-<h4 id="handling-date-and-time-strings-with-strptime-and-strftime-https-www-dataquest-io-blog-python-datetime-tutorial-handling-date-and-time-strings-with-strptime-and-strftime">Handling Date and Time Strings with  <code>strptime()</code>  and  <code>strftime()</code>[](<a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Handling-Date-and-Time-Strings-with-strptime()-and-strftime()">https://www.dataquest.io/blog/python-datetime-tutorial/#Handling-Date-and-Time-Strings-with-strptime()-and-strftime()</a>)</h4>
+<h4 id="handling-date-and-time-strings-with-strptime-and-strftime">Handling Date and Time Strings with  <code>strptime()</code>  and  <code>strftime()</code></h4>
 
 <p>Thankfully,  <code>datetime</code>  includes two methods,  <code>strptime()</code>  and  <code>strftime()</code>, for converting objects from strings to  <code>datetime</code>  objects and vice versa.  <code>strptime()</code>  can read strings with date and time information and convert them to  <code>datetime</code>  objects, and  <code>strftime()</code>  converts datetime objects back into strings.</p>
 
@@ -707,7 +737,7 @@ for i in calendar.day_name:
 
 <p>Now we can see that Python starts weeks on Monday and counts from the index 0 rather than starting at 1. So it makes sense that the number 3 is converted to “Thursday” as we saw above.</p>
 
-<h2 id="getting-hours-and-minutes-from-a-python-datetime-object-https-www-dataquest-io-blog-python-datetime-tutorial-getting-hours-and-minutes-from-a-datetime-object"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Getting-Hours-and-Minutes-From-a-Datetime-Object">Getting Hours and Minutes From a Python Datetime Object</a></h2>
+<h2 id="getting-hours-and-minutes-from-a-python-datetime-object">Getting Hours and Minutes From a Python Datetime Object</h2>
 
 <p>Now let’s dig into time and extract the hours and minutes from datetime object. Much like what we did above with month and year, we can use class attributes  <code>.hour</code>  and  <code>.minute</code>  to get the hours and minutes of the day.</p>
 
@@ -727,7 +757,7 @@ Hour:  10
 Minute:  25
 </code></pre>
 
-<h2 id="getting-week-of-the-year-from-a-datetime-object-https-www-dataquest-io-blog-python-datetime-tutorial-getting-week-of-the-year-from-a-datetime-object"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Getting-Week-of-the-Year-from-a-Datetime-Object">Getting Week of the Year from a Datetime Object</a></h2>
+<h2 id="getting-week-of-the-year-from-a-datetime-object">Getting Week of the Year from a Datetime Object</h2>
 
 <p>We can also do fancier things with  <code>datetime</code>. For example, what if we want to know what week of the year it is?</p>
 
@@ -751,7 +781,7 @@ todays_date.isocalendar()
 # 43
 </code></pre>
 
-<h2 id="converting-a-date-object-into-unix-timestamp-and-vice-versa-https-www-dataquest-io-blog-python-datetime-tutorial-converting-a-date-object-into-unix-timestamp-and-vice-versa"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Converting-a-Date-Object-into-Unix-Timestamp-and-Vice-Versa">Converting a Date Object into Unix Timestamp and Vice Versa</a></h2>
+<h2 id="converting-a-date-object-into-unix-timestamp-and-vice-versa">Converting a Date Object into Unix Timestamp and Vice Versa</h2>
 
 <p>In programming, it’s not uncommon to encounter time and date data that’s stored as a timestamp, or to want to store your own data in  <a href="https://en.wikipedia.org/wiki/Unix_time">Unix timestamp format</a>.</p>
 
@@ -793,7 +823,7 @@ type(dt_object):  &lt;class 'datetime.datetime'&gt;
 
 <p><img src="https://www.dataquest.io/wp-content/uploads/2019/10/measure-time-span-python-timedelta.jpg" alt="python datetime tutorial - timedelta and time span" /></p>
 
-<h2 id="measuring-time-span-with-timedelta-objects-https-www-dataquest-io-blog-python-datetime-tutorial-measuring-time-span-with-timedelta-objects"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Measuring-Time-Span-with-Timedelta-Objects">Measuring Time Span with Timedelta Objects</a></h2>
+<h2 id="measuring-time-span-with-timedelta-objects">Measuring Time Span with Timedelta Objects</h2>
 
 <p>Often, we may want to measure a span of time, or a duration, using Python datetime. We can do this with its built-in  <code>timedelta</code>  class. A  <code>timedelta</code>  object represents the amount of time between two dates or times. We can use this to measure time spans, or manipulate dates or times by adding and subtracting from them, etc.</p>
 
@@ -856,7 +886,7 @@ two_weeks_ago object type:  &lt;class 'datetime.datetime'&gt;
 
 <p>Note that the output of these mathematical operations is still a  <code>datetime</code>  object.</p>
 
-<h2 id="find-the-difference-between-two-dates-and-times-https-www-dataquest-io-blog-python-datetime-tutorial-find-the-difference-between-two-dates-and-times"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Find-the-Difference-Between-Two-Dates-and-Times">Find the Difference Between Two Dates and Times</a></h2>
+<h2 id="find-the-difference-between-two-dates-and-times">Find the Difference Between Two Dates and Times</h2>
 
 <p>Similar to what we did above, we can also subtract one date from another date to find the timespan between them using datetime.</p>
 
@@ -901,7 +931,7 @@ print(&quot;Difference: &quot;, diff)
 
 <p><img src="https://www.dataquest.io/wp-content/uploads/2019/10/python-datetime-formatting-dates.jpg" alt="python datetime tutorial formatting dates strftime" /></p>
 
-<h2 id="formatting-dates-more-on-strftime-and-strptime-https-www-dataquest-io-blog-python-datetime-tutorial-formatting-dates-more-on-strftime-and-strptime"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Formatting-Dates:-More-on-strftime()-and-strptime()">Formatting Dates: More on strftime() and strptime()</a></h2>
+<h2 id="formatting-dates-more-on-strftime-and-strptime">Formatting Dates: More on strftime() and strptime()</h2>
 
 <p>We touched briefly on  <code>strftime()</code>  and  <code>strptime()</code>  earlier, but let’s take a closer look at these methods, as they’re often important for data analysis work in Python.</p>
 
@@ -1006,7 +1036,7 @@ Day: 25
 Time: 11:56:41
 Date and Time: 10/25/2019, 11:56:41</p>
 
-<h2 id="handling-timezones-https-www-dataquest-io-blog-python-datetime-tutorial-handling-timezones"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Handling-Timezones">Handling Timezones</a></h2>
+<h2 id="handling-timezones">Handling Timezones</h2>
 
 <p>Working with dates and times in Pythin can get even more complicated when timezones get involved. Thankfully, the  <code>pytz</code>  module exists to help us deal with cross-timezone conversions. It also handles the daylight savings time in locations that use that.</p>
 
@@ -1039,7 +1069,7 @@ print(loc_dt.astimezone(au_tz))
 
 <p>This module can help make life simpler when working with data sets that include multiple different time zones.</p>
 
-<h2 id="working-with-pandas-datetime-objects-https-www-dataquest-io-blog-python-datetime-tutorial-working-with-pandas-datetime-objects"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Working-with-pandas-Datetime-Objects">Working with  <code>pandas</code>  Datetime Objects</a></h2>
+<h2 id="working-with-pandas-datetime-objects">Working with  <code>pandas</code>  Datetime Objects</h2>
 
 <p>Data scientists love  <code>pandas</code>  for many reasons. One of them is that it contains extensive capabilities and features for working with time series data. Much like  <code>datetime</code>  itself, pandas has both  <code>datetime</code>  and  <code>timedelta</code>  objects for specifying dates and times and durations, respectively.</p>
 
@@ -1088,7 +1118,7 @@ DatetimeIndex(['2019-08-10', '2019-08-11', '2019-08-12', '2019-08-13',
               dtype='datetime64[ns]', freq='D')
 </code></pre>
 
-<h4 id="get-year-month-day-hour-minute-in-pandas-https-www-dataquest-io-blog-python-datetime-tutorial-get-year-month-day-hour-minute-in-pandas"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Get-Year,-Month,-Day,-Hour,-Minute-in-pandas">Get Year, Month, Day, Hour, Minute in pandas</a></h4>
+<h4 id="get-year-month-day-hour-minute-in-pandas">Get Year, Month, Day, Hour, Minute in pandas</h4>
 
 <p>We can easily get year, month, day, hour, or minute from dates in a column of a pandas dataframe using  <code>dt</code>  attributes for all columns. For example, we can use  <code>df['date'].dt.year</code>  to extract only the year from a pandas column that includes the full date.</p>
 
@@ -1179,7 +1209,7 @@ df.head()
 </tbody>
 </table>
 
-<h4 id="get-weekday-and-day-of-year-https-www-dataquest-io-blog-python-datetime-tutorial-get-weekday-and-day-of-year">Get Weekday and Day of Year[](<a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Get-Weekday-and-Day-of-Year">https://www.dataquest.io/blog/python-datetime-tutorial/#Get-Weekday-and-Day-of-Year</a>)</h4>
+<h4 id="get-weekday-and-day-of-year">Get Weekday and Day of Year</h4>
 
 <p>Pandas is also capable of getting other elements, like the day of the week and the day of the year, from its datetime objects. Again, we can use  <code>dt</code>  attributes to do this. Note that here, as in Python generally, the week starts on Monday at index 0, so day of the week 5 is  <em>Saturday</em>.</p>
 
@@ -1268,7 +1298,7 @@ df.head()
 </tbody>
 </table>
 
-<h3 id="convert-date-object-into-dataframe-index-https-www-dataquest-io-blog-python-datetime-tutorial-convert-date-object-into-dataframe-index">Convert Date Object into DataFrame Index[](<a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Convert-Date-Object-into-DataFrame-Index">https://www.dataquest.io/blog/python-datetime-tutorial/#Convert-Date-Object-into-DataFrame-Index</a>)</h3>
+<h3 id="convert-date-object-into-dataframe-index">Convert Date Object into DataFrame Index</h3>
 
 <p>We can also use pandas to make a datetime column into the index of our DataFrame. This can be very helpful for tasks like exploratory data visualization, because matplotlib will recognize that the DataFrame index is a time series and plot the data accordingly.</p>
 
@@ -1357,7 +1387,7 @@ df.head()
 </tbody>
 </table>
 
-<h2 id="conclusion-https-www-dataquest-io-blog-python-datetime-tutorial-conclusion"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Conclusion">Conclusion</a></h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>In this tutorial, we’ve taken a deep dive into Python datetime, and also done some work with pandas and the calendar module. We’ve covered a lot, but remember: the best way to learn something is by actually writing code yourself! If you’d like to practice writing  <code>datetime</code>  code with interactive answer-checking, check out our  <a href="https://www.dataquest.io/course/python-for-data-science-intermediate/">free Python intermediate course</a>  for  <a href="https://www.dataquest.io/m/353-working-with-dates-and-times-in-python/">a lesson on datetime in Python</a>  with interative answer-checking and in-browser code-running.</p>
 
@@ -1393,33 +1423,34 @@ df.head()
 <ul>
 <li><a href="#python-datetime-tutorial-manipulate-times-dates-and-time-spans">Python Datetime Tutorial: Manipulate Times, Dates, and Time Spans</a>
 <ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#python-datetime-classes">Python  <code>datetime</code>  Classes</a></li>
 <li><a href="#creating-date-objects">Creating Date Objects</a></li>
 <li><a href="#extract-year-and-month-from-the-date">Extract Year and Month from the Date</a>
 <ul>
 <li>
 <ul>
-<li><a href="#handling-date-and-time-strings-with-strptime-and-strftime-https-www-dataquest-io-blog-python-datetime-tutorial-handling-date-and-time-strings-with-strptime-and-strftime">Handling Date and Time Strings with  <code>strptime()</code>  and  <code>strftime()</code>[](<a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Handling-Date-and-Time-Strings-with-strptime()-and-strftime()">https://www.dataquest.io/blog/python-datetime-tutorial/#Handling-Date-and-Time-Strings-with-strptime()-and-strftime()</a>)</a></li>
+<li><a href="#handling-date-and-time-strings-with-strptime-and-strftime">Handling Date and Time Strings with  <code>strptime()</code>  and  <code>strftime()</code></a></li>
 </ul></li>
 </ul></li>
 <li><a href="#getting-day-of-the-month-and-day-of-the-week-from-a-date">Getting Day of the Month and Day of the Week from a Date</a></li>
-<li><a href="#getting-hours-and-minutes-from-a-python-datetime-object-https-www-dataquest-io-blog-python-datetime-tutorial-getting-hours-and-minutes-from-a-datetime-object"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Getting-Hours-and-Minutes-From-a-Datetime-Object">Getting Hours and Minutes From a Python Datetime Object</a></a></li>
-<li><a href="#getting-week-of-the-year-from-a-datetime-object-https-www-dataquest-io-blog-python-datetime-tutorial-getting-week-of-the-year-from-a-datetime-object"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Getting-Week-of-the-Year-from-a-Datetime-Object">Getting Week of the Year from a Datetime Object</a></a></li>
-<li><a href="#converting-a-date-object-into-unix-timestamp-and-vice-versa-https-www-dataquest-io-blog-python-datetime-tutorial-converting-a-date-object-into-unix-timestamp-and-vice-versa"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Converting-a-Date-Object-into-Unix-Timestamp-and-Vice-Versa">Converting a Date Object into Unix Timestamp and Vice Versa</a></a></li>
-<li><a href="#measuring-time-span-with-timedelta-objects-https-www-dataquest-io-blog-python-datetime-tutorial-measuring-time-span-with-timedelta-objects"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Measuring-Time-Span-with-Timedelta-Objects">Measuring Time Span with Timedelta Objects</a></a></li>
-<li><a href="#find-the-difference-between-two-dates-and-times-https-www-dataquest-io-blog-python-datetime-tutorial-find-the-difference-between-two-dates-and-times"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Find-the-Difference-Between-Two-Dates-and-Times">Find the Difference Between Two Dates and Times</a></a></li>
-<li><a href="#formatting-dates-more-on-strftime-and-strptime-https-www-dataquest-io-blog-python-datetime-tutorial-formatting-dates-more-on-strftime-and-strptime"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Formatting-Dates:-More-on-strftime()-and-strptime()">Formatting Dates: More on strftime() and strptime()</a></a></li>
-<li><a href="#handling-timezones-https-www-dataquest-io-blog-python-datetime-tutorial-handling-timezones"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Handling-Timezones">Handling Timezones</a></a></li>
-<li><a href="#working-with-pandas-datetime-objects-https-www-dataquest-io-blog-python-datetime-tutorial-working-with-pandas-datetime-objects"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Working-with-pandas-Datetime-Objects">Working with  <code>pandas</code>  Datetime Objects</a></a>
+<li><a href="#getting-hours-and-minutes-from-a-python-datetime-object">Getting Hours and Minutes From a Python Datetime Object</a></li>
+<li><a href="#getting-week-of-the-year-from-a-datetime-object">Getting Week of the Year from a Datetime Object</a></li>
+<li><a href="#converting-a-date-object-into-unix-timestamp-and-vice-versa">Converting a Date Object into Unix Timestamp and Vice Versa</a></li>
+<li><a href="#measuring-time-span-with-timedelta-objects">Measuring Time Span with Timedelta Objects</a></li>
+<li><a href="#find-the-difference-between-two-dates-and-times">Find the Difference Between Two Dates and Times</a></li>
+<li><a href="#formatting-dates-more-on-strftime-and-strptime">Formatting Dates: More on strftime() and strptime()</a></li>
+<li><a href="#handling-timezones">Handling Timezones</a></li>
+<li><a href="#working-with-pandas-datetime-objects">Working with  <code>pandas</code>  Datetime Objects</a>
 <ul>
 <li>
 <ul>
-<li><a href="#get-year-month-day-hour-minute-in-pandas-https-www-dataquest-io-blog-python-datetime-tutorial-get-year-month-day-hour-minute-in-pandas"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Get-Year,-Month,-Day,-Hour,-Minute-in-pandas">Get Year, Month, Day, Hour, Minute in pandas</a></a></li>
-<li><a href="#get-weekday-and-day-of-year-https-www-dataquest-io-blog-python-datetime-tutorial-get-weekday-and-day-of-year">Get Weekday and Day of Year[](<a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Get-Weekday-and-Day-of-Year">https://www.dataquest.io/blog/python-datetime-tutorial/#Get-Weekday-and-Day-of-Year</a>)</a></li>
+<li><a href="#get-year-month-day-hour-minute-in-pandas">Get Year, Month, Day, Hour, Minute in pandas</a></li>
+<li><a href="#get-weekday-and-day-of-year">Get Weekday and Day of Year</a></li>
 </ul></li>
-<li><a href="#convert-date-object-into-dataframe-index-https-www-dataquest-io-blog-python-datetime-tutorial-convert-date-object-into-dataframe-index">Convert Date Object into DataFrame Index[](<a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Convert-Date-Object-into-DataFrame-Index">https://www.dataquest.io/blog/python-datetime-tutorial/#Convert-Date-Object-into-DataFrame-Index</a>)</a></li>
+<li><a href="#convert-date-object-into-dataframe-index">Convert Date Object into DataFrame Index</a></li>
 </ul></li>
-<li><a href="#conclusion-https-www-dataquest-io-blog-python-datetime-tutorial-conclusion"><a href="https://www.dataquest.io/blog/python-datetime-tutorial/#Conclusion">Conclusion</a></a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul></li>
 </ul>
 </nav>

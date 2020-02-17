@@ -15,8 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</guid>
-      <description>Python Datetime Tutorial: Manipulate Times, Dates, and Time Spans Dealing with dates and times in Python can be a hassle. Thankfully, there’s a built-in way of making it easier: the Python datetime module.
-datetime helps us identify and process time-related elements like dates, hours, minutes, seconds, days of the week, months, years, etc. It offers various services like managing time zones and daylight savings time. It can work with timestamp data.</description>
+      <description>Python Datetime Tutorial: Manipulate Times, Dates, and Time Spans Table of Contents  Python datetime Classes Creating Date Objects Extract Year and Month from the Date  - Handling Date and Time Strings with strptime() and strftime()  Getting Day of the Month and Day of the Week from a Date Getting Hours and Minutes From a Python Datetime Object Getting Week of the Year from a Datetime Object Converting a Date Object into Unix Timestamp and Vice Versa Measuring Time Span with Timedelta Objects Find the Difference Between Two Dates and Times Formatting Dates: More on strftime() and strptime() Handling Timezones Working with pandas Datetime Objects  - Get Year, Month, Day, Hour, Minute in pandas  Get Weekday and Day of Year  Convert Date Object into DataFrame Index  Conclusion  Dealing with dates and times in Python can be a hassle.</description>
     </item>
     
     <item>
