@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/git/</link>
+    <description>Recent content in Git on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Working with missing data</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/git/what-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/git/what-git/</guid>
+      <description>Git คืออะไร &amp;gt; Source : .
+1. Git คืออะไร Git คือ Version Control แบบ Distributed ตัวหนึ่ง เป็นระบบที่ใช้จัดเก็บและควบคุมการเปลี่ยนแปลงที่เกิดขึ้นกับไฟล์ชนิดใดก็ได้ ไม่ว่าจะเป็น Text File หรือ Binary File (จากนี้จะขอเรียก Text File หรือ Binary File รวมกันว่า Source Code)
+ทำไมถึงต้องใช้ Git Track version ของ Source Code ย้อนกลับได้  เมื่อจัดเก็บไฟล์เข้าไปในระบบของ Git จะเรียกว่า Git Repository ซึ่งเก็บสำรองข้อมูลและการเปลี่ยนแปลงของ Source Code ทำให้สามารถย้อนกลับไปที่เวอร์ชั่นใดๆ ก่อนหน้า และดูรายละเอียดการเปลี่ยนแปลงของแต่ละเวอร์ชั่นได้ นอกจากนั้นยังสามารถดูได้ว่าใครเป็นคนแก้ไข!!  ช่วยในการพัฒนาซอฟต์แวร์เป็นทีม  Git สามารถเก็บบันทึกการเปลี่ยนแปลงของ Source Code เวอร์ชั่นล่าสุดไว้ที่ Local Repository ซึ่งสามารถทำงานได้โดยที่ไม่ต้องต่อกับอินเตอร์เน็ต และเมื่อต้อง Update การเปลี่ยนแปลงของ Source Code เวอร์ชั่นล่าสุดให้กับเพื่อนร่วมทีมก็สามารถที่จะ Push ขึ้นไปเก็บที่ Remote Repository(Git Hosting) และเพื่อนร่วมทีมก็สามารถ Pull เวอร์ชั้นล่าสุดนั้นมารวม(Auto Merge) ที่เครื่องของเขาเอง ทำให้ Source Code ที่พัฒนาร่วมกันกับคนภายในทีมเป็นเวอร์ชั่นล่าสุดเสมอ  Git Status สถานะของ Source Code ที่เก็บอยู่ในระบบของ Git นั้นมีดั่งนี้</description>
+    </item>
+    
+  </channel>
+</rss>

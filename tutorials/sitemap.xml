@@ -234,6 +234,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/git/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/</loc>
   </url>
   
@@ -463,7 +467,23 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-13/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/14-google-sheets/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/</loc>
   </url>
   
   <url>
@@ -636,6 +656,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/missing_data/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/git/what-git/</loc>
   </url>
   
   <url>

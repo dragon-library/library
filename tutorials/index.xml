@@ -958,6 +958,26 @@ function run() { const myNum = 191; var one = &amp;quot;One&amp;quot;; let two =
     </item>
     
     <item>
+      <title>13. Working With Excel</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-13/</guid>
+      <description>13 Working With Excel Spreadsheets Although we don’t often think of spreadsheets as programming tools, almost everyone uses them to organize information into two-dimensional data structures, perform calculations with formulas, and produce output as charts. In the next two chapters, we’ll integrate Python into two popular spreadsheet applications: Microsoft Excel and Google Sheets.
+Excel is a popular and powerful spreadsheet application for Windows. The openpyxl module allows your Python programs to read and modify Excel spreadsheet files.</description>
+    </item>
+    
+    <item>
+      <title>14 Working With Google Sheets</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/14-google-sheets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/14-google-sheets/</guid>
+      <description>14 Working With Google Sheets Source : 
+Google Sheets, the free, web-based spreadsheet application available to anyone with a Google account or Gmail address, has become a useful, feature-rich competitor to Excel. Google Sheets has its own API, but this API can be confusing to learn and use. This chapter covers the EZSheets third-party module, documented at https://ezsheets.readthedocs.io/. While not as full featured as the official Google Sheets API, EZSheets makes common spreadsheet tasks easy to perform.</description>
+    </item>
+    
+    <item>
       <title>Bootstrap 4 Grid</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/boostrap-4-flex-grid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1378,6 +1398,17 @@ Every data analysis starts with an idea, hypothesis, problem, etc. The next step
       <description>Working with missing data In this section, we will discuss missing (also referred to as NA) values in pandas.
  Note The choice of using NaN internally to denote missing data was largely for simplicity and performance reasons. Starting from pandas 1.0, some optional data types start experimenting with a native NA scalar using a mask-based approach. See here for more.
  See the cookbook for some advanced strategies.</description>
+    </item>
+    
+    <item>
+      <title>Working with missing data</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/git/what-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/git/what-git/</guid>
+      <description>Git คืออะไร &amp;gt; Source : .
+1. Git คืออะไร Git คือ Version Control แบบ Distributed ตัวหนึ่ง เป็นระบบที่ใช้จัดเก็บและควบคุมการเปลี่ยนแปลงที่เกิดขึ้นกับไฟล์ชนิดใดก็ได้ ไม่ว่าจะเป็น Text File หรือ Binary File (จากนี้จะขอเรียก Text File หรือ Binary File รวมกันว่า Source Code)
+ทำไมถึงต้องใช้ Git Track version ของ Source Code ย้อนกลับได้  เมื่อจัดเก็บไฟล์เข้าไปในระบบของ Git จะเรียกว่า Git Repository ซึ่งเก็บสำรองข้อมูลและการเปลี่ยนแปลงของ Source Code ทำให้สามารถย้อนกลับไปที่เวอร์ชั่นใดๆ ก่อนหน้า และดูรายละเอียดการเปลี่ยนแปลงของแต่ละเวอร์ชั่นได้ นอกจากนั้นยังสามารถดูได้ว่าใครเป็นคนแก้ไข!!  ช่วยในการพัฒนาซอฟต์แวร์เป็นทีม  Git สามารถเก็บบันทึกการเปลี่ยนแปลงของ Source Code เวอร์ชั่นล่าสุดไว้ที่ Local Repository ซึ่งสามารถทำงานได้โดยที่ไม่ต้องต่อกับอินเตอร์เน็ต และเมื่อต้อง Update การเปลี่ยนแปลงของ Source Code เวอร์ชั่นล่าสุดให้กับเพื่อนร่วมทีมก็สามารถที่จะ Push ขึ้นไปเก็บที่ Remote Repository(Git Hosting) และเพื่อนร่วมทีมก็สามารถ Pull เวอร์ชั้นล่าสุดนั้นมารวม(Auto Merge) ที่เครื่องของเขาเอง ทำให้ Source Code ที่พัฒนาร่วมกันกับคนภายในทีมเป็นเวอร์ชั่นล่าสุดเสมอ  Git Status สถานะของ Source Code ที่เก็บอยู่ในระบบของ Git นั้นมีดั่งนี้</description>
     </item>
     
     <item>

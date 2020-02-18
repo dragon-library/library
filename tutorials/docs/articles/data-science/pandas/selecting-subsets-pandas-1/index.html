@@ -18,7 +18,7 @@ Become an Expert  My book Master Data Analysis with Python is the most comprehen
 <link rel="stylesheet" href="/library/tutorials/book.min.0bbb1b2ec3079d329cb8e5a2adb6fc66611f3ba7b845024d4147abefe1834ceb.css" integrity="sha256-C7sbLsMHnTKcuOWirbb8ZmEfO6e4RQJNQUer7&#43;GDTOs=">
 
 
-<script defer src="/library/tutorials/en.search.min.99013ed0acfb51c00943c166d086846c53e4b9537dfc6df1fb4bda7de24c3e9a.js" integrity="sha256-mQE&#43;0Kz7UcAJQ8Fm0IaEbFPkuVN9/G3x&#43;0vafeJMPpo="></script>
+<script defer src="/library/tutorials/en.search.min.7fded2205ee93e1ee75b51b4f0f1ad2b9e491c897a3a7fe79d27a78ea228cb82.js" integrity="sha256-f97SIF7pPh7nW1G08PGtK55JHIl6On/nnSenjqIoy4I="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -436,8 +436,60 @@ https://github.com/alex-shpak/hugo-book
 
       
     
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
   </ul>
   
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
 
 
 
@@ -1482,31 +1534,34 @@ Name: age, dtype: int64
 
 <h2 id="summary-of-part-1">Summary of Part 1</h2>
 
-<p>We covered an incredible amount of ground. Let’s summarize all the main points:
-- Before learning pandas, ensure you have the fundamentals of Python
-- Always refer to the documentation when learning new pandas operations
-- The DataFrame and the Series are the containers of data
-- A DataFrame is two-dimensional, tabular data
-- A Series is a single dimension of data
-- The three components of a DataFrame are the index, the columns and the data (or values)
-- Each row and column of the DataFrame is referenced by both a label and an integer location
-- There are three primary ways to select subsets from a DataFrame — [], .loc and .iloc
-- I use the term just the indexing operator to refer to [] immediately following a DataFrame/Series
-- Just the indexing operator’s primary purpose is to select a column or columns from a DataFrame
-- Using a single column name to just the indexing operator returns a single column of data as a Series
-- Passing multiple columns in a list to just the indexing operator returns a DataFrame
-- A Series has two components, the index and the data (values). It has no columns
-- .loc makes selections only by label
-- .loc can simultaneously select rows and columns
-- .loc can make selections with either a single label, a list of labels, or a slice of labels
-- .loc makes row selections first followed by column selections: df.loc[row_selection, col_selection]
-- .iloc is analogous to .loc but uses only integer location to refer to rows or columns.
-- .ix is deprecated and should never be used
-- .loc and .iloc work the same for Series except they only select based on the index as there are no columns
-- Pandas combines the power of python lists (selection via integer location) and dictionaries (selection by label)
-- You can use just the indexing operator to select rows from a DataFrame, but I recommend against this and instead sticking with the explicit .loc and .iloc
-- Normally data is imported without setting an index. Use the set_index method to use a column as an index.
-- You can select a single column as a Series from a DataFrame with dot notation</p>
+<p>We covered an incredible amount of ground. Let’s summarize all the main points:</p>
+
+<ul>
+<li>Before learning pandas, ensure you have the fundamentals of Python</li>
+<li>Always refer to the documentation when learning new pandas operations</li>
+<li>The DataFrame and the Series are the containers of data</li>
+<li>A DataFrame is two-dimensional, tabular data</li>
+<li>A Series is a single dimension of data</li>
+<li>The three components of a DataFrame are the index, the columns and the data (or values)</li>
+<li>Each row and column of the DataFrame is referenced by both a label and an integer location</li>
+<li>There are three primary ways to select subsets from a DataFrame — [], <code>.loc</code> and <code>.iloc</code></li>
+<li>I use the term just the indexing operator to refer to [] immediately following a DataFrame/Series</li>
+<li>Just the indexing operator’s primary purpose is to select a column or columns from a DataFrame</li>
+<li>Using a single column name to just the indexing operator returns a single column of data as a Series</li>
+<li>Passing multiple columns in a list to just the indexing operator returns a DataFrame</li>
+<li>A Series has two components, the index and the data (values). It has no columns</li>
+<li><code>.loc</code> makes selections only by label</li>
+<li><code>.loc</code> can simultaneously select rows and columns</li>
+<li><code>.loc</code> can make selections with either a single label, a list of labels, or a slice of labels</li>
+<li><code>.loc</code> makes row selections first followed by column selections: <code>df.loc[row_selection, col_selection]</code></li>
+<li><code>.iloc</code> is analogous to .loc but uses only integer location to refer to rows or columns.</li>
+<li><code>.ix</code> is deprecated and should never be used</li>
+<li><code>.loc</code> and .iloc work the same for Series except they only select based on the index as there are no columns</li>
+<li>Pandas combines the power of python lists (selection via integer location) and dictionaries (selection by label)</li>
+<li>You can use just the indexing operator to select rows from a DataFrame, but I recommend against this and instead sticking with the explicit <code>.loc</code> and <code>.iloc</code></li>
+<li>Normally data is imported without setting an index. Use the set_index method to use a column as an index.</li>
+<li>You can select a single column as a Series from a DataFrame with dot notation</li>
+</ul>
 
 <h2 id="way-more-to-the-story">Way more to the story</h2>
 
