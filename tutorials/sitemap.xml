@@ -106,6 +106,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/table-of-contents/with-toc/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/</loc>
   </url>
   
@@ -157,6 +161,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/table-of-contents/without-toc/</loc>
   </url>
   
   <url>
@@ -230,6 +238,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/table-of-contents/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-10/</loc>
   </url>
   
@@ -286,6 +298,10 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/2nd/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-20/</loc>
   </url>
   
@@ -295,6 +311,14 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-22/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/</loc>
   </url>
   
   <url>
@@ -328,11 +352,6 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/</loc>
-    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/</loc>
     <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
@@ -354,6 +373,11 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/</loc>
     <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
   
@@ -448,6 +472,16 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/functions/</loc>
+    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/functions/newfunction/</loc>
+    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/posts/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
@@ -463,6 +497,59 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/2nd/3rd/4th/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/2nd/3rd/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/hidden/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/buttons/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/columns/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/expand/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/hints/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/katex/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/mermaid/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/tabs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/10-knowledge-javascript/</loc>
   </url>
   
@@ -471,7 +558,7 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/14-google-sheets/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-14/</loc>
   </url>
   
   <url>
