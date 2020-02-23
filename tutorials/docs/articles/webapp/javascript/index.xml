@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/</link>
+    <description>Recent content in JavaScript on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Progressive Web App คืออะไร</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/create-progressive-web-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/create-progressive-web-app/</guid>
+      <description>Progressive Web App คืออะไร และ มาลองกันแบบง่ายๆ วันเดียวเสร็จ ฮัลโหลๆ สวัสดีครับ ช่วงนี้หายไปนาน แอบไปศึกษา Front-end framework อยู่หลายตัว จนไปเจอกับของเล่นใหม่เรียกว่า Progressive Web App หรือเรียกสั้นๆว่า PWA นั่นเอง ซึ่งประจวบเหมาะกับทาง Google ผู้ผลักดันเทคโนโลยีนี้ก็ได้มา Roadshow แสดงความเทพที่กรุงเทพกันไปหยกๆ ก็เลยถือโอกาสใช้พลังความมั่วส่วนตัว ขอมาเขียนเรื่องนี้ ดีไม่ดี ผิดพลาดตรงไหน ติชมได้เน่อ เริ่มกันเลย …
+ บทความนี้เกิดจากเนื้อหาหลายๆส่วนจากทั้งในงาน Roadshow เอง รวมถึงการมั่วซั่วของผู้เขียนนะครับ ดู Reference ได้ท้ายบทความ
+ หัวข้อในวันนี้  อะไรคือ PWA ทำไมต้อง PWA เบื้องหลังการทำงานของ PWA เป็นอย่างไร มาลองทำ PWA เล่นๆกันดู  อะไรคือ เจ้า Progressive Web App ? Source: http://www.letsnurture.com/blog/progressive-web-app-an-application-in-a-webpage.html
+เจ้านี่คือเทคโนโลยีที่จะทำให้เว็บของเราเนี่ย มีความใกล้เคียงกับ App ในมือถือมากขึ้น ทั้งความลื่นไหลในการใช้งาน, เข้าเมนูต่างๆอย่างง่ายดาย, การใช้งานเมื่ออยู่ใน Mode Offline, การทำ Push Notification ฯลฯ ในขณะเดียวกันก็เก็บข้อดีของเว็บไว้อาทิเช่น ความสดใหม่ของข้อมูล(อัพเดทกันได้ทันที ไม่ต้องไปอัพ App Store), ความเข้าถึงง่ายไม่ต้อง Install ให้ยุ่งยาก</description>
+    </item>
+    
+    <item>
+      <title>10 เรื่องน่ารู้ตอบข้อสงสัย JavaScript</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/10-knowledge-javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/10-knowledge-javascript/</guid>
+      <description>10 เรื่องน่ารู้ตอบข้อสงสัย JavaScript ในการเขียนภาษา JavaScript นั้นมีทั้งสิ่งที่เหมือนและแตกต่างกับภาษาโปรแกรมอื่นๆ สำหรับคนที่ใช้งาน JavaScript ไม่ว่าจะเพิ่งเริ่มศึกษาหรือใช้มานานแล้ว ก็อาจจะยังมีบางเรื่องที่สงสัยหรือยังไม่รู้เกี่ยวกับ JavaScript อยู่ เราจึงรวบรวม 10 เรื่องน่ารู้เกี่ยวกับ JavaScriptมาให้ได้ลองอ่านกัน
+1. การประกาศตัวแปร Var, Let, Const ใช้แบบไหน ในการเขียนโค้ด การประกาศตัวแปรก็เป็นสิ่งแรกๆ ที่น่าจะเจอในการเริ่มต้นศึกษาภาษานั้นๆ ใน JavaScript ก็เช่นกัน สำหรับคนที่เริ่มศึกษา JavaSctipt น่าจะเคยเห็นผ่านตามาบ้างก็คือ var, let และ const เพื่อการนำไปใช้งานอย่างถูกต้อง ลองมาดูกันว่าการประกาศแต่ละแบบนั้นต่างกันอย่างไรบ้าง
+function run() { const myNum = 191; var one = &amp;quot;One&amp;quot;; let two = &amp;quot;Two&amp;quot;; { var three = &amp;quot;Three&amp;quot;; let four = &amp;quot;Four&amp;quot;; } console.log(one); //Output: One console.log(two); //Output: Two console.log(three); //Output: Three console.</description>
+    </item>
+    
+    <item>
+      <title>Circle Progress</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/circle-progress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/circle-progress/</guid>
+      <description>Circle Progress  Responsive, accessible, animated, stylable with CSS circular progress bar available as plain (vanilla) JavaScript and jQuery plugin.
+ See examples or go to the project site
+Getting Started As plain JavaScript Download the minified [production version][vanilla-min]
+In your web page:
+&amp;lt;div class=&amp;quot;progress&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;dist/circle-progress.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; new CircleProgress(&#39;.progress&#39;); &amp;lt;/script&amp;gt;  As jQuery plugin Download the minified jQuery production version
+In your web page:
+&amp;lt;div class=&amp;quot;progress&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://code.jquery.com/jquery-3.3.1.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;dist/jquery.</description>
+    </item>
+    
+    <item>
+      <title>Use .map(), .reduce(), and .filter()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/javascript-use-map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/javascript-use-map/</guid>
+      <description>Simplify your JavaScript – Use .map(), .reduce(), and .filter() Jan 29, 2018 · 7 min read
+If you’re starting in JavaScript, maybe you haven’t heard of .map(), .reduce(), and .filter(). For me, it took a while as I had to support Internet Explorer 8 until a couple years ago. But if you don’t need to be compatible with this very old browser, you have to become familiar with those methods.</description>
+    </item>
+    
+    <item>
+      <title>รวม API สำหรับ Javascript ที่น่าสนใจในปี 2020</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/api-for-javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/api-for-javascript/</guid>
+      <description>รวม API สำหรับ Javascript ที่น่าสนใจในปี 2020 หากคุณอยากเขียนไซต์หรือโปรแกรมของคุณ ในหัวของคุณคงมีภาพไซต์ที่มีฟีเจอร์มากมาย แต่จะทำอย่างไรล่ะให้ไซต์ของคุณเป็นไปตามที่วาดเอาไว้ เราจึงได้รวบรวม API สำหรับ JavaScript ที่จะทำให้ไซต์ของคุณทำงานได้อย่างหลากหลายทันต่อยุคสมัยปี 2020
+Youtube API Youtube เป็นหนึ่งในสิ่งที่ทุกคนใช้กันอย่างล้นหลาม และเป็นส่วนหนึ่งในชีวิตประจำวันของทุกคน จะเป็นอย่างไรถ้าเรานำยูทูปมาเป็นส่วนหนึ่งในไซต์ของเรา โดย Youtube API จะช่วยให้เราสามารถนำวิดิโอที่เราต้องการมาแปะในไซต์ของเราได้โดยไม่จำเป็นต้องเปลี่ยนหน้าไปที่ลิงค์วิดิโอของวิดิโอนั้นๆ
+https://developers.google.com/youtube
+Google Map API เราสามารถย่อส่วนกูเกิ้ลแมพมาใส่ไซต์ของเราได้!! ด้วย API ของ Google Map จะทำให้เราสามารถนำ service ต่างๆของ Google Map มาใส่ในไซต์ของเราได้ ไม่ว่าจะเป็นนำแผนที่มาใส่ในไซต์ หรือปักหมุดบนแผนที่ ซึ่งเป็นประโยชน์มากหากเราต้องการระบุตำแหน่งสถานที่ต่างๆบนแผนที่ ถึงแม้จะไม่สามารถทำทุกอย่างได้เหมือนกูเกิ้ลแมพหลักแต่ก็มีประโยชน์มากไม่น้อย
+https://developers.google.com/maps/documentation/javascript/tutorial
+Nasa API นาซ่าเองก็มี API ของตัวเอง โดย API ของนาซ่าจะทำให้เราสามารถนำข้อมูลต่างๆที่น่าสนใจของนาซ่ามาแปะไว้ในไซต์ของเราได้ ไม่ว่าจะเป็นข้อมูลทางดาราศาสตร์ต่างๆ บทคความสนุกๆของนาซ่า หรือรูปภาพสวยๆของนาซ่า ซึ่งแต่ละวันนาซ่าจะมี Picture of The Day ที่เป็นภาพที่นาซ่าคัดมาไม่ซ้ำกัน ช่วยเพิ่มความสนุกให้ในการเยี่ยมชมไซต์ของเราได้ไม่น้อย
+https://api.nasa.gov/
+Web Animation API อยากให้ไซต์ของเรามีอนิชั่นสวยๆ แต่CSSมันก็ใช้ยากเหลือเกิน แถมการเคลื่อนไหวก็ดูไม่ค่อยสมูท ปัญหานี้จะหมดไปเมื่อเราใช้ Web Animation API ซึ่งช่วยให้เราจัดการอนิเมชั่นของCSS animationได้ง่ายขึ้น ช่วยให้ไซต์ของเราให้มีชีวิตชีวามากขึ้น</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Creating the Layout in HTML"><meta property="og:title" content="Creating the Layout in HTML" />
+<meta property="og:description" content="Website Design: Creating the Layout in HTML For this you need to be aware of the different layout options available in HTML/CSS and which of those is the right fit for your website design. Let us go through the options one by one.
+Photo by Pankaj Patel on Unsplash
+Tables — Do Not Do This! This was used earlier when the web was still in its infancy, and there wasn’t much you could do with a website except display text." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/html/creating-the-layout/" />
+
+<title>Creating the Layout in HTML | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.b9a2ef487e6e785fb7a8bd0b0dea3279fe2cce2341ab46d277edb0ee33acb543.css" integrity="sha256-uaLvSH5ueF&#43;3qL0LDeoyef4sziNBq0bSd&#43;2w7jOstUM=">
+
+
+<script defer src="/library/tutorials/en.search.min.c0b87457c19583b217b7edc29f3b721bddde75a7d308be42c89b747a07d5523a.js" integrity="sha256-wLh0V8GVg7IXt&#43;3CnztyG93edafTCL5CyJt0egfVUjo="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/html/creating-the-layout/"  class="active">
+      Creating the Layout in HTML
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/html/learning-web-development/" >
+      Learning Full Stack Web Development
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Creating the Layout in HTML</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="website-design-creating-the-layout-in-html">Website Design: Creating the Layout in HTML</h1>
+
+<p>For this you need to be aware of the different layout options available in HTML/CSS and which of those is the right fit for your website design. Let us go through the options one by one.</p>
+
+<p><img src="https://miro.medium.com/max/1000/1*WO-qp0_CiTmxoH5JsS-kEQ.jpeg" alt="" /></p>
+
+<p>Photo by  <a href="https://unsplash.com/photos/Ylk5n_nd9dA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pankaj Patel</a>  on  <a href="https://unsplash.com/search/photos/website?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+
+<h1 id="tables-do-not-do-this">Tables — Do Not Do This!</h1>
+
+<p>This was used earlier when the web was still in its infancy, and there wasn’t much you could do with a website except display text. The developers had got used to designing websites using  <code>&lt;table&gt;</code>  element and stuck to it even when new things (CSS, images, animations, small screens) came into the picture.</p>
+
+<pre><code class="language-html">&lt;html&gt;
+&lt;body&gt;
+&lt;table width=&quot;600px&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;center&quot;&gt;
+   &lt;tbody&gt;
+      &lt;tr&gt;
+      &lt;td&gt;
+
+         &lt;table width=&quot;600px&quot; bgcolor=&quot;red&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+         &lt;tbody&gt;
+            &lt;tr&gt;
+               &lt;td height=&quot;130px&quot;&gt;
+               &lt;h1&gt;Header&lt;/h1&gt;
+               &lt;/td&gt;
+            &lt;/tr&gt;
+         &lt;/tbody&gt;
+         &lt;/table&gt;
+
+     &lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+     &lt;td&gt;
+
+        &lt;table width=&quot;600px&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+        &lt;tbody&gt;
+           &lt;tr&gt;&lt;td height=&quot;10px&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+           &lt;tr&gt;
+              &lt;td bgcolor=&quot;yellow&quot; width=&quot;400px&quot; height=&quot;450px&quot;&gt;
+              &lt;h1&gt;Main&lt;/h1&gt;
+              &lt;/td&gt;
+
+              &lt;td width=&quot;5px&quot;&gt;&lt;/td&gt;  
+
+              &lt;td bgcolor=&quot;orange&quot; width=&quot;195px&quot; height=&quot;450px&quot;&gt;
+              &lt;h1&gt;Aside&lt;/h1&gt;
+              &lt;/td&gt;
+
+           &lt;/tr&gt;
+           &lt;tr&gt;&lt;td height=&quot;10px&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+
+     &lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+     &lt;td&gt;
+
+        &lt;table width=&quot;600px&quot; height=&quot;80px&quot; bgcolor=&quot;green&quot;
+cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+        &lt;tbody&gt;
+           &lt;tr&gt;
+           &lt;td&gt;
+           &lt;h1&gt;Footer&lt;/h1&gt;
+           &lt;/td&gt;
+           &lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;/table&gt;
+
+     &lt;/td&gt;
+     &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Websites designed using  <code>&lt;table&gt;</code>  element are fixed in nature. They can’t be redesigned to handle new changes, everything will have to be rewritten completely. This is because the  <code>&lt;table&gt;</code>  element is meant to display only tabular data, and nothing more. So do not use it for website layout!</p>
+
+<p>When we look at the other options available, you will realise why it’s so bad to use the Table-based layout. Especially when you are trying to create responsive websites.</p>
+
+<p><strong>A bit of history:</strong>  When the CSS standard arrived in 1996, it helped alleviate the problems created by table-based layout. The  <code>&lt;div&gt;</code>  element ruled the layout design for a long time, until the CSS 2.1 standard was finally published in 2011 and float walked in to claim the throne!</p>
+
+<h1 id="float-the-classical-way">Float — The Classical Way</h1>
+
+<p>The CSS Float property is used to float elements in a website. For example, you can float an image next to a body of text. This is  <code>&lt;float&gt;</code>  in its simplest usage. The same concept can be used to design an entire website.</p>
+
+<pre><code class="language-html">img {
+  float: right;
+}
+</code></pre>
+
+<p>For designing an entire website, the basic idea to understand is that the  <code>&lt;float&gt;</code>  element can be used to design an n-column layout. We can combine this with the  <code>&lt;div&gt;</code>  element to create a layout as given below.</p>
+
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;topmenu&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;div class=&quot;sidebar&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;mainbar&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<pre><code class="language-css">/* Create two columns that floats next to each other */
+.sidebar {
+    float: left;
+    width: 30%;
+}
+
+.mainbar {
+    float: left;
+    width: 70%;
+}
+
+/* Clear floats after the columns */
+.content:after {
+    content: &quot;&quot;;
+    display: block;
+    clear: both;
+}
+</code></pre>
+
+<p>Today, a website can be accessed from so many different devices — mobiles, tablets, laptops, PCs. So, how would you ensure that your website looks good on any device? The answer is  <strong>Responsive Web Design</strong>. It has only one guiding principle:  <strong><em>A web page should look good on any device!</em></strong></p>
+
+<p><a href="https://www.w3schools.com/html/html_responsive.asp">w3schools</a>  has a rather neat definition: “_Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones)._”</p>
+
+<p>Now, if you want to make sure that your website is responsive and looks good on all kinds of devices then you can do something like the code below.</p>
+
+<p>Add the following  <code>&lt;meta&gt;</code>  element to all your web pages:</p>
+
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+</code></pre>
+
+<p>Modify the CSS to add a media query:</p>
+
+<pre><code class="language-css">/* Create two columns that floats next to each other */
+.sidebar {
+    float: left;
+    width: 30%;
+}
+
+.mainbar {
+    float: left;
+    width: 70%;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .sidebar, .mainbar {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+/* Clear floats after the columns */
+.content:after {
+    content: &quot;&quot;;
+    display: block;
+    clear: both;
+}
+</code></pre>
+
+<p>This basically makes the website display as a single column for devices with resolution smaller than 800px (most tablets and all smartphones). Why do this you ask? Imagine looking at a two-column website on your mobile device and trying to read the content. It’s not appealing, is it?!</p>
+
+<h1 id="flex-the-responsive-way">Flex — The Responsive Way</h1>
+
+<p>CSS Flexbox makes it quite simple to design flexible responsive layout for websites. It takes the concept behind float and streamlines it for easy adoption. The above code can be rewritten as follows:</p>
+
+<pre><code class="language-css">/* Flexbox Layout */
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .sidebar, .mainbar {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+</code></pre>
+
+<p>It’s that simple.</p>
+
+<p>You can imagine your website to be a hierarchy of Flexbox elements, starting with the body element, and diving down into the depths till you reach the individual components on each page. Once you start adding  <code>&lt;flex&gt;</code>  elements to your website, it will become second nature to think of your layout in terms of  <code>&lt;flex&gt;</code>  properties. That’s how powerful Flexbox is!</p>
+
+<p>I won’t add anything more here, because there is a beautiful website which already explains Flexbox and its properties in detail. This  <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS Tricks</a>  page is my go-to reference for all things  <strong>flex</strong>!</p>
+
+<h1 id="grid-the-future">Grid — The Future</h1>
+
+<p>By now you should be able to spot the issue with using  <code>&lt;flex&gt;</code>  to design an entire layout. It is a one-dimensional tool (a row/column layout), and as such has to be adapted to be used for designing a website layout which is two-dimensional. This is why you will end up with a hierarchy of nested Flexbox elements in your layout design.</p>
+
+<p><strong>Grid</strong>  solves this by providing a two-dimensional layout that can be designed as per your requirements. The below code creates a 3-column layout of 8 items.</p>
+
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;grid-container&quot;&gt;
+      &lt;div class=&quot;grid-item&quot;&gt;1&lt;/div&gt;
+      &lt;div class=&quot;grid-item&quot;&gt;2&lt;/div&gt;
+      &lt;div class=&quot;grid-item&quot;&gt;3&lt;/div&gt;  
+      &lt;div class=&quot;grid-item&quot;&gt;4&lt;/div&gt;
+      &lt;div class=&quot;grid-item&quot;&gt;5&lt;/div&gt;
+      &lt;div class=&quot;grid-item&quot;&gt;6&lt;/div&gt;  
+      &lt;div class=&quot;grid-item&quot;&gt;7&lt;/div&gt;
+      &lt;div class=&quot;grid-item&quot;&gt;8&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<pre><code class="language-css">.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.grid-item {
+  text-align: center;
+}
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/698/0*QriIVOGWeM4ApYXM.png" alt="" /></p>
+
+<p>Going by the example above, you can design a layout of your website using the CSS Grid as follows.</p>
+
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;grid-container&quot;&gt;
+      &lt;div class=&quot;item1&quot;&gt;Header&lt;/div&gt;
+      &lt;div class=&quot;item2&quot;&gt;Menu&lt;/div&gt;
+      &lt;div class=&quot;item3&quot;&gt;Main&lt;/div&gt;  
+      &lt;div class=&quot;item4&quot;&gt;Right&lt;/div&gt;
+      &lt;div class=&quot;item5&quot;&gt;Footer&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<pre><code class="language-css">.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+}
+
+.grid-container &gt; div {
+  text-align: center;
+}
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/998/0*RBEc4iNzaPGQmy0F.png" alt="" /></p>
+
+<p>The  <code>grid-template-areas</code>  is a great way to structure your layout. It’s represented visually in code and is easily understandable. Comparing this with the earlier ways (the rigid structure of the tables, the cumbersome floats and the multi-level hierarchy of the flexbox), we can see how easy the CSS Grid has made designing a layout!</p>
+
+<p>After going through each of the above, you can see that a pattern has emerged.</p>
+
+<ul>
+<li>The  <strong>CSS Grid</strong>  is best suited for designing entire layout of the website.</li>
+<li>The  <strong>CSS Flexbox</strong>  is optimal for designing individual rows or columns of components.</li>
+<li><strong>Responsive Web Design</strong>  should be considered in the beginning stages of website design. You should have a pretty good idea about how your website will look on every kind of device.</li>
+<li>And finally,  <strong>DO NOT use Tables</strong>  for layout design.</li>
+</ul>
+
+<p>I hope this post has been easy to understand and has added to your CSS/HTML knowledge. Please don’t hesitate to ask any questions that you may have!</p>
+
+<p>Until the next bog post..</p>
+
+<hr />
+
+<p><em>Originally published at</em> <a href="https://www.amithraravi.com/articles/tech/website-design-creating-the-layout-in-html/"><em>www.amithraravi.com</em></a> <em>on December 29, 2018.</em></p>
+
+<blockquote>
+<p>Written with <a href="https://medium.com/elfsight-blog/website-design-creating-the-layout-in-html-887c6b30cf13">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cHTML%5ccreating-the-layout.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#website-design-creating-the-layout-in-html">Website Design: Creating the Layout in HTML</a></li>
+<li><a href="#tables-do-not-do-this">Tables — Do Not Do This!</a></li>
+<li><a href="#float-the-classical-way">Float — The Classical Way</a></li>
+<li><a href="#flex-the-responsive-way">Flex — The Responsive Way</a></li>
+<li><a href="#grid-the-future">Grid — The Future</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

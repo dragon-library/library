@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Build a CRUD Web App. 1-3 on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/</link>
+    <description>Recent content in Build a CRUD Web App. 1-3 on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Part. I</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-1/</guid>
+      <description>Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. I I’ve named the app Project Dream Team, and it will have the following features:
+ Users will be able to register and login as employees The administrator will be able to create, update, and delete departments and roles The administrator will be able to assign employees to a department and assign them roles The administrator will be able to view all employees and their details  Part One will cover:</description>
+    </item>
+    
+    <item>
+      <title>Part. II</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-2/</guid>
+      <description>Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. II This is Part Two of a three-part tutorial to build an employee management web app, named Project Dream Team. In Part One) of the tutorial, we set up a MySQL database using MySQL-Python and Flask-SQLAlchemy. We created models, migrated the database, and worked on the home and auth blueprints and templates. By the end of Part One, we had a working app that had a homepage, registration page, login page, and dashboard.</description>
+    </item>
+    
+    <item>
+      <title>Part. III</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-3/</guid>
+      <description>Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. III This is the last part of a three-part tutorial to build an employee management web app, named Project Dream Team. In Part Two of the tutorial, we built out the CRUD functionality of the app.
+We created forms, views, and templates to list, add, edit and delete departments and roles. By the end of Part Two, we could assign (and re-assign) departments and roles to employees.</description>
+    </item>
+    
+  </channel>
+</rss>

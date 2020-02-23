@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CSS Animation — Part 3"><meta property="og:title" content="CSS Animation — Part 3" />
+<meta property="og:description" content="A Guide to CSS Animation — Part 3 CSS Variables CSS variables are awesome. But you can’t animate them just yet. So what can we do with them? We can use their values to create dynamic animations.
+Consider an example where we have three squares. We want to animate them all growing to different scales. Do we need three different animations for this? We could use animation-fill-mode backwards and scale them all from the same start size?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-3/" />
+
+<title>CSS Animation — Part 3 | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.b9a2ef487e6e785fb7a8bd0b0dea3279fe2cce2341ab46d277edb0ee33acb543.css" integrity="sha256-uaLvSH5ueF&#43;3qL0LDeoyef4sziNBq0bSd&#43;2w7jOstUM=">
+
+
+<script defer src="/library/tutorials/en.search.min.c0b87457c19583b217b7edc29f3b721bddde75a7d308be42c89b747a07d5523a.js" integrity="sha256-wLh0V8GVg7IXt&#43;3CnztyG93edafTCL5CyJt0egfVUjo="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-1/" >
+      CSS Animation — Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-2/" >
+      CSS Animation — Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-3/"  class="active">
+      CSS Animation — Part 3
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>CSS Animation — Part 3</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="a-guide-to-css-animation-part-3">A Guide to CSS Animation — Part 3</h1>
+
+<p><img src="https://miro.medium.com/max/4752/1*8VI1jY60cMT8ij5lHr6Ydw.jpeg" alt="enter image description here" /></p>
+
+<h1 id="css-variables">CSS Variables</h1>
+
+<p>CSS variables are awesome. But you can’t animate them just yet. So what can we do with them? We can use their values to create dynamic animations.</p>
+
+<p>Consider an example where we have three squares. We want to animate them all growing to different scales. Do we need three different animations for this? We could use animation-fill-mode backwards and scale them all from the same start size? But do we know their start size? With CSS variables we can make the animation dynamic.</p>
+
+<p>How about the following code</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*KZG4T0sSS_qXITu5hbylIA.png" alt="" /></p>
+
+<p>Unfortunately, I’ve not seen a way for the animation to take any notice of CSS variables changing value at run time 👎 😭 Maybe in the future.</p>
+
+<p>But not all is lost, we can just flip the animation on it’s head 🤕 Consider this example where we update an elements scale to effect the animation.</p>
+
+<p>**UPDATE 💡<br />
+**It seems that you can actually update variables for animations on the fly now 💪 Consider this example I recently put together:</p>
+
+<h1 id="curved-animation-path">Curved animation path</h1>
+
+<p>So we can animate an element from point to point but how do we add curve to our animation path?</p>
+
+<p>Let’s start with a simple example where we want an element to travel from one point to another but get some air time.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*eAENn0gkDSrMY_UdSIX_wA.png" alt="" /></p>
+
+<p>Looks good. But won’t work. We will get something like this</p>
+
+<p><img src="https://miro.medium.com/max/480/1*jtc-GUF1SgmJzpLVVxkOfw.gif" alt="" /></p>
+
+<p>So how do we combat that? We need two animations and two elements. The wrapper element will handle the X axis. The actual element will handle the Y axis.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*QVeeK1jo_3RV-oEDJVmh7g.png" alt="" /></p>
+
+<p>Sweet 🍭</p>
+
+<p>And here’s a little loader you could put together with this technique 🐛</p>
+
+<hr />
+
+<h1 id="javascript-hooks">JavaScript hooks</h1>
+
+<p>So what if we need to know when an animation has ended in our scripts? Don’t worry. There are some events for you to hook into.</p>
+
+<ul>
+<li><code>animationiteration</code>  - triggered after each animation iteration</li>
+<li><code>animationend</code>  - triggered after an animation completes</li>
+<li><code>animationstart</code>  - triggered at the start of an animation</li>
+</ul>
+
+<p>These hooks are pretty powerful and allow us to do some pretty cool things. Consider an infinitely spinning element. Using  <code>animationiteration</code>  we can keep a track of how many times the element has span for example.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*safP69TyVqDlvqgJ3hy9Jg.png" alt="" /></p>
+
+<p>There are many possibilities when you start hooking into the animation events. You could also make an animation infinite but with random delays.</p>
+
+<h1 id="do-you-even-need-css-animation">Do you even need CSS animation?</h1>
+
+<p>If you’ve got this far, you pretty much know everything there is to know about CSS animation 🙌</p>
+
+<p>It might seem like an odd topic to end on but do you even need CSS animation? 😕</p>
+
+<p>Hear me out. CSS animation is great. But once your animations start becoming complex, things get harder to maintain. Especially if you’re not using a CSS preprocessor like SASS.</p>
+
+<p>You can make use of the JavaScript hooks to manage things a little better. But if you start developing complex timelines, don’t start reinventing the wheel. There are great tools out there to aid with animation. I can’t vouch for  <a href="https://greensock.com/">GSAP</a>  enough. It’s brilliant for gaining complete control over your animations from the JavaScript side.
+<blockquote class="book-hint danger">
+  <h2 id="gsap-the-standard-for-javascript-html5-animation-greensock-https-greensock-com"><a href="https://greensock.com/">GSAP, the standard for JavaScript HTML5 animation | GreenSock</a></h2>
+</blockquote>
+</p>
+
+<p>So why learn CSS animation at all?! CSS animation still has it’s place. There are plenty of things you can do with it. And you might not always be able to rely on JavaScript. Especially if a user has it disabled in their browser. Consider simpler things that you might animate such as loading spinners. These still contribute to user experience.</p>
+
+<hr />
+
+<h1 id="that-s-it">That’s it! 🎉</h1>
+
+<p>If you’ve got this far, thank you so much for sticking around!</p>
+
+<p>You should be all set now to go off and get things moving 📽 If there’s something you are not quite sure about or feel could be explained better, don’t hesitate to reach out.</p>
+
+<p>All of the demos are available in the following CodePen collection</p>
+
+<blockquote>
+<p>Written with <a href="https://codeburst.io/a-guide-to-css-animation-part-3-2e497110119">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cCSS%5cguide-to-css-animation-part-3.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#a-guide-to-css-animation-part-3">A Guide to CSS Animation — Part 3</a></li>
+<li><a href="#css-variables">CSS Variables</a></li>
+<li><a href="#curved-animation-path">Curved animation path</a></li>
+<li><a href="#javascript-hooks">JavaScript hooks</a></li>
+<li><a href="#do-you-even-need-css-animation">Do you even need CSS animation?</a></li>
+<li><a href="#that-s-it">That’s it! 🎉</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

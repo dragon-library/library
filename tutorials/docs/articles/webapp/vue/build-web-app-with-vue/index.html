@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Build a web app with Vue"><meta property="og:title" content="Build a web app with Vue" />
+<meta property="og:description" content="How to build a web app with Vue, Vuetify and Axios Source:
+Introduction In this article, we will be building a Vue.js Application supported by Vuetify and Axios. The aim of this article is to implement a movie application which will be calling on an API. The user will be able to search for movies. The API will retrieve movies with all the search details. When a user clicks on a movie, it will give more details of each movie." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/vue/build-web-app-with-vue/" />
+
+<title>Build a web app with Vue | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.b9a2ef487e6e785fb7a8bd0b0dea3279fe2cce2341ab46d277edb0ee33acb543.css" integrity="sha256-uaLvSH5ueF&#43;3qL0LDeoyef4sziNBq0bSd&#43;2w7jOstUM=">
+
+
+<script defer src="/library/tutorials/en.search.min.c0b87457c19583b217b7edc29f3b721bddde75a7d308be42c89b747a07d5523a.js" integrity="sha256-wLh0V8GVg7IXt&#43;3CnztyG93edafTCL5CyJt0egfVUjo="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/build-web-app-with-vue/"  class="active">
+      Build a web app with Vue
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Build a web app with Vue</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="how-to-build-a-web-app-with-vue-vuetify-and-axios">How to build a web app with Vue, Vuetify and Axios</h1>
+
+<p><a href="https://medium.com/javascript-in-plain-english/implement-movie-app-with-vue-vuetify-axios-open-movie-database-api-d12290318cf9">Source:</a></p>
+
+<p><img src="https://miro.medium.com/max/1600/1*dA0K8ZQ4yQn1Ld4JQBG4ug.png" alt="enter image description here" /></p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>In this article, we will be building a Vue.js Application supported by Vuetify and Axios. The aim of this article is to implement a movie application which will be calling on an API. The user will be able to search for movies. The API will retrieve movies with all the search details. When a user clicks on a movie, it will give more details of each movie. It’s a fairly simple App, but it will explain the use case of calling the API from the Vue.js App.</p>
+
+<h1 id="contents">Contents</h1>
+
+<ol>
+<li>Why Axios?</li>
+<li>Why Vuetify?</li>
+<li>A brief about the movie API</li>
+<li>Calling and testing API and Test.</li>
+<li>Create an App</li>
+<li>Requirement and structure of the App</li>
+<li>Add Vuetify to the Project</li>
+<li>Add vue-router to the project</li>
+<li>Add axios to the project</li>
+<li>Remove the currently scaffolded component</li>
+<li>Create LatestMovies component</li>
+<li>Implement Movie Component</li>
+<li>Display the ratings</li>
+<li>Add Search Movie component</li>
+<li>An issue with search movie and how we can rectify it</li>
+<li>Add a warning message if there is no search data in the API</li>
+<li>Creating a central file for axios/refactoring</li>
+<li>Wrapping Up and source code</li>
+</ol>
+
+<h1 id="1-why-axios">1. Why Axios?</h1>
+
+<p>In Vue.js App, we can display the data from an external API. This can be done by vue-resource and axios. Axios is a 3rd part library and it is a popular one.  <a href="https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html">Here is the official link for using Axios with Vue.js</a>.</p>
+
+<p>The important point to be noted here is that in the official docs there are no details about installing axios to the Vue.js app. We will cover this in Section 9:  <em>Add axios to the project</em>.</p>
+
+<h1 id="2-why-vuetify">2. Why Vuetify?</h1>
+
+<p>Vuetify is a material design framework built on top of Vue.js. It has nice UI components and which can be readily available to use on Vue.js.</p>
+
+<h1 id="3-a-brief-about-the-movie-api">3. A brief about the movie API</h1>
+
+<p><a href="http://www.omdbapi.com/">http://www.omdbapi.com/</a></p>
+
+<p>The  <a href="http://www.omdbapi.com/">omdbapi</a>  is an open and free movie database API which will provide the movie details and images too. The main drawback is that most images are not very clear, but it will do the trick. Also API support is there.</p>
+
+<p>In order to use this API, first of all, need to signup and they will provide an API key sent to you via mail. This can be used for each query result.</p>
+
+<p>Passing key and also the special string is needed. s stands for search when passing <strong><em>s=”Indiana”</em></strong>, API will retrieve all data contains Indiana. Also, <strong><em>i</em></strong> stands for a movie with imbd id will be returned, so only one is returned since it is unique. We are using “<strong><em>s”</em></strong>  and <strong><em>“i”</em></strong> here for the demo.</p>
+
+<h1 id="4-calling-and-testing-api-and-test">4. Calling and testing API and Test</h1>
+
+<p>In order to check what we will receive when calling the omdbapi is by testing with postman tool or any API test mechanism. Here I am using the postman for this.</p>
+
+<p><img src="https://miro.medium.com/max/968/1*Qz8IqTSZQG3z45WeI6yGhg.png" alt="" /></p>
+
+<p>As you see in the image, need to pass the apikey=XXXX and the s=”movie-name”</p>
+
+<p>So the URL becomes</p>
+
+<blockquote>
+<p><a href="http://www.omdbapi.com/?s=indiana&amp;apikey=b76b385c&amp;page=1&amp;type=movie&amp;Content-Type=application/json">http://www.omdbapi.com/?s=movie-name&amp;apikey=XXXX&amp;page=1&amp;type=movie&amp;Content-Type=application/json</a></p>
+</blockquote>
+
+<p>Awesome, we are good, now we can proceed to create an app and work on the axios as well.</p>
+
+<h1 id="5-create-an-app">5. Create an App</h1>
+
+<p>Create a Vue js application is done by a simple command</p>
+
+<pre><code class="language-js">vue create movie-app
+</code></pre>
+
+<p>movie-app is our app name.</p>
+
+<p><img src="https://miro.medium.com/max/1245/1*_GRlYMIq2PIy9lt-dzKlyQ.png" alt="" /></p>
+
+<h1 id="6-requirement-and-structure-of-the-app">6. Requirement and structure of the App</h1>
+
+<p>The structure of the app have 3 components.</p>
+
+<ol>
+<li>LatestMovie component.</li>
+<li>Movie Component.</li>
+<li>SearchMovie component.</li>
+</ol>
+
+<p>LatestMovie component will have the current home page and I will display the movies related to my favorite movie “indiana”</p>
+
+<p>On clicking on each movie, will display details of every single movie, Which can be done by using the Movie component.</p>
+
+<p>Provided an option to search and display those movies, which can be handled by SearchMovie component.</p>
+
+<h1 id="7-add-vuetify-to-the-project">7. Add Vuetify to the Project</h1>
+
+<p>As already discussed, we are using the Vuetify for the desgin of the App. Need to do some groundwork for that. on the terminal, type</p>
+
+<pre><code>vue add vuetify
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/1205/1*Rs1pFRTIeysNQhdE5_UUNA.png" alt="" /></p>
+
+<p>After installation, our front end will look like this:</p>
+
+<p><img src="https://miro.medium.com/max/1277/1*93-wXWbEjhE_91NU_7cyMg.png" alt="" /></p>
+
+<p>Awesome right, they provide a nav bar also. Then will proceed.</p>
+
+<h1 id="8-add-vue-router-to-the-project">8. Add vue-router to the project</h1>
+
+<p>Will explain why we needed the vue-router, it will do the routing functionalities and component switching without hassle. Installing the vue-router is by</p>
+
+<pre><code>npm install vue-router
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/316/1*E9nzhzWCiJ2IuX9gghviRQ.png" alt="" /></p>
+
+<p>now, need to link the router to the application and create a routes file.</p>
+
+<ol>
+<li>Create a router file</li>
+<li>Add content to the router file</li>
+<li>Link the router to the app</li>
+</ol>
+
+<p><strong><em>1.Create a router file</em></strong></p>
+
+<p>I am following a pattern by which create a folder called  <strong><em>router</em></strong>  in the src path and in that, will create an  <strong><em>index.js</em></strong> file</p>
+
+<p><img src="https://miro.medium.com/max/230/1*2hVB5zeLxC01sqkgkjXiqg.png" alt="" /></p>
+
+<p><strong><em>2. Add content to the router file</em></strong></p>
+
+<p>So far, we created a router/index.js file now need to import the Vue instance and vue-router to that file also, need to export the default router file.</p>
+
+<p>Each router path will have 3 components:  <strong><em>path, name, component.</em></strong></p>
+
+<pre><code class="language-javascript">import Vue from 'vue'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+export default new VueRouter({
+  routes: [
+    {
+    }
+  ]
+})
+</code></pre>
+
+<p><strong><em>3. Link the router to the app</em></strong></p>
+
+<p>First, need to import the router from the path, and use that in the Vue instance. All these are done in the src/main.js file</p>
+
+<pre><code class="language-js">import router from ‘./router’
+</code></pre>
+
+<p>Current main.js file will look like this:</p>
+
+<pre><code class="language-js">import Vue from 'vue'  
+import './plugins/vuetify'  
+import App from './App.vue'  
+import router from './router'Vue.config.productionTip = false  
+new Vue({  
+  render: h =&gt; h(App),  
+  router  
+}).$mount('#app')
+</code></pre>
+
+<h1 id="9-add-axios-to-the-project">9. Add axios to the project</h1>
+
+<p>Axios is our point of contact to call the API services in this app. Now we need to install axios to our project.</p>
+
+<pre><code class="language-js">npm install axios --save
+</code></pre>
+
+<p><img src="https://miro.medium.com/max/668/1*peus5peqmkliaK4Tw1MEEw.png" alt="" /></p>
+
+<h1 id="10-remove-the-currently-scaffolded-component">10. Remove the currently scaffolded component</h1>
+
+<p>By default, we are having a component in place, will remove that and will create the components we needed.</p>
+
+<p>HelloWorld.vue is the default component, will remove that from our app.</p>
+
+<h1 id="11-create-latestmovie-component">11. Create LatestMovie component</h1>
+
+<p>Need to do some steps here</p>
+
+<ol>
+<li>Create the LatestMovie.vue.</li>
+<li>Add the axios to the LatestMovie component.</li>
+<li>Link the router to LatestMovie.</li>
+<li>Add a progress bar for LatestMovie.</li>
+<li><strong><em>Create the LatestMovie.vue.</em></strong></li>
+</ol>
+
+<p>Create a file called  <strong><em>LatestMovie.vue</em></strong> in components folder.</p>
+
+<p><strong><em>2. Add the axios to the LatestMovie component.</em></strong></p>
+
+<p>Here, we are using the mounted() life cycle for this, added the code to get the result from the omdbapi with the indiana movie data.</p>
+
+<pre><code class="language-js">mounted () {  
+  axios  
+    .get('http://www.omdbapi.com/?s=mummy&amp;apikey=XXXXX&amp;page=1&amp;type=movie&amp;Content-Type=application/json') 
+    .then(response =&gt; {  
+      this.wholeResponse = response.data.Search  
+    })  
+    .catch(error =&gt; {  
+      console.log(error)  
+    })  
+}
+</code></pre>
+
+<p><strong><em>3. Link the router to LatestMovie.</em></strong></p>
+
+<p>Now, we need to link the  <strong><em>LatestMovie</em></strong>  to the router file.</p>
+
+<p>in the src/router/index.js:</p>
+
+<p>import LatestMovie from &lsquo;@/components/LatestMovie&rsquo;</p>
+
+<p>add the links to the <strong>router/index.js:</strong></p>
+
+<pre><code class="language-js">export default new VueRouter({  
+  routes: [  
+   {  path: '/',  
+      name: 'LatestMovie',  
+      component: LatestMovie  
+    }  
+  ]  
+})
+</code></pre>
+
+<p><strong><em>4. Add a progress bar for LatestMovie</em></strong></p>
+
+<p>If the API will take time to retrieve, we will need to display a progress bar. This can be achieved by using the  <em>“ &lt;v-progress-circular”</em> from vuetify.</p>
+
+<p>Created a data property which will be set to true initially, then after the API response will be set to false.</p>
+
+<p>Also another data property called wholeResponse will take care of the data.</p>
+
+<p>So totally our  <strong><em>LatestMovie.vue</em></strong> becomes:</p>
+
+<pre><code class="language-html">&lt;template&gt;&lt;v-container v-if=&quot;loading&quot;&gt;  
+    &lt;div class=&quot;text-xs-center&quot;&gt;  
+      &lt;v-progress-circular  
+        indeterminate  
+        :size=&quot;150&quot;  
+        :width=&quot;8&quot;  
+        color=&quot;green&quot;&gt;  
+      &lt;/v-progress-circular&gt;  
+    &lt;/div&gt;  
+  &lt;/v-container&gt;&lt;v-container v-else grid-list-xl&gt;  
+    &lt;v-layout wrap&gt;  
+      &lt;v-flex xs4  
+        v-for=&quot;(item, index) in wholeResponse&quot;  
+        :key=&quot;index&quot;  
+        mb-2&gt;  
+        &lt;v-card&gt;  
+          &lt;v-img  
+            :src=&quot;item.Poster&quot;  
+            aspect-ratio=&quot;1&quot;  
+          &gt;&lt;/v-img&gt;&lt;v-card-title primary-title&gt;  
+            &lt;div&gt;  
+              &lt;h2&gt;{{item.Title}}&lt;/h2&gt;  
+              &lt;div&gt;Year: {{item.Year}}&lt;/div&gt;  
+              &lt;div&gt;Type: {{item.Type}}&lt;/div&gt;  
+              &lt;div&gt;IMDB-id: {{item.imdbID}}&lt;/div&gt;  
+            &lt;/div&gt;  
+          &lt;/v-card-title&gt;&lt;v-card-actions class=&quot;justify-center&quot;&gt;  
+            &lt;v-btn flat  
+              color=&quot;green&quot;  
+              [@click](http://twitter.com/click)=&quot;singleMovie(item.imdbID)&quot;  
+              &gt;View&lt;/v-btn&gt;  
+          &lt;/v-card-actions&gt;&lt;/v-card&gt;  
+      &lt;/v-flex&gt;  
+  &lt;/v-layout&gt;  
+  &lt;/v-container&gt;  
+&lt;/template&gt;&lt;script&gt;  
+import axios from 'axios'  
+export default {  
+  data () {  
+    return {  
+      wholeResponse: [],  
+      loading: true  
+    }  
+  },  
+  mounted () {  
+  axios  
+    .get('http://www.omdbapi.com/?s=indiana&amp;apikey=XXXX&amp;page=1&amp;type=movie&amp;Content-Type=application/json') 
+    .then(response =&gt; {  
+      this.wholeResponse = response.data.Search  
+      this.loading = false  
+    })  
+    .catch(error =&gt; {  
+      console.log(error)  
+    })  
+  }  
+}  
+&lt;/script&gt;&lt;style lang=&quot;stylus&quot; scoped&gt;  
+  .v-progress-circular  
+    margin: 1rem  
+&lt;/style&gt;
+
+Now, add the router-view to the App.vue to display the component:
+
+&lt;router-view&gt;&lt;/router-view&gt;
+</code></pre>
+
+<h1 id="12-implement-movie-component">12. Implement Movie Component</h1>
+
+<p>Now, it is the time for the single movie part. This can be achieved by using the Movie.vue file.</p>
+
+<ol>
+<li>Add the Movie.vue file</li>
+<li>Add the router</li>
+<li>Add the mode</li>
+<li>Pass the props in a router.</li>
+<li>Pass the props in latest component.</li>
+<li>Work on the props data in the movie component.</li>
+</ol>
+
+<p><strong><em>Add the Movie.vue file</em></strong></p>
+
+<p>Add the file in components/Movie.vue</p>
+
+<p><strong><em>Add the router</em></strong></p>
+
+<p>Register the Movie.vue to the router/index.js file</p>
+
+<p>import Movie from <code>@/components/Movie</code></p>
+
+<p><strong><em>Add the mode</em></strong></p>
+
+<p>There is “#” is there in the URL, we can remove those using the</p>
+
+<p>mode: history</p>
+
+<p>In the router/index.js file.</p>
+
+<p><strong><em>Pass the props in a router.</em></strong></p>
+
+<p>Create a path for the Movie.vue component, using the below code in the <strong>router/index.js</strong></p>
+
+<pre><code class="language-js">{  
+      path: '/movie/:id',  
+      name: 'Movie',  
+      props: true,  
+      component: Movie  
+    },
+</code></pre>
+
+<p>We are giving props: true because we are passing the imdb_id to the Movie.vue component then that value is used to call the API for that single movie.</p>
+
+<p><strong><em>Pass the props in latest component</em></strong></p>
+
+<p>Now up on clicking on the view in the LatestMovie, will call the method which will, in turn, pass the imdb_id as a props to the Movie.vue.</p>
+
+<pre><code class="language-js">&lt;v-btn round  
+              color=&quot;green&quot;  
+              [@click](http://twitter.com/click)=&quot;singleMovie(item.imdbID)&quot;  
+              &gt;View&lt;/v-btn&gt;
+</code></pre>
+
+<p>and the singleMovie method is</p>
+
+<pre><code class="language-js">methods: {  
+    singleMovie (id) {  
+      this.$router.push('/movie/' + id)  
+    }  
+  }
+</code></pre>
+
+<p><strong><em>Work on the props data in the movie component</em></strong></p>
+
+<p>Now, the data is passed from the LatestMovie. That value is received as prop in the Movie.vue component. This value can be used by <em>this.id</em></p>
+
+<p>Also, added a data property called singleMovie to handle the response.</p>
+
+<p>The code in the Movie.vue becomes,</p>
+
+<pre><code class="language-html">&lt;template&gt;  
+  &lt;v-container&gt;  
+    &lt;v-layout row wrap&gt;  
+      &lt;v-flex xs12&gt;  
+        &lt;h2&gt;welcome to single movie component&lt;/h2&gt;  
+          &lt;div&gt;{{singleMovie}}&lt;/div&gt;  
+      &lt;/v-flex&gt;  
+    &lt;/v-layout&gt;  
+  &lt;/v-container&gt;  
+&lt;/template&gt;&lt;script&gt;  
+import axios from 'axios'  
+export default {  
+  props: ['id'],  
+  data () {  
+    return {  
+      singleMovie: ''  
+    }  
+  },  
+  mounted () {  
+    axios  
+      .get('[http://www.omdbapi.com/?apikey=b76b385c&amp;i=XXXXX&amp;Content-Type=application/json'](http://www.omdbapi.com/?apikey=b76b385c&amp;i=tt0209163&amp;Content-Type=application/json%27))  
+      .then(response =&gt; {  
+        this.singleMovie = response.data  
+      })  
+      .catch(error =&gt; {  
+        console.log(error)  
+      })  
+  }  
+}  
+&lt;/script&gt;&lt;style&gt;  
+&lt;/style&gt;
+</code></pre>
+
+<h1 id="13-display-the-ratings">13. Display the ratings</h1>
+
+<p>The omdbapi will provide us the current ratings for the movie. We will display that value in the table,</p>
+
+<p><img src="https://miro.medium.com/max/667/1*okaLcvRTXsW2znGn-t7Ugg.png" alt="" /></p>
+
+<p>For that, will display using a modal, which will be invoked on clicking the view rating button.</p>
+
+<pre><code class="language-html">&lt;template&gt;  
+&lt;v-layout row wrap&gt;  
+      &lt;v-flex xs12&gt;  
+        &lt;div class=&quot;text-xs-center&quot;&gt;  
+        &lt;v-dialog  
+          v-model=&quot;dialog&quot;  
+          width=&quot;500&quot;&gt;  
+          &lt;v-btn  
+            slot=&quot;activator&quot;  
+            color=&quot;green&quot;  
+            dark&gt;  
+            View Ratings  
+          &lt;/v-btn&gt;  
+          &lt;v-card&gt;  
+            &lt;v-card-title  
+              class=&quot;headline grey lighten-2&quot;  
+              primary-title  
+            &gt;  
+              Ratings  
+            &lt;/v-card-title&gt;  
+            &lt;v-card-text&gt;  
+              &lt;table style=&quot;width:100%&quot; border=&quot;1&quot; &gt;  
+                &lt;tr&gt;  
+                  &lt;th&gt;Source&lt;/th&gt;  
+                  &lt;th&gt;Ratings&lt;/th&gt;  
+                &lt;/tr&gt;  
+                &lt;tr v-for=&quot;(rating,index) in this.ratings&quot; :key=&quot;index&quot;&gt;  
+                  &lt;td align=&quot;center&quot;&gt;{{ratings[index].Source}}&lt;/td&gt;  
+                  &lt;td align=&quot;center&quot;&gt;{{ratings[index].Value}}&lt;/td&gt;  
+                &lt;/tr&gt;  
+              &lt;/table&gt;  
+            &lt;/v-card-text&gt;  
+            &lt;v-divider&gt;&lt;/v-divider&gt;  
+            &lt;v-card-actions&gt;  
+              &lt;v-spacer&gt;&lt;/v-spacer&gt;  
+              &lt;v-btn  
+                color=&quot;primary&quot;  
+                flat  
+                [@click](http://twitter.com/click)=&quot;dialog = false&quot;  
+              &gt;  
+                OK  
+              &lt;/v-btn&gt;  
+            &lt;/v-card-actions&gt;  
+          &lt;/v-card&gt;  
+        &lt;/v-dialog&gt;  
+      &lt;/div&gt;  
+      &lt;/v-flex&gt;  
+    &lt;/v-layout&gt;  
+  &lt;/template&gt;
+</code></pre>
+
+<p>We are iterating a data value called ratings. This data property is from a response from API ie r<em>esponse.data.Ratings.</em></p>
+
+<h1 id="14-add-search-movie-component">14. Add Search Movie component</h1>
+
+<p>For this, we need to create the following:</p>
+
+<ol>
+<li>Create a SearchMovie.vue file</li>
+<li>Create a text field in the App.vue.</li>
+<li>On clicking the search button, will pass the data from the text field to the SearchMovie.vue file as prop.</li>
+<li>In SearchMovie.vue file, we will receive the value and call the API to get the data.</li>
+</ol>
+
+<p><a href="https://github.com/anoobbava/movie-app/commit/1212477d5c4fdb25b0a3ba999f1ca6429e646fec">commit link for this</a></p>
+
+<h1 id="15-an-issue-with-search-movie-and-how-we-can-rectify-it">15. An issue with search movie and how we can rectify it</h1>
+
+<p>Currently mounted lifecycle hook is called only one time, when we search for one time, it displays the data, ie when searched with iron man, it shows the data. but After searching with “titan”, It shows the same data. This can be fixed by using the watch property on the props of the data called name(from the App.vue) and updated the mounted property as a method. As a result, the system will call 2 times, ie when the first loaded by the mounted lifecycle hook and again search will be handled by the watcher action for the props(name) value.</p>
+
+<p><img src="https://miro.medium.com/max/1241/1*zCH_0IVgw8MntbHXnusw9Q.png" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1254/1*WnkGWlNwwevk9kAeFFQX7A.png" alt="" /></p>
+
+<p>t<strong>he issue, we are searching for Titan, but we got iron man</strong></p>
+
+<p><a href="https://github.com/anoobbava/movie-app/commit/706d81167bf948db62ff63afdb5ff5f2ee197734">commit link for the fix</a></p>
+
+<h1 id="16-add-a-warning-message-if-there-is-no-search-data-in-the-api">16. Add a warning message if there is no search data in the API</h1>
+
+<p>Suppose, when we are calling for the API with invalid movie or movie that is not available in our omdbapi . In that case, need to display a message.</p>
+
+<p>We are creating a data property by default which is false, when searched data is not returning anything, will set as true and it will display the message.</p>
+
+<p><img src="https://miro.medium.com/max/1266/1*_B2SmVA0_LbpNqQFlbQ7xg.png" alt="" /></p>
+
+<p><a href="https://github.com/anoobbava/movie-app/commit/20625f2b3b9d6283fe6b43bca6f652f085673af4">commit link for the code change</a></p>
+
+<h1 id="17-creating-a-central-file-for-axios-refactoring">17. Creating a central file for axios/refactoring</h1>
+
+<p>Still, our axios and API calling codes are scattered everywhere in the component. It will good if we place those all in a single place like services in angular.</p>
+
+<p>For that</p>
+
+<ol>
+<li>Create a folder named services in src/ and create a file MovieApi.js</li>
+<li>Import the axios in the main.js</li>
+<li>Create a default URL in the main.js</li>
+<li>Export the MovieApi.js file</li>
+<li>Import the MovieApi.js in the components.</li>
+<li>Remove the axios code from the components and place in the MovieApi.js file.</li>
+<li>Call the appropriate methods from components.</li>
+</ol>
+
+<p><a href="https://github.com/anoobbava/movie-app/commit/4f1638136ebdf9d7d5b98190d678936bb185ddc0">commit link for the code change</a></p>
+
+<h1 id="18-wrapping-up-and-source-code">18. Wrapping Up and source code</h1>
+
+<p>Our final output will be this:</p>
+
+<p><img src="https://miro.medium.com/max/1273/1*hii3QStv4XyzXlL2fFpU-w.png" alt="" /></p>
+
+<p>LatestMovie component.</p>
+
+<p><img src="https://miro.medium.com/max/1272/1*oxTNq1V6B3t-OGhiD0lN8Q.png" alt="" /></p>
+
+<p>searchMovie.vue</p>
+
+<p><img src="https://miro.medium.com/max/1256/1*6eUr_CW1OxES0OAXDBe7SA.png" alt="" /></p>
+
+<p>Movie.vue</p>
+
+<p><a href="https://github.com/anoobbava/movie-app"><strong>GitHub URL</strong></a></p>
+
+<h1 id="and-there-we-have-it">And there we have it!</h1>
+
+<p>I hope you have enjoyed following along. Please leave claps and comments if you liked the content and would like to discuss further!</p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cVue%5cbuild-web-app-with-vue.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#how-to-build-a-web-app-with-vue-vuetify-and-axios">How to build a web app with Vue, Vuetify and Axios</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#1-why-axios">1. Why Axios?</a></li>
+<li><a href="#2-why-vuetify">2. Why Vuetify?</a></li>
+<li><a href="#3-a-brief-about-the-movie-api">3. A brief about the movie API</a></li>
+<li><a href="#4-calling-and-testing-api-and-test">4. Calling and testing API and Test</a></li>
+<li><a href="#5-create-an-app">5. Create an App</a></li>
+<li><a href="#6-requirement-and-structure-of-the-app">6. Requirement and structure of the App</a></li>
+<li><a href="#7-add-vuetify-to-the-project">7. Add Vuetify to the Project</a></li>
+<li><a href="#8-add-vue-router-to-the-project">8. Add vue-router to the project</a></li>
+<li><a href="#9-add-axios-to-the-project">9. Add axios to the project</a></li>
+<li><a href="#10-remove-the-currently-scaffolded-component">10. Remove the currently scaffolded component</a></li>
+<li><a href="#11-create-latestmovie-component">11. Create LatestMovie component</a></li>
+<li><a href="#12-implement-movie-component">12. Implement Movie Component</a></li>
+<li><a href="#13-display-the-ratings">13. Display the ratings</a></li>
+<li><a href="#14-add-search-movie-component">14. Add Search Movie component</a></li>
+<li><a href="#15-an-issue-with-search-movie-and-how-we-can-rectify-it">15. An issue with search movie and how we can rectify it</a></li>
+<li><a href="#16-add-a-warning-message-if-there-is-no-search-data-in-the-api">16. Add a warning message if there is no search data in the API</a></li>
+<li><a href="#17-creating-a-central-file-for-axios-refactoring">17. Creating a central file for axios/refactoring</a></li>
+<li><a href="#18-wrapping-up-and-source-code">18. Wrapping Up and source code</a></li>
+<li><a href="#and-there-we-have-it">And there we have it!</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>
