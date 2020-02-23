@@ -18,17 +18,11 @@
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/24-trick-python/</guid>
       <description>24 เคล็ดลับ การใช้งาน Python Python เป็นอีกหนึ่งภาษา Programming ที่ได้รับความนิยม ถูกนำไปใช้ในการเขียน Program ได้หลากหลายประเภท โดยไม่ได้จำกัดอยู่ที่งานเฉพาะทางใดทางหนึ่ง ไม่ว่าจะเป็นการพัฒนา Web หรือด้าน Data Science และ Machine Learning เป็นต้น จึงทำให้มีการนำไปใช้กันอย่างแพร่หลาย วันนี้เรามาดู 24 เคล็ดลับ การใช้งาน Python ที่จะช่วยให้คุณประหยัดเวลาและทำงานได้สะดวกขึ้น โดยดูตัวอย่างการใช้งานในแต่ละหัวข้อกันได้เลย
 1. Unpacking Array Items (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/01.png)
-2. Swapping Variables 3. Profile And Stats Of Your Code
-3. Profile And Stats Of Your Code
-(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png)
-4. Repeat String
-(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png)
-5. Slicing
-(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png)
-6. Reversing
-
-7. Negative Index
-ถ้าคุณต้องการที่จะเริ่มต้นจาก Character ตัวสุดท้าย สามารถใช้ Negative Index ได้</description>
+2. Swapping Variables 3. Profile And Stats Of Your Code 3. Profile And Stats Of Your Code (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png)
+4. Repeat String (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png)
+5. Slicing (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png)
+6. Reversing 
+7. Negative Index ถ้าคุณต้องการที่จะเริ่มต้นจาก Character ตัวสุดท้าย สามารถใช้ Negative Index ได้</description>
     </item>
     
     <item>
