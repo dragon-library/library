@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python Heapq for Beginners"><meta property="og:title" content="Python Heapq for Beginners" />
+<meta property="og:description" content="How to using Python Heapq for Beginners (With Examples) Often when working with collections of data, you may want to find the smallest or largest item. It&rsquo;s easy enough to write a function that iterates through the items and returns the smallest or largest one, or use the builtin min(), max(), or sorted() functions. Another interesting way may be implementing a heap (priority) queue.
+Interestingly, the heapq module uses a regular Python list to create Heap." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/beginer/python-heapq-for-beginners/" />
+
+<title>Python Heapq for Beginners | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.a5598010f7e221569e6175a0cf8ad127b893aa6049d013fbeb3bdcf33958d5ec.js" integrity="sha256-pVmAEPfiIVaeYXWgz4rRJ7iTqmBJ0BP76zvc8zlY1ew="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/variable/" >
+      ตัวแปรและประเภทข้อมูล
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/" >
+      Dictionary(Dict)
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/date-and-time/" >
+      Date&amp;Time
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/string-format/" >
+      Format a String in Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/list/" >
+      List
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/python-heapq-for-beginners/"  class="active">
+      Python Heapq for Beginners
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/snippets/" >
+      Snippets
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/important-basic-syntax/" >
+      ไวยกรณ์พื้นฐานที่จำเป็น
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
+      Bootstrap 4 แบบพื้นฐาน
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Python Heapq for Beginners</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="how-to-using-python-heapq-for-beginners-with-examples">How to using Python Heapq for Beginners (With Examples)</h1>
+
+<p><img src="https://i.morioh.com/2019/11/26/ec8b0b1db451.jpg" alt="enter image description here" /></p>
+
+<p>Often when working with collections of data, you may want to find the smallest or largest item. It&rsquo;s easy enough to write a function that iterates through the items and returns the smallest or largest one, or use the builtin min(), max(), or sorted() functions. Another interesting way may be implementing a heap (priority) queue.</p>
+
+<p>Interestingly, the heapq module uses a regular Python list to create Heap. It supports addition and removal of the smallest element in O(log n) time. Hence, it is an obvious choice for implementing priority queues.</p>
+
+<p>The heapq module includes seven functions, the first four of which are used for heap operations. However, you need to provide a list as the heap object itself.</p>
+
+<p>Heap data structure has a property that it always pops out the smallest of its element (Min Heap). Also, it keeps the heap structure intact despite any push or pop operation. The heap[0] would also point to the smallest value of the Heap.</p>
+
+<p>In this article we will guide you using Python heapq. It is a module in Python which uses the binary heap data structure and implements Heap Queue a.k.a. Priority Queue algorithm.</p>
+
+<h2 id="what-is-a-priority-queue"><strong>What Is A Priority Queue?</strong></h2>
+
+<p>Priority Queue is an advanced data type (ADT) which is a more refined version of a Queue. It dequeues higher-priority items before the lower-priority items. Most programming languages such as Python use Binary heap to implement it.</p>
+
+<p>Python heapq, as stated in the beginning, provides a min-heap implementation.</p>
+
+<h2 id="what-is-a-heap"><strong>What Is A Heap?</strong></h2>
+
+<p>A heap has multiple meaning in computer science. Sometimes, it refers to a memory area in a program used for dynamic allocation. However, in this tutorial, we are talking about the Heap Data Structure, which is a complete binary tree. It helps in implementing priority queues (PQ), the heapsort, and some graph-based algorithms.</p>
+
+<p>A heap has the following two variants:</p>
+
+<ul>
+<li>A max-heap, in which the parent is more than or equal to both of its child nodes.</li>
+<li>A min-heap, in which the parent is smaller or equal to the child nodes.</li>
+</ul>
+
+<p>Below is a general representation of a binary heap.</p>
+
+<p><img src="https://i.imgur.com/OSmWZmV.png" alt="This is image title" /></p>
+
+<h2 id="heapq-module"><strong>Heapq Module</strong></h2>
+
+<p>Heapq is a Python module which provides an implementation of the Min heap. It makes use of Binary heap and exposes several functions to implement a priority queue.</p>
+
+<p>You may eventually solve many programming problems using its functions. For example, find the two largest numbers from a list of integers in Python.</p>
+
+<p>There happen to be many ways to address this problem. However, none is as intuitive and faster than a Heapq solution.</p>
+
+<p>Out of many Python heapq functions, one is nlargest(). It returns a list type object containing the desired number of largest elements. Below is a short example before we dig into the more complicated ones.</p>
+
+<h2 id="python-heapq-example"><strong>Python Heapq Example</strong></h2>
+
+<pre><code class="language-py"># A brief heapq example
+# Find the two largest integers from a list of numbers
+
+import heapq as hq
+
+list_of_integers = [21, 67, 33, 13, 40, 89, 71, 19]
+
+# Find two largest values
+largest_nums = hq.nlargest(2, list_of_integers)
+
+print(&quot;Two largest numbers are: &quot;, largest_nums)
+</code></pre>
+
+<p>The output is:</p>
+
+<pre><code class="language-py">Two largest numbers are: [89, 71]
+</code></pre>
+
+<p>Please note that you can create a heap in either of these two ways:</p>
+
+<ul>
+<li>Initialize the list with [].</li>
+<li>Pass a pre-filled list into heapify() to convert to a heap.</li>
+</ul>
+
+<p>Let’s now check out what functions does this module provide.</p>
+
+<h2 id="python-heapq-functions"><strong>Python Heapq Functions</strong></h2>
+
+<p>The heapq module has the following methods:</p>
+
+<h3 id="1-heappush">1. Heappush()</h3>
+
+<p>It adds an element to the heap. Don’t apply it on any old list, instead use the one that you built using Heap functions. That is how you can ensure the elements are in the desired order.</p>
+
+<pre><code class="language-py"># heappush() Syntax
+import heapq as hq
+hq.heappush(heap, element)
+</code></pre>
+
+<p>Check out below heapq heappush() example.</p>
+
+<pre><code class="language-py"># A brief heapq.heappush() example
+
+import heapq as hq
+import random as r
+
+init_list = list(range(10, 99, 10))
+print(&quot;Step-1: Seed data for the heap: &quot;, init_list)
+
+r.shuffle(init_list)
+print(&quot;Step-2: Randomize the seed data: &quot;, init_list)
+
+# Creating heap from an empty list
+heap = []
+print(&quot;Step-3: Creating heap...&quot;)
+
+# Demonstrating heapq.heappush() function
+[hq.heappush(heap, x) for x in init_list]
+
+# Printing heap content to see if the smallest item is at 0th index
+print(&quot; a. Heap contains: &quot;, heap)
+
+# Adding another smaller item to the heap
+hq.heappush(heap, 1)
+print(&quot; b. Heap contains: &quot;, heap)
+</code></pre>
+
+<p>This code results in the following:</p>
+
+<pre><code class="language-py">Step-1: Seed data for the heap:  [10, 20, 30, 40, 50, 60, 70, 80, 90]
+Step-2: Randomize the seed data:  [70, 20, 60, 80, 90, 30, 40, 10, 50]
+Step-3: Creating heap...
+ a. Heap contains:  [10, 20, 30, 50, 90, 60, 40, 80, 70]
+ b. Heap contains:  [1, 10, 30, 50, 20, 60, 40, 80, 70, 90]
+</code></pre>
+
+<p>You can observe that heap kept the smallest item at the 0th index. We added a new lower value using the heappush() function. And it pushed that at 0th position by shifting the previous value to 1st index.</p>
+
+<h3 id="2-heappop">2. Heappop()</h3>
+
+<p>It is used to remove the smallest item that stays at index 0. Moreover, it also ensures that the next lowest replaces this position:</p>
+
+<pre><code class="language-py"># heappop() Syntax
+import heapq as hq
+hq.heappop(heap)
+</code></pre>
+
+<p>Check out heapq heappop() example. You need to append this code to the previous heappush() example.</p>
+
+<pre><code class="language-py"># Exercising heapq.heappop() function
+print(&quot;Step-4: Removing items from heap...&quot;)
+out = hq.heappop(heap)
+print(&quot; a. heappop() removed {} from heap{}&quot;.format(out, heap))
+out = hq.heappop(heap)
+print(&quot; b. heappop() removed {} from heap{}&quot;.format(out, heap))
+out = hq.heappop(heap)
+print(&quot; c. heappop() removed {} from heap{}&quot;.format(out, heap))
+</code></pre>
+
+<p>It will give the following result:</p>
+
+<pre><code class="language-py">Step-4: Removing items from heap...
+ a. heappop() removed 1 from heap[10, 20, 40, 50, 30, 70, 80, 90, 60]
+ b. heappop() removed 10 from heap[20, 30, 40, 50, 60, 70, 80, 90]
+ c. heappop() removed 20 from heap[30, 50, 40, 90, 60, 70, 80]
+</code></pre>
+
+<p>It is clear from the output that heappop() always poped off the lowest element from the heap.</p>
+
+<h3 id="3-heappushpop">3. Heappushpop()</h3>
+
+<p>This function first adds the given item in a Heap, then removes the smallest one and returns it. So, it is an increment of both heappush() and heappop(). But it tends to be a little faster than the two combined.</p>
+
+<pre><code class="language-py"># heappushpop() Syntax
+import heapq as hq
+hq.heappushpop(heap, element)
+</code></pre>
+
+<p>Check out heapq heappushpop() example. You need to append it to the previous code sample.</p>
+
+<pre><code class="language-py"># Exercising heapq.heappushpop() function
+print(&quot;Step-5: Adding &amp; removing items from heap...&quot;)
+new_item = 99
+out = hq.heappushpop(heap, new_item)
+print(&quot; a. heappushpop() added {} and removed {} from heap{}&quot;.format(new_item, out, heap))
+new_item = 999
+out = hq.heappushpop(heap, new_item)
+print(&quot; b. heappushpop() added {} and removed {} from heap{}&quot;.format(new_item, out, heap))
+</code></pre>
+
+<p>The output is:</p>
+
+<pre><code class="language-py">Step-5: Adding &amp; removing items from heap...
+ a. heappushpop() added 99 and removed 30 from heap[40, 60, 50, 70, 90, 99, 80]
+ b. heappushpop() added 999 and removed 40 from heap[50, 60, 80, 70, 90, 99, 999]
+</code></pre>
+
+<h3 id="4-heapify">4. Heapify()</h3>
+
+<p>This function accepts an arbitrary list and converts it to a heap.</p>
+
+<pre><code class="language-py"># heapify() Syntax
+import heapq as hq
+hq.heapify(heap)
+</code></pre>
+
+<p>Check out heapq heapify() example.</p>
+
+<pre><code class="language-py">
+# A brief heapq.heapify() example
+
+import heapq as hq
+
+heap = [78, 34, 78, 11, 45, 13, 99]
+print(&quot;Raw heap: &quot;, heap)
+
+hq.heapify(heap)
+print(&quot;heapify(heap): &quot;, heap)
+</code></pre>
+
+<p>Here is the output:</p>
+
+<pre><code class="language-py">Raw heap: [78, 34, 78, 11, 45, 13, 99]
+heapify(heap): [11, 34, 13, 78, 45, 78, 99]
+</code></pre>
+
+<p>You can see that the heapify() function transformed the input list and made it a heap.</p>
+
+<h3 id="5-heapreplace">5. Heapreplace()</h3>
+
+<p>It deletes the smallest element from the Heap and then inserts a new item. This function is more efficient than calling heappop() and heappush().</p>
+
+<pre><code>
+# heapreplace() Syntax
+import heapq as hq
+hq.heapreplace(heap, element)
+
+
+</code></pre>
+
+<p>Check out heapq heapreplace() example.</p>
+
+<pre><code class="language-py"># A brief heapq.heapreplace() example
+
+import heapq as hq
+
+heap = [78, 34, 78, 11, 45, 13, 99]
+hq.heapify(heap)
+print(&quot;heap: &quot;, heap)
+
+hq.heapreplace(heap, 12)
+print(&quot;heapreplace(heap, 12): &quot;, heap)
+
+hq.heapreplace(heap, 100)
+print(&quot;heapreplace(heap, 100): &quot;, heap)
+</code></pre>
+
+<p>The output is:</p>
+
+<pre><code>heap: [11, 34, 13, 78, 45, 78, 99]
+heapreplace(heap, 12): [12, 34, 13, 78, 45, 78, 99]
+heapreplace(heap, 100): [13, 34, 78, 78, 45, 100, 99]
+</code></pre>
+
+<h3 id="6-nlargest">6. Nlargest()</h3>
+
+<p>It finds the n largest elements from a given iterable. It also accepts a key which is a function of one argument.</p>
+
+<p>The selected items have to satisfy the k function. If any of them fails, then the next higher number is considered.</p>
+
+<pre><code class="language-py"># nlargest() Syntax
+import heapq as hq
+hq.nlargest(n, iterable, key=None)
+</code></pre>
+
+<p>Check out heapq nlargest() example. It is requesting for two largest numbers.</p>
+
+<pre><code class="language-py"># heapq.nlargest() example without a key
+
+import heapq as hq
+
+heap = [78, 34, 78, 11, 45, 13, 99]
+hq.heapify(heap)
+print(&quot;heap: &quot;, heap)
+
+out = hq.nlargest(2, heap)
+print(&quot;nlargest(heap, 2): &quot;, out)
+</code></pre>
+
+<p>The result is:</p>
+
+<pre><code>heap: [11, 34, 13, 78, 45, 78, 99]
+nlargest(heap, 2): [99, 78]
+</code></pre>
+
+<p>Check out another heapq nlargest() example. It is not only requesting for two largest numbers but also has an is_even() function as the KEY.</p>
+
+<p>If any of the selected numbers fail to clear the KEY function, then the next one comes in.</p>
+
+<pre><code class="language-py"># heapq.nlargest() example with key
+
+import heapq as hq
+
+def is_even(num):
+if num%2 == 0: return 1
+return 0
+
+heap = [78, 34, 78, 11, 45, 13, 99]
+hq.heapify(heap)
+print(&quot;heap: &quot;, heap)
+
+out = hq.nlargest(2, heap, is_even)
+print(&quot;nlargest(heap, 2): &quot;, out)
+</code></pre>
+
+<p>The output is:</p>
+
+<pre><code>heap: [11, 34, 13, 78, 45, 78, 99]
+nlargest(heap, 2): [34, 78]
+</code></pre>
+
+<h3 id="7-nsmallest">7. Nsmallest()</h3>
+
+<p>It is also similar to the nlargest() in operation. However, it gets the n smallest elements from a given iterable. It too accepts a key which is a function of one argument.</p>
+
+<p>The selected items have to satisfy the k function. If any of them fails, then the next smaller number is considered.</p>
+
+<pre><code class="language-py"># nsmallest() Syntax
+import heapq as hq
+hq.nsmallest(n, iterable, key=None)
+</code></pre>
+
+<p>Check out heapq nsmallest() example. It is requesting for two smallest numbers.</p>
+
+<pre><code class="language-py"># heapq.nsmallest() example
+
+import heapq as hq
+
+heap = [78, 34, 78, 11, 45, 13, 99]
+hq.heapify(heap)
+print(&quot;heap: &quot;, heap)
+
+out = hq.nsmallest(2, heap)
+print(&quot;nsmallest(heap, 2): &quot;, out)
+</code></pre>
+
+<p>Here is the result:</p>
+
+<pre><code>heap: [11, 34, 13, 78, 45, 78, 99]
+nsmallest(heap, 2): [11, 13]
+</code></pre>
+
+<p>You can achieve similar behavior through other ways, but the heap algorithm is more memory-efficient and even faster.</p>
+
+<h2 id="heapq-exercises"><strong>Heapq Exercises</strong></h2>
+
+<h3 id="first-exercise">First Exercise</h3>
+
+<p>Write a Python program to push elements and pop off the smallest one.</p>
+
+<pre><code class="language-py">import heapq as hq
+heap = []
+hq.heappush(heap, ('H', 9))
+hq.heappush(heap, ('H', 7))
+hq.heappush(heap, ('H', 4))
+hq.heappush(heap, ('H', 1))
+print(&quot;Elements in the heap:&quot;)
+for ele in heap:
+   print(ele)
+print(&quot;----------------------&quot;)
+print(&quot;Calling heappushpop() to push element on the heap and return the smallest one.&quot;)
+hq.heappushpop(heap, ('H', 11))
+for ele in heap:
+   print(ele)
+</code></pre>
+
+<p>The output:</p>
+
+<pre><code>Elements in the heap:
+('H', 1)
+('H', 4)
+('H', 7)
+('H', 9)
+----------------------
+Calling heappushpop() to push element on the heap and return the smallest one.
+('H', 4)
+('H', 9)
+('H', 7)
+('H', 11)
+</code></pre>
+
+<h3 id="second-exercise">Second Exercise</h3>
+
+<p>Write a Python program to perform Heap Sort, push all items to a heap, and then take off the smallest ones one after other.</p>
+
+<pre><code class="language-py">import heapq as hq
+
+def heap_sort(heap):
+   in_list = []
+   for value in heap:
+      hq.heappush(in_list, value)
+   return [hq.heappop(in_list) for i in range(len(in_list))]
+
+out = heap_sort([9, 7, 5, 2, 1, 2, 8, 10, 6, 5, 4])
+print(out)
+</code></pre>
+
+<p>Here is the result:</p>
+
+<pre><code>[1, 2, 2, 4, 5, 5, 6, 7, 8, 9, 10]
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>With the heapq module, you can implement several kinds of priority queues and schedulers. It has vast usage in different areas such as Artificial Intelligence (AI), Machine Learning, Operating systems (OS), and in graphs.</p>
+
+<p>Anyways, after wrapping up this tutorial, you should feel comfortable in using Python Heapq.</p>
+
+<p>Thanks for reading !</p>
+
+<p>Originally published by  <strong>Meenakshi Agarwal</strong>  at  <a href="https://on.morioh.net/b0a3f595aa?r=https://www.techbeamers.com/python-heapq/" title="techbeamers">techbeamers</a></p>
+
+<blockquote>
+<p><a href="https://morioh.com/p/bbf88af0d8ee?list=5dcd3264203e265d661aa056">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cBeginer%5cpython-heapq-for-beginners.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#how-to-using-python-heapq-for-beginners-with-examples">How to using Python Heapq for Beginners (With Examples)</a>
+<ul>
+<li><a href="#what-is-a-priority-queue"><strong>What Is A Priority Queue?</strong></a></li>
+<li><a href="#what-is-a-heap"><strong>What Is A Heap?</strong></a></li>
+<li><a href="#heapq-module"><strong>Heapq Module</strong></a></li>
+<li><a href="#python-heapq-example"><strong>Python Heapq Example</strong></a></li>
+<li><a href="#python-heapq-functions"><strong>Python Heapq Functions</strong></a>
+<ul>
+<li><a href="#1-heappush">1. Heappush()</a></li>
+<li><a href="#2-heappop">2. Heappop()</a></li>
+<li><a href="#3-heappushpop">3. Heappushpop()</a></li>
+<li><a href="#4-heapify">4. Heapify()</a></li>
+<li><a href="#5-heapreplace">5. Heapreplace()</a></li>
+<li><a href="#6-nlargest">6. Nlargest()</a></li>
+<li><a href="#7-nsmallest">7. Nsmallest()</a></li>
+</ul></li>
+<li><a href="#heapq-exercises"><strong>Heapq Exercises</strong></a>
+<ul>
+<li><a href="#first-exercise">First Exercise</a></li>
+<li><a href="#second-exercise">Second Exercise</a></li>
+</ul></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

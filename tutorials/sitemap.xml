@@ -114,6 +114,14 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/database/sqlite/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/database/sqlite/sqlite3-module/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/django/start-django-framework/</loc>
   </url>
   
@@ -127,6 +135,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/dictionary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/important-basic-syntax/</loc>
   </url>
   
   <url>
@@ -153,6 +165,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/database/</loc>
   </url>
   
   <url>
@@ -979,6 +995,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101-for-beginner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/python-heapq-for-beginners/</loc>
   </url>
   
   <url>

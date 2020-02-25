@@ -32,5 +32,15 @@ Last Updated on January 31, 2020
 It’s been awhile since I’ve written one of these “how to” articles, but I’m back at it. This time, I want to talk about string formatting using techniques like interpolation and concatenation. In other words, it’s time to finally learn how to format a string in Python</description>
     </item>
     
+    <item>
+      <title>Python Heapq for Beginners</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/python-heapq-for-beginners/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/python-heapq-for-beginners/</guid>
+      <description>How to using Python Heapq for Beginners (With Examples) Often when working with collections of data, you may want to find the smallest or largest item. It&amp;rsquo;s easy enough to write a function that iterates through the items and returns the smallest or largest one, or use the builtin min(), max(), or sorted() functions. Another interesting way may be implementing a heap (priority) queue.
+Interestingly, the heapq module uses a regular Python list to create Heap.</description>
+    </item>
+    
   </channel>
 </rss>
