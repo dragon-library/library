@@ -230,6 +230,16 @@ from functools import partial def curry(fn, *args): return partial(fn,*args)  ad
     </item>
     
     <item>
+      <title>dateutil()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/dateutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/dateutil/</guid>
+      <description>dateutil()  Source :
+# pip install python-dateutil from datetime import datetime, date from dateutil.relativedelta import relativedelta, SA, TH def demo1(): today = date.today() next_3_m = today + relativedelta(months=3) print(today) print(next_3_m) d1 = today + relativedelta(weeks=40) print(d1) d2 = today + relativedelta(years=1, months=6) print(d2) d3 = today + relativedelta(days=-1) print(d3) def demo2(): now = datetime.today() print(now) t1 = now + relativedelta(hours=3, minutes=30) print(t1) def demo_weekday(): childrenday = date(2016, 1, 1) + relativedelta(weekday=SA(+2)) print(childrenday) print(datetime.</description>
+    </item>
+    
+    <item>
       <title>decapitalize()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/decapitalize/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -654,7 +664,7 @@ def max_element_index(arr): return arr.index(max(arr))  max_element_index([5, 8,
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_n/</guid>
-      <description>Returns the n maximum elements from the provided list. If n is greater than or equal to the provided list&amp;rsquo;s length, then return the original list (sorted in descending order).
+      <description> max_n Returns the n maximum elements from the provided list. If n is greater than or equal to the provided list&amp;rsquo;s length, then return the original list (sorted in descending order).
 Use sorted() to sort the list, [:n] to get the specified number of elements. Omit the second argument, n, to get a one-element list.
 def max_n(lst, n=1): return sorted(lst, reverse=True)[:n]  max_n([1, 2, 3]) # [3] max_n([1, 2, 3], 2) # [3,2]  </description>
     </item>
@@ -665,10 +675,20 @@ def max_n(lst, n=1): return sorted(lst, reverse=True)[:n]  max_n([1, 2, 3]) # [3
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/median/</guid>
-      <description>Finds the median of a list of numbers.
+      <description>median Finds the median of a list of numbers.
 Sort the numbers of the list using list.sort() and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even.
 statistics.median() provides similar functionality to this snippet.
 def median(list): list.sort() list_length = len(list) if list_length % 2 == 0: return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2 return list[int(list_length / 2)]  median([1,2,3]) # 2 median([1,2,3,4]) # 2.</description>
+    </item>
+    
+    <item>
+      <title>merge_two_dictionaries()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/merge_two_dictionaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/merge_two_dictionaries/</guid>
+      <description>merge_two_dictionaries()  source: 
+ # How to merge two dictionaries # in Python 3.5+: x = {&#39;a&#39;: 1, &#39;b&#39;: 2} y = {&#39;b&#39;: 3, &#39;c&#39;: 4} z = {**x, **y} z # {&#39;c&#39;: 4, &#39;a&#39;: 1, &#39;b&#39;: 3}  # Why Python Is Great: # Function argument unpacking def myfunc(x, y, z): print(x, y, z) tuple_vec = (1, 0, 1) dict_vec = {&#39;x&#39;: 1, &#39;y&#39;: 0, &#39;z&#39;: 1} &amp;gt;&amp;gt;&amp;gt; myfunc(*tuple_vec) 1, 0, 1 &amp;gt;&amp;gt;&amp;gt; myfunc(**dict_vec) 1, 0, 1  # The lambda keyword in Python provides a # shortcut for declaring small and # anonymous functions: &amp;gt;&amp;gt;&amp;gt; add = lambda x, y: x + y &amp;gt;&amp;gt;&amp;gt; add(5, 3) 8 # You could declare the same add() # function with the def keyword: &amp;gt;&amp;gt;&amp;gt; def add(x, y): .</description>
     </item>
     
     <item>

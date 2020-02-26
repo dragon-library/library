@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hover shadow box animation"><meta property="og:title" content="Hover shadow box animation" />
+<meta property="og:description" content="Creates a shadow box around the text when it is hovered.
+&lt;p class=&quot;hover-shadow-box-animation&quot;&gt;Box it!&lt;/p&gt;  .hover-shadow-box-animation { display: inline-block; vertical-align: middle; transform: perspective(1px) translateZ(0); box-shadow: 0 0 1px transparent; margin: 10px; transition-duration: 0.3s; transition-property: box-shadow, transform; } .hover-shadow-box-animation:hover, .hover-shadow-box-animation:focus, .hover-shadow-box-animation:active { box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5); transform: scale(1.2); }  Explanation  display: inline-block to set width and length for p element thus making it an inline-block." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hover-shadow-box-animation/" />
+
+<title>Hover shadow box animation | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/bootstrap/" >
+      Bootstrap
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/" >
+      Snippets
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/tile-layout-using-inline-block/" >
+      3-tile layout
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/not-selector/" >
+      :not selector
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/border-with-top-triangle/" >
+      Border with top triangle
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/bouncing-loader/" >
+      Bouncing loader
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/box-sizing-reset/" >
+      Box-sizing reset
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/button-border-animation/" >
+      Button border animation
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/calc/" >
+      Calc()
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/circle/" >
+      Circle
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/clearfix/" >
+      Clearfix
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/constant-width-to-height-ratio/" >
+      Constant width to height ratio
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/counter/" >
+      Counter
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/custom-scrollbar/" >
+      Custom scrollbar
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/custom-text-selection/" >
+      Custom text selection
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/custom-variables/" >
+      Custom variables
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/disable-selection/" >
+      Disable selection
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/display-table-centering/" >
+      Display table centering
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/donut-spinner/" >
+      Donut spinner
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/drop-cap/" >
+      Drop cap
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/dynamic-shadow/" >
+      Dynamic shadow
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/easing-variables/" >
+      Easing variables
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/etched-text/" >
+      Etched text
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/evenly-distributed-children/" >
+      Evenly distributed children
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/fit-image-in-container/" >
+      Fit image in container
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/flexbox-centering/" >
+      Flexbox centering
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/focus-within/" >
+      Focus Within
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/fullscreen/" >
+      Fullscreen
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/ghost-trick/" >
+      Ghost trick
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/gradient-text/" >
+      Gradient text
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/grid-centering/" >
+      Grid centering
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/hairline-border/" >
+      Hairline border
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/hamburger-button/" >
+      Hamburger Button
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/height-transition/" >
+      Height transition
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/hover-shadow-box-animation/"  class="active">
+      Hover shadow box animation
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/hover-underline-animation/" >
+      Hover underline animation
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/last-item-with-remaining-available-height/" >
+      Last item with remaining available height
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/lobotomizedowlselector/" >
+      Lobotomized Owl Selector
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/masonry-layout/" >
+      Masonry Layout
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/mouse-cursor-gradient-tracking/" >
+      Mouse cursor gradient tracking
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/navigation-list-item-hover-and-focus-effect/" >
+      Navigation list item hover and focus effect
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/offscreen/" >
+      Offscreen
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/overflow-scroll-gradient/" >
+      Overflow scroll gradient
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/popout-menu/" >
+      Popout menu
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/pretty-text-underline/" >
+      Pretty text underline
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/pulse-loader/" >
+      Pulse loader
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/reset-all-styles/" >
+      Reset all styles
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/shape-separator/" >
+      Shape separator
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/sibling-fade/" >
+      Sibling fade
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/system-font-stack/" >
+      System font stack
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/toggle-switch/" >
+      Toggle switch
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/transform-detransform/" >
+      Transform - Detransform
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/transform-centering/" >
+      Transform centering
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/triangle/" >
+      Triangle
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/truncate-text/" >
+      Truncate text
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/truncate-text-multiline/" >
+      Truncate text multiline
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/front-end/css/snippets/zebra-striped-list/" >
+      Zebra striped list
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Hover shadow box animation</strong>
+</header>
+
+      
+<article class="markdown">
+
+<p>Creates a shadow box around the text when it is hovered.</p>
+
+<pre><code class="language-html">&lt;p class=&quot;hover-shadow-box-animation&quot;&gt;Box it!&lt;/p&gt;
+</code></pre>
+
+<pre><code class="language-css">.hover-shadow-box-animation {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  margin: 10px;
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform;
+}
+.hover-shadow-box-animation:hover,
+.hover-shadow-box-animation:focus,
+.hover-shadow-box-animation:active {
+  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+  transform: scale(1.2);
+}
+</code></pre>
+
+<h4 id="explanation">Explanation</h4>
+
+<ol>
+<li><code>display: inline-block</code> to set width and length for <code>p</code> element thus making it an <code>inline-block</code>.</li>
+<li>Set <code>transform: perspective(1px)</code> to give element a 3D space by affecting the distance between the Z plane and the user and <code>translate(0)</code> to reposition the <code>p</code> element along z-axis in 3D space.</li>
+<li><code>box-shadow:</code> to set up the box.</li>
+<li><code>transparent</code> to make box transparent.</li>
+<li><code>transition-property</code> to enable transitions for both <code>box-shadow</code> and <code>transform</code>.</li>
+<li><code>:hover</code> to activate whole css when hovering is done until <code>active</code>.</li>
+<li><code>transform: scale(1.2)</code> to change the scale, magnifying the text.</li>
+</ol>
+
+<h4 id="browser-support">Browser Support</h4>
+
+<ul>
+<li><a href="https://caniuse.com/#feat=transforms3d">https://caniuse.com/#feat=transforms3d</a></li>
+<li><a href="https://caniuse.com/#feat=css-transitions">https://caniuse.com/#feat=css-transitions</a></li>
+</ul>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cFront-End%5cCSS%5csnippets%5chover-shadow-box-animation.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#explanation">Explanation</a></li>
+<li><a href="#browser-support">Browser Support</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

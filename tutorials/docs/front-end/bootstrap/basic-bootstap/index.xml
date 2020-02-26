@@ -37,16 +37,5 @@ https://code.visualstudio.com/
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot; /&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot; /&amp;gt; &amp;lt;title&amp;gt;Portal&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;css/bootstrap.</description>
     </item>
     
-    <item>
-      <title>Bootstrap 4 Grid</title>
-      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/boostrap-4-flex-grid/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/boostrap-4-flex-grid/</guid>
-      <description>Bootstrap 4 Grid Download Source Code
-Bootstrap 4 brings many changes and new features to the grid system we are all so familiar with from version 3. The new grid is now powered by flexbox, lots of utility classes have been renamed, and a new XL breakpoint has been added.
- When we first wrote this article, Bootstrap 4 was supposed to have two separate grids. Shortly after we published it, a new Alpha was released, making flexbox the only layout mode of the framework as well as introducing some new features.</description>
-    </item>
-    
   </channel>
 </rss>

@@ -1146,6 +1146,38 @@ Google Sheets, the free, web-based spreadsheet application available to anyone w
     </item>
     
     <item>
+      <title>3-tile layout</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/tile-layout-using-inline-block/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/tile-layout-using-inline-block/</guid>
+      <description>Align items horizontally using display: inline-block to create a 3-tile layout.
+&amp;lt;div class=&amp;quot;tiles&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;tile&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;tile_image&amp;quot; src=&amp;quot;https://via.placeholder.com/250x150&amp;quot; alt=&amp;quot;placeholder&amp;quot; &amp;gt; &amp;lt;h2 class=&amp;quot;tile_title&amp;quot;&amp;gt;30 Seconds of CSS&amp;lt;/h2&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;tile&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;tile_image&amp;quot; src=&amp;quot;https://via.placeholder.com/250x150&amp;quot; alt=&amp;quot;placeholder&amp;quot; &amp;gt; &amp;lt;h2 class=&amp;quot;tile_title&amp;quot;&amp;gt;30 Seconds of CSS&amp;lt;/h2&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;tile&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;tile_image&amp;quot; src=&amp;quot;https://via.placeholder.com/250x150&amp;quot; alt=&amp;quot;placeholder&amp;quot; &amp;gt; &amp;lt;h2 class=&amp;quot;tile_title&amp;quot;&amp;gt;30 Seconds of CSS&amp;lt;/h2&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  .tiles { width: 900px; font-size: 0; } .tile { width: calc(900px / 3); display: inline-block; } .</description>
+    </item>
+    
+    <item>
+      <title>5 แหล่งดาวน์โหลด CSS สวย ๆ</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/5-web-download-css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/5-web-download-css/</guid>
+      <description> 5 แหล่งดาวน์โหลด CSS สวย ๆ CSS ถือเป็นหนึ่งเครื่องมือสำคัญในการสร้างสรรค์เว็บไซต์ให้สวยงามและมีลูกเล่นซึ่งไม่ใช่เรื่องยากอีกต่อไป เพราะวันนี้เราได้รวบรวมคลังเหล่านั้นมาไว้ให้คุณแล้ว
+1. Easing functions cheatsheet
+2. Animate.css 3. Animate Plus 4. Motion and Meaning 5. Hover.css  Source : .
+ </description>
+    </item>
+    
+    <item>
+      <title>:not selector</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/not-selector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/not-selector/</guid>
+      <description>The :not pseudo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.
+&amp;lt;ul class=&amp;quot;css-not-selector-shortcut&amp;quot;&amp;gt; &amp;lt;li&amp;gt;One&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Two&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Three&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Four&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;  .css-not-selector-shortcut { display: flex; } ul { padding-left: 0; } li { list-style-type: none; margin: 0; padding: 0 0.75rem; } li:not(:last-child) { border-right: 2px solid #d2d5e4; }  Explanation  li:not(:last-child) specifies that the styles should apply to all li elements except the :last-child.</description>
+    </item>
+    
+    <item>
       <title>all_equal()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/all_equal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1213,13 +1245,43 @@ def bifurcate_by(lst, fn): return [ [x for x in lst if fn(x)], [x for x in lst i
     
     <item>
       <title>Bootstrap 4 Grid</title>
-      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/boostrap-4-flex-grid/</link>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/boostrap-4-flex-grid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/basic-bootstap/boostrap-4-flex-grid/</guid>
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/boostrap-4-flex-grid/</guid>
       <description>Bootstrap 4 Grid Download Source Code
 Bootstrap 4 brings many changes and new features to the grid system we are all so familiar with from version 3. The new grid is now powered by flexbox, lots of utility classes have been renamed, and a new XL breakpoint has been added.
  When we first wrote this article, Bootstrap 4 was supposed to have two separate grids. Shortly after we published it, a new Alpha was released, making flexbox the only layout mode of the framework as well as introducing some new features.</description>
+    </item>
+    
+    <item>
+      <title>Border with top triangle</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/border-with-top-triangle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/border-with-top-triangle/</guid>
+      <description>Border with top triangle Creates a text container with a triangle at the top.
+&amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt; Border with top triangle &amp;lt;/div&amp;gt;  .container { position: relative; background: #ffffff; padding: 15px; border: 1px solid #dddddd; margin-top: 20px; } .container:before, .container:after { content: &#39;&#39;; position: absolute; bottom: 100%; left: 19px; border: 11px solid transparent; border-bottom-color: #dddddd; } .container:after { left: 20px; border: 10px solid transparent; border-bottom-color: #ffffff; }  Explanation  Use the :before and :after pseudo-elements to create two triangles.</description>
+    </item>
+    
+    <item>
+      <title>Bouncing loader</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/bouncing-loader/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/bouncing-loader/</guid>
+      <description>Bouncing loader Creates a bouncing loader animation.
+&amp;lt;div class=&amp;quot;bouncing-loader&amp;quot;&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  @keyframes bouncing-loader { to { opacity: 0.1; transform: translate3d(0, -1rem, 0); } } .bouncing-loader { display: flex; justify-content: center; } .bouncing-loader &amp;gt; div { width: 1rem; height: 1rem; margin: 3rem 0.2rem; background: #8385aa; border-radius: 50%; animation: bouncing-loader 0.6s infinite alternate; } .bouncing-loader &amp;gt; div:nth-child(2) { animation-delay: 0.2s; } .bouncing-loader &amp;gt; div:nth-child(3) { animation-delay: 0.4s; }  Explanation Note: 1rem is usually 16px.</description>
+    </item>
+    
+    <item>
+      <title>Box-sizing reset</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/box-sizing-reset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/box-sizing-reset/</guid>
+      <description>Box-sizing reset Resets the box-model so that widths and heights are not affected by their borders or padding.
+&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;border-box&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;box content-box&amp;quot;&amp;gt;content-box&amp;lt;/div&amp;gt;  html { box-sizing: border-box; } *, *::before, *::after { box-sizing: inherit; } .box { display: inline-block; width: 150px; height: 150px; padding: 10px; background: tomato; color: white; border: 10px solid red; } .content-box { box-sizing: content-box; }  Explanation  box-sizing: border-box makes the addition of padding or borders not affect an element&amp;rsquo;s width or height.</description>
     </item>
     
     <item>
@@ -1274,6 +1336,16 @@ Please click Add Python 3.7 to PATH option. It will add one entry in the environ
     </item>
     
     <item>
+      <title>Button border animation</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/button-border-animation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/button-border-animation/</guid>
+      <description>Button border animation Creates a border animation on hover.
+&amp;lt;div class=&amp;quot;button-border&amp;quot;&amp;gt;&amp;lt;button class=&amp;quot;button&amp;quot;&amp;gt;Submit&amp;lt;/button&amp;gt;&amp;lt;/div&amp;gt;  .button { background-color: #c47135; border: none; color: #ffffff; outline: none; padding: 12px 40px 10px; position: relative; } .button:before, .button:after { border: 0 solid transparent; transition: all 0.25s; content: &#39;&#39;; height: 24px; position: absolute; width: 24px; } .button:before { border-top: 2px solid #c47135; left: 0px; top: -5px; } .button:after { border-bottom: 2px solid #c47135; bottom: -5px; right: 0px; } .</description>
+    </item>
+    
+    <item>
       <title>byte_size()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/byte_size/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1282,6 +1354,16 @@ Please click Add Python 3.7 to PATH option. It will add one entry in the environ
       <description> byte_size() Returns the length of a string in bytes.
 Use s.encode(&#39;utf-8&#39;) to encode the given string and return its length.
 def byte_size(s): return len(s.encode(&#39;utf-8&#39;))  byte_size(&#39;😀&#39;) # 4 byte_size(&#39;Hello World&#39;) # 11  </description>
+    </item>
+    
+    <item>
+      <title>Calc()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/calc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/calc/</guid>
+      <description>Calc() The function calc() allows to define CSS values with the use of mathematical expressions, the value adopted for the property is the result of a mathematical expression.
+&amp;lt;div class=&amp;quot;box-example&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  .box-example { height: 280px; background: #222 url(&#39;https://image.ibb.co/fUL9nS/wolf.png&#39;) no-repeat; background-position: calc(100% - 20px) calc(100% - 20px); }  Explanation  It allows addition, subtraction, multiplication and division. Can use different units (pixel and percent together, for example) for each value in your expression.</description>
     </item>
     
     <item>
@@ -1362,6 +1444,16 @@ from math import ceil def chunk(lst, size): return list( map(lambda x: lst[x * s
     </item>
     
     <item>
+      <title>Circle</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/circle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/circle/</guid>
+      <description> Circle Creates a circle shape with pure CSS.
+&amp;lt;div class=&amp;quot;circle&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  .circle { border-radius: 50%; width: 2rem; height: 2rem; background: #333; }  Explanation  border-radius: 50% curves the borders of an element to create a circle. Since a circle has the same radius at any given point, the width and height must be the same. Differing values will create an ellipse.  Browser support  https://caniuse.com/#feat=border-radius  </description>
+    </item>
+    
+    <item>
       <title>Circle Progress</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/circle-progress/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1385,6 +1477,16 @@ In your web page:
       <description> clamp_number() Clamps num within the inclusive range specified by the boundary values a and b.
 If num falls within the range, return num. Otherwise, return the nearest number in the range.
 def clamp_number(num,a,b): return max(min(num, max(a, b)), min(a, b))  clamp_number(2, 3, 5) # 3 clamp_number(1, -1, -5) # -1  </description>
+    </item>
+    
+    <item>
+      <title>Clearfix</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/clearfix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/clearfix/</guid>
+      <description>Clearfix Ensures that an element self-clears its children.
+&amp;lt;div class=&amp;quot;clearfix&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;floated&amp;quot;&amp;gt;float a&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;floated&amp;quot;&amp;gt;float b&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;floated&amp;quot;&amp;gt;float c&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  .clearfix::after { content: &#39;&#39;; display: block; clear: both; } .floated { float: left; }  Explanation  .clearfix::after defines a pseudo-element. content: &#39;&#39; allows the pseudo-element to affect layout. clear: both indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.</description>
     </item>
     
     <item>
@@ -1421,6 +1523,25 @@ from functools import reduce def compose_right(*fns): return reduce(lambda f, g:
     </item>
     
     <item>
+      <title>Constant width to height ratio</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/constant-width-to-height-ratio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/constant-width-to-height-ratio/</guid>
+      <description>Constant width to height ratio Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion (i.e., its width to height ratio remains constant).
+&amp;lt;div class=&amp;quot;constant-width-to-height-ratio&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  .constant-width-to-height-ratio { background: #333; width: 50%; } .constant-width-to-height-ratio::before { content: &#39;&#39;; padding-top: 100%; float: left; } .constant-width-to-height-ratio::after { content: &#39;&#39;; display: block; clear: both; }  Explanation  padding-top on the ::before pseudo-element causes the height of the element to equal a percentage of its width.</description>
+    </item>
+    
+    <item>
+      <title>Constant width to height ratio</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-groupby-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-groupby-tutorial/</guid>
+      <description> Constant width to height ratio </description>
+    </item>
+    
+    <item>
       <title>count_by()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/count_by/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1440,6 +1561,16 @@ def count_by(arr, fn=lambda x: x): key = {} for el in map(fn, arr): key[el] = 1 
       <description> count_occurences() Counts the occurrences of a value in a list.
 Increment a counter for every item in the list that has the given value and is of the same type.
 def count_occurrences(lst, val): return len([x for x in lst if x == val and type(x) == type(val)])  count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3  </description>
+    </item>
+    
+    <item>
+      <title>Counter</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/counter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/counter/</guid>
+      <description>Counter Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they&amp;rsquo;re used.
+&amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;List item&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;List item&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; List item &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;List item&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;List item&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;List item&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;  ul { counter-reset: counter; } li::before { counter-increment: counter; content: counters(counter, &#39;.&#39;) &#39; &#39;; }  Explanation  You can create a ordered list using any type of HTML.</description>
     </item>
     
     <item>
@@ -1495,6 +1626,36 @@ from functools import partial def curry(fn, *args): return partial(fn,*args)  ad
     </item>
     
     <item>
+      <title>Custom scrollbar</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-scrollbar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-scrollbar/</guid>
+      <description>Custom scrollbar Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.
+&amp;lt;div class=&amp;quot;custom-scrollbar&amp;quot;&amp;gt; &amp;lt;p&amp;gt; Lorem ipsum dolor sit amet consectetur adipisicing elit.&amp;lt;br /&amp;gt; Iure id exercitationem nulla qui repellat laborum vitae, &amp;lt;br /&amp;gt; molestias tempora velit natus. Quas, assumenda nisi. &amp;lt;br /&amp;gt; Quisquam enim qui iure, consequatur velit sit? &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt;  .custom-scrollbar { height: 70px; overflow-y: scroll; } /* To style the document scrollbar, remove `.</description>
+    </item>
+    
+    <item>
+      <title>Custom text selection</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-text-selection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-text-selection/</guid>
+      <description>Custom text selection Changes the styling of text selection.
+&amp;lt;p class=&amp;quot;custom-text-selection&amp;quot;&amp;gt;Select some of this text.&amp;lt;/p&amp;gt;  ::selection { background: aquamarine; color: black; } .custom-text-selection::selection { background: deeppink; color: white; }  Explanation  ::selection defines a pseudo selector on an element to style text within it when selected. Note that if you don&amp;rsquo;t combine any other selector your style will be applied at document root level, to any selectable element.</description>
+    </item>
+    
+    <item>
+      <title>Custom variables</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-variables/</guid>
+      <description>Custom variables CSS variables that contain specific values to be reused throughout a document.
+&amp;lt;p class=&amp;quot;custom-variables&amp;quot;&amp;gt;CSS is awesome!&amp;lt;/p&amp;gt;  :root { /* Place variables within here to use the variables globally. */ } .custom-variables { --some-color: #da7800; --some-keyword: italic; --some-size: 1.25em; --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray; color: var(--some-color); font-size: var(--some-size); font-style: var(--some-keyword); text-shadow: var(--some-complex-value); }  Explanation  The variables are defined globally within the :root CSS pseudo-class which matches the root element of a tree representing the document.</description>
+    </item>
+    
+    <item>
       <title>Dash by Plotly</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1521,6 +1682,16 @@ from functools import partial def curry(fn, *args): return partial(fn,*args)  ad
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</guid>
       <description>Python DateTime, TimeDelta, Strftime(Format) with Examples In Python, date, time and datetime classes provides a number of function to deal with dates, times and time intervals. Date and datetime are an object in Python, so when you manipulate them, you are actually manipulating objects and not string or timestamps. Whenever you manipulate dates or time, you need to import datetime function.
 The datetime classes in Python are categorized into main 5 classes.</description>
+    </item>
+    
+    <item>
+      <title>dateutil()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/dateutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/dateutil/</guid>
+      <description>dateutil()  Source :
+# pip install python-dateutil from datetime import datetime, date from dateutil.relativedelta import relativedelta, SA, TH def demo1(): today = date.today() next_3_m = today + relativedelta(months=3) print(today) print(next_3_m) d1 = today + relativedelta(weeks=40) print(d1) d2 = today + relativedelta(years=1, months=6) print(d2) d3 = today + relativedelta(days=-1) print(d3) def demo2(): now = datetime.today() print(now) t1 = now + relativedelta(hours=3, minutes=30) print(t1) def demo_weekday(): childrenday = date(2016, 1, 1) + relativedelta(weekday=SA(+2)) print(childrenday) print(datetime.</description>
     </item>
     
     <item>
@@ -1611,6 +1782,87 @@ def digitize(n): return list(map(int, str(n)))  digitize(123) # [1, 2, 3]  </des
     </item>
     
     <item>
+      <title>Disable selection</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/disable-selection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/disable-selection/</guid>
+      <description> Disable selection Makes the content unselectable.
+&amp;lt;p&amp;gt;You can select me.&amp;lt;/p&amp;gt; &amp;lt;p class=&amp;quot;unselectable&amp;quot;&amp;gt;You can&#39;t select me!&amp;lt;/p&amp;gt;  .unselectable { user-select: none; }  Explanation  user-select: none specifies that the text cannot be selected.  Browser support ⚠️ Requires prefixes for full support. ⚠️ This is not a secure method to prevent users from copying content.
+ https://caniuse.com/#feat=user-select-none  </description>
+    </item>
+    
+    <item>
+      <title>Display table centering</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/display-table-centering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/display-table-centering/</guid>
+      <description>Display table centering Vertically and horizontally centers a child element within its parent element using display: table (as an alternative to flexbox).
+&amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Centered content&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  .container { border: 1px solid #333; height: 250px; width: 250px; } .center { display: table; height: 100%; width: 100%; } .center &amp;gt; span { display: table-cell; text-align: center; vertical-align: middle; }  Explanation  display: table on &amp;lsquo;.center&amp;rsquo; allows the element to behave like a &amp;lt;table&amp;gt; HTML element.</description>
+    </item>
+    
+    <item>
+      <title>Donut spinner</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/donut-spinner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/donut-spinner/</guid>
+      <description>Donut spinner Creates a donut spinner that can be used to indicate the loading of content.
+&amp;lt;div class=&amp;quot;donut&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  @keyframes donut-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } .donut { display: inline-block; border: 4px solid rgba(0, 0, 0, 0.1); border-left-color: #7983ff; border-radius: 50%; width: 30px; height: 30px; animation: donut-spin 1.2s linear infinite; }  Explanation  Use a semi-transparent border for the whole element, except one side that will serve as the loading indicator for the donut.</description>
+    </item>
+    
+    <item>
+      <title>Drop cap</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/drop-cap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/drop-cap/</guid>
+      <description>Makes the first letter in the first paragraph bigger than the rest of the text - often used to signify the beginning of a new section.
+&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo ligula quis tincidunt cursus. Integer consectetur tempor ex eget hendrerit. Cras facilisis sodales odio nec maximus. Pellentesque lacinia convallis libero, rhoncus tincidunt ante dictum at. Nullam facilisis lectus tellus, sit amet congue erat sodales commodo.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic shadow</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/dynamic-shadow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/dynamic-shadow/</guid>
+      <description>Creates a shadow similar to box-shadow but based on the colors of the element itself.
+&amp;lt;div class=&amp;quot;dynamic-shadow&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  .dynamic-shadow { position: relative; width: 10rem; height: 10rem; background: linear-gradient(75deg, #6d78ff, #00ffb8); z-index: 1; } .dynamic-shadow::after { content: &#39;&#39;; width: 100%; height: 100%; position: absolute; background: inherit; top: 0.5rem; filter: blur(0.4rem); opacity: 0.7; z-index: -1; }  Explanation  position: relative on the element establishes a Cartesian positioning context for psuedo-elements. z-index: 1 establishes a new stacking context.</description>
+    </item>
+    
+    <item>
+      <title>Easing variables</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/easing-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/easing-variables/</guid>
+      <description>Variables that can be reused for transition-timing-function properties, more powerful than the built-in ease, ease-in, ease-out and ease-in-out.
+&amp;lt;div class=&amp;quot;easing-variables&amp;quot;&amp;gt;Hover&amp;lt;/div&amp;gt;  :root { /* Place variables in here to use globally */ } .easing-variables { --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53); --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19); --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22); --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06); --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035); --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335); --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.</description>
+    </item>
+    
+    <item>
+      <title>Etched text</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/etched-text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/etched-text/</guid>
+      <description>Creates an effect where text appears to be &amp;ldquo;etched&amp;rdquo; or engraved into the background.
+&amp;lt;p class=&amp;quot;etched-text&amp;quot;&amp;gt;I appear etched into the background.&amp;lt;/p&amp;gt;  .etched-text { text-shadow: 0 2px white; font-size: 1.5rem; font-weight: bold; color: #b8bec5; }  Explanation  text-shadow: 0 2px white creates a white shadow offset 0px horizontally and 2px vertically from the origin position. The background must be darker than the shadow for the effect to work. The text color should be slightly faded to make it look like it&amp;rsquo;s engraved/carved out of the background.</description>
+    </item>
+    
+    <item>
+      <title>Evenly distributed children</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/evenly-distributed-children/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/evenly-distributed-children/</guid>
+      <description>Evenly distributes child elements within a parent element.
+&amp;lt;div class=&amp;quot;evenly-distributed-children&amp;quot;&amp;gt; &amp;lt;p&amp;gt;Item1&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Item2&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Item3&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt;  .evenly-distributed-children { display: flex; justify-content: space-between; }  Explanation  display: flex enables flexbox. justify-content: space-between evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.   Alternatively, use justify-content: space-around to distribute the children with space around them, rather than between them.</description>
+    </item>
+    
+    <item>
       <title>every()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/every/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1698,6 +1950,16 @@ from collections import Counter def find_parity_outliers(nums): return [ x for x
     </item>
     
     <item>
+      <title>Fit image in container</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/fit-image-in-container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/fit-image-in-container/</guid>
+      <description>Changes the fit and position of an image within its container while preserving its aspect ratio. Previously only possible using a background image and the background-size property.
+&amp;lt;img class=&amp;quot;image image-contain&amp;quot; src=&amp;quot;https://picsum.photos/600/200&amp;quot; /&amp;gt; &amp;lt;img class=&amp;quot;image image-cover&amp;quot; src=&amp;quot;https://picsum.photos/600/200&amp;quot; /&amp;gt;  .image { background: #34495e; border: 1px solid #34495e; width: 200px; height: 200px; } .image-contain { object-fit: contain; object-position: center; } .image-cover { object-fit: cover; object-position: right top; }  Explanation  object-fit: contain fits the entire image within the container while preserving its aspect ratio.</description>
+    </item>
+    
+    <item>
       <title>flatten()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/flatten/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1706,6 +1968,27 @@ from collections import Counter def find_parity_outliers(nums): return [ x for x
       <description> flatten() Flattens a list of lists once.
 Use nested list comprehension to extract each value from sub-lists in order.
 def flatten(lst): return [x for y in lst for x in y]  flatten([[1,2,3,4],[5,6,7,8]]) # [1, 2, 3, 4, 5, 6, 7, 8]  </description>
+    </item>
+    
+    <item>
+      <title>Flexbox centering</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/flexbox-centering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/flexbox-centering/</guid>
+      <description> Horizontally and vertically centers a child element within a parent element using flexbox.
+&amp;lt;div class=&amp;quot;flexbox-centering&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;Centered content.&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;  .flexbox-centering { display: flex; justify-content: center; align-items: center; height: 100px; }  Explanation  display: flex enables flexbox. justify-content: center centers the child horizontally. align-items: center centers the child vertically.  Browser support ⚠️ Needs prefixes for full support.
+ https://caniuse.com/#feat=flexbox  </description>
+    </item>
+    
+    <item>
+      <title>Focus Within</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/focus-within/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/focus-within/</guid>
+      <description>Changes the appearance of a form if any of its children are focused.
+&amp;lt;div class=&amp;quot;focus-within&amp;quot;&amp;gt; &amp;lt;form&amp;gt; &amp;lt;label for=&amp;quot;given_name&amp;quot;&amp;gt;Given Name:&amp;lt;/label&amp;gt; &amp;lt;input id=&amp;quot;given_name&amp;quot; type=&amp;quot;text&amp;quot; /&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;label for=&amp;quot;family_name&amp;quot;&amp;gt;Family Name:&amp;lt;/label&amp;gt; &amp;lt;input id=&amp;quot;family_name&amp;quot; type=&amp;quot;text&amp;quot; /&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt;  form { border: 3px solid #2d98da; color: #000000; padding: 4px; } form:focus-within { background: #f7b731; color: #000000; }  Explanation  The psuedo class :focus-within applies styles to a parent element if any child element gets focused.</description>
     </item>
     
     <item>
@@ -1720,6 +2003,16 @@ It’s been awhile since I’ve written one of these “how to” articles, but 
     </item>
     
     <item>
+      <title>Fullscreen</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/fullscreen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/fullscreen/</guid>
+      <description>The :fullscreen CSS pseudo-class represents an element that&amp;rsquo;s displayed when the browser is in fullscreen mode.
+&amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt; &amp;lt;p&amp;gt;&amp;lt;em&amp;gt;Click the button below to enter the element into fullscreen mode. &amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;div class=&amp;quot;element&amp;quot; id=&amp;quot;element&amp;quot;&amp;gt;&amp;lt;p&amp;gt;I change color in fullscreen mode!&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;br /&amp;gt; &amp;lt;button onclick=&amp;quot;var el = document.getElementById(&#39;element&#39;); el.requestFullscreen();&amp;quot;&amp;gt; Go Full Screen! &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;  .container { margin: 40px auto; max-width: 700px; } .element { padding: 20px; height: 300px; width: 100%; background-color: skyblue; box-sizing: border-box; } .</description>
+    </item>
+    
+    <item>
       <title>gcd()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/gcd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1731,6 +2024,37 @@ from functools import reduce from math import gcd def gcd(numbers): return reduc
     </item>
     
     <item>
+      <title>Ghost trick</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/ghost-trick/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/ghost-trick/</guid>
+      <description> Vertically centers an element in another.
+&amp;lt;div class=&amp;quot;ghost-trick&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;ghosting&amp;quot;&amp;gt;&amp;lt;p&amp;gt;Vertically centered without changing the position property.&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  .ghosting { height: 300px; background: #0ff; } .ghosting:before { content: &#39;&#39;; display: inline-block; height: 100%; vertical-align: middle; } p { display: inline-block; vertical-align: middle; }  Explanation  Use the style of a :before pseudo-element to vertically align inline elements without changing their position property.  Browser support  https://caniuse.com/#feat=inline-block  </description>
+    </item>
+    
+    <item>
+      <title>Gradient text</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/gradient-text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/gradient-text/</guid>
+      <description> Gives text a gradient color.
+&amp;lt;p class=&amp;quot;gradient-text&amp;quot;&amp;gt;Gradient text&amp;lt;/p&amp;gt;  .gradient-text { background: -webkit-linear-gradient(pink, red); -webkit-text-fill-color: transparent; -webkit-background-clip: text; }  Explanation  background: -webkit-linear-gradient(...) gives the text element a gradient background. webkit-text-fill-color: transparent fills the text with a transparent color. webkit-background-clip: text clips the background with the text, filling the text with the gradient background as the color.  Browser support ⚠️ Uses non-standard properties.
+ https://caniuse.com/#feat=text-stroke  </description>
+    </item>
+    
+    <item>
+      <title>Grid centering</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/grid-centering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/grid-centering/</guid>
+      <description> Horizontally and vertically centers a child element within a parent element using grid.
+&amp;lt;div class=&amp;quot;grid-centering&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;Centered content.&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;  .grid-centering { display: grid; justify-content: center; align-items: center; height: 100px; }  Explanation  display: grid enables grid. justify-content: center centers the child horizontally. align-items: center centers the child vertically.  Browser support  https://caniuse.com/#feat=css-grid  </description>
+    </item>
+    
+    <item>
       <title>group_by()</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/group_by/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1739,6 +2063,26 @@ from functools import reduce from math import gcd def gcd(numbers): return reduc
       <description>group_by() Groups the elements of a list based on the given function.
 Use map() and fn to map the values of the list to the keys of an object. Use list comprehension to map each element to the appropriate key.
 def group_by(lst, fn): return {key : [el for el in lst if fn(el) == key] for key in map(fn, lst)}  from math import floor group_by([6.1, 4.2, 6.3], floor) # {4: [4.</description>
+    </item>
+    
+    <item>
+      <title>Hairline border</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hairline-border/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hairline-border/</guid>
+      <description>Gives an element a border equal to 1 native device pixel in width, which can look very sharp and crisp.
+&amp;lt;div class=&amp;quot;hairline-border&amp;quot;&amp;gt;text&amp;lt;/div&amp;gt;  .hairline-border { box-shadow: 0 0 0 1px; } @media (min-resolution: 2dppx) { .hairline-border { box-shadow: 0 0 0 0.5px; } } @media (min-resolution: 3dppx) { .hairline-border { box-shadow: 0 0 0 0.33333333px; } } @media (min-resolution: 4dppx) { .hairline-border { box-shadow: 0 0 0 0.25px; } }  Explanation  box-shadow, when only using spread, adds a pseudo-border which can use subpixels*.</description>
+    </item>
+    
+    <item>
+      <title>Hamburger Button</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hamburger-button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hamburger-button/</guid>
+      <description>Displays a hamburger menu which transitions to a cross on hover.
+&amp;lt;div class=&amp;quot;hamburger-menu&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;bar top&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;bar middle&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;bar bottom&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  .hamburger-menu { display: flex; flex-direction: column; flex-wrap: wrap; justify-content: space-between; height: 2.5rem; width: 2.5rem; cursor: pointer; } .hamburger-menu .bar { height: 5px; background: black; border-radius: 5px; margin: 3px 0px; transform-origin: left; transition: all 0.5s; } .hamburger-menu:hover .top { transform: rotate(45deg); } .hamburger-menu:hover .middle { opacity: 0; } .</description>
     </item>
     
     <item>
@@ -1761,6 +2105,37 @@ def has_duplicates(lst): return len(lst) != len(set(lst))  x = [1, 2, 3, 4, 5, 5
       <description> head() Returns the head of a list.
 Use lst[0] to return the first element of the passed list.
 def head(lst): return lst[0]  head([1, 2, 3]) # 1  </description>
+    </item>
+    
+    <item>
+      <title>Height transition</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/height-transition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/height-transition/</guid>
+      <description>Transitions an element&amp;rsquo;s height from 0 to auto when its height is unknown.
+&amp;lt;div class=&amp;quot;trigger&amp;quot;&amp;gt; Hover me to see a height transition. &amp;lt;div class=&amp;quot;el&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  .el { transition: max-height 0.5s; overflow: hidden; max-height: 0; } .trigger:hover &amp;gt; .el { max-height: var(--max-height); }  var el = document.querySelector(&#39;.el&#39;) var height = el.scrollHeight el.style.setProperty(&#39;--max-height&#39;, height + &#39;px&#39;)  Explanation  transition: max-height: 0.5s cubic-bezier(...) specifies that changes to max-height should be transitioned over 0.</description>
+    </item>
+    
+    <item>
+      <title>Hover shadow box animation</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hover-shadow-box-animation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hover-shadow-box-animation/</guid>
+      <description>Creates a shadow box around the text when it is hovered.
+&amp;lt;p class=&amp;quot;hover-shadow-box-animation&amp;quot;&amp;gt;Box it!&amp;lt;/p&amp;gt;  .hover-shadow-box-animation { display: inline-block; vertical-align: middle; transform: perspective(1px) translateZ(0); box-shadow: 0 0 1px transparent; margin: 10px; transition-duration: 0.3s; transition-property: box-shadow, transform; } .hover-shadow-box-animation:hover, .hover-shadow-box-animation:focus, .hover-shadow-box-animation:active { box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5); transform: scale(1.2); }  Explanation  display: inline-block to set width and length for p element thus making it an inline-block.</description>
+    </item>
+    
+    <item>
+      <title>Hover underline animation</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hover-underline-animation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hover-underline-animation/</guid>
+      <description>Creates an animated underline effect when the text is hovered over.
+Credit: https://flatuicolors.com/
+&amp;lt;p class=&amp;quot;hover-underline-animation&amp;quot;&amp;gt;Hover this text to see the effect!&amp;lt;/p&amp;gt;  .hover-underline-animation { display: inline-block; position: relative; color: #0087ca; } .hover-underline-animation::after { content: &#39;&#39;; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: 0; left: 0; background-color: #0087ca; transform-origin: bottom right; transition: transform 0.25s ease-out; } .hover-underline-animation:hover::after { transform: scaleX(1); transform-origin: bottom left; }  Explanation  display: inline-block makes the block p an inline-block to prevent the underline from spanning the entire parent width rather than just the content (text).</description>
     </item>
     
     <item>
@@ -1938,6 +2313,16 @@ def last(lst): return lst[-1]  last([1, 2, 3]) # 3  </description>
     </item>
     
     <item>
+      <title>Last item with remaining available height</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/last-item-with-remaining-available-height/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/last-item-with-remaining-available-height/</guid>
+      <description>Take advantage of available viewport space by giving the last element the remaining available space in current viewport, even when resizing the window.
+&amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt; &amp;lt;div&amp;gt;Div 1&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;Div 2&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;Div 3&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  html, body { height: 100%; margin: 0; } .container { height: 100%; display: flex; flex-direction: column; } .container &amp;gt; div:last-child { background-color: tomato; flex: 1; }  Explanation  height: 100% set the height of container as viewport height.</description>
+    </item>
+    
+    <item>
       <title>lcm</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/lcm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1956,6 +2341,16 @@ from functools import reduce from math import gcd def lcm(numbers): return reduc
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/html/learning-web-development/</guid>
       <description>The Ultimate Guide to Learning Full Stack Web Development in 6 months, for $30 Hey everyone! In this article I’m going to show you how to go from knowing little to nothing about Web Development to Junior Full Stack Developer in just six months, for under $30.
 This article will cover everything you need to know! You’ll first learn the basics of Web Development with an online coding bootcamp ($15).</description>
+    </item>
+    
+    <item>
+      <title>Lobotomized Owl Selector</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/lobotomizedowlselector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/lobotomizedowlselector/</guid>
+      <description>Sets an automatically inherited margin for all elements that follow other elements in the document.
+&amp;lt;div&amp;gt; &amp;lt;div&amp;gt;Parent 01&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;Parent 02 &amp;lt;div&amp;gt;Child 01&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;Child 02&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;Parent 03&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  * + * { margin-top: 1.5em; }  Explanation  View this link for a detailed explanation. In this example, all elements in the flow of the document that follow other elements will receive margin-top: 1.5em. This example assumes that the paragraphs&amp;rsquo; font-size is 1em and its line-height is 1.</description>
     </item>
     
     <item>
@@ -1978,6 +2373,16 @@ def longest_item(*args): return max(args, key=len)  longest_item(&#39;this&#39;,
       <description>Creates an object with the same keys as the provided object and values generated by running the provided function for each value.
 Use dict.keys() to iterate over the object&amp;rsquo;s keys, assigning the values produced by fn to each key of a new object.
 def map_values(obj, fn): ret = {} for key in obj.keys(): ret[key] = fn(obj[key]) return ret  users = { &#39;fred&#39;: { &#39;user&#39;: &#39;fred&#39;, &#39;age&#39;: 40 }, &#39;pebbles&#39;: { &#39;user&#39;: &#39;pebbles&#39;, &#39;age&#39;: 1 } } map_values(users, lambda u : u[&#39;age&#39;]) # {&#39;fred&#39;: 40, &#39;pebbles&#39;: 1}  </description>
+    </item>
+    
+    <item>
+      <title>Masonry Layout</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/masonry-layout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/masonry-layout/</guid>
+      <description>Creates a vertical Masonry layout using pure HTML and CSS.
+&amp;lt;div class=&amp;quot;masonry-container&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;masonry-columns&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;masonry-brick&amp;quot; src=&amp;quot;https://picsum.photos/id/1016/384/256&amp;quot; alt=&amp;quot;An image&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;masonry-brick&amp;quot; src=&amp;quot;https://picsum.photos/id/1025/495/330&amp;quot; alt=&amp;quot;Another image&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;masonry-brick&amp;quot; src=&amp;quot;https://picsum.photos/id/1024/192/128&amp;quot; alt=&amp;quot;Another image&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;masonry-brick&amp;quot; src=&amp;quot;https://picsum.photos/id/1028/518/345&amp;quot; alt=&amp;quot;One more image&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;masonry-brick&amp;quot; src=&amp;quot;https://picsum.photos/id/1035/585/390&amp;quot; alt=&amp;quot;And another one&amp;quot;&amp;gt; &amp;lt;img class=&amp;quot;masonry-brick&amp;quot; src=&amp;quot;https://picsum.photos/id/1074/384/216&amp;quot; alt=&amp;quot;Last one&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  /* Container */ .masonry-container { --column-count-small: 1; --column-count-medium: 2; --column-count-large: 3; --column-gap: 0.125rem; padding: var(--column-gap); } /* Columns */ .masonry-columns { column-gap: var(--column-gap); column-count: var(--column-count-small); column-width: calc(1 / var(--column-count-small) * 100%); } @media only screen and (min-width: 640px) { .</description>
     </item>
     
     <item>
@@ -2008,7 +2413,7 @@ def max_element_index(arr): return arr.index(max(arr))  max_element_index([5, 8,
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_n/</guid>
-      <description>Returns the n maximum elements from the provided list. If n is greater than or equal to the provided list&amp;rsquo;s length, then return the original list (sorted in descending order).
+      <description> max_n Returns the n maximum elements from the provided list. If n is greater than or equal to the provided list&amp;rsquo;s length, then return the original list (sorted in descending order).
 Use sorted() to sort the list, [:n] to get the specified number of elements. Omit the second argument, n, to get a one-element list.
 def max_n(lst, n=1): return sorted(lst, reverse=True)[:n]  max_n([1, 2, 3]) # [3] max_n([1, 2, 3], 2) # [3,2]  </description>
     </item>
@@ -2019,7 +2424,7 @@ def max_n(lst, n=1): return sorted(lst, reverse=True)[:n]  max_n([1, 2, 3]) # [3
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/median/</guid>
-      <description>Finds the median of a list of numbers.
+      <description>median Finds the median of a list of numbers.
 Sort the numbers of the list using list.sort() and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even.
 statistics.median() provides similar functionality to this snippet.
 def median(list): list.sort() list_length = len(list) if list_length % 2 == 0: return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2 return list[int(list_length / 2)]  median([1,2,3]) # 2 median([1,2,3,4]) # 2.</description>
@@ -2033,6 +2438,16 @@ def median(list): list.sort() list_length = len(list) if list_length % 2 == 0: r
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/</guid>
       <description>How to Merge Two Dictionaries in Python: Dictionary Comprehensions and Unpacking POSTED ON JUNE 7, 2019 BY JEREMY GRIFSKI
 When I’m trying to find a topic for this series, I either decide to write about something I just learned, or I choose to write about something I found from the list of top Python questions on Stack Overflow. Today, I’m hitting both by covering how to merge two dictionaries in Python.</description>
+    </item>
+    
+    <item>
+      <title>merge_two_dictionaries()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/merge_two_dictionaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/merge_two_dictionaries/</guid>
+      <description>merge_two_dictionaries()  source: 
+ # How to merge two dictionaries # in Python 3.5+: x = {&#39;a&#39;: 1, &#39;b&#39;: 2} y = {&#39;b&#39;: 3, &#39;c&#39;: 4} z = {**x, **y} z # {&#39;c&#39;: 4, &#39;a&#39;: 1, &#39;b&#39;: 3}  # Why Python Is Great: # Function argument unpacking def myfunc(x, y, z): print(x, y, z) tuple_vec = (1, 0, 1) dict_vec = {&#39;x&#39;: 1, &#39;y&#39;: 0, &#39;z&#39;: 1} &amp;gt;&amp;gt;&amp;gt; myfunc(*tuple_vec) 1, 0, 1 &amp;gt;&amp;gt;&amp;gt; myfunc(**dict_vec) 1, 0, 1  # The lambda keyword in Python provides a # shortcut for declaring small and # anonymous functions: &amp;gt;&amp;gt;&amp;gt; add = lambda x, y: x + y &amp;gt;&amp;gt;&amp;gt; add(5, 3) 8 # You could declare the same add() # function with the def keyword: &amp;gt;&amp;gt;&amp;gt; def add(x, y): .</description>
     </item>
     
     <item>
@@ -2069,6 +2484,16 @@ def most_frequent(list): return max(set(list), key=list.count)  most_frequent([1
     </item>
     
     <item>
+      <title>Mouse cursor gradient tracking</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/mouse-cursor-gradient-tracking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/mouse-cursor-gradient-tracking/</guid>
+      <description>A hover effect where the gradient follows the mouse cursor.
+&amp;lt;button class=&amp;quot;mouse-cursor-gradient-tracking&amp;quot;&amp;gt;&amp;lt;span&amp;gt;Hover me&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;  .mouse-cursor-gradient-tracking { position: relative; background: #7983ff; padding: 0.5rem 1rem; font-size: 1.2rem; border: none; color: white; cursor: pointer; outline: none; overflow: hidden; } .mouse-cursor-gradient-tracking span { position: relative; } .mouse-cursor-gradient-tracking::before { --size: 0; content: &#39;&#39;; position: absolute; left: var(--x); top: var(--y); width: var(--size); height: var(--size); background: radial-gradient(circle closest-side, pink, transparent); transform: translate(-50%, -50%); transition: width 0.2s ease, height 0.</description>
+    </item>
+    
+    <item>
       <title>n_times_string</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/n_times_string/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2077,6 +2502,16 @@ def most_frequent(list): return max(set(list), key=list.count)  most_frequent([1
       <description>Prints out the same string a defined number of times.
 Repeat the string n times, using the * operator.
 def n_times_string(s, n): return (s * n)  n_times_string(&#39;py&#39;, 4) #&#39;pypypypy&#39;  </description>
+    </item>
+    
+    <item>
+      <title>Navigation list item hover and focus effect</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/navigation-list-item-hover-and-focus-effect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/navigation-list-item-hover-and-focus-effect/</guid>
+      <description>Fancy hover and focus effect at navigation items using transform CSS property.
+&amp;lt;nav&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#/&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#/&amp;quot;&amp;gt;Contact&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/nav&amp;gt;  nav ul { list-style: none; margin: 0; padding: 0; overflow: hidden; } nav li { float: left; } nav li a { position: relative; display: block; color: #222; text-align: center; padding: 8px 12px; text-decoration: none; } li a::before { position: absolute; content: &amp;quot;&amp;quot;; width: 100%; height: 100%; bottom: 0; left: 0; background-color: #f6c126; z-index: -1; transform: scale(0); transition: transform 0.</description>
     </item>
     
     <item>
@@ -2091,6 +2526,15 @@ def none(lst, fn=lambda x: x): return all(not fn(x) for x in lst)  none([0, 1, 2
     </item>
     
     <item>
+      <title>Offscreen</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/offscreen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/offscreen/</guid>
+      <description>A bulletproof way to completely hide an element visually and positionally in the DOM while still allowing it to be accessed by JavaScript and readable by screen readers. This method is very useful for accessibility (ADA) development when more context is needed for visually-impaired users. As an alternative to display: none which is not readable by screen readers or visibility: hidden which takes up physical space in the DOM.</description>
+    </item>
+    
+    <item>
       <title>offset</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/offset/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2102,6 +2546,16 @@ def offset(lst, offset): return lst[offset:] + lst[:offset]  offset([1, 2, 3, 4,
     </item>
     
     <item>
+      <title>Overflow scroll gradient</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/overflow-scroll-gradient/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/overflow-scroll-gradient/</guid>
+      <description>Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
+&amp;lt;div class=&amp;quot;overflow-scroll-gradient&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;overflow-scroll-gradient__scroller&amp;quot;&amp;gt; Lorem ipsum dolor sit amet consectetur adipisicing elit. &amp;lt;br /&amp;gt; Iure id exercitationem nulla qui repellat laborum vitae, &amp;lt;br /&amp;gt; molestias tempora velit natus. Quas, assumenda nisi. &amp;lt;br /&amp;gt; Quisquam enim qui iure, consequatur velit sit? &amp;lt;br /&amp;gt; Lorem ipsum dolor sit amet consectetur adipisicing elit.&amp;lt;br /&amp;gt; Iure id exercitationem nulla qui repellat laborum vitae, &amp;lt;br /&amp;gt; molestias tempora velit natus.</description>
+    </item>
+    
+    <item>
       <title>palindrome</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/palindrome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2110,6 +2564,45 @@ def offset(lst, offset): return lst[offset:] + lst[:offset]  offset([1, 2, 3, 4,
       <description>Returns True if the given string is a palindrome, False otherwise.
 Use s.lower() and re.sub() to convert to lowercase and remove non-alphanumeric characters from the given string. Then, compare the new string with its reverse.
 from re import sub def palindrome(s): s = sub(&#39;[\W_]&#39;, &#39;&#39;, s.lower()) return s == s[::-1]  palindrome(&#39;taco cat&#39;) # True  </description>
+    </item>
+    
+    <item>
+      <title>Part I</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-1/</guid>
+      <description>Python Web Applications with Flask – Part I Table of Contents  Articles in this series: What we are building Starting off  First principles A note on the repository structure  Starting the project  Dependencies  Outgrowing small A place for everything  Domain models Data translation layer Views Application setup Configuration and command line runner  And everything in its place Wrapping Up  Please note: This is a collaboration piece between Michael Herman, from Real Python, and Sean Vieira, a Python developer from De Deo Designs.</description>
+    </item>
+    
+    <item>
+      <title>Part II</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-2/</guid>
+      <description>Python Web Applications with Flask – Part II Articles in this series:
+ Part I: Application setup Part II: Setup user accounts, Templates, Static files ← CURRENT ARTICLE Part III: Testing (unit and integration), Debugging, and Error handling  Welcome back to the Flask-Tracking development series! For those of you who are just joining us, we are implementing a web analytics application that conforms to this napkin specification. For all those of you following along at home, you may check out today’s code with:</description>
+    </item>
+    
+    <item>
+      <title>Part III</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-3/</guid>
+      <description>Python Web Applications with Flask – Part III Articles in this series:
+ Part I: Application setup Part II: Setup user accounts, Templates, Static files Part III: Testing (unit and integration), Debugging, and Error handling ← CURRENT ARTICLE  Welcome back to the Flask-Tracking development series! For those of you who are just joining us, we are implementing a web analytics application that conforms to this napkin specification. For all those of you following along at home, you may check out today’s code with:</description>
+    </item>
+    
+    <item>
+      <title>Popout menu</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/popout-menu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/popout-menu/</guid>
+      <description>Reveals an interactive popout menu on hover and focus.
+&amp;lt;div class=&amp;quot;reference&amp;quot; tabindex=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;popout-menu&amp;quot;&amp;gt;Popout menu&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;  .reference { position: relative; background: tomato; width: 100px; height: 100px; } .popout-menu { position: absolute; visibility: hidden; left: 100%; background: #333; color: white; padding: 15px; } .reference:hover &amp;gt; .popout-menu, .reference:focus &amp;gt; .popout-menu, .reference:focus-within &amp;gt; .popout-menu { visibility: visible; }  Explanation  position: relative on the reference parent establishes a Cartesian positioning context for its child.</description>
     </item>
     
     <item>
@@ -2132,6 +2625,26 @@ import pandas as pd import numpy as np import matplotlib.pyplot as plt import pa
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/</guid>
       <description>Portfolio Optimization Methods When constructing a multi-asset portfolio, coming up with the strategy to allocate weights to the portfolio components is a very important step in the process. Coming up with weights for a portfolio given its components can be done in a number of ways and is a question that boggles even the most skilled managers. So what is the most optimal way to do this? in this article we will try to introduce the most widely used methods and understand the intuition behind them.</description>
+    </item>
+    
+    <item>
+      <title>Pretty text underline</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/pretty-text-underline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/pretty-text-underline/</guid>
+      <description>A nicer alternative to text-decoration: underline or &amp;lt;u&amp;gt;&amp;lt;/u&amp;gt; where descenders do not clip the underline. Natively implemented as text-decoration-skip-ink: auto but it has less control over the underline.
+&amp;lt;p class=&amp;quot;pretty-text-underline&amp;quot;&amp;gt;Pretty text underline without clipping descending letters.&amp;lt;/p&amp;gt;  .pretty-text-underline { display: inline; text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9; background-image: linear-gradient(90deg, currentColor 100%, transparent 100%); background-position: bottom; background-repeat: no-repeat; background-size: 100% 1px; } .pretty-text-underline::-moz-selection { background-color: rgba(0, 150, 255, 0.</description>
+    </item>
+    
+    <item>
+      <title>Pulse loader</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/pulse-loader/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/pulse-loader/</guid>
+      <description>Creates a pulse effect loader animation using the animation-delay property.
+&amp;lt;div class=&amp;quot;ripple-loader&amp;quot;&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  .ripple-loader { position: relative; width: 64px; height: 64px; } .ripple-loader div { position: absolute; border: 4px solid #76ff03; border-radius: 50%; animation: ripple-loader 1s ease-out infinite; } .ripple-loader div:nth-child(2) { animation-delay: -0.5s; } @keyframes ripple-loader { 0% { top: 32px; left: 32px; width: 0; height: 0; opacity: 1; } 100% { top: 0; left: 0; width: 64px; height: 64px; opacity: 0; } }  Explanation  Use @keyframes to define an animation at two points in the cycle, start (0%), where the two &amp;lt;div&amp;gt; elements have no width or height and are positioned at the center and end (100%), where both &amp;lt;div&amp;gt; elements have increased width and height, but their position is reset to 0.</description>
     </item>
     
     <item>
@@ -2222,6 +2735,16 @@ Regular expressions (regex) are essentially text patterns that you can use to au
     </item>
     
     <item>
+      <title>Reset all styles</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/reset-all-styles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/reset-all-styles/</guid>
+      <description>Resets all styles to default values with one property. This will not affect direction and unicode-bidi properties.
+&amp;lt;div class=&amp;quot;reset-all-styles&amp;quot;&amp;gt; &amp;lt;h5&amp;gt;Title&amp;lt;/h5&amp;gt; &amp;lt;p&amp;gt; Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit? &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt;  .reset-all-styles { all: initial; }  Explanation  The all property allows you to reset all styles (inherited or not) to default values.</description>
+    </item>
+    
+    <item>
       <title>reverse_string</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/reverse_string/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2245,6 +2768,16 @@ from random import randint def sample(lst): return lst[randint(0, len(lst) - 1)]
     </item>
     
     <item>
+      <title>Shape separator</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/shape-separator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/shape-separator/</guid>
+      <description>Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.
+&amp;lt;div class=&amp;quot;shape-separator&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  .shape-separator { position: relative; height: 48px; background: #333; } .shape-separator::after { content: &#39;&#39;; background-image: url(&amp;quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 24 12&#39;%3E%3Cpath d=&#39;m12 0l12 12h-24z&#39; fill=&#39;%23fff&#39;/%3E%3C/svg%3E&amp;quot;); position: absolute; width: 100%; height: 12px; bottom: 0; }  Explanation  position: relative on the element establishes a Cartesian positioning context for pseudo elements.</description>
+    </item>
+    
+    <item>
       <title>shuffle</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/shuffle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2254,6 +2787,16 @@ from random import randint def sample(lst): return lst[randint(0, len(lst) - 1)]
 Uses the Fisher-Yates algorithm to reorder the elements of the list.
 random.shuffle provides similar functionality to this snippet.
 from copy import deepcopy from random import randint def shuffle(lst): temp_lst = deepcopy(lst) m = len(temp_lst) while (m): m -= 1 i = randint(0, m) temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m] return temp_lst  foo = [1,2,3] shuffle(foo) # [2,3,1], foo = [1,2,3]  </description>
+    </item>
+    
+    <item>
+      <title>Sibling fade</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/sibling-fade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/sibling-fade/</guid>
+      <description>Fades out the siblings of a hovered item.
+&amp;lt;div class=&amp;quot;sibling-fade&amp;quot;&amp;gt; &amp;lt;span&amp;gt;Item 1&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt;Item 2&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt;Item 3&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt;Item 4&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt;Item 5&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt;Item 6&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  span { padding: 0 1rem; transition: opacity 0.2s; } .sibling-fade:hover span:not(:hover) { opacity: 0.5; }  Explanation  transition: opacity 0.2s specifies that changes to opacity will be transitioned over 0.2 seconds. .sibling-fade:hover span:not(:hover) specifies that when the parent is hovered, select any span children that are not currently being hovered and change their opacity to 0.</description>
     </item>
     
     <item>
@@ -2367,6 +2910,16 @@ def symmetric_difference_by(a, b, fn): _a, _b = set(map(fn, a)), set(map(fn, b))
     </item>
     
     <item>
+      <title>System font stack</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/system-font-stack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/system-font-stack/</guid>
+      <description>Uses the native font of the operating system to get close to a native app feel.
+&amp;lt;p class=&amp;quot;system-font-stack&amp;quot;&amp;gt;This text uses the system font.&amp;lt;/p&amp;gt;  .system-font-stack { font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; }  Explanation  The browser looks for each successive font, preferring the first one if possible, and falls back to the next if it cannot find the font (on the system or defined in CSS).</description>
+    </item>
+    
+    <item>
       <title>tail</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/tail/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2378,6 +2931,36 @@ def tail(lst): return lst[1:] if len(lst) &amp;gt; 1 else lst  tail([1, 2, 3]) #
     </item>
     
     <item>
+      <title>Toggle switch</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/toggle-switch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/toggle-switch/</guid>
+      <description>Creates a toggle switch with CSS only.
+&amp;lt;input type=&amp;quot;checkbox&amp;quot; id=&amp;quot;toggle&amp;quot; class=&amp;quot;offscreen&amp;quot; /&amp;gt; &amp;lt;label for=&amp;quot;toggle&amp;quot; class=&amp;quot;switch&amp;quot;&amp;gt;&amp;lt;/label&amp;gt;  .switch { position: relative; display: inline-block; width: 40px; height: 20px; background-color: rgba(0, 0, 0, 0.25); border-radius: 20px; transition: all 0.3s; } .switch::after { content: &#39;&#39;; position: absolute; width: 18px; height: 18px; border-radius: 18px; background-color: white; top: 1px; left: 1px; transition: all 0.3s; } input[type=&#39;checkbox&#39;]:checked + .switch::after { transform: translateX(20px); } input[type=&#39;checkbox&#39;]:checked + .switch { background-color: #7983ff; } .</description>
+    </item>
+    
+    <item>
+      <title>Transform - Detransform</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/transform-detransform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/transform-detransform/</guid>
+      <description>Sets a transform on the parent element and de-transforms the child elements, so they are not affected by the transform. This allows for some neat effects such as skewed buttons.
+&amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;Child content&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;  :root { --transform: 10deg; } .parent { transform: skewX(var(--transform)); padding: 1rem; border: 1px solid; display: inline-block; } .child { transform: skewX(calc(-1 * var(--transform))); }  Explanation  --transform: 10deg sets a CSS variable we can later use to prevent duplicate code.</description>
+    </item>
+    
+    <item>
+      <title>Transform centering</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/transform-centering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/transform-centering/</guid>
+      <description>Vertically and horizontally centers a child element within its parent element using position: absolute and transform: translate() (as an alternative to flexbox or display: table). Similar to flexbox, this method does not require you to know the height or width of your parent or child so it is ideal for responsive applications.
+&amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;Centered content&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;  .parent { border: 1px solid #333; height: 250px; position: relative; width: 250px; } .</description>
+    </item>
+    
+    <item>
       <title>transpose</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/transpose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2386,6 +2969,36 @@ def tail(lst): return lst[1:] if len(lst) &amp;gt; 1 else lst  tail([1, 2, 3]) #
       <description>Returns the transpose of a two-dimensional list.
 Use *lst to get the passed list as tuples. Use zip() in combination with list() to create the transpose of the given two-dimensional list.
 def transpose(lst): return list(zip(*lst))  transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]) # [(1, 4, 7, 10), (2, 5, 8, 11), (3, 6, 9, 12)]  </description>
+    </item>
+    
+    <item>
+      <title>Triangle</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/triangle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/triangle/</guid>
+      <description>Creates a triangle shape with pure CSS.
+&amp;lt;div class=&amp;quot;triangle&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  .triangle { width: 0; height: 0; border-top: 20px solid #333; border-left: 20px solid transparent; border-right: 20px solid transparent; }  Explanation  View this link for a detailed explanation. The color of the border is the color of the triangle. The side the triangle tip points corresponds to the opposite border-* property. For example, a color on border-top means the arrow points downward.</description>
+    </item>
+    
+    <item>
+      <title>Truncate text</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/truncate-text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/truncate-text/</guid>
+      <description>If the text is longer than one line, it will be truncated and end with an ellipsis ….
+&amp;lt;p class=&amp;quot;truncate-text&amp;quot;&amp;gt;If I exceed one line&#39;s width, I will be truncated.&amp;lt;/p&amp;gt;  .truncate-text { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width: 200px; }  Explanation  overflow: hidden prevents the text from overflowing its dimensions (for a block, 100% width and auto height). white-space: nowrap prevents the text from exceeding one line in height.</description>
+    </item>
+    
+    <item>
+      <title>Truncate text multiline</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/truncate-text-multiline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/truncate-text-multiline/</guid>
+      <description>If the text is longer than one line, it will be truncated for n lines and end with an gradient fade.
+&amp;lt;p class=&amp;quot;truncate-text-multiline&amp;quot;&amp;gt; Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et. &amp;lt;/p&amp;gt;  .truncate-text-multiline { overflow: hidden; display: block; height: 109.2px; margin: 0 auto; font-size: 26px; line-height: 1.4; width: 400px; position: relative; } .truncate-text-multiline:after { content: &#39;&#39;; position: absolute; bottom: 0; right: 0; width: 150px; height: 36.</description>
     </item>
     
     <item>
@@ -2568,6 +3181,16 @@ def when(predicate, when_true): return lambda x: when_true(x) if predicate(x) el
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</guid>
       <description>Python for Finance, Part I: Yahoo &amp;amp; Google Finance API, pandas, and matplotlib Getting the Data Pandas and matplotlib are included in the more popular distributions of Python for Windows, such as Anaconda.
 In case it&amp;rsquo;s not included in your Python distribution, just simply use pip or conda install. Once installed, to use pandas, all one needs to do is import it. We will also need the pandas_datareader package (pip install pandas-datareader), as well as matplotlib for visualizing our results.</description>
+    </item>
+    
+    <item>
+      <title>Zebra striped list</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/zebra-striped-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/zebra-striped-list/</guid>
+      <description>Creates a striped list with alternating background colors, which is useful for differentiating siblings that have content spread across a wide row.
+&amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;Item 01&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Item 02&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Item 03&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Item 04&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Item 05&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;  li:nth-child(odd) { background-color: #ddd; }  Explanation  Use the :nth-child(odd) or :nth-child(even) pseudo-class to apply a different background color to elements that match based on their position in a group of siblings. Note that you can use it to apply different styles to other HTML elements like div, tr, p, ol, etc.</description>
     </item>
     
     <item>
