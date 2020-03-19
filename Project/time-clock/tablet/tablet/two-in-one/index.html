@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>2 in One Clock</title>
+  <link rel="stylesheet" href="static/css/dark.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/tigrr/circle-progress@v0.1.0/dist/circle-progress.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link
+    href='https://fonts.googleapis.com/css?family=Helvetica:300,300i,400,400i,500,700|Kanit:300,400,400i,600,700&display=swap'
+    rel='stylesheet' type='text/css'>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="static/css/analog-clock.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Share+Tech+Mono'>
+
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+
+
+
+
+  <style>
+    body {
+      background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+      color: #02feff;
+      font-family: 'Share Tech Mono', monospace; /*'Share Tech Mono', monospace; */
+    }
+
+    .time {   
+
+
+      position: relative;
+     margin-top:1.5em;
+
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 2em;
+      font-family: 'Share Tech Mono', monospace; /*'Share Tech Mono', monospace; */
+      letter-spacing: 4px;
+      text-align: center;
+     
+
+    }
+
+    .today {
+
+      position: relative;
+      padding-top:20%;
+
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 2em;
+      font-family: 'Share Tech Mono', monospace; /*'Share Tech Mono', monospace; */
+      letter-spacing: 4px;
+      text-align: center;
+      color:#fafafa;
+    }
+
+    #container_clock {
+
+
+      border-radius: 5px;
+      background-position: center;
+      margin-top: .5em;
+      position: absolute;
+
+
+
+    }
+  </style>
+
+  <!-- Arc Reactor -->
+  <div id="container_clock">
+
+
+    <div class='today' id='date_now'></div>
+
+
+    <div id="root" class="container"></div>
+    <div class="time"></div>
+    <!-- partial -->
+
+
+
+  </div>
+
+  <!-- Particles -->
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
+  <script src="static/js/analog-clock.js"></script>
+
+  <script src="static/js/dark.js"></script>
+  <script>
+    var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    var months = ["มกราคม", "กุมภาพันธ์", "March", "April", "May", "June", "July", "August", "September", "October",
+      "November", "December"
+    ];
+
+    function zeroPadding(num, digit) {
+      var zero = '';
+      for (var i = 0; i < digit; i++) {
+        zero += '0';
+      }
+      return (zero + num).slice(-digit);
+    }
+
+
+
+
+    var tnow = new Date();
+    var today = tnow.toDateString();
+    var time = tnow.toLocaleTimeString();
+    var hrs = zeroPadding(tnow.getHours(), 2);
+    var min = zeroPadding(tnow.getMinutes(), 2);
+    var sec = zeroPadding(tnow.getSeconds(), 2);
+
+    var day_names = week[tnow.getDay()];
+    var month_nows = months[tnow.getMonth()];
+    var date_nows = tnow.getDate();
+    var year_nows = tnow.getUTCFullYear();
+
+
+
+
+    var i = 0;
+    var txt = date_nows + ' ' + month_nows + ' ' + (year_nows + 543);
+    var speed = 80;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("date_now").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter()
+
+    // document.getElementById("time_now").innerHTML = hrs + ':' + min + ':' + sec;
+  </script>
+
+</body>
+
+</html>
