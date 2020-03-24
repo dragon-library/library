@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/</link>
+    <description>Recent content in Vue on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build a web app with Vue</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/build-web-app-with-vue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/website/vue/build-web-app-with-vue/</guid>
+      <description>How to build a web app with Vue, Vuetify and Axios Source:
+Introduction In this article, we will be building a Vue.js Application supported by Vuetify and Axios. The aim of this article is to implement a movie application which will be calling on an API. The user will be able to search for movies. The API will retrieve movies with all the search details. When a user clicks on a movie, it will give more details of each movie.</description>
+    </item>
+    
+  </channel>
+</rss>

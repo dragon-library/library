@@ -22,6 +22,19 @@
     </item>
     
     <item>
+      <title>ไวยกรณ์พื้นฐานที่จำเป็น</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/important-basic-syntax/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/important-basic-syntax/</guid>
+      <description>ไวยกรณ์พื้นฐานที่จำเป็นอย่างยิ่งต้องจดจำ (Important basic syntax) ไวยกรณ์ต่าง ๆ ที่จะกล่าวต่อไปนี้ ขอให้ผู้อ่านจดจำ และท่องให้ขึ้นใจ เพราะมันจะทำให้การเขียนโปรแกรมไม่มีอุปสรรค
+Case sensitivity การตั้งชื่อตัวแปร ตัวใหญ่ และตัวเล็กถือว่าเป็นคนละตัวแปร เช่น Number และ number ไม่ใช่ตัวแปรตัวเดียวกัน
+Space and tabs don’t mix ไพธอนมองว่า space และ tabs มีความหมายไม่เหมือนกัน ดังนั้นเวลาเขียนโปรแกรมอย่าผสมระหว่าง space และ tabs เข้าด้วยกันให้เลือกเอาอย่างใดอย่างหนึ่งเท่านั้น
+Objects (วัตถุ) ไพธอนถูกสร้างขึ้นภายใต้แนวคิดการโปรแกรมเชิงวัตถุ ดังนั้นเมื่อเราเรียกใช้งานคลาสใด ๆ ก็ตามถือว่าเป็นวัตถุตามแนวความคิดแบบโปรแกรมเชิงวัตถุ (การโปรแกรมเชิงวัตถุจะกล่าวในบทที่ 11 ) ดังนั้นเมื่อใดก็ตามที่มีการสร้างวัตถุและต้องการเข้าถึงแอตทริบิวต์ (Attribute) หรือฟังชัน (Function) ใดๆ ในวัตถุต้องใช้“ ” แล้วตามด้วยเครื่องหมาย ( ) แต่ถ้าอ้างถึงตัวแปรไม่ต้อง มี ( ) เช่น เมื่อต้องการเปลี่ยนค่าสตริง &#39;Pop&#39;เป็นตัวอักษรตัวใหญ่ทั้งหมด ทำได้โดยเรียกใช้คลาส upper ในไลบรารีของไพธอน ดังนี้ &#39;Pop&#39;.upper()
+Scope ในการพัฒนาโปรแกรมขนาดใหญ่ ที่มีโปรแกรมเมอร์มากกว่า 1 คน อาจจะประสบปัญหาเรื่องการประกาศตัวแปรที่ซ ้ากันได้ ดังนั้นเพื่อให้การเข้าถึงและใช้งานตัวแปรเป็นไปอย่างถูกต้องโดยไม่มีข้อผิดพลาด แนะนำให้ผู้เขียนโปรแกรมใช้งานในลักษณะของฟังชันจะดีกว่า โดยมีการส่งค่าตัวแปรไปในฟังชัน และคืนค่าที่คำนวณเรียบร้อยแล้วกลับมา จะไม่ทำให้ประสบปัญหาเรื่องของการอ้างตัวแปรดังที่กล่าวมาแล้ว</description>
+    </item>
+    
+    <item>
       <title>Awesome Python</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/python/awesome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -38,7 +51,7 @@ Inspired by awesome-php.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/python/cheat-sheet/</guid>
-      <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit()# For 1 statement on multiple lines,  # use line continuation character (\). # Good for blog post. def __str__(self):return &amp;#34;Name={}, Title={}, Hourly rate={}.&amp;#34;\.format( self.name, self.title, self.__hourly_rate ) String # Concatenation s1 = &amp;#39;Open&amp;#39;s2 = &amp;#39;Writings.net&amp;#39;print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetimenow_str = &amp;#34;Today is &amp;#34; + str(datetime.</description>
+      <description>Python Cheat sheet Useful tricks # Terminate a Python script early. quit() # For 1 statement on multiple lines, # use line continuation character (\). # Good for blog post. def __str__(self): return &amp;quot;Name={}, Title={}, Hourly rate={}.&amp;quot;\ .format( self.name, self.title, self.__hourly_rate )  String # Concatenation s1 = &#39;Open&#39; s2 = &#39;Writings.net&#39; print( s1+s2 ) # Output: OpenWritings.net # Object to string: Use str() function import datetime now_str = &amp;quot;Today is &amp;quot; + str(datetime.</description>
     </item>
     
     <item>
@@ -88,6 +101,16 @@ Python ftp
 Python tarfile
 Python lxml
 Python ConfigParser</description>
+    </item>
+    
+    <item>
+      <title>Regular Expressions</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/python-regular-expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/python-regular-expressions/</guid>
+      <description>Tutorial: Python Regex (Regular Expressions) for Data Scientists Diving headlong into data sets is a part of the mission for anyone working in data science. Often, this means number-crunching, but what do we do when our data set is primarily text-based? We can use regular expressions. In this tutorial, we’re going to take a closer look at how to use regular expressions (regex) in Python.
+Regular expressions (regex) are essentially text patterns that you can use to automate searching through and replacing elements within strings of text.</description>
     </item>
     
   </channel>

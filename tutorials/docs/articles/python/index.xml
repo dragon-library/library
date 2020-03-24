@@ -18,17 +18,34 @@
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/24-trick-python/</guid>
       <description>24 เคล็ดลับ การใช้งาน Python Python เป็นอีกหนึ่งภาษา Programming ที่ได้รับความนิยม ถูกนำไปใช้ในการเขียน Program ได้หลากหลายประเภท โดยไม่ได้จำกัดอยู่ที่งานเฉพาะทางใดทางหนึ่ง ไม่ว่าจะเป็นการพัฒนา Web หรือด้าน Data Science และ Machine Learning เป็นต้น จึงทำให้มีการนำไปใช้กันอย่างแพร่หลาย วันนี้เรามาดู 24 เคล็ดลับ การใช้งาน Python ที่จะช่วยให้คุณประหยัดเวลาและทำงานได้สะดวกขึ้น โดยดูตัวอย่างการใช้งานในแต่ละหัวข้อกันได้เลย
 1. Unpacking Array Items (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/01.png)
-2. Swapping Variables 3. Profile And Stats Of Your Code
-3. Profile And Stats Of Your Code
-(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png)
-4. Repeat String
-(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png)
-5. Slicing
-(http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png)
-6. Reversing
-
-7. Negative Index
-ถ้าคุณต้องการที่จะเริ่มต้นจาก Character ตัวสุดท้าย สามารถใช้ Negative Index ได้</description>
+2. Swapping Variables 3. Profile And Stats Of Your Code 3. Profile And Stats Of Your Code (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/03.png)
+4. Repeat String (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/04.png)
+5. Slicing (http://images.techstarthailand.com/images/blog/Article2019/TopPythonTips/05.png)
+6. Reversing 
+7. Negative Index ถ้าคุณต้องการที่จะเริ่มต้นจาก Character ตัวสุดท้าย สามารถใช้ Negative Index ได้</description>
+    </item>
+    
+    <item>
+      <title>71 Python Code Snippets</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/71-python-code-snippet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/71-python-code-snippet/</guid>
+      <description>71 Python Code Snippets for Everyday Problems POSTED ON DECEMBER 27, 2019 BY JEREMY GRIFSKI
+Last Updated on February 3, 2020
+If you’ve been following me for any amount of time, you know that I regularly publish Python code snippets for everyday problems. Well, I figured I’d finally aggregate all those responses in one massive article with links to all those resources.
+As a heads up, I’m looking to start porting all of the code snippets in this article to Jupyter Notebooks.</description>
+    </item>
+    
+    <item>
+      <title>81 Python Code Snippets</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/81-pythoncodesnippets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/81-pythoncodesnippets/</guid>
+      <description>81 Python Code Snippets for Everyday Problems POSTED ON DECEMBER 27, 2019 BY JEREMY GRIFSKI
+If you’ve been following me for any amount of time, you know that I regularly publish Python code snippets for everyday problems. Well, I figured I’d finally aggregate all those responses in one massive article with links to all those resources.
+As a heads up, I’m looking to start porting all of the code snippets in this article to Jupyter Notebooks.</description>
     </item>
     
     <item>
@@ -52,17 +69,6 @@ name = input(&amp;quot;What is your name? &amp;quot;) print(&amp;quot;Hello &amp
       <description>Learning Python: From Zero to Hero First of all, what is Python? According to its creator, Guido van Rossum, Python is a:
  “high-level programming language, and its core design philosophy is all about code readability and a syntax which allows programmers to express concepts in a few lines of code.”
  For me, the first reason to learn Python was that it is, in fact, a beautiful programming language.</description>
-    </item>
-    
-    <item>
-      <title>Dictionaries</title>
-      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</link>
-      <pubDate>Fri, 17 Jan 2020 11:42:26 +0600</pubDate>
-      
-      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</guid>
-      <description>Python Dictionaries Data structures are basically containers that store data in predefined layouts, optimized for certain operations — like apples in a box, ready for picking😉.
-The Python programming language natively implements a number of data structures. Lists, tuples, sets, dictionaries are but some of them. We will be looking at the dictionary data type in subsequent sections.
-What are dictionaries ? key-value mapping  A dictionary in python is a mapping object that maps keys to values, where the keys are unique within a collection and the values can hold any arbitrary value.</description>
     </item>
     
     <item>
@@ -268,6 +274,23 @@ If you are into python , there is a fair chance that you would have contributed 
       <description>การใช้งาน Virtualenv Virtualenv คืออะไร Virtualenv(ironment) คือ environment ของ python เช่น คุณทำโปรแกรมอยู่ 2 ตัว A กับ B แล้วเวลาคุณจะติดตั้ง library ถ้าคุณ pip install ลงไปเลย
  library ที่คุณใช้กับงาน A กับปนมั่วกับงาน B  เช่น เวลาจะทำไฟล์ requirement เพื่อให้คนอื่น สามารถติดตั้ง library ที่ใช้กับงานเราได้สะดวกมากขึ้นก็กลับกลายเป็นว่า งาน A ใช้ 5 library งาน B ใช้ 10 Libray สรุป คนที่เอาโปรแกรมเราไม่ไปใช้ก็ไม่รู้ว่า โปรแกรมเราใช้ library อะไรบ้างก็ต้องติดตั้งทั้งหมด 15 library
  หรือแบบไม่สามารถแยก version ของ library กันได้  เช่น งาน A ใช้ OpenCV 3 แต่ งาน B ใช้ OpenCV 4 ทำไงให้ลง 2 version พร้อมกันได้ละ ก็ต้องให้เจ้า Virtualenv ช่วยเราไง</description>
+    </item>
+    
+    <item>
+      <title>Python 101 สําหรับมือใหม่</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101-for-beginner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101-for-beginner/</guid>
+      <description>Python 101 สําหรับมือใหม่ Interpreted Language (ความหมายง่ายๆของภาษาแบบนี้คือ มันสามารถทํางานได้บนทุกแพลตฟอร์มขอให้มีแค่ interpreter ให้มันก็พอ และ อีกอย่างคือมันจะทําการแปลงจากโค้ดที่เรามีไปเป็นภาษาที่เครื่องเข้าใจแบบ on the fly)
+ถ้าเทียบกับการพัฒนาโปรแกรมด้วย Java การเขียน Python นี้จะแตกต่างแล้วก็เห็นได้ชัดเลยว่ามันเร็วกว่ามากๆ เช่นตัวอย่างนี้เลย
+public class { public static void main(String[]args) { System.out.println(&amp;quot;Hello, world!&amp;quot;); } }  ตัวอย่างภาษา Java
+print(&amp;quot;Hello, world!&amp;quot;)
+ตัวอย่างภาษา Python
+แค่เทียบก็เห็นละว่า Line of code น้อยกว่ามาก เขียนสั้นง่ายๆดี
+Basic Python Syntax Indent
+ปกติภาษาเขียนโปรแกรมทั่วไปจะต้องมี วงเล็บ (Bracket – {}) เพื่อระบุว่าอะไรคือขอบเขตของมัน แต่ Python ไม่ได้ใช้วงเล็บ แต่ใช้ Indent หรือ Space แทน
+public class { public static void main(String[]args) { System.</description>
     </item>
     
   </channel>

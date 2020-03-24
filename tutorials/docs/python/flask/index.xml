@@ -20,5 +20,16 @@ For those who have not been exposed to a templating language before, such langua
 The variables and/or logic are placed between tags or delimiters. For example, Jinja templates use {% ... %} for expressions or logic (like for loops), while {{ .</description>
     </item>
     
+    <item>
+      <title>Use a Flask Blueprint</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/flask/flask-blueprint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/flask/flask-blueprint/</guid>
+      <description>Use a Flask Blueprint to Architect Your Applications Flask is a very popular web application framework that leaves almost all design and architecture decisions up to the developer. In this tutorial, you’ll learn how a Flask Blueprint, or Blueprint for short, can help you structure your Flask application by grouping its functionality into reusable components.
+In this tutorial, you’ll learn:
+ What Flask Blueprints are and how they work How to create and use a Flask Blueprint to organize your code How to improve code reusability using your own or a third-party Flask Blueprint  This tutorial assumes that you have some experience using Flask and that you’ve built some applications before.</description>
+    </item>
+    
   </channel>
 </rss>

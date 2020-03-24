@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - SVG Clock Animation</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+	<h1><span></span></h1>
+
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="600px" height="600px" viewBox="0 0 600 600" enable-background="new 0 0 600 600"
+		xml:space="preserve">
+
+        <!-- circle -1 Y -->
+        <circle id="circle_1" cx="300" cy="300" r="0" fill="#F5F982" />
+
+        <!-- circle -2 B -->
+        <circle id="circle_2" cx="300" cy="300" r="0" fill="#191621" />
+
+        <!-- circle -3 Y -->
+        <circle id="circle_3" cx="300" cy="300" r="0" fill="#F5F982" />
+
+        <!-- circle -4  B -->
+        <circle id="circle_4" cx="300" cy="300" r="0" fill="#191621" />
+
+        <!-- outline -1  -->
+        <circle id="outline_1" cx="300" cy="300" r="160" fill="none" stroke-width="10" stroke-linecap="round"
+        stroke="#6BB9AE" style="
+          stroke-dashoffset: 1000;
+          stroke-dasharray: 1000,1000;
+          opacity : 0"></circle>
+
+
+          <!-- circle 5 white-->
+          <circle id="circle_5" cx="300" cy="300" r="0" fill="#F4F6EB" />
+
+          <!-- circle 5 white-->
+          <circle id="circle_6" cx="190" cy="420" r="230" fill="#DFEDDA" clip-path="url(#circle_clip)" />
+
+          <clipPath id="circle_clip">
+            <circle id="circle_clip_element" cx="300" cy="300" r="156" fill="green" />
+          </clipPath>
+
+
+          <line id="line_1" x1="398" y1="398" x2="202" y2="202" stroke-width="8" stroke="#333333" style="
+          stroke-dasharray: 1000,1000;
+          stroke-dashoffset: -280;"></line>
+
+        <line id="line_2" x1="202" y1="398" x2="398" y2="202" stroke-width="8" stroke="#333333" style="
+          stroke-dasharray: 1000,1000;
+          stroke-dashoffset: -280;
+      "></line>
+
+
+
+        <line id="lancet_hh" fill="none" stroke-linecap="round" stroke="#333" stroke-width="7" stroke-miterlimit="10" x1="300" y1="230" x2="300" y2="300"/>
+        <line id="lancet_mm" fill="none" stroke-linecap="round" stroke="#333" stroke-width="7" stroke-miterlimit="10" x1="300" y1="200" x2="300" y2="300"/>
+
+        <line id="lancet_ss" fill="none" stroke-linecap="round" stroke="#F00021" stroke-width="3" stroke-miterlimit="10" x1="300" y1="180" x2="300" y2="300"/>
+        <!-- <text class="number" font-size="55" id="number-6"  x="290" y="420" fill="#333">6</text> -->
+      </svg>
+
+	<span id="number-6" class="number">6</span>
+	<span id="number-12" class="number">12</span>
+
+	<span id="number-3" class="number">9</span>
+	<span id="number-9" class="number">3</span>
+
+
+</div>
+
+<div class="button-group">
+	<button id="start" type="button" name="button">restart</button>
+	<button id="reverse" type="button" name="button">reverse</button>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

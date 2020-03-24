@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Building a Simple Web APP using Flask and MongoDB"><meta property="og:title" content="Building a Simple Web APP using Flask and MongoDB" />
+<meta property="og:description" content="Building a Simple Python Web APP using Flask framework and MongoDB Introduction We are going to create a simple Python web application using Flask framework and MongoDB. It is very easy to work with Flask as well as MongoDB.
+You can select the customized installation choice for adding Python environment variables. If you choose default installation, please set these variables manually.
+Please click Add Python 3.7 to PATH option. It will add one entry in the environment variable." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/" />
+
+<title>Building a Simple Web APP using Flask and MongoDB | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/" >
+      Build a CRUD Web App. 1-3
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/"  class="active">
+      Building a Simple Web APP using Flask and MongoDB
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/" >
+      Web Applications With Flask [Series]
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Building a Simple Web APP using Flask and MongoDB</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="building-a-simple-python-web-app-using-flask-framework-and-mongodb">Building a Simple Python Web APP using Flask framework and MongoDB</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>We are going to create a simple Python web application using Flask framework and MongoDB. It is very easy to work with Flask as well as MongoDB.</p>
+
+<p>You can select the customized installation choice for adding Python environment variables. If you choose default installation, please set these variables manually.</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image001.jpg" alt="This is image title" /></p>
+
+<p>Please click Add Python 3.7 to PATH option. It will add one entry in the environment variable.</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image002.jpg" alt="This is image title" /></p>
+
+<p>If needed you can modify the installation path. Please check the Python environment variables.</p>
+
+<p>After successful installation, if you check the system environment variable you can see the below two entries are added in the system.</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image003.jpg" alt="This is image title" /></p>
+
+<p>We installed the Python 3.7 version, so it added as Python 37-32.</p>
+
+<p><code>\Scripts</code> folder is used for handling additional packages needed for Python.</p>
+
+<p>Now you can check the Python and PIP version in the command prompt. PIP is the abbreviation for Python package index which is used for installing, upgrading or removing the additional Python libraries from our system.</p>
+
+<pre><code class="language-py">python --version and pip -- version
+</code></pre>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image004.jpg" alt="This is image title" /></p>
+
+<p>By default, the pip version may not be 18. This is the latest version as of today. If your pip version is older than that, please upgrade it.</p>
+
+<pre><code class="language-py">python -m pip install -__U pip_Now
+</code></pre>
+
+<p>we are going to install Flask. Flask is a web framework for Python. Flask provides you with tools, libraries and technologies that allow you to build a web application in Python.</p>
+
+<p>Its dependencies are,</p>
+
+<ul>
+<li>Werkzeug a WSGI utility library</li>
+<li>jinja2 which is its template engine</li>
+</ul>
+
+<p>WSGI is basically a protocol defined so that the Python application can communicate with a web-server and thus be used as web-application outside of CGI.</p>
+
+<p>Jinja2 is used for creating views in flask application. It holds all the static files like html, CSS and JavaScript files.</p>
+
+<p>First install <code>Flask</code> using pip command in command prompt.</p>
+
+<p><code>pip install Flask_It</code> will install the latest version of flask library from its global repository and in Windows machines it saves the below file location</p>
+
+<p><code>C:\Program Files (x86)\Python\Python37-32\Lib\site-packages</code></p>
+
+<p>Our sample application uses MongoDB as database. So, we are going to install Mongo DB from below URL.</p>
+
+<p><a href="https://www.mongodb.com/download-center#community">https://www.mongodb.com/download-center#community</a></p>
+
+<p>It is a free community version. After successful installation it is all set to run MongoDB instance.</p>
+
+<p>Before running the MongoDB instance, we must create a data folder and run below command in command prompt.</p>
+
+<p><em><code>&quot;C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe&quot; --dbpath=&quot;C:\mongo-data&quot;</code></em></p>
+
+<p>Here C:\mongo-data folder is used for saving mongodb files.</p>
+
+<p>While installing the MongoDB in windows system, you can choose the compass community edition also.</p>
+
+<p>This is a free edition and will help to handle our MongoDB databases, collections (tables in MongoDB) and documents (records) graphically</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image005.jpg" alt="This is image title" /></p>
+
+<p>By default, MongoDB is running in localhost 27017 port.</p>
+
+<p>We can see there are 3 databases, (admin, config and local) created automatically in the installation time.</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image006.jpg" alt="This is image title" /></p>
+
+<p>Now we are going to install PyMongolibrary in python. PyMongo is a simple but powerful Python distribution containing tools for working with MongoDB and is the recommended way to work with MongoDB from Python. It&rsquo;s a kind of ODM (object document mapper). There is mongoengine and so many libraries also available as ODM for Python.</p>
+
+<pre><code class="language-py">pip install pymongo
+</code></pre>
+
+<p>We need to install another Python library, bson, too. It is used for getting objectId property of mongodb document.</p>
+
+<pre><code class="language-py">pip install bson
+</code></pre>
+
+<p>Now we are all set and ready to start our python program.Create a folder named FlaskwithMongo and add two sub folders, static and templates, inside it. There is a convention to name static and templates used in jinja2 framework. Please open the folder in any of the code editors. I am using Visual Studio code as an IDE. Create a new file named  <a href="http://app.py/">app.py</a>. This is the only Python file we are using in this application. First, we are going to import the required libraries into our application.</p>
+
+<pre><code class="language-py">from flask import Flask, render_template,request,redirect,url_for
+from bson import ObjectId
+from pymongo import MongoClient
+import os
+</code></pre>
+
+<p>Now we are going to declare the app variable in our program.</p>
+
+<pre><code class="language-py">app = Flask(**name**)_
+</code></pre>
+
+<p>This app variable is used in the entire application.</p>
+
+<p>Now we are going to declare twovariable titles and headings which are later used in jinja2 template.</p>
+
+<pre><code class="language-py">title = &quot;TODO sample application with Flask and MongoDB&quot;  
+heading = &quot;TODO Reminder with Flask and MongoDB&quot;
+</code></pre>
+
+<p>We must declare the connection string for MongoDB and select a database. Also, we are going to select our collection name to a variable.</p>
+
+<pre><code class="language-py">client = MongoClient(&quot;mongodb://127.0.0.1:27017&quot;) #host uri  
+db = client.mymongodb #Select the database  
+todos = db.todo #Select the collection name
+</code></pre>
+
+<p>As I mentioned earlier mongodb is running in the port 27017 by default. Please note that we have selected mymongodb as database and todo as collection name. When we create our first transaction, pymongo will generate the database and collection automatically. Unlike SQL server or any other RDBMS mongodb doesn’t require predefined schemas.</p>
+
+<p>In flask, it is easy to implement routing unlike any other programming language.</p>
+
+<p>For that, we are using  _render<em>template</em>, request, redirect and url_for. All these methods help us to establish redirection and show html templates in the browser</p>
+
+<pre><code class="language-py">def redirect_url():    
+return request.args.get('next') or \    
+request.referrer or \    
+url_for('index')  
+</code></pre>
+
+<p>In the above code we defined a method named _redirect_url _and it is used to redirect page to index page.</p>
+
+<pre><code class="language-py">@app.route(&quot;/&quot;)    
+@app.route(&quot;/uncompleted&quot;)    
+def tasks ():    
+#Display the Uncompleted Tasks    
+todos_l = todos.find({&quot;done&quot;:&quot;no&quot;})    
+a2=&quot;active&quot;    
+return render_template('index.html',a2=a2,todos=todos_l,t=title,h=heading) 
+</code></pre>
+
+<p>In the above code, we defined a method named  <em>tasks</em>  and it is used for two routes. One for default “/” route and another for “/uncompleted” route. In this code we defined a variable todos_l and it gets the documents from mongodb filter by condition done equal to no. We defined one more variable named a2 and it is used for controlling active records. Both todos_land a2 variables passed with the other two variables, title, and heading, and passed to the jinja2 template index.html which we must create in the template folder.</p>
+
+<p>Now we are going to finish all the remaining route definitions for adding and deleting the documents to mongodb</p>
+
+<p><a href="http://app.py/"><strong>app.py</strong></a></p>
+
+<pre><code class="language-py">from flask import Flask, render_template,request,redirect,url_for # For flask implementation    
+from bson import ObjectId # For ObjectId to work    
+from pymongo import MongoClient    
+import os    
+    
+app = Flask(__name__)    
+title = &quot;TODO sample application with Flask and MongoDB&quot;    
+heading = &quot;TODO Reminder with Flask and MongoDB&quot;    
+    
+client = MongoClient(&quot;mongodb://127.0.0.1:27017&quot;) #host uri    
+db = client.mymongodb    #Select the database    
+todos = db.todo #Select the collection name    
+    
+def redirect_url():    
+    return request.args.get('next') or \    
+           request.referrer or \    
+           url_for('index')    
+  
+@app.route(&quot;/list&quot;)    
+def lists ():    
+    #Display the all Tasks    
+    todos_l = todos.find()    
+    a1=&quot;active&quot;    
+    return render_template('index.html',a1=a1,todos=todos_l,t=title,h=heading)    
+  
+@app.route(&quot;/&quot;)    
+@app.route(&quot;/uncompleted&quot;)    
+def tasks ():    
+    #Display the Uncompleted Tasks    
+    todos_l = todos.find({&quot;done&quot;:&quot;no&quot;})    
+    a2=&quot;active&quot;    
+    return render_template('index.html',a2=a2,todos=todos_l,t=title,h=heading)    
+  
+  
+@app.route(&quot;/completed&quot;)    
+def completed ():    
+    #Display the Completed Tasks    
+    todos_l = todos.find({&quot;done&quot;:&quot;yes&quot;})    
+    a3=&quot;active&quot;    
+    return render_template('index.html',a3=a3,todos=todos_l,t=title,h=heading)    
+  
+@app.route(&quot;/done&quot;)    
+def done ():    
+    #Done-or-not ICON    
+    id=request.values.get(&quot;_id&quot;)    
+    task=todos.find({&quot;_id&quot;:ObjectId(id)})    
+    if(task[0][&quot;done&quot;]==&quot;yes&quot;):    
+        todos.update({&quot;_id&quot;:ObjectId(id)}, {&quot;$set&quot;: {&quot;done&quot;:&quot;no&quot;}})    
+    else:    
+        todos.update({&quot;_id&quot;:ObjectId(id)}, {&quot;$set&quot;: {&quot;done&quot;:&quot;yes&quot;}})    
+    redir=redirect_url()        
+    
+    return redirect(redir)    
+  
+@app.route(&quot;/action&quot;, methods=['POST'])    
+def action ():    
+    #Adding a Task    
+    name=request.values.get(&quot;name&quot;)    
+    desc=request.values.get(&quot;desc&quot;)    
+    date=request.values.get(&quot;date&quot;)    
+    pr=request.values.get(&quot;pr&quot;)    
+    todos.insert({ &quot;name&quot;:name, &quot;desc&quot;:desc, &quot;date&quot;:date, &quot;pr&quot;:pr, &quot;done&quot;:&quot;no&quot;})    
+    return redirect(&quot;/list&quot;)    
+  
+@app.route(&quot;/remove&quot;)    
+def remove ():    
+    #Deleting a Task with various references    
+    key=request.values.get(&quot;_id&quot;)    
+    todos.remove({&quot;_id&quot;:ObjectId(key)})    
+    return redirect(&quot;/&quot;)    
+  
+@app.route(&quot;/update&quot;)    
+def update ():    
+    id=request.values.get(&quot;_id&quot;)    
+    task=todos.find({&quot;_id&quot;:ObjectId(id)})    
+    return render_template('update.html',tasks=task,h=heading,t=title)    
+  
+@app.route(&quot;/action3&quot;, methods=['POST'])    
+def action3 ():    
+    #Updating a Task with various references    
+    name=request.values.get(&quot;name&quot;)    
+    desc=request.values.get(&quot;desc&quot;)    
+    date=request.values.get(&quot;date&quot;)    
+    pr=request.values.get(&quot;pr&quot;)    
+    id=request.values.get(&quot;_id&quot;)    
+    todos.update({&quot;_id&quot;:ObjectId(id)}, {'$set':{ &quot;name&quot;:name, &quot;desc&quot;:desc, &quot;date&quot;:date, &quot;pr&quot;:pr }})    
+    return redirect(&quot;/&quot;)    
+  
+@app.route(&quot;/search&quot;, methods=['GET'])    
+def search():    
+    #Searching a Task with various references    
+    
+    key=request.values.get(&quot;key&quot;)    
+    refer=request.values.get(&quot;refer&quot;)    
+    if(key==&quot;_id&quot;):    
+        todos_l = todos.find({refer:ObjectId(key)})    
+    else:    
+        todos_l = todos.find({refer:key})    
+    return render_template('searchlist.html',todos=todos_l,t=title,h=heading)    
+    
+if __name__ == &quot;__main__&quot;:    
+    
+    app.run()   
+</code></pre>
+
+<p>We must add the below three HTML files in the templates folder. (index.html, searchlist.html and update.html)</p>
+
+<p><strong>index.html</strong></p>
+
+<pre><code class="language-html">&lt;html&gt;    
+    &lt;head&gt;    
+        &lt;title&gt;{{t}}&lt;/title&gt;    
+        &lt;!-- href=&quot;/static/assets/style.css&quot;--&gt;    
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot;  href=&quot;{{ url_for('static',filename='assets/style.css')}}&quot; &gt;    
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot;  href=&quot;{{ url_for('static',filename='assets/emoji.css')}}&quot; &gt;    
+        &lt;script src=&quot;{{ url_for('static',filename='assets/twemoji.min.js')}}&quot;&gt;&lt;/script&gt;      
+        &lt;script src=&quot;{{ url_for('static',filename='assets/emoji.js')}}&quot;&gt;&lt;/script&gt;    
+    &lt;/head&gt;    
+&lt;body&gt;    
+    &lt;h1&gt;{{ h }}&lt;/h1&gt;    
+    &lt;ul&gt;    
+        &lt;li&gt;&lt;a href=&quot;/list&quot; class=&quot;{{ a1 }}&quot;&gt;ALL&lt;/a&gt;&lt;/li&gt;    
+        &lt;li&gt;&lt;a href=&quot;/&quot; class=&quot;{{ a2 }}&quot;&gt;Uncompleted&lt;/a&gt;&lt;/li&gt;    
+        &lt;li&gt;&lt;a href=&quot;/completed&quot; class=&quot;{{ a3 }}&quot;&gt;Completed&lt;/a&gt;&lt;/li&gt;    
+    &lt;/ul&gt;    
+    &lt;hr&gt;    
+    {% if todos[0] %}    
+    &lt;div span=&quot;right&quot;&gt;    
+    &lt;form action=&quot;/search&quot;   method=&quot;GET&quot; &gt;    
+        &lt;table class=&quot;none&quot; id=&quot;close&quot;&gt;    
+        &lt;tr&gt;    
+        &lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;    
+        &lt;td&gt;&lt;big&gt;&lt;b&gt;Search Reference:&lt;/b&gt;&lt;/big&gt;&lt;/td&gt;    
+        &lt;td&gt;&lt;select name=&quot;refer&quot; required&gt;    
+            &lt;option value=&quot;name&quot;&gt;Task Name&lt;/option&gt;    
+            &lt;option value=&quot;desc&quot;&gt;Description&lt;/option&gt;    
+            &lt;option value=&quot;date&quot;&gt;Date&lt;/option&gt;    
+            &lt;option value=&quot;pr&quot;&gt;Priority&lt;/option&gt;    
+        &lt;/select&gt;&lt;/td&gt;    
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;key&quot; placeholder=&quot;Search Task&quot; size=&quot;15&quot; /&gt;&lt;/td&gt;    
+        &lt;td&gt;&lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+        &lt;/table&gt;    
+    &lt;/form&gt;    
+    &lt;/div&gt;    
+    &lt;b&gt;&lt;big&gt;To-Do LIST :&lt;/big&gt;&lt;/b&gt;    
+    &lt;table&gt;    
+        &lt;tr id=&quot;row&quot;&gt;    
+            &lt;th class=&quot;status&quot;&gt;Status&lt;/th&gt;    
+            &lt;th class=&quot;name&quot;&gt;Task Name&lt;/th&gt;    
+            &lt;th class=&quot;desc&quot;&gt;Description Name&lt;/th&gt;    
+            &lt;th class=&quot;date&quot;&gt;Date&lt;/th&gt;    
+            &lt;th class=&quot;pr&quot;&gt;Priority&lt;/th&gt;    
+        &lt;th class=&quot;func1&quot;&gt;Remove&lt;/th&gt;    
+        &lt;th class=&quot;func2&quot;&gt;Modify&lt;/th&gt;    
+        &lt;/tr&gt;    
+    {% for todo in todos %}    
+        &lt;tr class=&quot;datas&quot;&gt;    
+            &lt;td&gt;&lt;a href=&quot;./done?_id={{ todo['_id'] }}&quot;&gt;&lt;input type=&quot;image&quot; src=&quot;static/images/{{todo['done']}}.png&quot; alt=&quot;Submit ME&quot;&gt;&lt;/a&gt;&lt;/td&gt;    
+            &lt;td class=&quot;name&quot;&gt;{{ todo[&quot;name&quot;] }}&lt;/td&gt;    
+            &lt;td class=&quot;desc&quot;&gt;{{ todo[&quot;desc&quot;] }}&lt;/td&gt;    
+            &lt;td class=&quot;date&quot;&gt;{{ todo[&quot;date&quot;] }}&lt;/td&gt;    
+            &lt;td class=&quot;pr&quot;&gt;{{ todo[&quot;pr&quot;] }}&lt;/td&gt;    
+            &lt;td class=&quot;func1&quot;&gt;&lt;a href=&quot;./remove?_id={{ todo['_id'] }}&quot;&gt;&lt;button type=&quot;submit&quot;&gt;DELETE&lt;/button&gt;&lt;/a&gt;&lt;/td&gt;    
+            &lt;td class=&quot;func1&quot;&gt;&lt;a href=&quot;./update?_id={{ todo['_id'] }}&quot;&gt;&lt;button type=&quot;submit&quot;&gt;EDIT&lt;/button&gt;&lt;/a&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+    {% endfor %}    
+    &lt;/table&gt;    
+    {% else %}    
+    &lt;h4&gt;No Tasks in the List !!&lt;/h4&gt;    
+    {% endif %}    
+    &lt;hr/&gt;    
+    &lt;form action=&quot;/action&quot; method=&quot;POST&quot;&gt;    
+    &lt;table class=&quot;none&quot;&gt;    
+        &lt;tr&gt;    
+            &lt;td&gt;&lt;b&gt;&lt;big&gt;&lt;label&gt;Add a Task : &lt;/label&gt;&lt;/big&gt;&lt;/b&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+        &lt;tr&gt;    
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Taskname&quot; &gt;&lt;/td&gt;    
+        &lt;td&gt;&lt;textarea name=&quot;desc&quot; rows=&quot;1&quot; cols=&quot;30&quot; placeholder=&quot;Enter Description here...&quot; required&gt;&lt;/textarea&gt;&lt;/td&gt;    
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;date&quot; placeholder=&quot;Date&quot; /&gt;&lt;/td&gt;    
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;pr&quot; placeholder=&quot;Priority&quot; /&gt;&lt;/td&gt;    
+        &lt;td&gt;&lt;button type=&quot;submit&quot;&gt; Create &lt;/button&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+    &lt;/form&gt;    
+    &lt;/table&gt;    
+    &lt;script&gt;    
+        
+    &lt;/script&gt;    
+&lt;/body&gt;    
+&lt;/html&gt;   
+</code></pre>
+
+<p><strong>searchlist.html</strong></p>
+
+<pre><code class="language-html">&lt;html&gt;    
+    &lt;head&gt;    
+        &lt;title&gt;{{t}}&lt;/title&gt;    
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot;  href=&quot;{{ url_for('static',filename='assets/style.css')}}&quot; &gt;    
+    &lt;/head&gt;    
+&lt;body&gt;    
+    &lt;h1&gt;{{h}}&lt;/h1&gt;    
+    &lt;hr&gt;    
+        {% if todos[0] %}    
+    &lt;h3&gt;Result of the Search : ToDO List&lt;/h3&gt;    
+    &lt;table&gt;    
+        &lt;tr id=&quot;row&quot;&gt;    
+           &lt;td class=&quot;status&quot;&gt;Status&lt;/td&gt;    
+            &lt;td class=&quot;name&quot;&gt;Task Name&lt;/td&gt;    
+            &lt;td class=&quot;desc&quot;&gt;Task Description&lt;/td&gt;    
+            &lt;td class=&quot;date&quot;&gt;Date&lt;/td&gt;    
+            &lt;td class=&quot;pr&quot;&gt;Project&lt;/td&gt;    
+        &lt;td class=&quot;func&quot;&gt;Delete&lt;/td&gt;    
+        &lt;td class=&quot;func&quot;&gt;Modify&lt;/td&gt;    
+        &lt;/tr&gt;    
+        {% for todo in todos %}    
+        &lt;tr class=&quot;datas&quot;&gt;    
+            &lt;td&gt;&lt;a href=&quot;./done?_id={{ todo['_id'] }}&quot;&gt;&lt;input type=&quot;image&quot; src=&quot;static/images/{{todo['done']}}.png&quot; alt=&quot;Submit ME&quot;&gt;&lt;/a&gt;&lt;/td&gt;    
+            &lt;td class=&quot;name&quot;&gt;{{ todo[&quot;name&quot;] }}&lt;/td&gt;    
+            &lt;td class=&quot;desc&quot;&gt;{{ todo[&quot;desc&quot;] }}&lt;/td&gt;    
+            &lt;td class=&quot;date&quot;&gt;{{ todo[&quot;date&quot;] }}&lt;/td&gt;    
+            &lt;td class=&quot;pr&quot;&gt;{{ todo[&quot;pr&quot;] }}&lt;/td&gt;    
+            &lt;td class=&quot;func1&quot;&gt;&lt;a href=&quot;./remove?_id={{ todo['_id'] }}&quot;&gt;&lt;button type=&quot;submit&quot;&gt;DELETE&lt;/button&gt;&lt;/a&gt;&lt;/td&gt;    
+            &lt;td class=&quot;func1&quot;&gt;&lt;a href=&quot;./update?_id={{ todo['_id'] }}&quot;&gt;&lt;button type=&quot;submit&quot;&gt;EDIT&lt;/button&gt;&lt;/a&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+        {% endfor %}    
+    {% else %}    
+        &lt;h4&gt;No Result Found !!&lt;/h4&gt;    
+    {% endif %}    
+    &lt;/table&gt;    
+   &lt;a href=&quot;/&quot;&gt;Return to TaskList&lt;/a&gt;    
+&lt;/body&gt;    
+&lt;/html&gt;  
+</code></pre>
+
+<p><strong>update.html</strong></p>
+
+<pre><code class="language-html">&lt;html&gt;    
+   &lt;head&gt;    
+            &lt;title&gt;{{t}}&lt;/title&gt;    
+        &lt;/head&gt;    
+        &lt;style&gt;       
+            h1{    
+                font-family:&quot;Arial Black&quot;, Gadget, sans-serif;    
+            }    
+            body{    
+                background-color:white;    
+            }    
+        &lt;/style&gt;    
+    &lt;body&gt;    
+        &lt;h1&gt;{{h}}&lt;/h1&gt;    
+        &lt;hr&gt;    
+        &lt;h3&gt;Update tasks with a reference&lt;/h3&gt;    
+        &lt;form action=&quot;/action3&quot; method=&quot;POST&quot;&gt;    
+        {% for task in tasks %}    
+            Unique Object ID : {{ task['_id'] }}&lt;br/&gt;    
+        &lt;input type=&quot;text&quot; name=&quot;_id&quot; value=&quot;{{ task['_id'] }}&quot; hidden&gt;    
+        
+        &lt;table&gt;    
+        &lt;tr&gt;    
+        &lt;td&gt;Task Name&lt;/td&gt;&lt;td&gt; : &lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;{{ task['name'] }}&quot; placeholder=&quot;{{ task['name'] }}&quot;&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+        &lt;tr&gt;    
+        &lt;td&gt;Description&lt;/td&gt;&lt;td&gt; : &lt;/td&gt;&lt;td&gt;&lt;textarea type=&quot;text&quot; name=&quot;desc&quot; rows=3 cols=30 placeholder=&quot;{{ task['desc'] }}&quot;&gt; {{ task['desc'] }} &lt;/textarea&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+        &lt;tr&gt;    
+        &lt;td&gt;Date&lt;/td&gt;&lt;td&gt; : &lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;date&quot; value=&quot;{{ task['date'] }}&quot; placeholder=&quot;{{ task['date'] }}&quot;&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+        &lt;tr&gt;    
+        &lt;td&gt;Priority&lt;/td&gt;&lt;td&gt; : &lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;pr&quot; value=&quot;{{ task['pr'] }}&quot; placeholder=&quot;{{ task['pr'] }}&quot;&gt;&lt;/td&gt;    
+        &lt;/tr&gt;    
+        &lt;/table&gt;    
+        {% endfor %}    
+            &lt;button type=&quot;submit&quot;&gt; Update Task &lt;/button&gt;    
+            &lt;br/&gt;    
+        &lt;/form&gt;    
+        &lt;a href=&quot;/&quot;&gt;Return to TaskList&lt;/a&gt;    
+&lt;/body&gt;    
+&lt;/html&gt;   
+</code></pre>
+
+<p>All three of these files used the features of jinja2 framework to render the model values from  <a href="http://app.py/">app.py</a>.</p>
+
+<p>In addition, we must add emoji.css, emoji.js, style.css and twemoji.min.js files in the static\assets folder</p>
+
+<p><strong>emoji.css</strong></p>
+
+<pre><code class="language-css">img.emoji {      
+// Override any img styles to ensure Emojis are displayed inline      
+margin: 0px !important;      
+display: inline !important;      
+}    
+</code></pre>
+
+<p><strong>emoji.js</strong></p>
+
+<pre><code class="language-js">window.onload = function() {    
+      // Set the size of the rendered Emojis    
+      // This can be set to 16x16, 36x36, or 72x72    
+     twemoji.size = '16x16';    
+      // Parse the document body and    
+      // insert &lt;img&gt; tags in place of Unicode Emojis    
+      twemoji.parse(document.body);    
+      }   
+</code></pre>
+
+<p><strong>style.css</strong></p>
+
+<pre><code class="language-css">h1{    
+/*  font-family:&quot;Arial Black&quot;, Gadget, sans-serif;*/    
+    font-family:&quot;Times New Romans&quot;, Gadget, sans-serif;    
+}    
+body{    
+   color:black;    
+    background-color:white;    
+    left-margin:10px;    
+    right-margin:10px;    
+}    
+table{    
+    width:95%;    
+    border-collapse:collapse;    
+    table-layout:fixed;    
+}    
+td    
+{    
+    border: rgba(224, 119, 70, 1) 2px solid;    
+    word-wrap:break-word;    
+}    
+table#close{    
+       
+    table-layout:default;    
+    border-collapse:seperate;    
+    border-spacing: 5px 5px;    
+    border:none;    
+    vertical-align:top;    
+}    
+table.none    
+{    
+    border:none;    
+    vertical-align:top;    
+}    
+table.none td    
+{    
+    border: none;    
+}    
+tr.row td{    
+    text-decoration:italic;    
+}    
+th.status{    
+    width:5%;    
+}    
+th.name{    
+    width:20%;    
+}    
+th.des{    
+    width:40%;    
+    padding:5px 5px 5px 5px;    
+}    
+th.date{    
+    width:8%;    
+}    
+th.pr{    
+    width:7%;    
+}    
+th.func1{    
+   width:6%;    
+}    
+th.func2{    
+   width:5%;    
+}    
+input[type=submit] {    
+    width: 20em;  height: 2em;    
+}    
+ul {    
+    list-style-type: none;    
+   margin: 0;    
+   padding: 0;    
+   overflow: hidden;    
+   background-color: #333;    
+}    
+li {    
+    float: left;    
+}    
+li a {    
+    display: block;    
+    color: white;    
+   text-align: center;    
+   padding: 14px 16px;    
+   text-decoration: none;    
+}    
+a.active {    
+   background-color: #4CAF50;    
+}    
+/* Change the link color to #111 (black) on hover */    
+li a:hover {    
+    background-color: #111;    
+}   
+</code></pre>
+
+<p>There are two images, _no.<strong>png_, and _yes.</strong>png,_  in static\images folder.</p>
+
+<p>We are ready to run our sample application.</p>
+
+<p>Please start our mongodb instance with the below command</p>
+
+<p><em>&ldquo;C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe&rdquo; &ndash;dbpath=&ldquo;C:\mongo-data&rdquo;</em></p>
+
+<p>Please note that mongodb now runs with data folder C:\mongo-data</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image007.jpg" alt="This is image title" /></p>
+
+<p>By default, it is listening the port 27017.</p>
+
+<p>Please open another command prompt window in the same Python application folder and run Python with the below command.</p>
+
+<p>For example:</p>
+
+<p><em>D:\Python\FlaskWithMongo&gt;python  <a href="http://app.py/">app.py</a></em></p>
+
+<p>Our local server is running in the port 5000 by default.</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image008.jpg" alt="This is image title" /></p>
+
+<p>The application is now running successfully.</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image009.jpg" alt="This is image title" /></p>
+
+<p>You can now add a sample task as task name “Test task for mongo with flask application”, description “Sample description”, date “05-08-2018&rdquo; and priority “High”</p>
+
+<p>After clicking the Create button we can immediately view the task details in the grid.</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image010.jpg" alt="This is image title" /></p>
+
+<p>Please note that there is a new database named mymongodb and collection todo is created now. Using this application, you can edit and remove the existing documents easily.</p>
+
+<p>You can check the document details in the mongodb compass community too.</p>
+
+<p><img src="https://www.c-sharpcorner.com/article/a-sample-python-flask-application-with-mongodb/Images/image011.jpg" alt="This is image title" /></p>
+
+<p>Happy coding with Flask and MongoDB!!!</p>
+
+<p>You can download the source code from  <a href="https://on.morioh.net/b0a3f595aa?r=https://github.com/sarathlalsaseendran/FlaskWithMongoDB" title="Github Source code for Sample TODO application with python flask and mongo db">Github</a>.</p>
+
+<p>Thank you!</p>
+
+<blockquote>
+<p><a href="https://morioh.com/p/9451f1260fe2?f=5c21f93bc16e2556b555ab2f&amp;fbclid=IwAR2czTt1YUdumhoVNj2XCd15IC4IajbrU-VCngtFP0FcCculghiELRqxPNg">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cFalsk%5cbuild-web-app-using-flask.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#building-a-simple-python-web-app-using-flask-framework-and-mongodb">Building a Simple Python Web APP using Flask framework and MongoDB</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

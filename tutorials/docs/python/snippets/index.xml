@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Snippets on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/</link>
+    <description>Recent content in Snippets on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/python/snippets/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>all_equal()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/all_equal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/all_equal/</guid>
+      <description> all_equal() Checks if all elements in a list are equal.
+Use [1:] and [:-1] to compare all the values in the given list.
+def all_equal(lst): return lst[1:] == lst[:-1]  all_equal([1, 2, 3, 4, 5, 6]) # False all_equal([1, 1, 1, 1]) # True  </description>
+    </item>
+    
+    <item>
+      <title>all_unique()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/all_unique/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/all_unique/</guid>
+      <description> all_unique() Returns True if all the values in a list are unique, False otherwise.
+Use set() on the given list to remove duplicates, use len() to compare its length with the length of the list.
+def all_unique(lst): return len(lst) == len(set(lst))  x = [1, 2, 3, 4, 5, 6] y = [1, 2, 2, 3, 4, 5] all_unique(x) # True all_unique(y) # False  </description>
+    </item>
+    
+    <item>
+      <title>average()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/average/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/average/</guid>
+      <description> average() Returns the average of two or more numbers.
+Use sum() to sum all of the args provided, divide by len(args).
+def average(*args): return sum(args, 0.0) / len(args)  average(*[1, 2, 3]) # 2.0 average(1, 2, 3) # 2.0  </description>
+    </item>
+    
+    <item>
+      <title>average_by()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/average_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/average_by/</guid>
+      <description>average_by() Returns the average of a list, after mapping each element to a value using the provided function.
+Use map() to map each element to the value returned by fn. Use sum() to sum all of the mapped values, divide by len(lst).
+def average_by(lst, fn=lambda x: x): return sum(map(fn, lst), 0.0) / len(lst)  average_by([{ &#39;n&#39;: 4 }, { &#39;n&#39;: 2 }, { &#39;n&#39;: 8 }, { &#39;n&#39;: 6 }], lambda x: x[&#39;n&#39;]) # 5.</description>
+    </item>
+    
+    <item>
+      <title>bifurcate()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/bifurcate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/bifurcate/</guid>
+      <description> bifurcate() Splits values into two groups. If an element in filter is True, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.
+Use list comprehension and enumerate() to add elements to groups, based on filter.
+def bifurcate(lst, filter): return [ [x for i, x in enumerate(lst) if filter[i] == True], [x for i, x in enumerate(lst) if filter[i] == False] ]  bifurcate([&#39;beep&#39;, &#39;boop&#39;, &#39;foo&#39;, &#39;bar&#39;], [True, True, False, True]) # [ [&#39;beep&#39;, &#39;boop&#39;, &#39;bar&#39;], [&#39;foo&#39;] ]  </description>
+    </item>
+    
+    <item>
+      <title>bifurcate_by()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/bifurcate_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/bifurcate_by/</guid>
+      <description> bifurcate_by() Splits values into two groups according to a function, which specifies which group an element in the input list belongs to. If the function returns True, the element belongs to the first group; otherwise, it belongs to the second group.
+Use list comprehension to add elements to groups, based on fn.
+def bifurcate_by(lst, fn): return [ [x for x in lst if fn(x)], [x for x in lst if not fn(x)] ]  bifurcate_by( [&#39;beep&#39;, &#39;boop&#39;, &#39;foo&#39;, &#39;bar&#39;], lambda x: x[0] == &#39;b&#39; ) # [ [&#39;beep&#39;, &#39;boop&#39;, &#39;bar&#39;], [&#39;foo&#39;] ]  </description>
+    </item>
+    
+    <item>
+      <title>byte_size()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/byte_size/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/byte_size/</guid>
+      <description> byte_size() Returns the length of a string in bytes.
+Use s.encode(&#39;utf-8&#39;) to encode the given string and return its length.
+def byte_size(s): return len(s.encode(&#39;utf-8&#39;))  byte_size(&#39;😀&#39;) # 4 byte_size(&#39;Hello World&#39;) # 11  </description>
+    </item>
+    
+    <item>
+      <title>camel()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/camel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/camel/</guid>
+      <description> camel() Converts a string to camelcase.
+Use re.sub() to replace any - or _ with a space, using the regexp r&amp;quot;(_|-)+&amp;quot;. Use title() to capitalize the first letter of each word convert the rest to lowercase. Finally, use replace() to remove spaces between words.
+from re import sub def camel(s): s = sub(r&amp;quot;(_|-)+&amp;quot;, &amp;quot; &amp;quot;, s).title().replace(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;) return s[0].lower() + s[1:]  camel(&#39;some_database_field_name&#39;) # &#39;someDatabaseFieldName&#39; camel(&#39;Some label that needs to be camelized&#39;) # &#39;someLabelThatNeedsToBeCamelized&#39; camel(&#39;some-javascript-property&#39;) # &#39;someJavascriptProperty&#39; camel(&#39;some-mixed_string with spaces_underscores-and-hyphens&#39;) # &#39;someMixedStringWithSpacesUnderscoresAndHyphens&#39;  </description>
+    </item>
+    
+    <item>
+      <title>capitalize()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/capitalize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/capitalize/</guid>
+      <description> capitalize() Capitalizes the first letter of a string.
+Capitalize the first letter of the string and then add it with rest of the string. Omit the lower_rest parameter to keep the rest of the string intact, or set it to True to convert to lowercase.
+def capitalize(s, lower_rest=False): return s[:1].upper() + (s[1:].lower() if lower_rest else s[1:])  capitalize(&#39;fooBar&#39;) # &#39;FooBar&#39; capitalize(&#39;fooBar&#39;, True) # &#39;Foobar&#39;  </description>
+    </item>
+    
+    <item>
+      <title>capitalize_every_word()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/capitalize_every_word/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/capitalize_every_word/</guid>
+      <description> capitalize_every_word() Capitalizes the first letter of every word in a string.
+Use s.title() to capitalize first letter of every word in the string.
+def capitalize_every_word(s): return s.title()  capitalize_every_word(&#39;hello world!&#39;) # &#39;Hello World!&#39;  </description>
+    </item>
+    
+    <item>
+      <title>cast_list()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/cast_list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/cast_list/</guid>
+      <description> cast_list() Casts the provided value as a list if it&amp;rsquo;s not one.
+Use isinstance() to check if the given value is enumerable and return it by using list() or encapsulated in a list accordingly.
+def cast_list(val): return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]  cast_list(&#39;foo&#39;) # [&#39;foo&#39;] cast_list([1]) # [1] cast_list((&#39;foo&#39;, &#39;bar&#39;)) # [&#39;foo&#39;, &#39;bar&#39;]  </description>
+    </item>
+    
+    <item>
+      <title>check_prop()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/check_prop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/check_prop/</guid>
+      <description> check_prop() Given a predicate function, fn, and a prop string, this curried function will then take an object to inspect by calling the property and passing it to the predicate.
+Return a lambda function that takes an object and applies the predicate function, fn to the specified property.
+def check_prop(fn, prop): return lambda obj: fn(obj[prop])  check_age = check_prop(lambda x: x &amp;gt;= 18, &#39;age&#39;) user = {&#39;name&#39;: &#39;Mark&#39;, &#39;age&#39;: 18} check_age(user) # True  </description>
+    </item>
+    
+    <item>
+      <title>chunk()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/chunk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/chunk/</guid>
+      <description> chunk() Chunks a list into smaller lists of a specified size.
+Use list() and range() to create a list of the desired size. Use map() on the list and fill it with splices of the given list. Finally, return the created list.
+from math import ceil def chunk(lst, size): return list( map(lambda x: lst[x * size:x * size + size], list(range(0, ceil(len(lst) / size)))))  chunk([1, 2, 3, 4, 5], 2) # [[1,2],[3,4],5]  </description>
+    </item>
+    
+    <item>
+      <title>clamp_number()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/clamp_number/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/clamp_number/</guid>
+      <description> clamp_number() Clamps num within the inclusive range specified by the boundary values a and b.
+If num falls within the range, return num. Otherwise, return the nearest number in the range.
+def clamp_number(num,a,b): return max(min(num, max(a, b)), min(a, b))  clamp_number(2, 3, 5) # 3 clamp_number(1, -1, -5) # -1  </description>
+    </item>
+    
+    <item>
+      <title>compact()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compact/</guid>
+      <description> compact() Removes falsey values from a list.
+Use filter() to filter out falsey values (False, None, 0, and &amp;quot;&amp;quot;).
+def compact(lst): return list(filter(bool, lst))  compact([0, 1, False, 2, &#39;&#39;, 3, &#39;a&#39;, &#39;s&#39;, 34]) # [ 1, 2, 3, &#39;a&#39;, &#39;s&#39;, 34 ]  </description>
+    </item>
+    
+    <item>
+      <title>compose()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compose/</guid>
+      <description> compose() Performs right-to-left function composition.
+Use functools.reduce() to perform right-to-left function composition. The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
+from functools import reduce def compose(*fns): return reduce(lambda f, g: lambda *args: f(g(*args)), fns)  add5 = lambda x: x + 5 multiply = lambda x, y: x * y multiply_and_add_5 = compose(add5, multiply) multiply_and_add_5(5, 2) # 15  </description>
+    </item>
+    
+    <item>
+      <title>compose_right()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compose_right/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compose_right/</guid>
+      <description> compose_right() Performs left-to-right function composition.
+Use functools.reduce() to perform left-to-right function composition. The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+from functools import reduce def compose_right(*fns): return reduce(lambda f, g: lambda *args: g(f(*args)), fns)  add = lambda x, y: x + y square = lambda x: x * x add_and_square = compose_right(add,square) add_and_square(1, 2) # 9  </description>
+    </item>
+    
+    <item>
+      <title>count_by()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/count_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/count_by/</guid>
+      <description>count_by() Groups the elements of a list based on the given function and returns the count of elements in each group.
+Use map() to map the values of the given list using the given function. Iterate over the map and increase the element count each time it occurs.
+def count_by(arr, fn=lambda x: x): key = {} for el in map(fn, arr): key[el] = 1 if el not in key else key[el] + 1 return key  from math import floor count_by([6.</description>
+    </item>
+    
+    <item>
+      <title>count_occurences()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/count_occurences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/count_occurences/</guid>
+      <description> count_occurences() Counts the occurrences of a value in a list.
+Increment a counter for every item in the list that has the given value and is of the same type.
+def count_occurrences(lst, val): return len([x for x in lst if x == val and type(x) == type(val)])  count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3  </description>
+    </item>
+    
+    <item>
+      <title>curry()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/curry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/curry/</guid>
+      <description> curry() Curries a function.
+Use functools.partial() to return a new partial object which behaves like fn with the given arguments, args, partially applied.
+from functools import partial def curry(fn, *args): return partial(fn,*args)  add = lambda x, y: x + y add10 = curry(add, 10) add10(20) # 30  </description>
+    </item>
+    
+    <item>
+      <title>dateutil()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/dateutil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/dateutil/</guid>
+      <description>dateutil()  Source :
+# pip install python-dateutil from datetime import datetime, date from dateutil.relativedelta import relativedelta, SA, TH def demo1(): today = date.today() next_3_m = today + relativedelta(months=3) print(today) print(next_3_m) d1 = today + relativedelta(weeks=40) print(d1) d2 = today + relativedelta(years=1, months=6) print(d2) d3 = today + relativedelta(days=-1) print(d3) def demo2(): now = datetime.today() print(now) t1 = now + relativedelta(hours=3, minutes=30) print(t1) def demo_weekday(): childrenday = date(2016, 1, 1) + relativedelta(weekday=SA(+2)) print(childrenday) print(datetime.</description>
+    </item>
+    
+    <item>
+      <title>decapitalize()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/decapitalize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/decapitalize/</guid>
+      <description> decapitalize() Decapitalizes the first letter of a string.
+Decapitalize the first letter of the string and then add it with rest of the string. Omit the upper_rest parameter to keep the rest of the string intact, or set it to True to convert to uppercase.
+def decapitalize(s, upper_rest=False): return s[:1].lower() + (s[1:].upper() if upper_rest else s[1:])  decapitalize(&#39;FooBar&#39;) # &#39;fooBar&#39; decapitalize(&#39;FooBar&#39;, True) # &#39;fOOBAR&#39;  </description>
+    </item>
+    
+    <item>
+      <title>deep_flatten()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/deep_flatten/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/deep_flatten/</guid>
+      <description> deep_flatten() Deep flattens a list.
+Use recursion. Use isinstance() with collections.abc.Iterable to check if an element is iterable. If it is, apply deep_flatten() recursively, otherwise return [lst].
+from collections.abc import Iterable def deep_flatten(lst): return [a for i in lst for a in deep_flatten(i)] if isinstance(lst, Iterable) else [lst]  deep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]  </description>
+    </item>
+    
+    <item>
+      <title>degrees_to_rads()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/degrees_to_rads/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/degrees_to_rads/</guid>
+      <description> degrees_to_rads() Converts an angle from degrees to radians.
+Use math.pi and the degrees to radians formula to convert the angle from degrees to radians.
+from math import pi def degrees_to_rads(deg): return (deg * pi) / 180.0  degrees_to_rads(180) # 3.141592653589793  </description>
+    </item>
+    
+    <item>
+      <title>delay()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/delay/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/delay/</guid>
+      <description> delay() Invokes the provided function after ms milliseconds.
+Use time.sleep() to delay the execution of fn by ms / 1000 seconds.
+from time import sleep def delay(fn, ms, *args): sleep(ms / 1000) return fn(*args)  delay( lambda x: print(x), 1000, &#39;later&#39; ) # prints &#39;later&#39; after one second  </description>
+    </item>
+    
+    <item>
+      <title>difference()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/difference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/difference/</guid>
+      <description> difference() Returns the difference between two iterables.
+Create a set from b, then use list comprehension on a to only keep values not contained in the previously created set, _b.
+def difference(a, b): _b = set(b) return [item for item in a if item not in _b]  difference([1, 2, 3], [1, 2, 4]) # [3]  </description>
+    </item>
+    
+    <item>
+      <title>difference_by()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/difference_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/difference_by/</guid>
+      <description>difference_by() Returns the difference between two lists, after applying the provided function to each list element of both.
+Create a set by applying fn to each element in b, then use list comprehension in combination with fn on a to only keep values not contained in the previously created set, _b.
+def difference_by(a, b, fn): _b = set(map(fn, b)) return [item for item in a if fn(item) not in _b]  from math import floor difference_by([2.</description>
+    </item>
+    
+    <item>
+      <title>digitize()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/digitize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/digitize/</guid>
+      <description> digitize() Converts a number to a list of digits.
+Use map() combined with int on the string representation of n and return a list from the result.
+def digitize(n): return list(map(int, str(n)))  digitize(123) # [1, 2, 3]  </description>
+    </item>
+    
+    <item>
+      <title>every()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/every/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/every/</guid>
+      <description> every() Returns True if the provided function returns True for every element in the list, False otherwise.
+Use all() in combination with map and fn to check if fn returns True for all elements in the list.
+def every(lst, fn=lambda x: x): return all(map(fn, lst))  every([4, 2, 3], lambda x: x &amp;gt; 1) # True every([1, 2, 3]) # True  </description>
+    </item>
+    
+    <item>
+      <title>every_nth()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/every_nth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/every_nth/</guid>
+      <description> every_nth() Returns every nth element in a list.
+Use [nth-1::nth] to create a new list that contains every nth element of the given list.
+def every_nth(lst, nth): return lst[nth - 1::nth]  every_nth([1, 2, 3, 4, 5, 6], 2) # [ 2, 4, 6 ]  </description>
+    </item>
+    
+    <item>
+      <title>factorial()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/factorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/factorial/</guid>
+      <description> factorial() Calculates the factorial of a number.
+Use recursion. If num is less than or equal to 1, return 1. Otherwise, return the product of num and the factorial of num - 1. Throws an exception if num is a negative or a floating point number.
+def factorial(num): if not ((num &amp;gt;= 0) and (num % 1 == 0)): raise Exception(&amp;quot;Number can&#39;t be floating point or negative.&amp;quot;) return 1 if num == 0 else num * factorial(num - 1)  factorial(6) # 720  </description>
+    </item>
+    
+    <item>
+      <title>fibonacci()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/fibonacci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/fibonacci/</guid>
+      <description>fibonacci() Generates a list, containing the Fibonacci sequence, up until the nth term.
+Starting with 0 and 1, use list.append() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches n.
+If n is less or equal to 0, return a list containing 0.
+def fibonacci(n): if n &amp;lt;= 0: return [0] sequence = [0, 1] while len(sequence) &amp;lt;= n: next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2] sequence.</description>
+    </item>
+    
+    <item>
+      <title>filter_non_unique()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/filter_non_unique/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/filter_non_unique/</guid>
+      <description> filter_non_unique() Filters out the non-unique values in a list.
+Use a collections.Counter to get the count of each value in the list. Use list comprehension to create a list containing only the unique values.
+from collections import Counter def filter_non_unique(lst): return [item for item, count in counter = Counter(lst).items() if count == 1]  filter_non_unique([1, 2, 2, 3, 4, 4, 5]) # [1, 3, 5]  </description>
+    </item>
+    
+    <item>
+      <title>filter_unique()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/filter_unique/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/filter_unique/</guid>
+      <description> filter_unique() Filters out the unique values in a list.
+Use a collections.Counter to get the count of each value in the list. Use list comprehension to create a list containing only the non-unique values.
+from collections import Counter def filter_unique(lst): return [item for item, count in Counter(lst).items() if count &amp;gt; 1]  filter_unique([1, 2, 2, 3, 4, 4, 5]) # [2, 4]  </description>
+    </item>
+    
+    <item>
+      <title>find_parity_outliers()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/find_parity_outliers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/find_parity_outliers/</guid>
+      <description>find_parity_outliers() Given a list, returns the items that are parity outliers.
+Use collections.Counter with a list comprehension to count even and odd values in the list, use collections.Counter.most_common() to get the most common parity. Use a list comprehension to find all elements that do not match the most common parity.
+from collections import Counter def find_parity_outliers(nums): return [ x for x in nums if x % 2 != Counter([n % 2 for n in nums]).</description>
+    </item>
+    
+    <item>
+      <title>flatten()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/flatten/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/flatten/</guid>
+      <description> flatten() Flattens a list of lists once.
+Use nested list comprehension to extract each value from sub-lists in order.
+def flatten(lst): return [x for y in lst for x in y]  flatten([[1,2,3,4],[5,6,7,8]]) # [1, 2, 3, 4, 5, 6, 7, 8]  </description>
+    </item>
+    
+    <item>
+      <title>gcd()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/gcd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/gcd/</guid>
+      <description> gcd() Calculates the greatest common divisor of a list of numbers.
+Use functools.reduce() and math.gcd() over the given list.
+from functools import reduce from math import gcd def gcd(numbers): return reduce(gcd, numbers)  gcd([8, 36, 28]) # 4  </description>
+    </item>
+    
+    <item>
+      <title>group_by()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/group_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/group_by/</guid>
+      <description>group_by() Groups the elements of a list based on the given function.
+Use map() and fn to map the values of the list to the keys of an object. Use list comprehension to map each element to the appropriate key.
+def group_by(lst, fn): return {key : [el for el in lst if fn(el) == key] for key in map(fn, lst)}  from math import floor group_by([6.1, 4.2, 6.3], floor) # {4: [4.</description>
+    </item>
+    
+    <item>
+      <title>has_duplicates()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/has_duplicates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/has_duplicates/</guid>
+      <description> has_duplicates() Returns True if there are duplicate values in a flast list, False otherwise.
+Use set() on the given list to remove duplicates, compare its length with the length of the list.
+def has_duplicates(lst): return len(lst) != len(set(lst))  x = [1, 2, 3, 4, 5, 5] y = [1, 2, 3, 4, 5] has_duplicates(x) # True has_duplicates(y) # False  </description>
+    </item>
+    
+    <item>
+      <title>head()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/head/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/head/</guid>
+      <description> head() Returns the head of a list.
+Use lst[0] to return the first element of the passed list.
+def head(lst): return lst[0]  head([1, 2, 3]) # 1  </description>
+    </item>
+    
+    <item>
+      <title>in_range()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/in_range/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/in_range/</guid>
+      <description> in_range() Checks if the given number falls within the given range.
+Use arithmetic comparison to check if the given number is in the specified range. If the second parameter, end, is not specified, the range is considered to be from 0 to start.
+def in_range(n, start, end = 0): return start &amp;lt;= n &amp;lt;= end if end &amp;gt;= start else end &amp;lt;= n &amp;lt;= start  in_range(3, 2, 5) # True in_range(3, 4) # True in_range(2, 3, 5) # False in_range(3, 2) # False  </description>
+    </item>
+    
+    <item>
+      <title>initial</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initial/</guid>
+      <description>Returns all the elements of a list except the last one.
+Use lst[0:-1] to return all but the last element of the list.
+def initial(lst): return lst[0:-1]  initial([1, 2, 3]) # [1,2]  </description>
+    </item>
+    
+    <item>
+      <title>initialize_2d_list</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_2d_list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_2d_list/</guid>
+      <description>Initializes a 2D list of given width and height and value.
+Use list comprehension and range() to generate h rows where each is a list with length h, initialized with val. If val is not provided, default to None.
+def initialize_2d_list(w,h, val = None): return [[val for x in range(w)] for y in range(h)]  initialize_2d_list(2, 2, 0) # [[0,0], [0,0]]  </description>
+    </item>
+    
+    <item>
+      <title>initialize_list_with_range</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_list_with_range/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_list_with_range/</guid>
+      <description>Initializes a list containing the numbers in the specified range where start and end are inclusive with their common difference step.
+Use list and range() to generate a list of the appropriate length, filled with the desired values in the given range. Omit start to use the default value of 0. Omit step to use the default value of 1.
+def initialize_list_with_range(end, start=0, step=1): return list(range(start, end + 1, step))  initialize_list_with_range(5) # [0, 1, 2, 3, 4, 5] initialize_list_with_range(7, 3) # [3, 4, 5, 6, 7] initialize_list_with_range(9, 0, 2) # [0, 2, 4, 6, 8]  </description>
+    </item>
+    
+    <item>
+      <title>initialize_list_with_values</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_list_with_values/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_list_with_values/</guid>
+      <description>Initializes and fills a list with the specified value.
+Use list comprehension and range() to generate a list of length equal to n, filled with the desired values. Omit val to use the default value of 0.
+def initialize_list_with_values(n, val = 0): return [val for x in range(n)]  initialize_list_with_values(5, 2) # [2, 2, 2, 2, 2]  </description>
+    </item>
+    
+    <item>
+      <title>intersection</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/intersection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/intersection/</guid>
+      <description>Returns a list of elements that exist in both lists.
+Create a set from a and b, then use the built-in set operator &amp;amp; to only keep values contained in both sets, then transform the set back into a list.
+def intersection(a, b): _a, _b = set(a), set(b) return list(_a &amp;amp; _b)  intersection([1, 2, 3], [4, 3, 2]) # [2, 3]  </description>
+    </item>
+    
+    <item>
+      <title>intersection_by</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/intersection_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/intersection_by/</guid>
+      <description>Returns a list of elements that exist in both lists, after applying the provided function to each list element of both.
+Create a set by applying fn to each element in b, then use list comprehension in combination with fn on a to only keep values contained in both lists.
+def intersection_by(a, b, fn): _b = set(map(fn, b)) return [item for item in a if fn(item) in _b]  from math import floor intersection_by([2.</description>
+    </item>
+    
+    <item>
+      <title>is_anagram</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_anagram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_anagram/</guid>
+      <description>Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
+Use s.replace() to remove spaces from both strings. Compare the lengths of the two strings, return False if they are not equal. Use sorted() on both strings and compare the results.
+def is_anagram(s1, s2): _str1, _str2 = s1.replace(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;), s2.replace(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;) return False if len(_str1) != len(_str2) else sorted(_str1.lower()) == sorted(_str2.lower())  is_anagram(&amp;quot;anagram&amp;quot;, &amp;quot;Nag a ram&amp;quot;) # True  </description>
+    </item>
+    
+    <item>
+      <title>is_divisible</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_divisible/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_divisible/</guid>
+      <description>Checks if the first numeric argument is divisible by the second one.
+Use the modulo operator (%) to check if the remainder is equal to 0.
+def is_divisible(dividend, divisor): return dividend % divisor == 0  is_divisible(6, 3) # True  </description>
+    </item>
+    
+    <item>
+      <title>is_even</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_even/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_even/</guid>
+      <description>Returns True if the given number is even, False otherwise.
+Checks whether a number is odd or even using the modulo (%) operator. Returns True if the number is even, False if the number is odd.
+def is_even(num): return num % 2 == 0  is_even(3) # False  </description>
+    </item>
+    
+    <item>
+      <title>is_odd</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_odd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_odd/</guid>
+      <description>Returns True if the given number is odd, False otherwise.
+Checks whether a number is even or odd using the modulo (%) operator. Returns True if the number is odd, False if the number is even.
+def is_odd(num): return num % 2 != 0  is_odd(3) # True  </description>
+    </item>
+    
+    <item>
+      <title>kebab</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/kebab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/kebab/</guid>
+      <description>Converts a string to kebab case.
+Break the string into words and combine them adding - as a separator, using a regexp.
+from re import sub def kebab(s): return sub( r&amp;quot;(\s|_|-)+&amp;quot;,&amp;quot;-&amp;quot;, sub( r&amp;quot;[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+&amp;quot;, lambda mo: mo.group(0).lower(), s))  kebab(&#39;camelCase&#39;) # &#39;camel-case&#39; kebab(&#39;some text&#39;) # &#39;some-text&#39; kebab(&#39;some-mixed_string With spaces_underscores-and-hyphens&#39;) # &#39;some-mixed-string-with-spaces-underscores-and-hyphens&#39; kebab(&#39;AllThe-small Things&#39;) # &amp;quot;all-the-small-things&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>keys_only</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/keys_only/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/keys_only/</guid>
+      <description>Returns a flat list of all the keys in a flat dictionary.
+Use dict.keys() to return the keys in the given dictionary. Return a list() of the previous result.
+def keys_only(flat_dict): return list(flat_dict.keys())  ages = { &amp;quot;Peter&amp;quot;: 10, &amp;quot;Isabel&amp;quot;: 11, &amp;quot;Anna&amp;quot;: 9, } keys_only(ages) # [&#39;Peter&#39;, &#39;Isabel&#39;, &#39;Anna&#39;]  </description>
+    </item>
+    
+    <item>
+      <title>last</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/last/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/last/</guid>
+      <description>Returns the last element in a list.
+use lst[-1] to return the last element of the passed list.
+def last(lst): return lst[-1]  last([1, 2, 3]) # 3  </description>
+    </item>
+    
+    <item>
+      <title>lcm</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/lcm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/lcm/</guid>
+      <description>Returns the least common multiple of a list of numbers.
+Use functools.reduce(), math.gcd() and lcm(x,y) = x * y / gcd(x,y) over the given list.
+from functools import reduce from math import gcd def lcm(numbers): return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)  lcm([12, 7]) # 84 lcm([1, 3, 4, 5]) # 60  </description>
+    </item>
+    
+    <item>
+      <title>longest_item</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/longest_item/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/longest_item/</guid>
+      <description>Takes any number of iterable objects or objects with a length property and returns the longest one. If multiple objects have the same length, the first one will be returned.
+Use max() with len as the key to return the item with the greatest length.
+def longest_item(*args): return max(args, key=len)  longest_item(&#39;this&#39;, &#39;is&#39;, &#39;a&#39;, &#39;testcase&#39;) # &#39;testcase&#39; longest_item([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]) # [1, 2, 3, 4, 5] longest_item([1, 2, 3], &#39;foobar&#39;) # &#39;foobar&#39;  </description>
+    </item>
+    
+    <item>
+      <title>map_values</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/map_values/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/map_values/</guid>
+      <description>Creates an object with the same keys as the provided object and values generated by running the provided function for each value.
+Use dict.keys() to iterate over the object&amp;rsquo;s keys, assigning the values produced by fn to each key of a new object.
+def map_values(obj, fn): ret = {} for key in obj.keys(): ret[key] = fn(obj[key]) return ret  users = { &#39;fred&#39;: { &#39;user&#39;: &#39;fred&#39;, &#39;age&#39;: 40 }, &#39;pebbles&#39;: { &#39;user&#39;: &#39;pebbles&#39;, &#39;age&#39;: 1 } } map_values(users, lambda u : u[&#39;age&#39;]) # {&#39;fred&#39;: 40, &#39;pebbles&#39;: 1}  </description>
+    </item>
+    
+    <item>
+      <title>max_by</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_by/</guid>
+      <description>Returns the maximum value of a list, after mapping each element to a value using the provided function.
+Use map() with fn to map each element to a value using the provided function, use max() to return the maximum value.
+def max_by(lst, fn): return max(map(fn, lst))  max_by([{ &#39;n&#39;: 4 }, { &#39;n&#39;: 2 }, { &#39;n&#39;: 8 }, { &#39;n&#39;: 6 }], lambda v : v[&#39;n&#39;]) # 8  </description>
+    </item>
+    
+    <item>
+      <title>max_element_index</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_element_index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_element_index/</guid>
+      <description>Returns the index of the element with the maximum value in a list.
+Use max() and list.index() to get the maximum value in the list and return its index.
+def max_element_index(arr): return arr.index(max(arr))  max_element_index([5, 8, 9, 7, 10, 3, 0]) # 4  </description>
+    </item>
+    
+    <item>
+      <title>max_n</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_n/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_n/</guid>
+      <description> max_n Returns the n maximum elements from the provided list. If n is greater than or equal to the provided list&amp;rsquo;s length, then return the original list (sorted in descending order).
+Use sorted() to sort the list, [:n] to get the specified number of elements. Omit the second argument, n, to get a one-element list.
+def max_n(lst, n=1): return sorted(lst, reverse=True)[:n]  max_n([1, 2, 3]) # [3] max_n([1, 2, 3], 2) # [3,2]  </description>
+    </item>
+    
+    <item>
+      <title>median</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/median/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/median/</guid>
+      <description>median Finds the median of a list of numbers.
+Sort the numbers of the list using list.sort() and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even.
+statistics.median() provides similar functionality to this snippet.
+def median(list): list.sort() list_length = len(list) if list_length % 2 == 0: return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2 return list[int(list_length / 2)]  median([1,2,3]) # 2 median([1,2,3,4]) # 2.</description>
+    </item>
+    
+    <item>
+      <title>merge_two_dictionaries()</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/merge_two_dictionaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/merge_two_dictionaries/</guid>
+      <description>merge_two_dictionaries()  source: 
+ # How to merge two dictionaries # in Python 3.5+: x = {&#39;a&#39;: 1, &#39;b&#39;: 2} y = {&#39;b&#39;: 3, &#39;c&#39;: 4} z = {**x, **y} z # {&#39;c&#39;: 4, &#39;a&#39;: 1, &#39;b&#39;: 3}  # Why Python Is Great: # Function argument unpacking def myfunc(x, y, z): print(x, y, z) tuple_vec = (1, 0, 1) dict_vec = {&#39;x&#39;: 1, &#39;y&#39;: 0, &#39;z&#39;: 1} &amp;gt;&amp;gt;&amp;gt; myfunc(*tuple_vec) 1, 0, 1 &amp;gt;&amp;gt;&amp;gt; myfunc(**dict_vec) 1, 0, 1  # The lambda keyword in Python provides a # shortcut for declaring small and # anonymous functions: &amp;gt;&amp;gt;&amp;gt; add = lambda x, y: x + y &amp;gt;&amp;gt;&amp;gt; add(5, 3) 8 # You could declare the same add() # function with the def keyword: &amp;gt;&amp;gt;&amp;gt; def add(x, y): .</description>
+    </item>
+    
+    <item>
+      <title>min_by</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/min_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/min_by/</guid>
+      <description>Returns the minimum value of a list, after mapping each element to a value using the provided function.
+Use map() with fn to map each element to a value using the provided function, use min() to return the minimum value.
+def min_by(lst, fn): return min(map(fn, lst))  min_by([{ &#39;n&#39;: 4 }, { &#39;n&#39;: 2 }, { &#39;n&#39;: 8 }, { &#39;n&#39;: 6 }], lambda v : v[&#39;n&#39;]) # 2  </description>
+    </item>
+    
+    <item>
+      <title>min_n</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/min_n/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/min_n/</guid>
+      <description>Returns the n minimum elements from the provided list. If n is greater than or equal to the provided list&amp;rsquo;s length, then return the original list (sorted in ascending order).
+Use sorted() to sort the list,[:n]to get the specified number of elements. Omit the second argument,n`, to get a one-element list.
+def min_n(lst, n=1): return sorted(lst, reverse=False)[:n]  min_n([1, 2, 3]) # [1] min_n([1, 2, 3], 2) # [1,2]  </description>
+    </item>
+    
+    <item>
+      <title>most_frequent</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/most_frequent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/most_frequent/</guid>
+      <description>Returns the most frequent element in a list.
+Use set(list) to get the unique values in the list combined with max() to find the element that has the most appearances.
+def most_frequent(list): return max(set(list), key=list.count)  most_frequent([1, 2, 1, 2, 3, 2, 1, 4, 2]) #2  </description>
+    </item>
+    
+    <item>
+      <title>n_times_string</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/n_times_string/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/n_times_string/</guid>
+      <description>Prints out the same string a defined number of times.
+Repeat the string n times, using the * operator.
+def n_times_string(s, n): return (s * n)  n_times_string(&#39;py&#39;, 4) #&#39;pypypypy&#39;  </description>
+    </item>
+    
+    <item>
+      <title>none</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/none/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/none/</guid>
+      <description>Returns False if the provided function returns True for at least one element in the list, True otherwise.
+Use all() and fn to check if fn returns False for all the elements in the list.
+def none(lst, fn=lambda x: x): return all(not fn(x) for x in lst)  none([0, 1, 2, 0], lambda x: x &amp;gt;= 2 ) # False none([0, 0, 0]) # True  </description>
+    </item>
+    
+    <item>
+      <title>offset</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/offset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/offset/</guid>
+      <description>Moves the specified amount of elements to the end of the list.
+Use lst[offset:] and lst[:offset] to get the two slices of the list and combine them before returning.
+def offset(lst, offset): return lst[offset:] + lst[:offset]  offset([1, 2, 3, 4, 5], 2) # [3, 4, 5, 1, 2] offset([1, 2, 3, 4, 5], -2) # [4, 5, 1, 2, 3]  </description>
+    </item>
+    
+    <item>
+      <title>palindrome</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/palindrome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/palindrome/</guid>
+      <description>Returns True if the given string is a palindrome, False otherwise.
+Use s.lower() and re.sub() to convert to lowercase and remove non-alphanumeric characters from the given string. Then, compare the new string with its reverse.
+from re import sub def palindrome(s): s = sub(&#39;[\W_]&#39;, &#39;&#39;, s.lower()) return s == s[::-1]  palindrome(&#39;taco cat&#39;) # True  </description>
+    </item>
+    
+    <item>
+      <title>rads_to_degrees</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/rads_to_degrees/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/rads_to_degrees/</guid>
+      <description>Converts an angle from radians to degrees.
+Use math.pi and the radian to degree formula to convert the angle from radians to degrees.
+from math import pi def rads_to_degrees(rad): return (rad * 180.0) / math.pi  from math import pi rads_to_degrees(math.pi / 2) # 90.0  </description>
+    </item>
+    
+    <item>
+      <title>reverse_string</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/reverse_string/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/reverse_string/</guid>
+      <description>Returns the reverse of a string.
+Use string slicing to reverse the string.
+def reverse_string(s): return s[::-1]  reverse_string(&amp;quot;snippet&amp;quot;) #&amp;quot;teppins&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>sample</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/sample/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/sample/</guid>
+      <description>Returns a random element from a list.
+Use random.randint() to generate a random number that corresponds to an index in the list, return the element at that index.
+random.sample() provides similar functionality to this snippet.
+from random import randint def sample(lst): return lst[randint(0, len(lst) - 1)]  sample([3, 7, 9, 11]) # 9  </description>
+    </item>
+    
+    <item>
+      <title>shuffle</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/shuffle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/shuffle/</guid>
+      <description>Randomizes the order of the values of an list, returning a new list.
+Uses the Fisher-Yates algorithm to reorder the elements of the list.
+random.shuffle provides similar functionality to this snippet.
+from copy import deepcopy from random import randint def shuffle(lst): temp_lst = deepcopy(lst) m = len(temp_lst) while (m): m -= 1 i = randint(0, m) temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m] return temp_lst  foo = [1,2,3] shuffle(foo) # [2,3,1], foo = [1,2,3]  </description>
+    </item>
+    
+    <item>
+      <title>similarity</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/similarity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/similarity/</guid>
+      <description>Returns a list of elements that exist in both lists.
+Use list comprehension on a to only keep values contained in both lists.
+def similarity(a, b): return [item for item in a if item in b]  similarity([1, 2, 3], [1, 2, 4]) # [1, 2]  </description>
+    </item>
+    
+    <item>
+      <title>snake</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/snake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/snake/</guid>
+      <description>Converts a string to snake case.
+Break the string into words and combine them adding _ as a separator, using a regexp.
+from re import sub def snake(s): return &#39;_&#39;.join( sub(&#39;([A-Z][a-z]+)&#39;, r&#39; \1&#39;, sub(&#39;([A-Z]+)&#39;, r&#39; \1&#39;, s.replace(&#39;-&#39;, &#39; &#39;))).split()).lower()  snake(&#39;camelCase&#39;) # &#39;camel_case&#39; snake(&#39;some text&#39;) # &#39;some_text&#39; snake(&#39;some-mixed_string With spaces_underscores-and-hyphens&#39;) # &#39;some_mixed_string_with_spaces_underscores_and_hyphens&#39; snake(&#39;AllThe-small Things&#39;) # &amp;quot;all_the_small_things&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>some</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/some/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/some/</guid>
+      <description>Returns True if the provided function returns True for at least one element in the list, False otherwise.
+Use any() in combination with map() and fn to check if fn returns True for any element in the list.
+def some(lst, fn=lambda x: x): return any(map(fn, lst))  some([0, 1, 2, 0], lambda x: x &amp;gt;= 2 ) # True some([0, 0, 1, 0]) # True  </description>
+    </item>
+    
+    <item>
+      <title>split_lines</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/split_lines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/split_lines/</guid>
+      <description>Splits a multiline string into a list of lines.
+Use s.split() and &#39;\n&#39; to match line breaks and create a list.
+str.splitlines() provides similar functionality to this snippet.
+def split_lines(s): return s.split(&#39;\n&#39;)  split_lines(&#39;This\nis a\nmultiline\nstring.\n&#39;) # [&#39;This&#39;, &#39;is a&#39;, &#39;multiline&#39;, &#39;string.&#39; , &#39;&#39;]  </description>
+    </item>
+    
+    <item>
+      <title>spread</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/spread/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/spread/</guid>
+      <description>Flattens a list, by spreading its elements into a new list.
+Loop over elements, use list.extend() if the element is a list, list.append() otherwise.
+def spread(arg): ret = [] for i in arg: ret.extend(i) if isinstance(i, list) else ret.append(i) return ret  spread([1, 2, 3, [4, 5, 6], [7], 8, 9]) # [1, 2, 3, 4, 5, 6, 7, 8, 9]  </description>
+    </item>
+    
+    <item>
+      <title>sum_by</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/sum_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/sum_by/</guid>
+      <description>Returns the sum of a list, after mapping each element to a value using the provided function.
+Use map() with fn to map each element to a value using the provided function, use sum() to return the sum of the values.
+def sum_by(lst, fn): return sum(map(fn, lst))  sum_by([{ &#39;n&#39;: 4 }, { &#39;n&#39;: 2 }, { &#39;n&#39;: 8 }, { &#39;n&#39;: 6 }], lambda v : v[&#39;n&#39;]) # 20  </description>
+    </item>
+    
+    <item>
+      <title>symmetric_difference</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/symmetric_difference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/symmetric_difference/</guid>
+      <description>Returns the symmetric difference between two iterables, without filtering out duplicate values.
+Create a set from each list, then use list comprehension on each one to only keep values not contained in the previously created set of the other.
+def symmetric_difference(a, b): _a, _b = set(a), set(b) return [item for item in a if item not in _b] + [item for item in b if item not in _a]  symmetric_difference([1, 2, 3], [1, 2, 4]) # [3, 4]  </description>
+    </item>
+    
+    <item>
+      <title>symmetric_difference_by</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/symmetric_difference_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/symmetric_difference_by/</guid>
+      <description>Returns the symmetric difference between two lists, after applying the provided function to each list element of both.
+Create a set by applying fn to each element in every list, then use list comprehension in combination with fn on each one to only keep values not contained in the previously created set of the other.
+def symmetric_difference_by(a, b, fn): _a, _b = set(map(fn, a)), set(map(fn, b)) return [item for item in a if fn(item) not in _b] + [item for item in b if fn(item) not in _a]  from math import floor symmetric_difference_by([2.</description>
+    </item>
+    
+    <item>
+      <title>tail</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/tail/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/tail/</guid>
+      <description>Returns all elements in a list except for the first one.
+Return lst[1:] if the list&amp;rsquo;s length is more than 1, otherwise, return the whole list.
+def tail(lst): return lst[1:] if len(lst) &amp;gt; 1 else lst  tail([1, 2, 3]) # [2,3] tail([1]) # [1]  </description>
+    </item>
+    
+    <item>
+      <title>transpose</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/transpose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/transpose/</guid>
+      <description>Returns the transpose of a two-dimensional list.
+Use *lst to get the passed list as tuples. Use zip() in combination with list() to create the transpose of the given two-dimensional list.
+def transpose(lst): return list(zip(*lst))  transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]) # [(1, 4, 7, 10), (2, 5, 8, 11), (3, 6, 9, 12)]  </description>
+    </item>
+    
+    <item>
+      <title>unfold</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/unfold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/unfold/</guid>
+      <description>Builds a list, using an iterator function and an initial seed value.
+The iterator function accepts one argument (seed) and must always return a list with two elements ([value, nextSeed]) or False to terminate. Use a generator function, fn_generator, that uses a while loop to call the iterator function and yield the value until it returns False. Use list comprehension to return the list that is produced by the generator, using the iterator function.</description>
+    </item>
+    
+    <item>
+      <title>union</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/union/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/union/</guid>
+      <description>Returns every element that exists in any of the two lists once.
+Create a set with all values of a and b and convert to a list.
+def union(a, b): return list(set(a + b))  union([1, 2, 3], [4, 3, 2]) # [1,2,3,4]  </description>
+    </item>
+    
+    <item>
+      <title>union_by</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/union_by/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/union_by/</guid>
+      <description>Returns every element that exists in any of the two lists once, after applying the provided function to each element of both.
+Create a set by applying fn to each element in a, then use list comprehension in combination with fn on b to only keep values not contained in the previously created set, _a. Finally, create a set from the previous result and a and transform it into a list</description>
+    </item>
+    
+    <item>
+      <title>unique_elements</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/unique_elements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/unique_elements/</guid>
+      <description>Returns the unique elements in a given list.
+Create a set from the list to discard duplicated values, then return a list from it.
+def unique_elements(li): return list(set(li))  unique_elements([1, 2, 2, 3, 4, 3]) # [1, 2, 3, 4]  </description>
+    </item>
+    
+    <item>
+      <title>values_only</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/values_only/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/values_only/</guid>
+      <description>Returns a flat list of all the values in a flat dictionary.
+Use dict.values() to return the values in the given dictionary. Return a list() of the previous result.
+def values_only(flat_dict): return list(flat_dict.values())  ages = { &amp;quot;Peter&amp;quot;: 10, &amp;quot;Isabel&amp;quot;: 11, &amp;quot;Anna&amp;quot;: 9, } values_only(ages) # [10, 11, 9]  </description>
+    </item>
+    
+    <item>
+      <title>when</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/when/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/when/</guid>
+      <description>Tests a value, x, against a predicate function, conditionally applying a function.
+Check if the value of predicate(x) is True and if so return when_true(x), otherwise return x.
+def when(predicate, when_true): return lambda x: when_true(x) if predicate(x) else x  double_even_numbers = when(lambda x: x % 2 == 0, lambda x : x * 2) double_even_numbers(2) # 4 double_even_numbers(1) # 1  </description>
+    </item>
+    
+    <item>
+      <title>zip</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/snippets/zip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/snippets/zip/</guid>
+      <description>Creates a list of elements, grouped based on the position in the original lists.
+Use max combined with list comprehension to get the length of the longest list in the arguments. Loop for max_length times grouping elements. If lengths of lists vary, use fill_value (defaults to None).
+zip() and itertools.zip_longest() provide similar functionality to this snippet.
+def zip(*args, fill_value=None): max_length = max([len(lst) for lst in args]) result = [] for i in range(max_length): result.</description>
+    </item>
+    
+  </channel>
+</rss>

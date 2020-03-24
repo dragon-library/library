@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQLite on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/database/sqlite/</link>
+    <description>Recent content in SQLite on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/database/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SQLite for Python</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/database/sqlite/sqlite3-module/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/database/sqlite/sqlite3-module/</guid>
+      <description>SQLite for Python Create Database import os import sqlite3 db_filename = &#39;journaldev.db&#39; db_exists = not os.path.exists(db_filename) connection = sqlite3.connect(db_filename) if db_exists: print(&#39;No schema exists.&#39;) else: print(&#39;DB exists.&#39;) connection.close()  Create Table To start working with the database, we must define a table schema on which we will write our further queries and perform operations. Here is the schema we will follow:
+For the same schema, we will be writing related SQL Query next and these queries will be saved in book_schema.</description>
+    </item>
+    
+  </channel>
+</rss>

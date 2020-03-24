@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Progressive Web App คืออะไร"><meta property="og:title" content="Progressive Web App คืออะไร" />
+<meta property="og:description" content="Progressive Web App คืออะไร และ มาลองกันแบบง่ายๆ วันเดียวเสร็จ ฮัลโหลๆ สวัสดีครับ ช่วงนี้หายไปนาน แอบไปศึกษา Front-end framework อยู่หลายตัว จนไปเจอกับของเล่นใหม่เรียกว่า Progressive Web App หรือเรียกสั้นๆว่า PWA นั่นเอง ซึ่งประจวบเหมาะกับทาง Google ผู้ผลักดันเทคโนโลยีนี้ก็ได้มา Roadshow แสดงความเทพที่กรุงเทพกันไปหยกๆ ก็เลยถือโอกาสใช้พลังความมั่วส่วนตัว ขอมาเขียนเรื่องนี้ ดีไม่ดี ผิดพลาดตรงไหน ติชมได้เน่อ เริ่มกันเลย …
+ บทความนี้เกิดจากเนื้อหาหลายๆส่วนจากทั้งในงาน Roadshow เอง รวมถึงการมั่วซั่วของผู้เขียนนะครับ ดู Reference ได้ท้ายบทความ
+ หัวข้อในวันนี้  อะไรคือ PWA ทำไมต้อง PWA เบื้องหลังการทำงานของ PWA เป็นอย่างไร มาลองทำ PWA เล่นๆกันดู  อะไรคือ เจ้า Progressive Web App ? Source: http://www.letsnurture.com/blog/progressive-web-app-an-application-in-a-webpage.html
+เจ้านี่คือเทคโนโลยีที่จะทำให้เว็บของเราเนี่ย มีความใกล้เคียงกับ App ในมือถือมากขึ้น ทั้งความลื่นไหลในการใช้งาน, เข้าเมนูต่างๆอย่างง่ายดาย, การใช้งานเมื่ออยู่ใน Mode Offline, การทำ Push Notification ฯลฯ ในขณะเดียวกันก็เก็บข้อดีของเว็บไว้อาทิเช่น ความสดใหม่ของข้อมูล(อัพเดทกันได้ทันที ไม่ต้องไปอัพ App Store), ความเข้าถึงง่ายไม่ต้อง Install ให้ยุ่งยาก" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/create-progressive-web-app/" />
+
+<title>Progressive Web App คืออะไร | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/create-progressive-web-app/"  class="active">
+      Progressive Web App คืออะไร
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/10-knowledge-javascript/" >
+      10 เรื่องน่ารู้ตอบข้อสงสัย JavaScript
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/circle-progress/" >
+      Circle Progress
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/javascript-use-map/" >
+      Use .map(), .reduce(), and .filter()
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/api-for-javascript/" >
+      รวม API สำหรับ Javascript ที่น่าสนใจในปี 2020
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Progressive Web App คืออะไร</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="progressive-web-app-ค-ออะไร-และ-มาลองก-นแบบง-ายๆ-ว-นเด-ยวเสร-จ">Progressive Web App คืออะไร และ มาลองกันแบบง่ายๆ วันเดียวเสร็จ</h1>
+
+<p><img src="https://miro.medium.com/max/1440/1*fgLCG_rSLORMz3aVuJEe5w.jpeg" alt="enter image description here" /></p>
+
+<p>ฮัลโหลๆ สวัสดีครับ ช่วงนี้หายไปนาน แอบไปศึกษา Front-end framework อยู่หลายตัว จนไปเจอกับของเล่นใหม่เรียกว่า Progressive Web App หรือเรียกสั้นๆว่า PWA นั่นเอง ซึ่งประจวบเหมาะกับทาง Google ผู้ผลักดันเทคโนโลยีนี้ก็ได้มา Roadshow แสดงความเทพที่กรุงเทพกันไปหยกๆ ก็เลยถือโอกาสใช้พลังความมั่วส่วนตัว ขอมาเขียนเรื่องนี้ ดีไม่ดี ผิดพลาดตรงไหน ติชมได้เน่อ เริ่มกันเลย …</p>
+
+<blockquote>
+<p>บทความนี้เกิดจากเนื้อหาหลายๆส่วนจากทั้งในงาน Roadshow เอง รวมถึงการมั่วซั่วของผู้เขียนนะครับ ดู Reference ได้ท้ายบทความ</p>
+</blockquote>
+
+<h1 id="ห-วข-อในว-นน">หัวข้อในวันนี้</h1>
+
+<ol>
+<li>อะไรคือ PWA</li>
+<li>ทำไมต้อง PWA</li>
+<li>เบื้องหลังการทำงานของ PWA เป็นอย่างไร</li>
+<li>มาลองทำ PWA เล่นๆกันดู</li>
+</ol>
+
+<h2 id="อะไรค-อ-เจ-า-progressive-web-app">อะไรคือ เจ้า Progressive Web App ?</h2>
+
+<p><img src="https://miro.medium.com/max/30/1*NgXhx6T6gx6YrbCTD0oB3w.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/3440/1*NgXhx6T6gx6YrbCTD0oB3w.png" alt="" /></p>
+
+<p>Source:  <a href="http://www.letsnurture.com/blog/progressive-web-app-an-application-in-a-webpage.html">http://www.letsnurture.com/blog/progressive-web-app-an-application-in-a-webpage.html</a></p>
+
+<p>เจ้านี่คือเทคโนโลยีที่จะทำให้เว็บของเราเนี่ย มีความใกล้เคียงกับ App ในมือถือมากขึ้น ทั้งความลื่นไหลในการใช้งาน, เข้าเมนูต่างๆอย่างง่ายดาย, การใช้งานเมื่ออยู่ใน Mode Offline, การทำ Push Notification ฯลฯ ในขณะเดียวกันก็เก็บข้อดีของเว็บไว้อาทิเช่น ความสดใหม่ของข้อมูล(อัพเดทกันได้ทันที ไม่ต้องไปอัพ App Store), ความเข้าถึงง่ายไม่ต้อง Install ให้ยุ่งยาก</p>
+
+<p>แหม่ ดีอย่างงี้ จะให้อธิบายก็ไม่สู้ลองเล่นดูเอง ใครใช้ Android ขอให้หยิบมาถือขึ้นมาแล้วเข้าไปที่ aliexpress.com กันเลยครับ</p>
+
+<p>วิธีลงเจ้า PWA นี่ก็ง่ายๆ แค่อยู่ในหน้าเว็บแล้วกด Add To Home Screen….</p>
+
+<p><img src="https://miro.medium.com/max/250/1*vYfQT43mgPfSv_IOCo4GJg.jpeg" alt="" /></p>
+
+<p><strong>เรียบร้อย!</strong> ท่านได้ลง Progressive Web App ลงเครื่องของท่านแล้วครับ</p>
+
+<p>ทีนี้พอเราลองไปที่หน้า Homescreen ก็จะพบว่ามี Icon ของ Aliexpress สีแดงๆอยู่ ให้ท่านผู้อ่านลองกดเข้าไปปุ้ป ก็จะเห็นหน้า Splash Screen เก๋ๆ เป็นรูปโลโก้ App และ Background สีแดงฉาน เต็มจอ เก๋ๆ ตรงนี้เราก็จะเข้า App มาละครับ สังเกตว่าจะเป็น Feeling แบบ App ที่เราใช้กันเลย ไม่มี Address Bar ให้ยุ่งยาก รวมถึงสามารถกด Hamburger เมนูหรือไอ้เจ้าขีดสามขีดตรงซ้ายบน ให้โชว์เมนูออกมาได้อย่างสวยงาม</p>
+
+<p><img src="https://miro.medium.com/max/30/1*5faniMyOjNKR6EgLN_Hovw.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1000/1*5faniMyOjNKR6EgLN_Hovw.png" alt="" /></p>
+
+<p>Aliexpress.com</p>
+
+<p><strong>ถ้าคิดว่าหมดแค่นี้…</strong> ให้ทุกท่านลองปิดอินเตอร์เน็ตในมือถือดู แล้วเข้า App อีกทีครับผม… แต่น แต๊นนน สังเกตได้ว่าแอพยังทำงานได้ เมนูต่างๆยังอยู่ครบ เลยใช่ไหมครับ</p>
+
+<p>นี่แหล่ะครับ PWA ที่เราจะพูดถึงกันในวันนี้ ซึ่งเรียกได้ว่าเป็นความพยายามแก้ปัญหา Post-App Era จากฝั่งค่าย​ Google นั่นเอง</p>
+
+<h2 id="ทำไมต-อง-pwa-post-app-era-ก-บความพยายามของ-google">ทำไมต้อง PWA ? (Post-App Era กับความพยายามของ Google)</h2>
+
+<p>Section นี้ขอสรุปในแบบของผมจาก Keynote ในงานวัน Progressive Web App Roadshow ที่กรุงเทพนะครับ</p>
+
+<p><img src="https://miro.medium.com/max/607/1*rBrC06UDVTMwuVbdy78KbA.png" alt="" /></p>
+
+<p>Source: Progressive Web App Roadshow 2016</p>
+
+<p>เรื่องมันมีอยู่ว่า จากการวิจัยของ  <em>comScore Mobile Metrix</em> พบว่าในปัจจุบัน ค่าเฉลี่ยของการโหลดแอพใหม่ลงมือถือต่อเดือนมันอยู่ที่ 0 แล้วจริงๆ ลองคิดง่ายๆครับว่าในมือถือที่เราใช้กันอยู่ เดือนๆนึงโหลดอะไรมาเพิ่มบ้าง รวมถึงใช้กันจริงๆ ทุกวันเนี่ยกี่แอพกัน (ในงานวิจัยบอกว่า 80% ของเวลาที่ใช้มือถือ ใช้อยู่แค่ 3 แอพหลักๆ เท่านั้นเอง)</p>
+
+<p>ในขณะที่มาดูข้อมูลการใช้งานเว็บไซต์ พบว่าผู้ใช้มือถือในหนึ่งเดือน เข้าเว็บไซต์ต่างๆกว่า 100 เว็บไซต์ Google เลยบอกว่าปล่อยไว้อย่างงี้ไม่ได้ละ จึงปิ๊งไอเดีย จะมายกเครื่องเว็บไซต์ของเรากัน ภายใต้แนวคิด…</p>
+
+<p><img src="https://miro.medium.com/max/593/1*3YW_iMX9BZExFmN1s04kmg.png" alt="" /></p>
+
+<p>Source: Progressive Web App Roadshow 2016</p>
+
+<ol>
+<li>Reliable - ไม่ใช่กดเปิด App ขึ้นมาแล้วเจอ Downasaur (ชื่อเล่นของตัวไดโนเสาร์ ที่เรามักเจอใน Chrome เวลาเน็ตขัดข้อง) ต้องทำงานได้แม้ในโหมด Offline</li>
+<li>Fast - มีงานวิจัยออกมาว่า Users กว่า 53% ถอดใจที่จะเข้าเว็บ หากเว็บใช้เวลาโหลดเกิน 3 วินาที ดังนั้นต้องทำไงก็ได้ ให้กดปุ้ปติดปั้ป พร้อมใช้งาน</li>
+<li>Engaging-แบ่งออกเป็น 3 หัวข้อย่อยๆ ได้แก่<br />
+3.1) Homescreen เข้าถึงง่าย สามารถกด Icon App ได้จาก Home screen<br />
+3.2) Immersive นักพัฒนาสามารถควบคุม Experience ของ User กำหนด รูปแบบหน้าตาของ App ว่าจะมี Address Bar ไหม เอาแนวตั้งแนวนอนได้<br />
+3.3) Notification อันนี้หล่อ คือสามารถ Push Notification ให้ User ได้แบบ App เลยนั่นเอง</li>
+</ol>
+
+<h2 id="เบ-องหล-งการทำงานของ-pwa">เบื้องหลังการทำงานของ PWA</h2>
+
+<p>ในการทำให้เว็บของเราเป็น PWA นั้น ผมขอแบ่งพระเอกออกเป็น 2 คนหลักๆครับคือ ServiceWorker กับ Manifest.json</p>
+
+<ol>
+<li><strong>ServiceWorker</strong></li>
+</ol>
+
+<p><img src="https://miro.medium.com/max/770/1*9-3hRYImNd7E-BGEyPuXvA.png" alt="" /></p>
+
+<p>Source: Progressive Web App Roadshow 2016</p>
+
+<p>ServiceWorker หรือ SW เอาง่ายๆคือไฟล์ Cilent-side proxy ที่เราเขียนขึ้นมาด้วย JavaScript นี่แหล่ะครับ พอ Users เข้ามาเว็บเรา เราก็จะทำการ Install เจ้า SW นี่ลงไปในเครื่องของ User คนนั้นๆ</p>
+
+<p><strong>หน้าที่ของ SW</strong> ก็คือ กำหนดให้ Cache สิ่งต่างๆที่เราจำเป็นในเว็บของเราไว้ ซึ่งเราก็กำหนดได้ว่าจะให้ Cache ส่วนไหน ไม่ Cache ส่วนไหน</p>
+
+<p><img src="https://miro.medium.com/max/1249/1*zK795muTXWsQefMlUDWcTw.png" alt="" /></p>
+
+<p>Source:  <a href="https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/">https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/</a></p>
+
+<p>ง่ายๆ ให้ลองมองเป็น App ครับ เราอาจจะบอกให้ SW แคช Header, ปุ่มต่างๆ ของเราไว้ เพื่อให้ครั้งต่อไปที่เข้าเว็บไม่ต้องเสียเวลามานั่งโหลดเจ้า Element เหล่านั้นใหม่ แต่ในส่วนเนื้อหาเนี่ยให้ไม่ต้องแคช ให้ดึงออกมาใหม่ทุกครั้ง หรือจะบอกให้ใช้ Strategy ต่างๆเช่น Cache Then Network คือ เข้าเว็บมาให้ดึงเนื้อหาจาก Cache ที่เก็บไว้ก่อน พอ Network โหลดเสร็จค่อยเอาเนื้อหาใหม่มา Re render เข้าไปอีกที</p>
+
+<p>ซึ่งเจ้าตัวนี้ก็จะทำให้เว็บไซต์ของเราทำงานเร็วขึ้นปรู๊ดปร๊าด ผิดหูผิดตา รวมถึงสามารถทำงานในโหมด Offline ได้ด้วย เนื่องจากเรา Browser สามารถไปดึง Element บางส่วนที่เรากำหนดไว้จาก Cache มาใช้งานได้เลย (ลองเล่นตัวนี้ดูครับ  <a href="https://airhorner.com/">https://airhorner.com/</a>  ทำงานได้ Offline เต็มรูปแบบเลย)</p>
+
+<p><img src="https://miro.medium.com/max/818/1*zDoTrUR1cTOQT3chmQqMRg.png" alt="" /></p>
+
+<p>Source: Progressive Web App Roadshow 2016</p>
+
+<p><strong>ไม่หมดเพียงแค่นั้นครับ</strong> อีกหนึ่งหน้าที่ที่สำคัญมากๆ ของ SW คือการทำ Push Notification นั่นเอง เนื่องจากเจ้า SW เนี่ยแม้เราทำการปิด Browser ของเราไปแล้ว แต่ OS ก็สามารถทำการปลุก SW ออกมาทำงานได้ ซึ่งก็ทำให้เราสามารถเขียน Code เพื่อรับ Message ที่ส่งมาได้</p>
+
+<p><strong>2. Manifest.json</strong></p>
+
+<p><img src="https://miro.medium.com/max/1440/1*vaOPvP8lMkhnOdAcYQ181Q.jpeg" alt="" /></p>
+
+<p>Source:  <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/">https://addyosmani.com/blog/getting-started-with-progressive-web-apps/</a></p>
+
+<p>เจ้าตัวนี้เป็นไฟล์ JSON เล็กๆที่เราใส่เข้าไปใน head ของ html ครับ หน้าที่ของมันมีมากมายอาทิเช่น</p>
+
+<ul>
+<li>ทำให้เว็บของเรามี Icon สวยๆบน หน้า Home screen เมื่อ Users กด Add to homescreen เว็บของเรา</li>
+<li>สามารถเปิดเว็บแบบ Full screen mode ไม่มี Address bar เมื่อ Users กดเข้ามาจากหน้า Homescreen</li>
+<li>ควบคุมมุมมองแนวตั้ง แนวนอน ของ Users ได้</li>
+<li>ระบุ สี และ Icon ที่จะใช้มาประกอบเป็น Splash screen (หน้าจอ ตอนกดแอพขึ้นมา ลองดูรูปข้างบนครับ อันขวาสุด)</li>
+</ul>
+
+<p><strong>สำคัญอีกเรื่องเกือบลืมคือเว็บไซต์ของคุณจะใช้งานพวก Service Worker ได้จำเป็นต้องมี HTTPS นะครับ เรียกได้ว่าจะให้พลังที่ยิ่งใหญ่ไปเล่นกับเครื่อง Users ได้ขนาดนั้น เราก็ต้องรับผิดชอบชีวิต ทรัพย์สินเขาให้เรียบร้อย ไม่ใช่โดนดักตีหัวระหว่างทางนะครับ (เดี๋ยวนี้มี Cloudflare, Firebase ให้ลองเล่นกันฟรีๆแล้วนะครับ ซึ่งทำให้เราไปลองทำ HTTPS กันแบบฟรีๆแล้วนะครับ)</strong></p>
+
+<h2 id="มาลองทำ-pwa-เล-นๆก-นด">มาลองทำ PWA เล่นๆกันดู</h2>
+
+<p>เอาหล่ะ ถึงเวลามาลองทำเล่นกันดูแล้ว ในส่วนนี้ผมจะขอเรียบเรียงมาจาก<a href="https://codelabs.developers.google.com/codelabs/your-first-pwapp/index.html">CodeLab</a>  ในวันงาน PWA RoadShow ของทาง Google นะครับ ละก็จะมีเสริมเติมแต่งไปบ้างประปรายตามทาง</p>
+
+<ol>
+<li><strong>ดาวน์โหลด Source Code, ติดตั้ง Web Server</strong></li>
+</ol>
+
+<p>ตอนนี้ให้ทุกคนไปโหลด Source Code เบื่องต้นมากันก่อนครับที่  <a href="https://github.com/googlecodelabs/your-first-pwapp/archive/master.zip">https://github.com/googlecodelabs/your-first-pwapp/archive/master.zip</a>  ได้เลย เมื่อ Unzip ออกมาจะได้ your-first-pwapp-master ออกมา สำหรับวันนี้เราจะเริ่มกันที่โฟลเดอร์ work นะครับ เป็นไฟล์ตั้งต้นของเรา</p>
+
+<p><img src="https://miro.medium.com/max/30/1*WZe1eNXoGuONwtmkoCwwPA.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/582/1*WZe1eNXoGuONwtmkoCwwPA.png" alt="" /></p>
+
+<p>จากนั้นให้ทุกคนไปลง Web Server ให้เรียบร้อยก่อน Google ก็ให้ Tool ง่ายๆมา ลองเล่นได้ทาง  <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en">https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en</a></p>
+
+<p><img src="https://miro.medium.com/max/1226/1*1VA6orskiuy7ebnYgpR4QA.png" alt="" /></p>
+
+<p>Source: Progressive Web App Roadshow 2016</p>
+
+<p>พอรันขึ้นมาก็กด Choose Folder เลือกโฟลเดอร์ work ของเรา แล้วกด Web Server URL(s) เข้าไปดูกันได้เลยครับ</p>
+
+<p><strong>2. มาดูโครงสร้าง App ของเรากันหน่อย</strong></p>
+
+<p><img src="https://miro.medium.com/max/189/1*XH8wUS_k-hw9tGZTVBsFsA.png" alt="" /></p>
+
+<p>สำหรับ App ตัวนี้ก็เป็น Single Page App ที่แสดงข้อมูลสภาพอากาศจาก API ของ yahoo แบบง่ายๆครับ โดยมีไฟล์ JavaScript หลักคือ app.js นั่นเอง (JavaScript Plainๆจริง document.querySelector ไม่เจอกันตั้งนาน 555) ซึ่งก็จะมีโครงสร้างหลักๆดังนี้</p>
+
+<p><strong>[Object] app</strong>  เป็น Object หลักที่เก็บข้อมูลสำคัญของ App นี้ เออเกือบลืม เขาใช้ Pattern JavaScript แบบนึงเรียกว่า IIFE (immediately-invoked function expression) นะครับ ซึ่งมันจะทำให้ตัวแปรหรือ Function ที่เราประกาศข้างในเนี่ยไม่ไปรบกวน Environment Context อื่นๆ (เห็นมีพี่ท่านนึงเขียน รายละเอียดไว้  <a href="https://www.algorithmtut.com/javascript-design-pattern-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%97%E0%B8%B3%E0%B8%87/">ที่นี่</a>  ครับ) ตรงนี้น่าศึกษาๆ</p>
+
+<p><strong>Listener สองตัว</strong> สำหรับปุ่ม Refresh กับ เพิ่มเมือง</p>
+
+<p><strong>[Function] updateForecaseCard</strong> ฟังก์ชันที่ทำหน้าที่เอาข้อมูลที่ได้จาก API มาแสดงผลบน Card ครับ</p>
+
+<p><strong>[Function] getForecast</strong> ฟังก์ชันที่ทำการดึงข้อมูลจาก API Endpoint ออกมา</p>
+
+<p><strong>[Function] updateForecast</strong> ฟังก์ชันที่ทำการ Loop เช็คการ์ดต่างๆแล้วสั่ง getForecast เพื่ออัพเดทข้อมูลสภาพอากาศ</p>
+
+<p><strong>[Object] initialWeatherForecast</strong> ข้อมูลเบื้องต้นที่เราจะใส่ไปหลอกๆ เป็นตัวตั้งต้นให้โปรแกรมแสดงผลออกมา</p>
+
+<p>ทีนี้ขอให้ทุกท่านเริ่มโดยการ uncomment บรรทัดนี้ ในไฟล์ index.html</p>
+
+<pre><code class="language-js">&lt;!--&lt;script src=&quot;scripts/app.js&quot; async&gt;&lt;/script&gt;--&gt;
+</code></pre>
+
+<p>เพื่อรับพลังจาก app.js เข้ามา และ uncomment บรรทัดข้างล่างนี้ใน app.js ครับ</p>
+
+<pre><code class="language-js">// app.updateForecastCard(initialWeatherForecast);
+</code></pre>
+
+<p>ซึ่งจะเป็นการสั่งให้นำข้อมูลหลอกๆ ของเราเนี่ยไปอัพเดทบนการ์ดสภาพอากาศของเราทำให้การโหลดแอพขึ้นมาครั้งแรก Cilent ไม่ต้องเสียเวลาไปดึงข้อมูล API เอง</p>
+
+<p><em>ตรงนี้ใน Production อาจจะทำการ Inject จาก Server ซึ่ง Base ตามตำแหน่งของ User ได้ครับ</em></p>
+
+<p>ตอนนี้แอพเราควรจะมีหน้าตาเป็นแบบนี้แล้วครับ (ตรงลูกศรสีแดง เผื่อบางท่านยังไม่ทราบว่าไอ้ Chrome Dev Tool สามารถจำลองรูปแบบหน้าจอเป็นมือถือรุ่นดังๆ ต่างๆได้นะครับ ลองเล่นดูสนุกดีครับ)</p>
+
+<p><img src="https://miro.medium.com/max/676/1*YWpKIfVQvHhXDBZ9yfrfqw.png" alt="" /></p>
+
+<p><strong>3. เก็บข้อมูลเมืองที่ Users ต้องการดูสภาพอากาศกัน</strong></p>
+
+<p>ทีนี้ พอ Users ลองเล่น App ของเราเพิ่มเมืองใหม่เข้ามา เราจะทำอย่างไรเพื่อ Save ข้อมูลของ Users คนนั้นไว้ ให้ครั้งต่อไป เมื่อเข้าเว็บมาก็แสดงเมืองที่เขาเลือกออกมาเลย</p>
+
+<p><img src="https://miro.medium.com/max/528/1*LPUqCP_VuMk5AW_rEeFCqw.png" alt="" /></p>
+
+<p>ให้เพื่อนๆ ลองเปิด Chrome Dev Tools ขึ้นมาแล้วเลือกไปที่ Tab Application ครับ จะพบว่ามีตัวเลือก Storage ให้เราเล่นมากมาย ง่ายสุดก็จะเป็น  <strong>Local Storage</strong> ซึ่งเป็นวิธีการเก็บข้อมูลคล้ายๆ Cookies แต่เก็บได้มากกว่า พร้อมทั้งมี Browser ที่รองรับมากมายตั้งแต่ IE ยัน Opera</p>
+
+<p>แต่ทว่าปัญหาของ  <strong>Local Storage</strong>  คือ</p>
+
+<ul>
+<li>เก็บข้อมูลได้แค่แบบ String จะใช้ JSON ก็ทำการ parse, stringify เอา</li>
+<li>ทำงานแบบ Synchronous หรือ Blocking ทีละอันนั่นเอง ซึ่งอาจเป็นปัญหา Performance ได้</li>
+<li>ไม่ทำงานแบบ Transactional กล่าวคือ Write ไปสองอันพร้อมกัน อาจจะ Overwrite กันได้ จนเดาไม่ออกเลยว่าข้อมูลมันจะออกอันไหนออกมา</li>
+</ul>
+
+<p>ยุ่งไปถึงนักพัฒนาต้องทำ Storage ยุคใหม่ๆ เช่น<strong>IndexedDB,WebSQL</strong> ที่ทำงานได้แบบ Asynchronous, Transactional, รวมถึงสามารถเก้บ Data แบบต่างๆเช่น JSON ได้นั่นเอง</p>
+
+<p><img src="https://miro.medium.com/max/907/1*lO6MJIZn4jJvd8-bvx85iw.png" alt="" /></p>
+
+<p>เรื่องเหมือนจะจบดี แต่ปัญหาคือ Browser รุ่นเก่าๆ บางประเภทยังไม่ Support เจ้านี่เต็มรูปแบบ Google ก็เลยเสนอทางแก้มาคือให้เราใช้ localForage อันเป็น Library ที่ทำให้เราใช้งานเจ้า IndexedDB,WebSQL นี้ง่ายขึ้น รวมไปถึง Switch ไปใช้ localStorage ได้หาก Browser ของ User คนนั้นๆ ไม่ Support IndexedDB หรือ WebSQL</p>
+
+<p>วิธีการใช้ localForage แบบบ้านๆ ง่ายๆ เพื่อความรวดเร็ว ก็ไปโหลด localforage.min.js มาเก็บไว้เลยละกันครับ</p>
+
+<p>จากนั้นก็วาง เจ้านี่ในไฟล์ index.html เหนือบรรทัด script tag -&gt; app.js เราได้เลยครับ</p>
+
+<pre><code class="language-js">&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/localforage.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>กลับมาที่ app.js ขั้นตอนของเราจะเป็นงี้คือ ทุกครั้งที่ Users เพิ่มเมืองเข้ามา เราจะ Push Object เมืองของเราเนี่ยเข้าไปที่ Array ที่ชื่อว่า app.selectedCities จากนั้นเราจะเรียก Function ใหม่ที่เราสร้างขึ้น ขอเรียกมันว่า app.saveForage() ซึ่งจะเป็นฟังก์ชันจับเจ้า Array app.selectedCities เนี่ยยัดเข้าไปใน localForage ของเราอีกที</p>
+
+<p>มาสร้าง Function app.saveForage() กันก่อน ให้ทุกท่านหาบรรทัดที่ 199 จะเจออันนี้ครับ</p>
+
+<pre><code class="language-js">// TODO add saveSelectedCities function here
+</code></pre>
+
+<p>แล้วทำการใส่ Code ส่วนนี้เข้าไปข้างล่าง</p>
+
+<pre><code class="language-js">app.saveForage=function(){  
+    localforage.setItem('selectedCities',app.selectedCities)  
+    .then(function(value){  
+      console.log('Save data: '+value);  
+    })  
+    .catch(function(error){  
+      console.log('Saving data failed: '+error);  
+    })  
+  }
+</code></pre>
+
+<p>จากนั้นให้ไปที่บรรทัดที่ 53 เราจะเจอ</p>
+
+<pre><code class="language-js">// TODO init the app.selectedCities array here
+// TODO push the selected city to the array and save here
+</code></pre>
+
+<p>ตรงนี้เราจะเช็ค app.selectedCities ก่อนว่ามีไหม ถ้าไม่มีก็สร้างเป็น Array มาซะ</p>
+
+<p>จากนั้นทำการ Push Object เมืองเข้าไปใน Array แล้วเซฟลง IndexedDB ซะ โดยการใส่ Code ชุดนี้ลงไปครับ</p>
+
+<pre><code class="language-js">// TODO init the app.selectedCities array here  
+    if (!app.selectedCities) {  
+      app.selectedCities = [];  
+    }
+</code></pre>
+
+<p>และ</p>
+
+<pre><code class="language-js">// TODO push the selected city to the array and save here  
+    app.selectedCities.push({key: key, label: label});  
+    app.saveForage();
+</code></pre>
+
+<p>ต่อมาเราก็ต้องมีฟังก์ชันที่ Check ว่า Users คนนี้เคยเข้าเล่น App เราและเพิ่มเมืองเล่นไว้หรือยัง</p>
+
+<p>เลื่อนไปข้างล่าง ตรงที่เราทำการ Inject Data ไว้ในขั้นตอนที่สองครับ แถวๆนี้</p>
+
+<pre><code class="language-js">// TODO uncomment line below to test app with fake data  
+ app.updateForecastCard(initialWeatherForecast);// TODO add startup code here
+</code></pre>
+
+<p>ผมจะขออนุญาตเปลี่ยนเป็นฟังก์ชัน app.getForage เลยละกันครับตามนี้ (ลบเจ้า app.updateForecastCard(initialWeatherForecast) ออกไปเลย)</p>
+
+<pre><code class="language-js">app.getForage=function(){  
+    localforage.getItem('selectedCities')  
+    .then(function(value){  
+      console.log(value);  
+      if(value){  
+        app.selectedCities=value;  
+        app.selectedCities.forEach(function(city){  
+          app.getForecast(city.key,city.label);  
+        })  
+      }else{  
+        app.selectedCities = [{key: initialWeatherForecast.key, label: initialWeatherForecast.label}];  
+        app.updateForecastCard(initialWeatherForecast);  
+        app.saveForage()  
+      }  
+    })  
+    .catch(function(error){  
+      console.log('Getting data failed: '+error);  
+    })  
+  }app.getForage();
+</code></pre>
+
+<p>เจ้านี้ทำหน้าที่ไปดึงข้อมูลใน localForage ออกมาถ้าเจอ Item ที่มี key ว่า selectedCities ก็เอาข้อมูลออกมา getForecast แสดงผลบนแอพ ถ้าไม่เจอก็ทำการใช้ข้อมูล Inject ไปก่อนซะ</p>
+
+<p><img src="https://miro.medium.com/max/639/1*m_wp2Ha_A_uhBeY7ka9J-w.png" alt="" /></p>
+
+<p>มาถึงตรง แอพเราก็น่าจะเก็บข้อมูลของ Users ได้แล้วครับ ลองปิด Browser แล้วเปิดใหม่ ข้อมูลก็ควรจะยังอยู่ครบนะครับ</p>
+
+<p><strong>4. ติดตั้ง Service Worker</strong></p>
+
+<p>ทีนี้มาถึงตาพระเอกคนแรกของเราละครับ เราจะทำการบอก app.js ของเราให้ทำการติดตั้ง Service Worker ลงบนเครื่องของ Users ให้เลื่อนลงไปล่างสุดจะเจอ</p>
+
+<p>// TODO add service worker code here</p>
+
+<p>ให้เราทำการใส่ Code ส่วนนี้ลงไปครับ</p>
+
+<pre><code class="language-js">if ('serviceWorker' in navigator) {  
+    navigator.serviceWorker  
+             .register('./service-worker.js')  
+             .then(function() { console.log('Service Worker Registered'); });  
+  }
+</code></pre>
+
+<p>เจ้านี่จะเป็นการบอกว่าถ้า Browser ของเรามี Support Service Worker ให้ทำการ Register service-worker.js ของเราซะ</p>
+
+<p>พอใส่เสร็จแล้วก็ให้เราทำการสร้างไฟล์ service-worker.js ขึ้นมาใหม่อันนึงใน Root Directory ที่เดียวกับ index.html ของเราครับ แล้วก็ใส่ code นี้เข้าไป</p>
+
+<pre><code class="language-js">var cacheName = 'weatherPWA-step-6-1';  
+var filesToCache = [  
+  '/',  
+  '/index.html',  
+  '/scripts/app.js',  
+  '/scripts/localforage.min.js',  
+  '/styles/inline.css',  
+  '/images/clear.png',  
+  '/images/cloudy-scattered-showers.png',  
+  '/images/cloudy.png',  
+  '/images/fog.png',  
+  '/images/ic_add_white_24px.svg',  
+  '/images/ic_refresh_white_24px.svg',  
+  '/images/partly-cloudy.png',  
+  '/images/rain.png',  
+  '/images/scattered-showers.png',  
+  '/images/sleet.png',  
+  '/images/snow.png',  
+  '/images/thunderstorm.png',  
+  '/images/wind.png'  
+];self.addEventListener('install', function(e) {  
+  console.log('[ServiceWorker] Install');  
+  e.waitUntil(  
+    caches.open(cacheName).then(function(cache) {  
+      console.log('[ServiceWorker] Caching app shell');  
+      return cache.addAll(filesToCache);  
+    })  
+  );  
+});
+</code></pre>
+
+<p>ตรงนี้คือเราจะทำการ Install SW ลงไปเครื่องของ Users ครับ จากนั้นทำการเซฟไฟล์ Static ต่างๆที่เรากำหนดไว้ใน Array filesToCache เก็บลงไว้ใน Cache ของเครื่อง User</p>
+
+<p>เราจะทำการเปิด Cache ด้วย caches.open ซึ่งในส่วนของ cacheName จะต้องกำหนดไว้เพื่อให้เราสามารถอัพเดทเวอร์ชั่นของของไฟล์ต่างๆได้ เดี๋ยวจะไปดูต่อกันครับว่าทำงานอย่างไร</p>
+
+<p>จากนั้นจะทำการ Add ไฟล์ทั้งหมดลงใน Cache ด้วย cache.addAll นั่นเอง</p>
+
+<p><em>e.waitUntil เป็นตัวที่สั่งให้ Browser อย่าพึ่ง Terminate Service Worker ก่อนที่มันจะทำงานเสร็จ อ่านเพิ่มเติมเกี่ยวกับ Service Worker ได้</em> <a href="https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/lifecycle"><em>ที่นี่</em></a> <em>ครับ</em></p>
+
+<p>หลังจากติดตั้งแล้ว เราจะทำบอกให้ Service Worker เช็ค Version ของ App เรากรณีที่มีการเปลี่ยนแปลงไฟล์ที่เรา Cache ไปนะครับ โดยเราใส่ Code นี้เพิ่มเข้าไปซึ่งจะทำงานทุกครั้งที่มีการเปิดใช้ App</p>
+
+<pre><code class="language-js">self.addEventListener('activate', function(e) {  
+   console.log('[ServiceWorker] Activate');  
+   e.waitUntil(  
+     caches.keys().then(function(keyList) {  
+       return Promise.all(keyList.map(function(key) {  
+         if (key !== cacheName) {  
+           console.log('[ServiceWorker] Removing old cache', key);  
+           return caches.delete(key);  
+         }  
+       }));  
+     })  
+   );  
+   return self.clients.claim();  
+ });
+</code></pre>
+
+<p>หลักการคือจะ Iterate key ของ cache แต่ละตัว ถ้ามันไม่ตรงกับ cacheName ที่เราตั้งไว้บนหัวไฟล์ก็จะทำการลบ cache เก่านั้นทิ้งไปครับผม ฉะนั้นเวลาเราอัพเดทเวอร์ชัน App ของเรา ก็อย่าลืมไปเปลี่ยน cacheName ด้วยนะครับ</p>
+
+<p><img src="https://miro.medium.com/max/30/1*m23fnqb3uj7guS3ONzQuUA.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/546/1*m23fnqb3uj7guS3ONzQuUA.png" alt="" /></p>
+
+<p>มาถึงตรงนี้ ตรวจงานกันหน่อย น่าจะเจอหน้าตา Cache Storage เป็นแบบนี้แล้วนะครับ</p>
+
+<p>ต่อจากนี้เราจะทำการบอก Service Worker ว่า ในการ fetch data เพื่อดึงข้อมูลเนี่ย ถ้า fetch ไปที่ url ที่มีการ cache ไว้แล้ว ให้ดึงข้อมูลจาก cache ได้เลย ซึ่งจะทำให้เราไม่ต้องมาโหลดเจ้าตัว app shell นี้ใหม่กันทุกรอบครับ ใส่ code ด้านล่างต่อได้เลย</p>
+
+<pre><code class="language-js">self.addEventListener('fetch', function(e) {  
+  console.log('[ServiceWorker] Fetch', e.request.url);  
+  e.respondWith(  
+    caches.match(e.request).then(function(response) {  
+      return response || fetch(e.request);  
+    })  
+  );  
+});
+</code></pre>
+
+<p>ทีนี้ใน Chrome Dev Tool ลองกดเป็น Offline mode แล้ว refresh ดูได้เลยครับ :)</p>
+
+<p><em>หมายเหตุ เวลาเราแก้ service-worker.js เพื่อให้ Browser ของเราอัพเดทเป็น SW Worker ใหม่ ลบ Cache ลบ IndexedDB ให้หมด ให้กดเข้าไปที่ Clear storage ใน Tab Application ของ Chrome Dev Tool ด้วยนะครับ เดี๋ยวจะงงกันหมด</em></p>
+
+<p><strong>5.แคชข้อมูลสภาพอากาศ</strong></p>
+
+<p>ทีนี้เพื่อให้แอพของเราสามารถทำงานในโหมด Offline ได้เต็มรูปแบบ รวมถึงทำตัวให้เหมือน App มือถือที่เราใช้กัน ที่เปิดขึ้นมาแล้ว โชว์ Data เก่าๆจาก Cache ก่อนระหว่างรอโหลด Data ใหม่ขึ้นมา</p>
+
+<p>มาลุยกันเลยครับ ที่ service-worker.js เหมือนเดิม สร้างตัวแปรใหม่ขึ้นมา</p>
+
+<pre><code class="language-js">var dataCacheName = 'weatherData-v1';
+</code></pre>
+
+<p>แล้วให้ทำการแก้ไขตัว Listener ‘activate’ ของเรา ตรง if ให้กลายเป็นอย่างนี้แทนครับ เพื่อไม่ให้มันไปลบ Cache นี้ทิ้งไปซะได้</p>
+
+<pre><code class="language-js">if (key !== cacheName &amp;&amp; key !== dataCacheName) {
+</code></pre>
+
+<p>จากนั้นก็ Update Listener ‘fetch’ ของเราใหม่เป็น</p>
+
+<pre><code class="language-js">self.addEventListener('fetch', function(e) {  
+  console.log('[Service Worker] Fetch', e.request.url);  
+  var dataUrl = 'https://query.yahooapis.com/v1/public/yql';  
+  if (e.request.url.indexOf(dataUrl) &gt; -1) {  
+    e.respondWith(  
+      caches.open(dataCacheName).then(function(cache) {  
+        return fetch(e.request).then(function(response){  
+          cache.put(e.request.url, response.clone());  
+          return response;  
+        });  
+      })  
+    );  
+  } else {  
+    e.respondWith(  
+      caches.match(e.request).then(function(response) {  
+        return response || fetch(e.request);  
+      })  
+    );  
+  }  
+});
+</code></pre>
+
+<p>ตรงนี้ใน CodeLab จะมีอธิบายไว้ดีครับ คือ ถ้าไอ้ url ที่ไป fetch มาเนี่ยดันไปมีส่วนที่ตรงกับ query.yahoo บลาๆนั่น ให้ทำการดึงข้อมูลจาก Network มา แล้วมาเก็บไว้ที่ Cache ก่อน จากนั้น Return ข้อมูลที่ได้มากลับไป</p>
+
+<p>ส่วนถ้าไม่ตรงกับ query.yahoo เนี่ย ก็คือไอ้พวก App Shell ก็ไปดึงจาก Cache มาเลยนะดู้ด ถ้าไม่เจอค่อยไป fetch โหลดมา</p>
+
+<p>เดี๋ยวๆ ยังไม่จบ ขอให้กลับไปที่ app.js ก่อนครับ บรรทัดที่ 170 เราจะเจอ</p>
+
+<p>ให้ทำการใส่ Code นี้เข้าไป</p>
+
+<pre><code class="language-js">if ('caches' in window) {  
+      caches.match(url).then(function(response) {  
+        if (response) {  
+          response.json().then(function updateFromCache(json) {  
+            var results = json.query.results;  
+            results.key = key;  
+            results.label = label;  
+            results.created = json.query.created;  
+            app.updateForecastCard(results);  
+          });  
+        }  
+      });  
+    }
+</code></pre>
+
+<p>ตรงนี้มีความเท่คือ ถ้า SW เรามีการ cache เจ้าข้อมูลสภาพอากาศไว้แล้วเนี่ย ให้ดึงมาแสดงผลก่อนเลย ระหว่างที่รออัพเดทจากการ fetch network จริงเข้ามาครับ</p>
+
+<p><em>ตรงนี้มีการ Handle Extreme case ไว้จุดนึงคือ เราไม่รู้ว่าข้อมูลอันไหนมันสด ใหม่กว่ากัน (แต่ปกติ Network มามันก็ต้องใหม่กว่าแหล่ะ) อันนี้เป็น Case Study ไว้ ใน App.js เขามีการเขียนป้องกันให้เราตามนี้ไว้ครับ (ไม่ต้องใส่เพิ่มใดๆ แล้วครับ)</em></p>
+
+<pre><code class="language-js">var cardLastUpdatedElem = card.querySelector('.card-last-updated');  
+    var cardLastUpdated = cardLastUpdatedElem.textContent;  
+    if (cardLastUpdated) {  
+      cardLastUpdated = new Date(cardLastUpdated);  
+      _// Bail if the card has more recent data then the data_  
+      if (dataLastUpdated.getTime() &lt; cardLastUpdated.getTime()) {  
+        return;  
+      }  
+    }
+</code></pre>
+
+<p>ตรงนี้เราก็จะได้ PWA ที่สามารถทำงานรวดเร็วและใช้งานได้แม้ Offline อยู่แล้วหล่ะครับ อีกนิดเดียวจบแล้ว อึดใจเดียวครับ</p>
+
+<p><strong>5. แต่งหน้าทาปาก App ด้วย Manifest.json</strong></p>
+
+<p>พระเอกคนที่สองของเราที่จะทำหน้าที่บ่งบอกว่า App ของเราหน้าตาเป็นอย่างไรเมื่อ Users ทำการ Add to homescreen เราแก้ได้หมดเลยว่าจะเอา Logo แบบไหน full-screen โหมดไม่มี Address Bar หรือเปล่า</p>
+
+<p>ลองกันไม่ยากครับ สร้างไฟล์ manifest.json ใน Root Directory ของเราแล้วแปะไปตามนี้ได้เลย</p>
+
+<pre><code class="language-js">{  
+  &quot;name&quot;: &quot;Weather&quot;,  
+  &quot;short_name&quot;: &quot;Weather&quot;,  
+  &quot;icons&quot;: [{  
+    &quot;src&quot;: &quot;images/icons/icon-128x128.png&quot;,  
+      &quot;sizes&quot;: &quot;128x128&quot;,  
+      &quot;type&quot;: &quot;image/png&quot;  
+    }, {  
+      &quot;src&quot;: &quot;images/icons/icon-144x144.png&quot;,  
+      &quot;sizes&quot;: &quot;144x144&quot;,  
+      &quot;type&quot;: &quot;image/png&quot;  
+    }, {  
+      &quot;src&quot;: &quot;images/icons/icon-152x152.png&quot;,  
+      &quot;sizes&quot;: &quot;152x152&quot;,  
+      &quot;type&quot;: &quot;image/png&quot;  
+    }, {  
+      &quot;src&quot;: &quot;images/icons/icon-192x192.png&quot;,  
+      &quot;sizes&quot;: &quot;192x192&quot;,  
+      &quot;type&quot;: &quot;image/png&quot;  
+    }, {  
+      &quot;src&quot;: &quot;images/icons/icon-256x256.png&quot;,  
+      &quot;sizes&quot;: &quot;256x256&quot;,  
+      &quot;type&quot;: &quot;image/png&quot;  
+    }],  
+  &quot;start_url&quot;: &quot;/index.html&quot;,  
+  &quot;display&quot;: &quot;standalone&quot;,  
+  &quot;background_color&quot;: &quot;#3E4EB8&quot;,  
+  &quot;theme_color&quot;: &quot;#2F3BA2&quot;  
+}
+</code></pre>
+
+<p>จากนั้นก็ให้ไปที่ไฟล์ html ใน Section header ก็ใส่ตามนี้เข้าไปครับ</p>
+
+<pre><code class="language-json">&lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot;&gt;
+</code></pre>
+
+<p>ยังไม่หมด Codelab ของ Google ใจดีให้ Meta Tag สำหรับ iOS และ Window มาด้วยครับ ตามนี้</p>
+
+<pre><code class="language-js">&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;  
+&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;  
+&lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;Weather PWA&quot;&gt;  
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;images/icons/icon-152x152.png&quot;&gt;&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;images/icons/icon-144x144.png&quot;&gt;  
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#2F3BA2&quot;&gt;
+</code></pre>
+
+<p>เสร็จแล้วไปลอง Test กันใน Chrome Dev Tools ได้เลยหน้าตาแบบนี้</p>
+
+<p><img src="https://miro.medium.com/max/30/1*Gb1BZi6ceDaUiilZMNuzsw.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/955/1*Gb1BZi6ceDaUiilZMNuzsw.png" alt="" /></p>
+
+<p>ฮู่ววว … จบแล้ววววว</p>
+
+<h1 id="สร-ปก-นหน-อย"><strong>สรุปกันหน่อย</strong></h1>
+
+<p>เป็นอย่างไรบ้างครับกับ PWA เอาจริงๆ ก็ถ้าเราทำเว็บ SPA ใช้พวก Angular, React, VueJS อยู่แล้ว เพิ่มอีกนิดหน่อยสบายๆเลย ไม่แน่ 1–2 ปีถัดไป มันอาจเป็น Technology ที่ Front-end ทุกคนต้องติดตัวไปกันหมด เหมือนสมัยก่อนที่เป็นกับ Responsive Design ก็ได้ครับ</p>
+
+<p>เรื่องนึงที่สำคัญคือ Apple ยังไม่เอาด้วย ก็แน่หล่ะ รายได้ของ Apple มาจาก App Store ตั้งเยอะ จะให้มา Bypass ไปลง App กันตามหน้าเว็บเองก็กระไรอยู่ ก็ได้แต่ภาวนาครับ เอา Service Worker มาใส่ไว้หน่อยก็ยังดี</p>
+
+<p>ยังมีส่วนอื่นๆที่น่าสนใจเกี่ยวกับ PWA อีกครับ ไม่ว่าจะเป็น Push Notification ที่ใครสนใจ Google ก็มีทำ CodeLab ไว้แล้ว กดไปลุยได้เลย ที่  <a href="https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/">https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/</a></p>
+
+<p>อีกเรื่องที่น่าศึกษาไม่แพ้กันคือ Caching Strategy ต่างๆ ว่าส่วนไหนของ App ดึง Cache ส่วนไหน ดึง Network ดู Keynote วันงานได้ตรงนี้ครับ  <a href="https://docs.google.com/presentation/d/1TJSaBfxiwm2pIsyQpd9PSbCuwqeKyqbKx4YGQFZRTfU/edit#slide=id.p103">https://docs.google.com/presentation/d/1TJSaBfxiwm2pIsyQpd9PSbCuwqeKyqbKx4YGQFZRTfU/edit#slide=id.p103</a></p>
+
+<p>วันนี้ก็ขอขอบคุณทุกท่านมากครับ ที่สละเวลามาอ่าน รู้สึกว่าได้ทบทวนตัวเองดี เวลาต้องเขียนบทความออกมา อาจจะมีข้อผิดพลาดบ้าง ก็ขอให้ติชมกันมาได้เลยครับ</p>
+
+<h1 id="แถมๆ">แถมๆ</h1>
+
+<p>Google มีทำ Library จัดการสร้าง Service Worker ให้เราแบบง่ายๆครับ ใช้ร่วมกับ Gulp ได้เลยเรียกว่า sw-precache  <a href="https://github.com/GoogleChrome/sw-precache">https://github.com/GoogleChrome/sw-precache</a>  ลองไปเล่นมาแล้วรู้สึกชีวิตดีขึ้นเยอะครับ</p>
+
+<pre><code class="language-js">var gulp = require('gulp');  
+var sw = require('sw-precache')gulp.task('service', function() {  
+  sw.write('service-worker.js', {  
+    staticFileGlobs: [  
+    'scripts/**.js',  
+    'styles/**.css',  
+    'images/**.*',  
+    '**.{html,ico}'  
+  ],  
+  stripPrefix:'.',  
+  runtimeCaching:[{  
+      urlPattern: /^https:\/\/publicdata-weather\.firebaseio\.com/,  
+      handler:'networkFirst',  
+      options:{  
+          cache:{  
+              name:'weatherData'  
+          }  
+      }  
+  }]  
+  }, function(){  
+      console.log('Done Dude');  
+  });  
+});
+</code></pre>
+
+<p>ใส่ประมาณนี้ไป อยากใช้ Caching Strategy ไหน ใส่ใน handler แล้วให้มัน Build ให้แปปเดียวเสร็จ ตัวนี้แนะนำเลยครับ</p>
+
+<h1 id="source-อ-างอ-ง">Source อ้างอิง</h1>
+
+<p>PWA RoadShow Full day Slide:  <a href="https://drive.google.com/drive/folders/0B55wxScz_BJtV1lGbTBOYlhLTVk">https://drive.google.com/drive/folders/0B55wxScz_BJtV1lGbTBOYlhLTVk</a></p>
+
+<p>Your First Progressive Web App (Code Lab):<br />
+<a href="https://codelabs.developers.google.com/codelabs/your-first-pwapp/index.html#0">https://codelabs.developers.google.com/codelabs/your-first-pwapp/index.html#0</a></p>
+
+<p>Client-Side Storage:  <a href="https://www.html5rocks.com/en/tutorials/offline/storage/">https://www.html5rocks.com/en/tutorials/offline/storage/</a></p>
+
+<p>Web Storage API:<br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API</a></p>
+
+<p>Udacity: Intro to Progressive Web Apps:<br />
+<a href="https://www.udacity.com/course/intro-to-progressive-web-apps--ud811">https://www.udacity.com/course/intro-to-progressive-web-apps&ndash;ud811</a></p>
+
+<p><a href="https://medium.com/@timeff/%E0%B9%82%E0%B8%AD%E0%B9%89%E0%B9%80%E0%B8%A2-progressive-web-app-%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%87%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%86-%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%AA%E0%B8%A3%E0%B9%87%E0%B8%88-b7a2be52ae5b">Source:</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cJavaScript%5ccreate-progressive-web-app.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#progressive-web-app-ค-ออะไร-และ-มาลองก-นแบบง-ายๆ-ว-นเด-ยวเสร-จ">Progressive Web App คืออะไร และ มาลองกันแบบง่ายๆ วันเดียวเสร็จ</a></li>
+<li><a href="#ห-วข-อในว-นน">หัวข้อในวันนี้</a>
+<ul>
+<li><a href="#อะไรค-อ-เจ-า-progressive-web-app">อะไรคือ เจ้า Progressive Web App ?</a></li>
+<li><a href="#ทำไมต-อง-pwa-post-app-era-ก-บความพยายามของ-google">ทำไมต้อง PWA ? (Post-App Era กับความพยายามของ Google)</a></li>
+<li><a href="#เบ-องหล-งการทำงานของ-pwa">เบื้องหลังการทำงานของ PWA</a></li>
+<li><a href="#มาลองทำ-pwa-เล-นๆก-นด">มาลองทำ PWA เล่นๆกันดู</a></li>
+</ul></li>
+<li><a href="#สร-ปก-นหน-อย"><strong>สรุปกันหน่อย</strong></a></li>
+<li><a href="#แถมๆ">แถมๆ</a></li>
+<li><a href="#source-อ-างอ-ง">Source อ้างอิง</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

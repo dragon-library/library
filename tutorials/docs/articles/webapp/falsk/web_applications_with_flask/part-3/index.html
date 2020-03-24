@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Part III"><meta property="og:title" content="Part III" />
+<meta property="og:description" content="Python Web Applications with Flask – Part III Articles in this series:
+ Part I: Application setup Part II: Setup user accounts, Templates, Static files Part III: Testing (unit and integration), Debugging, and Error handling ← CURRENT ARTICLE  Welcome back to the Flask-Tracking development series! For those of you who are just joining us, we are implementing a web analytics application that conforms to this napkin specification. For all those of you following along at home, you may check out today’s code with:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-3/" />
+
+<title>Part III | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/" >
+      Build a CRUD Web App. 1-3
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/" >
+      Building a Simple Web APP using Flask and MongoDB
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/" >
+      Web Applications With Flask [Series]
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-1/" >
+      Part I
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-2/" >
+      Part II
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-3/"  class="active">
+      Part III
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Part III</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-web-applications-with-flask-part-iii">Python Web Applications with Flask – Part III</h1>
+
+<p><img src="https://realpython.com/static/real-python-placeholder-1.909137364508.jpg" alt="enter image description here" /></p>
+
+<p><strong>Articles in this series:</strong></p>
+
+<ol>
+<li>Part I:  <a href="../part-1">Application setup</a></li>
+<li>Part II:  <a href="../part-2">Setup user accounts, Templates, Static files</a></li>
+<li><strong>Part III: Testing (unit and integration), Debugging, and Error handling ←  <em>CURRENT ARTICLE</em></strong></li>
+</ol>
+
+<p>Welcome back to the Flask-Tracking development series! For those of you who are just joining us, we are implementing a web analytics application that conforms to  <a href="https://realpython.com/python-web-applications-with-flask-part-i/#toc_1">this napkin specification</a>. For all those of you following along at home, you may check out today’s code with:</p>
+
+<p>$ git checkout v0.3</p>
+
+<p>Or you may download it from the  <a href="https://github.com/mjhea0/flask-tracking/releases">releases page on Github</a>. Those of you who are just joining us may wish to read  <a href="https://realpython.com/python-web-applications-with-flask-part-i/#toc_5">a note on the repository structure</a>  as well.</p>
+
+<p><a href="https://realpython.com/python-web-applications-with-flask-part-ii/">In the previous segment</a>  we added user accounts to our application. This week we’ll work on implementing a testing framework, talk a bit about why testing is important and then write some tests for our application. After, we’ll talk a bit about debugging errors in our application and logging.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h2 id="why-testing">Why Testing</h2>
+
+<p>Before we actually write any of our tests lets talk about  <a href="https://realpython.com/python-testing/">why testing is important</a>. If you remember the Zen of Python from  <a href="https://realpython.com/python-web-applications-with-flask-part-i/">Part 1</a>, you may have noticed that “Simple is better than complex” is right above “Complex is better than complicated”.  <em>Simple is the ideal, complex is often a reality.</em>  Web applications, in particular, have many moving parts, and can very quickly move from simple to complex.</p>
+
+<p>As the complexity of our application grows we want to ensure that the various moving parts we create continue to work together in a harmonious fashion. We don’t want to change the signature of a utility function that breaks a seemingly unrelated feature in production. Moreover, we want to ensure that our changes still preserve  <em>correct</em>  (not simply valid) functionality. A method that always returns the same  <code>datetime</code>  instance is valid and correct twice a day, but valid and  <em>incorrect</em>  all the rest of the time.</p>
+
+<p>Tests are a great debugging aid. Writing a test that produces the invalid behavior we are seeing helps us look at our code from a different perspective. In addition, once we have the test passing we have ensured that we will not re-introduce this bug again (at least in that particular way).</p>
+
+<p>Tests are also an excellent source of documentation. Since they have to deal with expected inputs and outputs reading a test suite will clarify what the code under test is expected to do. This will illuminate unclear segments of the documentation that we have written (or in simple cases, even substitute for it).</p>
+
+<p>Finally, tests can be a wonderful exploratory aid - sketching out how we  <em>want</em>  to interact with our code before we write it reveals simpler APIs, and helps us paper over the internal complexity of a domain.  <a href="http://en.wikipedia.org/wiki/Test-driven_development">“Test Driven Development”</a>  is the ultimate commitment to this process. In TDD we first write tests to cover our code’s functionality and only then do we write that code.</p>
+
+<p>Tests will make it obvious:</p>
+
+<ul>
+<li>When code isn’t working,</li>
+<li>What code is broken, and</li>
+<li>Why we wrote this code in the first place.</li>
+</ul>
+
+<p>Every time we go to add a feature to our application, fix a bug or change some code we should make sure our code is adequately covered by tests and that the tests all pass after we’re done.</p>
+
+<p><strong>Do:</strong></p>
+
+<ul>
+<li>Add tests to cover the basic functionality of your code.</li>
+<li>Add tests to cover as many corner/edge cases of your code that you can think of.</li>
+<li>Add tests to cover the corner/edge cases you didn’t think of after you go back and fix them.</li>
+<li>Remind your coding peers to adequately test their code.</li>
+<li>Bug people about code that doesn’t pass tests.</li>
+</ul>
+
+<p><strong>Do Not:</strong></p>
+
+<ul>
+<li>Commit code without tests.</li>
+<li>Commit code that doesn’t pass or breaks tests.</li>
+<li>Change your tests so your code passes without fixing the problem.</li>
+</ul>
+
+<p>Now that we’ve worked out why testing is so important lets start writing some tests for our application.</p>
+
+<h2 id="setting-up">Setting up</h2>
+
+<p>Each chunk of functionality needs to have tests. To do this in a neat and concise way each package will get a  <code>tests.py</code>  module in it. This way we know where the tests for each package are and that they’re contained in the package if we ever need to break it out of our application.</p>
+
+<p>We’ll use  <a href="http://pythonhosted.org/Flask-Testing/"><code>Flask-Testing</code></a>  extension because it has a bunch of useful testing features that we’d be setting up anyways. Go ahead and add  <code>Flask-Testing==0.4</code>  to the bottom of  <code>requirements.txt</code>  then run  <code>pip install -r requirements.txt</code>.</p>
+
+<p>Flask-Testing eliminates almost all of the boilerplate of setting up Flask for unit testing. The little bit that remains we will place in a new module  <code>test_base.py</code>:</p>
+
+<pre><code class="language-py"># flask_testing/test_base.py
+from flask.ext.testing import TestCase
+
+from . import app, db
+
+class BaseTestCase(TestCase):
+    &quot;&quot;&quot;A base test case for flask-tracking.&quot;&quot;&quot;
+
+    def create_app(self):
+        app.config.from_object('config.TestConfiguration')
+        return app
+
+    def setUp(self):
+        db.create_all()
+
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+</code></pre>
+
+<p>This test case doesn’t do anything spectacular - it just configures the application with our test configuration, creates all of our tables at the start of every test and deletes all of our tables at the end of every test. This way every test case starts out with a clean slate and we can spend more time writing tests and less time debugging our test cases. Since every test case will inherit from our new  <code>BaseTestCase()</code>  class we will avoid copying and pasting this configuration into every package we create for our application.</p>
+
+<p>One additional thing we have done is modularize our configurations. The original  <code>config.py</code>  module supported only one configuration - we can update that to allow for differences between environments. As a reminder, this is what  <code>config.py</code>  looked like in  <a href="https://realpython.com/python-web-applications-with-flask-part-ii/">Part 2</a>:</p>
+
+<pre><code class="language-py"># config.py
+from os.path import abspath, dirname, join
+
+_cwd = dirname(abspath(__file__))
+
+SECRET_KEY = 'flask-session-insecure-secret-key'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + join(_cwd, 'flask-tracking.db')
+SQLALCHEMY_ECHO = True
+</code></pre>
+
+<p>It looks almost the same now - we simply created a class that holds all of these configuration values:</p>
+
+<pre><code class="language-py">from os.path import abspath, dirname, join
+
+_cwd = dirname(abspath(__file__))
+
+class BaseConfiguration(object):
+    DEBUG = False
+    TESTING = False
+    SECRET_KEY = 'flask-session-insecure-secret-key'
+    HASH_ROUNDS = 100000
+    # ... etc. ...
+
+which we can then inherit from:
+
+class TestConfiguration(BaseConfiguration):
+    TESTING = True
+    WTF_CSRF_ENABLED = False
+
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'  # + join(_cwd, 'testing.db')
+
+    # Since we want our unit tests to run quickly
+    # we turn this down - the hashing is still done
+    # but the time-consuming part is left out.
+    HASH_ROUNDS = 1
+</code></pre>
+
+<p>This way settings that are common to all environments can be easily shared, and we can easily override what we need to in our environment specific configurations. (This pattern comes directly from  <a href="http://flask.pocoo.org/docs/config/#development-production">Flask’s excellent documentation</a>.)</p>
+
+<p>We are using an in-memory SQLite database for our tests to ensure that our tests execute as quickly as possible. We want to enjoy running our tests, and we can only do that if they execute in a reasonable amount of time. If we really need access to the result of the test run we can override the  <code>:memory:</code>  setting with the calculated path to  <code>tests.db</code>. (That’s the commented out  <code>+ join(_cwd, 'testing.db')</code>  in our  <code>TestConfiguration</code>).</p>
+
+<p>We have also added a  <code>HASH_ROUNDS</code>  key to our configuration to control how many times a user’s password should be hashed before it is stored. We can change  <code>flask_tracking.users.models.User</code>’s  <code>_hash_password</code>  method to use this key:</p>
+
+<p>from flask import current_app</p>
+
+<pre><code class="language-py"># ... snip ...
+
+def _hash_password(self, password):
+    # ... snip ...
+    rounds = current_app.config.get(&quot;HASH_ROUNDS&quot;, 100000)
+    buff = pbkdf2_hmac(&quot;sha512&quot;, pwd, salt, iterations=rounds)
+</code></pre>
+
+<p>This ensures that our unit tests will run quickly - otherwise, every time we need to create or log in a user we will have to wait for 100,000 rounds of sha512 to complete before we can continue our test.</p>
+
+<p>Finally, we will need to update our  <code>app.from_object</code>  call in  <code>flask_tracking/__init__.py</code>. Before, we were loading the config using  <code>app.from_object('config')</code>. Now that we have two configurations in our config module we will want to change that to  <code>app.from_object('config.BaseConfiguration')</code>.</p>
+
+<p>Now we are ready to test our application.</p>
+
+<h2 id="the-tests">The Tests</h2>
+
+<p>We’ll start with the  <code>users</code>  package.</p>
+
+<p>From  <a href="https://realpython.com/python-web-applications-with-flask-part-ii/">last time</a>  we know that the  <code>users</code>  package is responsible for:</p>
+
+<ul>
+<li>Registration,</li>
+<li>Logging in, and</li>
+<li>Logging out.</li>
+</ul>
+
+<p>So we need to write tests that cover users signing up, users logging in and then users logging out. Let’s start with a simple case - an existing user attempting to log in:</p>
+
+<pre><code class="language-py"># flask_tracking/users/tests.py
+from flask import url_for
+
+from flask_tracking.test_base import BaseTestCase
+from .models import User
+
+class UserViewsTests(BaseTestCase):
+    def test_users_can_login(self):
+        User.create(name='Joe', email='joe@joes.com', password='12345')
+
+        response = self.client.post(url_for('users.login'),
+                                    data={'email': 'joe@joes.com', 'password': '12345'})
+
+        self.assert_redirects(response, url_for('tracking.index'))
+</code></pre>
+
+<p>Since every test case starts out with a completely clean database we have to create an existing user first. We can then submit the same request that our user (Joe) would submit if he were trying to log in. We want to ensure that if Joe logs in successfully, he will be redirected back to the home page.</p>
+
+<p>We can run our tests with the  <a href="http://docs.python.org/2/library/unittest.html"><code>unittest</code></a>  test runner, which comes built-in with Python. Run the following command from the root of the project:</p>
+
+<pre><code class="language-py">$ python -m unittest discover
+</code></pre>
+
+<p>That results in the following output:</p>
+
+<pre><code>----------------------------------------------------------------------
+Ran 1 test in 0.045s
+
+OK
+</code></pre>
+
+<p>Hurray! We now have a passing test! Let’s also test that our integration with Flask-Login is working.  <code>current_user</code>  should be Joe, so we should be able to do the following:</p>
+
+<pre><code class="language-py">from flask.ext.login import current_user
+# And then inside of our test_users_can_login function:
+self.assertTrue(current_user.name == 'Joe')
+self.assertFalse(current_user.is_anonymous())
+</code></pre>
+
+<p>However, if we were to try this we would get the following error:</p>
+
+<pre><code>AttributeError: 'AnonymousUserMixin' object has no attribute 
+'name'
+</code></pre>
+
+<p><code>current_user</code>  needs to be accessed within the context of a request (it is a thread-local object, just like  <code>flask.request</code>). When  <code>self.client.post</code>  completes the request and every thread-local object is torn down. We need to preserve the request context so we can test our integration with Flask-Login. Fortunately,  <code>Flask</code>’s  <a href="http://flask.pocoo.org/docs/api/#flask.Flask.test_client"><code>test_client</code></a>  is a  <a href="http://flask.pocoo.org/docs/testing/#keeping-the-context-around">context manager</a>, which means that we can use it in a  <code>with</code>  statement and it will keep the context around as long as we need it:</p>
+
+<pre><code class="language-py">with self.client:
+    response = self.client.post(url_for('users.login'),
+                                data={'email': 'joe@joes.com', 'password': '12345'})
+
+    self.assert_redirects(response, url_for('index'))
+    self.assertTrue(current_user.name == 'Joe')
+    self.assertFalse(current_user.is_anonymous())
+</code></pre>
+
+<p>Now, when we run our test again, we pass!</p>
+
+<pre><code>----------------------------------------------------------------------
+Ran 1 test in 0.053s
+</code></pre>
+
+<p>Let’s ensure that when Joe is logged in, he can log out:</p>
+
+<pre><code class="language-py">def test_users_can_logout(self):
+    User.create(name=&quot;Joe&quot;, email=&quot;joe@joes.com&quot;, password=&quot;12345&quot;)
+
+    with self.client:
+        self.client.post(url_for(&quot;users.login&quot;),
+                         data={&quot;email&quot;: &quot;joe@joes.com&quot;,
+                               &quot;password&quot;: &quot;12345&quot;})
+        self.client.get(url_for(&quot;users.logout&quot;))
+
+        self.assertTrue(current_user.is_anonymous())
+</code></pre>
+
+<p>Once again, we create Joe (remember, the database is reset at the end of every test). Then we log him in (which we know works because our first test is passing). Finally, we log him out by requesting the logout page via  <code>self.client.get(url_for(&quot;users.logout&quot;))</code>  and ensure that the user we have is once again anonymous. Run the tests again and bask in the satisfaction of having two passing tests.</p>
+
+<p>A couple of other things that we will want to check:</p>
+
+<ul>
+<li>Can a user register and then log into the application?</li>
+<li>When a user logs out, do they get redirected back to the index page?</li>
+</ul>
+
+<p>These tests are available in  <a href="https://github.com/mjhea0/flask-tracking">the  <code>flask-tracking</code>  repository</a>, should you want to review them. Since they are similar to what we have already written, we will skip them here.</p>
+
+<h2 id="mocks-and-integration-tests">Mocks and Integration Tests</h2>
+
+<p>There is one part of our application though, which is a little different from the rest - our  <code>add_visit</code>  endpoint in the  <code>tracking</code>  package not only interacts with the database and the user - it also interacts with the third-party service  <a href="http://freegeoip.net/">Free GeoIP</a>. As this is a potential source of breakage, we will want to test it thoroughly. Since Free GeoIP is a third party service (which we might not always have access to) it also gives us a good opportunity to talk about the difference between unit and integration tests.</p>
+
+<h3 id="unit-vs-integration-tests">Unit vs. Integration Tests</h3>
+
+<p>Everything that we have written so far has fallen under the heading of a unit test. A  <strong>unit test</strong>  is a test of the smallest possible piece of functionality of  <em>our</em>  code - a test of an indivisible section of code (generally a function or method).</p>
+
+<p><strong>Integration tests</strong>, on the other hand, test our application at its boundaries - does our application interact correctly with this other application (which may well be something we have written)? Testing that our application properly calls and interacts with Free GeoIP is an integration test. These sorts of tests are very important, as they let us know that the features that we are depending on still work the way we expect them to. (Yes, that doesn’t help us if Free GeoIP changes its contract (API), or goes down completely, while we are running our application in production but that is what logging is for - which we will cover a little later on.)</p>
+
+<p>However, the issue with integration tests is that they are often more than an order of magnitude slower than unit tests. A large number of integration tests can slow down our test suite to the point where it takes more than a minute to run - once it crosses that boundary, our test suite starts to be a hindrance rather than an assistant. Taking the time to run our tests now breaks our flow of concentration, rather than simply verifying that we are on the right track. Also, in the case of distributed services like Free GeoIP, it means we cannot actually run our test suite if we are offline or if Free GeoIP is down.</p>
+
+<p>This leaves us in a fine quandary - on the one hand, integration tests are very important, and on the other hand, running integration tests is likely to break our work flow.</p>
+
+<p>The solution is simple - we can create a bare-bones local implementation of the service we are calling (which is called a mock in testing parlance) and run our unit tests using this mock. We can separate out our integration tests into a separate file and run those before we commit changes to our code. That way, we get the speed of good unit tests and retain the certainty that integration tests provide.</p>
+
+<h3 id="mocking-free-geoip">Mocking Free GeoIP</h3>
+
+<p>If you remember from  <a href="https://realpython.com/python-web-applications-with-flask-part-ii/">Part 2</a>  we added a  <code>geodata</code>  module to our  <code>tracking</code>  package which implemented a single function  <code>get_geodata</code>. We use this function in our  <code>tracking.add_visit</code>  view:</p>
+
+<p>ip_address = request.access_route[0] or request.remote_addr
+geodata = get_geodata(ip_address)</p>
+
+<p>What we want to do in our  <em>unit</em>  test is ensure that when  <code>get_geodata</code>  works as expected we will properly record the visit in the database. However, we don’t want to call Free GeoIP (otherwise, our test will be slow in comparison to our other tests and we will not be able to run the tests when offline.) We need to replace  <code>get_geodata</code>  with another function (a mock).</p>
+
+<p>First, let’s install  <a href="http://mock.readthedocs.org/en/latest/">a mocking library</a>  to make this easier. Add  <a href="http://mock.readthedocs.org/en/latest/"><code>mock==1.0.1</code></a>  to requirements.txt and  <code>pip install -r requirements.txt</code>  again. (If you are using Python 3.3 or greater, you already have mock installed as  <code>unittest.mock</code>.)</p>
+
+<p>Now we can write our unit test:</p>
+
+<pre><code class="language-py"># flask_tracking/tracking/tests.py
+from decimal import Decimal
+
+from flask import url_for
+from mock import Mock, patch
+from werkzeug.datastructures import Headers
+
+from flask_tracking.test_base import BaseTestCase
+from flask_tracking.users.models import User
+from .models import Site, Visit
+from ..tracking import views
+
+class TrackingViewsTests(BaseTestCase):
+    def test_visitors_location_is_derived_from_ip(self):
+        user = User.create(name='Joe', email='joe@joe.com', password='12345')
+        site = Site.create(user_id=user.id)
+
+        mock_geodata = Mock(name='get_geodata')
+        mock_geodata.return_value = {
+            'city': 'Los Angeles',
+            'zipcode': '90001',
+            'latitude': '34.05',
+            'longitude': '-118.25'
+        }
+
+        url = url_for('tracking.add_visit', site_id=site.id)
+        wsgi_environment = {'REMOTE_ADDR': '1.2.3.4'}
+        headers = Headers([('Referer', '/some/url')])
+
+        with patch.object(views, 'get_geodata', mock_geodata):
+            with self.client:
+                self.client.get(url, environ_overrides=wsgi_environment,
+                                headers=headers)
+
+                visits = Visit.query.all()
+
+                mock_geodata.assert_called_once_with('1.2.3.4')
+                self.assertEqual(1, len(visits))
+
+                first_visit = visits[0]
+                self.assertEqual(&quot;/some/url&quot;, first_visit.url)
+                self.assertEqual('Los Angeles, 90001', first_visit.location)
+                self.assertEqual(34.05, first_visit.latitude)
+                self.assertEqual(-118.25, first_visit.longitude)
+</code></pre>
+
+<p>Don’t worry - the pain of testing these sorts of integrations is mitigated by the fact that you generally have fewer of them in your application than you have units of code. Let’s walk through this code section by section and break it down into digestible chunks.</p>
+
+<h3 id="set-up-the-test-data-and-mocks">Set up the test data and mocks</h3>
+
+<p>First, we set up a user and a site since the database is empty at the start of every test:</p>
+
+<pre><code class="language-py">def test_visitors_location_is_derived_from_ip(self):
+    user = User.create(name='Joe', email='joe@joe.com', password='12345')
+    site = Site.create(user_id=user.id)
+</code></pre>
+
+<p>Then, we create a mock function, and specify that it should return a dictionary containing the coordinates for Los Angeles every time it is called (we could have simply created a simple function that always returned the dictionary, but mock also provides the  <a href="http://mock.readthedocs.org/en/latest/patch.html"><code>patch.*</code></a>  context managers, which are extremely useful, so we’ll go the whole nine yards with the library):</p>
+
+<pre><code class="language-py">mock_geodata = Mock(name='get_geodata')
+mock_geodata.return_value = {
+    'city': 'Los Angeles',
+    'zipcode': '90001',
+    'latitude': '34.05',
+    'longitude': '-118.25'
+}
+</code></pre>
+
+<p>Finally, we set up the URL that we are going to visit and the parts of the WSGI environment that we need for  <code>tracking.add_visit</code>  to work (which, in this case is just the IP address of our fake end user’s visitor and the URL they supposedly came from):</p>
+
+<pre><code class="language-py">url = url_for('tracking.add_visit', site_id=site.id)
+wsgi_environment = {'REMOTE_ADDR': '1.2.3.4'}
+headers = Headers([('Referer', '/some/url')])
+</code></pre>
+
+<h3 id="patch-the-mock-into-our-tracking-module">Patch the mock into our tracking module</h3>
+
+<p>We explicitly imported the  <code>flask_tracking.tracking.views</code>  module into our  <code>tests</code>  module with:</p>
+
+<p>from ..tracking import views</p>
+
+<p>Now we patch that module’s  <code>get_views</code>  name to point to our  <code>mock_geodata</code>  object rather than the  <code>flask_tracking.tracking.geodata.get_geodata</code>  function:</p>
+
+<p>with patch.object(views, &lsquo;get_geodata&rsquo;, mock_geodata):</p>
+
+<p>By using  <code>patch.object</code>  as a context manager, we ensure that after we exit this  <code>with</code>  block  <code>flask_tracking.tracking.views.get_geodata</code>  will once again point to  <code>flask_tracking.tracking.geodata.get_geodata</code>. We could also have used  <code>patch.object</code>  as a decorator:</p>
+
+<pre><code class="language-py">mock_geodata = Mock(name='get_geodata')
+# ... snip return setup ...
+
+class TrackingViewsTests(BaseTestCase):
+    @patch.object(views, 'get_geodata', mock_geodata)
+    def test_visitors_location_is_derived_from_ip(self):
+</code></pre>
+
+<p>or even a class decorator:</p>
+
+<pre><code class="language-py">@patch.object(views, 'get_geodata', mock_geodata)
+class TrackingViewsTests(BaseTestCase):
+</code></pre>
+
+<p>The only difference is the scope of the patch. The function decorator version ensures that as long as we are inside the  <code>test_visitors_location_is_derived_from_ip</code>  function  <code>get_geodata</code>  points at our mock, while the class decorator version ensures that every function that starts with  <code>test</code>  inside of  <code>TrackingViewsTests</code>  will see the mocked version of  <code>get_geodata</code>.</p>
+
+<p><em>Personally, I prefer to keep the scope of my mocks as limited as possible. It helps ensure that I keep my testing scope in mind, and saves me from surprises where I was expecting to have access to the real object and have to de-patch it.</em></p>
+
+<h3 id="run-the-test">Run the test</h3>
+
+<p>Having set up everything we need we can now make our request:</p>
+
+<pre><code class="language-py">with self.client:
+    self.client.get(url, environ_overrides=wsgi_environment,
+                    headers=headers)
+</code></pre>
+
+<p>We provide our controller with the viewer’s IP address through the  <code>wsgi_environment</code>  dictionary we created (<code>wsgi_environment = {'REMOTE_ADDR': '1.2.3.4'}</code>). Flask’s test client is an instance of Werkzeug’s test client - which supports all of the arguments that you can pass to  <a href="http://werkzeug.pocoo.org/docs/test/#werkzeug.test.EnvironBuilder"><code>EnvironmentBuilder</code></a>.</p>
+
+<h3 id="assert-that-everything-worked">Assert that everything worked</h3>
+
+<p>Finally, we fetch all of the visits from the  <code>tracking_visit</code>  table:</p>
+
+<p>visits = Visit.query.all()</p>
+
+<p>and verify that:</p>
+
+<ul>
+<li>We used the user’s IP address to lookup his geodata:</li>
+</ul>
+
+<p>mock_geodata.assert_called_once_with(&lsquo;1.2.3.4&rsquo;)</p>
+
+<ul>
+<li>The request only generated one visit:</li>
+</ul>
+
+<p>self.assertEqual(1, len(visits))</p>
+
+<ul>
+<li><p>The location data was properly persisted:</p>
+
+<pre><code class="language-py">first_visit = visits[0]
+self.assertEqual(&quot;/some/url&quot;, first_visit.url)
+self.assertEqual('Los Angeles, 90001', first_visit.location)
+self.assertEqual(Decimal(&quot;34.05&quot;), first_visit.latitude)
+self.assertEqual(Decimal(&quot;-118.25&quot;), first_visit.longitude)
+</code></pre>
+
+<p>When we run  <code>python -m unittest discover</code>  we get the following output:</p>
+
+<pre><code class="language-py">F.....
+======================================================================
+FAIL: test_visitors_location_is_derived_from_ip (flask_tracking.tracking.tests.TrackingViewsTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+File &quot;~/dev/flask-tracking/flask_tracking/tracking/tests.py&quot;, line 41, in test_visitors_location_is_derived_from_ip
+self.assertEqual('Los Angeles, 90001', first_visit.location)
+AssertionError: 'Los Angeles, 90001' != None
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.147s
+
+FAILED (failures=1)
+</code></pre></li>
+</ul>
+
+<p>Ah, a failure! Apparently, we are not mapping location properly, as the  <code>Visit</code>’s location is not being persisted in the database. Checking our view code reveals that we are indeed setting  <code>location</code>  when we construct our  <code>VisitForm</code>  … but that we do not actually  <em>have</em>  a  <code>location</code>  field set up for our  <code>VisitForm</code>! Good thing we caught that before we went live! (This duplication of fields causes problems, and should suggest something to you all - when it does I suggest you take a look at  <a href="http://wtforms-alchemy.readthedocs.org/en/latest/"><code>wtforms-alchemy</code></a>.)</p>
+
+<p>Once we add  <code>location</code>,  <code>latitude</code>, and  <code>longitude</code>  fields to our  <code>VisitForm</code>  we should be able to run our tests and get:</p>
+
+<pre><code>.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.150s
+
+OK
+</code></pre>
+
+<p>And that completes our first test with mocks.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h2 id="debugging">Debugging</h2>
+
+<p>Our unit tests are very useful - but what happens when we try to test something and the test code does not do what we expect it to do? Or even worse, when a user calls us up and complains that he has encountered an error? If it is a system-wide problem, running our unit tests might reveal the issue … but that could only happen if we checked in  <em>and deployed</em>  code without running our tests (and we would never do that, now would we?)</p>
+
+<p>Assume that we always run our tests before committing and deploying, then our unit tests cannot help us when something breaks in production. Instead, we will need to ask the user to provided us with a complete example, so that we can debug it locally.</p>
+
+<p>Let’s say that we engaged in a little bit of refactoring of our login form-</p>
+
+<pre><code class="language-py"># If you can see what's broken already, give yourself a prize
+# and write a test to ensure it never happens again :-)
+
+class LoginForm(Form):
+    email = fields.StringField(validators=[InputRequired(), Email()])
+    password = fields.StringField(validators=[InputRequired()])
+
+    def validate_login(form, field):
+        try:
+            user = User.query.filter(User.email == form.email.data).one()
+        except (MultipleResultsFound, NoResultFound):
+            raise ValidationError(&quot;Invalid user&quot;)
+        if user is None:
+            raise ValidationError(&quot;Invalid user&quot;)
+        if not user.is_valid_password(form.password.data):
+            raise ValidationError(&quot;Invalid password&quot;)
+
+        # Make the current user available
+        # to calling code.
+        form.user = user
+</code></pre>
+
+<p>-and when we push it to production our first user sends us an email to let us know that he mis-typed his password and was still logged into the system. We verify that this is the case on our live site. Woah, Nelly, that is not at all acceptable! So we quickly take down the login page and replace it with a message saying we are down for maintenance and we’ll be back as soon as possible (<em>Rule #0 of SaaS - always treat your customers the way you would want to be treated</em>).</p>
+
+<p>Looking at it locally, we don’t see any reason that users  <em>should</em>  be able to log in without a password. However, we haven’t written any tests to test that a mis-typed password is rejected with an error message, so we can’t be 100% sure that this isn’t an error in our code. So let’s write a test case and see what happens:</p>
+
+<pre><code class="language-py">def test_invalid_password_is_rejected(self):
+    User.create(name=&quot;Joe&quot;, email=&quot;joe@joes.com&quot;, password=&quot;12345&quot;)
+
+    with self.client:
+        response = self.client.post(url_for(&quot;users.login&quot;),
+                                    data={&quot;email&quot;: &quot;joe@joes.com&quot;,
+                                          &quot;password&quot;: &quot;*****&quot;})
+
+        self.assertTrue(current_user.is_anonymous())
+        self.assert_200(response)
+        self.assertIn(&quot;Invalid password&quot;, response.data)
+</code></pre>
+
+<p>Running the tests results in a failure:</p>
+
+<pre><code>.F....
+======================================================================
+FAIL: test_invalid_password_is_rejected (app.users.tests.UserViewsTests)
+----------------------------------------------------------------------
+</code></pre>
+
+<p>Traceback (most recent call last):
+ File &ldquo;~/dev/flask-tracking/flask_tracking/users/tests.py&rdquo;, line 34, in test_invalid_password_is_rejected
+ self.assertTrue(current_user.is_anonymous())
+AssertionError: False is not true</p>
+
+<p>Okay, so we can reproduce it locally. And we have a test case to yell at us until we fix the problem. Good. We’re on our way!</p>
+
+<p>There are several ways we could debug the problem:</p>
+
+<ul>
+<li>We could scatter  <code>print</code>  statements throughout the application until we find the source of the error.</li>
+<li>We could generate intentional errors in our code and look at the existing environment using Flask’s built-in debugger.</li>
+<li>We could step through the code using a debugger.</li>
+</ul>
+
+<p>We’ll use all three techniques. First, let’s add a simple  <code>print</code>  statement to our  <code>app.users.models.LoginForm#validate_login</code>  method:</p>
+
+<pre><code class="language-py">def validate_login(self, field):
+    print 'Validating login'
+</code></pre>
+
+<p>When we run our tests again we do not see the “Validating login” message at all. That tells us that our method is not being called. Let’s add an intentional error to our view and make use of Flask’s internal debugger to verify the state of the world. First, we’ll create a new configuration for debugging:</p>
+
+<pre><code class="language-py"># config.py
+class DebugConfiguration(BaseConfiguration):
+    DEBUG = True
+</code></pre>
+
+<p>Then we will update  <code>flask_tracking.__init__</code>  to use the new debug configuration:</p>
+
+<pre><code class="language-py">app.config.from_object('config.DebugConfiguration')
+</code></pre>
+
+<p>And finally, we will add a Arithmetic error to our  <code>login_view</code>  method:</p>
+
+<pre><code class="language-py">def login_view():
+    form = LoginForm(request.form)
+    1 / 0  # KABOOM!
+</code></pre>
+
+<p>Now, if we run:</p>
+
+<pre><code>$ python run.py
+</code></pre>
+
+<p>And navigate to the login page we will see  <a href="https://realpython.com/python-traceback/">a nice traceback</a>. Clicking on the shell icon on the right of the last line of the traceback (<code>1 / 0</code>) will get us an interactive REPL that we can use to test our function:</p>
+
+<pre><code class="language-py">&gt;&gt;&gt; form.validate_login(field=None)  # We don't use the field argument
+</code></pre>
+
+<p>This results in:</p>
+
+<pre><code class="language-py">Traceback (most recent call last):
+    File &quot;&lt;debugger&gt;&quot;, line 1, in &lt;module&gt;
+    form.validate_login(None)
+    File &quot;~/dev/flask-tracking/flask_tracking/users/forms.py&quot;, line 15, in validate_login
+    raise validators.ValidationError('Invalid user')
+    ValidationError: Invalid user
+</code></pre>
+
+<p>So now we know that our validation function  <em>works</em>  - it simply is not being called. Let’s remove that division by zero error from our login view and replace it with a call to  <a href="https://realpython.com/python-debugging-pdb/">the Python debugger  <code>pdb</code></a>.</p>
+
+<pre><code class="language-py">def login_view():
+    form = LoginForm(request.form)
+    import pdb; pdb.set_trace()
+</code></pre>
+
+<p>Now, when we run our tests again we get a debugger:</p>
+
+<p>python -m unittest discover .</p>
+
+<pre><code class="language-py">.&gt; ~/dev/flask-tracking/app/users/views.py(18)login_view()
+-&gt; if form.validate_on_submit():
+(Pdb)
+</code></pre>
+
+<p>We can step into the  <code>validate_on_submit</code>  method by typing “s” for “step”, and step over calls we are not interested in with “n” for “next” (a full introduction to PDB is beyond the scope of this tutorial - for more information on PDB see it’s  <a href="http://docs.python.org/2/library/pdb.html">documentation</a>  or type “h” while inside of  <code>pdb</code>):</p>
+
+<pre><code>(Pdb) s
+</code></pre>
+
+<pre><code>--Call--
+&gt; ~/.virtualenvs/realpython/lib/python2.7/site-packages/flask_wtf/form.py(120)validate_on_submit()
+-&gt; def validate_on_submit(self):
+</code></pre>
+
+<p>I won’t walk you through the whole debugging session, but needless to say, the issue was with our code. WTForms allows for inline validators in the form  <code>validate_[fieldname]</code>. Our  <code>validate_login</code>  method is never called because we don’t have a field named  <code>login</code>  in our form. Let’s remove the  <code>set_trace</code>  call from our controller and rename our  <code>flask_tracking.users.forms.LoginForm.validate_login</code>  method back to  <code>LoginForm.validate_password</code>  so that WTForms will pick it up as an inline validator for our  <code>password</code>  field. This ensures that it only gets called after both the name and password fields have been validated to contain user-supplied data.</p>
+
+<p>Now, when we run our unit tests again, they  <em>should</em>  pass. Testing locally reveals that we did indeed fix the issue. We can now safely deploy and take down our maintenance message.</p>
+
+<h2 id="error-handling">Error Handling</h2>
+
+<p>As we have discovered, a test suite does not guarantee that we will have no bugs in our application. It is possible for users to still come across errors in production. For example, if we simply blindly accessed  <code>request.args['some_optional_key']</code>  in one of our controllers and we only wrote tests with that optional key set in the request, the end user would get a  <code>400 Bad Request</code>  response from Flask by default. We want to show a  <em>helpful</em>  error message to the user in such cases. We also want to avoid showing the users unbranded or out-of-date pages without much help on where to go, or what to do next.</p>
+
+<p>We can register error handlers with Flask to explicitly handle these sorts of issues. Let’s register one for the most common error - a mis-typed or no-longer existing link:</p>
+
+<pre><code class="language-py">@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+</code></pre>
+
+<p>We may want to explicitly handle other kinds of errors as well, such as the 400 Bad Request errors that Flask generates for missing keys and the 500 Internal Server errors that are generated for uncaught exceptions:</p>
+
+<pre><code class="language-py">@app.errorhandler(400)
+def key_error(e):
+    return render_template('400.html'), 400
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('generic.html'), 500
+</code></pre>
+
+<p>In addition to the HTTP errors that we might have to deal with, Flask also allows us to display different error pages when an uncaught exception bubbles up to its level. For now, let’s just register a generic error handler for all uncaught exceptions (but later we may want to register specific ones for more-common error conditions that we cannot do anything about):</p>
+
+<pre><code class="language-py">@app.errorhandler(Exception)
+def unhandled_exception(e):
+    return render_template('generic.html'), 500
+</code></pre>
+
+<p>Now all the most common cases of errors should be handled gracefully by our application.</p>
+
+<p>However, we can do even better - let’s ensure that  <em>every</em>  error is nicely styled we could register the same error handler for every possible error condition:</p>
+
+<pre><code class="language-py"># flask_tracking/errors.py
+from flask import current_app, Markup, render_template, request
+from werkzeug.exceptions import default_exceptions, HTTPException
+
+def error_handler(error):
+    msg = &quot;Request resulted in {}&quot;.format(error)
+    current_app.logger.warning(msg, exc_info=error)
+
+    if isinstance(error, HTTPException):
+        description = error.get_description(request.environ)
+        code = error.code
+        name = error.name
+    else:
+        description = (&quot;We encountered an error &quot;
+                       &quot;while trying to fulfill your request&quot;)
+        code = 500
+        name = 'Internal Server Error'
+
+    # Flask supports looking up multiple templates and rendering the first
+    # one it finds.  This will let us create specific error pages
+    # for errors where we can provide the user some additional help.
+    # (Like a 404, for example).
+    templates_to_try = ['errors/{}.html'.format(code), 'errors/generic.html']
+    return render_template(templates_to_try,
+                           code=code,
+                           name=Markup(name),
+                           description=Markup(description),
+                           error=error)
+
+def init_app(app):
+    for exception in default_exceptions:
+        app.register_error_handler(exception, error_handler)
+
+    app.register_error_handler(Exception, error_handler)
+</code></pre>
+
+<h1 id="this-can-be-used-in-init-with-a">This can be used in <strong>init</strong> with a</h1>
+
+<h1 id="import-errors">import .errors</h1>
+
+<h1 id="errors-init-app-app">errors.init_app(app)</h1>
+
+<p>This ensures that all the HTTP error conditions that Flask knows how to handle (4XX and 5XX level errors) have the  <code>error_handler</code>  function registered as their handler. Coupled with a  <code>app.register_error_handler(Exception, error_handler)</code>, this will cover almost every error that our application might throw. (There are a few exceptions, such as  <code>SystemExit</code>  that will not be caught this way and C-level segfaults or OS-level events will obviously not be caught and handled in this way, but those sorts of catastrophic events should be act-of-God occasions, not something that our application needs to be prepared to handle on a semi-regular basis).</p>
+
+<h2 id="logging">Logging</h2>
+
+<p>Finally, let’s talk about logging. Users will not always have enough time to reach out to us with a fully fleshed-out bug report (not to mention, bad actors will be actively looking for ways to take advantage of us.) We need a way to ensure that we can look back in time and see what happened and when.</p>
+
+<p>Fortunately, both Python and Flask have logging capabilities, so we do not need to re-invent the wheel here either. A standard Python  <code>logging</code>  logger is available on the Flask object at  <code>app.logger</code>.</p>
+
+<p>The first place where we could use some logging is in our error handlers. We don’t need to log 404s as the proxy server will do that for us if we set it up right, but we will want to log the reasons for our other exceptions (400, 500 and Exception). Let’s go ahead and add some more detailed logging to those handlers. Since we are doing using the same handler for all our errors, this is easy:</p>
+
+<pre><code class="language-py">def error_handler(error):
+    error_name = error.__name__ if error else &quot;Unknown-Error&quot;
+    app.logger.warning('Request resulted in {}'.format(error_name), exc_info=error)
+    # ... etc. ...
+</code></pre>
+
+<p>Python’s documentation on the logging module has a good breakdown of the various available  <a href="http://docs.python.org/2/howto/logging.html#when-to-use-logging">logging levels</a>  and what they are most appropriate for.</p>
+
+<p>For those times when we don’t have access to the  <code>app</code>  (say, inside of our  <code>view</code>  modules) we can use the thread-local  <code>current_app</code>  in the exact same way as we would use  <code>app</code>. For an example, let’s also add a bit of logging to our login and logout handlers:</p>
+
+<pre><code class="language-py">from flask import current_app
+
+@users.route('/logout/')
+def logout_view():
+    current_app.debug('Attempting to log out the current user')
+    logout_user()
+    current_app.debug('Successfully logged out the current user')
+    return redirect(url_for('tracking.index'))
+</code></pre>
+
+<p><em>This code nicely demonstrates an issue we can run into with logging - having too much of it can be as bad as having too little.</em>  In this case, we have as much debugging code as we have application code, and it is difficult to follow the flow of the code any more. We’ll go ahead and remove this particular logging code, as it doesn’t add anything above and beyond what we would see in our proxy server’s access logs.</p>
+
+<p>If we needed to log the entry and exit of each controller, we could add handlers for  <a href="http://flask.pocoo.org/docs/api/#flask.Flask.before_request"><code>app.before_request</code></a>  and  <a href="http://flask.pocoo.org/docs/api/#flask.Flask.teardown_request"><code>app.teardown_request</code></a>. Just for fun, here’s how we might log every access to our application:</p>
+
+<pre><code class="language-py">@app.before_request
+def log_entry():
+    context = {
+        'url': request.path,
+        'method': request.method,
+        'ip': request.environ.get(&quot;REMOTE_ADDR&quot;)
+    }
+    app.logger.debug(&quot;Handling %(method)s request from %(ip)s for %(url)s&quot;, context)
+
+If we run our application in debug mode and access our home page then we will see:
+
+--------------------------------------------------------------------------------
+DEBUG in __init__ [~/dev/flask-tracking/flask_tracking/__init__.py:68]:
+Handling GET request from 127.0.0.1 for /
+--------------------------------------------------------------------------------
+</code></pre>
+
+<p>As was said above, in production logging this sort of information would be duplicating the logs that our proxy server (Apache with mod_wsgi, ngnix with uwsgi, etc.) will be generating. We should only do this if we are generating a unique value for each request that we absolutely need to keep track of.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h3 id="adding-context-and-formatting-to-our-logs">Adding context and formatting to our logs</h3>
+
+<p>However, it would be nice to have the context from our  <code>log_entry</code>  handler (above) in our exception handlers. Let’s go ahead and add a  <a href="http://docs.python.org/2/library/logging.html#filter-objects"><code>Filter</code></a>  instance to the logger to provide the url, method, IP address, and user id to all loggers that are interested in them (this is called  <a href="http://docs.python.org/2/howto/logging-cookbook.html#filters-contextual">“contextual logging”</a>:</p>
+
+<pre><code class="language-py"># flask_tracking/logs.py
+import logging
+
+class ContextualFilter(logging.Filter):
+    def filter(self, log_record):
+        log_record.url = request.path
+        log_record.method = request.method
+        log_record.ip = request.environ.get(&quot;REMOTE_ADDR&quot;)
+        log_record.user_id = -1 if current_user.is_anonymous() else current_user.get_id()
+
+        return True
+</code></pre>
+
+<p>This filter doesn’t actually filter any of our messages - instead, it provides some additional information that we can make use of in our logs. Here’s an example of how we might use this filter:</p>
+
+<pre><code class="language-py"># Create the filter and add it to the base application logger
+context_provider = ContextualFilter()
+app.logger.addFilter(context_provider)
+
+# Optionally, remove Flask's default debug handler
+# del app.logger.handlers[:]
+
+# Create a new handler for log messages that will send them to standard error
+handler = logging.StreamHandler()
+
+# Add a formatter that makes use of our new contextual information
+log_format = &quot;%(asctime)s\t%(levelname)s\t%(user_id)s\t%(ip)s\t%(method)s\t%(url)s\t%(message)s&quot;
+formatter = logging.Formatter(log_format)
+handler.setFormatter(formatter)
+
+# Finally, attach the handler to our logger
+app.logger.addHandler(handler)
+</code></pre>
+
+<p>And here’s what a log message might look like:</p>
+
+<pre><code>2013-10-12 09:22:52,764    DEBUG   1   127.0.0.1   GET / Some additional message
+</code></pre>
+
+<p>One thing to note is that the message we pass to  <code>app.logger.[LOGLEVEL]</code>  is not expanded with the values in the context. So if we had kept our  <code>before_request</code>  log call and changed our before request log call to just be-</p>
+
+<h1 id="note-the-missing-context-argument">Note the missing context argument</h1>
+
+<p>app.logger.debug(&ldquo;Handling %(method)s request from %(ip)s for %(url)s&rdquo;)</p>
+
+<p>-the format strings will be passed through unaltered. But since we have them in our  <a href="http://docs.python.org/2/library/logging.html#formatter-objects"><code>Formatter</code></a>, we can remove them from our individual message, leaving just:</p>
+
+<pre><code class="language-py">@app.before_request
+def log_entry():
+    app.logger.debug(&quot;Handling request&quot;)
+</code></pre>
+
+<p>This is the advantage of contextual logging - we can include important information in all our log entries without needing to collect it manually at the site of every log call.</p>
+
+<h3 id="directing-logs-to-different-places">Directing logs to different places</h3>
+
+<p>Most of the information we will be logging is not immediately actionable. However, there are certain kinds of errors we want to know about immediately. A rash of 500 errors probably means that something is broken with our application, for example. We cannot stay glued to our logs <sup>24</sup>&frasl;<sub>7</sub> so we need to have severe errors shipped to us.</p>
+
+<p>Fortunately, adding new handlers to our application logger is easy - and since each handler can filter log entries down to only the ones it finds interesting, we can avoid getting deluged by logs, but still get alerts when something breaks horribly.</p>
+
+<p>By way of an example, let’s add another handler that will log ERROR and CRITICAL log messages to a special file. This will not give us the alerting we want, but  <a href="https://realpython.com/python-send-email/">email</a>  or SMS setup depends on your host (we’ll do such a setup in a later article for Heroku). To whet your appetite see the example of how to log to email in  <a href="http://flask.pocoo.org/docs/errorhandling/#error-mails">Flask’s documentation on logging</a>  or  <a href="http://stackoverflow.com/q/8616617/135978">these recipes</a>:</p>
+
+<pre><code class="language-py">from logging import ERROR
+from logging.handlers import TimedRotatingFileHandler
+
+# Only set up a file handler if we know where to put the logs
+if app.config.get(&quot;ERROR_LOG_PATH&quot;):
+
+    # Create one file for each day. Delete logs over 7 days old.
+    file_handler = TimedRotatingFileHandler(app.config[&quot;ERROR_LOG_PATH&quot;], when=&quot;D&quot;, backupCount=7)
+
+    # Use a multi-line format for this logger, for easier scanning
+    file_formatter = logging.Formatter('''
+ Time: %(asctime)s
+ Level: %(levelname)s
+ Method: %(method)s
+ Path: %(url)s
+ IP: %(ip)s
+ User ID: %(user_id)s
+
+ Message: %(message)s
+
+ ---------------------''')
+
+    # Filter out all log messages that are lower than Error.
+    file_handler.setLevel(ERROR)
+
+    file_handler.addFormatter(file_formatter)
+    app.logger.addHandler(file_handler)
+</code></pre>
+
+<p>If we use this setup ERROR and CRITICAL log messages will appear both on the console and in the file specified in our configuration.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>We have covered a great deal in this article.</p>
+
+<ol>
+<li>Starting out with unit testing, we covered what testing is and why we need it.</li>
+<li>We moved on to writing tests, both with and without mocks.</li>
+<li>We briefly covered three methods of debugging errors locally (<code>print</code>, intentional errors to trigger Flask’s debugger, and  <code>pdb</code>.)</li>
+<li>We covered error handling and ensured that our end users should only see styled error pages.</li>
+<li>Finally, we went over logging setups.</li>
+</ol>
+
+<p>In Part IV we’ll do some Test Driven Development to enable our application to accept payments and display simple reports.</p>
+
+<p>In Part V we will write a RESTful JSON API for others to consume.</p>
+
+<p>In Part VI we will cover automating deployments (on Heroku) with Fabric and basic A/B Feature Testing.</p>
+
+<p>Finally, in Part VII we will cover preserving your application for the future with documentation, code coverage and quality metric tools.</p>
+
+<p>As always, the code is available from  <a href="https://github.com/mjhea0/flask-tracking">the repository</a>. Looking forward to continuing this journey with you.</p>
+
+<p>Reference : <a href="https://realpython.com/python-web-applications-with-flask-part-iii/">https://realpython.com/python-web-applications-with-flask-part-iii/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cFalsk%5cWeb_Applications_With_Flask%5cpart-3.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

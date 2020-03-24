@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SQLite for Python"><meta property="og:title" content="SQLite for Python" />
+<meta property="og:description" content="SQLite for Python Create Database import os import sqlite3 db_filename = &#39;journaldev.db&#39; db_exists = not os.path.exists(db_filename) connection = sqlite3.connect(db_filename) if db_exists: print(&#39;No schema exists.&#39;) else: print(&#39;DB exists.&#39;) connection.close()  Create Table To start working with the database, we must define a table schema on which we will write our further queries and perform operations. Here is the schema we will follow:
+For the same schema, we will be writing related SQL Query next and these queries will be saved in book_schema." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/database/sqlite/sqlite3-module/" />
+
+<title>SQLite for Python | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/sqlite/" >
+      SQLite
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/database/sqlite/sqlite3-module/"  class="active">
+      SQLite for Python
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>SQLite for Python</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="sqlite-for-python">SQLite for Python</h1>
+
+<h2 id="create-database">Create Database</h2>
+
+<pre><code class="language-py">import os
+import sqlite3
+
+db_filename = 'journaldev.db'
+
+db_exists = not os.path.exists(db_filename)
+connection = sqlite3.connect(db_filename)
+
+if db_exists:
+    print('No schema exists.')
+else:
+    print('DB exists.')
+connection.close()
+</code></pre>
+
+<p><img src="https://cdn.journaldev.com/wp-content/uploads/2018/04/create-database.png" alt="enter image description here" /></p>
+
+<h2 id="create-table">Create Table</h2>
+
+<p>To start working with the database, we must define a table schema on which we will write our further queries and perform operations. Here is the schema we will follow:</p>
+
+<p><img src="https://cdn.journaldev.com/wp-content/uploads/2018/04/table-schema.png" alt="enter image description here" /></p>
+
+<p>For the same schema, we will be writing related SQL Query next and these queries will be saved in book_schema.sql:</p>
+
+<pre><code class="language-py">CREATE TABLE book (
+    name        text primary key,
+    topic       text,
+    published   date
+);
+
+CREATE TABLE chapter (
+    id           number primary key autoincrement not null,
+    name         text,
+    day_effort   integer,
+    book         text not null references book(name)
+);
+</code></pre>
+
+<p>Now let us use the connect() function to connect to the database and insert some initial data using the executescript() function:</p>
+
+<pre><code class="language-py">import os
+import sqlite3
+
+db_filename = 'journaldev.db'
+schema_filename = 'book_schema.sql'
+
+db_exists = not os.path.exists(db_filename)
+
+with sqlite3.connect(db_filename) as conn:
+    if db_exists:
+        print('Creating schema')
+        with open(schema_filename, 'rt') as file:
+            schema = file.read()
+        conn.executescript(schema)
+
+        print('Inserting initial data')
+
+        conn.executescript(&quot;&quot;&quot;
+        insert into book (name, topic, published)
+        values ('JournalDev', 'Java', '2011-01-01');
+
+        insert into chapter (name, day_effort, book)
+        values ('Java XML', 2,'JournalDev');
+
+        insert into chapter (name, day_effort, book)
+        values ('Java Generics', 1, 'JournalDev');
+
+        insert into chapter (name, day_effort, book)
+        values ('Java Reflection', 3, 'JournalDev');
+        &quot;&quot;&quot;)
+    else:
+        print('DB already exists.')
+</code></pre>
+
+<p><img src="https://cdn.journaldev.com/wp-content/uploads/2018/04/create-schema-with-db-test.png" alt="enter image description here" /></p>
+
+<h2 id="cursor-select">Cursor Select</h2>
+
+<pre><code class="language-py">import sqlite3
+
+db_filename = 'journaldev.db'
+
+with sqlite3.connect(db_filename) as conn:
+    cursor = conn.cursor()
+
+    cursor.execute(&quot;&quot;&quot;
+    select id, name, day_effort, book from chapter
+    where book = 'JournalDev'
+    &quot;&quot;&quot;)
+
+    for row in cursor.fetchall():
+        id, name, day_effort, book = row
+        print('{:2d} ({}) {:2d} ({})'.format(
+            id, name, day_effort, book))
+</code></pre>
+
+<p><img src="https://cdn.journaldev.com/wp-content/uploads/2018/04/fetch-data.png" alt="enter image description here" /></p>
+
+<h2 id="getting-metadata-of-table">Getting Metadata of Table</h2>
+
+<pre><code class="language-py">import sqlite3
+
+db_filename = 'journaldev.db'
+
+with sqlite3.connect(db_filename) as connection:
+    cursor = connection.cursor()
+
+    cursor.execute(&quot;&quot;&quot;
+    select * from chapter where book = 'JournalDev'
+    &quot;&quot;&quot;)
+
+    print('Chapter table has these columns:')
+    for column_info in cursor.description:
+        print(column_info)
+</code></pre>
+
+<p><img src="https://cdn.journaldev.com/wp-content/uploads/2018/04/table-metadata.png" alt="enter image description here" /></p>
+
+<h2 id="using-named-parameters">Using Named Parameters</h2>
+
+<pre><code class="language-py">import sqlite3
+import sys
+
+db_filename = 'journaldev.db'
+book_name = sys.argv[1]
+
+with sqlite3.connect(db_filename) as conn:
+    cursor = conn.cursor()
+
+    query = &quot;&quot;&quot;
+    select id, name, day_effort, book from chapter
+    where book = :book_name
+    &quot;&quot;&quot;
+
+    cursor.execute(query, {'book_name': book_name})
+    for row in cursor.fetchall():
+        id, name, day_effort, book = row
+        print('{:2d} ({}) {:2d} ({})'.format(
+            id, name, day_effort, book))
+</code></pre>
+
+<p><img src="https://cdn.journaldev.com/wp-content/uploads/2018/04/named-parameter.png" alt="enter image description here" /></p>
+
+<h2 id="transaction-management">Transaction Management</h2>
+
+<pre><code class="language-py">import sqlite3
+
+db_filename = 'journaldev.db'
+
+def show_books(conn):
+    cursor = conn.cursor()
+    cursor.execute('select name, topic from book')
+    for name, topic in cursor.fetchall():
+        print('  ', name)
+
+
+with sqlite3.connect(db_filename) as conn1:
+    print('Before changes:')
+    show_books(conn1)
+
+    # Insert in one cursor
+    cursor1 = conn1.cursor()
+    cursor1.execute(&quot;&quot;&quot;
+    insert into book (name, topic, published)
+    values ('Welcome Python', 'Python', '2013-01-01')
+    &quot;&quot;&quot;)
+
+    print('\nAfter changes in conn1:')
+    show_books(conn1)
+
+    # Select from another connection, without committing first
+    print('\nBefore commit:')
+    with sqlite3.connect(db_filename) as conn2:
+        show_books(conn2)
+
+    # Commit then select from another connection
+    conn1.commit()
+    print('\nAfter commit:')
+    with sqlite3.connect(db_filename) as conn3:
+        show_books(conn3)
+</code></pre>
+
+<p><img src="https://cdn.journaldev.com/wp-content/uploads/2018/04/transactions.png" alt="enter image description here" /></p>
+
+<blockquote>
+<p>Source : <a href="https://www.journaldev.com/20515/python-sqlite-tutorial">journaldev.com</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cDatabase%5cSQLite%5csqlite3-module.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#sqlite-for-python">SQLite for Python</a>
+<ul>
+<li><a href="#create-database">Create Database</a></li>
+<li><a href="#create-table">Create Table</a></li>
+<li><a href="#cursor-select">Cursor Select</a></li>
+<li><a href="#getting-metadata-of-table">Getting Metadata of Table</a></li>
+<li><a href="#using-named-parameters">Using Named Parameters</a></li>
+<li><a href="#transaction-management">Transaction Management</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

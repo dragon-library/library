@@ -15,10 +15,10 @@ It’s easy to get carried away with the wealth of data and free open-source too
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.d7931d740642e656222bfe71c31926bed24ceb9fafa2d9069a7a83fa55070bb9.css" integrity="sha256-15MddAZC5lYiK/5xwxkmvtJM65&#43;votkGmnqD&#43;lUHC7k=">
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
 
 
-<script defer src="/library/tutorials/en.search.min.cea1133e9b29e4d856c65970fdf9c3648003a14ab3aa47858673822782b70898.js" integrity="sha256-zqETPpsp5NhWxllw/fnDZIADoUqzqkeFhnOCJ4K3CJg="></script>
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -111,8 +111,8 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
-      Bootstrap 4 แบบพื้นฐาน
+  <a href="/library/tutorials/docs/database/" >
+      Database
   </a>
 
 
@@ -137,8 +137,8 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/library/tutorials/docs/front-end/javascript/" >
-      JavaScript
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
   </a>
 
 
@@ -297,8 +297,48 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
+  <a href="/library/tutorials/docs/articles/data-science/finance/cal-stock-return/" >
+      Calculate Stock Returns
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
   <a href="/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/" >
       Dash by Plotly
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/intro-stock-analysis-pandas/" >
+      Introduction to Stock Analysis using Pandas
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/" >
+      Portfolio Optimization in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/" >
+      Portfolio Optimization Methods
   </a>
 
 </li>
@@ -387,8 +427,34 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/library/tutorials/docs/articles/website/" >
-      Website
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
   </a>
 
 
@@ -408,6 +474,58 @@ https://github.com/alex-shpak/hugo-book
     
   </ul>
   
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
 
 
 
@@ -599,8 +717,8 @@ plt.show()
 <pre><code class="language-py">print(microsoft.weekly_seasonality)
 microsoft.weekly_seasonality = True
 print(microsoft.weekly_seasonality)
-False 
-True
+# False 
+# True
 </code></pre>
 
 <p>The default value for  <code>weekly_seasonality</code>is False, but we changed the value to include a weekly pattern in our model. We then make another call to  <code>create_prophet_model</code>and graph the resulting components. Below is the weekly seasonality from the new model.</p>
@@ -636,18 +754,21 @@ Changepoints sorted by slope rate of change (2nd derivative):
 
 <pre><code class="language-py"># same method but with a search term
 microsoft.changepoint_date_analysis(search = 'Microsoft profit')
-Top Related Queries: 
+</code></pre>
 
-                  query  value
+<p>Top Related Queries:</p>
+
+<pre><code class="language-py">                  query  value
 0  microsoft non profit    100
 1      microsoft office     55
 2                 apple     30
 3         microsoft 365     30
 4  microsoft office 365     20
+</code></pre>
 
- Rising Related Queries: 
+<p>Rising Related Queries:</p>
 
-                   query  value
+<pre><code class="language-py">                   query  value
 0          microsoft 365    120
 1   microsoft office 365     90
 2  microsoft profit 2014     70

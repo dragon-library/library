@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Date&amp;Time on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/</link>
+    <description>Recent content in Date&amp;Time on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Datetime Tutorial</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</guid>
+      <description>Python Datetime Tutorial: Manipulate Times, Dates, and Time Spans Table of Contents  Python datetime Classes Creating Date Objects Extract Year and Month from the Date  - Handling Date and Time Strings with strptime() and strftime()  Getting Day of the Month and Day of the Week from a Date Getting Hours and Minutes From a Python Datetime Object Getting Week of the Year from a Datetime Object Converting a Date Object into Unix Timestamp and Vice Versa Measuring Time Span with Timedelta Objects Find the Difference Between Two Dates and Times Formatting Dates: More on strftime() and strptime() Handling Timezones Working with pandas Datetime Objects  - Get Year, Month, Day, Hour, Minute in pandas  Get Weekday and Day of Year  Convert Date Object into DataFrame Index  Conclusion  Dealing with dates and times in Python can be a hassle.</description>
+    </item>
+    
+    <item>
+      <title>DateTime, TimeDelta, Strftime with Examples</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</guid>
+      <description>Python DateTime, TimeDelta, Strftime(Format) with Examples In Python, date, time and datetime classes provides a number of function to deal with dates, times and time intervals. Date and datetime are an object in Python, so when you manipulate them, you are actually manipulating objects and not string or timestamps. Whenever you manipulate dates or time, you need to import datetime function.
+The datetime classes in Python are categorized into main 5 classes.</description>
+    </item>
+    
+    <item>
+      <title>Python - Date &amp; Time</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-date-and-time/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-date-and-time/</guid>
+      <description>Python - Date &amp;amp; Time A Python program can handle date and time in several ways. Converting between date formats is a common chore for computers. Python&amp;rsquo;s time and calendar modules help track dates and times.
+What is Tick? Time intervals are floating-point numbers in units of seconds. Particular instants in time are expressed in seconds since 12:00am, January 1, 1970(epoch).
+There is a popular time module available in Python which provides functions for working with times, and for converting between representations.</description>
+    </item>
+    
+    <item>
+      <title>การจัดการวันเวลาด้วย datetime</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime/</guid>
+      <description>การจัดการวันเวลาใน python ด้วย datetime  เขียนเมื่อ 2016/06/21 19:35
+ มอดูล datetime เป็นหนึ่งในมอดูลภายในตัวของไพธอน มีหน้าที่จัดการเกี่ยวกับเรื่องวันเดือนปีและเวลาต่างๆ หน้าที่มีความคล้ายคลึงกับมอดูล time (อ่านรายละเอียดใน https://phyblas.hinaboshi.com/20160610) แต่ก็มีความต่างกันอยู่ บางครั้งก็อาจใช้ร่วมกัน datetime มักถูกใช้เมื่อต้องการจัดการกับข้อมูลที่อยู่ในรูปของวันเดือนปีหรือเวลาชั่วโมงนาทีวินาที เวลาและวันเดือนปีนั้นเป็นปริมาณที่ใช้หน่วยหลากหลายในการอธิบาย และการแปลงหน่วยก็มีความยุ่งยากเพราะมีความไม่สม่ำเสมอ เช่นจำนวนวันในหนึ่งปีหรือหนึ่งเดือนเป็นต้น
+การใช้ออบเจ็กต์พิเศษของ datetime จะทำให้การคำนวณทำได้โดยง่ายขึ้น อีกทั้งยังสามารถปรับเปลี่ยนรูปแบบการแสดงผลให้เป็นไปตามที่ต้องการได้ง่ายด้วย การใช้มอดูลนี้ก่อนอื่นต้องเริ่มจากทำการ import เรียกใช้ก่อน
+import datetime  ออบเจ็กต์พิเศษใน datetime มอดูล datetime นั้นมีการนิยามคลาสของออบเจ็กต์สำหรับเก็บค่าวันเดือนปีและเวลาโดยเฉพาะ มีอยู่ 4 ชนิดคือ
+ datetime.date ออบเจ็กต์เก็บค่าวันเดือนปี datetime.time ออบเจ็กต์เก็บค่าเวลา datetime.datetime เป็นออบเจ็กต์ที่เอา datetime.date กับ datetime.time มารวมกัน เก็บค่าทั้งวันเดือนปีและเวลา datetime.timedelta ออบเจ็กต์เก็บค่าระยะห่างระหว่างเวลาซึ่งมีหน่วยเป็นวันและวินาที   datetime.date จะเก็บค่าตัวเลขปี เดือน วัน ทั้งหมดเป็นจำนวนเต็มเอาไว้ ในการสร้าง datetime.date จะต้องใส่ค่าปี, เดือน, วัน ตามลำดับ เช่น</description>
+    </item>
+    
+  </channel>
+</rss>

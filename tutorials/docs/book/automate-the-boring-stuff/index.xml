@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automate the Boring Stuff on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/</link>
+    <description>Recent content in Automate the Boring Stuff on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>13. Working With Excel</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-13/</guid>
+      <description>13 Working With Excel Spreadsheets Although we don’t often think of spreadsheets as programming tools, almost everyone uses them to organize information into two-dimensional data structures, perform calculations with formulas, and produce output as charts. In the next two chapters, we’ll integrate Python into two popular spreadsheet applications: Microsoft Excel and Google Sheets.
+Excel is a popular and powerful spreadsheet application for Windows. The openpyxl module allows your Python programs to read and modify Excel spreadsheet files.</description>
+    </item>
+    
+    <item>
+      <title>14 Working With Google Sheets</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-14/</guid>
+      <description>14 Working With Google Sheets Source : 
+Google Sheets, the free, web-based spreadsheet application available to anyone with a Google account or Gmail address, has become a useful, feature-rich competitor to Excel. Google Sheets has its own API, but this API can be confusing to learn and use. This chapter covers the EZSheets third-party module, documented at https://ezsheets.readthedocs.io/. While not as full featured as the official Google Sheets API, EZSheets makes common spreadsheet tasks easy to perform.</description>
+    </item>
+    
+  </channel>
+</rss>

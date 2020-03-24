@@ -1,0 +1,149 @@
+.clock {
+  background: #ececec;
+  top:30%;
+  left:50%;
+  width: 300px;
+  height: 300px;
+  margin: 8% auto 0;
+  border-radius: 50%;
+  border: 14px solid #111;
+  position: absolute;
+  box-shadow: 0 2vw 4vw -1vw rgba(0,0,0,0.8);
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ccc;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 2px 4px -1px black;
+}
+
+.hour-hand {
+  position: absolute;
+  z-index: 5;
+  width: 6px;
+  height: 65px;
+  background: #222;
+  top: 72px;
+  transform-origin: 50% 70px;
+  left: 50%;
+  margin-left: -2px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.minute-hand {
+  position: absolute;
+  z-index: 6;
+  width: 6px;
+  height: 100px;
+  background: #333;
+  top: 35px;
+  left: 50%;
+  margin-left: -2px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  transform-origin: 50% 105px;
+}
+
+.second-hand {
+  position: absolute;
+  z-index: 7;
+  width: 4px;
+  height: 120px;
+  background: gold;
+  top: 19px;
+  lefT: 50%;
+  margin-left: -1px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  transform-origin: 50% 120px;
+}
+
+span {
+  display: inline-block;
+  position: absolute;
+  color: #222;
+  font-size: 28px;
+  font-family: 'impact';
+  font-weight: 600;
+  z-index: 4;
+}
+
+.h12 {
+  top: 20px;
+  left: 50%;
+  margin-left: -9px;
+}
+.h3 {
+  top: 120px;
+  right: 20px;
+}
+.h6 {
+  bottom:20px;
+  left: 50%;
+  margin-left: -5px;
+}
+.h9 {
+  left: 20px;
+  top: 120px;
+}
+
+.diallines {
+  position: absolute;
+  z-index: 1;
+  width: 2px;
+  height: 10px;
+  background: #666;
+  left: 50%;
+  margin-left: -1px;
+  transform-origin: 50% 137px;
+}
+.diallines:nth-of-type(5n) {
+  position: absolute;
+  z-index: 1;
+  width: 5px;
+  height: 15px;
+  background: #222;
+  left: 50%;
+  margin-left: -1px;
+  transform-origin: 50% 137px;
+}
+
+.info {
+  position: absolute;
+  width: 80px;
+  height: 20px;
+  border-radius: 7px;
+  
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  font-size: 1px;
+  top: 200px;
+  left: 50%;
+  margin-left: -60px;
+  font-family: 'Poiret One', cursive;
+  font-weight: 700;
+  z-index: 3;
+  letter-spacing: 3px;
+  margin-left: -60px;
+  left: 50%;
+  
+}
+.date {
+    top: 100px;
+  }
+.day {
+    top: 180px;
+}

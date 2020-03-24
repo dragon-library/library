@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Part II"><meta property="og:title" content="Part II" />
+<meta property="og:description" content="Python Web Applications with Flask – Part II Articles in this series:
+ Part I: Application setup Part II: Setup user accounts, Templates, Static files ← CURRENT ARTICLE Part III: Testing (unit and integration), Debugging, and Error handling  Welcome back to the Flask-Tracking development series! For those of you who are just joining us, we are implementing a web analytics application that conforms to this napkin specification. For all those of you following along at home, you may check out today’s code with:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-2/" />
+
+<title>Part II | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/" >
+      Build a CRUD Web App. 1-3
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/" >
+      Building a Simple Web APP using Flask and MongoDB
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/" >
+      Web Applications With Flask [Series]
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-1/" >
+      Part I
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-2/"  class="active">
+      Part II
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-3/" >
+      Part III
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Part II</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-web-applications-with-flask-part-ii">Python Web Applications with Flask – Part II</h1>
+
+<p><img src="https://realpython.com/static/real-python-placeholder-4.d9524cd39927.jpg" alt="enter image description here" /></p>
+
+<p><strong>Articles in this series:</strong></p>
+
+<ol>
+<li>Part I:  <a href="../part-1">Application setup</a></li>
+<li><strong>Part II: Setup user accounts, Templates, Static files ←  <em>CURRENT ARTICLE</em></strong></li>
+<li>Part III:  <a href="../part-3">Testing (unit and integration), Debugging, and Error handling</a></li>
+</ol>
+
+<p>Welcome back to the Flask-Tracking development series! For those of you who are just joining us, we are implementing a web analytics application that conforms to  <a href="https://realpython.com/python-web-applications-with-flask-part-i/#toc_1">this napkin specification</a>. For all those of you following along at home, you may check out today’s code with:</p>
+
+<pre><code class="language-py">$ git checkout v0.2
+</code></pre>
+
+<p>Or, you may download it from the  <a href="https://github.com/mjhea0/flask-tracking/releases">releases page on Github</a>. Those of you who are just joining us may wish to read  <a href="https://realpython.com/python-web-applications-with-flask-part-i/#toc_5">a note on the repository structure</a>  as well.</p>
+
+<h2 id="housekeeping">Housekeeping</h2>
+
+<p>To quickly review, in our  <a href="https://realpython.com/python-web-applications-with-flask-part-i/">last article</a>  we set up a bare-bones application which enabled sites to be added and visits recorded against them via a simple web interface or over HTTP.</p>
+
+<p>Today we will add users, access control, and enable users to add visits from their own websites using tracking beacons. We will also be diving into some best practices for writing templates, keeping our models and forms in sync, and handling static files.</p>
+
+<h3 id="from-single-to-multi-package">From single to multi-package</h3>
+
+<p>When last we left our application, the directory structure looked something like this:</p>
+
+<pre><code class="language-py">flask-tracking/
+    flask_tracking/
+        templates/    # Holds Jinja templates
+        __init__.py   # General application setup
+        forms.py      # User data to domain data mappers and validators
+        models.py     # Domain models
+        views.py      # well ... controllers, really.
+    config.py         # Configuration, just like it says on the cover
+    README.md
+    requirements.txt
+    run.py            # `python run.py` to bring the application up locally.
+</code></pre>
+
+<p>To keep things clear, let’s move the existing  <code>forms</code>,  <code>models</code>, and  <code>views</code>  into a  <code>tracking</code>  sub-package and create another sub-package for our  <code>User</code>-specific functionality which we will call  <code>users</code>:</p>
+
+<pre><code class="language-py">flask_tracking/
+    templates/
+    tracking/         # This is the code from Part 1
+        __init__.py   # Create this file - it should be empty.
+        forms.py
+        models.py
+        views.py
+    users/            # Where we are working today
+        __init__.py
+    __init__.py       # This is also code from Part 1
+</code></pre>
+
+<p>This means that we will need to change our import in  <code>flask_tracking/__init__.py</code>  from  <code>from .views import tracking</code>  to  <code>from .tracking.views import tracking</code>.</p>
+
+<p>Then there is the database setup in  <code>tracking.models</code>. This we will move out into the parent package (<code>flask_tracking</code>) since the database manager will be shared between packages. Let’s call that module  <code>data</code>:</p>
+
+<pre><code class="language-py"># flask_tracking/data.py
+from flask.ext.sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+def query_to_list(query, include_field_names=True):
+    &quot;&quot;&quot;Turns a SQLAlchemy query into a list of data values.&quot;&quot;&quot;
+    column_names = []
+    for i, obj in enumerate(query.all()):
+        if i == 0:
+            column_names = [c.name for c in obj.__table__.columns]
+            if include_field_names:
+                yield column_names
+        yield obj_to_list(obj, column_names)
+
+def obj_to_list(sa_obj, field_order):
+    &quot;&quot;&quot;Takes a SQLAlchemy object - returns a list of all its data&quot;&quot;&quot;
+    return [getattr(sa_obj, field_name, None) for field_name in field_order]
+</code></pre>
+
+<p>Then we can update  <code>tracking.models</code>  to use  <code>from flask_tracking.data import db</code>  and  <code>tracking.views</code>  to use  <code>from flask_tracking.data import db, query_to_list</code>  and we should now have a working  <em>multi-package</em>  application.</p>
+
+<h2 id="users">Users</h2>
+
+<p>Now that we have split up our application into separate packages of related functionality, let’s start working on the  <code>users</code>  package. Users need to be able to sign up for an account, manage their account, and log in and out. There could be more user-related functionality (especially around permissions) but to keep things clear we will stick with these basics.</p>
+
+<h3 id="enlisting-help">Enlisting help</h3>
+
+<p>We have a  <a href="https://realpython.com/python-web-applications-with-flask-part-i/#toc_7">rule</a>  for taking on dependencies - each dependency we add must solve at least one difficult problem well. Maintaining user sessions has several interesting edge-cases which makes it an excellent candidate for a dependency. Fortunately, there is one readily available for this use case -  <a href="http://flask-login.readthedocs.org/en/latest/">Flask-Login</a>. However, there is one thing that Flask-Login does not handle at all - authentication. We can use any authentication scheme we want to - from “just provide a username” to distributed authentication schemes like Persona. Let’s keep it simple and go with username and password. This means that we need to store a user’s password, which we will want to hash. Since properly hashing passwords is  <em>also</em>  a hard problem we will take on another dependency,  <a href="https://pypi.python.org/pypi/backports.pbkdf2/"><code>backports.pbkdf2</code></a>  to ensure our passwords are securely hashed. (We picked pbdkdf2 because it is  <a href="http://security.stackexchange.com/a/6415/3231">considered secure</a>  as of this writing and is included in Python 3.3+ - we only need it while we are running on Python 2.)</p>
+
+<p>Let’s go ahead and add:</p>
+
+<pre><code class="language-py">Flask-Login==0.2.7
+backports.pbkdf2==0.1
+</code></pre>
+
+<p>to our  <code>requirements.txt</code>  file and then (making sure our virtual environment is activated) we can run  <code>pip install -r requirements.txt</code>  again to install them. (You may get some errors compiling the C speedups for pbkdf2 - you can ignore them). We will integrate it with our application in a moment - first we need to set up our Users so Flask-Login has something to work with.</p>
+
+<h3 id="models">Models</h3>
+
+<p>We will set up our  <code>User</code>  SQLAlchemy class in  <code>users.models</code>. We will only store a user’s name, email address, and (salted and hashed) password:</p>
+
+<pre><code class="language-py">from random import SystemRandom
+
+from backports.pbkdf2 import pbkdf2_hmac, compare_digest
+from flask.ext.login import UserMixin
+from sqlalchemy.ext.hybrid import hybrid_property
+
+from flask_tracking.data import db
+
+class User(UserMixin, db.Model):
+    __tablename__ = 'users_user'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    email = db.Column(db.String(120), unique=True)
+    _password = db.Column(db.LargeBinary(120))
+    _salt = db.Column(db.String(120))
+    sites = db.relationship('Site', backref='owner', lazy='dynamic')
+
+    @hybrid_property
+    def password(self):
+        return self._password
+
+    # In order to ensure that passwords are always stored
+    # hashed and salted in our database we use a descriptor
+    # here which will automatically hash our password
+    # when we provide it (i. e. user.password = &quot;12345&quot;)
+    @password.setter
+    def password(self, value):
+        # When a user is first created, give them a salt
+        if self._salt is None:
+            self._salt = bytes(SystemRandom().getrandbits(128))
+        self._password = self._hash_password(value)
+
+    def is_valid_password(self, password):
+        &quot;&quot;&quot;Ensure that the provided password is valid.
+</code></pre>
+
+<p>We are using this instead of a <code>sqlalchemy.types.TypeDecorator</code>
+ (which would let us write <code>User.password == password</code> and have the incoming
+ <code>password</code> be automatically hashed in a SQLAlchemy query)
+ because <code>compare_digest</code> properly compares <strong>all</strong>*
+ the characters of the hash even when they do not match in order to
+ avoid timing oracle side-channel attacks.&ldquo;&rdquo;&rdquo;</p>
+
+<pre><code class="language-py">new_hash = self._hash_password(password)
+return compare_digest(new_hash, self._password)
+</code></pre>
+
+<pre><code class="language-py">    def _hash_password(self, password):
+        pwd = password.encode(&quot;utf-8&quot;)
+        salt = bytes(self._salt)
+        buff = pbkdf2_hmac(&quot;sha512&quot;, pwd, salt, iterations=100000)
+        return bytes(buff)
+
+    def __repr__(self):
+        return &quot;&lt;User #{:d}&gt;&quot;.format(self.id)
+</code></pre>
+
+<p><em>Phew</em>  - almost half of this code is for the password! Even worse, by the time you are reading this our implementation of  <code>_hash_password</code>  is likely to be considered imperfect (such is the ever-changing nature of cryptography) but it does cover all of the basic best practices:</p>
+
+<ul>
+<li>Always use a salt unique to each user.</li>
+<li>Use a key-stretching algorithm with a tunable unit of work.</li>
+<li>Compare hashes using a  <em>constant time</em>  algorithm.</li>
+</ul>
+
+<p>In non-password related notes, we are making a  <a href="http://pythonhosted.org/Flask-SQLAlchemy/models.html#one-to-many-relationships">one-to-many</a>  relationship between  <code>User</code>s and  <code>Site</code>s (<code>sites = db.relationship('Site', backref='owner', lazy='dynamic')</code>) so that we can have users who manage multiple sites.</p>
+
+<p>In addition, we are subclassing Flask-Login’s  <code>UserMixin</code>  class. Flask-Login requires that the  <code>User</code>  class implement  <a href="https://flask-login.readthedocs.org/en/latest/#your-user-class">certain methods</a>  (<code>get_id</code>,  <code>is_authenticated</code>, etc.) so that it can do its work.  <code>UserMixin</code>  provides default versions of those methods that work quite well for our purposes.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h3 id="integrating-flask-login">Integrating Flask-Login</h3>
+
+<p>Now that we have a  <code>User</code>  we can integrate with Flask-Login. In order to avoid circular imports we are going to setup the extension in its own top-level module named  <code>auth</code>:</p>
+
+<pre><code class="language-py"># flask_tracking/auth.py
+from flask.ext.login import LoginManager
+
+from flask_tracking.users.models import User
+
+login_manager = LoginManager()
+
+login_manager.login_view = &quot;users.login&quot;
+# We have not created the users.login view yet
+# but that is the name that we will use for our
+# login view, so we will set it now.
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+</code></pre>
+
+<p><code>@login_manager.user_loader</code>  registers our  <code>load_user</code>  function with Flask-Login so that when a user returns after logging in Flask-Login can load the user from the user_id that it stores in Flask’s  <code>session</code>.</p>
+
+<p>Finally, we import  <code>login_manager</code>  into  <code>flask_tracking/__init__.py</code>  and register it with our application object:</p>
+
+<pre><code class="language-py">from .auth import login_manager
+
+# ...
+
+login_manager.init_app(app)
+</code></pre>
+
+<h3 id="views">Views</h3>
+
+<p>Next let’s set up our view and controller functions for Users to enable register/log in/log out functionality. First, we will set up our forms:</p>
+
+<pre><code class="language-py"># flask_tracking/users/forms.py
+from flask.ext.wtf import Form
+from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
+from wtforms import fields
+from wtforms.validators import Email, InputRequired, ValidationError
+
+from .models import User
+
+class LoginForm(Form):
+    email = fields.StringField(validators=[InputRequired(), Email()])
+    password = fields.StringField(validators=[InputRequired()])
+
+    # WTForms supports &quot;inline&quot; validators
+    # which are methods of our `Form` subclass
+    # with names in the form `validate_[fieldname]`.
+    # This validator will run after all the
+    # other validators have passed.
+    def validate_password(form, field):
+        try:
+            user = User.query.filter(User.email == form.email.data).one()
+        except (MultipleResultsFound, NoResultFound):
+            raise ValidationError(&quot;Invalid user&quot;)
+        if user is None:
+            raise ValidationError(&quot;Invalid user&quot;)
+        if not user.is_valid_password(form.password.data):
+            raise ValidationError(&quot;Invalid password&quot;)
+
+        # Make the current user available
+        # to calling code.
+        form.user = user
+
+class RegistrationForm(Form):
+    name = fields.StringField(&quot;Display Name&quot;)
+    email = fields.StringField(validators=[InputRequired(), Email()])
+    password = fields.StringField(validators=[InputRequired()])
+
+    def validate_email(form, field):
+        user = User.query.filter(User.email == field.data).first()
+        if user is not None:
+            raise ValidationError(&quot;A user with that email already exists&quot;)
+</code></pre>
+
+<p>Again, a decent amount of code, this time mostly around validating user input. One thing to note is that for our login form, when the user is authenticated, we expose the  <code>User</code>  instance on the form as  <code>form.user</code>  (so we do not have to make the same query in two places - even though SQLAlchemy will do the right thing here and only hit the database once).</p>
+
+<p>Finally, we can set up our views:</p>
+
+<pre><code class="language-py"># flask_tracking/users/views.py
+from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask.ext.login import login_required, login_user, logout_user
+
+from flask_tracking.data import db
+from .forms import LoginForm, RegistrationForm
+from .models import User
+
+users = Blueprint('users', __name__)
+
+@users.route('/login/', methods=('GET', 'POST'))
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        # Let Flask-Login know that this user
+        # has been authenticated and should be
+        # associated with the current session.
+        login_user(form.user)
+        flash(&quot;Logged in successfully.&quot;)
+        return redirect(request.args.get(&quot;next&quot;) or url_for(&quot;tracking.index&quot;))
+    return render_template('users/login.html', form=form)
+
+@users.route('/register/', methods=('GET', 'POST'))
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User()
+        form.populate_obj(user)
+        db.session.add(user)
+        db.session.commit()
+        login_user(user)
+        return redirect(url_for('tracking.index'))
+    return render_template('users/register.html', form=form)
+
+@users.route('/logout/')
+@login_required
+def logout():
+    # Tell Flask-Login to destroy the
+    # session-&gt;User connection for this session.
+    logout_user()
+    return redirect(url_for('tracking.index'))
+</code></pre>
+
+<p>And import and register them with our application object:</p>
+
+<pre><code class="language-py"># flask_tracking/__init__.py
+from .users.views import users
+
+# ...
+
+app.register_blueprint(users)
+</code></pre>
+
+<p>Notice the call to  <code>load_user</code>  inside of our  <code>login</code>  view.  <code>Flask-Login</code>  requires us to call this function in order to activate our user’s session (which it will manage for us).</p>
+
+<p>One last thing to look at is our  <code>users/login.html</code>  template:</p>
+
+<pre><code class="language-py">{% extends &quot;layout.html&quot; %}
+{% import &quot;helpers/forms.html&quot; as forms %}
+{% block title %}Log into Flask Tracking!{% endblock %}
+{% block content %}
+{{super()}}
+&lt;form action=&quot;{{ url_for('users.login', ext=request.args.get('next', '')) }}&quot; method=&quot;POST&quot;&gt;
+{{ forms.render(form) }}
+&lt;p&gt;&lt;input type=&quot;Submit&quot; value=&quot;Sign In&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;
+{% endblock content %}
+</code></pre>
+
+<p>We will cover the  <code>layout.html</code>  and  <code>forms</code>  macros in a little while - the key thing to note is that for our form’s  <code>action</code>  we are explicitly passing in the value of the  <code>next</code>  parameter:</p>
+
+<p>url_for(&lsquo;users.login&rsquo;, next=request.args.get(&lsquo;next&rsquo;, &ldquo;))</p>
+
+<p>This ensures that when the user submits the form to  <code>users.login</code>  the  <code>next</code>  parameter is available for our redirect code:</p>
+
+<pre><code class="language-py">login_user(form.user)
+flash(&quot;Logged in successfully.&quot;)
+return redirect(request.args.get(&quot;next&quot;) or url_for(&quot;tracking.index&quot;))
+</code></pre>
+
+<p>There’s a subtle security hole in this code, which we will be fixing in our next article (but points to you if you have already spotted it).</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h3 id="fighting-duplication">Fighting duplication</h3>
+
+<p>But wait! Did you see the pattern that we just repeated for the third time? (We actually repeated  <em>at least</em>  two patterns, but we are only going to remove the duplication from one of them today). This part of the  <code>register</code>  code:</p>
+
+<p>user = User()
+form.populate_obj(user)
+db.session.add(user)
+db.session.commit()</p>
+
+<p>is also repeated multiple times in the  <code>tracking</code>  code. Let’s pull that database session behavior out using a custom mixin which we can borrow from  <a href="https://github.com/semirook/flask-kit">Flask-Kit</a>. Open  <code>flask_tracking/data</code>  and add the following code:</p>
+
+<pre><code class="language-py">class CRUDMixin(object):
+    __table_args__ = {'extend_existing': True}
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    @classmethod
+    def create(cls, commit=True, **kwargs):
+        instance = cls(**kwargs)
+        return instance.save(commit=commit)
+
+    @classmethod
+    def get(cls, id):
+        return cls.query.get(id)
+
+    # We will also proxy Flask-SqlAlchemy's get_or_44
+    # for symmetry
+    @classmethod
+    def get_or_404(cls, id):
+        return cls.query.get_or_404(id)
+
+    def update(self, commit=True, **kwargs):
+        for attr, value in kwargs.iteritems():
+            setattr(self, attr, value)
+        return commit and self.save() or self
+
+    def save(self, commit=True):
+        db.session.add(self)
+        if commit:
+            db.session.commit()
+        return self
+
+    def delete(self, commit=True):
+        db.session.delete(self)
+        return commit and db.session.commit()
+</code></pre>
+
+<p><code>CRUDMixin</code>  provides us with an easier way of handling the four most common model operations (Create, Read, Update, and Delete):</p>
+
+<pre><code class="language-py">def create(cls, commit=True, **kwargs): 
+    pass
+
+def get(cls, id): 
+    pass
+
+def update(self, commit=True, **kwargs): 
+    pass
+
+def delete(self, commit=True): 
+    pass
+</code></pre>
+
+<p>Now, if we update our  <code>User</code>  class to also subclass  <code>CRUDMixin</code>:</p>
+
+<p>from flask_tracking.data import CRUDMixin, db</p>
+
+<p>class User(UserMixin, CRUDMixin, db.Model):</p>
+
+<p>we can then use the much clearer:</p>
+
+<pre><code class="language-py">user = User.create(**form.data)
+</code></pre>
+
+<p>call in our views. This makes it easier to reason about what our code is doing and makes it much easier to refactor (since each piece of code deals with fewer concerns). We can also update our  <code>tracking</code>  package’s code to make use of the same methods.</p>
+
+<h3 id="templates">Templates</h3>
+
+<p>In Part I, we skipped reviewing our templates to save time. Let’s take a couple of minutes now and review the more interesting parts of what we are using to render our HTML.</p>
+
+<p>Later on, we might break these all up into a RESTful interface. Instead of having Python/Flask/Jinja serve up a pre-formatted page we could use a JavaScript MVC framework to handle the front-end and make requests to the backend to fetch the necessary data. The client would then send requests to the server to make/register new sites and be in charge of updating the views when new sites and visits are created. The views would then be responsible for the REST interface.</p>
+
+<p>That said, since we are focusing on Flask, we will use Jinja to serve up the page for now.</p>
+
+<h3 id="layout">Layout</h3>
+
+<p>First, look at  <a href="https://github.com/mjhea0/flask-tracking/blob/part-2/flask_tracking/templates/layout.html"><code>layout.html</code></a>  (I am leaving the majority of the code out of this article to save space, but I am providing links to the full code):</p>
+
+<pre><code class="language-py">&lt;title&gt;{% block title %}{{ title }}{% endblock %}&lt;/title&gt;
+&lt;!-- ... snip ... --&gt;
+&lt;h1&gt;{{ self.title() }}&lt;/h1&gt;
+</code></pre>
+
+<p>This snippet showcases two of my favorite tricks - first, we have a block (<code>title</code>) that contains a variable so we can set this value from our  <code>render_template</code>  calls (so we don’t need to create a whole new template just to change a title). Second, we are  <em>re-using</em>  the contents of the block for our header with the special  <code>self</code>  variable. This means, when we set  <code>title</code>  (either in a child template or via a keyword argument to  <code>render_template</code>) the text we provide will show up  <em>both</em>  in the browser’s title bar and in the  <code>h1</code>  tag.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h3 id="form-management">Form management</h3>
+
+<p>The other piece of our templating structure that merits a look is  <a href="https://github.com/mjhea0/flask-tracking/tree/part-2/flask_tracking/templates/helpers">our macros</a>. For those of you coming from a Django background, Jinja’s macros are Django’s  <code>tag</code>s on steroids. Our  <code>form.render</code>  macro, for example, makes it incredibly easy to add a form to one of our templates:</p>
+
+<pre><code class="language-html">{% macro render(form) %}
+&lt;dl&gt;
+{% for field in form if field.type not in [&quot;HiddenField&quot;, &quot;CSRFTokenField&quot;] %}
+&lt;dt&gt;{{ field.label }}&lt;/dt&gt;
+&lt;dd&gt;{{ field }}
+{% if field.errors %}
+&lt;ul class=&quot;errors&quot;&gt;
+{% for error in field.errors %}
+&lt;li&gt;{{error}}&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+{% endif %}&lt;/dd&gt;
+{% endfor %}
+&lt;/dl&gt;
+{{ form.hidden_tag() }}
+{% endmacro %}
+</code></pre>
+
+<p>Using it is as simple as:</p>
+
+<pre><code class="language-py">{% import &quot;helpers/forms.html&quot; as forms %}
+&lt;!-- ... snip ... --&gt;
+&lt;form action=&quot;{{url_for('users.register')}}&quot; method=&quot;POST&quot;&gt;
+{{ forms.render(form) }}
+&lt;p&gt;&lt;input type=&quot;Submit&quot; value=&quot;Learn more about your visitors&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Instead of writing the same form HTML over and over again we can just use  <code>form.render</code>  to automatically generate the boilerplate HTML for each field in our forms. This way all of our forms will look and function in the same way and if we ever have to change them we only have to do it in once place.  <strong>Don’t Repeat Yourself</strong>  makes for very clean code.</p>
+
+<h2 id="refactoring-the-tracking-application">Refactoring the Tracking Application</h2>
+
+<p>Now that we have all that set up properly, let’s go back and refactor the meat of the application:  <em>the request tracking</em>.</p>
+
+<p>In Part I, we built the skeleton of a request tracker. Sites were created on the index page and anyone could view  <em>all</em>  the available sites. As long as the end user sent all the information themselves, Flask-Tracking would store it happily. Now, we have users, so we want to filter the list of sites. Additionally, it would be good if our application could derive some of the data from the visitor, rather than asking the end user of our application to derive it all for themselves.</p>
+
+<h3 id="filtering-sites">Filtering sites</h3>
+
+<p>Let’s start with site list:</p>
+
+<pre><code class="language-py"># flask_tracking/tracking/views.py
+@tracking.route(&quot;/sites&quot;, methods=(&quot;GET&quot;, &quot;POST&quot;))
+@login_required
+def view_sites():
+    form = SiteForm()
+
+    if form.validate_on_submit():
+        Site.create(owner=current_user, **form.data)
+        flash(&quot;Added site&quot;)
+        return redirect(url_for(&quot;.view_sites&quot;))
+
+    query = Site.query.filter(Site.user_id == current_user.id)
+    data = query_to_list(query)
+    results = []
+
+    try:
+        # The header row should not be linked
+        results = [next(data)]
+        for row in data:
+            row = [_make_link(cell) if i == 0 else cell
+                   for i, cell in enumerate(row)]
+            results.append(row)
+    except StopIteration:
+        # This happens when a user has no sites registered yet
+        # Since it is expected, we ignore it and carry on.
+        pass
+
+    return render_template(&quot;tracking/sites.html&quot;, sites=results, form=form)
+
+_LINK = Markup('&lt;a href=&quot;{url}&quot;&gt;{name}&lt;/a&gt;')
+
+def _make_link(site_id):
+    url = url_for(&quot;.view_site_visits&quot;, site_id=site_id)
+    return _LINK.format(url=url, name=site_id)
+</code></pre>
+
+<p>Starting from the top, the  <code>@login_required</code>  decorator is provided by  <code>Flask-Login</code>. Anyone who isn’t logged in who tries to go to  <code>/sites/</code>  will be redirected to the login page. Next, we are checking to see if the user is currently adding a new site (<code>form.validate_on_submit</code>  checks to see if  <code>request.method</code>  is POST and validates the form - if either of the preconditions fails, the method returns  <code>False</code>, otherwise it returns  <code>True</code>). If the user is creating a new site, we create a new site (using the method defined by our  <code>CRUDMixin</code>, so if you are making changes to the code yourself, you will want to make sure that  <code>Site</code>  and  <code>Visit</code>  both inherit from  <code>CRUDMixin</code>) and redirect back to the same page. We redirect back to ourselves after saving the new site to prevent a page refresh causing the user to attempt to add the site twice. (This is called the Post-Redirect-Get pattern).</p>
+
+<p>If you are not sure what I mean by that, try commenting out the  <code>return redirect(url_for(&quot;.view_sites&quot;))</code>, then submit the “Add a Site” form and when the page reloads push  <code>F5</code>  to refresh your browser. Try that same exercise after restoring the redirect. (When the redirect is removed the browser will ask if you really want to submit the form data again - the last request that the browser made is the POST that created the new site. With the redirect, the last request that the browser made is the GET request that reloaded the  <code>view_sites</code>  page).</p>
+
+<p>Continuing on, if the user is not creating a new site (or if the provided data has errors) we are querying our database to look up all of the sites that were created by the currently logged in user. We then slightly transform our list, turning the database ID into an HTML link for each of our non-header rows. This use of an “inline” template is good for fast prototyping, when you do not yet have a good idea of whether the template pattern is worth “macro-izing”. In our case, this is the only view we have with a table with an action link, so we use the inline template technique to demonstrate another way of doing things.</p>
+
+<p>It is worth noting that we have elected to use  <code>sites_view</code>  for both displaying sites and their visits and for registering sites. It’s really up to you how you want to break up your application. Having a  <code>view_sites</code>  and an  <code>add_site</code>  view, where the former is only accessible to GET requests and the latter to POST is also a valid technique. Whichever technique feels clearer to you is the one you should prefer - just make sure you are consistent.</p>
+
+<h3 id="deriving-data-from-visitors">Deriving data from visitors</h3>
+
+<p><code>add_visit</code>, meanwhile, is now a bit more complex (although it is mostly mapping code):</p>
+
+<pre><code class="language-py">from flask import request
+
+from .geodata import get_geodata
+
+# ... snip ...
+
+@tracking.route(&quot;/sites/&lt;int:site_id&gt;/visit&quot;, methods=(&quot;GET&quot;, &quot;POST&quot;))
+def add_visit(site_id=None):
+    site = Site.get_or_404(site_id)
+
+    browser = request.headers.get(&quot;User-Agent&quot;)
+    url = request.values.get(&quot;url&quot;) or request.headers.get(&quot;Referer&quot;)
+    event = request.values.get(&quot;event&quot;)
+    ip_address = request.access_route[0] or request.remote_addr
+    geodata = get_geodata(ip_address)
+    location = &quot;{}, {}&quot;.format(geodata.get(&quot;city&quot;),
+                               geodata.get(&quot;zipcode&quot;))
+
+    # WTForms does not coerce obj or keyword arguments
+    # (otherwise, we could just pass in `site=site_id`)
+    # CSRF is disabled in this case because we will *want*
+    # users to be able to hit the /sites/{id}  endpoint from other sites.
+    form = VisitForm(csrf_enabled=False,
+                     site=site,
+                     browser=browser,
+                     url=url,
+                     ip_address=ip_address,
+                     latitude=geodata.get(&quot;latitude&quot;),
+                     longitude=geodata.get(&quot;longitude&quot;),
+                     location=location,
+                     event=event)
+
+    if form.validate():
+        Visit.create(**form.data)
+        # No need to send anything back to the client
+        # Just indicate success with the response code
+        # (204 is &quot;Your request succeeded; I have nothing else to say.&quot;)
+        return '', 204
+
+    return jsonify(errors=form.errors), 400
+</code></pre>
+
+<p>We have removed the ability for users to manually add visits from our website via a form (and so we have also removed the second route on  <code>add_visit</code>). We now do explicit mapping for data that we can derive on the server (the browser, the IP Address) and then we construct our  <code>VisitForm</code>  passing in those mapped values directly. The IP address we pull from  <code>access_route</code>  in case we are behind a proxy since then  <code>remote_addr</code>  will contain the IP address of the last proxy, which is not what we want at all. We disable CSRF protection because we actually  <em>want</em>  users to be able to make requests to this endpoint from elsewhere. Finally, we know what site this request is for because of the  <code>&lt;int:site_id&gt;</code>  parameter that we have set to the URL.</p>
+
+<p>This is not a perfect implementation of this idea. We do not have any way of verifying that the request is a licit request from our tracking beacons. Someone could modify the JavaScript code or submit modified requests from another server entirely and we would happily save it. This is simple and it easy to implement. But you probably should not use this code in a production environment.</p>
+
+<p><code>get_geodata(ip_address)</code>  queries  <code>http://freegeoip.net/</code>  so we can get a rough idea of where the requests are coming from:</p>
+
+<pre><code class="language-py">from json import loads
+from re import compile, VERBOSE
+from urllib import urlopen
+
+FREE_GEOIP_URL = &quot;http://freegeoip.net/json/{}&quot;
+VALID_IP = compile(r&quot;&quot;&quot;
+\b
+(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)
+\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)
+\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)
+\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)
+\b
+&quot;&quot;&quot;, VERBOSE)
+
+def get_geodata(ip):
+    &quot;&quot;&quot;
+ Search for geolocation information using http://freegeoip.net/
+ &quot;&quot;&quot;
+    if not VALID_IP.match(ip):
+        raise ValueError('Invalid IPv4 format')
+
+    url = FREE_GEOIP_URL.format(ip)
+    data = {}
+
+    try:
+        response = urlopen(url).read()
+        data = loads(response)
+    except Exception:
+        pass
+
+    return data
+</code></pre>
+
+<p>Save this as  <code>geodata.py</code>  in the  <code>tracking</code>  directory.</p>
+
+<p>Return to the view, all this view is doing is copying info from the request down and storing it in the database. It responds to the request with an HTTP 204 (No Content) response. This tells the browser that the request succeeded, but we do not have to spend any extra time generating content that the end-user will not see.</p>
+
+<p><a href="https://realpython.com/account/join/">Remove ads</a></p>
+
+<h3 id="seeing-the-visits">Seeing the visits</h3>
+
+<p>We also add authentication to the Visits view for each individual site:</p>
+
+<pre><code class="language-py">@tracking.route(&quot;/sites/&lt;int:site_id&gt;&quot;)
+@login_required
+def view_site_visits(site_id=None):
+    site = Site.get_or_404(site_id)
+    if not site.user_id == current_user.id:
+        abort(401)
+
+    query = Visit.query.filter(Visit.site_id == site_id)
+    data = query_to_list(query)
+    return render_template(&quot;tracking/site.html&quot;, visits=data, site=site)
+</code></pre>
+
+<p>The only real change here is that if the user is logged in, but does not own the site, they will see an authorization error page, rather than being able to view the visits for the site.</p>
+
+<h3 id="providing-a-means-of-tracking-visitors">Providing a means of tracking visitors</h3>
+
+<p>Finally, we want to provide users a snippet of code that they can place on their website that will automatically record visits:</p>
+
+<pre><code class="language-py">{# flask_tracking/templates/tracking/site.html #}
+{% block content %}
+{{ super() }}
+&lt;p&gt;To track visits to this site, simple add the following snippet to the pages that you wish to track:&lt;/p&gt;
+&lt;code&gt;&lt;pre&gt;
+&amp;lt;script&gt;
+(function() {
+  var img = new Image();
+  img.src = &quot;{{ url_for('tracking.add_visit', site_id=site.id, event='PageLoad', _external=true) }}&quot;;
+})();
+&amp;lt;/script&gt;
+&amp;lt;noscript&gt;
+&amp;lt;img src=&quot;{{ url_for('tracking.add_visit', site_id=site.id, event='PageLoad', _external=true) }}&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&amp;lt;/noscript&gt;
+&lt;/pre&gt;&lt;/code&gt;
+&lt;h2&gt;Visits for {{ site.base_url }}&lt;/h2&gt;
+&lt;table&gt;
+{{ tables.render(visits) }}
+&lt;/table&gt;
+{% endblock content %}
+</code></pre>
+
+<p>Our snippet is very simple - when the page loads we create a new image and set its source to be our tracking URL. The browser will  <em>immediately</em>  load the image specified (which will be nothing at all) and we will record a tracking hit in our application. We also have a  <code>&lt;noscript&gt;</code>  block for those people who are visiting us without JavaScript enabled. (If we really wanted to keep up with the times, we could also update our server-side code to check for the  <code>Do Not Track</code>  header and only record the visit if the user has opted into tracking.)</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>That’s it for this post. We now have user accounts, and the beginnings of an easy to use client-side API for tracking. We still need to finalize our client-side API, style the application and add reports.</p>
+
+<p>The code for the application can be found  <a href="https://github.com/mjhea0/flask-tracking">here</a>.</p>
+
+<p>Your app should now look like this:</p>
+
+<p><a href="https://files.realpython.com/media/flask-tracking-3.20b14871c9a4.png"><img src="https://files.realpython.com/media/flask-tracking-3.20b14871c9a4.png" alt="Flask Tracking app screenshot" /></a></p>
+
+<p><strong>Looking ahead:</strong></p>
+
+<ul>
+<li>In Part III we’ll explore  <a href="https://realpython.com/python-testing/">writing tests</a>  for our application, logging, and debugging errors.</li>
+<li>In Part IV we’ll do some Test Driven Development to enable our application to accept payments and display simple reports.</li>
+<li>In Part V we will write a RESTful JSON API for others to consume.</li>
+<li>In Part VI we will cover automating deployments (on Heroku) with Fabric and basic A/B Feature Testing.</li>
+<li>Finally, in Part VII we will cover preserving your application for the future with documentation, code coverage and quality metric tools.</li>
+</ul>
+
+<p>Reference : <a href="https://realpython.com/python-web-applications-with-flask-part-ii/">https://realpython.com/python-web-applications-with-flask-part-ii/</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cFalsk%5cWeb_Applications_With_Flask%5cpart-2.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

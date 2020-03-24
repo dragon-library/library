@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Build a Web Scraper"><meta property="og:title" content="Build a Web Scraper" />
+<meta property="og:description" content="Beautiful Soup: Build a Web Scraper With Python The incredible amount of data on the Internet is a rich resource for any field of research or personal interest. To effectively harvest that data, you’ll need to become skilled at web scraping. The Python libraries requests and Beautiful Soup are powerful tools for the job. If you like to learn with hands-on examples and you have a basic understanding of Python and HTML, then this tutorial is for you." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/" />
+
+<title>Build a Web Scraper | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/"  class="active">
+      Build a Web Scraper
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/" >
+      Building a Stock Screener - Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/" >
+      Building a Stock Screener - Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/" >
+      How to scrape Yahoo Finance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/" >
+      Requests and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/" >
+      Web Scraping 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-and-beautifulsoup/" >
+      Web Scraping and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-craigslist/" >
+      Web Scraping Craigslist
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/" >
+      Web Scraping NBA Stats
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/" >
+      Web Scraping Using BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/" >
+      ทำ Web Scraping ด้วย BeautifulSoup
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Build a Web Scraper</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="beautiful-soup-build-a-web-scraper-with-python">Beautiful Soup: Build a Web Scraper With Python</h1>
+
+<p><img src="https://files.realpython.com/media/Build-a-Web-Scraper-With-Requests-and-Beautiful-Soup_Watermarked.37918fb3906c.jpg" alt="enter image description here" /></p>
+
+<p>The incredible amount of data on the Internet is a rich resource for any field of research or personal interest. To effectively harvest that data, you’ll need to become skilled at  <strong>web scraping</strong>. The Python libraries  <code>requests</code>  and Beautiful Soup are powerful tools for the job. If you like to learn with hands-on examples and you have a basic understanding of Python and HTML, then this tutorial is for you.</p>
+
+<p><strong>In this tutorial, you’ll learn how to:</strong></p>
+
+<ul>
+<li>Use  <code>requests</code>  and Beautiful Soup for  <strong>scraping and parsing data</strong>  from the Web</li>
+<li>Walk through a  <strong>web scraping pipeline</strong>  from start to finish</li>
+<li><strong>Build a script</strong>  that fetches job offers from the Web and displays relevant information in your console</li>
+</ul>
+
+<p>This is a powerful project because you’ll be able to apply the same process and the same tools to any static website out there on the World Wide Web. You can download the source code for the project and all examples in this tutorial by clicking on the link below:</p>
+
+<blockquote>
+<p><strong>Get Sample Code:</strong>  <a href="https://realpython.com/bonus/beautiful-soup/">Click here to get the sample code you&rsquo;ll use</a>  for the project and examples in this tutorial.</p>
+</blockquote>
+
+<p>Let’s get started!</p>
+
+<h2 id="what-is-web-scraping">What Is Web Scraping?</h2>
+
+<p><strong>Web scraping</strong>  is the process of gathering information from the Internet. Even copy-pasting the lyrics of your favorite song is a form of web scraping! However, the words “web scraping” usually refer to a process that involves automation. Some websites don’t like it when automatic scrapers gather their data, while others don’t mind.</p>
+
+<p>If you’re scraping a page respectfully for educational purposes, then you’re unlikely to have any problems. Still, it’s a good idea to do some research on your own and make sure that you’re not  <a href="https://benbernardblog.com/web-scraping-and-crawling-are-perfectly-legal-right/">violating</a>  any Terms of Service before you start a large-scale project. To learn more about the legal aspects of web scraping, check out  <a href="https://www.lawinsociety.org/legal-perspectives-on-scraping-data-from-the-modern-web">Legal Perspectives on Scraping Data From The Modern Web</a>.</p>
+
+<h3 id="why-scrape-the-web">Why Scrape the Web?</h3>
+
+<p>Say you’re a surfer (both online and in real life) and you’re looking for employment. However, you’re not looking for just  <em>any</em>  job. With a surfer’s mindset, you’re waiting for the perfect opportunity to roll your way!</p>
+
+<p>There’s a job site that you like that offers exactly the kinds of jobs you’re looking for. Unfortunately, a new position only pops up once in a blue moon. You think about checking up on it every day, but that doesn’t sound like the most fun and productive way to spend your time.</p>
+
+<p>Thankfully, the world offers other ways to apply that surfer’s mindset! Instead of looking at the job site every day, you can use Python to help automate the repetitive parts of your job search.  <strong>Automated web scraping</strong>  can be a solution to speed up the data collection process. You write your code once and it will get the information you want many times and from many pages.</p>
+
+<p>In contrast, when you try to get the information you want manually, you might spend a lot of time clicking, scrolling, and searching. This is especially true if you need large amounts of data from websites that are regularly updated with new content. Manual web scraping can take a lot of time and repetition.</p>
+
+<p>There’s so much information on the Web, and new information is constantly added. Something among all that data is likely of interest to you, and much of it is just out there for the taking. Whether you’re actually on the job hunt, gathering data to support your grassroots organization, or are finally looking to get all the lyrics from your favorite artist downloaded to your computer, automated web scraping can help you accomplish your goals.</p>
+
+<h3 id="challenges-of-web-scraping">Challenges of Web Scraping</h3>
+
+<p>The Web has grown organically out of many sources. It combines a ton of different technologies, styles, and personalities, and it continues to grow to this day. In other words, the Web is kind of a hot mess! This can lead to a few challenges you’ll see when you try web scraping.</p>
+
+<p>One challenge is  <strong>variety</strong>. Every website is different. While you’ll encounter general structures that tend to repeat themselves, each website is unique and will need its own personal treatment if you want to extract the information that’s relevant to you.</p>
+
+<p>Another challenge is  <strong>durability</strong>. Websites constantly change. Say you’ve built a shiny new web scraper that automatically cherry-picks precisely what you want from your resource of interest. The first time you run your script, it works flawlessly. But when you run the same script only a short while later, you run into a discouraging and lengthy stack of  <a href="https://realpython.com/python-traceback/">tracebacks</a>!</p>
+
+<p>This is a realistic scenario, as many websites are in active development. Once the site’s structure has changed, your scraper might not be able to navigate the sitemap correctly or find the relevant information. The good news is that many changes to websites are small and incremental, so you’ll likely be able to update your scraper with only minimal adjustments.</p>
+
+<p>However, keep in mind that because the internet is dynamic, the scrapers you’ll build will probably require constant maintenance. You can set up  <a href="https://realpython.com/python-continuous-integration/">continuous integration</a>  to run scraping tests periodically to ensure that your main script doesn’t break without your knowledge.</p>
+
+<h3 id="apis-an-alternative-to-web-scraping">APIs: An Alternative to Web Scraping</h3>
+
+<p>Some website providers offer  <strong>Application Programming Interfaces (APIs)</strong>  that allow you to access their data in a predefined manner. With APIs, you can avoid parsing HTML and instead access the data directly using formats like  <a href="https://realpython.com/courses/working-json-data-python/">JSON</a>  and XML. HTML is primarily a way to visually present content to users.</p>
+
+<p>When you use an API, the process is generally more stable than gathering the data through web scraping. That’s because APIs are made to be consumed by programs, rather than by human eyes. If the design of a website changes, then it doesn’t mean that the structure of the API has changed.</p>
+
+<p>However, APIs  <em>can</em>  change as well. Both the challenges of variety and durability apply to APIs just as they do to websites. Additionally, it’s much harder to inspect the structure of an API by yourself if the provided documentation is lacking in quality.</p>
+
+<p>The approach and tools you need to gather information using APIs are outside the scope of this tutorial. To learn more about it, check out  <a href="https://realpython.com/api-integration-in-python/">API Integration in Python</a>.</p>
+
+<h2 id="scraping-the-monster-job-site">Scraping the Monster Job Site</h2>
+
+<p>In this tutorial, you’ll build a web scraper that fetches Software Developer job listings from the  <a href="https://www.monster.com/jobs/search/?q=Software-Developer">Monster</a>  job aggregator site. Your web scraper will parse the HTML to pick out the relevant pieces of information and filter that content for specific words.</p>
+
+<p>You can scrape any site on the Internet that you can look at, but the difficulty of doing so depends on the site. This tutorial offers you an introduction to web scraping to help you understand the overall process. Then, you can apply this same process for every website you’ll want to scrape.</p>
+
+<h2 id="part-1-inspect-your-data-source">Part 1: Inspect Your Data Source</h2>
+
+<p>The first step is to head over to the site you want to scrape using your favorite browser. You’ll need to understand the site structure to extract the information you’re interested in.</p>
+
+<h3 id="explore-the-website">Explore the Website</h3>
+
+<p>Click through the site and interact with it just like any normal user would. For example, you could search for Software Developer jobs in Australia using the site’s native search interface:</p>
+
+<p><a href="https://files.realpython.com/media/search_result.ed99b1b57c4f.png"><img src="https://files.realpython.com/media/search_result.ed99b1b57c4f.png" alt="Search Result on Monster Job Aggregator Page" /></a></p>
+
+<p>You can see that there’s a list of jobs returned on the left side, and there are more detailed descriptions about the selected job on the right side. When you click on any of the jobs on the left, the content on the right changes. You can also see that when you interact with the website, the URL in your browser’s address bar also changes.</p>
+
+<h3 id="decipher-the-information-in-urls">Decipher the Information in URLs</h3>
+
+<p>A lot of information can be encoded in a URL. Your web scraping journey will be much easier if you first become familiar with how URLs work and what they’re made of. Try to pick apart the URL of the site you’re currently on:</p>
+
+<pre><code>https://www.monster.com/jobs/search/?q=Software-Developer&amp;where=Australia
+</code></pre>
+
+<p>You can deconstruct the above URL into two main parts:</p>
+
+<ol>
+<li><strong>The base URL</strong>  represents the path to the search functionality of the website. In the example above, the base URL is  <code>https://www.monster.com/jobs/search/</code>.</li>
+<li><strong>The query parameters</strong>  represent additional values that can be declared on the page. In the example above, the query parameters are  <code>?q=Software-Developer&amp;where=Australia</code>.</li>
+</ol>
+
+<p>Any job you’ll search for on this website will use the same base URL. However, the query parameters will change depending on what you’re looking for. You can think of them as query strings that get sent to the database to retrieve specific records.</p>
+
+<p>Query parameters generally consist of three things:</p>
+
+<ol>
+<li><strong>Start:</strong>  The beginning of the query parameters is denoted by a question mark (<code>?</code>).</li>
+<li><strong>Information:</strong>  The pieces of information constituting one query parameter are encoded in key-value pairs, where related keys and values are joined together by an equals sign (<code>key=value</code>).</li>
+<li><strong>Separator:</strong>  Every URL can have multiple query parameters, which are separated from each other by an ampersand (<code>&amp;</code>).</li>
+</ol>
+
+<p>Equipped with this information, you can pick apart the URL’s query parameters into two key-value pairs:</p>
+
+<ol>
+<li><strong><code>q=Software-Developer</code></strong>  selects the type of job you’re looking for.</li>
+<li><strong><code>where=Australia</code></strong>  selects the location you’re looking for.</li>
+</ol>
+
+<p>Try to change the search parameters and observe how that affects your URL. Go ahead and enter new values in the search bar up top:</p>
+
+<p><img src="https://files.realpython.com/media/search_bar.f4ae83849d4e.png" alt="Job search bar from Monster site with details filled in (Software Developer, Australia)" /></p>
+
+<p>Change these values to observe the changes in the URL.</p>
+
+<p>Next, try to change the values directly in your URL. See what happens when you paste the following URL into your browser’s address bar:</p>
+
+<pre><code>https://www.monster.com/jobs/search/?q=Programmer&amp;where=New-York 
+</code></pre>
+
+<p>You’ll notice that changes in the search box of the site are directly reflected in the URL’s query parameters and vice versa. If you change either of them, then you’ll see different results on the website. When you explore URLs, you can get information on how to retrieve data from the website’s server.</p>
+
+<h3 id="inspect-the-site-using-developer-tools">Inspect the Site Using Developer Tools</h3>
+
+<p>Next, you’ll want to learn more about how the data is structured for display. You’ll need to understand the page structure to pick what you want from the HTML response that you’ll collect in one of the upcoming steps.</p>
+
+<p><strong>Developer tools</strong>  can help you understand the structure of a website. All modern browsers come with developer tools installed. In this tutorial, you’ll see how to work with the developer tools in Chrome. The process will be very similar to other modern browsers.</p>
+
+<p>In Chrome, you can open up the developer tools through the menu  <em>View → Developer → Developer Tools</em>. You can also access them by right-clicking on the page and selecting the  <em>Inspect</em>  option, or by using a keyboard shortcut.</p>
+
+<p>Developer tools allow you to interactively explore the site’s  <a href="https://en.wikipedia.org/wiki/Document_Object_Model">DOM</a>  to better understand the source that you’re working with. To dig into your page’s DOM, select the  <em>Elements</em>  tab in developer tools. You’ll see a structure with clickable HTML elements. You can expand, collapse, and even edit elements right in your browser:</p>
+
+<p><a href="https://files.realpython.com/media/dev_tools.4a10589b5ca3.png"><img src="https://files.realpython.com/media/dev_tools.4a10589b5ca3.png" alt="Chrome Developer Tools" /></a></p>
+
+<p>The HTML on the right represents the structure of the page you can see on the left.</p>
+
+<p>You can think of the text displayed in your browser as the HTML structure of that page. If you’re interested, then you can read more about the difference between the DOM and HTML on  <a href="https://css-tricks.com/dom/">CSS-TRICKS</a>.</p>
+
+<p>When you right-click elements on the page, you can select  <em>Inspect</em>  to zoom to their location in the DOM. You can also hover over the HTML text on your right and see the corresponding elements light up on the page.</p>
+
+<p><strong>Task:</strong>  Find a single job posting. What HTML element is it wrapped in, and what other HTML elements does it contain?</p>
+
+<p>Play around and explore! The more you get to know the page you’re working with, the easier it will be to scrape it. However, don’t get too overwhelmed with all that HTML text. You’ll use the power of programming to step through this maze and cherry-pick only the interesting parts with Beautiful Soup.</p>
+
+<h2 id="part-2-scrape-html-content-from-a-page">Part 2: Scrape HTML Content From a Page</h2>
+
+<p>Now that you have an idea of what you’re working with, it’s time to get started using Python. First, you’ll want to get the site’s HTML code into your Python script so that you can interact with it. For this task, you’ll use Python’s  <a href="https://realpython.com/python-requests/"><code>requests</code></a>  library. Type the following in your terminal to install it:</p>
+
+<pre><code class="language-shell">$ pip3 install requests
+</code></pre>
+
+<p>Then open up a new file in your favorite  <a href="https://realpython.com/python-ides-code-editors-guide/">text editor</a>. All you need to retrieve the HTML are a few lines of code:</p>
+
+<pre><code class="language-py">import requests
+
+URL = 'https://www.monster.com/jobs/search/?q=Software-Developer&amp;where=Australia'
+page = requests.get(URL)` 
+</code></pre>
+
+<p>This code performs an  <a href="https://realpython.com/courses/python-requests/">HTTP request</a>  to the given URL. It retrieves the HTML data that the server sends back and stores that data in a Python object.</p>
+
+<p>If you take a look at the downloaded content, then you’ll notice that it looks very similar to the HTML you were inspecting earlier with developer tools. To improve the structure of how the HTML is displayed in your console output, you can print the object’s  <code>.content</code>  attribute with  <a href="https://docs.python.org/3/library/pprint.html"><code>pprint()</code></a>.</p>
+
+<h3 id="static-websites">Static Websites</h3>
+
+<p>The website you’re scraping in this tutorial serves  <strong>static HTML content</strong>. In this scenario, the server that hosts the site sends back HTML documents that already contain all the data you’ll get to see as a user.</p>
+
+<p>When you inspected the page with developer tools earlier on, you discovered that a job posting consists of the following long and messy-looking HTML:</p>
+
+<pre><code class="language-html">&lt;section class=&quot;card-content&quot; data-jobid=&quot;4755ec59-d0db-4ce9-8385-b4df7c1e9f7c&quot; onclick=&quot;MKImpressionTrackingMouseDownHijack(this, event)&quot;&gt;
+&lt;div class=&quot;flex-row&quot;&gt;
+&lt;div class=&quot;mux-company-logo thumbnail&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;summary&quot;&gt;
+&lt;header class=&quot;card-header&quot;&gt;
+&lt;h2 class=&quot;title&quot;&gt;&lt;a data-bypass=&quot;true&quot; data-m_impr_a_placement_id=&quot;JSR2CW&quot; data-m_impr_j_cid=&quot;4&quot; data-m_impr_j_coc=&quot;&quot; data-m_impr_j_jawsid=&quot;371676273&quot; data-m_impr_j_jobid=&quot;0&quot; data-m_impr_j_jpm=&quot;2&quot; data-m_impr_j_jpt=&quot;3&quot; data-m_impr_j_lat=&quot;30.1882&quot; data-m_impr_j_lid=&quot;619&quot; data-m_impr_j_long=&quot;-95.6732&quot; data-m_impr_j_occid=&quot;11838&quot; data-m_impr_j_p=&quot;3&quot; data-m_impr_j_postingid=&quot;4755ec59-d0db-4ce9-8385-b4df7c1e9f7c&quot; data-m_impr_j_pvc=&quot;4496dab8-a60c-4f02-a2d1-6213320e7213&quot; data-m_impr_s_t=&quot;t&quot; data-m_impr_uuid=&quot;0b620778-73c7-4550-9db5-df4efad23538&quot; href=&quot;https://job-openings.monster.com/python-developer-woodlands-wa-us-lancesoft-inc/4755ec59-d0db-4ce9-8385-b4df7c1e9f7c&quot; onclick=&quot;clickJobTitle('plid=619&amp;amp;pcid=4&amp;amp;poccid=11838','Software Developer',''); clickJobTitleSiteCat('{&amp;quot;events.event48&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;eVar25&amp;quot;:&amp;quot;Python Developer&amp;quot;,&amp;quot;eVar66&amp;quot;:&amp;quot;Monster&amp;quot;,&amp;quot;eVar67&amp;quot;:&amp;quot;JSR2CW&amp;quot;,&amp;quot;eVar26&amp;quot;:&amp;quot;_LanceSoft Inc&amp;quot;,&amp;quot;eVar31&amp;quot;:&amp;quot;Woodlands_WA_&amp;quot;,&amp;quot;prop24&amp;quot;:&amp;quot;2019-07-02T12:00&amp;quot;,&amp;quot;eVar53&amp;quot;:&amp;quot;1500127001001&amp;quot;,&amp;quot;eVar50&amp;quot;:&amp;quot;Aggregated&amp;quot;,&amp;quot;eVar74&amp;quot;:&amp;quot;regular&amp;quot;}')&quot;&gt;Python Developer
+&lt;/a&gt;&lt;/h2&gt;
+&lt;/header&gt;
+&lt;div class=&quot;company&quot;&gt;
+&lt;span class=&quot;name&quot;&gt;LanceSoft Inc&lt;/span&gt;
+&lt;ul class=&quot;list-inline&quot;&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;location&quot;&gt;
+&lt;span class=&quot;name&quot;&gt;
+Woodlands, WA
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;meta flex-col&quot;&gt;
+&lt;time datetime=&quot;2017-05-26T12:00&quot;&gt;2 days ago&lt;/time&gt;
+&lt;span class=&quot;mux-tooltip applied-only&quot; data-mux=&quot;tooltip&quot; title=&quot;Applied&quot;&gt;
+&lt;i aria-hidden=&quot;true&quot; class=&quot;icon icon-applied&quot;&gt;&lt;/i&gt;
+&lt;span class=&quot;sr-only&quot;&gt;Applied&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;mux-tooltip saved-only&quot; data-mux=&quot;tooltip&quot; title=&quot;Saved&quot;&gt;
+&lt;i aria-hidden=&quot;true&quot; class=&quot;icon icon-saved&quot;&gt;&lt;/i&gt;
+&lt;span class=&quot;sr-only&quot;&gt;Saved&lt;/span&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+<p>It can be difficult to wrap your head around such a long block of HTML code. To make it easier to read, you can use an  <a href="https://htmlformatter.com/">HTML formatter</a>  to automatically clean it up a little more. Good readability helps you better understand the structure of any code block. While it may or may not help to improve the formatting of the HTML, it’s always worth a try.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  Keep in mind that every website will look different. That’s why it’s necessary to inspect and understand the structure of the site you’re currently working with before moving forward.</p>
+</blockquote>
+
+<p>The HTML above definitely has a few confusing parts in it. For example, you can scroll to the right to see the large number of attributes that the  <code>&lt;a&gt;</code>  element has. Luckily, the  <strong>class names</strong>  on the elements that you’re interested in are relatively straightforward:</p>
+
+<ul>
+<li><strong><code>class=&quot;title&quot;</code></strong>: the title of the job posting</li>
+<li><strong><code>class=&quot;company&quot;</code></strong>: the company that offers the position</li>
+<li><strong><code>class=&quot;location&quot;</code></strong>: the location where you’d be working</li>
+</ul>
+
+<p>In case you ever get lost in a large pile of HTML, remember that you can always go back to your browser and use developer tools to further explore the HTML structure interactively.</p>
+
+<p>By now, you’ve successfully harnessed the power and user-friendly design of Python’s  <code>requests</code>  library. With only a few lines of code, you managed to scrape the static HTML content from the web and make it available for further processing.</p>
+
+<p>However, there are a few more challenging situations you might encounter when you’re scraping websites. Before you begin using Beautiful Soup to pick the relevant information from the HTML that you just scraped, take a quick look at two of these situations.</p>
+
+<h3 id="hidden-websites">Hidden Websites</h3>
+
+<p>Some pages contain information that’s hidden behind a login. That means you’ll need an account to be able to see (and scrape) anything from the page. The process to make an HTTP request from your Python script is different than how you access a page from your browser. That means that just because you can log in to the page through your browser, that doesn’t mean you’ll be able to scrape it with your Python script.</p>
+
+<p>However, there are some advanced techniques that you can use with the  <a href="https://realpython.com/python-requests/"><code>requests</code></a>  to access the content behind logins. These techniques will allow you to log in to websites while making the HTTP request from within your script.</p>
+
+<h3 id="dynamic-websites">Dynamic Websites</h3>
+
+<p>Static sites are easier to work with because the server sends you an HTML page that already contains all the information as a response. You can parse an HTML response with Beautiful Soup and begin to pick out the relevant data.</p>
+
+<p>On the other hand, with a  <strong>dynamic website</strong>  the server might not send back any HTML at all. Instead, you’ll receive JavaScript code as a response. This will look completely different from what you saw when you inspected the page with your browser’s developer tools.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  To offload work from the server to the clients’ machines, many modern websites avoid crunching numbers on their servers whenever possible. Instead, they’ll send  <strong>JavaScript</strong>  code that your browser will execute locally to produce the desired HTML.</p>
+</blockquote>
+
+<p>As mentioned before, what happens in the browser is not related to what happens in your script. Your browser will diligently execute the JavaScript code it receives back from a server and create the DOM and HTML for you locally. However, doing a request to a dynamic website in your Python script will  <em>not</em>  provide you with the HTML page content.</p>
+
+<p>When you use  <code>requests</code>, you’ll only receive what the server sends back. In the case of a dynamic website, you’ll end up with some JavaScript code, which you won’t be able to parse using Beautiful Soup. The only way to go from the JavaScript code to the content you’re interested in is to  <strong>execute</strong>  the code, just like your browser does. The  <code>requests</code>  library can’t do that for you, but there are other solutions that can.</p>
+
+<p>For example,  <code>requests-html</code>  is a project created by the author of the  <code>requests</code>  library that allows you to easily render JavaScript using syntax that’s similar to the syntax in  <code>requests</code>. It also includes capabilities for parsing the data by using Beautiful Soup under the hood.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  Another popular choice for scraping dynamic content is  <a href="https://realpython.com/modern-web-automation-with-python-and-selenium/"><strong>Selenium</strong></a>. You can think of Selenium as a slimmed-down browser that executes the JavaScript code for you before passing on the rendered HTML response to your script.</p>
+</blockquote>
+
+<p>You won’t go deeper into scraping dynamically-generated content in this tutorial. For now, it’s enough for you to remember that you’ll need to look into the above-mentioned options if the page you’re interested in is generated in your browser dynamically.</p>
+
+<h2 id="part-3-parse-html-code-with-beautiful-soup">Part 3: Parse HTML Code With Beautiful Soup</h2>
+
+<p>You’ve successfully scraped some HTML from the Internet, but when you look at it now, it just seems like a huge mess. There are tons of HTML elements here and there, thousands of attributes scattered around—and wasn’t there some JavaScript mixed in as well? It’s time to parse this lengthy code response with Beautiful Soup to make it more accessible and pick out the data that you’re interested in.</p>
+
+<p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a>  is a Python library for  <strong>parsing structured data</strong>. It allows you to interact with HTML in a similar way to how you would interact with a web page using developer tools. Beautiful Soup exposes a couple of intuitive functions you can use to explore the HTML you received. To get started, use your terminal to install the Beautiful Soup library:</p>
+
+<pre><code class="language-py">$ pip3 install beautifulsoup4
+</code></pre>
+
+<p>Then, import the library and create a Beautiful Soup object:</p>
+
+<pre><code class="language-py">import requests
+from bs4 import BeautifulSoup 
+URL = 'https://www.monster.com/jobs/search/?q=Software-Developer&amp;where=Australia'
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+</code></pre>
+
+<p>When you add the two highlighted lines of code, you’re creating a Beautiful Soup object that takes the HTML content you scraped earlier as its input. When you instantiate the object, you also instruct Beautiful Soup to use the appropriate parser.</p>
+
+<h3 id="find-elements-by-id">Find Elements by ID</h3>
+
+<p>In an HTML web page, every element can have an  <code>id</code>  attribute assigned. As the name already suggests, that  <code>id</code>  attribute makes the element uniquely identifiable on the page. You can begin to parse your page by selecting a specific element by its ID.</p>
+
+<p>Switch back to developer tools and identify the HTML object that contains all of the job postings. Explore by hovering over parts of the page and using right-click to  <em>Inspect</em>.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  Keep in mind that it’s helpful to periodically switch back to your browser and interactively explore the page using developer tools. This helps you learn how to find the exact elements you’re looking for.</p>
+</blockquote>
+
+<p>At the time of this writing, the element you’re looking for is a  <code>&lt;div&gt;</code>  with an  <code>id</code>  attribute that has the value  <code>&quot;ResultsContainer&quot;</code>. It has a couple of other attributes as well, but below is the gist of what you’re looking for:</p>
+
+<pre><code class="language-html">&lt;div id=&quot;ResultsContainer&quot;&gt;
+    &lt;!-- all the job listings --&gt;
+&lt;/div&gt; 
+</code></pre>
+
+<p>Beautiful Soup allows you to find that specific element easily by its ID:</p>
+
+<pre><code class="language-py">results = soup.find(id='ResultsContainer')
+</code></pre>
+
+<p>For easier viewing, you can  <code>.prettify()</code>  any Beautiful Soup object when you print it out. If you call this method on the  <code>results</code>  variable that you just assigned above, then you should see all the HTML contained within the  <code>&lt;div&gt;</code>:</p>
+
+<pre><code class="language-py">print(results.prettify())
+</code></pre>
+
+<p>When you use the element’s ID, you’re able to pick one element out from among the rest of the HTML. This allows you to work with only this specific part of the page’s HTML. It looks like the soup just got a little thinner! However, it’s still quite dense.</p>
+
+<h3 id="find-elements-by-html-class-name">Find Elements by HTML Class Name</h3>
+
+<p>You’ve seen that every job posting is wrapped in a  <code>&lt;section&gt;</code>  element with the class  <code>card-content</code>. Now you can work with your new Beautiful Soup object called  <code>results</code>  and select only the job postings. These are, after all, the parts of the HTML that you’re interested in! You can do this in one line of code:</p>
+
+<pre><code class="language-py">job_elems = results.find_all('section', class_='card-content') 
+</code></pre>
+
+<p>Here, you call  <code>.find_all()</code>  on a Beautiful Soup object, which returns an  <a href="https://realpython.com/courses/python-for-loop/">iterable</a>  containing all the HTML for all the job listings displayed on that page.</p>
+
+<p>Take a look at all of them:</p>
+
+<pre><code class="language-py">for job_elem in job_elems:
+    print(job_elem, end='\n'*2) 
+</code></pre>
+
+<p>That’s already pretty neat, but there’s still a lot of HTML! You’ve seen earlier that your page has descriptive class names on some elements. Let’s pick out only those:</p>
+
+<pre><code class="language-py">for job_elem in job_elems:
+    # Each job_elem is a new BeautifulSoup object.
+    # You can use the same methods on it as you did before.
+ title_elem = job_elem.find('h2', class_='title') company_elem = job_elem.find('div', class_='company') location_elem = job_elem.find('div', class_='location')    print(title_elem)
+    print(company_elem)
+    print(location_elem)
+    print()
+</code></pre>
+
+<p>Great! You’re getting closer and closer to the data you’re actually interested in. Still, there’s a lot going on with all those HTML tags and attributes floating around:</p>
+
+<pre><code class="language-html">&lt;h2 class=&quot;title&quot;&gt;&lt;a data-bypass=&quot;true&quot; data-m_impr_a_placement_id=&quot;JSR2CW&quot; data-m_impr_j_cid=&quot;4&quot; data-m_impr_j_coc=&quot;&quot; data-m_impr_j_jawsid=&quot;371676273&quot; data-m_impr_j_jobid=&quot;0&quot; data-m_impr_j_jpm=&quot;2&quot; data-m_impr_j_jpt=&quot;3&quot; data-m_impr_j_lat=&quot;30.1882&quot; data-m_impr_j_lid=&quot;619&quot; data-m_impr_j_long=&quot;-95.6732&quot; data-m_impr_j_occid=&quot;11838&quot; data-m_impr_j_p=&quot;3&quot; data-m_impr_j_postingid=&quot;4755ec59-d0db-4ce9-8385-b4df7c1e9f7c&quot; data-m_impr_j_pvc=&quot;4496dab8-a60c-4f02-a2d1-6213320e7213&quot; data-m_impr_s_t=&quot;t&quot; data-m_impr_uuid=&quot;0b620778-73c7-4550-9db5-df4efad23538&quot; href=&quot;https://job-openings.monster.com/python-developer-woodlands-wa-us-lancesoft-inc/4755ec59-d0db-4ce9-8385-b4df7c1e9f7c&quot; onclick=&quot;clickJobTitle('plid=619&amp;amp;pcid=4&amp;amp;poccid=11838','Software Developer',''); clickJobTitleSiteCat('{&amp;quot;events.event48&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;eVar25&amp;quot;:&amp;quot;Python Developer&amp;quot;,&amp;quot;eVar66&amp;quot;:&amp;quot;Monster&amp;quot;,&amp;quot;eVar67&amp;quot;:&amp;quot;JSR2CW&amp;quot;,&amp;quot;eVar26&amp;quot;:&amp;quot;_LanceSoft Inc&amp;quot;,&amp;quot;eVar31&amp;quot;:&amp;quot;Woodlands_WA_&amp;quot;,&amp;quot;prop24&amp;quot;:&amp;quot;2019-07-02T12:00&amp;quot;,&amp;quot;eVar53&amp;quot;:&amp;quot;1500127001001&amp;quot;,&amp;quot;eVar50&amp;quot;:&amp;quot;Aggregated&amp;quot;,&amp;quot;eVar74&amp;quot;:&amp;quot;regular&amp;quot;}')&quot;&gt;Python Developer
+&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;company&quot;&gt;
+&lt;span class=&quot;name&quot;&gt;LanceSoft Inc&lt;/span&gt;
+&lt;ul class=&quot;list-inline&quot;&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;location&quot;&gt;
+&lt;span class=&quot;name&quot;&gt;
+Woodlands, WA
+&lt;/span&gt;
+&lt;/div&gt; 
+</code></pre>
+
+<p>You’ll see how to narrow down this output in the next section.</p>
+
+<h3 id="extract-text-from-html-elements">Extract Text From HTML Elements</h3>
+
+<p>For now, you only want to see the title, company, and location of each job posting. And behold! Beautiful Soup has got you covered. You can add  <code>.text</code>  to a Beautiful Soup object to return only the  <strong>text content</strong>  of the HTML elements that the object contains:</p>
+
+<pre><code class="language-py">for job_elem in job_elems:
+    title_elem = job_elem.find('h2', class_='title')
+    company_elem = job_elem.find('div', class_='company')
+    location_elem = job_elem.find('div', class_='location')
+ print(title_elem.text) 
+ print(company_elem.text) 
+ print(location_elem.text)    
+ print()
+</code></pre>
+
+<p>Run the above code snippet and you’ll see the text content displayed. However, you’ll also get a lot of  <a href="https://realpython.com/lessons/whitespace-expressions-and-statements/">whitespace</a>. Since you’re now working with Python strings, you can  <code>.strip()</code>  the superfluous whitespace. You can also apply any other familiar Python string methods to further clean up your text.</p>
+
+<blockquote>
+<p><strong>Note:</strong>  The web is messy and you can’t rely on a page structure to be consistent throughout. Therefore, you’ll more often than not run into errors while parsing HTML.</p>
+</blockquote>
+
+<p>When you run the above code, you might encounter an  <code>AttributeError</code>:</p>
+
+<pre><code>AttributeError: 'NoneType' object has no attribute 'text'
+</code></pre>
+
+<p>If that’s the case, then take a step back and inspect your previous results. Were there any items with a value of  <code>None</code>? You might have noticed that the structure of the page is not entirely uniform. There could be an advertisement in there that displays in a different way than the normal job postings, which may return different results. For this tutorial, you can safely disregard the problematic element and skip over it while parsing the HTML:</p>
+
+<pre><code class="language-py">for job_elem in job_elems:
+    title_elem = job_elem.find('h2', class_='title')
+    company_elem = job_elem.find('div', class_='company')
+    location_elem = job_elem.find('div', class_='location')
+ if None in (title_elem, company_elem, location_elem): continue    print(title_elem.text.strip())
+    print(company_elem.text.strip())
+    print(location_elem.text.strip())
+    print()
+</code></pre>
+
+<p>Feel free to explore why one of the elements is returned as  <code>None</code>. You can use the conditional statement you wrote above to  <code>print()</code>  out and inspect the relevant element in more detail. What do you think is going on there?</p>
+
+<p>After you complete the above steps try running your script again. The results finally look much better:</p>
+
+<pre><code>Python Developer
+LanceSoft Inc
+Woodlands, WA
+
+Senior Engagement Manager
+Zuora
+Sydney, NSW 
+</code></pre>
+
+<h3 id="find-elements-by-class-name-and-text-content">Find Elements by Class Name and Text Content</h3>
+
+<p>By now, you’ve cleaned up the list of jobs that you saw on the website. While that’s pretty neat already, you can make your script more useful. However, not all of the job listings seem to be developer jobs that you’d be interested in as a Python developer. So instead of printing out all of the jobs from the page, you’ll first filter them for some keywords.</p>
+
+<p>You know that job titles in the page are kept within  <code>&lt;h2&gt;</code>  elements. To filter only for specific ones, you can use the  <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#the-string-argument"><code>string</code>  argument</a>:</p>
+
+<pre><code class="language-py">python_jobs = results.find_all('h2', string='Python Developer')` 
+</code></pre>
+
+<p>This code finds all  <code>&lt;h2&gt;</code>  elements where the contained string matches  <code>'Python Developer'</code>  exactly. Note that you’re directly calling the method on your first  <code>results</code>  variable. If you go ahead and  <code>print()</code>  the output of the above code snippet to your console, then you might be disappointed because it will probably be empty:</p>
+
+<pre><code class="language-py">[] 
+</code></pre>
+
+<p>There was definitely a job with that title in the search results, so why is it not showing up? When you use  <code>string=</code>  like you did above, your program looks for  <em>exactly</em>  that string. Any differences in capitalization or whitespace will prevent the element from matching. In the next section, you’ll find a way to make the string more general.</p>
+
+<h4 id="pass-a-function-to-a-beautiful-soup-method">Pass a Function to a Beautiful Soup Method</h4>
+
+<p>In addition to strings, you can often pass functions as arguments to Beautiful Soup methods. You can change the previous line of code to use a function instead:</p>
+
+<pre><code class="language-py">python_jobs = results.find_all('h2',
+                               string=lambda text: 'python' in text.lower())
+</code></pre>
+
+<p>Now you’re passing an  <strong>anonymous function</strong>  to the  <code>string=</code>  argument. The  <a href="https://realpython.com/courses/python-lambda-functions/">lambda function</a>  looks at the text of each  <code>&lt;h2&gt;</code>  element, converts it to lowercase, and checks whether the substring  <code>'python'</code>  is found anywhere in there. Now you’ve got a match:</p>
+
+<pre><code class="language-py">print(len(python_jobs))
+# 1
+</code></pre>
+
+<p>Your program has found a match!</p>
+
+<blockquote>
+<p><strong>Note:</strong>  In case you still don’t get a match, try adapting your search string. The job offers on this page are constantly changing and there might not be a job listed that includes the substring  <code>'python'</code>  in its title at the time that you’re working through this tutorial.</p>
+</blockquote>
+
+<p>The process of finding specific elements depending on their text content is a powerful way to filter your HTML response for the information that you’re looking for. Beautiful Soup allows you to use either exact strings or functions as arguments for filtering text in Beautiful Soup objects.</p>
+
+<h3 id="extract-attributes-from-html-elements">Extract Attributes From HTML Elements</h3>
+
+<p>At this point, your Python script already scrapes the site and filters its HTML for relevant job postings. Well done! However, one thing that’s still missing is the link to apply for a job.</p>
+
+<p>While you were inspecting the page, you found that the link is part of the element that has the  <code>title</code>  HTML class. The current code strips away the entire link when accessing the  <code>.text</code>  attribute of its parent element. As you’ve seen before,  <code>.text</code>  only contains the visible text content of an HTML element. Tags and attributes are not part of that. To get the actual URL, you want to  <strong>extract</strong>  one of those attributes instead of discarding it.</p>
+
+<p>Look at the list of filtered results  <code>python_jobs</code>  that you created above. The URL is contained in the  <code>href</code>  attribute of the nested  <code>&lt;a&gt;</code>  tag. Start by fetching the  <code>&lt;a&gt;</code>  element. Then, extract the value of its  <code>href</code>  attribute using square-bracket notation:</p>
+
+<pre><code class="language-py">python_jobs = results.find_all('h2',
+                               string=lambda text: &quot;python&quot; in text.lower())
+
+for p_job in python_jobs:
+	 link = p_job.find('a')['href']    
+	 print(p_job.text.strip())
+	 print(f&quot;Apply here: {link}\n&quot;)
+</code></pre>
+
+<p>The filtered results will only show links to job opportunities that include  <code>python</code>  in their title. You can use the same square-bracket notation to extract other HTML attributes as well. A common use case is to fetch the URL of a link, as you did above.</p>
+
+<h2 id="building-the-job-search-tool">Building the Job Search Tool</h2>
+
+<p>If you’ve written the code alongside this tutorial, then you can already run your script as-is. To wrap up your journey into web scraping, you could give the code a final makeover and create a command line interface app that looks for Software Developer jobs in any location you define.</p>
+
+<p>You can check out a command line app version of the code you built in this tutorial at the link below:</p>
+
+<p><strong>Get Sample Code:</strong>  <a href="https://realpython.com/bonus/beautiful-soup/">Click here to get the sample code you&rsquo;ll use</a>  for the project and examples in this tutorial.</p>
+
+<p>If you’re interested in learning how to adapt your script as a command line interface, then check out  <a href="https://realpython.com/command-line-interfaces-python-argparse/">How to Build Command Line Interfaces in Python With argparse</a>.</p>
+
+<h2 id="additional-practice">Additional Practice</h2>
+
+<p>Below is a list of other job boards. These linked pages also return their search results as static HTML responses. To keep practicing your new skills, you can revisit the web scraping process using any or all of the following sites:</p>
+
+<ul>
+<li><a href="http://pythonjobs.github.io/">PythonJobs</a></li>
+<li><a href="https://remote.co/remote-jobs/developer/">Remote(dot)co</a></li>
+<li><a href="https://au.indeed.com/jobs">Indeed</a></li>
+</ul>
+
+<p>Go through this tutorial again from the top using one of these other sites. You’ll see that the structure of each website is different and that you’ll need to re-build the code in a slightly different way to fetch the data you want. This is a great way to practice the concepts that you just learned. While it might make you sweat every so often, your coding skills will be stronger for it!</p>
+
+<p>During your second attempt, you can also explore additional features of Beautiful Soup. Use the  <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">documentation</a>  as your guidebook and inspiration. Additional practice will help you become more proficient at web scraping using Python,  <code>requests</code>, and Beautiful Soup.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Beautiful Soup is packed with useful functionality to parse HTML data. It’s a trusted and helpful companion for your web scraping adventures. Its  <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">documentation</a>  is comprehensive and relatively user-friendly to get started with. You’ll find that Beautiful Soup will cater to most of your parsing needs, from  <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#navigating-the-tree">navigating</a>  to  <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-the-tree">advanced searching</a>  through the results.</p>
+
+<p>In this tutorial, you’ve learned how to scrape data from the Web using Python,  <code>requests</code>, and Beautiful Soup. You built a script that fetches job postings from the Internet and went through the full web scraping process from start to finish.</p>
+
+<p><strong>You learned how to:</strong></p>
+
+<ul>
+<li><strong>Inspect</strong>  the HTML structure of your target site with your browser’s developer tools</li>
+<li><strong>Gain insight</strong>  into how to decipher the data encoded in URLs</li>
+<li><strong>Download</strong>  the page’s HTML content using Python’s  <code>requests</code>  library</li>
+<li><strong>Parse</strong>  the downloaded HTML with Beautiful Soup to extract relevant information</li>
+</ul>
+
+<p>With this general pipeline in mind and powerful libraries in your toolkit, you can go out and see what other websites you can scrape! Have fun, and remember to always be respectful and use your programming skills responsibly.</p>
+
+<p>You can download the source code for the sample script that you built in this tutorial by clicking on the link below:</p>
+
+<p><strong>Get Sample Code:</strong>  <a href="https://realpython.com/bonus/beautiful-soup/">Click here to get the sample code you&rsquo;ll use</a>  for the project and examples in this tutorial.</p>
+
+<blockquote>
+<p><a href="https://realpython.com/beautiful-soup-web-scraper-python/">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cweb-scraping%5cbeautiful-soup-web-scraper.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#beautiful-soup-build-a-web-scraper-with-python">Beautiful Soup: Build a Web Scraper With Python</a>
+<ul>
+<li><a href="#what-is-web-scraping">What Is Web Scraping?</a>
+<ul>
+<li><a href="#why-scrape-the-web">Why Scrape the Web?</a></li>
+<li><a href="#challenges-of-web-scraping">Challenges of Web Scraping</a></li>
+<li><a href="#apis-an-alternative-to-web-scraping">APIs: An Alternative to Web Scraping</a></li>
+</ul></li>
+<li><a href="#scraping-the-monster-job-site">Scraping the Monster Job Site</a></li>
+<li><a href="#part-1-inspect-your-data-source">Part 1: Inspect Your Data Source</a>
+<ul>
+<li><a href="#explore-the-website">Explore the Website</a></li>
+<li><a href="#decipher-the-information-in-urls">Decipher the Information in URLs</a></li>
+<li><a href="#inspect-the-site-using-developer-tools">Inspect the Site Using Developer Tools</a></li>
+</ul></li>
+<li><a href="#part-2-scrape-html-content-from-a-page">Part 2: Scrape HTML Content From a Page</a>
+<ul>
+<li><a href="#static-websites">Static Websites</a></li>
+<li><a href="#hidden-websites">Hidden Websites</a></li>
+<li><a href="#dynamic-websites">Dynamic Websites</a></li>
+</ul></li>
+<li><a href="#part-3-parse-html-code-with-beautiful-soup">Part 3: Parse HTML Code With Beautiful Soup</a>
+<ul>
+<li><a href="#find-elements-by-id">Find Elements by ID</a></li>
+<li><a href="#find-elements-by-html-class-name">Find Elements by HTML Class Name</a></li>
+<li><a href="#extract-text-from-html-elements">Extract Text From HTML Elements</a></li>
+<li><a href="#find-elements-by-class-name-and-text-content">Find Elements by Class Name and Text Content</a>
+<ul>
+<li><a href="#pass-a-function-to-a-beautiful-soup-method">Pass a Function to a Beautiful Soup Method</a></li>
+</ul></li>
+<li><a href="#extract-attributes-from-html-elements">Extract Attributes From HTML Elements</a></li>
+</ul></li>
+<li><a href="#building-the-job-search-tool">Building the Job Search Tool</a></li>
+<li><a href="#additional-practice">Additional Practice</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

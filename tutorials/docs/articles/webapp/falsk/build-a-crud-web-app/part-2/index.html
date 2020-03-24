@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Part. II"><meta property="og:title" content="Part. II" />
+<meta property="og:description" content="Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. II This is Part Two of a three-part tutorial to build an employee management web app, named Project Dream Team. In Part One) of the tutorial, we set up a MySQL database using MySQL-Python and Flask-SQLAlchemy. We created models, migrated the database, and worked on the home and auth blueprints and templates. By the end of Part One, we had a working app that had a homepage, registration page, login page, and dashboard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-2/" />
+
+<title>Part. II | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/" >
+      Build a CRUD Web App. 1-3
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-1/" >
+      Part. I
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-2/"  class="active">
+      Part. II
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-3/" >
+      Part. III
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/" >
+      Building a Simple Web APP using Flask and MongoDB
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/" >
+      Web Applications With Flask [Series]
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Part. II</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-flask-for-beginners-build-a-crud-web-app-with-python-and-flask-part-ii">Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. II</h1>
+
+<p><img src="https://i.morioh.com/2019/11/21/34f9bcbd043d.jpg" alt="" /></p>
+
+<p>This is Part Two of a three-part tutorial to build an employee management web app, named Project Dream Team. In Part One) of the tutorial, we set up a MySQL database using MySQL-Python and Flask-SQLAlchemy. We created models, migrated the database, and worked on the  <code>home</code>  and  <code>auth</code>  blueprints and templates. By the end of Part One, we had a working app that had a homepage, registration page, login page, and dashboard. We could register a new user, login, and logout.</p>
+
+<p>In Part Two, we will work on:</p>
+
+<ol>
+<li>Creating an admin user and admin dashboard</li>
+<li>Creating, listing, editing and deleting departments</li>
+<li>Creating, listing, editing and deleting roles</li>
+<li>Assigning departments and roles to employees</li>
+</ol>
+
+<h3 id="admin-user">Admin User</h3>
+
+<p>We&rsquo;ll start by creating an admin user through the command line. Flask provides a handy command,  <code>flask shell</code>, that allows us to use an interactive Python shell for use with Flask apps.</p>
+
+<pre><code class="language-py">$ flask shell
+from app.models import Employee
+from app import db
+admin = Employee(email=&quot;admin@admin.com&quot;,username=&quot;admin&quot;,password=&quot;admin2016&quot;,is_admin=True)
+db.session.add(admin)
+db.session.commit()
+</code></pre>
+
+<p>We&rsquo;ve just created a user with a username,  <code>admin</code>, and a password,  <code>admin2016</code>. Recall that we set the  <code>is_admin</code>  field to default to  <code>False</code>  in the  <code>Employee</code>  model. To create the admin user above, we override the default value of  <code>is_admin</code>  and set it to  <code>True</code>.</p>
+
+<h3 id="admin-dashboard">Admin Dashboard</h3>
+
+<p>Now that we have an admin user, we need to add a view for an admin dashboard. We also need to ensure that once the admin user logs in, they are redirected to the admin dashboard and not the one for non-admin users. We will do this in the  <code>home</code>  blueprint.</p>
+
+<pre><code class="language-py"># app/home/views.py
+
+# update imports
+from flask import abort, render_template
+from flask_login import current_user, login_required
+
+# add admin dashboard view
+@home.route(&amp;apos;/admin/dashboard&amp;apos;)
+@login_required
+def admin_dashboard():
+    # prevent non-admins from accessing the page
+    if not current_user.is_admin:
+        abort(403)
+
+    return render_template(&amp;apos;home/admin_dashboard.html&amp;apos;, title=&quot;Dashboard&quot;)
+# app/auth/views.py
+
+# Edit the login view to redirect to the admin dashboard if employee is an admin
+
+@auth.route(&amp;apos;/login&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+
+        # check whether employee exists in the database and whether
+        # the password entered matches the password in the database
+        employee = Employee.query.filter_by(email=form.email.data).first()
+        if employee is not None and employee.verify_password(
+                form.password.data):
+            # log employee in
+            login_user(employee)
+
+            # redirect to the appropriate dashboard page
+            if employee.is_admin:
+                return redirect(url_for(&amp;apos;home.admin_dashboard&amp;apos;))
+            else:
+                return redirect(url_for(&amp;apos;home.dashboard&amp;apos;))
+
+        # when login details are incorrect
+        else:
+            flash(&amp;apos;Invalid email or password.&amp;apos;)
+
+    # load login template
+    return render_template(&amp;apos;auth/login.html&amp;apos;, form=form, title=&amp;apos;Login&amp;apos;)
+</code></pre>
+
+<p>Next we&rsquo;ll create the admin dashboard template. Create an  <code>admin_dashboard.html</code>  file in the  <code>templates/home</code>  directory, and then add the following code in it:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/home/admin_dashboard.html --&gt;
+
+{% extends &quot;base.html&quot; %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block body %}
+&lt;div class=&quot;intro-header&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-lg-12&quot;&gt;
+                &lt;div class=&quot;intro-message&quot;&gt;
+                    &lt;h1&gt;Admin Dashboard&lt;/h1&gt;
+                    &lt;h3&gt;For administrators only!&lt;/h3&gt;
+                    &lt;hr class=&quot;intro-divider&quot;&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>Now we need to edit the base template to show a different menu for the admin user.</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/base.html --&gt;
+
+&lt;!-- Modify nav bar menu --&gt;
+&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+    {% if current_user.is_authenticated %}
+      {% if current_user.is_admin %}
+        &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.admin_dashboard&amp;apos;) }}&quot;&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Departments&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Roles&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Employees&lt;/a&gt;&lt;/li&gt;
+      {% else %}
+        &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.dashboard&amp;apos;) }}&quot;&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+      {% endif %}
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.logout&amp;apos;) }}&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;  Hi, {{ current_user.username }}!&lt;/a&gt;&lt;/li&gt;
+    {% else %}
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.register&amp;apos;) }}&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.login&amp;apos;) }}&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+    {% endif %}
+&lt;/ul&gt;
+</code></pre>
+
+<p>In the menu above, we make use of the  <code>current_user</code>  proxy from Flask-Login to check whether the current user is an admin. If they are, we display the admin menu which will allow them to navigate to the Departments, Roles and Employees pages. Notice that we use  <code>#</code>  for the links in the admin menu. We will update this after we have created the respective views.</p>
+
+<p>Now run the app and login as the admin user that we just created. You should see the admin dashboard:</p>
+
+<p>Let&rsquo;s test the error we set in the  <code>home/views.py</code>  file to prevent non-admin users from accessing the admin dashboard. Log out and then log in as a regular user. In your browser&rsquo;s address bar, manually enter the following URL:  <code>&lt;a href=&quot;http://127.0.0.1:5000/admin/dashboard&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:5000/admin/dashboard&lt;/a&gt;</code>. You should get a  <code>403 Forbidden</code>  error. It looks pretty boring now, but don&rsquo;t worry, we&rsquo;ll create custom error pages in Part Three!</p>
+
+<h3 id="departments">Departments</h3>
+
+<p>Now we&rsquo;ll start working on the  <code>admin</code>  blueprint, which has the bulk of the functionality in the application. We&rsquo;ll begin by building out CRUD functionality for the departments.</p>
+
+<h3 id="forms">Forms</h3>
+
+<p>We&rsquo;ll start with the  <code>admin/forms.py</code>  file, where we&rsquo;ll create a form to add and edit departments.</p>
+
+<pre><code class="language-py"># app/admin/forms.py
+
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
+
+class DepartmentForm(FlaskForm):
+    &quot;&quot;&quot;
+    Form for admin to add or edit a department
+    &quot;&quot;&quot;
+    name = StringField(&amp;apos;Name&amp;apos;, validators=[DataRequired()])
+    description = StringField(&amp;apos;Description&amp;apos;, validators=[DataRequired()])
+    submit = SubmitField(&amp;apos;Submit&amp;apos;)
+</code></pre>
+
+<p>The form is pretty simple and has only two fields,  <code>name</code>  and  <code>department</code>, both of which are required. We enforce this using the  <code>DataRequired()</code>  validator from WTForms. Note that we will use the same form for adding and editing departments.</p>
+
+<h3 id="views">Views</h3>
+
+<p>Now, let&rsquo;s work on the views:</p>
+
+<pre><code class="language-py"># app/admin/views.py
+
+from flask import abort, flash, redirect, render_template, url_for
+from flask_login import current_user, login_required
+
+from . import admin
+from forms import DepartmentForm
+from .. import db
+from ..models import Department
+
+def check_admin():
+    &quot;&quot;&quot;
+    Prevent non-admins from accessing the page
+    &quot;&quot;&quot;
+    if not current_user.is_admin:
+        abort(403)
+
+# Department Views
+
+@admin.route(&amp;apos;/departments&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+@login_required
+def list_departments():
+    &quot;&quot;&quot;
+    List all departments
+    &quot;&quot;&quot;
+    check_admin()
+
+    departments = Department.query.all()
+
+    return render_template(&amp;apos;admin/departments/departments.html&amp;apos;,
+                           departments=departments, title=&quot;Departments&quot;)
+
+@admin.route(&amp;apos;/departments/add&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+@login_required
+def add_department():
+    &quot;&quot;&quot;
+    Add a department to the database
+    &quot;&quot;&quot;
+    check_admin()
+
+    add_department = True
+
+    form = DepartmentForm()
+    if form.validate_on_submit():
+        department = Department(name=form.name.data,
+                                description=form.description.data)
+        try:
+            # add department to the database
+            db.session.add(department)
+            db.session.commit()
+            flash(&amp;apos;You have successfully added a new department.&amp;apos;)
+        except:
+            # in case department name already exists
+            flash(&amp;apos;Error: department name already exists.&amp;apos;)
+
+        # redirect to departments page
+        return redirect(url_for(&amp;apos;admin.list_departments&amp;apos;))
+
+    # load department template
+    return render_template(&amp;apos;admin/departments/department.html&amp;apos;, action=&quot;Add&quot;,
+                           add_department=add_department, form=form,
+                           title=&quot;Add Department&quot;)
+
+@admin.route(&amp;apos;/departments/edit/&lt;int:id&gt;&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+@login_required
+def edit_department(id):
+    &quot;&quot;&quot;
+    Edit a department
+    &quot;&quot;&quot;
+    check_admin()
+
+    add_department = False
+
+    department = Department.query.get_or_404(id)
+    form = DepartmentForm(obj=department)
+    if form.validate_on_submit():
+        department.name = form.name.data
+        department.description = form.description.data
+        db.session.commit()
+        flash(&amp;apos;You have successfully edited the department.&amp;apos;)
+
+        # redirect to the departments page
+        return redirect(url_for(&amp;apos;admin.list_departments&amp;apos;))
+
+    form.description.data = department.description
+    form.name.data = department.name
+    return render_template(&amp;apos;admin/departments/department.html&amp;apos;, action=&quot;Edit&quot;,
+                           add_department=add_department, form=form,
+                           department=department, title=&quot;Edit Department&quot;)
+
+@admin.route(&amp;apos;/departments/delete/&lt;int:id&gt;&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+@login_required
+def delete_department(id):
+    &quot;&quot;&quot;
+    Delete a department from the database
+    &quot;&quot;&quot;
+    check_admin()
+
+    department = Department.query.get_or_404(id)
+    db.session.delete(department)
+    db.session.commit()
+    flash(&amp;apos;You have successfully deleted the department.&amp;apos;)
+
+    # redirect to the departments page
+    return redirect(url_for(&amp;apos;admin.list_departments&amp;apos;))
+
+    return render_template(title=&quot;Delete Department&quot;)
+</code></pre>
+
+<p>We begin by creating a function,  <code>check_admin</code>, which throws a  <code>403 Forbidden</code>  error if a non-admin user attempts to access these views. We will call this function in every admin view.</p>
+
+<p>The  <code>list_departments</code>  view queries the database for all departments and assigns them to the variable  <code>departments</code>, which we will use to list them in the template.</p>
+
+<p>The  <code>add_department</code>  view creates a new department object using the form data, and adds it to the database. If the department name already exists, an error message is displayed. This view redirects to the  <code>list_departments</code>. This means that once the admin user creates a new department, they will be redirected to the Departments page.</p>
+
+<p>The  <code>edit_department</code>  view takes one parameter:  <code>id</code>  . This is the department ID, and will be passed to the view in the template. The view queries the database for a department with the ID specified. If the department doesn&rsquo;t exist, a  <code>404 Not Found</code>  error is thrown. If it does, it is updated with the form data.</p>
+
+<p>The  <code>delete_department</code>  view is similar to the  <code>edit_department</code>  one, in that it takes a department ID as a parameter and throws an error if the specified department doesn&rsquo;t exist. If it does, it is deleted from the database.</p>
+
+<p>Note that we render the same template for adding and editing individual departments:  <code>department.html</code>. This is why we have the  <code>add_department</code>  variable in the  <code>add_department</code>  view (where it is set to  <code>True</code>), as well as in the  <code>edit_department</code>  view (where it is set to  <code>False</code>). We&rsquo;ll use this variable in the  <code>department.html</code>  template to determine what wording to use for the title and heading.</p>
+
+<h3 id="templates">Templates</h3>
+
+<p>Create an  <code>templates/admin</code>  directory, and in it, add a  <code>departments</code>  directory. Inside it, add the  <code>departments.html</code>  and  <code>department.html</code>  files:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/admin/departments/departments.html --&gt;
+
+{% import &quot;bootstrap/utils.html&quot; as utils %}
+{% extends &quot;base.html&quot; %}
+{% block title %}Departments{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+  &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;br/&gt;
+        {{ utils.flashed_messages() }}
+        &lt;br/&gt;
+        &lt;h1 style=&quot;text-align:center;&quot;&gt;Departments&lt;/h1&gt;
+        {% if departments %}
+          &lt;hr class=&quot;intro-divider&quot;&gt;
+          &lt;div class=&quot;center&quot;&gt;
+            &lt;table class=&quot;table table-striped table-bordered&quot;&gt;
+              &lt;thead&gt;
+                &lt;tr&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Name &lt;/th&gt;
+                  &lt;th width=&quot;40%&quot;&gt; Description &lt;/th&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Employee Count &lt;/th&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Edit &lt;/th&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Delete &lt;/th&gt;
+                &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+              {% for department in departments %}
+                &lt;tr&gt;
+                  &lt;td&gt; {{ department.name }} &lt;/td&gt;
+                  &lt;td&gt; {{ department.description }} &lt;/td&gt;
+                  &lt;td&gt;
+                    {% if department.employees %}
+                      {{ department.employees.count() }}
+                    {% else %}
+                      0
+                    {% endif %}
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;a href=&quot;{{ url_for(&amp;apos;admin.edit_department&amp;apos;, id=department.id) }}&quot;&gt;
+                      &lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt; Edit 
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;a href=&quot;{{ url_for(&amp;apos;admin.delete_department&amp;apos;, id=department.id) }}&quot;&gt;
+                      &lt;i class=&quot;fa fa-trash&quot;&gt;&lt;/i&gt; Delete 
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              {% endfor %}
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/div&gt;
+          &lt;div style=&quot;text-align: center&quot;&gt;
+        {% else %}
+          &lt;div style=&quot;text-align: center&quot;&gt;
+            &lt;h3&gt; No departments have been added. &lt;/h3&gt;
+            &lt;hr class=&quot;intro-divider&quot;&gt;
+        {% endif %}
+          &lt;a href=&quot;{{ url_for(&amp;apos;admin.add_department&amp;apos;) }}&quot; class=&quot;btn btn-default btn-lg&quot;&gt;
+            &lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+            Add Department
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>We&rsquo;ve created a table in the template above, where we will display all the departments with their name, description, and number of employees. Take note of the  <code>count()</code>  function, which we use in this case to get the number of employees. Each department listed will have an edit and delete link. Notice how we pass the  <code>department.id</code>  value to the  <code>edit_department</code>  and  <code>delete_department</code>  views in the respective links.</p>
+
+<p>If there are no departments, the page will display “No departments have been added”. There is also a button which can be clicked to add a new department.</p>
+
+<p>Now let&rsquo;s work on the template for adding and editing departments:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/admin/departments/department.html --&gt;
+
+{% import &quot;bootstrap/wtf.html&quot; as wtf %}
+{% extends &quot;base.html&quot; %}
+{% block title %}
+    {% if add_department %}
+        Add Department
+    {% else %}
+        Edit Department
+    {% endif %}
+{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+ &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;div class=&quot;center&quot;&gt;
+            {% if add_department %}
+                &lt;h1&gt;Add Department&lt;/h1&gt;
+            {% else %}
+                &lt;h1&gt;Edit Department&lt;/h1&gt;
+            {% endif %}
+            &lt;br/&gt;
+            {{ wtf.quick_form(form) }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>Notice that we use the  <code>add_department</code>  variable which we initialized in the  <code>admin/views.py</code>  file, to determine whether the page title will be “Add Department” or “Edit Department”.</p>
+
+<p>Add the following lines to your  <code>style.css</code>  file:</p>
+
+<pre><code class="language-css">/* app/static/css/style.css */
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+}
+</code></pre>
+
+<p>The  <code>.middle</code>,  <code>.inner</code>, and  <code>.outer</code>  classes are to center the content in the middle of the page.</p>
+
+<p>Lastly, let&rsquo;s put the correct link to the Departments page in the admin menu:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/base.html --&gt;
+
+&lt;!-- Modify nav bar menu --&gt;
+&lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;admin.list_departments&amp;apos;) }}&quot;&gt;Departments&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p>Re-start the flask server, and then log back in as the admin user and click on the Departments link. Because we have not added any departments, loading the page will display:</p>
+
+<p>Let&rsquo;s try adding a department:</p>
+
+<p>It worked! We get the success message we configured in the  <code>add_department</code>  view, and can now see the department displayed.</p>
+
+<p>Now let&rsquo;s edit it:</p>
+
+<p>Notice that the current department name and description are already pre-loaded in the form. Also, take note of the URL, which has the ID of the department we are editing.</p>
+
+<p>Editing the department is successful as well. Clicking the Delete link deletes the department and redirects to the Departments page, where a confirmation message is displayed:</p>
+
+<h3 id="roles">Roles</h3>
+
+<p>Now to work on the roles. This will be very similar to the departments code because the functionality for roles and departments is exactly the same.</p>
+
+<h3 id="forms-1">Forms</h3>
+
+<p>We&rsquo;ll start by creating the form to add and edit roles. Add the following code to the  <code>admin/forms.py</code>  file:</p>
+
+<pre><code class="language-py"># app/admin/forms.py
+
+# existing code remains
+
+class RoleForm(FlaskForm):
+    &quot;&quot;&quot;
+    Form for admin to add or edit a role
+    &quot;&quot;&quot;
+    name = StringField(&amp;apos;Name&amp;apos;, validators=[DataRequired()])
+    description = StringField(&amp;apos;Description&amp;apos;, validators=[DataRequired()])
+    submit = SubmitField(&amp;apos;Submit&amp;apos;)
+</code></pre>
+
+<h3 id="views-1">Views</h3>
+
+<p>Next we&rsquo;ll write the views to add, list, edit, and delete roles. Add the following code to the admin/views.py file:</p>
+
+<pre><code class="language-py"># app/admin/views.py
+
+# update imports
+from forms import DepartmentForm, RoleForm
+from ..models import Department, Role
+
+# existing code remains
+
+# Role Views
+
+@admin.route(&amp;apos;/roles&amp;apos;)
+@login_required
+def list_roles():
+    check_admin()
+    &quot;&quot;&quot;
+    List all roles
+    &quot;&quot;&quot;
+    roles = Role.query.all()
+    return render_template(&amp;apos;admin/roles/roles.html&amp;apos;,
+                           roles=roles, title=&amp;apos;Roles&amp;apos;)
+
+@admin.route(&amp;apos;/roles/add&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+@login_required
+def add_role():
+    &quot;&quot;&quot;
+    Add a role to the database
+    &quot;&quot;&quot;
+    check_admin()
+
+    add_role = True
+
+    form = RoleForm()
+    if form.validate_on_submit():
+        role = Role(name=form.name.data,
+                    description=form.description.data)
+
+        try:
+            # add role to the database
+            db.session.add(role)
+            db.session.commit()
+            flash(&amp;apos;You have successfully added a new role.&amp;apos;)
+        except:
+            # in case role name already exists
+            flash(&amp;apos;Error: role name already exists.&amp;apos;)
+
+        # redirect to the roles page
+        return redirect(url_for(&amp;apos;admin.list_roles&amp;apos;))
+
+    # load role template
+    return render_template(&amp;apos;admin/roles/role.html&amp;apos;, add_role=add_role,
+                           form=form, title=&amp;apos;Add Role&amp;apos;)
+
+@admin.route(&amp;apos;/roles/edit/&lt;int:id&gt;&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+@login_required
+def edit_role(id):
+    &quot;&quot;&quot;
+    Edit a role
+    &quot;&quot;&quot;
+    check_admin()
+
+    add_role = False
+
+    role = Role.query.get_or_404(id)
+    form = RoleForm(obj=role)
+    if form.validate_on_submit():
+        role.name = form.name.data
+        role.description = form.description.data
+        db.session.add(role)
+        db.session.commit()
+        flash(&amp;apos;You have successfully edited the role.&amp;apos;)
+
+        # redirect to the roles page
+        return redirect(url_for(&amp;apos;admin.list_roles&amp;apos;))
+
+    form.description.data = role.description
+    form.name.data = role.name
+    return render_template(&amp;apos;admin/roles/role.html&amp;apos;, add_role=add_role,
+                           form=form, title=&quot;Edit Role&quot;)
+
+@admin.route(&amp;apos;/roles/delete/&lt;int:id&gt;&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+@login_required
+def delete_role(id):
+    &quot;&quot;&quot;
+    Delete a role from the database
+    &quot;&quot;&quot;
+    check_admin()
+
+    role = Role.query.get_or_404(id)
+    db.session.delete(role)
+    db.session.commit()
+    flash(&amp;apos;You have successfully deleted the role.&amp;apos;)
+
+    # redirect to the roles page
+    return redirect(url_for(&amp;apos;admin.list_roles&amp;apos;))
+
+    return render_template(title=&quot;Delete Role&quot;)
+</code></pre>
+
+<p>These list, add, edit, and delete views are similar to the ones for departments that we created earlier.</p>
+
+<h3 id="templates-1">Templates</h3>
+
+<p>Create a  <code>roles</code>  directory in the  <code>templates/admin</code>  directory. In it, create the  <code>roles.html</code>  and  <code>role.html</code>  files:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/admin/roles/roles.html --&gt;
+
+{% import &quot;bootstrap/utils.html&quot; as utils %}
+{% extends &quot;base.html&quot; %}
+{% block title %}Roles{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+  &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;br/&gt;
+        {{ utils.flashed_messages() }}
+        &lt;br/&gt;
+        &lt;h1 style=&quot;text-align:center;&quot;&gt;Roles&lt;/h1&gt;
+        {% if roles %}
+          &lt;hr class=&quot;intro-divider&quot;&gt;
+          &lt;div class=&quot;center&quot;&gt;
+            &lt;table class=&quot;table table-striped table-bordered&quot;&gt;
+              &lt;thead&gt;
+                &lt;tr&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Name &lt;/th&gt;
+                  &lt;th width=&quot;40%&quot;&gt; Description &lt;/th&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Employee Count &lt;/th&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Edit &lt;/th&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Delete &lt;/th&gt;
+                &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+              {% for role in roles %}
+                &lt;tr&gt;
+                  &lt;td&gt; {{ role.name }} &lt;/td&gt;
+                  &lt;td&gt; {{ role.description }} &lt;/td&gt;
+                  &lt;td&gt;
+                    {% if role.employees %}
+                      {{ role.employees.count() }}
+                    {% else %}
+                      0
+                    {% endif %}
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;a href=&quot;{{ url_for(&amp;apos;admin.edit_role&amp;apos;, id=role.id) }}&quot;&gt;
+                      &lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt; Edit 
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;a href=&quot;{{ url_for(&amp;apos;admin.delete_role&amp;apos;, id=role.id) }}&quot;&gt;
+                      &lt;i class=&quot;fa fa-trash&quot;&gt;&lt;/i&gt; Delete 
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              {% endfor %}
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/div&gt;
+          &lt;div style=&quot;text-align: center&quot;&gt;
+        {% else %}
+          &lt;div style=&quot;text-align: center&quot;&gt;
+            &lt;h3&gt; No roles have been added. &lt;/h3&gt;
+            &lt;hr class=&quot;intro-divider&quot;&gt;
+        {% endif %}
+          &lt;a href=&quot;{{ url_for(&amp;apos;admin.add_role&amp;apos;) }}&quot; class=&quot;btn btn-default btn-lg&quot;&gt;
+            &lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+            Add Role
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>Just like we did for the departments, we have created a table where we will display all the roles with their name, description, and number of employees. Each role listed will also have an edit and delete link. If there are no roles, a message of the same will be displayed. There is also a button which can be clicked to add a new role.</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/admin/roles/role.html --&gt;
+
+{% import &quot;bootstrap/wtf.html&quot; as wtf %}
+{% extends &quot;base.html&quot; %}
+{% block title %}
+    {% if add_department %}
+        Add Role
+    {% else %}
+        Edit Role
+    {% endif %}
+{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+ &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;div class=&quot;center&quot;&gt;
+            {% if add_role %}
+                &lt;h1&gt;Add Role&lt;/h1&gt;
+            {% else %}
+                &lt;h1&gt;Edit Role&lt;/h1&gt;
+            {% endif %}
+            &lt;br/&gt;
+            {{ wtf.quick_form(form) }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>We use the  <code>add_role</code>  variable above the same way we used the  <code>add_department</code>  variable for the  <code>department.html</code>  template.</p>
+
+<p>Once again, let&rsquo;s update the admin menu with the correct link:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/base.html --&gt;
+
+&lt;!-- Modify nav bar menu --&gt;
+&lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;admin.list_roles&amp;apos;) }}&quot;&gt;Roles&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p>Re-start the server. You should now be able to access the Roles page, and add, edit and delete roles.</p>
+
+<h3 id="employees">Employees</h3>
+
+<p>Now to work on listing employees, as well as assigning them departments and roles.</p>
+
+<h3 id="forms-2">Forms</h3>
+
+<p>We&rsquo;ll need a form to assign each employee a department and role. Add the following to the  <code>admin/forms.py</code>  file:</p>
+
+<pre><code class="language-py"># app/admin/forms.py
+
+# update imports
+from wtforms.ext.sqlalchemy.fields import QuerySelectField
+
+from ..models import Department, Role
+
+# existing code remains
+
+class EmployeeAssignForm(FlaskForm):
+    &quot;&quot;&quot;
+    Form for admin to assign departments and roles to employees
+    &quot;&quot;&quot;
+    department = QuerySelectField(query_factory=lambda: Department.query.all(),
+                                  get_label=&quot;name&quot;)
+    role = QuerySelectField(query_factory=lambda: Role.query.all(),
+                            get_label=&quot;name&quot;)
+    submit = SubmitField(&amp;apos;Submit&amp;apos;)
+</code></pre>
+
+<p>We have imported a new field type,  <code>QuerySelectField</code>, which we use for both the department and role fields. This will query the database for all departments and roles. The admin user will select one department and one role using the form on the front-end.</p>
+
+<h3 id="views-2">Views</h3>
+
+<p>Add the following code to the  <code>admin/views.py</code>  file:</p>
+
+<pre><code class="language-py"># app/admin/views.py
+
+# update imports
+from forms import DepartmentForm, EmployeeAssignForm, RoleForm
+from ..models import Department, Employee, Role
+
+# existing code remains
+
+# Employee Views
+
+@admin.route(&amp;apos;/employees&amp;apos;)
+@login_required
+def list_employees():
+    &quot;&quot;&quot;
+    List all employees
+    &quot;&quot;&quot;
+    check_admin()
+
+    employees = Employee.query.all()
+    return render_template(&amp;apos;admin/employees/employees.html&amp;apos;,
+                           employees=employees, title=&amp;apos;Employees&amp;apos;)
+
+@admin.route(&amp;apos;/employees/assign/&lt;int:id&gt;&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+@login_required
+def assign_employee(id):
+    &quot;&quot;&quot;
+    Assign a department and a role to an employee
+    &quot;&quot;&quot;
+    check_admin()
+
+    employee = Employee.query.get_or_404(id)
+
+    # prevent admin from being assigned a department or role
+    if employee.is_admin:
+        abort(403)
+
+    form = EmployeeAssignForm(obj=employee)
+    if form.validate_on_submit():
+        employee.department = form.department.data
+        employee.role = form.role.data
+        db.session.add(employee)
+        db.session.commit()
+        flash(&amp;apos;You have successfully assigned a department and role.&amp;apos;)
+
+        # redirect to the roles page
+        return redirect(url_for(&amp;apos;admin.list_employees&amp;apos;))
+
+    return render_template(&amp;apos;admin/employees/employee.html&amp;apos;,
+                           employee=employee, form=form,
+                           title=&amp;apos;Assign Employee&amp;apos;)
+</code></pre>
+
+<p>The  <code>list_employees</code>  view queries the database for all employees and assigns them to the variable  <code>employees</code>, which we will use to list them in the template.</p>
+
+<p>The  <code>assign_employee</code>  view takes an employee ID. First, it checks whether the employee is an admin user; if it is, a  <code>403 Forbidden</code>  error is thrown. If not, it updates the  <code>employee.department</code>  and  <code>employee.role</code>  with the selected data from the form, essentially assigning the employee a new department and role.</p>
+
+<h3 id="templates-2">Templates</h3>
+
+<p>Create a  <code>employees</code>  directory in the  <code>templates/admin</code>  directory. In it, create the  <code>employees.html</code>  and  <code>employee.html</code>  files:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/admin/employees/employees.html --&gt;
+
+{% import &quot;bootstrap/utils.html&quot; as utils %}
+{% extends &quot;base.html&quot; %}
+{% block title %}Employees{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+  &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;br/&gt;
+        {{ utils.flashed_messages() }}
+        &lt;br/&gt;
+        &lt;h1 style=&quot;text-align:center;&quot;&gt;Employees&lt;/h1&gt;
+        {% if employees %}
+          &lt;hr class=&quot;intro-divider&quot;&gt;
+          &lt;div class=&quot;center&quot;&gt;
+            &lt;table class=&quot;table table-striped table-bordered&quot;&gt;
+              &lt;thead&gt;
+                &lt;tr&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Name &lt;/th&gt;
+                  &lt;th width=&quot;30%&quot;&gt; Department &lt;/th&gt;
+                  &lt;th width=&quot;30%&quot;&gt; Role &lt;/th&gt;
+                  &lt;th width=&quot;15%&quot;&gt; Assign &lt;/th&gt;
+                &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+              {% for employee in employees %}
+                {% if employee.is_admin %}
+                    &lt;tr style=&quot;background-color: #aec251; color: white;&quot;&gt;
+                        &lt;td&gt; &lt;i class=&quot;fa fa-key&quot;&gt;&lt;/i&gt; Admin &lt;/td&gt;
+                        &lt;td&gt; N/A &lt;/td&gt;
+                        &lt;td&gt; N/A &lt;/td&gt;
+                        &lt;td&gt; N/A &lt;/td&gt;
+                    &lt;/tr&gt;
+                {% else %}
+                    &lt;tr&gt;
+                      &lt;td&gt; {{ employee.first_name }} {{ employee.last_name }} &lt;/td&gt;
+                      &lt;td&gt;
+                        {% if employee.department %}
+                          {{ employee.department.name }}
+                        {% else %}
+                          -
+                        {% endif %}
+                      &lt;/td&gt;
+                      &lt;td&gt;
+                        {% if employee.role %}
+                          {{ employee.role.name }}
+                        {% else %}
+                          -
+                        {% endif %}
+                      &lt;/td&gt;
+                      &lt;td&gt;
+                        &lt;a href=&quot;{{ url_for(&amp;apos;admin.assign_employee&amp;apos;, id=employee.id) }}&quot;&gt;
+                          &lt;i class=&quot;fa fa-user-plus&quot;&gt;&lt;/i&gt; Assign
+                        &lt;/a&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                {% endif %}
+              {% endfor %}
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/div&gt;
+        {% endif %}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>The  <code>employees.html</code>  template shows a table of all employees. The table shows their full name, department and role, or displays a  <code>-</code>  in case no department and role has been assigned. Each employee has an assign link, which the admin user can click to assign them a department and role.</p>
+
+<p>Because the admin user is an employee as well, they will be displayed in the table. However, we have formatted the table such that admin users stand out with a green background and white text.</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/admin/employees/employee.html --&gt;
+
+{% import &quot;bootstrap/wtf.html&quot; as wtf %}
+{% extends &quot;base.html&quot; %}
+{% block title %}Assign Employee{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+ &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;div class=&quot;center&quot;&gt;
+            &lt;h1&gt; Assign Departments and Roles &lt;/h1&gt;
+            &lt;br/&gt;
+            &lt;p&gt;
+                Select a department and role to assign to
+                &lt;span style=&quot;color: #aec251;&quot;&gt;
+                    {{ employee.first_name }} {{ employee.last_name }}
+                &lt;/span&gt;
+            &lt;/p&gt;
+            &lt;br/&gt;
+            {{ wtf.quick_form(form) }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>We need to update the admin menu once more:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/base.html --&gt;
+
+&lt;!-- Modify nav bar menu --&gt;
+&lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;admin.list_employees&amp;apos;) }}&quot;&gt;Employees&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p>Navigate to the Employees page now. If there are no users other than the admin, this is what you should see:</p>
+
+<p>When there is an employee registered, this is displayed:</p>
+
+<p>Feel free to add a variety of departments and roles so that you can start assigning them to employees.</p>
+
+<p>You can re-assign departments and roles as well.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>We now have a completely functional CRUD web app! In Part Two of the tutorial, we&rsquo;ve been able to create an admin user and an admin dashboard, as well as customise the menu for different types of users. We&rsquo;ve also built out the core functionality of the app, and can now add, list, edit, and delete departments and roles, as well as assign them to employees. We have also taken security into consideration by protecting certain views from unauthorized access.</p>
+
+<blockquote>
+<p><a href="https://morioh.com/p/b59f7df2e1f5">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cFalsk%5cbuild-a-crud-web-app%5cpart-2.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IO tools (text, CSV, HDF5, …) on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/</link>
+    <description>Recent content in IO tools (text, CSV, HDF5, …) on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSV &amp; Text files</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/csv-and-text-file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/csv-and-text-file/</guid>
+      <description>CSV &amp;amp; Text files The workhorse function for reading text files (a.k.a. flat files) is read_csv(). See the cookbook for some advanced strategies.
+Parsing options read_csv() accepts the following common arguments:
+Basic filepath_or_buffervarious
+Either a path to a file (a str&amp;rdquo;), pathlib.Path&amp;rdquo;), or py._path.local.LocalPath), URL (including http, ftp, and S3 locations), or any object with a read() method (such as an open file or StringIO&amp;rdquo;)).
+sepstr, defaults to &#39;,&#39; for read_csv(), \t for read_table()</description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/html/</guid>
+      <description>HTML Reading HTML content  Warning
+We highly encourage you to read the HTML Table Parsing gotchas below regarding the issues surrounding the BeautifulSoup4/html5lib/lxml parsers.
+ The top-level read_html() function can accept an HTML string/file/URL and will parse HTML tables into list of pandas DataFrames. Let’s look at a few examples.
+ Note read_html returns a list of DataFrame objects, even if there is only a single table contained in the HTML content.</description>
+    </item>
+    
+    <item>
+      <title>Excel files</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/excel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/excel/</guid>
+      <description>Excel files The read_excel() method can read Excel 2003 (.xls) files using the xlrd Python module. Excel 2007+ (.xlsx) files can be read using either xlrd or openpyxl. Binary Excel (.xlsb) files can be read using pyxlsb. The to_excel() instance method is used for saving a DataFrame to Excel. Generally the semantics are similar to working with csv data. See the cookbook for some advanced strategies.
+Reading Excel files In the most basic use-case, read_excel takes a path to an Excel file, and the sheet_name indicating which sheet to parse.</description>
+    </item>
+    
+    <item>
+      <title>Clipboard</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/clipboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/clipboard/</guid>
+      <description>Clipboard A handy way to grab data is to use the read_clipboard() method, which takes the contents of the clipboard buffer and passes them to the read_csv method. For instance, you can copy the following text to the clipboard (CTRL-C on many operating systems):
+   A B C     1 4 p   2 5 q   3 6 r    And then import the data directly to a DataFrame by calling:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Start Django RestFramework"><meta property="og:title" content="Start Django RestFramework" />
+<meta property="og:description" content="เริ่มต้นใช้งาน Django RestFramework ปัจจุบันการพัฒนาเวปไซด์จะแยกการพัฒนาออกเป็น FrontEnd (เช่น React, Angular, Vue) และ BackEnd ( เช่น Django ) ซึ่งสิ่งที่ใช้เป็นสื่อกลางในการแลกเปลี่ยนข้อมูลกันระหว่าง FrontEnd และ BackEnd คือ Rest API นั่นเอง ในบทความนี้จะเป็นการอธิบายการสร้าง BackEnd ให้รองรับ Rest API ด้วย Django โดยได้มีการเลือกใช้ Library ชื่อ Django Rest framework เพื่อช่วยให้การพัฒนา REST API ทำได้อย่างง่ายดายและรวดเร็ว
+สิ่งที่ต้องเตรียม  Python 3.7 ความรู้ด้านการเขียน Django ขั้นพื้นฐาน ( สร้าง model และเขียน view ได้ ) ติดตั้ง package พื้นฐานด้วยคำสั่งต่อไปนี้
+$ pip install -r requirements.txt  ทำความรู้จักกับ REST API REST API คือข้อกำหนดที่ใช้ในการแลกเปลี่ยนข้อมูลระหว่าง FrontEnd และ BackEnd โดยทั่วไปข้อกำหนดนี้จะถูกใช้งานอยู่บน HTTP Protocol" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/django/django-rest-framework/" />
+
+<title>Start Django RestFramework | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/django/start-django-framework/" >
+      Start Web Application
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/django/django-rest-framework/"  class="active">
+      Start Django RestFramework
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Start Django RestFramework</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="เร-มต-นใช-งาน-django-restframework">เริ่มต้นใช้งาน Django RestFramework</h1>
+
+<p><img src="https://miro.medium.com/max/600/1*ze0aEdcRuak7_BektGgC_Q.png" alt="enter image description here" /></p>
+
+<p>ปัจจุบันการพัฒนาเวปไซด์จะแยกการพัฒนาออกเป็น FrontEnd (เช่น React, Angular, Vue) และ BackEnd ( เช่น Django ) ซึ่งสิ่งที่ใช้เป็นสื่อกลางในการแลกเปลี่ยนข้อมูลกันระหว่าง FrontEnd และ BackEnd คือ Rest API นั่นเอง ในบทความนี้จะเป็นการอธิบายการสร้าง BackEnd ให้รองรับ Rest API ด้วย Django โดยได้มีการเลือกใช้ Library ชื่อ  <a href="https://www.django-rest-framework.org/">Django Rest framework</a>  เพื่อช่วยให้การพัฒนา REST API ทำได้อย่างง่ายดายและรวดเร็ว</p>
+
+<h2 id="ส-งท-ต-องเตร-ยม"><strong>สิ่งที่ต้องเตรียม</strong></h2>
+
+<ol>
+<li>Python 3.7</li>
+<li>ความรู้ด้านการเขียน Django ขั้นพื้นฐาน ( สร้าง model และเขียน view ได้ )</li>
+<li>ติดตั้ง package พื้นฐานด้วยคำสั่งต่อไปนี้<br />
+$ pip install -r requirements.txt</li>
+</ol>
+
+<hr />
+
+<h2 id="ทำความร-จ-กก-บ-rest-api"><strong>ทำความรู้จักกับ REST API</strong></h2>
+
+<p>REST API คือข้อกำหนดที่ใช้ในการแลกเปลี่ยนข้อมูลระหว่าง FrontEnd และ BackEnd โดยทั่วไปข้อกำหนดนี้จะถูกใช้งานอยู่บน HTTP Protocol</p>
+
+<p>HTTP Protocol คือ message ที่ใช้รับและส่งกันระหว่าง web browser (FrontEnd) กับ Web Server (Backend/Django) ซึ่งลักษณะของ HTTP Request จะอยู่ในรูปแบบของ text message ที่สามารถแบ่งชิ้นส่วนออกมาได้ตามรูปต่อไปนี้</p>
+
+<p><img src="https://miro.medium.com/max/60/1*Nmx7sd041nLgmboaVVk7_w.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1792/1*Nmx7sd041nLgmboaVVk7_w.png" alt="" /></p>
+
+<ol>
+<li>ส่วน Request Line ใช้สำหรับบอกว่า HTTP message นี้ใช้ทำอะไร ซึ่งส่วนสำคัญคือส่วนที่อยู่ด้านหน้าสุดของบรรทัดที่เรียกว่า HTTP Method ซึ่งจากรูปจะเป็น HTTP Method “POST” โดยข้อตกลง REST API จะแบ่ง HTTP Method ออกเป็น<br />
+1.1 GET หมายถึง HTTP Message นี้ต้องการดึงข้อมูลบางอย่างจาก server<br />
+1.2 POST หมายถึง HTTP Message นี้ต้องการสร้างข้อมูล (Create) ขึ้นมาใหม่บน server<br />
+1.3 PUT หมายถึง​ HTTP Message นี้ต้องการแก้ไข (Update)ข้อมูลบน server<br />
+1.4 PATCH หมายถึง HTTP Message นี้ต้องการแก้ไขข้อมูลบางส่วน (Partial Update) บน server<br />
+1.5 DELETE หมายถึง HTTP Message นี้ต้องการลบข้อมูลบน server</li>
+<li>ส่วน HTTP Header เป็นส่วนที่ใช้ระบุรายละเอียดของ HTTP message นี้ เช่น ชนิดของ browser ที่ส่งข้อมูลมา, ระบุ Token สำหรับยืนยันตัวตนของผู้ใช้งาน, ชนิดข้อมูลของ Body มี format แบบไหน, ความยาวของ Body มีจำนวนกี่ตัวอักษร เป็นต้น</li>
+<li>ส่วนของ HTTP Body เป็นข้อมูลที่รับและส่งกับ web server โดยปกติแล้ว REST API จะใช้มาตรฐาน  <a href="https://th.wikipedia.org/wiki/%E0%B9%80%E0%B8%88%E0%B8%8B%E0%B8%B1%E0%B8%99">JSON (Javascript Object Notation)</a>  ในการแลกเปลี่ยนข้อมูล</li>
+</ol>
+
+<p>ดังน้ันโดยสรุปแล้วหน้าที่ของ Django ในการจัดการ REST API คือรอรับ HTTP Message จาก Browser (FrontEnd Client) แล้วตีความว่า client ต้องการทำอะไร กับข้อมูลที่เก็บอยู่ใน database แล้วสร้าง JSON message เพื่อตอบกลับ client ให้ถูกต้องนั่นเอง</p>
+
+<hr />
+
+<h2 id="เร-มต-น-checkout-tutorial-project"><strong>เริ่มต้น Checkout Tutorial Project</strong></h2>
+
+<p>เพื่อความรวดเร็วในบทเรียน จะอ้างอิง code ที่ checkout มาจาก</p>
+
+<p><a href="https://github.com/WasinTh/rest_tutorial">https://github.com/WasinTh/rest_tutorial</a></p>
+
+<p>ซึ่ง project นี้เก็บข้อมูลของ Author และ Book และมี REST API เพื่อใช้จัดการกับข้อมูลของ Author และ Book</p>
+
+<p><img src="https://miro.medium.com/max/1034/1*GZgYY82NE35c_XHLqowdVw.png" alt="" /></p>
+
+<p>ภาพตัวอย่างฐานข้อมูลที่ใช้ในการทดลองครั้งนี้</p>
+
+<p>โครงสร้างไฟล์ของ project มีดังต่อไปนี้</p>
+
+<ol>
+<li>db.sqlite3 คือไฟล์ database ที่เก็บข้อมูลของ Author และ Book</li>
+<li>manage.py เป็นไฟล์สำหรับรัน Django project</li>
+<li>rest_tutorial โฟลเดอร์ใช้สำหรับเก็บ urls.py และ settings.py ของ project</li>
+<li>library โฟลเดอร์ application ที่จะใช้ในบทความนี้<br />
+4.1 sample_1 เป็นตัวอย่าง code การสร้าง REST API โดยไม่ใช้ framework<br />
+4.2 sample_2 เป็นตัวอย่าง code การใช้งาน serializer ของ Django Rest framework<br />
+4.3 sample_3 เป็นตัวอย่าง code การใช้งาน Generics API View<br />
+4.4 sample_4 เป็นตัวอย่าง code การใช้งาน ViewSets และ Router</li>
+</ol>
+
+<hr />
+
+<h2 id="การสร-าง-rest-api-โดยไม-ใช-framework-sample-1"><strong>การสร้าง REST API โดยไม่ใช้ Framework (Sample_1)</strong></h2>
+
+<p>จากไฟล์ตัวอย่าง sample_1/views.py แสดงให้เห็นถึงการใช้ Django เพื่อ Query ข้อมูลจากฐานข้อมูลออกมาแล้ว Return กลับไปยัง client ในรูปแบบของ JSON</p>
+
+<p><img src="https://miro.medium.com/max/940/1*TILn52a5S9khnr23qcT5BQ.png" alt="" /></p>
+
+<ol>
+<li>class AuthorList ทำหน้าที่รับ HTTP GET จาก client และ Query Author object ทั้งหมดออกมาจากนั้น สร้าง list ของ dictionary ขึ้นมา 1 ตัวชื่อ response เพื่อเก็บข้อมูล id และ name ของ Author จากนั้นจึงใช้คำสั่ง json.dumps (ซึ่งเป็น build in library ของ Python) ในการแปลง list object ให้กลายเป็น JSON Array เพื่อตอบกลับไปยัง client</li>
+<li>class AuthorDetail ทำหน้าที่รับ HTTP GET จาก client พร้อมทั้งรับ url parameter 1 ตัวชื่อ ID เพื่อใช้สำหรับดึงข้อมูล Author คนที่ต้องการ ซึ่งมีการเรียกใช้ get_object_or_404 ที่เป็นคำสั่งพิเศษของ Django เพื่อตอบกลับ 404 not found ไปโดยอัตโนมัติ เมื่อผู้ใช้งานใส่ ID ที่ไม่มีอยู่จริงในระบบ</li>
+<li>class BookDetail และ BookList ทำหน้าที่เช่นเดียวกันกับของ Author แต่เปลี่ยน object เป็น Book</li>
+</ol>
+
+<p>ตัวอย่างผลการรัน Code เป็นดังต่อไปนี้</p>
+
+<p><img src="https://miro.medium.com/max/1194/1*mUZsPAWdpUITTV77eSlNQA.png" alt="" /></p>
+
+<p>ตัวอย่างการรัน Class AuthorList</p>
+
+<p><img src="https://miro.medium.com/max/1252/1*vr24rWJQKleL_FjzF2Da2Q.png" alt="" /></p>
+
+<p>ตัวอย่างการรัน Class AuthorDetail</p>
+
+<p><img src="https://miro.medium.com/max/2860/1*xgumWFwhlRbfGyPHRVhVQQ.png" alt="" /></p>
+
+<p>ตัวอย่างการรัน Class BookList</p>
+
+<p><img src="https://miro.medium.com/max/1244/1*hcmylIVjvg5E2Pfia-O3jw.png" alt="" /></p>
+
+<p>ตัวอย่างการรัน Class BookDetail</p>
+
+<p>จากตัวอย่างข้างต้นจะเห็นว่าการรอรับ HTTP Request ในทุกๆ method (GET, POST, PUT, PATCH, DELETE) และสร้าง JSON Response กลับไปนั้น เป็นเรื่องที่ใช้แรงงานสูงมาก และ code ที่เขียนก็จะซ้ำๆกันเป็นส่วนมาก ดังนั้นจึงเป็นที่มาของการนำ Django Rest framework มาใช้งาน</p>
+
+<hr />
+
+<h2 id="การต-ดต-ง-django-rest-framework"><strong>การติดตั้ง Django Rest framework</strong></h2>
+
+<p>ติดตั้งโดยใช้คำสั่ง pip ดังต่อไปนี้</p>
+
+<p><img src="https://miro.medium.com/max/1624/1*iGuO55ftypjafXxZTuOcrg.png" alt="" /></p>
+
+<p>จากนั้นแก้ไขไฟล์ rest_tutorial/settings.py โดยเพิ่ม “rest_framework” เข้าไปใน INSTALLED_APP</p>
+
+<p><img src="https://miro.medium.com/max/1818/1*XGSnJ_9IbUJpPD1CjRNjcQ.png" alt="" /></p>
+
+<hr />
+
+<h2 id="introduction-to-serializer-sample-2"><strong>Introduction to Serializer (Sample_2)</strong></h2>
+
+<p>Serializer คือตัวกลางที่ทำหน้าที่ในการแปลง Django model object ให้กลายเป็น JSON โดยการทำงานของ Serializer จะทำหน้าที่ใน 2 กรณีคือ</p>
+
+<ol>
+<li><p>การแปลงค่าที่ query ออกมาจากฐานข้อมูลให้กลายเป็น JSON เพื่อเตรียมส่งกลับไปยัง Client (มักจะใช้กับ HTTP GET method)<br />
+การใช้งานรูปแบบนี้ เราสามารถ new object ของ Serializer ที่ต้องการ แล้วส่ง Django model object เข้าไปเป็น parameter ได้ทันที จากนั้นเมื่อต้องการ JSON สามารถเรียก Serializer.data ได้ เช่น</p>
+
+<pre><code class="language-py">author_serializer = AuthorSerializer(Author.objects.first())  
+author_json = author_serializer.data
+</code></pre></li>
+
+<li><p>การแปลงค่า JSON ที่รับมาจาก client แล้วแปลงกลับมาเป็น Django object เพื่อเตรียม save ลงฐานข้อมูล (มักใช้กับ HTTP POST, PUT, PATCH method)<br />
+การใช้งานรูปแบบนี้จะเป็นการสร้าง object ของ serializer โดยการส่ง json ผ่านตัวแปรชื่อ data จากนั้นสามารถเรียกใช้ serializer.is_valid() เพื่อตรวจสอบความถูกต้องของ JSON หรือเรียกใช้ serializer.save() เพื่อบันทึกข้อมูลได้</p>
+
+<pre><code>author_serializer = AuthorSerializer(data=request_json)  
+if author_serializer.is_valid():  
+author_serializer.save()
+</code></pre>
+
+<p>จาก Project ตัวอย่างให้ดูในโฟลเดอร์ sample_2</p></li>
+</ol>
+
+<p><img src="https://miro.medium.com/max/1240/1*a8ImhB1DT4Oo4iskw-Ah9w.png" alt="" /></p>
+
+<p>ตัวอย่างการประกาศ Serializer โดยใช้ไฟล์ sample_2/serializers.py</p>
+
+<p>การประกาศ Serializer อย่างง่ายที่สุดคือการใช้งาน ModelSerializer โดยมีวิธีการสร้างดังต่อไปนี้</p>
+
+<ol>
+<li>สร้าง class ที่สืบทอด rest_framework.serializers.ModelSerializer</li>
+<li>ประกาศ class Meta พร้อมระบุข้อมูลที่จำเป็น 2 อย่างได้แก่<br />
+2.1 model เป็นการระบุ Model Class ที่เราต้องการจะทำ serializ<br />
+2.2 fields คือการระบุ field ที่ต้องการ</li>
+</ol>
+
+<p>จากตัวอย่างใน class AuthorSerializer มีการประกาศตัวแปรใหม่ชื่อ book_count ที่จะใช้นับจำนวน Book ทั้งหมดของ Author คนนี้ ( การใช้ reverse relationship ใน Django อ่านเพิ่มเติมได้  <a href="https://docs.djangoproject.com/en/2.2/topics/db/queries/#following-relationships-backward">ที่นี่</a>  ) ซึ่งจะเห็นว่าสามารถเพิ่ม field ใหม่เข้าไปใน JSON response ได้อย่างง่ายดาย</p>
+
+<p><img src="https://miro.medium.com/max/1264/1*MwNXzAjG8QhnbjJtMVHZhA.png" alt="" /></p>
+
+<p>การนำ Serializer มาใช้งานใน sample_2/views.py</p>
+
+<p>จากภาพด้านบนเป็นตัวอย่างการนำ Serializer มาใช้งานร่วมกับ View ที่เราได้เคยสร้างไว้ก่อนหน้านี้ จะเห็นว่า code สั้นลงและเป็นระเบียบอย่างชัดเจน</p>
+
+<p>สามารถรัน code ตัวอย่างนี้ได้โดยการเข้าไปที่ URL ดังต่อไปนี้<br />
+<a href="http://localhost:8000/library/sample_2/author">http://localhost:8000/library/sample_2/author</a><br />
+<a href="http://localhost:8000/library/sample_2/author/1">http://localhost:8000/library/sample_2/author/1</a><br />
+<a href="http://localhost:8000/library/sample_2/book">http://localhost:8000/library/sample_2/book</a><br />
+<a href="http://localhost:8000/library/sample_2/book/1">http://localhost:8000/library/sample_2/book/1</a></p>
+
+<hr />
+
+<h2 id="การใช-งาน-genericapiview-sample-3"><strong>การใช้งาน GenericAPIView (Sample_3)</strong></h2>
+
+<p>Django Rest framework สามารถนำมาใช้ใน View เพื่อลดการเขียน code ที่ซ้ำซ้อนออกไปจาก View และ Django Rest framework จะสร้าง GUI สำหรับให้ผู้ใช้งานทดสอบ REST API โดยอัตโนมัติอีกด้วย<br />
+ซึ่งการนำ Django Rest framework มาใช้งานใน View นี้มีได้หลายวิธีด้วยกัน แต่เพื่อให้กระชับในหัวข้อนี้จะกล่าวถึงการใช้ Generics APIView ซึ่งเมื่อนำมาใช้ร่วมกับ serializer ที่เขียนไว้ก่อนหน้าจะทำให้สร้าง REST API ได้อย่างง่ายมากขึ้น</p>
+
+<p>การใช้งาน Generics APIView ทำได้โดยขั้นตอนดังต่อไปนี้</p>
+
+<ol>
+<li>แก้ไข class ใน view ที่ต้องการให้เปลี่ยนมาสืบทอด generics.XXXView<br />
+โดย generics ได้แบ่ง API ออกเป็นกลุ่มใหญ่ๆ 2 กลุ่มคือ<br />
+1.1 กลุ่มของ API ที่ไม่จำเป็นต้องระบุ ID ของ object ซึ่ง API กลุ่มนี้ได้แก่การทำ GET (เพื่อ list ข้อมูลทั้งหมด) และการทำ POST (เพื่อสร้าง/create object ใหม่ขึ้นในฐานข้อมูล) โดยใช้งานผ่าน generics.ListAPIView, CreateAPIView, ListCreateAPIView<br />
+1.2 กลุ่มของ API ที่ต้องระบุ ID ของ object ซึ่ง API กลุ่มนี้ได้แก่การทำ GET (กรณีต้องการ detail ของ object เพียงตัวเดียว), PUT, PATCH, DELETE โดยจะใช้งานผ่าน generics.RetrieveAPIView (GET), UpdateAPIView (PUT), DestroyAPIView (Delete)</li>
+<li>ประกาศตัวแปรชื่อ queryset ซึ่งจะเป็นวิธีการระบุถึง Object ที่เราจะใช้ในการ query ออกมา ซึ่งโดยปกติจะใช้ Model.objects.all() แต่อาจมีบางกรณีที่ต้องการ filter object โดยเฉพาะ เช่น Model.objects.filter(is_active=True) เป็นต้น</li>
+<li>ประกาศตัวแปรชื่อ serializer_class ซึ่งเป็น Class Serializer ตัวเดียวกับที่ประกาศไว้ก่อนหน้า เพื่อบอกว่า View นี้จะใช้ Serializer ใดในการแปลง Django Model Object ไปอยู่ในรูปแบบของ JSON</li>
+<li>เพิ่มเติมกรณีเลือกใช้ GenericsAPI ในกลุ่มที่ต้องระบุ ID จะต้องเพิ่ม ตัวแปรชื่อ lookup_field และระบุ String ของชื่อ field ที่ต้องการนำ URL Parameter ไปค้นหาโดยชื่อของ lookup_field นี้ต้องเป็นชื่อที่ตรงกันทั้งชื่อของ model field และ url parameter field (หากไม่ระบุ lookup_field ต้องกำหนดชื่อตัวแปร URL Parameter ใน urls.py ให้เป็นชื่อ “<strong>pk</strong>” ซึ่งจะ map กับ id ของ object เท่านั้น)</li>
+</ol>
+
+<p>จาก Project ตัวอย่างดูในโฟลเดอร์ sample_3</p>
+
+<p><img src="https://miro.medium.com/max/60/1*Vc7IEubYYMNzi5zi6u3LAw.png?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/1166/1*Vc7IEubYYMNzi5zi6u3LAw.png" alt="" /></p>
+
+<p>ตัวอย่าง urls ของไฟล์ sample_3/urls.py</p>
+
+<p><img src="https://miro.medium.com/max/1172/1*2rG0O5nwmFIj4FMPTQUdYA.png" alt="" /></p>
+
+<p>ตัวอย่างการนำ Generics APIView มาใช้งานใน sample_3/views.py</p>
+
+<p>จากรูปตัวอย่างจะเห็นว่ามีการแก้ไข code ให้สั้นลง และ code ดังกล่าวยังครอบคลุม REST API ในเกือบทุก Method อีกด้วย</p>
+
+<ol>
+<li>AuthorList ใช้ในการแสดง author ทั้งหมดออกมา โดยสืบทอด generics.ListCreateAPIView เพื่อให้รองรับ GET และ POST API</li>
+<li>AuthorDetail ใช้ในการแสดงรายละเอียดของ author ที่ต้องการออกมา โดยหากดูใน urls.py จะเห็นว่ามีการใช้ URL Parameter ชื่อ id และประกาศ lookup_field เป็น id</li>
+<li>BookDetail มีการเรียกใช้ method ชื่อ get_queryset() แทนการประกาศตัวแปร queryset ธรรมดา กรณีนี้จะถูกใช้เมื่อมี logic ในการ query object ที่ต้องการที่ค่อนข้างซับซ้อน และในไฟล์ urls.py ได้มีการระบุค่า URL Parameter เป็น “<strong>pk</strong>” ซึ่งเป็นค่า default ของ Django Rest framework จึงไม่จำเป็นต้องระบุ lookup_field ใน class นี้</li>
+</ol>
+
+<p>สามารถรัน code ตัวอย่างนี้ได้โดยการเข้าไปที่ URL ดังต่อไปนี้<br />
+<a href="http://localhost:8000/library/sample_3/author">http://localhost:8000/library/sample_3/author</a><br />
+<a href="http://localhost:8000/library/sample_3/author/1">http://localhost:8000/library/sample_3/author/1</a><br />
+<a href="http://localhost:8000/library/sample_3/book">http://localhost:8000/library/sample_3/book</a><br />
+<a href="http://localhost:8000/library/sample_3/book/1">http://localhost:8000/library/sample_3/book/1</a></p>
+
+<p><img src="https://miro.medium.com/max/2464/1*8a0-Ls3qJGeUo-NCHBVgPA.png" alt="" /></p>
+
+<p>ตัวอย่างการเรียกใช้งาน URL sample_3/author</p>
+
+<hr />
+
+<h2 id="การใช-งาน-viewsets-และ-router-sample-4"><strong>การใช้งาน Viewsets และ Router (Sample_4)</strong></h2>
+
+<p>Django Rest framework ยังอำนวยความสะดวกให้กับการสร้าง Rest API กรณีที่ API สะท้อนถึงข้อมูลในฐานข้อมูลตรง ๆ โดยผ่านการใช้งาน Viewsets</p>
+
+<p>Viewsets ที่นำมาใช้งานในบทความนี้จะประกอบไปด้วย ModelViewSet คือ การระบุว่า Model ที่ระบุถึงนี้สามารถใช้งานได้ทั้ง GET, POST, PUT, PATCH, DELETE ส่วน ReadOnlyModelViewSet คือการระบุว่า Model นี้สามารถใช้งานได้ผ่านทาง GET สำหรับ list และ detail เท่านั้น</p>
+
+<p>Router ถูกนำมาใช้ใน urls.py เพื่อช่วยลด code ที่ต้องเขียนซ้ำๆในการประกาศ URL ไปยัง View ต่าง ๆ</p>
+
+<p><img src="https://miro.medium.com/max/1174/1*N8J9BMESw9Wpdxv986fakA.png" alt="" /></p>
+
+<p>การประกาศ URL โดยใช้ router ของ sample_4/urls.py</p>
+
+<p><img src="https://miro.medium.com/max/1354/1*LceglSqZLVnKSPFYkaeWuw.png" alt="" /></p>
+
+<p>การนำ Viewsets มาใช้ใน sample_4/views.py</p>
+
+<p>สามารถรัน code ตัวอย่างนี้ได้โดยการเข้าไปที่ URL ดังต่อไปนี้<br />
+<a href="http://localhost:8000/library/sample_4/author">http://localhost:8000/library/sample_4/author</a><br />
+<a href="http://localhost:8000/library/sample_4/author/1">http://localhost:8000/library/sample_4/author/1</a><br />
+<a href="http://localhost:8000/library/sample_4/book">http://localhost:8000/library/sample_4/book</a><br />
+<a href="http://localhost:8000/library/sample_4/book/1">http://localhost:8000/library/sample_4/book/1</a></p>
+
+<hr />
+
+<h2 id="rest-api-documentation"><strong>REST API Documentation</strong></h2>
+
+<p>Django Rest framework ยังช่วยทำ Document ให้โดยอัตโนมัติอีกด้วย โดยวิธีการคือแก้ไขไฟล์ rest_tutorial/urls.py โดยเพิ่ม URL ของ rest_framework.documentation.include_docs_urls ลงไป</p>
+
+<p>และเพิ่มบรรทัดในไฟล์ settings.py ให้ถูกต้องตามรูปต่อไปนี้</p>
+
+<p><img src="https://miro.medium.com/max/1328/1*b3iJVFbyPvzUTc6TNqpygA.png" alt="" /></p>
+
+<p>rest_tutorial/urls.py</p>
+
+<p><img src="https://miro.medium.com/max/1294/1*aKlz0SGkHIoovkADkRMLww.png" alt="" /></p>
+
+<p>settings.py</p>
+
+<p>จากนั้นสามารถเข้าดู document ได้ที่ URL</p>
+
+<p><a href="http://localhost:8000/docs/">http://localhost:8000/docs/</a></p>
+
+<p><img src="https://miro.medium.com/max/2872/1*UKkH8NI27JPBN9sAvfnoHg.png" alt="" /></p>
+
+<p>ตัวอย่างหน้าจอ Document ที่ Generate ออกมา</p>
+
+<p>นอกจากนี้ Django Rest framework ยังสามารถสร้าง document ใน format อื่น ๆ ได้ผ่านทาง third party library ต่าง ๆ รายละเอียดเพิ่มเติมอ่านได้  <a href="https://www.django-rest-framework.org/topics/documenting-your-api/">ที่นี่</a></p>
+
+<hr />
+
+<h2 id="ส-งท-าย"><strong>ส่งท้าย</strong></h2>
+
+<p>Django Rest framework เป็น framework ที่มีขนาดใหญ่และมีรายละเอียดเยอะมาก ตัวอย่างที่ยกมาอธิบายในบทความนี้เป็นเพียงแค่ส่วนหนึ่งในการเรียกใช้งาน เพื่อให้เห็นภาพรวมของการนำ Django Rest framework มาใช้งาน รายละเอียดทั้งหมดสามารถอ่านต่อได้  <a href="https://www.django-rest-framework.org/">ที่นี่</a>  ครับ</p>
+
+<blockquote>
+<p>Written with <a href="https://medium.com/@wasinthiengkunakrit/การใช้งาน-django-restframework-94e08255fe3c">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cDjango%5cdjango-rest-framework.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#เร-มต-นใช-งาน-django-restframework">เริ่มต้นใช้งาน Django RestFramework</a>
+<ul>
+<li><a href="#ส-งท-ต-องเตร-ยม"><strong>สิ่งที่ต้องเตรียม</strong></a></li>
+<li><a href="#ทำความร-จ-กก-บ-rest-api"><strong>ทำความรู้จักกับ REST API</strong></a></li>
+<li><a href="#เร-มต-น-checkout-tutorial-project"><strong>เริ่มต้น Checkout Tutorial Project</strong></a></li>
+<li><a href="#การสร-าง-rest-api-โดยไม-ใช-framework-sample-1"><strong>การสร้าง REST API โดยไม่ใช้ Framework (Sample_1)</strong></a></li>
+<li><a href="#การต-ดต-ง-django-rest-framework"><strong>การติดตั้ง Django Rest framework</strong></a></li>
+<li><a href="#introduction-to-serializer-sample-2"><strong>Introduction to Serializer (Sample_2)</strong></a></li>
+<li><a href="#การใช-งาน-genericapiview-sample-3"><strong>การใช้งาน GenericAPIView (Sample_3)</strong></a></li>
+<li><a href="#การใช-งาน-viewsets-และ-router-sample-4"><strong>การใช้งาน Viewsets และ Router (Sample_4)</strong></a></li>
+<li><a href="#rest-api-documentation"><strong>REST API Documentation</strong></a></li>
+<li><a href="#ส-งท-าย"><strong>ส่งท้าย</strong></a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

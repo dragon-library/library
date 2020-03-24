@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Circle Progress"><meta property="og:title" content="Circle Progress" />
+<meta property="og:description" content="Circle Progress  Responsive, accessible, animated, stylable with CSS circular progress bar available as plain (vanilla) JavaScript and jQuery plugin.
+ See examples or go to the project site
+Getting Started As plain JavaScript Download the minified [production version][vanilla-min]
+In your web page:
+&lt;div class=&quot;progress&quot;&gt;&lt;/div&gt; &lt;script src=&quot;dist/circle-progress.min.js&quot;&gt;&lt;/script&gt; &lt;script&gt; new CircleProgress(&#39;.progress&#39;); &lt;/script&gt;  As jQuery plugin Download the minified jQuery production version
+In your web page:
+&lt;div class=&quot;progress&quot;&gt;&lt;/div&gt; &lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;dist/jquery." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/circle-progress/" />
+
+<title>Circle Progress | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/create-progressive-web-app/" >
+      Progressive Web App คืออะไร
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/10-knowledge-javascript/" >
+      10 เรื่องน่ารู้ตอบข้อสงสัย JavaScript
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/circle-progress/"  class="active">
+      Circle Progress
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/javascript-use-map/" >
+      Use .map(), .reduce(), and .filter()
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/api-for-javascript/" >
+      รวม API สำหรับ Javascript ที่น่าสนใจในปี 2020
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Circle Progress</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="circle-progress">Circle Progress</h1>
+
+<blockquote>
+<p>Responsive, accessible, animated, stylable with CSS circular progress bar available as plain (vanilla) JavaScript and jQuery plugin.</p>
+</blockquote>
+
+<p><img src="https://i.imgur.com/gpxlBmm.png" alt="" /></p>
+
+<p>See <a href="https://tigrr.github.io/circle-progress/examples.html">examples</a> or go to the <a href="https://tigrr.github.io/circle-progress/">project site</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="as-plain-javascript">As plain JavaScript</h3>
+
+<p>Download the minified [production version][vanilla-min]</p>
+
+<p>In your web page:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;progress&quot;&gt;&lt;/div&gt;
+
+&lt;script src=&quot;dist/circle-progress.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    new CircleProgress('.progress');
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="as-jquery-plugin">As jQuery plugin</h3>
+
+<p>Download the minified <a href="https://github.com/tigrr/circle-progress/raw/master/dist/jquery.circle-progress.js">jQuery production version</a></p>
+
+<p>In your web page:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;progress&quot;&gt;&lt;/div&gt;
+
+&lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;dist/jquery.circle-progress.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  jQuery(function($) {
+    $('.progress').circleProgress();
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h4 id="a-note-about-jquery-file">A note about jQuery file</h4>
+
+<p>jQuery version of Circle Progress is built on top of plain JavaScript version.
+It uses jQuery Widget Factory. Two files are available: one that contains the Widget Factory code, and one that doesn&rsquo;t.
+1. You can use the smaller <code>jquery.circle-progress.bare.min.js</code>, if you have already included the jQuery Widget Factory or another native jQuery widget in your page.
+1. Otherwise you must use <code>jquery.circle-progress.min.js</code>, which includes the jQuery Widget Factory code.</p>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="initiate-circle-progress">Initiate Circle Progress</h3>
+
+<h4 id="plain-javascript">Plain JavaScript</h4>
+
+<pre><code class="language-js">const circleProgress = new CircleProgress(element, options, doc);
+</code></pre>
+
+<p>where</p>
+
+<p><code>element</code> is HTML element or selector to be converted into a progress circle (required),</p>
+
+<p><code>options</code> - object map of options (optional),</p>
+
+<p><code>doc</code> - the document we are acting upon (optional).</p>
+
+<h4 id="jquery">jQuery</h4>
+
+<pre><code class="language-js">$('.progress').circleProgress(options);
+</code></pre>
+
+<p>where <code>options</code> is object map of options (optional).</p>
+
+<h3 id="options">Options</h3>
+
+<p>You can customize Circle Progress with these options by either passing options object at initiation, or setting them later, e. g.:</p>
+
+<h4 id="in-plain-js">In plain js</h4>
+
+<p>Set options as properties on a CircleProgress instance:</p>
+
+<pre><code class="language-js">circleProgress.max = 100;
+circleProgress.value = 20;
+</code></pre>
+
+<p>or using the chainable <code>attr</code> method by passing it option key and value:</p>
+
+<pre><code class="language-js">circleProgress
+	.attr('max', 100)
+	.attr('value', 20);
+</code></pre>
+
+<p>or options object</p>
+
+<pre><code class="language-js">circleProgress.attr({
+	max: 100,
+	value: 20,
+});
+</code></pre>
+
+<h4 id="in-jquery">In jQuery</h4>
+
+<pre><code class="language-js">$('.progress').circleProgress('value', 20);
+</code></pre>
+
+<p>or</p>
+
+<pre><code class="language-js">$('.progress').circleProgress({
+	max: 100,
+	value: 20,
+});
+</code></pre>
+
+<h4 id="all-available-options">All available options</h4>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>value</td>
+<td>Number</td>
+<td>Indeterminate</td>
+<td>Current value</td>
+</tr>
+
+<tr>
+<td>min</td>
+<td>Number</td>
+<td>0</td>
+<td>Minimum value</td>
+</tr>
+
+<tr>
+<td>max</td>
+<td>Number</td>
+<td>1</td>
+<td>Maximum value</td>
+</tr>
+
+<tr>
+<td>startAngle</td>
+<td>Number</td>
+<td>0</td>
+<td>Starting angle in degrees. Angle of 0 points straight up. Direction depends on <code>clockwise</code>.</td>
+</tr>
+
+<tr>
+<td>clockwise</td>
+<td>Boolean</td>
+<td>true</td>
+<td>Whether to rotate clockwise (true) or anti-clockwise (false)</td>
+</tr>
+
+<tr>
+<td>constrain</td>
+<td>Boolean</td>
+<td>true</td>
+<td>Whether the value should be constrained between <code>min</code> and <code>max</code>. If true, values over <code>max</code> will be truncated to <code>max</code> and values under <code>min</code> will be set to <code>min</code>.</td>
+</tr>
+
+<tr>
+<td>indeterminateText</td>
+<td>String</td>
+<td>&rsquo;?&rsquo;</td>
+<td>Text to display as the value when it is indeterminate</td>
+</tr>
+
+<tr>
+<td>textFormat</td>
+<td>String or Function</td>
+<td>&lsquo;horizontal&rsquo;</td>
+<td>Text layout for value, min, max. <br> You can pass either one of the possible keywords: <br> <code>horizontal</code> - <samp>value/max</samp> <br> <code>vertical</code> - value is shown over max <br> <code>percent</code> - <samp>value%</samp> <br> <code>value</code> - only value is shown <br> <code>valueOnCircle</code> - the value is painted on top of the filled region on the circle <br> <code>none</code> - no text is shown. <br>Alternatively you can provide your own function, which will be called each time progress is updated with value and max as arguments and is expected to return a string to insert in the center of the progress circle</td>
+</tr>
+
+<tr>
+<td>animation</td>
+<td>String</td>
+<td>&lsquo;easeInOutCubic&rsquo;</td>
+<td>Animation easing function. One of <code>linear</code>, <code>easeInCubic</code>, <code>easeOutCubic</code>, <code>easeInOutCubic</code>, <code>easeInQuadr</code>, <code>easeOutQuadr</code>, <code>easeInOutQuadr</code> or <code>none</code></td>
+</tr>
+
+<tr>
+<td>animationDuration</td>
+<td>Number</td>
+<td>600</td>
+<td>Animation duration in milliseconds</td>
+</tr>
+</tbody>
+</table>
+
+<p>To customize widget&rsquo;s appearance, you can style its underlying SVG elements with CSS.
+The elements are:</p>
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>circle-progress</code></td>
+<td>The svg image. You can use this selector to scale the widget. E. g.: <code>.circle-progress {width: 200px; height: auto;}</code></td>
+</tr>
+
+<tr>
+<td><code>circle-progress-circle</code></td>
+<td>The entire circle (SVG circle element)</td>
+</tr>
+
+<tr>
+<td><code>circle-progress-value</code></td>
+<td>The arc representing currently filled progress (SVG path element)</td>
+</tr>
+
+<tr>
+<td><code>circle-progress-text</code></td>
+<td>Text controlled by <code>textFormat</code> option (SVG text element)</td>
+</tr>
+
+<tr>
+<td><code>circle-progress-text-value</code></td>
+<td>Current value text (SVG tspan element). Appears only for textFormat values of <code>horizontal</code>, <code>vertical</code>, <code>valueOnCircle</code></td>
+</tr>
+
+<tr>
+<td><code>circle-progress-text-max</code></td>
+<td>Maximum value text (SVG tspan element). Appears only for textFormat values of <code>horizontal</code>, <code>vertical</code>, <code>valueOnCircle</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>You can use any SVG presentation attributes on these elements. Particularly useful are:
+<code>fill</code>, <code>stroke</code>, <code>stroke-width</code>, <code>stroke-linecap</code> properties. (See <a href="https://tigrr.github.io/circle-progress/examples.html">examples</a>)</p>
+
+<p>The default options are stored in CircleProgress.defaults or jQuery.fn.circleProgress.defaults. The two are references to the same object. You can override them, so that all instances will be created with the overridden options.</p>
+
+<ul>
+<li>vanilla-min : <a href="https://github.com/tigrr/circle-progress/raw/master/dist/circle-progress.js">https://github.com/tigrr/circle-progress/raw/master/dist/circle-progress.js</a></li>
+<li>jquery-min: <a href="https://github.com/tigrr/circle-progress/raw/master/dist/jquery.circle-progress.js">https://github.com/tigrr/circle-progress/raw/master/dist/jquery.circle-progress.js</a></li>
+<li>site: <a href="https://tigrr.github.io/circle-progress/">https://tigrr.github.io/circle-progress/</a></li>
+<li>examples: <a href="https://tigrr.github.io/circle-progress/examples.html">https://tigrr.github.io/circle-progress/examples.html</a></li>
+<li>license: <a href="https://github.com/tigrr/circle-progress/blob/master/LICENSE">https://github.com/tigrr/circle-progress/blob/master/LICENSE</a></li>
+</ul>
+
+<h2 id="browser-support">Browser Support</h2>
+
+<p>Chrome, Firefox, Safari, Edge and IE 11 are supported.</p>
+
+<h2 id="license">License</h2>
+
+<p>© 2018 Tigran Sargsyan</p>
+
+<p>Licensed under (<a href="https://github.com/tigrr/circle-progress/blob/master/LICENSE">the MIT License</a>)</p>
+
+<p>[vanilla-min] : <a href="https://github.com/tigrr/circle-progress/raw/master/dist/circle-progress.js">https://github.com/tigrr/circle-progress/raw/master/dist/circle-progress.js</a></p>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cJavaScript%5ccircle-progress.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#circle-progress">Circle Progress</a>
+<ul>
+<li><a href="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#as-plain-javascript">As plain JavaScript</a></li>
+<li><a href="#as-jquery-plugin">As jQuery plugin</a>
+<ul>
+<li><a href="#a-note-about-jquery-file">A note about jQuery file</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#initiate-circle-progress">Initiate Circle Progress</a>
+<ul>
+<li><a href="#plain-javascript">Plain JavaScript</a></li>
+<li><a href="#jquery">jQuery</a></li>
+</ul></li>
+<li><a href="#options">Options</a>
+<ul>
+<li><a href="#in-plain-js">In plain js</a></li>
+<li><a href="#in-jquery">In jQuery</a></li>
+<li><a href="#all-available-options">All available options</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#browser-support">Browser Support</a></li>
+<li><a href="#license">License</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

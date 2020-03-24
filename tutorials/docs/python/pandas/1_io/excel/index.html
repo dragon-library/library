@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Excel files"><meta property="og:title" content="Excel files" />
+<meta property="og:description" content="Excel files The read_excel() method can read Excel 2003 (.xls) files using the xlrd Python module. Excel 2007&#43; (.xlsx) files can be read using either xlrd or openpyxl. Binary Excel (.xlsb) files can be read using pyxlsb. The to_excel() instance method is used for saving a DataFrame to Excel. Generally the semantics are similar to working with csv data. See the cookbook for some advanced strategies.
+Reading Excel files In the most basic use-case, read_excel takes a path to an Excel file, and the sheet_name indicating which sheet to parse." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/excel/" />
+
+<title>Excel files | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/" >
+      IO tools (text, CSV, HDF5, …)
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/csv-and-text-file/" >
+      CSV &amp; Text files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/html/" >
+      HTML
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/excel/"  class="active">
+      Excel files
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/1_io/clipboard/" >
+      Clipboard
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/pandas-groupby-tutorial/" >
+      Constant width to height ratio
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/pandas-explore-dataset/" >
+      Explore Your Dataset
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pandas/read-and-write-files/" >
+      Read and Write Files
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/snippets/" >
+      Snippets
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/important-basic-syntax/" >
+      ไวยกรณ์พื้นฐานที่จำเป็น
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Excel files</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="excel-files-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-excel-files-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#excel-files" title="Permalink to this headline">Excel files</a></h1>
+
+<p>The  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html#pandas.read_excel" title="pandas.read_excel"><code>read_excel()</code></a>  method can read Excel 2003 (<code>.xls</code>) files using the  <code>xlrd</code>  Python module. Excel 2007+ (<code>.xlsx</code>) files can be read using either  <code>xlrd</code>  or  <code>openpyxl</code>. Binary Excel (<code>.xlsb</code>) files can be read using  <code>pyxlsb</code>. The  <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel" title="pandas.DataFrame.to_excel"><code>to_excel()</code></a>  instance method is used for saving a  <code>DataFrame</code>  to Excel. Generally the semantics are similar to working with  <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table">csv</a>  data. See the  <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html#cookbook-excel">cookbook</a>  for some advanced strategies.</p>
+
+<h3 id="reading-excel-files-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-reading-excel-files-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#reading-excel-files" title="Permalink to this headline">Reading Excel files</a></h3>
+
+<p>In the most basic use-case,  <code>read_excel</code>  takes a path to an Excel file, and the  <code>sheet_name</code>  indicating which sheet to parse.</p>
+
+<pre><code class="language-py"># Returns a DataFrame
+pd.read_excel('path_to_file.xls', sheet_name='Sheet1')
+</code></pre>
+
+<h4 id="excelfile-class-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-excelfile-class-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#excelfile-class" title="Permalink to this headline">ExcelFile class</a></h4>
+
+<p>To facilitate working with multiple sheets from the same file, the  <code>ExcelFile</code>  class can be used to wrap the file and can be passed into  <code>read_excel</code>  There will be a performance benefit for reading multiple sheets as the file is read into memory only once.</p>
+
+<pre><code class="language-py">xlsx = pd.ExcelFile('path_to_file.xls')
+df = pd.read_excel(xlsx, 'Sheet1')
+</code></pre>
+
+<p>The  <code>ExcelFile</code>  class can also be used as a context manager.</p>
+
+<pre><code class="language-py">with pd.ExcelFile('path_to_file.xls') as xls:
+    df1 = pd.read_excel(xls, 'Sheet1')
+    df2 = pd.read_excel(xls, 'Sheet2')
+</code></pre>
+
+<p>The  <code>sheet_names</code>  property will generate a list of the sheet names in the file.</p>
+
+<p>The primary use-case for an  <code>ExcelFile</code>  is parsing multiple sheets with different parameters:</p>
+
+<pre><code class="language-py">data = {}
+# For when Sheet1's format differs from Sheet2
+with pd.ExcelFile('path_to_file.xls') as xls:
+    data['Sheet1'] = pd.read_excel(xls, 'Sheet1', index_col=None,
+                                   na_values=['NA'])
+    data['Sheet2'] = pd.read_excel(xls, 'Sheet2', index_col=1)
+</code></pre>
+
+<p>Note that if the same parsing parameters are used for all sheets, a list of sheet names can simply be passed to  <code>read_excel</code>  with no loss in performance.</p>
+
+<pre><code class="language-py"># using the ExcelFile class
+data = {}
+with pd.ExcelFile('path_to_file.xls') as xls:
+    data['Sheet1'] = pd.read_excel(xls, 'Sheet1', index_col=None,
+                                   na_values=['NA'])
+    data['Sheet2'] = pd.read_excel(xls, 'Sheet2', index_col=None,
+                                   na_values=['NA'])
+
+# equivalent using the read_excel function
+data = pd.read_excel('path_to_file.xls', ['Sheet1', 'Sheet2'],
+                     index_col=None, na_values=['NA'])
+</code></pre>
+
+<p><code>ExcelFile</code>  can also be called with a  <code>xlrd.book.Book</code>  object as a parameter. This allows the user to control how the excel file is read. For example, sheets can be loaded on demand by calling  <code>xlrd.open_workbook()</code>  with  <code>on_demand=True</code>.</p>
+
+<pre><code class="language-py">import xlrd
+xlrd_book = xlrd.open_workbook('path_to_file.xls', on_demand=True)
+with pd.ExcelFile(xlrd_book) as xls:
+    df1 = pd.read_excel(xls, 'Sheet1')
+    df2 = pd.read_excel(xls, 'Sheet2')
+</code></pre>
+
+<h4 id="specifying-sheets-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-specifying-sheets-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#specifying-sheets" title="Permalink to this headline">Specifying sheets</a></h4>
+
+<blockquote>
+<p><strong>Note</strong>
+The second argument is  <code>sheet_name</code>, not to be confused with  <code>ExcelFile.sheet_names</code>.</p>
+
+<p><strong>Note</strong>
+An ExcelFile’s attribute  <code>sheet_names</code>  provides access to a list of sheets.</p>
+</blockquote>
+
+<ul>
+<li>The arguments  <code>sheet_name</code>  allows specifying the sheet or sheets to read.<br /></li>
+<li>The default value for  <code>sheet_name</code>  is 0, indicating to read the first sheet<br /></li>
+<li>Pass a string to refer to the name of a particular sheet in the workbook.<br /></li>
+<li>Pass an integer to refer to the index of a sheet. Indices follow Python convention, beginning at 0.<br /></li>
+<li>Pass a list of either strings or integers, to return a dictionary of specified sheets.<br /></li>
+
+<li><p>Pass a  <code>None</code>  to return a dictionary of all available sheets.</p>
+
+<pre><code class="language-py"># Returns a DataFrame
+pd.read_excel('path_to_file.xls', 'Sheet1', index_col=None, na_values=['NA'])
+</code></pre></li>
+</ul>
+
+<p>Using the sheet index:</p>
+
+<pre><code class="language-py"># Returns a DataFrame
+pd.read_excel('path_to_file.xls', 0, index_col=None, na_values=['NA'])
+</code></pre>
+
+<p>Using all default values:</p>
+
+<pre><code class="language-py"># Returns a DataFrame
+pd.read_excel('path_to_file.xls')
+</code></pre>
+
+<p>Using None to get all sheets:</p>
+
+<pre><code class="language-py"># Returns a dictionary of DataFrames
+pd.read_excel('path_to_file.xls', sheet_name=None)
+</code></pre>
+
+<p>Using a list to get multiple sheets:</p>
+
+<pre><code class="language-py"># Returns the 1st and 4th sheet, as a dictionary of DataFrames.
+pd.read_excel('path_to_file.xls', sheet_name=['Sheet1', 3])
+</code></pre>
+
+<p><code>read_excel</code>  can read more than one sheet, by setting  <code>sheet_name</code>  to either a list of sheet names, a list of sheet positions, or  <code>None</code>  to read all sheets. Sheets can be specified by sheet index or sheet name, using an integer or string, respectively.</p>
+
+<h4 id="reading-a-multiindex-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-reading-a-multiindex-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#reading-a-multiindex" title="Permalink to this headline">Reading a  <code>MultiIndex</code></a></h4>
+
+<p><code>read_excel</code>  can read a  <code>MultiIndex</code>  index, by passing a list of columns to  <code>index_col</code>  and a  <code>MultiIndex</code>  column by passing a list of rows to  <code>header</code>. If either the  <code>index</code>  or  <code>columns</code>  have serialized level names those will be read in as well by specifying the rows/columns that make up the levels.</p>
+
+<p>For example, to read in a  <code>MultiIndex</code>  index without names:</p>
+
+<pre><code class="language-py">In [316]: df = pd.DataFrame({'a': [1, 2, 3, 4], 'b': [5, 6, 7, 8]},
+ .....:                  index=pd.MultiIndex.from_product([['a', 'b'], ['c', 'd']]))
+In [317]: df.to_excel('path_to_file.xlsx')
+In [318]: df = pd.read_excel('path_to_file.xlsx', index_col=[0, 1])
+In [319]: df
+</code></pre>
+
+<pre><code class="language-py">Out[319]: 
+
+     a  b
+a c  1  5
+  d  2  6
+b c  3  7
+  d  4  8
+</code></pre>
+
+<p>If the index has level names, they will parsed as well, using the same parameters.</p>
+
+<pre><code class="language-py">In [320]: df.index = df.index.set_names(['lvl1', 'lvl2'])
+In [321]: df.to_excel('path_to_file.xlsx')
+In [322]: df = pd.read_excel('path_to_file.xlsx', index_col=[0, 1])
+In [323]: df
+</code></pre>
+
+<pre><code class="language-py">Out[323]: 
+           a  b
+lvl1 lvl2      
+a    c     1  5
+     d     2  6
+b    c     3  7
+     d     4  8
+</code></pre>
+
+<p>If the source file has both  <code>MultiIndex</code>  index and columns, lists specifying each should be passed to  <code>index_col</code>  and  <code>header</code>:</p>
+
+<pre><code class="language-py">In [324]: df.columns = pd.MultiIndex.from_product([['a'], ['b', 'd']],
+ .....:                                        names=['c1', 'c2'])
+In [325]: df.to_excel('path_to_file.xlsx')
+In [326]: df = pd.read_excel('path_to_file.xlsx', index_col=[0, 1], header=[0, 1])
+In [327]: df
+</code></pre>
+
+<pre><code class="language-py">Out[327]: 
+c1         a   
+c2         b  d
+lvl1 lvl2      
+a    c     1  5
+     d     2  6
+b    c     3  7
+     d     4  8
+
+</code></pre>
+
+<h4 id="parsing-specific-columns-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-parsing-specific-columns-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#parsing-specific-columns" title="Permalink to this headline">Parsing specific columns</a></h4>
+
+<p>It is often the case that users will insert columns to do temporary computations in Excel and you may not want to read in those columns.  <code>read_excel</code>  takes a  <code>usecols</code>  keyword to allow you to specify a subset of columns to parse.</p>
+
+<p>Deprecated since version 0.24.0.</p>
+
+<p>Passing in an integer for  <code>usecols</code>  has been deprecated. Please pass in a list of ints from 0 to  <code>usecols</code>  inclusive instead.</p>
+
+<p>If  <code>usecols</code>  is an integer, then it is assumed to indicate the last column to be parsed.</p>
+
+<pre><code class="language-py">pd.read_excel('path_to_file.xls', 'Sheet1', usecols=2)
+</code></pre>
+
+<p>You can also specify a comma-delimited set of Excel columns and ranges as a string:</p>
+
+<pre><code class="language-py">pd.read_excel('path_to_file.xls', 'Sheet1', usecols='A,C:E')
+</code></pre>
+
+<p>If  <code>usecols</code>  is a list of integers, then it is assumed to be the file column indices to be parsed.</p>
+
+<pre><code class="language-py">pd.read_excel('path_to_file.xls', 'Sheet1', usecols=[0, 2, 3])
+</code></pre>
+
+<p>Element order is ignored, so  <code>usecols=[0,  1]</code>  is the same as  <code>[1,  0]</code>.</p>
+
+<p>New in version 0.24.</p>
+
+<p>If  <code>usecols</code>  is a list of strings, it is assumed that each string corresponds to a column name provided either by the user in  <code>names</code>  or inferred from the document header row(s). Those strings define which columns will be parsed:</p>
+
+<pre><code class="language-py">pd.read_excel('path_to_file.xls', 'Sheet1', usecols=['foo', 'bar'])
+</code></pre>
+
+<p>Element order is ignored, so  <code>usecols=['baz',  'joe']</code>  is the same as  <code>['joe',  'baz']</code>.</p>
+
+<p>New in version 0.24.</p>
+
+<p>If  <code>usecols</code>  is callable, the callable function will be evaluated against the column names, returning names where the callable function evaluates to  <code>True</code>.</p>
+
+<pre><code class="language-py">pd.read_excel('path_to_file.xls', 'Sheet1', usecols=lambda x: x.isalpha())
+</code></pre>
+
+<h4 id="parsing-dates-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-parsing-dates-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#parsing-dates" title="Permalink to this headline">Parsing dates</a></h4>
+
+<p>Datetime-like values are normally automatically converted to the appropriate dtype when reading the excel file. But if you have a column of strings that  <em>look</em>  like dates (but are not actually formatted as dates in excel), you can use the  <code>parse_dates</code>  keyword to parse those strings to datetimes:</p>
+
+<p>pd.read_excel(&lsquo;path_to_file.xls&rsquo;, &lsquo;Sheet1&rsquo;, parse_dates=[&lsquo;date_strings&rsquo;])</p>
+
+<h4 id="cell-converters-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-cell-converters-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#cell-converters" title="Permalink to this headline">Cell converters</a></h4>
+
+<p>It is possible to transform the contents of Excel cells via the  <code>converters</code>  option. For instance, to convert a column to boolean:</p>
+
+<pre><code class="language-py">pd.read_excel('path_to_file.xls', 'Sheet1', converters={'MyBools': bool})
+</code></pre>
+
+<p>This options handles missing values and treats exceptions in the converters as missing data. Transformations are applied cell by cell rather than to the column as a whole, so the array dtype is not guaranteed. For instance, a column of integers with missing values cannot be transformed to an array with integer dtype, because NaN is strictly a float. You can manually mask missing data to recover integer dtype:</p>
+
+<pre><code class="language-py">def cfun(x):
+    return int(x) if x else -1
+
+pd.read_excel('path_to_file.xls', 'Sheet1', converters={'MyInts': cfun})
+</code></pre>
+
+<h4 id="dtype-specifications-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-dtype-specifications-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#dtype-specifications" title="Permalink to this headline">Dtype specifications</a></h4>
+
+<p>As an alternative to converters, the type for an entire column can be specified using the  dtype  keyword, which takes a dictionary mapping column names to types. To interpret data with no type inference, use the type  <code>str</code>  or  <code>object</code>.</p>
+
+<pre><code class="language-py">pd.read_excel('path_to_file.xls', dtype={'MyInts': 'int64', 'MyText': str})
+</code></pre>
+
+<h3 id="writing-excel-files-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-writing-excel-files-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#writing-excel-files" title="Permalink to this headline">Writing Excel files</a></h3>
+
+<h4 id="writing-excel-files-to-disk-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-writing-excel-files-to-disk-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#writing-excel-files-to-disk" title="Permalink to this headline">Writing Excel files to disk</a></h4>
+
+<p>To write a  <code>DataFrame</code>  object to a sheet of an Excel file, you can use the  <code>to_excel</code>  instance method. The arguments are largely the same as  <code>to_csv</code>  described above, the first argument being the name of the excel file, and the optional second argument the name of the sheet to which the  <code>DataFrame</code>  should be written. For example:</p>
+
+<pre><code class="language-py">df.to_excel('path_to_file.xlsx', sheet_name='Sheet1')
+</code></pre>
+
+<p>Files with a  <code>.xls</code>  extension will be written using  <code>xlwt</code>  and those with a  <code>.xlsx</code>  extension will be written using  <code>xlsxwriter</code>  (if available) or  <code>openpyxl</code>.</p>
+
+<p>The  <code>DataFrame</code>  will be written in a way that tries to mimic the REPL output. The  <code>index_label</code>  will be placed in the second row instead of the first. You can place it in the first row by setting the  <code>merge_cells</code>  option in  <code>to_excel()</code>  to  <code>False</code>:</p>
+
+<pre><code class="language-py">df.to_excel('path_to_file.xlsx', index_label='label', merge_cells=False)
+</code></pre>
+
+<p>In order to write separate  <code>DataFrames</code>  to separate sheets in a single Excel file, one can pass an  <code>ExcelWriter</code>.</p>
+
+<pre><code class="language-py">with pd.ExcelWriter('path_to_file.xlsx') as writer:
+    df1.to_excel(writer, sheet_name='Sheet1')
+    df2.to_excel(writer, sheet_name='Sheet2')
+</code></pre>
+
+<blockquote>
+<p><strong>Note</strong>
+Wringing a little more performance out of  <code>read_excel</code>  Internally, Excel stores all numeric data as floats. Because this can produce unexpected behavior when reading in data, pandas defaults to trying to convert integers to floats if it doesn’t lose information (<code>1.0  --&gt;  1</code>). You can pass  <code>convert_float=False</code>  to disable this behavior, which may give a slight performance improvement.</p>
+</blockquote>
+
+<h4 id="writing-excel-files-to-memory-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-writing-excel-files-to-memory-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#writing-excel-files-to-memory" title="Permalink to this headline">Writing Excel files to memory</a></h4>
+
+<p>Pandas supports writing Excel files to buffer-like objects such as  <code>StringIO</code>  or  <code>BytesIO</code>  using  <code>ExcelWriter</code>.</p>
+
+<pre><code class="language-py"># Safe import for either Python 2.x or 3.x
+try:
+    from io import BytesIO
+except ImportError:
+    from cStringIO import StringIO as BytesIO
+
+bio = BytesIO()
+
+# By setting the 'engine' in the ExcelWriter constructor.
+writer = pd.ExcelWriter(bio, engine='xlsxwriter')
+df.to_excel(writer, sheet_name='Sheet1')
+
+# Save the workbook
+writer.save()
+
+# Seek to the beginning and read to copy the workbook to a variable in memory
+bio.seek(0)
+workbook = bio.read()
+</code></pre>
+
+<blockquote>
+<p><strong>Note</strong>
+<code>engine</code>  is optional but recommended. Setting the engine determines the version of workbook produced. Setting  <code>engine='xlrd'</code>  will produce an Excel 2003-format workbook (xls). Using either  <code>'openpyxl'</code>  or  <code>'xlsxwriter'</code>  will produce an Excel 2007-format workbook (xlsx). If omitted, an Excel 2007-formatted workbook is produced.</p>
+</blockquote>
+
+<h3 id="excel-writer-engines-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-excel-writer-engines-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#excel-writer-engines" title="Permalink to this headline">Excel writer engines</a></h3>
+
+<p>Pandas chooses an Excel writer via two methods:</p>
+
+<ol>
+<li><p>the  <code>engine</code>  keyword argument</p></li>
+
+<li><p>the filename extension (via the default specified in config options)</p></li>
+</ol>
+
+<p>By default, pandas uses the  <a href="https://xlsxwriter.readthedocs.io/">XlsxWriter</a>  for  <code>.xlsx</code>,  <a href="https://openpyxl.readthedocs.io/">openpyxl</a>  for  <code>.xlsm</code>, and  <a href="http://www.python-excel.org/">xlwt</a>  for  <code>.xls</code>  files. If you have multiple engines installed, you can set the default engine through  <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html#options">setting the config options</a>  <code>io.excel.xlsx.writer</code>  and  <code>io.excel.xls.writer</code>. pandas will fall back on  <a href="https://openpyxl.readthedocs.io/">openpyxl</a>  for  <code>.xlsx</code>  files if  <a href="https://xlsxwriter.readthedocs.io/">Xlsxwriter</a>  is not available.</p>
+
+<p>To specify which writer you want to use, you can pass an engine keyword argument to  <code>to_excel</code>  and to  <code>ExcelWriter</code>. The built-in engines are:</p>
+
+<ul>
+<li><p><code>openpyxl</code>: version 2.4 or higher is required</p></li>
+
+<li><p><code>xlsxwriter</code></p></li>
+
+<li><p><code>xlwt</code></p>
+
+<pre><code class="language-py"># By setting the 'engine' in the DataFrame 'to_excel()' methods.
+df.to_excel('path_to_file.xlsx', sheet_name='Sheet1', engine='xlsxwriter')
+
+# By setting the 'engine' in the ExcelWriter constructor.
+writer = pd.ExcelWriter('path_to_file.xlsx', engine='xlsxwriter')
+
+# Or via pandas configuration.
+from pandas import options  # noqa: E402
+options.io.excel.xlsx.writer = 'xlsxwriter'
+
+df.to_excel('path_to_file.xlsx', sheet_name='Sheet1')
+</code></pre></li>
+</ul>
+
+<h3 id="style-and-formatting-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-style-and-formatting-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#style-and-formatting" title="Permalink to this headline">Style and formatting</a></h3>
+
+<p>The look and feel of Excel worksheets created from pandas can be modified using the following parameters on the  <code>DataFrame</code>’s  <code>to_excel</code>  method.</p>
+
+<ul>
+<li><p><code>float_format</code>  : Format string for floating point numbers (default  <code>None</code>).</p></li>
+
+<li><p><code>freeze_panes</code>  : A tuple of two integers representing the bottommost row and rightmost column to freeze. Each of these parameters is one-based, so (1, 1) will freeze the first row and first column (default  <code>None</code>).</p></li>
+</ul>
+
+<p>Using the  <a href="https://xlsxwriter.readthedocs.io/">Xlsxwriter</a>  engine provides many options for controlling the format of an Excel worksheet created with the  <code>to_excel</code>  method. Excellent examples can be found in the  <a href="https://xlsxwriter.readthedocs.io/">Xlsxwriter</a>  documentation here:  <a href="https://xlsxwriter.readthedocs.io/working_with_pandas.html">https://xlsxwriter.readthedocs.io/working_with_pandas.html</a></p>
+
+<blockquote>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#excel-files">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cPandas%5c1_IO%5cexcel.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#excel-files-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-excel-files-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#excel-files" title="Permalink to this headline">Excel files</a></a>
+<ul>
+<li>
+<ul>
+<li><a href="#reading-excel-files-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-reading-excel-files-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#reading-excel-files" title="Permalink to this headline">Reading Excel files</a></a>
+<ul>
+<li><a href="#excelfile-class-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-excelfile-class-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#excelfile-class" title="Permalink to this headline">ExcelFile class</a></a></li>
+<li><a href="#specifying-sheets-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-specifying-sheets-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#specifying-sheets" title="Permalink to this headline">Specifying sheets</a></a></li>
+<li><a href="#reading-a-multiindex-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-reading-a-multiindex-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#reading-a-multiindex" title="Permalink to this headline">Reading a  <code>MultiIndex</code></a></a></li>
+<li><a href="#parsing-specific-columns-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-parsing-specific-columns-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#parsing-specific-columns" title="Permalink to this headline">Parsing specific columns</a></a></li>
+<li><a href="#parsing-dates-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-parsing-dates-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#parsing-dates" title="Permalink to this headline">Parsing dates</a></a></li>
+<li><a href="#cell-converters-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-cell-converters-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#cell-converters" title="Permalink to this headline">Cell converters</a></a></li>
+<li><a href="#dtype-specifications-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-dtype-specifications-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#dtype-specifications" title="Permalink to this headline">Dtype specifications</a></a></li>
+</ul></li>
+<li><a href="#writing-excel-files-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-writing-excel-files-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#writing-excel-files" title="Permalink to this headline">Writing Excel files</a></a>
+<ul>
+<li><a href="#writing-excel-files-to-disk-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-writing-excel-files-to-disk-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#writing-excel-files-to-disk" title="Permalink to this headline">Writing Excel files to disk</a></a></li>
+<li><a href="#writing-excel-files-to-memory-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-writing-excel-files-to-memory-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#writing-excel-files-to-memory" title="Permalink to this headline">Writing Excel files to memory</a></a></li>
+</ul></li>
+<li><a href="#excel-writer-engines-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-excel-writer-engines-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#excel-writer-engines" title="Permalink to this headline">Excel writer engines</a></a></li>
+<li><a href="#style-and-formatting-https-pandas-pydata-org-pandas-docs-stable-user-guide-io-html-style-and-formatting-permalink-to-this-headline"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#style-and-formatting" title="Permalink to this headline">Style and formatting</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

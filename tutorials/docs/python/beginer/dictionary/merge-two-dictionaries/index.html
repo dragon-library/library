@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Merge Two Dictionaries"><meta property="og:title" content="Merge Two Dictionaries" />
+<meta property="og:description" content="How to Merge Two Dictionaries in Python: Dictionary Comprehensions and Unpacking POSTED ON JUNE 7, 2019 BY JEREMY GRIFSKI
+When I’m trying to find a topic for this series, I either decide to write about something I just learned, or I choose to write about something I found from the list of top Python questions on Stack Overflow. Today, I’m hitting both by covering how to merge two dictionaries in Python." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/" />
+
+<title>Merge Two Dictionaries | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/variable/" >
+      ตัวแปรและประเภทข้อมูล
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/" >
+      Dictionary(Dict)
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/dictionary/" >
+      โครงสร้างข้อมูล Dictionary
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/dictionary-beginners-tutorial/" >
+      Dictionary(Dict) with Example
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/"  class="active">
+      Merge Two Dictionaries
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/date-and-time/" >
+      Date&amp;Time
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/string-format/" >
+      Format a String in Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/list/" >
+      List
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/python-heapq-for-beginners/" >
+      Python Heapq for Beginners
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/snippets/" >
+      Snippets
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/important-basic-syntax/" >
+      ไวยกรณ์พื้นฐานที่จำเป็น
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Merge Two Dictionaries</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="how-to-merge-two-dictionaries-in-python-dictionary-comprehensions-and-unpacking">How to Merge Two Dictionaries in Python: Dictionary Comprehensions and Unpacking</h1>
+
+<p>POSTED ON  <a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/">JUNE 7, 2019</a> BY  <a href="https://therenegadecoder.com/author/jeremy-grifski/">JEREMY GRIFSKI</a></p>
+
+<p><img src="https://i0.wp.com/therenegadecoder.com/wp-content/uploads/2019/05/how-to-merge-two-dictionaries-in-python-featured-image.jpeg?resize=1024,640&amp;ssl=1" alt="enter image description here" /></p>
+
+<p>When I’m trying to find a topic for this series, I either decide to write about something I just learned, or I choose to write about something I found from the  <a href="https://stackoverflow.com/questions/tagged/python?sort=votes&amp;pageSize=50">list of top Python questions on Stack Overflow</a>. Today, I’m hitting both by covering how to merge two dictionaries in Python.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#table-of-contents" title="Table of Contents">Table of Contents</a></li>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#problem-introduction" title="Problem Introduction">Problem Introduction</a></li>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#solutions" title="Solutions">Solutions</a>
+
+<ul>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#merge-two-dictionaries-with-brute-force" title="Merge Two Dictionaries with Brute Force">Merge Two Dictionaries with Brute Force</a></li>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#merge-two-dictionaries-with-a-dictionary-comprehension" title="Merge Two Dictionaries with a Dictionary Comprehension">Merge Two Dictionaries with a Dictionary Comprehension</a></li>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#merge-two-dictionaries-with-copy-and-update" title="Merge Two Dictionaries with Copy and Update">Merge Two Dictionaries with Copy and Update</a></li>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#merge-two-dictionaries-with-dictionary-unpacking" title="Merge Two Dictionaries with Dictionary Unpacking">Merge Two Dictionaries with Dictionary Unpacking</a></li>
+</ul></li>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#performance" title="Performance">Performance</a></li>
+<li><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/#a-little-recap" title="A Little Recap">A Little Recap</a></li>
+</ul>
+
+<h2 id="problem-introduction">Problem Introduction</h2>
+
+<p>Earlier in this series, I covered a similar problem where  <a href="https://therenegadecoder.com/code/how-to-convert-two-lists-into-a-dictionary-in-python/">I wanted to convert two lists into a dictionary</a>. In that article, I covered various methods for mapping one list onto the other. This time around I want to convert two dictionaries into a single dictionary like so:</p>
+
+<pre><code class="language-py">1.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;}
+2.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;}
+
+4.  # Insert merge code here
+
+6.  powers = {
+7.  &quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;,
+8.  &quot;Hiei&quot;: &quot;Jagan Eye&quot;
+9.  }
+</code></pre>
+
+<p>Here, we have two dictionaries:  <code>yusuke_power</code>  and  <code>hiei_power</code>. Each dictionary maps  <a href="https://myanimelist.net/anime/392/Yuu%E2%98%86Yuu%E2%98%86Hakusho">a YuYu Hakasho character</a>  to one of their abilities. In this case, I chose Yusuke and his Spirit Gun as well as Hiei and his Jagan Eye. Ultimately, we want to be able to merge these dictionaries, so we have a collection of characters and their powers. Let’s see if we can accomplish that below.</p>
+
+<h2 id="solutions">Solutions</h2>
+
+<p>As always, I like to list off a few possible ways to solve the problem. To start, we’ll try a brute force solution, then we’ll dig into some more sophisticated solutions.</p>
+
+<h3 id="merge-two-dictionaries-with-brute-force">Merge Two Dictionaries with Brute Force</h3>
+
+<p>As is tradition in this series, I always like to kick things off with a roll-your-own solution. In this case, we’re looking to iterate over one dictionary and add its items to the other dictionary:</p>
+
+<pre><code class="language-py">1.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;}
+2.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;}
+
+4.  for key, value in hiei_power.items():
+5.  yusuke_power[key] = value
+</code></pre>
+
+<p>Naturally, this solution leaves a lot to be desired, but it gets the job done. At the end of the day,  <code>yusuke_power</code>  should look like the  <code>powers</code>  dictionary we want.</p>
+
+<p>To accomplish something closer to what we want, we would have to iterate over both dictionaries separately:</p>
+
+<pre><code class="language-py">1.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;}
+2.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;}
+3.  powers = dict()
+
+5.  for dictionary in  (yusuke_power, hiei_power):
+6.  for key, value in dictionary.items():
+7.  powers[key] = value
+</code></pre>
+
+<p>Unfortunately, this solution doesn’t scale very well. That said, there are better ways to solve this problem.</p>
+
+<h3 id="merge-two-dictionaries-with-a-dictionary-comprehension">Merge Two Dictionaries with a Dictionary Comprehension</h3>
+
+<p>Since I’m a big fan of comprehensions, I think it’s worth mentioning that the solution above can be written in a single line with a dictionary comprehension:</p>
+
+<pre><code class="language-py">1.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;}
+2.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;}
+
+4.  powers = {key: value for d in  (yusuke_power, hiei_power)  for key, value in d.items()}
+</code></pre>
+
+<p>Here, we have written a dictionary comprehension that iterates over both dictionaries and copies each item into a new dictionary. Naturally, it works just like the brute force solution.</p>
+
+<h3 id="merge-two-dictionaries-with-copy-and-update">Merge Two Dictionaries with Copy and Update</h3>
+
+<p>As with many of the collections in Python, they have a builtin copy function associated with them. As a result, we can leverage that copy function to generate a new dictionary which includes all the items of the original dictionary. In addition, dictionaries have an update function which can be used to add all the items from one dictionary into another:</p>
+
+<pre><code class="language-py">1.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;}
+2.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;}
+
+4.  powers = yusuke_power.copy()
+5.  powers.update(hiei_power)
+</code></pre>
+
+<p>With this solution, we’re able to generate that  <code>powers</code>  dictionary which contains all the items from the original two dictionaries. As an added benefit,  <code>copy</code>  and  <code>update</code>  are backwards compatible, so Python 2 users won’t feel left out.</p>
+
+<p>It’s worth noting that we can extend this solution to merge any number of dictionaries with a custom function:</p>
+
+<pre><code class="language-py">1.  def merge_dicts(*dicts: dict):
+2.  merged_dict = dict()
+3.  for dictionary in dicts:
+4.  merge_dict.update(dictionary)
+5.  return merged_dict
+</code></pre>
+
+<p>Now, we can generate a new dictionary which contains all the items in any number of dictionaries.</p>
+
+<h3 id="merge-two-dictionaries-with-dictionary-unpacking">Merge Two Dictionaries with Dictionary Unpacking</h3>
+
+<p>When Python 3.5 rolled out, it introduced a dictionary unpacking syntax which allows us to merge dictionaries with a new operator:</p>
+
+<pre><code class="language-py">1.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;}
+2.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;}
+
+4.  powers = {**yusuke_power, **hiei_power}
+</code></pre>
+
+<p>Naturally, this solution scales for any number of arguments:</p>
+
+<pre><code class="language-py">1.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;}
+2.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;}
+
+4.  powers = {**yusuke_power, **hiei_power, &quot;Yoko Kurama&quot;: &quot;Rose Whip&quot;}
+</code></pre>
+
+<p>Of course, the drawback is backwards compatibility. If you’re still rocking Python 2 or even older versions of Python 3, this feature may not be available to you. Regardless, I think it’s a pretty clever piece of syntax, and I like how it looks.</p>
+
+<h2 id="performance">Performance</h2>
+
+<p>For the first time in this series, I thought it would be beneficial to take a look at the performance of each of the methods above (if you’re lucky, I might update the old articles to include performance as well). To do that, I’m going to use the builtin  <code>timeit</code>  library.</p>
+
+<p>To use the  <code>timeit</code>  library, we have to set up some strings for testing:</p>
+
+<pre><code class="language-py">1.  setup = &quot;&quot;&quot;\
+2.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;};
+3.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;};
+4.  powers = dict()
+5.  &quot;&quot;&quot;
+
+7.  brute_force = &quot;&quot;&quot;\
+8.  for dictionary in (yusuke_power, hiei_power):
+9.  for key, value in dictionary.items():
+10.  powers[key] = value
+11.  &quot;&quot;&quot;
+
+13.  dict_comprehension = &quot;&quot;&quot;\
+14.  powers = {key: value for d in (yusuke_power, hiei_power) for key, value in d.items()}
+15.  &quot;&quot;&quot;
+
+17.  copy_and_update = &quot;&quot;&quot;\
+18.  powers = yusuke_power.copy()
+19.  powers.update(hiei_power)
+20.  &quot;&quot;&quot;
+
+22.  dict_unpacking = &quot;&quot;&quot;\
+23.  powers = {**yusuke_power, **hiei_power}
+24.  &quot;&quot;&quot;
+</code></pre>
+
+<p>With our strings setup, we can begin our performance test:</p>
+
+<pre><code class="language-py">1.  &gt;&gt;&gt; import timeit
+2.  &gt;&gt;&gt; timeit.timeit(stmt=brute_force, setup=setup)
+3.  1.517404469999974
+4.  &gt;&gt;&gt; timeit.timeit(stmt=dict_comprehension, setup=setup)
+5.  1.6243454339999062
+6.  &gt;&gt;&gt; timeit.timeit(stmt=copy_and_update, setup=setup)
+7.  0.7273476979999032
+8.  &gt;&gt;&gt; timeit.timeit(stmt=dict_unpacking, setup=setup)
+9.  0.2897768919999635
+</code></pre>
+
+<p>As it turns out, dictionary unpacking is very fast. For reference, I performed the testing on a Surface Go with Windows 10 and Python 3.7.1.</p>
+
+<h2 id="a-little-recap">A Little Recap</h2>
+
+<p>Well, that’s all I have in terms of typical solutions. All that said, be aware that all of these solutions will overwrite duplicate values. In other words, if two dictionaries contain the same key, the last dictionary to be merged will overwrite the previous dictionary’s value.</p>
+
+<p>Also, it’s worth noting that all of these solutions perform  <a href="https://therenegadecoder.com/code/be-careful-when-copying-mutable-data-types/">a shallow copy</a>  of the dictionaries. As a result, dictionaries that may be nested or store objects will only have their references copied, not the actual values. If that’s a constraint in your application, you may need to write your own recursive copy function.</p>
+
+<p>At any rate, here are all the solutions:</p>
+
+<pre><code class="language-py">1.  yusuke_power = {&quot;Yusuke Urameshi&quot;: &quot;Spirit Gun&quot;}
+2.  hiei_power = {&quot;Hiei&quot;: &quot;Jagan Eye&quot;}
+3.  powers = dict()
+
+5.  # Brute force
+6.  for dictionary in  (yusuke_power, hiei_power):
+7.  for key, value in dictionary.items():
+8.  powers[key] = value
+
+10.  # Dictionary Comprehension
+11.  powers = {key: value for d in  (yusuke_power, hiei_power)  for key, value in d.items()}
+
+13.  # Copy and update
+14.  powers = yusuke_power.copy()
+15.  powers.update(hiei_power)
+
+17.  # Dictionary unpacking (Python 3.5+)
+18.  powers = {**yusuke_power, **hiei_power}
+
+20.  # Backwards compatible function for any number of dicts
+21.  def merge_dicts(*dicts: dict):
+22.  merged_dict = dict()
+23.  for dictionary in dicts:
+24.  merge_dict.update(dictionary)
+25.  return merged_dict
+</code></pre>
+
+<p>And, that’s it! As always, I appreciate the support. If you liked this article, do me a favor and share it with someone. For those feeling extra generous,  <a href="https://www.patreon.com/TheRenegadeCoder">consider becoming a member of The Renegade Coder</a>. If you’re not convinced, check out some of these other Python articles:</p>
+
+<ul>
+<li><a href="https://therenegadecoder.com/code/rock-paper-scissors-using-modular-arithmetic/">Rock Paper Scissors Using Modular Arithmetic</a></li>
+<li><a href="https://therenegadecoder.com/code/how-to-write-a-list-comprehension-in-python/">How to Write a List Comprehension in Python</a></li>
+<li><a href="https://therenegadecoder.com/code/the-coolest-programming-language-features/">The Coolest Programming Language Features</a></li>
+</ul>
+
+<p>Once again, thanks for the support! Before you go, share your recommendation for a topic you’d like to see in the comments.</p>
+
+<blockquote>
+<p><a href="https://therenegadecoder.com/code/how-to-merge-two-dictionaries-in-python/">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cBeginer%5cDictionary%5cmerge-two-dictionaries.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#how-to-merge-two-dictionaries-in-python-dictionary-comprehensions-and-unpacking">How to Merge Two Dictionaries in Python: Dictionary Comprehensions and Unpacking</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#problem-introduction">Problem Introduction</a></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#merge-two-dictionaries-with-brute-force">Merge Two Dictionaries with Brute Force</a></li>
+<li><a href="#merge-two-dictionaries-with-a-dictionary-comprehension">Merge Two Dictionaries with a Dictionary Comprehension</a></li>
+<li><a href="#merge-two-dictionaries-with-copy-and-update">Merge Two Dictionaries with Copy and Update</a></li>
+<li><a href="#merge-two-dictionaries-with-dictionary-unpacking">Merge Two Dictionaries with Dictionary Unpacking</a></li>
+</ul></li>
+<li><a href="#performance">Performance</a></li>
+<li><a href="#a-little-recap">A Little Recap</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ทำ Web Scraping ด้วย BeautifulSoup"><meta property="og:title" content="ทำ Web Scraping ด้วย BeautifulSoup" />
+<meta property="og:description" content="ทำ Web Scraping ด้วย BeautifulSoup กัน สำหรับ Blog นี้เราจะมาดูวิธีการทำ Web scraping ด้วย Python3 และ BeautifulSoup ในระดับ Basic มากกกกกกกกกกกกก กันดูนะ :)
+ก่อนที่เราจะเริ่มทำ web scraping เรามาเรียนรู้พื้นฐานเรื่อง website กันก่อนดีกว่า
+Componenet of web page เมื่อเราเข้าไปที่ web page ซัก url นึงแล้ว web browser ของเราก็จะทำการ request ไปที่ web server เราจะเรียกการ request ประเภทนี้ว่า GET request เนื่องจากเรา request ไปที่ server แล้วเราก็จะได้ file จาก server กลับมาเพื่อที่จะบอกกับ web browser นี้ว่าเราจะแสดงหน้า web page ของเราอย่างไร ซึ่งเนื้อหาใน file ที่กลับมาก็จะมีส่วนประกอบคร่าวๆ ดังนี้
+ HTML : เป็นเนื้อหาหลักของหน้านั้นๆ CSS : เป็นตัวจัดการตกแต่ง HTML ของเราให้สวยงาม ดูดีขึ้น JS : เป็นตัวจัดการ interactive ของ HTML ของเราให้ดีขึ้น Image : รูปภาพใน format เช่น JPG , PNG สำหรับแสดงบน web  หลังจาก web browser ได้รับดังกล่าวมาแล้ว ก็จะทำการ render ออกมาสวยงามตามที่เราเห็นกันเป็นปกติ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/" />
+
+<title>ทำ Web Scraping ด้วย BeautifulSoup | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/" >
+      Build a Web Scraper
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/" >
+      Building a Stock Screener - Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/" >
+      Building a Stock Screener - Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/" >
+      How to scrape Yahoo Finance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/" >
+      Requests and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/" >
+      Web Scraping 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-and-beautifulsoup/" >
+      Web Scraping and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-craigslist/" >
+      Web Scraping Craigslist
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/" >
+      Web Scraping NBA Stats
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/" >
+      Web Scraping Using BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/"  class="active">
+      ทำ Web Scraping ด้วย BeautifulSoup
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>ทำ Web Scraping ด้วย BeautifulSoup</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="ทำ-web-scraping-ด-วย-beautifulsoup-ก-น">ทำ Web Scraping ด้วย BeautifulSoup กัน</h1>
+
+<p>สำหรับ Blog นี้เราจะมาดูวิธีการทำ Web scraping ด้วย Python3 และ BeautifulSoup ในระดับ Basic มากกกกกกกกกกกกก กันดูนะ :)</p>
+
+<p><img src="https://miro.medium.com/max/900/1*DNTLycFqmcfwB5iNMCvPFg.jpeg" alt="" /></p>
+
+<p>ก่อนที่เราจะเริ่มทำ web scraping เรามาเรียนรู้พื้นฐานเรื่อง website กันก่อนดีกว่า</p>
+
+<hr />
+
+<h2 id="componenet-of-web-page"><strong>Componenet of web page</strong></h2>
+
+<p>เมื่อเราเข้าไปที่ web page ซัก url นึงแล้ว web browser ของเราก็จะทำการ request ไปที่ web server เราจะเรียกการ request ประเภทนี้ว่า GET request เนื่องจากเรา request ไปที่ server แล้วเราก็จะได้ file จาก server กลับมาเพื่อที่จะบอกกับ web browser นี้ว่าเราจะแสดงหน้า web page ของเราอย่างไร ซึ่งเนื้อหาใน file ที่กลับมาก็จะมีส่วนประกอบคร่าวๆ ดังนี้</p>
+
+<ul>
+<li><strong>HTML</strong> : เป็นเนื้อหาหลักของหน้านั้นๆ</li>
+<li><strong>CSS</strong> : เป็นตัวจัดการตกแต่ง HTML ของเราให้สวยงาม ดูดีขึ้น</li>
+<li><strong>JS</strong> : เป็นตัวจัดการ interactive ของ HTML ของเราให้ดีขึ้น</li>
+<li><strong>Image</strong> : รูปภาพใน format เช่น JPG , PNG สำหรับแสดงบน web</li>
+</ul>
+
+<p>หลังจาก web browser ได้รับดังกล่าวมาแล้ว ก็จะทำการ render ออกมาสวยงามตามที่เราเห็นกันเป็นปกติ</p>
+
+<hr />
+
+<h2 id="html"><strong>HTML</strong></h2>
+
+<p><a href="https://en.wikipedia.org/wiki/HTML">HyperText Markup Language</a>  (HTML) คือ ภาษาสำหรับสร้าง web page ไม่ใช่ภาษา programming เหมือน python โดยตัว HTML จะเป็นตัวบอก web browser ว่าจะต้องทำการวาดโครงสร้างหน้าตาออกมาเป็นอย่างไร</p>
+
+<p>เอาล่ะ เรามาทำความเข้าใจตัว HTML กันอย่างรวดเร็วกันดีกว่า HTML ประกอบไปด้วย  <code>tag &lt;&gt;</code>  โดยจะเริ่มด้วย  <code>&lt;html&gt;</code>  ซึ่งจะเป็นตัวบอก browser ว่าภายใต้สิ่งนี้คือสิ่งที่เราต้องการจะวาด ถ้าเราลองสร้าง file html เราก็จะได้ประมาณนี้</p>
+
+<pre><code class="language-html">&lt;html&gt;  
+&lt;/html&gt;
+</code></pre>
+
+<p>ต่อมาภายใน  <code>&lt;html&gt;</code>  เราสามารถใส่ tag  <code>head</code>  และ tag  <code>body</code>  เพื่อแยกส่วน content ต่างๆในหน้า web page ของเราได้</p>
+
+<pre><code class="language-html">&lt;html&gt;  
+  &lt;head&gt;  
+  &lt;/head&gt;  
+  &lt;body&gt;  
+  &lt;/body&gt;  
+&lt;/html&gt;
+</code></pre>
+
+<p>ตอนนี้เราจะเพิ่มเนื้อหาใน web page ของเราด้วย tag  <code>p</code>  โดย  <code>p</code>  คือ paragraph</p>
+
+<p>และทำการใส่ css class และใส่ id ดังนี้</p>
+
+<pre><code class="language-html">&lt;html&gt;  
+    &lt;head&gt;  
+    &lt;/head&gt;  
+    &lt;body&gt;  
+        &lt;p class=&quot;bold-paragraph&quot;&gt;  
+          Here's a paragraph of text!  
+          &lt;a href=&quot;https://www.google.com&quot; id=&quot;link1&quot;&gt;Google&lt;/a&gt;  
+        &lt;/p&gt;  
+        &lt;p class=&quot;bold-paragraph extra-large&quot;&gt;  
+          Here's a second paragraph of text!  
+          &lt;a href=&quot;https://www.python.org&quot; class=&quot;link2&quot;&gt;Python&lt;/a&gt;  
+        &lt;/p&gt;  
+    &lt;/body&gt;  
+&lt;/html&gt;
+</code></pre>
+
+<p>เราก็จะได้หน้า web page ของเราประมาณนี้</p>
+
+<p><img src="https://miro.medium.com/max/435/1*BY-qiEr-txcZhe8vZqAUjw.png" alt="" /></p>
+
+<hr />
+
+<h2 id="request-library">Request Library</h2>
+
+<p>ขั้นแรกของการทำ web scraping คือเราต้องทำการ request ไปที่ url ที่เราต้องการจะทำการ scrap ซึ่งเราสามารถใช้ Python library ที่ชื่อว่า request โดยเจ้า lib ตัวนี้จะทำการ  <code>GET</code>  request ไปที่ web server ของ url ที่เราระบุ และจำทำการ download content ของ web page นั้นมาให้เรา ป่ะๆ ลองทำกันดีกว่า</p>
+
+<p>ทำการ install lib ใน cmd ด้วย  <code>pip install request</code>  จากนั้นก็เขียน code ตามนี้</p>
+
+<p>เราจะได้ output เป็น  <code>&lt;Response [200]&gt;</code>  ซึ่งก็คือ request success</p>
+
+<p>ซึ่งตัวเลข status_code ที่ขึ้นต้นด้วย  <code>2</code>  คือ success แต่หากขึ้นต้นด้วย  <code>4</code>  <code>5</code>  คือ error สามารถดูรายละเอียดเพิ่มเติมเรื่อง request status code ได้ที่นี่  <a href="https://www.restapitutorial.com/httpstatuscodes.html">click</a></p>
+
+<p>ถ้าเราลอง  <code>print(page.content)</code>  เราจะเห็นได้ว่าตัว content ที่เราได้มานั้นดูเข้าใจได้ยาก ดังรูป</p>
+
+<p>b&rsquo;&lt;!DOCTYPE html&gt;\n<html>\n <head>\n <title>A simple example page</title>\n</head>\n<body>\n<p>Here is some simple content for this page.</p>\n </body>\n</html>&lsquo;</p>
+
+<hr />
+
+<h2 id="beautifulsoup">BeautifulSoup</h2>
+
+<p>และแล้วก็ถึงเวลาของพระเอกของเรา เจ้า BeautifulSoup เนี่ยจะมาทำการ parse content ที่เรา download ได้มา ให้มันสวยงามเข้าใจได้ง่ายมากขึ้น ลองกันเลยดีกว่า</p>
+
+<p>ทำการ install  <code>pip install beautifulsoup4</code>  จากนั้นก็เขียน code ตามนี้</p>
+
+<p>เราจะได้ output สวยงาม ตามนี้</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;    
+&lt;html&gt;   
+&lt;head&gt;   
+&lt;title&gt;A simple example page&lt;/title&gt;  
+&lt;/head&gt;   
+&lt;body&gt;   
+&lt;p&gt;Here is some simple content for this page.&lt;/p&gt;   
+&lt;/body&gt;   
+&lt;/html&gt;
+</code></pre>
+
+<hr />
+
+<h2 id="ค-นหา-tags-ท-งหมดบน-content">ค้นหา Tags ทั้งหมดบน Content</h2>
+
+<p>หากเราได้ content จาก web page ที่เราต้องการมาแล้ว แล้วเราต้องการหา tag  <code>p</code>  ทั้งหมดที่อยู่บนนั้น เราสามารถทำได้โดยใช้คำสั่ง  <code>find_all()</code>  เช่น</p>
+
+<p><code>print(soup.find_all('p'))</code>  ต่อจาก ตัวอย่างก่อนหน้า จะได้ list ออกมาตามนี้</p>
+
+<pre><code class="language-html">[&lt;p&gt;Here is some simple content for this page.&lt;/p&gt;]
+</code></pre>
+
+<p>จะเห็นได้ว่าเจ้า  <code>find_all()</code>  เนี่ยมัน return ออกมาเป็น list ให้เรา เราจึงสามารถ get position ของ list ได้ด้วย  <code>soup.find_all('p')[0].getText()</code>  ก็จะได้ผลลัพธ์ตามนี้</p>
+
+<p>Here is some simple content for this page.</p>
+
+<hr />
+
+<h2 id="ค-นหา-tags-ท-งหมดบน-content-ด-วย-class-หร-อ-id">ค้นหา Tags ทั้งหมดบน Content ด้วย Class หรือ Id</h2>
+
+<p>ลองสร้าง web page ด้วย html ใหม่โดยมีการใส่ class และ id ใหม่ ตามนี้</p>
+
+<pre><code class="language-html">&lt;html&gt;  
+    &lt;head&gt;  
+        &lt;title&gt;A simple example page&lt;/title&gt;  
+    &lt;/head&gt;  
+    &lt;body&gt;  
+        &lt;div&gt;  
+            &lt;p class=&quot;inner-text first-item&quot; id=&quot;first&quot;&gt;  
+                First paragraph.  
+            &lt;/p&gt;  
+            &lt;p class=&quot;inner-text&quot;&gt;  
+                Second paragraph.  
+            &lt;/p&gt;  
+        &lt;/div&gt;  
+        &lt;p class=&quot;outer-text first-item&quot; id=&quot;second&quot;&gt;  
+            &lt;b&gt;  
+                First outer paragraph.  
+            &lt;/b&gt;  
+        &lt;/p&gt;  
+        &lt;p class=&quot;outer-text&quot;&gt;  
+            &lt;b&gt;  
+                Second outer paragraph.  
+            &lt;/b&gt;  
+        &lt;/p&gt;  
+    &lt;/body&gt;  
+&lt;/html&gt;
+</code></pre>
+
+<p>แต่ ณ ที่นี้จากเราสามารถยิง url ไปลองได้ที่  <code>https://dataquestio.github.io/web-scraping-pages/ids_and_classes.html</code>  โอเคไปเขียน code ลองดึง tag ที่มี  <code>id = first</code>  ออกมาแสดง ลองเขียน code ตามนี้ดู</p>
+
+<pre><code class="language-py">soup.find_all(id=&quot;first&quot;)
+</code></pre>
+
+<p>เราก็จะได้ผลลัพธ์ของ tag ที่มี  <code>id = first</code>  ออกมาตามนี้</p>
+
+<pre><code class="language-html">[&lt;p class=&quot;inner-text first-item&quot; id=&quot;first&quot;&gt;  
+                 First paragraph.  
+             &lt;/p&gt;]
+</code></pre>
+
+<p>ต่อมาเราจะลองทำการหา tag  <code>p</code>  ที่มี class  <code>outer-tex</code>  โดยทำการเขียน code ดังนี้</p>
+
+<pre><code class="language-py">soup.find_all(‘p’, class_=’outer-text’)
+</code></pre>
+
+<p>เราก็จะได้ผลลัพธ์ของ tag ที่มี class  <code>outer-text</code> ออกมาตามนี้</p>
+
+<pre><code class="language-html">[&lt;p class=&quot;outer-text first-item&quot; id=&quot;second&quot;&gt;  
+ &lt;b&gt;First outer paragraph.&lt;/b&gt;  
+ &lt;/p&gt;, 
+ &lt;p class=&quot;outer-text&quot;&gt;  
+ &lt;b&gt;Second outer paragraph.&lt;/b&gt;  
+ &lt;/p&gt;]
+</code></pre>
+
+<p>มาถึงตรงจุดนี้เราก็จะทำการดึง content จาก web page หรือที่เรียกว่า web scraping กันได้แล้ว อีกทั้งยังสามารถแยกตาม tag , id , class ของ content นั้นได้ด้วย</p>
+
+<hr />
+
+<p>จบไปแล้วสำหรับ basic การทำ web scraping แบบ baby walk ถ้าติดขัดตรงไหน หรือมีอะไรจะแนะนำ comment หรือ inbox มาได้โดยตรงเลยนะครับ :P</p>
+
+<h2 id="reference"><strong>Reference</strong></h2>
+
+<ul>
+<li><a href="https://www.dataquest.io/blog/web-scraping-tutorial-python/">Python Web Scraping Tutorial using BeautifulSoup</a>
+When performing data science tasks, it&rsquo;s common to want to use data found on the internet. You&rsquo;ll usually be able to…</li>
+</ul>
+
+<blockquote>
+<p><a href="https://medium.com/equinox-blog/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B3-web-scraping-%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-beautifulsoup-%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%96%E0%B8%AD%E0%B8%B0-b58dc0e1775a">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cweb-scraping%5cequinox-blog-web-scraping.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#ทำ-web-scraping-ด-วย-beautifulsoup-ก-น">ทำ Web Scraping ด้วย BeautifulSoup กัน</a>
+<ul>
+<li><a href="#componenet-of-web-page"><strong>Componenet of web page</strong></a></li>
+<li><a href="#html"><strong>HTML</strong></a></li>
+<li><a href="#request-library">Request Library</a></li>
+<li><a href="#beautifulsoup">BeautifulSoup</a></li>
+<li><a href="#ค-นหา-tags-ท-งหมดบน-content">ค้นหา Tags ทั้งหมดบน Content</a></li>
+<li><a href="#ค-นหา-tags-ท-งหมดบน-content-ด-วย-class-หร-อ-id">ค้นหา Tags ทั้งหมดบน Content ด้วย Class หรือ Id</a></li>
+<li><a href="#reference"><strong>Reference</strong></a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web Scraping Using BeautifulSoup"><meta property="og:title" content="Web Scraping Using BeautifulSoup" />
+<meta property="og:description" content="Tutorial: Python Web Scraping Using BeautifulSoup When performing data science tasks, it’s common to want to use data found on the internet. You’ll usually be able to access this data in csv format, or via an Application Programming Interface (API). However, there are times when the data you want can only be accessed as part of a web page. In cases like this, you’ll want to use a technique called web scraping to get the data from the web page into a format you can work with in your analysis." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/" />
+
+<title>Web Scraping Using BeautifulSoup | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/" >
+      Finance
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/" >
+      Web Scraping
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/" >
+      Build a Web Scraper
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-1/" >
+      Building a Stock Screener - Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/building-stock-screener-2/" >
+      Building a Stock Screener - Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scrape-yahoo-finance/" >
+      How to scrape Yahoo Finance
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/request-and-beautifulsoup/" >
+      Requests and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-101/" >
+      Web Scraping 101
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-and-beautifulsoup/" >
+      Web Scraping and BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-craigslist/" >
+      Web Scraping Craigslist
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/" >
+      Web Scraping NBA Stats
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/"  class="active">
+      Web Scraping Using BeautifulSoup
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/" >
+      ทำ Web Scraping ด้วย BeautifulSoup
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Web Scraping Using BeautifulSoup</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="tutorial-python-web-scraping-using-beautifulsoup">Tutorial: Python Web Scraping Using BeautifulSoup</h1>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2016/11/python-web-scraping-beautifulsoup-tutorial-1040x520.jpg" alt="python-web-scraping-beautifulsoup-tutorial" title="python-web-scraping-beautifulsoup-tutorial" /></p>
+
+<p>When performing data science tasks, it’s common to want to use data found on the internet. You’ll usually be able to access this data in  <em>csv</em>  format, or via an  <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a>  (API). However, there are times when the data you want can only be accessed as part of a web page. In cases like this, you’ll want to use a technique called web scraping to get the data from the web page into a format you can work with in your analysis.</p>
+
+<p>In this tutorial, we’ll show you how to perform web scraping using  <a href="https://www.python.org/downloads/release/python-350/">Python 3</a>  and the  <a href="https://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>  library. We’ll be scraping weather forecasts from the  <a href="http://www.weather.gov/">National Weather Service</a>, and then analyzing them using the  <a href="http://pandas.pydata.org/">Pandas</a>  library.</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2019/01/nws.png" alt="nws" /></p>
+
+<p>We’ll be scraping weather forecasts from the National Weather Service site.</p>
+
+<p>Before we get started, if you’re looking for more background on APIs or the  <em>csv</em>  format, you might want to check out our Dataquest courses on  <a href="https://www.dataquest.io/course/apis-and-scraping">APIs</a>  or  <a href="https://www.dataquest.io/course/data-analysis-intermediate">data analysis</a>.</p>
+
+<h2 id="the-components-of-a-web-page">The components of a web page</h2>
+
+<p>When we visit a web page, our web browser makes a request to a web server. This request is called a  <code>GET</code>  request, since we’re getting files from the server. The server then sends back files that tell our browser how to render the page for us. The files fall into a few main types:</p>
+
+<ul>
+<li><a href="https://www.w3.org/TR/html/">HTML</a>  — contain the main content of the page.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>  — add styling to make the page look nicer.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a>  — Javascript files add interactivity to web pages.</li>
+<li>Images — image formats, such as  <a href="https://en.wikipedia.org/wiki/JPEG">JPG</a>  and  <a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>  allow web pages to show pictures.</li>
+</ul>
+
+<p>After our browser receives all the files, it renders the page and displays it to us. There’s a lot that happens behind the scenes to render a page nicely, but we don’t need to worry about most of it when we’re web scraping. When we perform web scraping, we’re interested in the main content of the web page, so we look at the HTML.</p>
+
+<h2 id="html">HTML</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/HTML">HyperText Markup Language</a>  (HTML) is a language that web pages are created in. HTML isn’t a programming language, like Python — instead, it’s a markup language that tells a browser how to layout content. HTML allows you to do similar things to what you do in a word processor like Microsoft Word — make text bold, create paragraphs, and so on. Because HTML isn’t a programming language, it isn’t nearly as complex as Python.</p>
+
+<p>Let’s take a quick tour through HTML so we know enough to scrape effectively. HTML consists of elements called tags. The most basic tag is the  <code>&lt;html&gt;</code>  tag. This tag tells the web browser that everything inside of it is HTML. We can make a simple HTML document just using this tag:</p>
+
+<pre><code class="language-python">&lt;html&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>We haven’t added any content to our page yet, so if we viewed our HTML document in a web browser, we wouldn’t see anything:</p>
+
+<p>Right inside an  <code>html</code>  tag, we put two other tags, the  <code>head</code>  tag, and the  <code>body</code>  tag. The main content of the web page goes into the  <code>body</code>  tag. The  <code>head</code>  tag contains data about the title of the page, and other information that generally isn’t useful in web scraping:</p>
+
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>We still haven’t added any content to our page (that goes inside the  <code>body</code>  tag), so we again won’t see anything:</p>
+
+<p>You may have noticed above that we put the  <code>head</code>  and  <code>body</code>  tags inside the  <code>html</code>  tag. In HTML, tags are nested, and can go inside other tags.</p>
+
+<p>We’ll now add our first content to the page, in the form of the  <code>p</code>  tag. The  <code>p</code>  tag defines a paragraph, and any text inside the tag is shown as a separate paragraph:</p>
+
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here's a paragraph of text!
+&lt;/p&gt;
+&lt;p&gt;
+Here's a second paragraph of text!
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Here’s how this will look:</p>
+
+<p>Here’s a paragraph of text!</p>
+
+<p>Here’s a second paragraph of text!</p>
+
+<p>Tags have commonly used names that depend on their position in relation to other tags:</p>
+
+<ul>
+<li><code>child</code>  — a child is a tag inside another tag. So the two  <code>p</code>  tags above are both children of the  <code>body</code>  tag.</li>
+<li><code>parent</code>  — a parent is the tag another tag is inside. Above, the  <code>html</code>  tag is the parent of the  <code>body</code>  tag.</li>
+<li><code>sibiling</code>  — a sibiling is a tag that is nested inside the same parent as another tag. For example,  <code>head</code>  and  <code>body</code>  are siblings, since they’re both inside  <code>html</code>. Both  <code>p</code>  tags are siblings, since they’re both inside  <code>body</code>.</li>
+</ul>
+
+<p>We can also add properties to HTML tags that change their behavior:</p>
+
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here's a paragraph of text!
+&lt;a href=&quot;https://www.dataquest.io&quot;&gt;Learn Data Science Online&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Here's a second paragraph of text!
+&lt;a href=&quot;https://www.python.org&quot;&gt;Python&lt;/a&gt; &lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+
+<p>Here’s how this will look:</p>
+
+<p>Here’s a paragraph of text!  <a href="https://www.dataquest.io/">Learn Data Science Online</a></p>
+
+<p>Here’s a second paragraph of text!  <a href="https://www.python.org/">Python</a></p>
+
+<p>In the above example, we added two  <code>a</code>  tags.  <code>a</code>  tags are links, and tell the browser to render a link to another web page. The  <code>href</code>  property of the tag determines where the link goes.</p>
+
+<p><code>a</code>  and  <code>p</code>  are extremely common html tags. Here are a few others:</p>
+
+<ul>
+<li><code>div</code>  — indicates a division, or area, of the page.</li>
+<li><code>b</code>  — bolds any text inside.</li>
+<li><code>i</code>  — italicizes any text inside.</li>
+<li><code>table</code>  — creates a table.</li>
+<li><code>form</code>  — creates an input form.</li>
+</ul>
+
+<p>For a full list of tags, look  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">here</a>.</p>
+
+<p>Before we move into actual web scraping, let’s learn about the  <code>class</code>  and  <code>id</code>  properties. These special properties give HTML elements names, and make them easier to interact with when we’re scraping. One element can have multiple classes, and a class can be shared between elements. Each element can only have one id, and an id can only be used once on a page. Classes and ids are optional, and not all elements will have them.</p>
+
+<p>We can add classes and ids to our example:</p>
+
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p class=&quot;bold-paragraph&quot;&gt;
+Here's a paragraph of text!
+&lt;a href=&quot;https://www.dataquest.io&quot; id=&quot;learn-link&quot;&gt;Learn Data Science Online&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;bold-paragraph extra-large&quot;&gt;
+Here's a second paragraph of text!
+&lt;a href=&quot;https://www.python.org&quot; class=&quot;extra-large&quot;&gt;Python&lt;/a&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Here’s how this will look:</p>
+
+<p>Here’s a paragraph of text!  <a href="https://www.dataquest.io/">Learn Data Science Online</a></p>
+
+<p>Here’s a second paragraph of text!  <a href="https://www.python.org/">Python</a></p>
+
+<p>As you can see, adding classes and ids doesn’t change how the tags are rendered at all.</p>
+
+<h2 id="the-requests-library">The requests library</h2>
+
+<p>The first thing we’ll need to do to scrape a web page is to download the page. We can download pages using the Python  <a href="https://2.python-requests.org/en/latest/">requests</a>  library. The requests library will make a  <code>GET</code>  request to a web server, which will download the HTML contents of a given web page for us. There are several different types of requests we can make using  <code>requests</code>, of which  <code>GET</code>  is just one. If you want to learn more, check out our  <a href="https://www.dataquest.io/blog/python-api-tutorial/">API tutorial</a>.</p>
+
+<p>Let’s try downloading a simple sample website,  <code>http://dataquestio.github.io/web-scraping-pages/simple.html</code>. We’ll need to first download it using the  <a href="https://2.python-requests.org/en/master/user/quickstart/#make-a-request">requests.get</a>  method.</p>
+
+<pre><code class="language-python">import requests
+page = requests.get(&quot;http://dataquestio.github.io/web-scraping-pages/simple.html&quot;)
+page
+</code></pre>
+
+<pre><code class="language-python">&lt;Response [200]&gt;
+</code></pre>
+
+<p>After running our request, we get a  <a href="https://2.python-requests.org/en/master/user/quickstart/#response-content">Response</a>  object. This object has a  <code>status_code</code>  property, which indicates if the page was downloaded successfully:</p>
+
+<pre><code class="language-python">page.status_code
+</code></pre>
+
+<pre><code class="language-python">200
+</code></pre>
+
+<p>A  <code>status_code</code>  of  <code>200</code>  means that the page downloaded successfully. We won’t fully dive into status codes here, but a status code starting with a  <code>2</code>  generally indicates success, and a code starting with a  <code>4</code>  or a  <code>5</code>  indicates an error.</p>
+
+<p>We can print out the HTML content of the page using the  <code>content</code>  property:</p>
+
+<pre><code class="language-python">page.content
+</code></pre>
+
+<pre><code class="language-html">b'&lt;!DOCTYPE html&gt;\n
+&lt;html&gt;\n
+&lt;head&gt;\n
+&lt;title&gt;A simple example page&lt;/title&gt;\n
+&lt;/head&gt;\n
+&lt;body&gt;\n
+&lt;p&gt;Here is some simple content for this
+page.&lt;/p&gt;\n
+&lt;/body&gt;\n
+&lt;/html&gt;'
+</code></pre>
+
+<h2 id="parsing-a-page-with-beautifulsoup">Parsing a page with BeautifulSoup</h2>
+
+<p>As you can see above, we now have downloaded an HTML document.</p>
+
+<p>We can use the  <a href="https://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>  library to parse this document, and extract the text from the  <code>p</code>  tag. We first have to import the library, and create an instance of the  <code>BeautifulSoup</code>  class to parse our document:</p>
+
+<pre><code class="language-python">from bs4 import BeautifulSoup
+soup = BeautifulSoup(page.content, 'html.parser')
+</code></pre>
+
+<p>We can now print out the HTML content of the page, formatted nicely, using the  <code>prettify</code>  method on the  <code>BeautifulSoup</code>  object:</p>
+
+<pre><code class="language-python">print(soup.prettify())
+</code></pre>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;
+A simple example page
+&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;
+Here is some simple content for this page.
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>As all the tags are nested, we can move through the structure one level at a time. We can first select all the elements at the top level of the page using the  <code>children</code>  property of  <code>soup</code>. Note that  <code>children</code>  returns a list generator, so we need to call the  <code>list</code>  function on it:</p>
+
+<pre><code class="language-python">list(soup.children)
+</code></pre>
+
+<pre><code class="language-html">['html', '\n', &lt;html&gt; &lt;head&gt; &lt;title&gt;A simple example page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;p&gt;Here is some simple content for this page.&lt;/p&gt; &lt;/body&gt; &lt;/html&gt;]
+</code></pre>
+
+<p>The above tells us that there are two tags at the top level of the page — the initial  <code>&lt;!DOCTYPE html&gt;</code>  tag, and the  <code>&lt;html&gt;</code>  tag. There is a newline character (<code>\n</code>) in the list as well. Let’s see what the type of each element in the list is:</p>
+
+<pre><code class="language-python">[type(item) for item in list(soup.children)]
+</code></pre>
+
+<pre><code class="language-python">[bs4.element.Doctype, bs4.element.NavigableString, bs4.element.Tag]
+</code></pre>
+
+<p>As you can see, all of the items are  <code>BeautifulSoup</code>  objects. The first is a  <code>Doctype</code>  object, which contains information about the type of the document. The second is a  <code>NavigableString</code>, which represents text found in the HTML document. The final item is a  <code>Tag</code>  object, which contains other nested tags. The most important object type, and the one we’ll deal with most often, is the  <code>Tag</code>  object.</p>
+
+<p>The  <code>Tag</code>  object allows us to navigate through an HTML document, and extract other tags and text. You can learn more about the various  <code>BeautifulSoup</code>  objects  <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#kinds-of-objects">here</a>.</p>
+
+<p>We can now select the  <code>html</code>  tag and its children by taking the third item in the list:</p>
+
+<pre><code class="language-python">html = list(soup.children)[2]
+</code></pre>
+
+<p>Each item in the list returned by the  <code>children</code>  property is also a  <code>BeautifulSoup</code>  object, so we can also call the  <code>children</code>  method on  <code>html</code>.</p>
+
+<p>Now, we can find the children inside the  <code>html</code>  tag:</p>
+
+<pre><code class="language-python">list(html.children)
+</code></pre>
+
+<pre><code class="language-html">['\n', &lt;head&gt; &lt;title&gt;A simple example page&lt;/title&gt; &lt;/head&gt;, '\n', &lt;body&gt; &lt;p&gt;Here is some simple content for this page.&lt;/p&gt; &lt;/body&gt;, '\n']
+</code></pre>
+
+<p>As you can see above, there are two tags here,  <code>head</code>, and  <code>body</code>. We want to extract the text inside the  <code>p</code>  tag, so we’ll dive into the body:</p>
+
+<pre><code class="language-python">body = list(html.children)[3]
+</code></pre>
+
+<p>Now, we can get the  <code>p</code>  tag by finding the children of the body tag:</p>
+
+<pre><code class="language-python">list(body.children)
+</code></pre>
+
+<pre><code class="language-html">['\n', &lt;p&gt;Here is some simple content for this page.&lt;/p&gt;, '\n']
+</code></pre>
+
+<p>We can now isolate the p tag:</p>
+
+<pre><code class="language-python">p = list(body.children)[1]
+</code></pre>
+
+<p>Once we’ve isolated the tag, we can use the  <code>get_text</code>  method to extract all of the text inside the tag:</p>
+
+<pre><code class="language-python">p.get_text()
+</code></pre>
+
+<pre><code>'Here is some simple content for this page.'
+</code></pre>
+
+<h2 id="finding-all-instances-of-a-tag-at-once">Finding all instances of a tag at once</h2>
+
+<p>What we did above was useful for figuring out how to navigate a page, but it took a lot of commands to do something fairly simple. If we want to extract a single tag, we can instead use the  <code>find_all</code>  method, which will find all the instances of a tag on a page.</p>
+
+<pre><code class="language-python">soup = BeautifulSoup(page.content, 'html.parser')
+soup.find_all('p')
+</code></pre>
+
+<pre><code class="language-html">[&lt;p&gt;Here is some simple content for this page.&lt;/p&gt;]
+</code></pre>
+
+<p>Note that  <code>find_all</code>  returns a list, so we’ll have to loop through, or use list indexing, it to extract text:</p>
+
+<pre><code class="language-python">soup.find_all('p')[0].get_text()
+</code></pre>
+
+<pre><code>'Here is some simple content for this page.'
+</code></pre>
+
+<p>If you instead only want to find the first instance of a tag, you can use the  <code>find</code>  method, which will return a single  <code>BeautifulSoup</code>  object:</p>
+
+<pre><code class="language-python">soup.find('p')
+</code></pre>
+
+<pre><code class="language-html">&lt;p&gt;Here is some simple content for this page.&lt;/p&gt;
+</code></pre>
+
+<h2 id="searching-for-tags-by-class-and-id">Searching for tags by class and id</h2>
+
+<p>We introduced classes and ids earlier, but it probably wasn’t clear why they were useful. Classes and ids are used by CSS to determine which HTML elements to apply certain styles to. We can also use them when scraping to specify specific elements we want to scrape. To illustrate this principle, we’ll work with the following page:</p>
+
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;A simple example page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;
+&lt;p class=&quot;inner-text first-item&quot; id=&quot;first&quot;&gt;
+First paragraph.
+&lt;/p&gt;
+&lt;p class=&quot;inner-text&quot;&gt;
+Second paragraph.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class=&quot;outer-text first-item&quot; id=&quot;second&quot;&gt;
+&lt;b&gt;
+First outer paragraph.
+&lt;/b&gt;
+&lt;/p&gt;
+&lt;p class=&quot;outer-text&quot;&gt;
+&lt;b&gt;
+Second outer paragraph.
+&lt;/b&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>We can access the above document at the URL  <code>http://dataquestio.github.io/web-scraping-pages/ids_and_classes.html</code>. Let’s first download the page and create a  <code>BeautifulSoup</code>  object:</p>
+
+<pre><code class="language-python">page = requests.get(&quot;http://dataquestio.github.io/web-scraping-pages/ids_and_classes.html&quot;)
+soup = BeautifulSoup(page.content, 'html.parser')
+soup
+</code></pre>
+
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;A simple example page
+&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;
+&lt;p class=&quot;inner-text first-item&quot; id=&quot;first&quot;&gt;
+First paragraph.
+&lt;/p&gt;&lt;p class=&quot;inner-text&quot;&gt;
+Second paragraph.
+&lt;/p&gt;&lt;/div&gt;
+&lt;p class=&quot;outer-text first-item&quot; id=&quot;second&quot;&gt;&lt;b&gt;
+First outer paragraph.
+&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;outer-text&quot;&gt;&lt;b&gt;
+Second outer paragraph.
+&lt;/b&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Now, we can use the  <code>find_all</code>  method to search for items by class or by id. In the below example, we’ll search for any  <code>p</code>  tag that has the class  <code>outer-text</code>:</p>
+
+<pre><code class="language-python">soup.find_all('p', class_='outer-text')
+</code></pre>
+
+<pre><code class="language-html">[&lt;p class=&quot;outer-text first-item&quot; id=&quot;second&quot;&gt; &lt;b&gt; First outer paragraph. &lt;/b&gt; &lt;/p&gt;, &lt;p class=&quot;outer-text&quot;&gt; &lt;b&gt; Second outer paragraph. &lt;/b&gt; &lt;/p&gt;]
+</code></pre>
+
+<p>In the below example, we’ll look for any tag that has the class  <code>outer-text</code>:</p>
+
+<pre><code class="language-python">soup.find_all(class_=&quot;outer-text&quot;)
+</code></pre>
+
+<pre><code class="language-html">&lt;p class=&quot;outer-text first-item&quot; id=&quot;second&quot;&gt;
+&lt;b&gt;
+First outer paragraph.
+&lt;/b&gt;
+&lt;/p&gt;, &lt;p class=&quot;outer-text&quot;&gt;
+&lt;b&gt;
+Second outer paragraph.
+&lt;/b&gt;
+&lt;/p&gt;]
+</code></pre>
+
+<p>We can also search for elements by id:</p>
+
+<pre><code class="language-python">soup.find_all(id=&quot;first&quot;)
+</code></pre>
+
+<pre><code class="language-html">[&lt;p class=&quot;inner-text first-item&quot; id=&quot;first&quot;&gt;
+First paragraph.
+&lt;/p&gt;]
+</code></pre>
+
+<h2 id="using-css-selectors">Using CSS Selectors</h2>
+
+<p>You can also search for items using  <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors">CSS selectors</a>. These selectors are how the CSS language allows developers to specify HTML tags to style. Here are some examples:</p>
+
+<ul>
+<li><code>p a</code>  — finds all  <code>a</code>  tags inside of a  <code>p</code>  tag.</li>
+<li><code>body p a</code>  — finds all  <code>a</code>  tags inside of a  <code>p</code>  tag inside of a  <code>body</code>  tag.</li>
+<li><code>html body</code>  — finds all  <code>body</code>  tags inside of an  <code>html</code>  tag.</li>
+<li><code>p.outer-text</code>  — finds all  <code>p</code>  tags with a class of  <code>outer-text</code>.</li>
+<li><code>p#first</code>  — finds all  <code>p</code>  tags with an id of  <code>first</code>.</li>
+<li><code>body p.outer-text</code>  — finds any  <code>p</code>  tags with a class of  <code>outer-text</code>  inside of a  <code>body</code>  tag.</li>
+</ul>
+
+<p>You can learn more about CSS selectors  <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors">here</a>.</p>
+
+<p><code>BeautifulSoup</code>  objects support searching a page via CSS selectors using the  <code>select</code>  method. We can use CSS selectors to find all the  <code>p</code>  tags in our page that are inside of a  <code>div</code>  like this:</p>
+
+<pre><code class="language-python">soup.select(&quot;div p&quot;)
+</code></pre>
+
+<pre><code class="language-html">[&lt;p class=&quot;inner-text first-item&quot; id=&quot;first&quot;&gt;
+First paragraph.
+&lt;/p&gt;, &lt;p class=&quot;inner-text&quot;&gt;
+Second paragraph.
+&lt;/p&gt;]
+</code></pre>
+
+<p>Note that the  <code>select</code>  method above returns a list of  <code>BeautifulSoup</code>  objects, just like  <code>find</code>  and  <code>find_all</code>.</p>
+
+<h2 id="downloading-weather-data">Downloading weather data</h2>
+
+<p>We now know enough to proceed with extracting information about the local weather from the National Weather Service website. The first step is to find the page we want to scrape. We’ll extract weather information about downtown San Francisco from  <a href="http://forecast.weather.gov/MapClick.php?lat=37.7772&amp;lon=-122.4168">this page</a>.</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2019/01/extended_forecast.png" alt="" /></p>
+
+<p>We’ll extract data about the extended forecast.</p>
+
+<p>As you can see from the image, the page has information about the extended forecast for the next week, including time of day, temperature, and a brief description of the conditions.</p>
+
+<h2 id="exploring-page-structure-with-chrome-devtools">Exploring page structure with Chrome DevTools</h2>
+
+<p>The first thing we’ll need to do is inspect the page using  <a href="https://developer.chrome.com/devtools">Chrome Devtools</a>. If you’re using another browser,  <a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Opening_the_Web_Console">Firefox</a>  and  <a href="https://developer.apple.com/safari/tools/">Safari</a>  have equivalents. It’s recommended to use Chrome though.</p>
+
+<p>You can start the developer tools in Chrome by clicking  <code>View -&gt; Developer -&gt; Developer Tools</code>. You should end up with a panel at the bottom of the browser like what you see below. Make sure the  <code>Elements</code>  panel is highlighted:</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2019/01/devtools.png" alt="" /></p>
+
+<p>Chrome Developer Tools.</p>
+
+<p>The elements panel will show you all the HTML tags on the page, and let you navigate through them. It’s a really handy feature!</p>
+
+<p>By right clicking on the page near where it says “Extended Forecast”, then clicking “Inspect”, we’ll open up the tag that contains the text “Extended Forecast” in the elements panel:</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2019/01/ex_selected.png" alt="" /></p>
+
+<p>The extended forecast text.</p>
+
+<p>We can then scroll up in the elements panel to find the “outermost” element that contains all of the text that corresponds to the extended forecasts. In this case, it’s a  <code>div</code>  tag with the id  <code>seven-day-forecast</code>:</p>
+
+<p><img src="https://www.dataquest.io/wp-content/uploads/2019/01/div.png" alt="" /></p>
+
+<p>The div that contains the extended forecast items.</p>
+
+<p>If you click around on the console, and explore the div, you’ll discover that each forecast item (like “Tonight”, “Thursday”, and “Thursday Night”) is contained in a  <code>div</code>  with the class  <code>tombstone-container</code>.</p>
+
+<p>We now know enough to download the page and start parsing it. In the below code, we:</p>
+
+<ul>
+<li>Download the web page containing the forecast.</li>
+<li>Create a  <code>BeautifulSoup</code>  class to parse the page.</li>
+<li>Find the  <code>div</code>  with id  <code>seven-day-forecast</code>, and assign to  <code>seven_day</code></li>
+<li>Inside  <code>seven_day</code>, find each individual forecast item.</li>
+
+<li><p>Extract and print the first forecast item.</p>
+
+<pre><code class="language-py">page = requests.get(&quot;http://forecast.weather.gov/MapClick.php?lat=37.7772&amp;lon=-122.4168&quot;)
+soup = BeautifulSoup(page.content, 'html.parser')
+seven_day = soup.find(id=&quot;seven-day-forecast&quot;)
+forecast_items = seven_day.find_all(class_=&quot;tombstone-container&quot;)
+tonight = forecast_items[0]
+print(tonight.prettify())
+</code></pre>
+
+<pre><code class="language-html">&lt;div class=&quot;tombstone-container&quot;&gt;
+&lt;p class=&quot;period-name&quot;&gt;
+Tonight
+&lt;br&gt;
+&lt;br/&gt;
+&lt;/br&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img alt=&quot;Tonight: Mostly clear, with a low around 49. West northwest wind 12 to 17 mph decreasing to 6 to 11 mph after midnight. Winds could gust as high as 23 mph. &quot; class=&quot;forecast-icon&quot; src=&quot;newimages/medium/nfew.png&quot; title=&quot;Tonight: Mostly clear, with a low around 49. West northwest wind 12 to 17 mph decreasing to 6 to 11 mph after midnight. Winds could gust as high as 23 mph. &quot;/&gt;
+&lt;/p&gt;
+&lt;p class=&quot;short-desc&quot;&gt;
+Mostly Clear
+&lt;/p&gt;
+&lt;p class=&quot;temp temp-low&quot;&gt;
+Low: 49 °F
+&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></li>
+</ul>
+
+<h2 id="extracting-information-from-the-page">Extracting information from the page</h2>
+
+<p>As you can see, inside the forecast item  <code>tonight</code>  is all the information we want. There are  <code>4</code>  pieces of information we can extract:</p>
+
+<ul>
+<li>The name of the forecast item — in this case,  <code>Tonight</code>.</li>
+<li>The description of the conditions — this is stored in the  <code>title</code>  property of  <code>img</code>.</li>
+<li>A short description of the conditions — in this case,  <code>Mostly Clear</code>.</li>
+<li>The temperature low — in this case,  <code>49</code>  degrees.</li>
+</ul>
+
+<p>We’ll extract the name of the forecast item, the short description, and the temperature first, since they’re all similar:</p>
+
+<pre><code class="language-py">period = tonight.find(class_=&quot;period-name&quot;).get_text()
+short_desc = tonight.find(class_=&quot;short-desc&quot;).get_text()
+temp = tonight.find(class_=&quot;temp&quot;).get_text()
+print(period)
+print(short_desc)
+print(temp)
+</code></pre>
+
+<pre><code class="language-py">Tonight
+Mostly Clear
+Low: 49 °F
+</code></pre>
+
+<p>Now, we can extract the  <code>title</code>  attribute from the  <code>img</code>  tag. To do this, we just treat the  <code>BeautifulSoup</code>  object like a dictionary, and pass in the attribute we want as a key:</p>
+
+<pre><code class="language-py">img = tonight.find(&quot;img&quot;)
+desc = img['title']
+print(desc)
+</code></pre>
+
+<pre><code>Tonight: Mostly clear, with a low around 49.  
+West northwest wind 12 to 17 mph decreasing to 6 to 11 mph after midnight.  
+Winds could gust as high as 23 mph.
+</code></pre>
+
+<h2 id="extracting-all-the-information-from-the-page">Extracting all the information from the page</h2>
+
+<p>Now that we know how to extract each individual piece of information, we can combine our knowledge with css selectors and list comprehensions to extract everything at once.</p>
+
+<p>In the below code, we:</p>
+
+<ul>
+<li>Select all items with the class  <code>period-name</code>  inside an item with the class  <code>tombstone-container</code>  in  <code>seven_day</code>.</li>
+
+<li><p>Use a list comprehension to call the  <code>get_text</code>  method on each  <code>BeautifulSoup</code>  object.</p>
+
+<pre><code class="language-python">period_tags = seven_day.select(&quot;.tombstone-container .period-name&quot;)
+periods = [pt.get_text() for pt in period_tags]
+periods
+</code></pre>
+
+<pre><code class="language-python">['Tonight',
+'Thursday',
+'ThursdayNight',
+'Friday',
+'FridayNight',
+'Saturday',
+'SaturdayNight',
+'Sunday',
+'SundayNight']
+</code></pre></li>
+</ul>
+
+<p>As you can see above, our technique gets us each of the period names, in order. We can apply the same technique to get the other  <code>3</code>  fields:</p>
+
+<pre><code class="language-python">short_descs = [sd.get_text() for sd in seven_day.select(&quot;.tombstone-container .short-desc&quot;)]
+temps = [t.get_text() for t in seven_day.select(&quot;.tombstone-container .temp&quot;)]
+descs = [d[&quot;title&quot;] for d in seven_day.select(&quot;.tombstone-container img&quot;)]print(short_descs)print(temps)print(descs)
+</code></pre>
+
+<pre><code class="language-py">['Mostly Clear', 'Sunny', 'Mostly Clear', 'Sunny', 'Slight ChanceRain', 'Rain Likely', 'Rain Likely', 'Rain Likely', 'Chance Rain']
+['Low: 49 °F', 'High: 63 °F', 'Low: 50 °F', 'High: 67 °F', 'Low: 57 °F', 'High: 64 °F', 'Low: 57 °F', 'High: 64 °F', 'Low: 55 °F']
+['Tonight: Mostly clear, with a low around 49. West northwest wind 12 to 17 mph decreasing to 6 to 11 mph after midnight. Winds could gust as high as 23 mph. ', 'Thursday: Sunny, with a high near 63. North wind 3 to 5 mph. ', 'Thursday Night: Mostly clear, with a low around 50. Light and variable wind becoming east southeast 5 to 8 mph after midnight. ', 'Friday: Sunny, with a high near 67. Southeast wind around 9 mph. ', 'Friday Night: A 20 percent chance of rain after 11pm. Partly cloudy, with a low around 57. South southeast wind 13 to 15 mph, with gusts as high as 20 mph. New precipitation amounts of less than a tenth of an inch possible. ', 'Saturday: Rain likely. Cloudy, with a high near 64. Chance of precipitation is 70%. New precipitation amounts between a quarter and half of an inch possible. ', 'Saturday Night: Rain likely. Cloudy, with a low around 57. Chance of precipitation is 60%.', 'Sunday: Rain likely. Cloudy, with a high near 64.', 'Sunday Night: A chance of rain. Mostly cloudy, with a low around 55.']
+</code></pre>
+
+<h2 id="combining-our-data-into-a-pandas-dataframe">Combining our data into a Pandas Dataframe</h2>
+
+<p>We can now combine the data into a  <a href="http://pandas.pydata.org/">Pandas</a>  DataFrame and analyze it. A DataFrame is an object that can store tabular data, making data analysis easy. If you want to learn more about Pandas, check out our free to start course  <a href="https://www.dataquest.io/course/data-analysis-intermediate">here</a>.</p>
+
+<p>In order to do this, we’ll call the  <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">DataFrame</a>  class, and pass in each list of items that we have. We pass them in as part of a dictionary. Each dictionary key will become a column in the DataFrame, and each list will become the values in the column:</p>
+
+<pre><code class="language-python">import pandas as pd
+weather = pd.DataFrame({
+    &quot;period&quot;: periods,
+    &quot;short_desc&quot;: short_descs,
+    &quot;temp&quot;: temps,
+    &quot;desc&quot;:descs
+})
+weather
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>desc</th>
+<th>period</th>
+<th>short_desc</th>
+<th>temp</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0</td>
+<td>Tonight:  Mostly clear,  with    a       low    around 49.       W…</td>
+<td>Tonight</td>
+<td>Mostly       Clear</td>
+<td>Low:         49    °F</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Thursday: Sunny, with    a       high    near   63.    North     wi…</td>
+<td>Thursday</td>
+<td>Sunny</td>
+<td>High:     63         °F</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Thursday  Night: Mostly  clear,  with    a      low    aroun…</td>
+<td>ThursdayNight</td>
+<td>Mostly      Clear</td>
+<td>Low:     50         °F</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Friday:   Sunny, with    a       high    near   67.    Southeast …</td>
+<td>Friday</td>
+<td>Sunny</td>
+<td>High:     67         °F</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Friday   Night: A       20      percent chance of     rain      afte…</td>
+<td>FridayNight</td>
+<td>Slight  ChanceRain</td>
+<td>Low:         57    °F</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Saturday: Rain   likely. Cloudy, with    a      high   ne…</td>
+<td>Saturday</td>
+<td>Rain        Likely</td>
+<td>High:     64         °F</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Saturday  Night: Rain    likely. Cloudy, with   a      l…</td>
+<td>SaturdayNigh</td>
+<td>t Rain        Likely</td>
+<td>Low:     57         °F</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Sunday:   Rain   likely. Cloudy, with    a      high   near…</td>
+<td>Sunday</td>
+<td>Rain        Likely</td>
+<td>High:     64         °F</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Sunday    Night: A       chance  of      rain.  Mostly cloudy…</td>
+<td>SundayNight</td>
+<td>Chance      Rain</td>
+<td>Low:     55         °F</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<p>We can now do some analysis on the data. For example, we can use a regular expression and the  <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.str.extract.html">Series.str.extract</a>  method to pull out the numeric temperature values:</p>
+
+<pre><code class="language-python">temp_nums = weather[&quot;temp&quot;].str.extract(&quot;(?P&lt;temp_num&gt;\d+)&quot;, expand=False)
+weather[&quot;temp_num&quot;] = temp_nums.astype('int')
+temp_nums
+</code></pre>
+
+<pre><code class="language-python">0 49
+1 63
+2 50
+3 67
+4 57
+5 64
+6 57
+7 64
+8 55
+Name: temp_num, dtype: object
+</code></pre>
+
+<p>We could then find the mean of all the high and low temperatures:</p>
+
+<pre><code class="language-python">weather[&quot;temp_num&quot;].mean()
+</code></pre>
+
+<pre><code class="language-python">58.444444444444443
+</code></pre>
+
+<p>We could also only select the rows that happen at night:</p>
+
+<pre><code class="language-python">is_night = weather[&quot;temp&quot;].str.contains(&quot;Low&quot;)
+weather[&quot;is_night&quot;] = is_night
+is_night
+</code></pre>
+
+<pre><code class="language-python">0 True
+1 False
+2 True
+3 False
+4 True
+5 False
+6 True
+7 False
+8 True
+Name: temp, dtype: bool
+</code></pre>
+
+<pre><code class="language-python">weather[is_night]
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">desc</th>
+<th align="left">period</th>
+<th align="left">short_desc</th>
+<th align="left">temp</th>
+<th align="right">temp_num</th>
+<th align="left">is_night</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left">Tonight: Mostly clear, with a low around 49. W…</td>
+<td align="left">Tonight</td>
+<td align="left">Mostly Clear</td>
+<td align="left">Low: 49 °F</td>
+<td align="right">49</td>
+<td align="left">True</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Thursday Night: Mostly clear, with a low aroun…</td>
+<td align="left">ThursdayNight</td>
+<td align="left">Mostly Clear</td>
+<td align="left">Low: 50 °F</td>
+<td align="right">50</td>
+<td align="left">True</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Friday Night: A 20 percent chance of rain afte…</td>
+<td align="left">FridayNight</td>
+<td align="left">Slight ChanceRain</td>
+<td align="left">Low: 57 °F</td>
+<td align="right">57</td>
+<td align="left">True</td>
+</tr>
+
+<tr>
+<td align="left">6</td>
+<td align="left">Saturday Night: Rain likely. Cloudy, with a l…</td>
+<td align="left">SaturdayNight</td>
+<td align="left">Rain Likely</td>
+<td align="left">Low: 57 °F</td>
+<td align="right">57</td>
+<td align="left">True</td>
+</tr>
+
+<tr>
+<td align="left">8</td>
+<td align="left">Sunday Night: A chance of rain. Mostly cloudy…</td>
+<td align="left">SundayNight</td>
+<td align="left">Chance Rain</td>
+<td align="left">Low: 55 °F</td>
+<td align="right">55</td>
+<td align="left">True</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>You should now have a good understanding of how to scrape web pages and extract data. A good next step would be to pick a site and try some web scraping on your own. Some good examples of data to scrape are:</p>
+
+<ul>
+<li>News articles</li>
+<li>Sports scores</li>
+<li>Weather forecasts</li>
+<li>Stock prices</li>
+<li>Online retailer prices</li>
+</ul>
+
+<p>You may also want to keep scraping the National Weather Service, and see what other data you can extract from the page, or about your own city.</p>
+
+<p>If you want to learn more about any of the topics covered here, check out our interactive courses which you can start for free:  <a href="https://app.dataquest.io/course/apis-and-scraping">Web Scraping in Python</a></p>
+
+<blockquote>
+<p><a href="https://www.dataquest.io/blog/web-scraping-tutorial-python/">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cdata-science%5cweb-scraping%5cweb-scraping-using-beautifulSoup.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#tutorial-python-web-scraping-using-beautifulsoup">Tutorial: Python Web Scraping Using BeautifulSoup</a>
+<ul>
+<li><a href="#the-components-of-a-web-page">The components of a web page</a></li>
+<li><a href="#html">HTML</a></li>
+<li><a href="#the-requests-library">The requests library</a></li>
+<li><a href="#parsing-a-page-with-beautifulsoup">Parsing a page with BeautifulSoup</a></li>
+<li><a href="#finding-all-instances-of-a-tag-at-once">Finding all instances of a tag at once</a></li>
+<li><a href="#searching-for-tags-by-class-and-id">Searching for tags by class and id</a></li>
+<li><a href="#using-css-selectors">Using CSS Selectors</a></li>
+<li><a href="#downloading-weather-data">Downloading weather data</a></li>
+<li><a href="#exploring-page-structure-with-chrome-devtools">Exploring page structure with Chrome DevTools</a></li>
+<li><a href="#extracting-information-from-the-page">Extracting information from the page</a></li>
+<li><a href="#extracting-all-the-information-from-the-page">Extracting all the information from the page</a></li>
+<li><a href="#combining-our-data-into-a-pandas-dataframe">Combining our data into a Pandas Dataframe</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

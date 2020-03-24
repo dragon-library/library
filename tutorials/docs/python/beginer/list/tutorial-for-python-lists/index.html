@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tutorial for Python Lists"><meta property="og:title" content="Tutorial for Python Lists" />
+<meta property="og:description" content="Tutorial for Python Lists  Home  This tutorial goes through how to work with lists in Python, including many of the built-in methods Python makes available for these data structures. Feel free to click on any of the links below to skip to a section of interest.
+**
+Background on lists
+Referring to list elements by index
+Slicing lists
+Combining lists
+Lists are mutable
+Lists support inplace methods**" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/tutorial-for-python-lists/" />
+
+<title>Tutorial for Python Lists | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/" >
+      Beginners
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/variable/" >
+      ตัวแปรและประเภทข้อมูล
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/" >
+      Dictionary(Dict)
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/date-and-time/" >
+      Date&amp;Time
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/string-format/" >
+      Format a String in Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/list/" >
+      List
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/list/list/" >
+      Lists
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/list/tutorial-for-python-lists/"  class="active">
+      Tutorial for Python Lists
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/python-heapq-for-beginners/" >
+      Python Heapq for Beginners
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/pythonthailand/" >
+      Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/snippets/" >
+      Snippets
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/important-basic-syntax/" >
+      ไวยกรณ์พื้นฐานที่จำเป็น
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/awesome/" >
+      Awesome Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/e-book/" >
+      e-Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/flask/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/cheat-sheet/" >
+      Python Cheat sheet
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/list-python-basics/" >
+      List for Tutorial
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/modules-list/" >
+      Modules List
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Tutorial for Python Lists</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="tutorial-for-python-lists">Tutorial for Python Lists</h1>
+
+<ul>
+<li><a href="http://theautomatic.net/">Home</a></li>
+</ul>
+
+<p><img src="https://i0.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-lists-tutorial.jpg?w=640" alt="python lists tutorial" /></p>
+
+<p>This tutorial goes through how to work with lists in Python, including many of the built-in methods Python makes available for these data structures. Feel free to click on any of the links below to skip to a section of interest.</p>
+
+<p>**<br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#background">Background on lists</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#indexing_list">Referring to list elements by index</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#slice_list">Slicing lists</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#combining_lists">Combining lists</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#lists_are_mutable">Lists are mutable</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#lists_inplace_methods">Lists support inplace methods</a>**</p>
+
+<p><a href="http://theautomatic.net/tutorial-for-python-lists/#add_elements_to_list">Adding elements to a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#append_elements_to_list">How to append elements to a list (individually)</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#insert_elements_into_list">How to insert elements at specific locations in a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#list_extend_method">How to append another list of elements to a list</a></p>
+
+<p><a href="http://theautomatic.net/tutorial-for-python-lists/#ways_to_remove_elements_from_list">Removing elements from a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#remove_elements_from_list">How to remove specific values from a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#list_pop_method">Removing an element from a specific index in a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#remove_all_elements_in_list">Removing all elements in a list at once</a></p>
+
+<p><a href="http://theautomatic.net/tutorial-for-python-lists/#other_list_operations">Other list operations</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#filter_list">How to filter a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#reverse_elements_in_list">How to reverse a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#count_occurrence_of_element_in_list">How to count the occurrence of an element in a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#copy_list">Copying a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#sort_list">How to sort a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#length_of_list">Getting the length of a list</a><br />
+<a href="http://theautomatic.net/tutorial-for-python-lists/#index_method">Finding the first occurrence of a value in a list</a></p>
+
+<h1 id="background-on-lists"><strong>Background on lists</strong></h1>
+
+<p>A  <strong>list</strong>  in  <a href="http://theautomatic.net/category/python/">Python</a>  is a container of numbers, strings, or other objects (or mixed). Lists can be created using brackets enclosing whatever elements you want in the list, where each element is separated by a comma.</p>
+
+<p>Below we define a list containing five numbers – 4, 5, 10, 20, and 34.</p>
+
+<pre><code class="language-py">nums = [4, 5, 10, 20, 34]
+# We can also define a list of strings:
+
+
+strings = [&quot;this&quot;, &quot;is&quot;, &quot;another&quot;, &quot;list&quot;]
+# Or – here’s a mixed data type list:
+
+
+[&quot;example&quot;, &quot;of&quot;, &quot;a&quot;, 42, 10, &quot;mixed&quot;, &quot;data type list&quot;, 5]
+# Lists can also contain other lists. These lists are called nested lists. Below we define a list where the last element is just an integer, 100, but the other elements of the list are lists themselves.
+
+nested_list = [[&quot;inner list&quot;, 10], [&quot;second inner list&quot;], 100]
+</code></pre>
+
+<h2 id="referring-to-list-elements-by-index"><strong>Referring to list elements by index</strong></h2>
+
+<p>One property of lists is that each element in the list can be referred to by an index i.e. there is an order to the elements in the list. In other words, there is the concept of the first element, second element, third element, and so on. Since Python is  <a href="https://en.wikipedia.org/wiki/Zero-based_numbering">zero-indexed</a>, the  <strong>0th</strong>  element of the list defined above is 4. The  <strong>1st</strong>  element is 5, the  <strong>2nd</strong>  is 10, and so on.</p>
+
+<p>We refer to elements in a list by index using bracket notation like this:</p>
+
+<pre><code class="language-py">nums[0] # returns 4
+ 
+nums[1] # returns 5
+ 
+nums[2] # returns 10
+
+# We can also refer to elements starting from the end of the list using negative indices.
+
+nums[-1] # returns 34
+ 
+nums[-2] # returns 20
+ 
+nums[-3] # returns 10
+</code></pre>
+
+<h2 id="slicing-a-list"><strong>Slicing a list</strong></h2>
+
+<p>What if want to grab more than one element at a time from a list? For instance, how would we retrieve the first three elements of our  <strong>nums</strong>  list?</p>
+
+<pre><code class="language-py">nums[0:3]
+ 
+nums[:3]
+</code></pre>
+
+<p>Each of the above will return the first three elements of the list  <strong>nums</strong>. The  <strong>0:3</strong>  means that Python will return the elements in the list indexed 0, 1, and 2 – but not 3. So it will include all the elements up until, but not including the third-indexed element.</p>
+
+<p><img src="https://i2.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-slice-list.png?w=640" alt="python slice list" /></p>
+
+<p>Here’s a few more examples:</p>
+
+<pre><code class="language-py">nums[1:4]
+ 
+nums[1:3]
+</code></pre>
+
+<p>The first example above will retrieve the elements indexed 1, 2, and 3 (but not 4) of  <strong>nums</strong>. The second example retrieves the elements indexed 1 and 2 (but not 3).</p>
+
+<p><img src="https://i2.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-slice-list2.png?w=640" alt="python how to slice list" /></p>
+
+<h2 id="how-to-combine-lists"><strong>How to combine lists</strong></h2>
+
+<p>Lists can be combined using the “+” operator.</p>
+
+<pre><code class="language-py">list_1 = [3, 4, 5]
+list_2 = [6, 7, 8]
+ 
+list_3 = list_1 + list_2
+ 
+list_3
+</code></pre>
+
+<p><img src="https://i2.wp.com/theautomatic.net/wp-content/uploads/2019/01/python-combine-lists.png?w=640" alt="python how to combine lists" /></p>
+
+<p>We can also chain together multiple concatenation operations:</p>
+
+<pre><code class="language-py">[1, 2, 3] + [4, 5, 6] + [&quot;python&quot;, &quot;is&quot;, &quot;awesome&quot;] + [[&quot;nested list&quot;]]
+</code></pre>
+
+<p><img src="https://i1.wp.com/theautomatic.net/wp-content/uploads/2019/01/python-concatenate-lists.png?w=640" alt="python concatenate lists" /></p>
+
+<h2 id="lists-are-mutable"><strong>Lists are mutable</strong></h2>
+
+<p>Another property of lists is that they are  <strong>mutable</strong>. We’ll see examples of what this means in the below sections. Effectively, though,  <strong>mutable</strong>  means that the  <em>state</em>  of a list can be changed after it has been defined. What does that mean in practice?  <strong>Mutability</strong>  means we can change how a list (or some other object in Python for that matter) is defined without formally redefining the list.</p>
+
+<p>Suppose, for example, we wanted to change the 0th element of the strings list above. We can do that by referencing just the 0th element of the list, and setting it equal to some other value.</p>
+
+<pre><code class="language-py">strings = [&quot;this&quot;, &quot;is&quot;, &quot;another&quot;, &quot;list&quot;]
+ 
+strings[0] = &quot;that&quot;
+ 
+strings
+</code></pre>
+
+<p><img src="https://i2.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-list-mutability-example.png?w=640" alt="python change element in list at specific index" /></p>
+
+<p>The above code is an alternative to the below where we redefine the full list  <strong>strings</strong>. The  <strong>mutability</strong>  of lists gives us the ability to shorten the amount of code we write to adjust the values they contain.</p>
+
+<pre><code class="language-py">strings = [&quot;that&quot;, &quot;is&quot;, &quot;another&quot;, &quot;list&quot;]
+</code></pre>
+
+<p>Some of the additional examples below will show how lists can be mutated, or changed, after they have been defined.</p>
+
+<h2 id="lists-support-inplace-methods"><strong>Lists support inplace methods</strong></h2>
+
+<p>Lists in Python have several inplace methods. These are methods, or functions, that perform operations on a list with the result being automatically stored back into the same list, thus generally reducing the amount of code that has to be written. If that isn’t clear, we’ll see examples of how this works in several of the sections below.</p>
+
+<h1 id="adding-elements-to-a-list"><strong>Adding elements to a list</strong></h1>
+
+<h2 id="how-to-append-elements-in-a-list"><strong>How to append elements in a list</strong></h2>
+
+<p>An example of  <strong>mutability</strong>  is via appending elements to a list. To append elements to a list, one at at a time, we can use the (aptly-named)  <strong>append</strong>  method. This method is also an example of an  <strong>inplace</strong>  operation.</p>
+
+<pre><code class="language-py"># append 100 to the end of our list, nums
+
+nums.append(100)
+</code></pre>
+
+<p><img src="https://i0.wp.com/theautomatic.net/wp-content/uploads/2018/12/list-append-method.png?w=640" alt="python list append" /></p>
+
+<p>Below we append 200 to the end of  <strong>nums</strong>, followed by 300.</p>
+
+<pre><code class="language-py">nums.append(200)
+nums.append(300)
+</code></pre>
+
+<p><img src="https://i1.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-list-append2.png?w=640" alt="python append to list" /></p>
+
+<p>Each of these append examples demonstrates how lists are mutable because they each show how the definition of  <strong>nums</strong>  can be changed after its initialization without a new initialization. In other words, we could have taken our original list and then redefined that list multiple times to append elements to the end of the list, like this:</p>
+
+<pre><code class="language-py">nums = [4, 5, 10, 20, 34]
+ 
+nums = [4, 5, 10, 20, 34, 100]
+ 
+nums = [4, 5, 10, 20, 34, 100, 200]
+ 
+nums = [4, 5, 10, 20, 34, 100, 200, 300]
+</code></pre>
+
+<p>…But we don’t have to. We can accomplish what the code above does with the  <strong>append</strong>  method because of the fact that lists are mutable, and therefore, we can  <em>mutate</em>, or change, lists without reinitialization.</p>
+
+<p>Also, because  <strong>append</strong>  is  <strong>inplace</strong>, we don’t have to run the last chunk of code above where we’re redefining  <strong>nums</strong>  because the method automatically changes  <strong>nums</strong>  to have the appended values.</p>
+
+<h2 id="how-to-insert-elements-at-specific-locations-in-a-list"><strong>How to insert elements at specific locations in a list</strong></h2>
+
+<p>The  <strong>append</strong>  method above appends an element to the  <em>end</em>  of a list, but what if we want to insert an element at some other specific location in a list? We can perform this task using the  <strong>insert</strong>  method.</p>
+
+<p>Taking the previous value of  <strong>nums</strong>  as  <strong>[4, 5, 10, 20, 34, 100, 200, 300]</strong>, let’s insert the string “test” into the third indexed position of the list.</p>
+
+<pre><code class="language-py">nums.insert(3, &quot;test&quot;)
+</code></pre>
+
+<p>The  <strong>insert</strong>  method takes two parameters. The first is the index in the list we want to insert some element. The second parameter is the element we want to insert. In this case, we insert the string “test” into the third index of the list, nums.</p>
+
+<p><img src="https://i1.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-insert-element-into-list.png?w=640" alt="python insert element into a list at specific index" /></p>
+
+<p>Putting an element into the nth  position in a list will shift the elements in that position and later to the right. In our case, this means the element in the third position initially will now be in the fourth position, the element in the fourth position shifts to the fifth position, the element in the fifth position shifts to the sixth position, etc.</p>
+
+<p>Below we insert the string “test” again – though this time we put it into the seventh-indexed position.</p>
+
+<pre><code class="language-py">nums.insert(7, &quot;test&quot;)
+</code></pre>
+
+<p><img src="https://i1.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-list-insert-method.png?w=640" alt="python insert into list" /></p>
+
+<h2 id="how-to-append-another-list-of-elements-to-a-list"><strong>How to append another list of elements to a list</strong></h2>
+
+<p>One of my favorite methods for dealing with lists is the  <strong>extend</strong>  method because it can append an entire other list of elements at once to your list.</p>
+
+<pre><code class="language-py">nums.extend([1000, 2000, 3000])
+</code></pre>
+
+<p><img src="https://i2.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-extend-method.png?w=640" alt="python extend method append an entire list to another list" /></p>
+
+<p>The  <strong>extend</strong>  method can be viewed as a shortcut for writing the below code:</p>
+
+<pre><code class="language-py">nums = nums + [1000, 2000, 3000]
+</code></pre>
+
+<p>The above code will take the initial list,  <strong>nums</strong>, and append the numbers 1000, 2000, and 3000 to the end of the list – just like the  <strong>extend</strong>  method. The difference is that in this case we have to redefine  <strong>nums</strong>  to be equal to this concatenation, whereas the  <strong>extend</strong>  method is  <strong>inplace</strong>.</p>
+
+<h1 id="removing-elements-from-a-list"><strong>Removing elements from a list</strong></h1>
+
+<h2 id="how-to-remove-elements-from-a-list-by-specific-values"><strong>How to remove elements from a list by specific values</strong></h2>
+
+<p>We can remove elements of a list that equal a specific value using the  <strong>remove</strong>  method. The  <strong>remove</strong>  method will take out the first occurrence of the input value for a given list (and only the first occurrence). For instance, let’s say we want to get rid of the string “test” we inserted into  <strong>nums</strong>  in an earlier section.</p>
+
+<pre><code class="language-py"># remove first occurrence of &quot;test&quot;
+nums.remove(&quot;test&quot;)
+ 
+# remove next occurrence of &quot;test&quot;
+nums.remove(&quot;test&quot;)
+</code></pre>
+
+<p>Each time we run  <strong>nums.remove(“test”)</strong>, Python will remove the first found occurrence of the string “test” in the list. Thus, running the first line above will remove “test” from the third-indexed position in  <strong>nums</strong>. Running the second line will remove the next (and in this case, only other) occurrence of “test” in the list.</p>
+
+<p><img src="https://i0.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-list-remove-element-first-occurrence.png?w=640" alt="python list remove first occurrence of element" /></p>
+
+<h2 id="how-to-remove-an-element-from-a-specific-index"><strong>How to remove an element from a specific index</strong></h2>
+
+<p>Elements can also be removed from a list based off index. For example, if we want to remove the element in the third-indexed position from a list, we could do this:</p>
+
+<pre><code class="language-py"># remove element in the third-indexed position
+nums.pop(3)
+ 
+# or remove the element in the fifth-indexed position
+nums.pop(5)
+</code></pre>
+
+<p><img src="https://i1.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-list-pop-method.png?w=640" alt="python list pop method" /></p>
+
+<p>Notice from the snapshot above that the  <strong>pop</strong>  method returns the value of the element that is removed. Hence, when used above, it returns 20 and then 200, respectively.</p>
+
+<p>Now, we can insert those numbers back into our list:</p>
+
+<pre><code class="language-py">nums.insert(5, 200)
+ 
+nums.insert(3, 20)
+</code></pre>
+
+<p><img src="https://i0.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-insert-method.png?w=640" alt="python insert list method" /></p>
+
+<h2 id="how-to-remove-all-elements-of-a-list"><strong>How to remove all elements of a list</strong></h2>
+
+<p>To clear out all elements of a list we can use the  <strong>clear</strong>  method:</p>
+
+<pre><code class="language-py">nums.clear()
+</code></pre>
+
+<p><img src="https://i0.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-list-clear-method.png?w=640" alt="python clear all elements from a list" /></p>
+
+<h1 id="other-built-in-list-operations"><strong>Other built-in list operations</strong></h1>
+
+<h2 id="filtering-lists"><strong>Filtering lists</strong></h2>
+
+<p>Lists can be filtered using the  <strong>filter</strong>  function. The  <strong>filter</strong>  function works by taking a function and a list as input. The input function applies a logical condition that returns True or False (i.e. Boolean) for each element in the list. If the function returns True, the output object will retain that list element.</p>
+
+<p>The actual object returned by  <strong>filter</strong>  is not a list (as of Python &gt;= 3.0) – but instead, is called a filter object. To convert this to a list, we just need to wrap the list function around the filter object.</p>
+
+<pre><code class="language-py">a = [10, 20, 30, 40]
+ 
+filter(lambda num: num &lt; 30, a)
+</code></pre>
+
+<pre><code class="language-py">list(filter(lambda num: num &lt; 30, a))
+</code></pre>
+
+<p><img src="https://i0.wp.com/theautomatic.net/wp-content/uploads/2019/01/python-filter-list-function.png?w=640" alt="python filter list" /></p>
+
+<h2 id="how-to-reverse-the-elements-in-a-list"><strong>How to reverse the elements in a list</strong></h2>
+
+<h4 id="option-1"><strong>Option 1)</strong></h4>
+
+<p>There’s a few different ways to reverse the elements in a list. One way is using the  <strong>inplace</strong>  method called  <strong>reverse</strong>, like so:</p>
+
+<pre><code class="language-py">nums.reverse()
+</code></pre>
+
+<p>This will reverse the elements of our list,  <strong>nums</strong>, while storing the results of that reversal back in nums. So if we run the below line of code, we can see now that nums contains its original elements in reverse.</p>
+
+<pre><code class="language-py">nums
+</code></pre>
+
+<p><img src="https://i0.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-reverse-elements-in-a-list.png?w=640" alt="python reverse a list" /></p>
+
+<h4 id="option-2"><strong>Option 2)</strong></h4>
+
+<p>Another way of reversing a list is using bracket notation, like this:</p>
+
+<pre><code class="language-py">nums[::-1]
+</code></pre>
+
+<p>Doing the above will reverse the elements of  <strong>nums</strong>, but won’t store the results back into  <strong>nums</strong>  unless we tell it to, like this:</p>
+
+<pre><code class="language-py">nums = nums[::-1]
+</code></pre>
+
+<p><img src="https://i2.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-reverse-list-double-colon.png?w=640" alt="python quick way to reverse a list" /></p>
+
+<h2 id="how-to-count-the-occurrence-of-an-element-in-a-list"><strong>How to count the occurrence of an element in a list</strong></h2>
+
+<p>To count how many times an element occurs in a list, we can use the  <strong>count</strong>  method, like this (using a different list this time):</p>
+
+<pre><code class="language-py">x = [10, 10, 30, 20, 50, 50, 30, 30, 30]
+ 
+x.count(30)
+</code></pre>
+
+<p>Here, running  <strong>x.count(30)</strong>  will return 4 because 30 occurs four times in  <strong>x</strong>.</p>
+
+<p><img src="https://i2.wp.com/theautomatic.net/wp-content/uploads/2018/12/list-count-method.png?w=640" alt="python count how many times an element occurs or appears in a list" /></p>
+
+<p>Likewise, if we want to count how many times 50 appears, or 10 appears, we would do this:</p>
+
+<pre><code class="language-py">x.count(50)
+ 
+x.count(10)
+</code></pre>
+
+<p><img src="https://i1.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-count-occurence-of-element-in-a-list.png?w=640" alt="python count how many times an element occurs or appears in a list" /></p>
+
+<p>If we try to use the  <strong>count</strong>  method for an element that doesn’t occur in the list, Python will return zero:</p>
+
+<pre><code class="language-py">x.count(100)
+</code></pre>
+
+<p><img src="https://i1.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-count-method.png?w=640" alt="python count zero elements in a list" /></p>
+
+<h2 id="how-to-copy-a-list"><strong>How to copy a list</strong></h2>
+
+<p>Lists can be copied using the  <strong>copy</strong>  method.</p>
+
+<p><img src="https://i0.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-how-to-copy-a-list.png?w=640" alt="python how to copy a list" /></p>
+
+<h2 id="how-to-sort-a-list"><strong>How to sort a list</strong></h2>
+
+<p>Sorting a list can be done using the  <strong>sort</strong>  method like this:</p>
+
+<pre><code class="language-py"># define a new list
+new_list = [10, 4, 17, 21, 8, 12, 2]
+ 
+# sort list
+new_list.sort()
+ 
+# see results stored in new_list
+new_list
+</code></pre>
+
+<p><img src="https://i1.wp.com/theautomatic.net/wp-content/uploads/2018/12/python-sort-list.png?w=640" alt="how to sort a list in python" /></p>
+
+<p>You can also sort a list using the  <strong>sorted</strong>  function:</p>
+
+<pre><code class="language-py">sorted_list = sorted(new_list)
+</code></pre>
+
+<h2 id="how-to-get-the-length-of-a-list"><strong>How to get the length of a list</strong></h2>
+
+<p>Getting the length of a list can be done in a couple of different ways. The first, more commonly seen way, is using Python’s built-in  <strong>len</strong>  function.</p>
+
+<pre><code class="language-py">a = [4, 5, 6]
+len(a) # returns 3
+ 
+b = [10, 20, 30, 40, 50]
+len(b) # returns 5
+</code></pre>
+
+<p>You can also get the length of a list using the  <strong><strong>len</strong></strong>  method. Note the double underscore on each side of  <em>len</em>.</p>
+
+<pre><code class="language-py"> a = [4, 5, 6]
+a.__len__() # returns 3
+ 
+b = [10, 20, 30, 40, 50]
+b.__len__() # returns 5
+</code></pre>
+
+<h2 id="how-to-get-the-index-where-an-element-first-occurs"><strong>How to get the index where an element first occurs</strong></h2>
+
+<p>Figuring out where in a list an element first occurs can be done using the  <strong>index</strong>  method.</p>
+
+<pre><code class="language-py">strings = [&quot;this&quot;, &quot;is&quot;, &quot;another&quot;, &quot;list&quot;]
+ 
+strings.index(&quot;another&quot;) # returns 2
+ 
+strings.index(&quot;list&quot;) # returns 3
+</code></pre>
+
+<blockquote>
+<p><a href="http://theautomatic.net/tutorial-for-python-lists/">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cBeginer%5cList%5ctutorial-for-python-lists.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

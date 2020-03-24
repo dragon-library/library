@@ -4,22 +4,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dictionary"><meta property="og:title" content="Dictionary" />
-<meta property="og:description" content="Dictionary ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูล Dictionary ในภาษา Python เราจะแนะนำให้คุณรู้จักกับ Dictionary คืออะไร และการประกาศและใช้งานสำหรับเก็บข้อมูลในการเขียนโปรแกรม นอกจากนี้ เรายังจะพูดถึงการใช้งานเมธอดและ built-in functions ของ Dictionary และตัวอย่างการใช้งานกับการเขียนโปรแกรมใบรูปแบบต่างๆ ในภาษา Python
-Dictionary คือประเภทข้อมูลที่เก็บข้อมูลในรูปแบบคู่ของ Key และ Value โดยที่ Key ใช้สำหรับเป็น Index ในการเข้าถึงข้อมูลและ Value เป็นค่าข้อมูลที่สอดคล้องกับ Key ของมัน การเข้าถึงข้อมูลใน Dictionary นั้นรวดเร็วเพราะว่าข้อมูลได้ถูกทำ Index ไว้อัตโนมัติโดยใช้ Key นอกจากนี้ Dictionary ยังมีเมธอดและฟังก์ชันอำนวยความสะดวกสำหรับการทำงานทั่วไป
-การประกาศ Dictionary ในภาษา Python ในการใช้งาน Dictionary เรามักจะใช้เก็บข้อมูลที่สามารถใช้บางอย่างที่สามารถจำแนกข้อมูลออกจากกันได้ โดยกำหนดให้สิ่งนั้นเป็น Key ในการประกาศ Dictionary สมาชิกของมันจะอยู่ภายในวงเล็บปีกกา {} มาดูตัวอย่างในการประกาศ Dictionary ในภาษา Python
-scores = {&#39;james&#39;: 1828, &#39;thomas&#39;: 3628, &#39;danny&#39;: 9310} scores[&#39;bobby&#39;] = 4401 numbers = {1: &#39;One&#39;, 2: &#39;Two&#39;, 3: &#39;Three&#39;} print(scores) print(numbers)  ในตัวอย่าง เราได้ประกาศตัวแปร Dictionary ที่มีชื่อว่า scores สำหรับเก็บคะแนนของแต่ละคนโดยใช้ชื่อเป็น Key และค่าของมันก็คือคะแนน สมาชิกของ Dictionary แต่ละตัวจะถูกกำหนดในรูปแบบ key: value และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา เราได้กำหนดค่าเริ่มต้นสามค่าให้กับ Dictionary และสามารถกำหนดค่าให้กับ Dictionary ในรูปแบบ scores[&#39;bobby&#39;] ได้หลังจากที่ตัวแปรถูกสร้างแล้ว สังเกตว่าเราสามารถใช้ Key เป็น String หรือประเภทข้อมูลอื่นๆ ได้ ต่อมาตัวแปร numbers เป็น Dictionary ที่มี Key เป็นตัวเลข" />
-<meta property="og:type" content="article" />
+<meta name="description" content="Dictionary(Dict)"><meta property="og:title" content="Dictionary(Dict)" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
 <meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/" />
 
-<title>Dictionary | Tutorials</title>
+<meta property="og:updated_time" content="2020-01-17T11:42:26+06:00" />
+<title>Dictionary(Dict) | Tutorials</title>
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.d7931d740642e656222bfe71c31926bed24ceb9fafa2d9069a7a83fa55070bb9.css" integrity="sha256-15MddAZC5lYiK/5xwxkmvtJM65&#43;votkGmnqD&#43;lUHC7k=">
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
 
 
-<script defer src="/library/tutorials/en.search.min.cea1133e9b29e4d856c65970fdf9c3648003a14ab3aa47858673822782b70898.js" integrity="sha256-zqETPpsp5NhWxllw/fnDZIADoUqzqkeFhnOCJ4K3CJg="></script>
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -30,6 +28,7 @@ scores = {&#39;james&#39;: 1828, &#39;thomas&#39;: 3628, &#39;danny&#39;: 9310} 
 <!-- highlight -->
 <script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<link rel="alternate" type="application/rss+xml" href="https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/index.xml" title="Tutorials" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -134,10 +133,32 @@ https://github.com/alex-shpak/hugo-book
       
     
       
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/"  class="active">
+      Dictionary(Dict)
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
         <li>
 
-  <a href="/library/tutorials/docs/python/beginer/list/" >
-      Lists
+  <a href="/library/tutorials/docs/python/beginer/dictionary/dictionary/" >
+      โครงสร้างข้อมูล Dictionary
   </a>
 
 </li>
@@ -146,8 +167,28 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
-  <a href="/library/tutorials/docs/python/beginer/dictionary/"  class="active">
-      Dictionary
+  <a href="/library/tutorials/docs/python/beginer/dictionary/python-dictionaries/" >
+      Dictionaries
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/dictionary-beginners-tutorial/" >
+      Dictionary(Dict) with Example
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/" >
+      Merge Two Dictionaries
   </a>
 
 </li>
@@ -164,10 +205,154 @@ https://github.com/alex-shpak/hugo-book
       
     
       
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/date-and-time/" >
+      Date&amp;Time
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/string-format/" >
+      Format a String in Python
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/beginer/list/" >
+      List
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/beginer/python-heapq-for-beginners/" >
+      Python Heapq for Beginners
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/pandas/" >
+      Pandas
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
         <li>
 
   <a href="/library/tutorials/docs/python/pythonthailand/" >
       Python Thailand
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/snippets/" >
+      Snippets
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/important-basic-syntax/" >
+      ไวยกรณ์พื้นฐานที่จำเป็น
   </a>
 
 </li>
@@ -265,6 +450,16 @@ https://github.com/alex-shpak/hugo-book
 </li>
       
     
+      
+        <li>
+
+  <a href="/library/tutorials/docs/python/python-regular-expressions/" >
+      Regular Expressions
+  </a>
+
+</li>
+      
+    
   </ul>
   
 
@@ -282,8 +477,8 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
-      Bootstrap 4 แบบพื้นฐาน
+  <a href="/library/tutorials/docs/database/" >
+      Database
   </a>
 
 
@@ -308,8 +503,8 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/library/tutorials/docs/front-end/javascript/" >
-      JavaScript
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
   </a>
 
 
@@ -336,6 +531,58 @@ https://github.com/alex-shpak/hugo-book
 
   <a href="/library/tutorials/docs/articles/" >
       Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
   </a>
 
 
@@ -390,240 +637,13 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Dictionary</strong>
+  <strong>Dictionary(Dict)</strong>
 </header>
 
       
 <article class="markdown">
 
-<h1 id="dictionary">Dictionary</h1>
-
-<p>ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูล Dictionary ในภาษา Python เราจะแนะนำให้คุณรู้จักกับ Dictionary คืออะไร และการประกาศและใช้งานสำหรับเก็บข้อมูลในการเขียนโปรแกรม นอกจากนี้ เรายังจะพูดถึงการใช้งานเมธอดและ built-in functions ของ Dictionary และตัวอย่างการใช้งานกับการเขียนโปรแกรมใบรูปแบบต่างๆ ในภาษา Python</p>
-
-<p>Dictionary คือประเภทข้อมูลที่เก็บข้อมูลในรูปแบบคู่ของ Key และ Value โดยที่ Key ใช้สำหรับเป็น Index ในการเข้าถึงข้อมูลและ Value เป็นค่าข้อมูลที่สอดคล้องกับ Key ของมัน การเข้าถึงข้อมูลใน Dictionary นั้นรวดเร็วเพราะว่าข้อมูลได้ถูกทำ Index ไว้อัตโนมัติโดยใช้ Key นอกจากนี้ Dictionary ยังมีเมธอดและฟังก์ชันอำนวยความสะดวกสำหรับการทำงานทั่วไป</p>
-
-<h2 id="การประกาศ-dictionary-ในภาษา-python">การประกาศ Dictionary ในภาษา Python</h2>
-
-<p>ในการใช้งาน Dictionary เรามักจะใช้เก็บข้อมูลที่สามารถใช้บางอย่างที่สามารถจำแนกข้อมูลออกจากกันได้ โดยกำหนดให้สิ่งนั้นเป็น Key ในการประกาศ Dictionary สมาชิกของมันจะอยู่ภายในวงเล็บปีกกา  <code>{}</code>  มาดูตัวอย่างในการประกาศ Dictionary ในภาษา Python</p>
-
-<pre><code class="language-py">scores = {'james': 1828, 'thomas': 3628, 'danny': 9310}
-scores['bobby'] = 4401
-numbers = {1: 'One', 2: 'Two', 3: 'Three'}
-
-print(scores)
-print(numbers)
-</code></pre>
-
-<p>ในตัวอย่าง เราได้ประกาศตัวแปร Dictionary ที่มีชื่อว่า  <code>scores</code>  สำหรับเก็บคะแนนของแต่ละคนโดยใช้ชื่อเป็น Key และค่าของมันก็คือคะแนน สมาชิกของ Dictionary แต่ละตัวจะถูกกำหนดในรูปแบบ  <code>key: value</code>  และคั่นสมาชิกแต่ละตัวด้วยเครื่องหมายคอมมา เราได้กำหนดค่าเริ่มต้นสามค่าให้กับ Dictionary และสามารถกำหนดค่าให้กับ Dictionary ในรูปแบบ  <code>scores['bobby']</code>  ได้หลังจากที่ตัวแปรถูกสร้างแล้ว สังเกตว่าเราสามารถใช้ Key เป็น String หรือประเภทข้อมูลอื่นๆ ได้ ต่อมาตัวแปร  <code>numbers</code>  เป็น Dictionary ที่มี Key เป็นตัวเลข</p>
-
-<pre><code class="language-py">{'james': 1828, 'thomas': 3628, 'danny': 9310, 'bobby': 4401}
-{1: 'One', 2: 'Two', 3: 'Three'}
-</code></pre>
-
-<p>นี่เป็นผลลัพธ์ของโปรแกรมในการแสดงผลข้อมูลภายในตัวแปร Dictionary ทั้งสองที่เราได้สร้างขึ้น</p>
-
-<h2 id="การเข-าถ-งข-อม-ลภายใน-dictionary">การเข้าถึงข้อมูลภายใน Dictionary</h2>
-
-<p>หลังจากที่เราได้ประกาศ Dictionary ไปแล้ว ต่อไปจะการเข้าถึงข้อมูลเพื่ออ่านและอัพเดทข้อมูลโดยผ่านทาง Key ของมัน มาดูตัวอย่างการเข้าถึงข้อมูลใน Dictionary</p>
-
-<pre><code class="language-py">scores = {'james': 1828, 'thomas': 3628, 'danny': 9310, 'bobby': 4401}
-
-# display data
-print('james =&gt;', scores['james'])
-print('thomas =&gt;', scores['thomas'])
-print('danny =&gt;', scores['danny'])
-print('bobby =&gt;', scores['bobby'])
-
-# update data
-scores['james'] = scores['james'] + 1000
-scores['thomas'] = 100
-
-print('james =&gt;', scores['james'])
-print('thomas =&gt;', scores['thomas'])
-</code></pre>
-
-<p>ในตัวอย่าง เรามีตัวแปร  <code>scores</code>  สำหรับเก็บคะแนนของผู้เล่นโดยชื่อเป็น Key ของ Dictionary ในการเข้าถึงข้อมูลนั้นจะใช้ Key ของมัน ในส่วนแรกเป็นการเข้าถึงข้อมูลภายใน Dictionary เพื่อแสดงผลคะแนนของแต่ละ Key ออกมาทางหน้าจอ ต่อมาเป็นการอัพเดทข้อมูลใน Dictionary โดยเราได้เพิ่มค่าให้กับ Key  <code>'james'</code>  ขึ้นไปอีก 1000 และกำหนดค่าให้กับ Key  <code>'thomas'</code>  เป็น 100 และแสดงผลอีกครั้ง</p>
-
-<pre><code class="language-py">james =&gt; 1828
-thomas =&gt; 3628
-danny =&gt; 9310
-bobby =&gt; 4401
-james =&gt; 2828
-thomas =&gt; 100
-</code></pre>
-
-<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรม ในการเข้าถึงข้อมูลภายใน Dictionary เพื่ออ่านค่าและอัพเดทข้อมูล</p>
-
-<p>ในการเข้าถึงข้อมูลภายใน Dictionary นั้น คุณต้องตรวจสอบให้แน่ใจว่า Key นั้นมีอยู่จริง ไม่เช่นนั้นโปรแกรมจะเกิดข้อผิดพลาดขึ้น ยกตัวอย่างเช่น</p>
-
-<pre><code class="language-py">scores = {'james': 1828, 'thomas': 3628, 'danny': 9310, 'bobby': 4401}
-print(scores['smith']) # Error
-
-# check if key smith exist
-if 'smith' in scores.keys():
-    print(scores['smith'])
-</code></pre>
-
-<p>ในตัวอย่างข้างบน โปรแกรมจะเกิดความผิดพลาดขึ้นเพราะเราได้เข้าถึง Key  <code>'smith'</code>  ซึ่งไม่มีอยู่ใน  <code>scores</code>  อย่าไรก็ตาม เราสามารถตรวจว่า Key มีอยู่หรือไม่ได้โดยการใช้คำสั่ง  <code>in</code>  เพื่อตรวจสอบจาก Key ในเมธอด  <code>keys()</code>  ของ Dictionary</p>
-
-<h2 id="การอ-านค-าใน-dictionary-ด-วยคำส-ง-for-loop">การอ่านค่าใน Dictionary ด้วยคำสั่ง For loop</h2>
-
-<p>คำสั่ง For loop นั้นเป็นคำสั่งที่ยืดหยุ่นและสามารถใช้งานได้อย่างหลากหลาย ในการอ่านค่าใน Dictionary นั้นเราสามารถใช้ For loop เพื่อวนอ่านค่าทั้ง Key และ Values ใน Dictionary ได้ มาดูตัวอย่างของโปรแกรม</p>
-
-<pre><code class="language-py">countries = {'de': 'Germany', 'ua': 'Ukraine',
-             'th': 'Thailand', 'nl': 'Netherlands'}
-
-for k, v in countries.items():
-    print(k, v)
-
-# iterate through keys
-print('Key:', end = ' ')
-for k in countries.keys():
-    print(k, end = ' ')
-
-# iterate through values
-print('\nValue:', end = ' ')
-for v in countries.values():
-    print(v, end = ' ')
-</code></pre>
-
-<p>ในตัวอย่าง เป็นการใช้งานคำสั่ง For loop วนอ่านค่าใน Dictionary ซึ่งมี 3 loop ด้วยกัน ในลูปแรกเป็นการอ่านค่าแบบ Key และ Value ในแต่ละรอบของการทำงานเราเอาข้อมูลใน Dictionary ด้วยเมธอด  <code>items()</code>  ซึ่งจะส่งค่ากลับเป็น Key และ Value กับมาและโหลดใส่ในตัวแปร  <code>k</code>  และ  <code>v</code>  ตามลำดับ</p>
-
-<p>ในลูปที่สอง เป็นการวนอ่าน Key ทั้งหมดภายใน Dictionary โดยเมธอด  <code>keys()</code>  จะส่งค่ากลับเป็น List ของ Key ทั้งหมดและโหลดใส่ในตัวแปร  <code>k</code>  แต่ละรอบของลูป และในลูปสุดท้ายนั้นเป็นการอ่าน Value ทั้งหมด และเมธอด  <code>values()</code>  เพื่อรับค่าของ Value ทั้งหมดมาและใส่ในตัวแปร  <code>v</code>  ในแต่ละรอบของลูป</p>
-
-<pre><code class="language-py">de Germany
-ua Ukraine
-th Thailand
-nl Netherlands
-Key: de ua th nl 
-Value: Germany Ukraine Thailand Netherlands
-</code></pre>
-
-<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรม ในการใช้คำสั่ง For loop เพื่ออ่านข้อมูลใน Dictionary ในภาษา Python</p>
-
-<h2 id="python-dictionary-methods">Python Dictionary methods</h2>
-
-<p>เช่นเดียวกับข้อมูลประเภทอื่นๆ Dictionary มีเมธอดที่ให้คุณสามารถทำงานกับมันได้ง่ายขึ้น โดยส่วนมากแล้วมักจะเป็นเมธอดในการอัพเดทและรับค่าข้อมูลภายใน Dictionary ต่อไปมาดูตัวอย่างการใช้งานเมธอดของ Dictionary ในภาษา Python</p>
-
-<pre><code class="language-py">countries = {'de': 'Germany', 'ua': 'Ukraine',
-             'th': 'Thailand', 'nl': 'Netherlands'}
-
-print(countries.keys())
-print(countries.values())
-
-print(countries.get('de')) # equal to countries['de']
-countries.setdefault('tr', 'Turkey')
-
-print(countries.popitem())
-print(countries.popitem())
-print(countries.items())
-</code></pre>
-
-<p>ในตัวอย่าง เป็นโปรแกรมในการใช้งานเมธอดของ Dictionary ตัวแปรของเรา  <code>countries</code>  มาจากตัวอย่างก่อนหน้าที่มี Key เป็นชื่อย่อของประเทศและ Value เป็นชื่อเต็มของประเทศ เมธอด  <code>keys()</code>  ส่งค่ากลับเป็น List ของ Key ทั้งหมดภายใน Dictionary และเมธอด  <code>values()</code>  นั้นจะส่งเป็น List ของ Value</p>
-
-<p>หลังจากนั้นเป็นการเข้าถึงข้อมูลด้วยเมธอด  <code>get()</code>  โดยมี Key เป็นอาร์กิวเมนต์ซึ่งผลลัพธ์การทำงานของมันจะเหมือนกับการเข้าถึงข้อมูลโดยตรง เช่น  <code>countries['de']</code>  และเมธอด  <code>setdefault()</code>  ใช้รับค่าจากคีย์ที่กำหนด ถ้าไม่มีจะเป็นการเพิ่มค่าดังกล่าวเข้าไปใน Dictionary และต่อมาเมธอด  <code>popitem()</code>  จะนำสมาชิกตัวสุดท้ายออกจาก Dictionary และส่งค่าดังกล่าวกลับมาเป็น Tuple ออบเจ็ค ส่วนเมธอด  <code>items()</code>  นั้นจะค่ากลับมาเป็น List ของ Tuple ของออบเจ็คของ Key และ Value ทั้งหมด</p>
-
-<pre><code class="language-py">dict_keys(['de', 'ua', 'th', 'nl'])
-dict_values(['Germany', 'Ukraine', 'Thailand', 'Netherlands'])
-Germany
-('tr', 'Turkey')
-('nl', 'Netherlands')
-dict_items([('de', 'Germany'), ('ua', 'Ukraine'), ('th', 'Thailand')])
-</code></pre>
-
-<p>นี่เป็นผลลัพธ์การทำงานของโปรแกรม ในการใช้เมธอดใน Dictionary ในภาษา Python และจากในตัวอย่างนั้นเป็นเพียงส่วนหนึ่งของเมธอดที่มีเท่านั้น สำหรับเมธอดทั้งหมดใน Dictionary นั้นแสดงดังตารางข้างล่างนี้</p>
-
-<table>
-<thead>
-<tr>
-<th>Methods</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>clear()</td>
-<td>ลบข้อมูลทั้งหมดภายใน Dictionary</td>
-</tr>
-
-<tr>
-<td>copy()</td>
-<td>คัดลอก Dictionary ทั้งหมดไปยังอันใหม่</td>
-</tr>
-
-<tr>
-<td>get(key[, default])</td>
-<td>ส่งค่าข้อมูลใน Dictionary จาก Key ที่กำหนด ถ้าหากไม่มี Key อยู่และไม่ได้กำหนด default จะทำให้เกิดข้อผิดพลาด KeyError</td>
-</tr>
-
-<tr>
-<td>items()</td>
-<td>ส่งค่ากลับเป็นออบเจ็คของ Key และ Value</td>
-</tr>
-
-<tr>
-<td>keys()</td>
-<td>ส่งค่ากลับเป็น List ของ Key ทั้งหมดใน Dictionary</td>
-</tr>
-
-<tr>
-<td>pop(key[, default])</td>
-<td>ส่งค่ากลับเป็นค่าสุดท้ายใน Dictionary</td>
-</tr>
-
-<tr>
-<td>popitem()</td>
-<td>ส่งค่ากลับเป็น Tuple ออบเจ็คของ Key และ Value</td>
-</tr>
-
-<tr>
-<td>setdefault(key[, default])</td>
-<td>ส่งค่ากลับเป็นค่าของ Key ที่กำหนด ถ้าหากไม่มี Key อยู่ใส่ข้อมูลเข้าไปใน Dictionary</td>
-</tr>
-
-<tr>
-<td>update([other])</td>
-<td>อัพเดท Dictionary กับคู่ของ Key และ Value จากออบเจ็คอื่น และเขียนทับ Key ที่มีอยู่</td>
-</tr>
-
-<tr>
-<td>values()</td>
-<td>ส่งค่ากลับเป็น List ของ Value ทั้งหมดใน Dictionary</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="python-dictionary-functions">Python Dictionary functions</h2>
-
-<p>ฟังก์ชันที่เป็นพื้นฐานและสามารถใช้ได้กับโครงสร้างข้อมูลทุกประเภทคือฟังก์ชัน  <code>len()</code>  เป็นฟังก์ชันที่ใช้สำหรับนับจำนวนสมาชิกของเจ็ค และ Dictionary ยังมีฟังก์ชัน  <code>iter()</code>  ที่ทำงานเหมือนกับเมธอด  <code>items()</code>  นี่เป็นตารางของฟังก์ชันที่สามารถใช้ได้กับ Dictionary</p>
-
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>len(dict)</td>
-<td>ส่งค่ากลับเป็นจำนวนของออบเจ็คใน Dictionary</td>
-</tr>
-
-<tr>
-<td>iter(dict)</td>
-<td>ส่งค่ากลับเป็นออบเจ็คของ Key และ Value</td>
-</tr>
-</tbody>
-</table>
-
-<p>คุณสามารถใช้คำสั่ง  <code>del</code>  เพื่อลบข้อมูลภายใน Dictionary ได้ เช่น คำสั่ง  <code>del countries['de']</code>  เพื่อลบสมาชิกที่มี Key ที่กำหนดออกไป และคำสั่ง  <code>del countries</code>  นั้นเป็นการลบทั้งตัวแปร</p>
-
-<p>ในบทนี้ คุณได้เรียนรู้เกี่ยวกับ Dictionary ในภาษา Python คุณได้ทราบวิธีการสร้างและใช้งาน Dictionary และสถานการณ์ที่เหมาะสมที่จะใช้ข้อมูลประเภทนี้ เราได้แสดงให้เห็นถึงการเข้าถึงข้อมูลภายใน Dictionary แบบพื้นฐานและด้วยการใช้คำสั่งวนซ้ำ For loop รวมถึงการใช้งานเมธอดและฟังก์ชันสำหรับจัดการ Dictionary</p>
-
-<p>Reference :  <a href="http://marcuscode.com/lang/python/dictionary">http://marcuscode.com/lang/python/dictionary</a></p>
+<h1 id="python-dictionary-dict">Python Dictionary(Dict)</h1>
 </article>
 
       <div class="book-footer justify-between">
@@ -633,7 +653,7 @@ dict_items([('de', 'Germany'), ('ua', 'Ukraine'), ('th', 'Thailand')])
 
   
   <div>
-    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cBeginer%5cDictionary.md" target="_blank">
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cPython%5cBeginer%5cDictionary%5c_index.md" target="_blank">
       <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
       <span>Edit this page</span>
     </a>
@@ -648,17 +668,10 @@ dict_items([('de', 'Germany'), ('ua', 'Ukraine'), ('th', 'Thailand')])
     
   
 
-  <aside class="book-toc levels-true fixed">
+  <aside class="book-toc levels-3 fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#dictionary">Dictionary</a>
-<ul>
-<li><a href="#การประกาศ-dictionary-ในภาษา-python">การประกาศ Dictionary ในภาษา Python</a></li>
-<li><a href="#การเข-าถ-งข-อม-ลภายใน-dictionary">การเข้าถึงข้อมูลภายใน Dictionary</a></li>
-<li><a href="#การอ-านค-าใน-dictionary-ด-วยคำส-ง-for-loop">การอ่านค่าใน Dictionary ด้วยคำสั่ง For loop</a></li>
-<li><a href="#python-dictionary-methods">Python Dictionary methods</a></li>
-<li><a href="#python-dictionary-functions">Python Dictionary functions</a></li>
-</ul></li>
+<li><a href="#python-dictionary-dict">Python Dictionary(Dict)</a></li>
 </ul>
 </nav>
   </aside>

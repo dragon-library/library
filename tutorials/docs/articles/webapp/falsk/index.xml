@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flask on Tutorials</title>
+    <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/</link>
+    <description>Recent content in Flask on Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building a Simple Web APP using Flask and MongoDB</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/</guid>
+      <description>Building a Simple Python Web APP using Flask framework and MongoDB Introduction We are going to create a simple Python web application using Flask framework and MongoDB. It is very easy to work with Flask as well as MongoDB.
+You can select the customized installation choice for adding Python environment variables. If you choose default installation, please set these variables manually.
+Please click Add Python 3.7 to PATH option. It will add one entry in the environment variable.</description>
+    </item>
+    
+  </channel>
+</rss>

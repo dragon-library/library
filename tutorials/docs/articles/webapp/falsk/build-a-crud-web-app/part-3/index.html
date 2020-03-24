@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Part. III"><meta property="og:title" content="Part. III" />
+<meta property="og:description" content="Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. III This is the last part of a three-part tutorial to build an employee management web app, named Project Dream Team. In Part Two of the tutorial, we built out the CRUD functionality of the app.
+We created forms, views, and templates to list, add, edit and delete departments and roles. By the end of Part Two, we could assign (and re-assign) departments and roles to employees." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-3/" />
+
+<title>Part. III | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/" >
+      Build a CRUD Web App. 1-3
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-1/" >
+      Part. I
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-2/" >
+      Part. II
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-3/"  class="active">
+      Part. III
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/" >
+      Building a Simple Web APP using Flask and MongoDB
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/" >
+      Web Applications With Flask [Series]
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Part. III</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-flask-for-beginners-build-a-crud-web-app-with-python-and-flask-part-iii">Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. III</h1>
+
+<p><img src="https://i.morioh.com/2019/11/21/34f9bcbd043d.jpg" alt="" /></p>
+
+<p>This is the last part of a three-part tutorial to build an employee management web app, named Project Dream Team. In Part Two of the tutorial, we built out the CRUD functionality of the app.</p>
+
+<p>We created forms, views, and templates to list, add, edit and delete departments and roles. By the end of Part Two, we could assign (and re-assign) departments and roles to employees.</p>
+
+<p>In Part Three, we will cover:</p>
+
+<ol>
+<li>Custom error pages</li>
+<li>Unit tests</li>
+<li>Deployment on PythonAnywhere</li>
+</ol>
+
+<h3 id="custom-error-pages">Custom Error Pages</h3>
+
+<p>Web applications make use of HTTP errors to let users know that something has gone wrong. Default error pages are usually quite plain, so we will create our own custom ones for the following common HTTP errors:</p>
+
+<ol>
+<li>Custom error pages</li>
+<li>Unit tests</li>
+<li>Deployment on PythonAnywhere</li>
+</ol>
+
+<p>We&rsquo;ll start by writing the views for the custom error pages. In your  <code>app/__init__.py</code>  file, add the following code:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# update imports
+from flask import Flask, render_template
+
+# existing code remains
+
+def create_app(config_name):
+
+    # existing code remains
+
+    @app.errorhandler(403)
+    def forbidden(error):
+        return render_template(&amp;apos;errors/403.html&amp;apos;, title=&amp;apos;Forbidden&amp;apos;), 403
+
+    @app.errorhandler(404)
+    def page_not_found(error):
+        return render_template(&amp;apos;errors/404.html&amp;apos;, title=&amp;apos;Page Not Found&amp;apos;), 404
+
+    @app.errorhandler(500)
+    def internal_server_error(error):
+        return render_template(&amp;apos;errors/500.html&amp;apos;, title=&amp;apos;Server Error&amp;apos;), 500
+
+    return app
+</code></pre>
+
+<p>We make use of Flask&rsquo;s  <code>@app.errorhandler</code>  decorator to define the error page views, where we pass in the status code as a parameter.</p>
+
+<p>Next, we&rsquo;ll create the template files. Create a  <code>app/templates/errors</code>  directory, and in it, create  <code>403.html</code>,  <code>404.html</code>, and  <code>500.html</code>.</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/errors/403.html --&gt;
+
+{% extends &quot;base.html&quot; %}
+{% block title %}Forbidden{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+  &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;div style=&quot;text-align: center&quot;&gt;
+            &lt;h1&gt; 403 Error &lt;/h1&gt;
+            &lt;h3&gt; You do not have sufficient permissions to access this page. &lt;/h3&gt;
+            &lt;hr class=&quot;intro-divider&quot;&gt;
+            &lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot; class=&quot;btn btn-default btn-lg&quot;&gt;
+                &lt;i class=&quot;fa fa-home&quot;&gt;&lt;/i&gt;
+                Home
+            &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+&lt;!-- app/templates/errors/404.html --&gt;
+
+{% extends &quot;base.html&quot; %}
+{% block title %}Page Not Found{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+  &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;div style=&quot;text-align: center&quot;&gt;
+            &lt;h1&gt; 404 Error &lt;/h1&gt;
+            &lt;h3&gt; The page you&amp;apos;re looking for doesn&amp;apos;t exist. &lt;/h3&gt;
+            &lt;hr class=&quot;intro-divider&quot;&gt;
+            &lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot; class=&quot;btn btn-default btn-lg&quot;&gt;
+                &lt;i class=&quot;fa fa-home&quot;&gt;&lt;/i&gt;
+                Home
+            &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+&lt;!-- app/templates/errors/500.html --&gt;
+
+{% extends &quot;base.html&quot; %}
+{% block title %}Internal Server Error{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+  &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+      &lt;div class=&quot;inner&quot;&gt;
+        &lt;div style=&quot;text-align: center&quot;&gt;
+            &lt;h1&gt; 500 Error &lt;/h1&gt;
+            &lt;h3&gt; The server encountered an internal error. That&amp;apos;s all we know. &lt;/h3&gt;
+            &lt;hr class=&quot;intro-divider&quot;&gt;
+            &lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot; class=&quot;btn btn-default btn-lg&quot;&gt;
+                &lt;i class=&quot;fa fa-home&quot;&gt;&lt;/i&gt;
+                Home
+            &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>All the templates give a brief description of the error, and a button that links to the homepage.</p>
+
+<p>Run the app and log in as a non-admin user, then attempt to access  <code>&lt;a href=&quot;http://127.0.0.1:5000/admin/departments&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:5000/admin/departments&lt;/a&gt;</code>. You should get the following page:</p>
+
+<p>Now attempt to access this non-existent page:  <code>&lt;a href=&quot;http://127.0.0.1:5000/nothinghere&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:5000/nothinghere&lt;/a&gt;</code>. You should see:</p>
+
+<p>To view the internal server error page, we&rsquo;ll create a temporary route where we&rsquo;ll use Flask&rsquo;s  <code>abort()</code>  function to raise a 500 error. In the  <code>app/__init__.py</code>  file, add the following:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# update imports
+from flask import abort, Flask, render_template
+
+# existing code remains
+
+def create_app(config_name):
+   # existing code remains
+
+    @app.route(&amp;apos;/500&amp;apos;)
+    def error():
+        abort(500)
+
+    return app
+</code></pre>
+
+<p>Go to  <code>&lt;a href=&quot;http://127.0.0.1:5000/500&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:5000/500&lt;/a&gt;</code>; you should see the following page:</p>
+
+<p>Now you can remove the temporary route we just created for the internal server error.</p>
+
+<h3 id="tests">Tests</h3>
+
+<p>Now, let&rsquo;s write some tests for the app. The importance of testing software can&rsquo;t be overstated. Tests help ensure that your app is working as expected, without the need for you to manually test all of your app&rsquo;s functionality.</p>
+
+<p>We’ll begin by creating a test database, and give the database user we created in  <a href="https://on.morioh.net/b0a3f595aa?r=https://scotch.io/tutorials/build-a-crud-web-app-with-python-and-flask-part-one" title="Part One">Part One</a>  all privileges on it:</p>
+
+<pre><code>$ mysql -u root
+
+mysql&gt; CREATE DATABASE dreamteam_test;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; GRANT ALL PRIVILEGES ON dreamteam_test . * TO &amp;apos;dt_admin&amp;apos;@&amp;apos;localhost&amp;apos;;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+
+<p>Now we need to edit the  <code>config.py</code>  file to add configurations for testing. Delete the current contents and replace them with the following code:</p>
+
+<pre><code class="language-py"># config.py
+
+class Config(object):
+    &quot;&quot;&quot;
+    Common configurations
+    &quot;&quot;&quot;
+
+    DEBUG = True
+
+class DevelopmentConfig(Config):
+    &quot;&quot;&quot;
+    Development configurations
+    &quot;&quot;&quot;
+
+    SQLALCHEMY_ECHO = True
+
+class ProductionConfig(Config):
+    &quot;&quot;&quot;
+    Production configurations
+    &quot;&quot;&quot;
+
+    DEBUG = False
+
+class TestingConfig(Config):
+    &quot;&quot;&quot;
+    Testing configurations
+    &quot;&quot;&quot;
+
+    TESTING = True
+
+app_config = {
+    &amp;apos;development&amp;apos;: DevelopmentConfig,
+    &amp;apos;production&amp;apos;: ProductionConfig,
+    &amp;apos;testing&amp;apos;: TestingConfig
+}
+</code></pre>
+
+<p>We have put  <code>DEBUG = True</code>  in the base class,  <code>Config</code>, so that it is the default setting. We override this in the  <code>ProductionConfig</code>  class. In the  <code>TestingConfig</code>  class, we set the  <code>TESTING</code>  configuration variable to  <code>True</code>.</p>
+
+<p>We will be writing unit tests. Unit tests are written to test small, individual, and fairly isolated units of code, such as functions. We will make use of  <a href="https://on.morioh.net/b0a3f595aa?r=https://pythonhosted.org/Flask-Testing/" title="Flask-Testing">Flask-Testing</a>, an extension that provides unit testing utilities for Flask.</p>
+
+<pre><code>$ pip install Flask-Testing
+</code></pre>
+
+<p>Next, create a  <code>tests.py</code>  file in the root directory of your app. In it, add the following code:</p>
+
+<pre><code class="language-py"># tests.py
+
+import unittest
+
+from flask_testing import TestCase
+
+from app import create_app, db
+from app.models import Employee
+
+class TestBase(TestCase):
+
+    def create_app(self):
+
+        # pass in test configurations
+        config_name = &amp;apos;testing&amp;apos;
+        app = create_app(config_name)
+        app.config.update(
+            SQLALCHEMY_DATABASE_URI=&amp;apos;mysql://dt_admin:dt2016@localhost/dreamteam_test&amp;apos;
+        )
+        return app
+
+    def setUp(self):
+        &quot;&quot;&quot;
+        Will be called before every test
+        &quot;&quot;&quot;
+
+        db.create_all()
+
+        # create test admin user
+        admin = Employee(username=&quot;admin&quot;, password=&quot;admin2016&quot;, is_admin=True)
+
+        # create test non-admin user
+        employee = Employee(username=&quot;test_user&quot;, password=&quot;test2016&quot;)
+
+        # save users to database
+        db.session.add(admin)
+        db.session.add(employee)
+        db.session.commit()
+
+    def tearDown(self):
+        &quot;&quot;&quot;
+        Will be called after every test
+        &quot;&quot;&quot;
+
+        db.session.remove()
+        db.drop_all()
+
+if __name__ == &amp;apos;__main__&amp;apos;:
+    unittest.main()
+</code></pre>
+
+<p>In the base class above,  <code>TestBase</code>, we have a  <code>create_app</code>  method, where we pass in the configurations for testing.</p>
+
+<p>We also have two other methods:  <code>setUp</code>  and  <code>tearDown</code>. The  <code>setUp</code>  method will be called automatically before every test we run. In it, we create two test users, one admin and one non-admin, and save them to the database. The  <code>tearDown</code>  method will be called automatically after every test. In it, we remove the database session and drop all database tables.</p>
+
+<p>To run the tests, we will run the  <code>tests.py</code>  file:</p>
+
+<pre><code>$ python tests.py
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+</code></pre>
+
+<p>The output above lets us know that our test setup is OK. Now let&rsquo;s write some tests.</p>
+
+<pre><code class="language-py"># tests.py
+
+# update imports
+
+import os
+
+from flask import abort, url_for
+
+from app.models import Department, Employee, Role
+
+# add the following after the TestBase class
+
+class TestModels(TestBase):
+
+    def test_employee_model(self):
+        &quot;&quot;&quot;
+        Test number of records in Employee table
+        &quot;&quot;&quot;
+        self.assertEqual(Employee.query.count(), 2)
+
+    def test_department_model(self):
+        &quot;&quot;&quot;
+        Test number of records in Department table
+        &quot;&quot;&quot;
+
+        # create test department
+        department = Department(name=&quot;IT&quot;, description=&quot;The IT Department&quot;)
+
+        # save department to database
+        db.session.add(department)
+        db.session.commit()
+
+        self.assertEqual(Department.query.count(), 1)
+
+    def test_role_model(self):
+        &quot;&quot;&quot;
+        Test number of records in Role table
+        &quot;&quot;&quot;
+
+        # create test role
+        role = Role(name=&quot;CEO&quot;, description=&quot;Run the whole company&quot;)
+
+        # save role to database
+        db.session.add(role)
+        db.session.commit()
+
+        self.assertEqual(Role.query.count(), 1)
+
+class TestViews(TestBase):
+
+    def test_homepage_view(self):
+        &quot;&quot;&quot;
+        Test that homepage is accessible without login
+        &quot;&quot;&quot;
+        response = self.client.get(url_for(&amp;apos;home.homepage&amp;apos;))
+        self.assertEqual(response.status_code, 200)
+
+    def test_login_view(self):
+        &quot;&quot;&quot;
+        Test that login page is accessible without login
+        &quot;&quot;&quot;
+        response = self.client.get(url_for(&amp;apos;auth.login&amp;apos;))
+        self.assertEqual(response.status_code, 200)
+
+    def test_logout_view(self):
+        &quot;&quot;&quot;
+        Test that logout link is inaccessible without login
+        and redirects to login page then to logout
+        &quot;&quot;&quot;
+        target_url = url_for(&amp;apos;auth.logout&amp;apos;)
+        redirect_url = url_for(&amp;apos;auth.login&amp;apos;, next=target_url)
+        response = self.client.get(target_url)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, redirect_url)
+
+    def test_dashboard_view(self):
+        &quot;&quot;&quot;
+        Test that dashboard is inaccessible without login
+        and redirects to login page then to dashboard
+        &quot;&quot;&quot;
+        target_url = url_for(&amp;apos;home.dashboard&amp;apos;)
+        redirect_url = url_for(&amp;apos;auth.login&amp;apos;, next=target_url)
+        response = self.client.get(target_url)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, redirect_url)
+
+    def test_admin_dashboard_view(self):
+        &quot;&quot;&quot;
+        Test that dashboard is inaccessible without login
+        and redirects to login page then to dashboard
+        &quot;&quot;&quot;
+        target_url = url_for(&amp;apos;home.admin_dashboard&amp;apos;)
+        redirect_url = url_for(&amp;apos;auth.login&amp;apos;, next=target_url)
+        response = self.client.get(target_url)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, redirect_url)
+
+    def test_departments_view(self):
+        &quot;&quot;&quot;
+        Test that departments page is inaccessible without login
+        and redirects to login page then to departments page
+        &quot;&quot;&quot;
+        target_url = url_for(&amp;apos;admin.list_departments&amp;apos;)
+        redirect_url = url_for(&amp;apos;auth.login&amp;apos;, next=target_url)
+        response = self.client.get(target_url)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, redirect_url)
+
+    def test_roles_view(self):
+        &quot;&quot;&quot;
+        Test that roles page is inaccessible without login
+        and redirects to login page then to roles page
+        &quot;&quot;&quot;
+        target_url = url_for(&amp;apos;admin.list_roles&amp;apos;)
+        redirect_url = url_for(&amp;apos;auth.login&amp;apos;, next=target_url)
+        response = self.client.get(target_url)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, redirect_url)
+
+    def test_employees_view(self):
+        &quot;&quot;&quot;
+        Test that employees page is inaccessible without login
+        and redirects to login page then to employees page
+        &quot;&quot;&quot;
+        target_url = url_for(&amp;apos;admin.list_employees&amp;apos;)
+        redirect_url = url_for(&amp;apos;auth.login&amp;apos;, next=target_url)
+        response = self.client.get(target_url)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, redirect_url)
+
+class TestErrorPages(TestBase):
+
+    def test_403_forbidden(self):
+        # create route to abort the request with the 403 Error
+        @self.app.route(&amp;apos;/403&amp;apos;)
+        def forbidden_error():
+            abort(403)
+
+        response = self.client.get(&amp;apos;/403&amp;apos;)
+        self.assertEqual(response.status_code, 403)
+        self.assertTrue(&quot;403 Error&quot; in response.data)
+
+    def test_404_not_found(self):
+        response = self.client.get(&amp;apos;/nothinghere&amp;apos;)
+        self.assertEqual(response.status_code, 404)
+        self.assertTrue(&quot;404 Error&quot; in response.data)
+
+    def test_500_internal_server_error(self):
+        # create route to abort the request with the 500 Error
+        @self.app.route(&amp;apos;/500&amp;apos;)
+        def internal_server_error():
+            abort(500)
+
+        response = self.client.get(&amp;apos;/500&amp;apos;)
+        self.assertEqual(response.status_code, 500)
+        self.assertTrue(&quot;500 Error&quot; in response.data)
+
+if __name__ == &amp;apos;__main__&amp;apos;:
+    unittest.main()
+</code></pre>
+
+<p>We&rsquo;ve added three classes:  <code>TestModels</code>,  <code>TestViews</code>  and  <code>TestErrorPages</code>.</p>
+
+<p>The first class has methods to test that each of the models in the app are working as expected. This is done by querying the database to check that the correct number of records exist in each table.</p>
+
+<p>The second class has methods that test the views in the app to ensure the expected status code is returned. For non-restricted views, such as the homepage and the login page, the  <code>200 OK</code>  code should be returned; this means that everything is OK and the request has succeeded. For restricted views that require authenticated access, a  <code>302 Found</code>  code is returned. This means that the page is redirected to an existing resource, in this case, the login page. We test both that the  <code>302 Found</code>  code is returned and that the page redirects to the login page.</p>
+
+<p>The third class has methods to ensure that the error pages we created earlier are shown when the respective error occurs.</p>
+
+<p>Note that each test method begins with  <code>test</code>. This is deliberate, because  <code>unittest</code>, the Python unit testing framework, uses the  <code>test</code>  prefix to automatically identify test methods. Also note that we have not written tests for the front-end to ensure users can register and login, and to ensure administrators can create departments and roles and assign them to employees. This can be done using a tool like  <a href="https://on.morioh.net/b0a3f595aa?r=http://www.seleniumhq.org/projects/webdriver/" title="Selenium Webdriver">Selenium Webdriver</a>; however this is outside the scope of this tutorial.</p>
+
+<p>Run the tests again:</p>
+
+<pre><code>$ python tests.py
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 2.313s
+
+OK
+</code></pre>
+
+<p>Success! The tests are passing.</p>
+
+<h3 id="deploy">Deploy!</h3>
+
+<p>Now for the final part of the tutorial: deployment. So far, we’ve been running the app locally. In this stage, we will publish the application on the internet so that other people can use it. We will use  <a href="https://on.morioh.net/b0a3f595aa?r=https://www.pythonanywhere.com/" title="PythonAnywhere">PythonAnywhere</a>, a Platform as a Service (PaaS) that is easy to set up, secure, and scalable, not to mention free for basic accounts!</p>
+
+<h3 id="pythonanywhere-set-up">PythonAnywhere Set-Up</h3>
+
+<p>Create a free PythonAnywhere account  <a href="https://on.morioh.net/b0a3f595aa?r=https://www.pythonanywhere.com/registration/register/beginner/" title="here">here</a>  if you don’t already have one. Be sure to select your username carefully since the app will be accessible at  <code>your-username.pythonanywhere.com</code>.</p>
+
+<p>Once you&rsquo;ve signed up,  <code>your-username.pythonanywhere.com</code>  should show this page:</p>
+
+<p>We will use git to upload the app to PythonAnywhere. If you’ve been pushing your code to cloud repository management systems like  <a href="https://on.morioh.net/b0a3f595aa?r=https://bitbucket.org/" title="Bitbucket">Bitbucket</a>,  <a href="https://on.morioh.net/b0a3f595aa?r=https://about.gitlab.com/" title="Gitlab">Gitlab</a>  or  <a href="https://on.morioh.net/b0a3f595aa?r=https://codequs.com/p/Hk3CYrFJG/github.com/" title="Github">Github</a>, that’s great! If not, now’s the time to do it. Remember that we won’t be pushing the  <code>instance</code>  directory, so be sure to include it in your  <code>.gitignore</code>  file, like so:</p>
+
+<pre><code># .gitignore
+
+*.pyc
+instance/
+</code></pre>
+
+<p>Also, ensure that your  <code>requirements.txt</code>  file is up to date using the  <code>pip freeze</code>  command before pushing your code:</p>
+
+<pre><code>$ pip freeze &gt; requirements.txt
+</code></pre>
+
+<p>Now, log in to your PythonAnywhere account. In your dashboard, there&rsquo;s a  <code>Consoles</code>  tab; use it to start a new Bash console.</p>
+
+<p>In the PythonAnywhere Bash console, clone your repository.</p>
+
+<pre><code>$ git clone https://github.com/andela-mnzomo/project-dream-team-three
+</code></pre>
+
+<p>Next we will create a virtualenv, then install the dependencies from the  <code>requirements.txt</code>  file. Because PythonAnywhere installs  <a href="https://on.morioh.net/b0a3f595aa?r=https://virtualenvwrapper.readthedocs.io/en/latest/" title="virtualenvwrapper">virtualenvwrapper</a>  for all users by default, we can use its commands:</p>
+
+<pre><code>$ mkvirtualenv dream-team
+$ cd project-dream-team-three
+$ pip install -r requirements.txt
+</code></pre>
+
+<p>We&rsquo;ve created a virtualenv called  <code>dream-team</code>. The virtualenv is automatically activated. We then entered the project directory and installed the dependencies.</p>
+
+<p>Now, in the Web tab on your dashboard, create a new web app.</p>
+
+<p>Select the Manual Configuration option (<strong>not</strong>  the Flask option), and choose Python 2.7 as your Python version. Once the web app is created, its configurations will be loaded. Scroll down to the Virtualenv section, and enter the name of the virtualenv you just created:</p>
+
+<h3 id="database-configuration">Database Configuration</h3>
+
+<p>Next, we will set up the MySQL production database. In the Databases tab of your PythonAnywhere dashboard, set a new password and then initialize a MySQL server:</p>
+
+<p>The password above will be your database user password. Next, create a new database if you wish. PythonAnywhere already has a default database which you can use.</p>
+
+<p>By default, the database user is your username, and has all privileges granted on any databases created. Now, we need to migrate the database and populate it with the tables. In a Bash console on PythonAnywhere, we will run the  <code>flask db upgrade</code>  command, since we already have the migrations directory that we created locally. Before running the commands, ensure you are in your virtualenv as well as in the project directory.</p>
+
+<pre><code>$ export FLASK_CONFIG=production
+$ export FLASK_APP=run.py
+$ export SQLALCHEMY_DATABASE_URI=&amp;apos;mysql://your-username:your-password@your-host-address/your-database-name&amp;apos;
+$ flask db upgrade
+</code></pre>
+
+<p>When setting the  <code>SQLALCHEMY_DATABASE_URI</code>  environment variable, remember to replace  <code>your-username</code>,  <code>your-password</code>,  <code>your-host-address</code>  and  <code>your-database-name</code>  with their correct values. The username, host address and database name can be found in the MySQL settings in the Databases tab on your dashboard. For example, using the information below, my database URI is:  <code>mysql://projectdreamteam:password@projectdreamteam.mysql.pythonanywhere-services.com/projectdreamteam$dreamteam_db</code></p>
+
+<h3 id="wsgi-file">WSGI File</h3>
+
+<p>Now we will edit the WSGI file, which PythonAnywhere uses to serve the app. Remember that we are not pushing the  <code>instance</code>  directory to version control. We therefore need to configure the environment variables for production, which we will do in the WSGI file.</p>
+
+<p>In the Code section of the Web tab on your dashboard, click on the link to the WSGI configuration file.</p>
+
+<p>Delete all the current contents of the file, and replace them with the following:</p>
+
+<pre><code class="language-py">import os
+import sys
+
+path = &amp;apos;/home/your-username/your-project-directory-name&amp;apos;
+if path not in sys.path:
+    sys.path.append(path)
+
+os.environ[&amp;apos;FLASK_CONFIG&amp;apos;] = &amp;apos;production&amp;apos;
+os.environ[&amp;apos;SECRET_KEY&amp;apos;] = &amp;apos;p9Bv&lt;3Eid9%$i01&amp;apos;
+os.environ[&amp;apos;SQLALCHEMY_DATABASE_URI&amp;apos;] = &amp;apos;mysql://your-username:your-password@your-host-address/your-database-name&amp;apos;
+
+from run import app as application
+</code></pre>
+
+<p>In the file above, we tell PythonAnywhere to get the variable  <code>app</code>  from the  <code>run.py</code>  file, and serve it as the application. We also set the  <code>FLASK_CONFIG</code>,  <code>SECRET_KEY</code>  and  <code>SQLALCHEMY_DATABASE_URI</code>  environment variables. Feel free to alter the secret key. Note that the  <code>path</code>  variable should contain your username and project directory name, so be sure to replace it with the correct values. The same applies for the database URI environment variable.</p>
+
+<p>We also need to edit our local  <code>app/__init__py</code>  file to prevent it from loading the  <code>instance/config.py</code>  file in production, as well as to load the configuration variables we&rsquo;ve set:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# update imports
+
+import os
+
+# existing code remains
+
+def create_app(config_name):
+    if os.getenv(&amp;apos;FLASK_CONFIG&amp;apos;) == &quot;production&quot;:
+        app = Flask(__name__)
+        app.config.update(
+            SECRET_KEY=os.getenv(&amp;apos;SECRET_KEY&amp;apos;),
+            SQLALCHEMY_DATABASE_URI=os.getenv(&amp;apos;SQLALCHEMY_DATABASE_URI&amp;apos;)
+        )
+    else:
+        app = Flask(__name__, instance_relative_config=True)
+        app.config.from_object(app_config[config_name])
+        app.config.from_pyfile(&amp;apos;config.py&amp;apos;)
+
+    # existing code remains
+</code></pre>
+
+<p>Push your changes to version control, and pull them on the PythonAnywhere Bash console:</p>
+
+<pre><code>$ git pull origin master
+</code></pre>
+
+<p>Now let&rsquo;s try loading the app on PythonAnywhere. First, we need to reload the app on the Web tab in the dashboard:</p>
+
+<p>Now go to your app URL:</p>
+
+<p>Great, it works! Try registering a new user and logging in. This should work just as it did locally.</p>
+
+<h3 id="admin-user">Admin User</h3>
+
+<p>We will now create an admin user the same way we did locally. Open the Bash console, and run the following commands:</p>
+
+<pre><code class="language-py">$ flask shell
+&gt;&gt;&gt; from app.models import Employee
+&gt;&gt;&gt; from app import db
+&gt;&gt;&gt; admin = Employee(email=&quot;admin@admin.com&quot;,username=&quot;admin&quot;,password=&quot;admin2016&quot;,is_admin=True)
+&gt;&gt;&gt; db.session.add(admin)
+&gt;&gt;&gt; db.session.commit()
+</code></pre>
+
+<p>Now you can login as an admin user and add departments and roles, and assign them to employees.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Congratulations on successfully deploying your first Flask CRUD web app! From setting up a MySQL database, to creating models, blueprints (with forms and views), templates, custom error pages, tests, and finally deploying the app on PythonAnywhere, you now have a strong foundation in web development with Flask. I hope this has been as fun and educational for you as it has for me! I&rsquo;m looking forward to hearing about your experiences in the comments below.</p>
+
+<blockquote>
+<p><a href="https://morioh.com/p/b59f7df2e1f5">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cFalsk%5cbuild-a-crud-web-app%5cpart-3.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

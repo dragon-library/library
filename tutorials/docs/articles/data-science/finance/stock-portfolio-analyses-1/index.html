@@ -14,10 +14,10 @@
 <link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/library/tutorials/book.min.d7931d740642e656222bfe71c31926bed24ceb9fafa2d9069a7a83fa55070bb9.css" integrity="sha256-15MddAZC5lYiK/5xwxkmvtJM65&#43;votkGmnqD&#43;lUHC7k=">
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
 
 
-<script defer src="/library/tutorials/en.search.min.cea1133e9b29e4d856c65970fdf9c3648003a14ab3aa47858673822782b70898.js" integrity="sha256-zqETPpsp5NhWxllw/fnDZIADoUqzqkeFhnOCJ4K3CJg="></script>
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
 <!-- highlight -->
   <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
 
@@ -110,8 +110,8 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/library/tutorials/docs/front-end/bootstrap/basic-bootstap/" >
-      Bootstrap 4 แบบพื้นฐาน
+  <a href="/library/tutorials/docs/database/" >
+      Database
   </a>
 
 
@@ -136,8 +136,8 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/library/tutorials/docs/front-end/javascript/" >
-      JavaScript
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
   </a>
 
 
@@ -296,8 +296,48 @@ https://github.com/alex-shpak/hugo-book
       
         <li>
 
+  <a href="/library/tutorials/docs/articles/data-science/finance/cal-stock-return/" >
+      Calculate Stock Returns
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
   <a href="/library/tutorials/docs/articles/data-science/finance/stock-portfolio-analyses-2/" >
       Dash by Plotly
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/intro-stock-analysis-pandas/" >
+      Introduction to Stock Analysis using Pandas
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/" >
+      Portfolio Optimization in Python
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/" >
+      Portfolio Optimization Methods
   </a>
 
 </li>
@@ -386,8 +426,34 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/library/tutorials/docs/articles/website/" >
-      Website
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
   </a>
 
 
@@ -407,6 +473,58 @@ https://github.com/alex-shpak/hugo-book
     
   </ul>
   
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
 
 
 
@@ -470,7 +588,7 @@ https://github.com/alex-shpak/hugo-book
 
 <p>Prior to my departure at my former company, FloSports, we were in the process of overhauling our analytics reporting across the organization (data, marketing, product et al), and part of this overhaul included our financial reporting. While I left early on in that implementation, over the past several months I’ve continued using Python extensively for financial analyses, particularly  <code>pandas</code>. In this post, I will share how I leveraged some very helpful online resources, the  <code>Yahoo Finance API</code>  (requires a work around and may require a future data source replacement), and  <code>Jupyter notebook</code>  to largely automate the tracking and benchmarking of a stock portfolio’s performance.</p>
 
-<h1 id="overview-of-pme-and-benchmarking-individual-stock-performance">Overview of PME and benchmarking individual stock performance</h1>
+<h2 id="overview-of-pme-and-benchmarking-individual-stock-performance">Overview of PME and benchmarking individual stock performance</h2>
 
 <p>As a quick background, I have been investing in my own stock portfolio since 2002 and developed a financial model for my portfolio a number of years ago. For years, I would download historical prices and load the data into the financial model — while online brokers calculate realized and unrealized returns, as well as income and dividends, I like to have historical data in the model as I conduct my own analyses to evaluate positions. One view / report which I’ve never found from online brokers and services is a  <a href="https://en.wikipedia.org/wiki/Public_Market_Equivalent">“Public Market Equivalent”</a>-like analysis. In short, the  Public Market Equivalent (PME)  is a set of analyses used in the private equity industry to compare the performance of a private equity fund relative to an industry benchmark. Much more detail  <a href="http://docs.preqin.com/reports/Preqin-Special-Report-PME-July-2015.pdf">here.</a></p>
 
@@ -908,8 +1026,10 @@ fig = go.Figure(data=d
   <aside class="book-toc levels-true fixed">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#python-for-finance-stock-portfolio-analyses">Python for Finance: Stock Portfolio Analyses</a></li>
+<li><a href="#python-for-finance-stock-portfolio-analyses">Python for Finance: Stock Portfolio Analyses</a>
+<ul>
 <li><a href="#overview-of-pme-and-benchmarking-individual-stock-performance">Overview of PME and benchmarking individual stock performance</a></li>
+</ul></li>
 <li><a href="#investment-portfolio-python-notebook">Investment Portfolio Python Notebook</a></li>
 <li><a href="#data-import-and-dataframe-manipulation">Data Import and Dataframe Manipulation</a></li>
 <li><a href="#total-return-and-cumulative-return-visualizations">Total Return and Cumulative Return Visualizations</a></li>

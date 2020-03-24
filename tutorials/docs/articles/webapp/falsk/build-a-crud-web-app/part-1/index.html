@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Part. I"><meta property="og:title" content="Part. I" />
+<meta property="og:description" content="Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. I I’ve named the app Project Dream Team, and it will have the following features:
+ Users will be able to register and login as employees The administrator will be able to create, update, and delete departments and roles The administrator will be able to assign employees to a department and assign them roles The administrator will be able to view all employees and their details  Part One will cover:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-1/" />
+
+<title>Part. I | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/" >
+      Build a CRUD Web App. 1-3
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-1/"  class="active">
+      Part. I
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-2/" >
+      Part. II
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-3/" >
+      Part. III
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/" >
+      Building a Simple Web APP using Flask and MongoDB
+  </a>
+
+</li>
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/" >
+      Web Applications With Flask [Series]
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Part. I</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="python-flask-for-beginners-build-a-crud-web-app-with-python-and-flask-part-i">Python Flask for Beginners: Build a CRUD Web App with Python and Flask Part. I</h1>
+
+<p><img src="https://i.morioh.com/2019/11/21/34f9bcbd043d.jpg" alt="" /></p>
+
+<p>I’ve named the app Project Dream Team, and it will have the following features:</p>
+
+<ol>
+<li>Users will be able to register and login as employees</li>
+<li>The administrator will be able to create, update, and delete departments and roles</li>
+<li>The administrator will be able to assign employees to a department and assign them roles</li>
+<li>The administrator will be able to view all employees and their details</li>
+</ol>
+
+<p>Part One will cover:</p>
+
+<ol>
+<li>Users will be able to register and login as employees</li>
+<li>The administrator will be able to create, update, and delete departments and roles</li>
+<li>The administrator will be able to assign employees to a department and assign them roles</li>
+<li>The administrator will be able to view all employees and their details</li>
+</ol>
+
+<p>Ready? Here we go!</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>This tutorial builds on my introductory tutorial,  <a href="https://morioh.com/p/5d8eca44372e" title="*Getting Started With Flask*"><em>Getting Started With Flask</em></a>, picking up where it left off. It assumes you have, to begin with, the following dependencies installed:</p>
+
+<ol>
+<li>Users will be able to register and login as employees</li>
+<li>The administrator will be able to create, update, and delete departments and roles</li>
+<li>The administrator will be able to assign employees to a department and assign them roles</li>
+<li>The administrator will be able to view all employees and their details</li>
+</ol>
+
+<p>You should have a virtual environment set up and activated. You should also have the following file and directory structure:</p>
+
+<pre><code>&amp;#x251C;&amp;#x2500;&amp;#x2500; dream-team
+    &amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; app
+    &amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; __init__.py
+    &amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; templates
+    &amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; models.py
+     &amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2514;&amp;#x2500;&amp;#x2500; views.py
+    &amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; config.py
+   &amp;#xA0; &amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; requirements.txt
+   &amp;#xA0;&amp;#xA0;  &amp;#x2514;&amp;#x2500;&amp;#x2500; run.py
+</code></pre>
+
+<p>This project structure groups the similar components of the application together. The  <code>dream-team</code>  directory houses all the project files. The  <code>app</code>  directory is the application package, and houses different but interlinked modules of the application. All templates are stored in the  <code>templates</code>  directory, all models are in the  <code>models.py</code>  file, and all routes are in the  <code>views.py</code>  file. The  <code>run.py</code>  file is the application&rsquo;s entry point, the  <code>config.py</code>  file contains the application configurations, and the  <code>requirements.txt</code>  file contains the software dependencies for the application.</p>
+
+<p>If you don&rsquo;t have these set up, please visit the introductory tutorial and catch up!</p>
+
+<h3 id="database-setup">Database Setup</h3>
+
+<p>Flask has support for several relational database management systems, including  <a href="https://on.morioh.net/b0a3f595aa?r=https://sqlite.org/" title="SQLite">SQLite</a>,  <a href="https://on.morioh.net/b0a3f595aa?r=https://www.mysql.com/" title="MySQL">MySQL</a>, and  <a href="https://on.morioh.net/b0a3f595aa?r=https://www.postgresql.org/" title="PostgreSQL">PostgreSQL</a>. For this tutorial, we will be using MySQL. It’s popular and therefore has a lot of support, in addition to being scalable, secure, and rich in features.</p>
+
+<p>We will install the following (remember to activate your virtual environment):</p>
+
+<ol>
+<li>Users will be able to register and login as employees</li>
+<li>The administrator will be able to create, update, and delete departments and roles</li>
+<li>The administrator will be able to assign employees to a department and assign them roles</li>
+
+<li><p>The administrator will be able to view all employees and their details</p>
+
+<pre><code>$ pip install flask-sqlalchemy mysql-python
+</code></pre></li>
+</ol>
+
+<p>We&rsquo;ll then create the MySQL database. Ensure you have MySQL installed and running, and then log in as the root user:</p>
+
+<pre><code>$ mysql -u root
+
+mysql&gt; CREATE USER &amp;apos;dt_admin&amp;apos;@&amp;apos;localhost&amp;apos; IDENTIFIED BY &amp;apos;dt2016&amp;apos;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; CREATE DATABASE dreamteam_db;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; GRANT ALL PRIVILEGES ON dreamteam_db . * TO &amp;apos;dt_admin&amp;apos;@&amp;apos;localhost&amp;apos;;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+
+<p>We have now created a new user  <code>dt_admin</code>  with the password  <code>dt2016</code>, created a new database  <code>dreamteam_db</code>, and granted the new user all database privileges.</p>
+
+<p>Next, let&rsquo;s edit the  <code>config.py</code>. Remove any exisiting code and add the following:</p>
+
+<pre><code class="language-py"># config.py
+
+class Config(object):
+    &quot;&quot;&quot;
+    Common configurations
+    &quot;&quot;&quot;
+
+    # Put any configurations here that are common across all environments
+
+class DevelopmentConfig(Config):
+    &quot;&quot;&quot;
+    Development configurations
+    &quot;&quot;&quot;
+
+    DEBUG = True
+    SQLALCHEMY_ECHO = True
+
+class ProductionConfig(Config):
+    &quot;&quot;&quot;
+    Production configurations
+    &quot;&quot;&quot;
+
+    DEBUG = False
+
+app_config = {
+    &amp;apos;development&amp;apos;: DevelopmentConfig,
+    &amp;apos;production&amp;apos;: ProductionConfig
+}
+</code></pre>
+
+<p>It is good practice to specify configurations for different environments. In the file above, we have specifed configurations for development, which we will use while building the app and running it locally, as well as production, which we will use when the app is deployed.</p>
+
+<p>Some useful configuration variables are:</p>
+
+<ol>
+<li>Users will be able to register and login as employees</li>
+<li>The administrator will be able to create, update, and delete departments and roles</li>
+<li>The administrator will be able to assign employees to a department and assign them roles</li>
+<li>The administrator will be able to view all employees and their details</li>
+</ol>
+
+<p>You can find more Flask configuration variables  <a href="https://on.morioh.net/b0a3f595aa?r=http://flask.pocoo.org/docs/0.11/config/" title="here">here</a>  and SQLAlchemy configuration variables  <a href="https://on.morioh.net/b0a3f595aa?r=http://flask-sqlalchemy.pocoo.org/2.1/config/" title="here">here</a>.</p>
+
+<p>Next, create an  <code>instance</code>  directory in the  <code>dream-team</code>  directory, and then create a  <code>config.py</code>  file inside it. We will put configuration variables here that will not be pushed to version control due to their sensitive nature. In this case, we put the secret key as well as the database URI which contains the database user password.</p>
+
+<pre><code class="language-py"># instance/config.py
+
+SECRET_KEY = &amp;apos;p9Bv&lt;3Eid9%$i01&amp;apos;
+SQLALCHEMY_DATABASE_URI = &amp;apos;mysql://dt_admin:dt2016@localhost/dreamteam_db&amp;apos;
+</code></pre>
+
+<p>Now, let&rsquo;s edit the  <code>app/__init__.py</code>  file. Remove any existing code and add the following:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# third-party imports
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+# local imports
+from config import app_config
+
+# db variable initialization
+db = SQLAlchemy()
+
+def create_app(config_name):
+    app = Flask(__name__, instance_relative_config=True)
+    app.config.from_object(app_config[config_name])
+    app.config.from_pyfile(&amp;apos;config.py&amp;apos;)
+    db.init_app(app)
+
+    return app
+</code></pre>
+
+<p>We&rsquo;ve created a function,  <code>create_app</code>  that, given a configuration name, loads the correct configuration from the  <code>config.py</code>  file, as well as the configurations from the  <code>instance/config.py</code>  file. We have also created a  <code>db</code>  object which we will use to interact with the database.</p>
+
+<p>Next, let&rsquo;s edit the  <code>run.py</code>  file:</p>
+
+<pre><code class="language-py"># run.py
+
+import os
+
+from app import create_app
+
+config_name = os.getenv(&amp;apos;FLASK_CONFIG&amp;apos;)
+app = create_app(config_name)
+
+if __name__ == &amp;apos;__main__&amp;apos;:
+    app.run()
+</code></pre>
+
+<p>We create the app by running the  <code>create_app</code>  function and passing in the configuration name. We get this from the OS environment variable  <code>FLASK_CONFIG</code>. Because we are in development, we should set the environment variable to  <code>development</code>.</p>
+
+<p>Let&rsquo;s run the app to ensure everything is working as expected. First, delete the  <code>app/views.py</code>  file as well as the  <code>app/templates</code>  directory as we will not be needing them going forward. Next, add a temporary route to the  <code>app/__init__.py</code>  file as follows:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# existing code remains
+
+def create_app(config_name):
+    # existing code remains
+
+    # temporary route
+    @app.route(&amp;apos;/&amp;apos;)
+    def hello_world():
+        return &amp;apos;Hello, World!&amp;apos;
+
+    return app
+</code></pre>
+
+<p>Make sure you set the  <code>FLASK_CONFIG</code>  and  <code>FLASK_APP</code>  environment variables before running the app:</p>
+
+<pre><code class="language-py">$ export FLASK_CONFIG=development
+$ export FLASK_APP=run.py
+$ flask run
+ * Serving Flask app &quot;run&quot;
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+</code></pre>
+
+<p>We can see the “Hello, World” string we set in the route. The app is working well so far.</p>
+
+<h3 id="models">Models</h3>
+
+<p>Now to work on the models. Remember that a model is a representation of a database table in code. We&rsquo;ll need three models:  <code>Employee</code>,  <code>Department</code>, and  <code>Role</code>.</p>
+
+<p>But first, let’s install  <a href="https://on.morioh.net/b0a3f595aa?r=https://flask-login.readthedocs.io/en/latest/" title="Flask-Login">Flask-Login</a>, which will help us with user management and handle logging in, logging out, and user sessions. The  <code>Employee</code>  model will inherit from Flask-Login’s  <code>UserMixin</code>  class which will make it easier for us to make use of its properties and methods.</p>
+
+<pre><code class="language-py">$ pip install flask-login
+</code></pre>
+
+<p>To use Flask-Login, we need to create a LoginManager object and initialize it in the  <code>app/__init__.py</code>  file. First, remove the route we added earlier, and then add the following:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# after existing third-party imports
+from flask_login import LoginManager
+
+# after the db variable initialization
+login_manager = LoginManager()
+
+def create_app(config_name):
+    # existing code remains
+
+    login_manager.init_app(app)
+    login_manager.login_message = &quot;You must be logged in to access this page.&quot;
+    login_manager.login_view = &quot;auth.login&quot;
+
+    return app
+</code></pre>
+
+<p>In addition to initializing the LoginManager object, we&rsquo;ve also added a  <code>login_view</code>  and  <code>login_message</code>  to it. This way, if a user tries to access a page that they are not authorized to, it will redirect to the specified view and display the specified message. We haven&rsquo;t created the  <code>auth.login</code>  view yet, but we will when we get to authentication.</p>
+
+<p>Now add the following code to the  <code>app/models.py</code>  file:</p>
+
+<pre><code class="language-py"># app/models.py
+
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
+
+from app import db, login_manager
+
+class Employee(UserMixin, db.Model):
+    &quot;&quot;&quot;
+    Create an Employee table
+    &quot;&quot;&quot;
+
+    # Ensures table will be named in plural and not in singular
+    # as is the name of the model
+    __tablename__ = &amp;apos;employees&amp;apos;
+
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(60), index=True, unique=True)
+    username = db.Column(db.String(60), index=True, unique=True)
+    first_name = db.Column(db.String(60), index=True)
+    last_name = db.Column(db.String(60), index=True)
+    password_hash = db.Column(db.String(128))
+    department_id = db.Column(db.Integer, db.ForeignKey(&amp;apos;departments.id&amp;apos;))
+    role_id = db.Column(db.Integer, db.ForeignKey(&amp;apos;roles.id&amp;apos;))
+    is_admin = db.Column(db.Boolean, default=False)
+
+    @property
+    def password(self):
+        &quot;&quot;&quot;
+        Prevent pasword from being accessed
+        &quot;&quot;&quot;
+        raise AttributeError(&amp;apos;password is not a readable attribute.&amp;apos;)
+
+    @password.setter
+    def password(self, password):
+        &quot;&quot;&quot;
+        Set password to a hashed password
+        &quot;&quot;&quot;
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
+        &quot;&quot;&quot;
+        Check if hashed password matches actual password
+        &quot;&quot;&quot;
+        return check_password_hash(self.password_hash, password)
+
+    def __repr__(self):
+        return &amp;apos;&lt;Employee: {}&gt;&amp;apos;.format(self.username)
+
+# Set up user_loader
+@login_manager.user_loader
+def load_user(user_id):
+    return Employee.query.get(int(user_id))
+
+class Department(db.Model):
+    &quot;&quot;&quot;
+    Create a Department table
+    &quot;&quot;&quot;
+
+    __tablename__ = &amp;apos;departments&amp;apos;
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(60), unique=True)
+    description = db.Column(db.String(200))
+    employees = db.relationship(&amp;apos;Employee&amp;apos;, backref=&amp;apos;department&amp;apos;,
+                                lazy=&amp;apos;dynamic&amp;apos;)
+
+    def __repr__(self):
+        return &amp;apos;&lt;Department: {}&gt;&amp;apos;.format(self.name)
+
+class Role(db.Model):
+    &quot;&quot;&quot;
+    Create a Role table
+    &quot;&quot;&quot;
+
+    __tablename__ = &amp;apos;roles&amp;apos;
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(60), unique=True)
+    description = db.Column(db.String(200))
+    employees = db.relationship(&amp;apos;Employee&amp;apos;, backref=&amp;apos;role&amp;apos;,
+                                lazy=&amp;apos;dynamic&amp;apos;)
+
+    def __repr__(self):
+        return &amp;apos;&lt;Role: {}&gt;&amp;apos;.format(self.name)
+</code></pre>
+
+<p>In the  <code>Employee</code>  model, we make use of some of Werkzeug&rsquo;s handy security helper methods,  <code>generate_password_hash</code>, which allows us to hash passwords, and  <code>check_password_hash</code>, which allows us ensure the hashed password matches the password. To enhance security, we have a  <code>password</code>  method which ensures that the password can never be accessed; instead an error will be raised. We also have two foreign key fields,  <code>department_id</code>  and  <code>role_id</code>, which refer to the ID&rsquo;s of the department and role assigned to the employee.</p>
+
+<p>Note that we have an  <code>is_admin</code>  field which is set to  <code>False</code>  by default. We will override this when creating the admin user. Just after the  <code>Employee</code>  model, we have a  <code>user_loader</code>  callback, which Flask-Login uses to reload the user object from the user ID stored in the session.</p>
+
+<p>The  <code>Department</code>  and  <code>Role</code>  models are quite similar. Both have  <code>name</code>  and  <code>description</code>  fields. Additionally, both have a one-to-many relationship with the  <code>Employee</code>  model (one department or role can have many employees). We define this in both models using the  <code>employees</code>  field.  <code>backref</code>  allows us to create a new property on the  <code>Employee</code>  model such that we can use  <code>employee.department</code>  or  <code>employee.role</code>  to get the department or role assigned to that employee.  <code>lazy</code>  defines how the data will be loaded from the database; in this case it will be loaded dynamically, which is ideal for managing large collections.</p>
+
+<h3 id="migration">Migration</h3>
+
+<p>Migrations allow us to manage changes we make to the models, and propagate these changes in the database. For example, if later on we make a change to a field in one of the models, all we will need to do is create and apply a migration, and the database will reflect the change.</p>
+
+<p>We’ll begin by installing  <a href="https://on.morioh.net/b0a3f595aa?r=https://flask-migrate.readthedocs.io/en/latest/" title="Flask-Migrate">Flask-Migrate</a>, which will handle the database migrations using Alembic, a lightweight database migration tool. Alembic emits  <code>ALTER</code>  statements to a database thus implememting changes made to the models. It also auto-generates minimalistic migration scripts, which may be complex to write.</p>
+
+<pre><code class="language-py">$ pip install flask-migrate
+</code></pre>
+
+<p>We&rsquo;ll need to edit the  <code>app/__init__.py</code>  file:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# after existing third-party imports
+from flask_migrate import Migrate
+
+# existing code remains
+
+def create_app(config_name):
+    # existing code remains
+
+    migrate = Migrate(app, db)
+
+    from app import models
+
+    return app
+</code></pre>
+
+<p>We have created a  <code>migrate</code>  object which will allow us to run migrations using Flask-Migrate. We have also imported the models from the  <code>app</code>  package. Next, we&rsquo;ll run the following command to create a migration repository:</p>
+
+<pre><code class="language-py">$ flask db init
+</code></pre>
+
+<p>This creates a  <code>migrations</code>  directory in the  <code>dream-team</code>  directory:</p>
+
+<pre><code class="language-py">&amp;#x2514;&amp;#x2500;&amp;#x2500; migrations
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; README
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; alembic.ini
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; env.py
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; script.py.mako
+    &amp;#x2514;&amp;#x2500;&amp;#x2500; versions
+</code></pre>
+
+<p>Next, we will create the first migration:</p>
+
+<pre><code class="language-py">$ flask db migrate
+</code></pre>
+
+<p>Finally, we&rsquo;ll apply the migration:</p>
+
+<pre><code class="language-py">$ flask db upgrade
+</code></pre>
+
+<p>We&rsquo;ve sucessfully created tables based on the models we wrote! Let&rsquo;s check the MySQL database to confirm this:</p>
+
+<pre><code class="language-py">$ mysql -u root
+
+mysql&gt; use dreamteam_db;
+
+mysql&gt; show tables;
++------------------------+
+| Tables_in_dreamteam_db |
++------------------------+
+| alembic_version        |
+| departments            |
+| employees              |
+| roles                  |
++------------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+
+<h3 id="blueprints">Blueprints</h3>
+
+<p>Blueprints are great for organising a flask app into components, each with its own views and forms. I find that blueprints make for a cleaner and more organised project structure because each blueprint is a distinct component that addresses a specific functionality of the app. Each blueprint can even have its own cutsom URL prefix or subdomain. Blueprints are particularly convenient for large applications.</p>
+
+<p>We&rsquo;re going to have three blueprints in this app:</p>
+
+<ol>
+<li>Users will be able to register and login as employees</li>
+<li>The administrator will be able to create, update, and delete departments and roles</li>
+<li>The administrator will be able to assign employees to a department and assign them roles</li>
+<li>The administrator will be able to view all employees and their details</li>
+</ol>
+
+<p>Create the relevant files and directories so that your directory structure resembles this:</p>
+
+<pre><code>&amp;#x2514;&amp;#x2500;&amp;#x2500; dream-team
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; app
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; __init__.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; admin
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; __init__.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; forms.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2514;&amp;#x2500;&amp;#x2500; views.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; auth
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; __init__.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; forms.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2514;&amp;#x2500;&amp;#x2500; views.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; home
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; __init__.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2514;&amp;#x2500;&amp;#x2500; views.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; models.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; static
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2514;&amp;#x2500;&amp;#x2500; templates
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; config.py
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; instance
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2514;&amp;#x2500;&amp;#x2500; config.py
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; migrations
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; README
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; alembic.ini
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; env.py
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x251C;&amp;#x2500;&amp;#x2500; script.py.mako
+    &amp;#x2502;&amp;#xA0;&amp;#xA0; &amp;#x2514;&amp;#x2500;&amp;#x2500; versions
+    &amp;#x2502;&amp;#xA0;&amp;#xA0;     &amp;#x2514;&amp;#x2500;&amp;#x2500; a1a1d8b30202_.py
+    &amp;#x251C;&amp;#x2500;&amp;#x2500; requirements.txt
+    &amp;#x2514;&amp;#x2500;&amp;#x2500; run.py
+</code></pre>
+
+<p>I chose not to have  <code>static</code>  and  <code>templates</code>  directories for each blueprint, because all the application templates will inherit from the same base template and use the same CSS file. Instead, the  <code>templates</code>  directory will have sub-directories for each blueprint so that blueprint templates can be grouped together.</p>
+
+<p>In each blueprint&rsquo;s  <code>__init__.py</code>  file, we need to create a Blueprint object and initialize it with a name. We also need to import the views.</p>
+
+<pre><code class="language-py"># app/admin/__init__.py
+
+from flask import Blueprint
+
+admin = Blueprint(&amp;apos;admin&amp;apos;, __name__)
+
+from . import views
+# app/auth/__init__.py
+
+from flask import Blueprint
+
+auth = Blueprint(&amp;apos;auth&amp;apos;, __name__)
+
+from . import views
+# app/home/__init__.py
+
+from flask import Blueprint
+
+home = Blueprint(&amp;apos;home&amp;apos;, __name__)
+
+from . import views
+</code></pre>
+
+<p>Then, we can register the blueprints on the app in the  <code>app/__init__.py</code>  file, like so:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# existing code remains
+
+def create_app(config_name):
+    # existing code remains
+
+    from app import models
+
+    from .admin import admin as admin_blueprint
+    app.register_blueprint(admin_blueprint, url_prefix=&amp;apos;/admin&amp;apos;)
+
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
+
+    from .home import home as home_blueprint
+    app.register_blueprint(home_blueprint)
+
+    return app
+</code></pre>
+
+<p>We have imported each blueprint object and registered it. For the  <code>admin</code>  blueprint, we have added a url prefix,  <code>/admin</code>. This means that all the views for this blueprint will be accessed in the browser with the url prefix  <code>admin</code>.</p>
+
+<h3 id="home-blueprint">Home Blueprint</h3>
+
+<p>Time to work on fleshing out the blueprints! We&rsquo;ll start with the  <code>home</code>  blueprint, which will have the homepage as well as the dashboard.</p>
+
+<pre><code class="language-py"># app/home/views.py
+
+from flask import render_template
+from flask_login import login_required
+
+from . import home
+
+@home.route(&amp;apos;/&amp;apos;)
+def homepage():
+    &quot;&quot;&quot;
+    Render the homepage template on the / route
+    &quot;&quot;&quot;
+    return render_template(&amp;apos;home/index.html&amp;apos;, title=&quot;Welcome&quot;)
+
+@home.route(&amp;apos;/dashboard&amp;apos;)
+@login_required
+def dashboard():
+    &quot;&quot;&quot;
+    Render the dashboard template on the /dashboard route
+    &quot;&quot;&quot;
+    return render_template(&amp;apos;home/dashboard.html&amp;apos;, title=&quot;Dashboard&quot;)
+</code></pre>
+
+<p>Each view function has a decorator,  <code>home.route</code>, which has a URL route as a parameter (remember that  <code>home</code>  is the name of the blueprint as specified in the  <code>app/home/__init__.py</code>  file). Each view handles requests to the specified URL.</p>
+
+<p>The  <code>homepage</code>  view renders the home template, while the  <code>dashboard</code>  view renders the dashboard template. Note that the  <code>dashboard</code>  view has a  <code>login_required</code>  decorator, meaning that users must be logged in to access it.</p>
+
+<p>Now to work on the base template, which all other templates will inherit from. Create a  <code>base.html</code>  file in the  <code>app/templates</code>  directory and add the following code:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/base.html --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;{{ title }} | Project Dream Team&lt;/title&gt;
+    &lt;link href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link href=&quot;{{ url_for(&amp;apos;static&amp;apos;, filename=&amp;apos;css/style.css&amp;apos;) }}&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ url_for(&amp;apos;static&amp;apos;, filename=&amp;apos;img/favicon.ico&amp;apos;) }}&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav class=&quot;navbar navbar-default navbar-fixed-top topnav&quot; role=&quot;navigation&quot;&gt;
+        &lt;div class=&quot;container topnav&quot;&gt;
+          &lt;div class=&quot;navbar-header&quot;&gt;
+              &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#bs-example-navbar-collapse-1&quot;&gt;
+                  &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+                  &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;a class=&quot;navbar-brand topnav&quot; href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot;&gt;Project Dream Team&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;bs-example-navbar-collapse-1&quot;&gt;
+              &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+                  &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+      {% block body %}
+      {% endblock %}
+      &lt;div class=&quot;push&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-lg-12&quot;&gt;
+                    &lt;ul class=&quot;list-inline&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;footer-menu-divider&quot;&gt;&amp;#x22C5;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;footer-menu-divider&quot;&gt;&amp;#x22C5;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;p class=&quot;copyright text-muted small&quot;&gt;Copyright &amp;#xA9; 2016. All Rights Reserved&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Note that we use  <code>#</code>  for the Register and Login links. We will update this when we are working on the  <code>auth</code>  blueprint.</p>
+
+<p>Next, create a  <code>home</code>  directory inside the  <code>app/templates</code>  directory. The homepage template,  <code>index.html</code>, will go inside it:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/home/index.html --&gt;
+
+{% extends &quot;base.html&quot; %}
+{% block title %}Home{% endblock %}
+{% block body %}
+&lt;div class=&quot;intro-header&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-lg-12&quot;&gt;
+                &lt;div class=&quot;intro-message&quot;&gt;
+                    &lt;h1&gt;Project Dream Team&lt;/h1&gt;
+                    &lt;h3&gt;The best company in the world!&lt;/h3&gt;
+                    &lt;hr class=&quot;intro-divider&quot;&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>Inside the  <code>static</code>  directory, add  <code>css</code>  and  <code>img</code>  directories. Add the following CSS file,  <code>style.css</code>, to your  <code>static/css</code>  directory (note that you will need a background image,  <code>intro-bg.jpg</code>, as well as a favicon in your  <code>static/img</code>  directory):</p>
+
+<pre><code class="language-css">/* app/static/css/style.css */
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body, h1, h2, h3 {
+    font-family: &quot;Lato&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+a, .navbar-default .navbar-brand, .navbar-default .navbar-nav&gt;li&gt;a {
+  color: #aec251;
+}
+
+a:hover, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav&gt;li&gt;a:hover {
+  color: #687430;
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+.alert-info {
+    width: 50%;
+    margin: auto;
+    color: #687430;
+    background-color: #e6ecca;
+    border-color: #aec251;
+}
+
+.btn-default {
+    border-color: #aec251;
+    color: #aec251;
+}
+
+.btn-default:hover {
+    background-color: #aec251;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.content-section {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+}
+
+.footer, .push {
+  clear: both;
+  height: 4em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100%;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message &gt; h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-message &gt; h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.topnav {
+    font-size: 14px;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+</code></pre>
+
+<p>Run the app; you should be able to see the homepage now.</p>
+
+<h3 id="auth-blueprint">Auth Blueprint</h3>
+
+<p>For the  <code>auth</code>  blueprint, we’ll begin by creating the registration and login forms. We’ll use  <a href="https://on.morioh.net/b0a3f595aa?r=https://flask-wtf.readthedocs.io/en/stable/" title="Flask-WTF">Flask-WTF</a>, which will allow us to create forms that are secure (thanks to CSRF protection and reCAPTCHA support).</p>
+
+<pre><code class="language-py">pip install Flask-WTF
+</code></pre>
+
+<p>Now to write the code for the forms:</p>
+
+<pre><code class="language-py"># app/auth/forms.py
+
+from flask_wtf import FlaskForm
+from wtforms import PasswordField, StringField, SubmitField, ValidationError
+from wtforms.validators import DataRequired, Email, EqualTo
+
+from ..models import Employee
+
+class RegistrationForm(FlaskForm):
+    &quot;&quot;&quot;
+    Form for users to create new account
+    &quot;&quot;&quot;
+    email = StringField(&amp;apos;Email&amp;apos;, validators=[DataRequired(), Email()])
+    username = StringField(&amp;apos;Username&amp;apos;, validators=[DataRequired()])
+    first_name = StringField(&amp;apos;First Name&amp;apos;, validators=[DataRequired()])
+    last_name = StringField(&amp;apos;Last Name&amp;apos;, validators=[DataRequired()])
+    password = PasswordField(&amp;apos;Password&amp;apos;, validators=[
+                                        DataRequired(),
+                                        EqualTo(&amp;apos;confirm_password&amp;apos;)
+                                        ])
+    confirm_password = PasswordField(&amp;apos;Confirm Password&amp;apos;)
+    submit = SubmitField(&amp;apos;Register&amp;apos;)
+
+    def validate_email(self, field):
+        if Employee.query.filter_by(email=field.data).first():
+            raise ValidationError(&amp;apos;Email is already in use.&amp;apos;)
+
+    def validate_username(self, field):
+        if Employee.query.filter_by(username=field.data).first():
+            raise ValidationError(&amp;apos;Username is already in use.&amp;apos;)
+
+class LoginForm(FlaskForm):
+    &quot;&quot;&quot;
+    Form for users to login
+    &quot;&quot;&quot;
+    email = StringField(&amp;apos;Email&amp;apos;, validators=[DataRequired(), Email()])
+    password = PasswordField(&amp;apos;Password&amp;apos;, validators=[DataRequired()])
+    submit = SubmitField(&amp;apos;Login&amp;apos;)
+</code></pre>
+
+<p>Flask-WTF has a number of validators that make writing forms much easier. All the fields in the models have the  <code>DataRequired</code>  validator, which means that users will be required to fill all of them in order to register or login.</p>
+
+<p>For the registration form, we require users to fill in their email address, username, first name, last name, and their password twice. We use the  <code>Email</code>  validator to ensure valid email formats are used (e.g  <code>some-name@some-domain.com</code>.) We use the  <code>EqualTo</code>  validator to confirm that the  <code>password</code>  and  <code>confirm_password</code>  fields in the  <code>RegistrationForm</code>  match. We also create methods (<code>validate_email</code>  and  <code>validate_username</code>) to ensure that the email and username entered have not been used before.</p>
+
+<p>The  <code>submit</code>  field in both forms will be represented as a button that users will be able to click to register and login respectively.</p>
+
+<p>With the forms in place, we can write the views:</p>
+
+<pre><code class="language-py"># app/auth/views.py
+
+from flask import flash, redirect, render_template, url_for
+from flask_login import login_required, login_user, logout_user
+
+from . import auth
+from forms import LoginForm, RegistrationForm
+from .. import db
+from ..models import Employee
+
+@auth.route(&amp;apos;/register&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+def register():
+    &quot;&quot;&quot;
+    Handle requests to the /register route
+    Add an employee to the database through the registration form
+    &quot;&quot;&quot;
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        employee = Employee(email=form.email.data,
+                            username=form.username.data,
+                            first_name=form.first_name.data,
+                            last_name=form.last_name.data,
+                            password=form.password.data)
+
+        # add employee to the database
+        db.session.add(employee)
+        db.session.commit()
+        flash(&amp;apos;You have successfully registered! You may now login.&amp;apos;)
+
+        # redirect to the login page
+        return redirect(url_for(&amp;apos;auth.login&amp;apos;))
+
+    # load registration template
+    return render_template(&amp;apos;auth/register.html&amp;apos;, form=form, title=&amp;apos;Register&amp;apos;)
+
+@auth.route(&amp;apos;/login&amp;apos;, methods=[&amp;apos;GET&amp;apos;, &amp;apos;POST&amp;apos;])
+def login():
+    &quot;&quot;&quot;
+    Handle requests to the /login route
+    Log an employee in through the login form
+    &quot;&quot;&quot;
+    form = LoginForm()
+    if form.validate_on_submit():
+
+        # check whether employee exists in the database and whether
+        # the password entered matches the password in the database
+        employee = Employee.query.filter_by(email=form.email.data).first()
+        if employee is not None and employee.verify_password(
+                form.password.data):
+            # log employee in
+            login_user(employee)
+
+            # redirect to the dashboard page after login
+            return redirect(url_for(&amp;apos;home.dashboard&amp;apos;))
+
+        # when login details are incorrect
+        else:
+            flash(&amp;apos;Invalid email or password.&amp;apos;)
+
+    # load login template
+    return render_template(&amp;apos;auth/login.html&amp;apos;, form=form, title=&amp;apos;Login&amp;apos;)
+
+@auth.route(&amp;apos;/logout&amp;apos;)
+@login_required
+def logout():
+    &quot;&quot;&quot;
+    Handle requests to the /logout route
+    Log an employee out through the logout link
+    &quot;&quot;&quot;
+    logout_user()
+    flash(&amp;apos;You have successfully been logged out.&amp;apos;)
+
+    # redirect to the login page
+    return redirect(url_for(&amp;apos;auth.login&amp;apos;))
+</code></pre>
+
+<p>Just like in the  <code>home</code>  blueprint, each view here handles requests to the specified URL. The  <code>register</code>  view creates an instance of the  <code>Employee</code>  model class using the registration form data to populate the fields, and then adds it to the database. This esentially registers a new employee.</p>
+
+<p>The  <code>login</code>  view queries the database to check whether an employee exists with an email address that matches the email provided in the login form data. It then uses the  <code>verify_password</code>  method to check that the password in the database for the employee matches the password provided in the login form data. If both of these are true, it proceeds to log the user in using the  <code>login_user</code>  method provided by Flask-Login.</p>
+
+<p>The  <code>logout</code>  view has the  <code>login_required</code>  decorator, which means that a user must be logged in to access it. It calles the  <code>logout_user</code>  method provided by Flask-Login to log the user out.</p>
+
+<p>Note the use of  <code>flash</code>  method, which allows us to use Flask’s  <a href="https://on.morioh.net/b0a3f595aa?r=http://flask.pocoo.org/docs/0.11/patterns/flashing/" title="message flashing">message flashing</a>  feature. This allows us to communicate feedback to the user, such as informing them of successful registration or unsuccessful login.</p>
+
+<p>Finally, let’s work on the templates. First, we’ll install  <a href="https://on.morioh.net/b0a3f595aa?r=https://pythonhosted.org/Flask-Bootstrap/index.html" title="Flask-Bootstrap">Flask-Bootstrap</a>  so we can use its  <code>wtf</code>  and  <code>utils</code>  libraries. The  <code>wtf</code>  library will allow us to quickly generate forms in the templates based on the forms in the  <code>forms.py</code>  file. The  <code>utils</code>  library will allow us to display the flash messages we set earlier to give feedback to the user.</p>
+
+<pre><code class="language-py">pip install flask-bootstrap
+</code></pre>
+
+<p>We need to edit the  <code>app/__init__.py</code>  file to use Flask-Bootstrap:</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# after existing third-party imports
+from flask_bootstrap import Bootstrap
+
+# existing code remains
+
+def create_app(config_name):
+    # existing code remains
+
+    Bootstrap(app)
+
+    from app import models
+
+    # blueprint registration remains here
+
+    return app
+</code></pre>
+
+<p>We&rsquo;ve made quite a number of edits to the  <code>app/__init__.py</code>  file. This is the final version of the file and how it should look at this point (note that I have re-arranged the imports and variables in alphabetical order):</p>
+
+<pre><code class="language-py"># app/__init__.py
+
+# third-party imports
+from flask import Flask
+from flask_bootstrap import Bootstrap
+from flask_login import LoginManager
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+
+# local imports
+from config import app_config
+
+db = SQLAlchemy()
+login_manager = LoginManager()
+
+def create_app(config_name):
+    app = Flask(__name__, instance_relative_config=True)
+    app.config.from_object(app_config[config_name])
+    app.config.from_pyfile(&amp;apos;config.py&amp;apos;)
+
+    Bootstrap(app)
+    db.init_app(app)
+    login_manager.init_app(app)
+    login_manager.login_message = &quot;You must be logged in to access this page.&quot;
+    login_manager.login_view = &quot;auth.login&quot;
+    migrate = Migrate(app, db)
+
+    from app import models
+
+    from .admin import admin as admin_blueprint
+    app.register_blueprint(admin_blueprint, url_prefix=&amp;apos;/admin&amp;apos;)
+
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
+
+    from .home import home as home_blueprint
+    app.register_blueprint(home_blueprint)
+
+    return app
+</code></pre>
+
+<p>We need two templates for the  <code>auth</code>  blueprint:  <code>register.html</code>  and  <code>login.html</code>, which we&rsquo;ll create in an  <code>auth</code>  directory inside the  <code>templates</code>  directory.</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/auth/register.html --&gt;
+
+{% import &quot;bootstrap/wtf.html&quot; as wtf %}
+{% extends &quot;base.html&quot; %}
+{% block title %}Register{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+  &lt;div class=&quot;center&quot;&gt;
+    &lt;h1&gt;Register for an account&lt;/h1&gt;
+    &lt;br/&gt;
+    {{ wtf.quick_form(form) }}
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+&lt;!-- app/templates/auth/login.html --&gt;
+
+{% import &quot;bootstrap/utils.html&quot; as utils %}
+{% import &quot;bootstrap/wtf.html&quot; as wtf %}
+{% extends &quot;base.html&quot; %}
+{% block title %}Login{% endblock %}
+{% block body %}
+&lt;div class=&quot;content-section&quot;&gt;
+  &lt;br/&gt;
+  {{ utils.flashed_messages() }}
+  &lt;br/&gt;
+  &lt;div class=&quot;center&quot;&gt;
+    &lt;h1&gt;Login to your account&lt;/h1&gt;
+    &lt;br/&gt;
+    {{ wtf.quick_form(form) }}
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>The forms are loaded from the  <code>app/auth/views.py</code>  file, where we specified which template files to display for each view. Remember the Register and Login links in the base template? Let&rsquo;s update them now so we can access the pages from the menus:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/base.html --&gt;
+
+&lt;!-- Modify nav bar menu --&gt;
+&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.register&amp;apos;) }}&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.login&amp;apos;) }}&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Modify footer menu --&gt;
+&lt;ul class=&quot;list-inline&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;footer-menu-divider&quot;&gt;&amp;#x22C5;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.register&amp;apos;) }}&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;footer-menu-divider&quot;&gt;&amp;#x22C5;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.login&amp;apos;) }}&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>Run the app again and click on the Register and Login menu links. You should see the templates loaded with the appropriate form.</p>
+
+<p>Try to fill out the registration form; you should be able to register a new employee. After registration, you should be redirected to the login page, where you will see the flash message we configured in the  <code>app/auth/views.py</code>  file, inviting you to login.</p>
+
+<p>Logging in should be successful; however you should get a  <code>Template Not Found</code>  error after logging in, because the  <code>dashboard.html</code>  template has not been created yet. Let&rsquo;s do that now:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/home/dashboard.html --&gt;
+
+{% extends &quot;base.html&quot; %}
+{% block title %}Dashboard{% endblock %}
+{% block body %}
+&lt;div class=&quot;intro-header&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-lg-12&quot;&gt;
+                &lt;div class=&quot;intro-message&quot;&gt;
+                    &lt;h1&gt;The Dashboard&lt;/h1&gt;
+                    &lt;h3&gt;We made it here!&lt;/h3&gt;
+                    &lt;hr class=&quot;intro-divider&quot;&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>Refresh the page. You&rsquo;ll notice that the navigation menu still has the register and login links, even though we are already logged in. We&rsquo;ll need to modify it to show a logout link when a user is already authenticated. We will also include a  <code>Hi, username!</code>  message in the nav bar:</p>
+
+<pre><code class="language-html">&lt;!-- app/templates/base.html --&gt;
+
+&lt;!-- In the head tag, include link to Font Awesome CSS so we can use icons --&gt;
+&lt;link href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+&lt;!-- Modify nav bar menu --&gt;
+&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+    {% if current_user.is_authenticated %}
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.dashboard&amp;apos;) }}&quot;&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.logout&amp;apos;) }}&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;  Hi, {{ current_user.username }}!&lt;/a&gt;&lt;/li&gt;
+    {% else %}
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.register&amp;apos;) }}&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.login&amp;apos;) }}&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+    {% endif %}
+&lt;/ul&gt;
+
+&lt;!-- Modify footer menu --&gt;
+&lt;ul class=&quot;list-inline&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;home.homepage&amp;apos;) }}&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;footer-menu-divider&quot;&gt;&amp;#x22C5;&lt;/li&gt;
+    {% if current_user.is_authenticated %}
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.logout&amp;apos;) }}&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+    {% else %}
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.register&amp;apos;) }}&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;footer-menu-divider&quot;&gt;&amp;#x22C5;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;{{ url_for(&amp;apos;auth.login&amp;apos;) }}&quot;&gt;Login&lt;/a&gt;&lt;/li&gt;
+    {% endif %}
+&lt;/ul&gt;
+</code></pre>
+
+<p>Note how we use  <code>if-else</code>  statements in the templates. Also, take note of the  <code>current_user</code>  proxy provided by Flask-Login, which allows us to check whether the user is authenticated and to get the user&rsquo;s username.</p>
+
+<p>Logging out will take you back to the login page:</p>
+
+<p>Attempting to access the dashboard page without logging in will redirect you to the login page and display the message we set in the  <code>app/__init__.py</code>  file:</p>
+
+<p>Notice that the URL is configured such that once you log in, you will be redirected to the page you initially attempted to access, which in this case is the dashboard.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>That&rsquo;s it for Part One! We&rsquo;ve covered quite a lot: setting up a MySQL database, creating models, migrating the database, and handling registration, login, and logout. Good job for making it this far!</p>
+
+<p>Watch this space for Part Two, which will cover the CRUD functionality of the app, allowing admin users to add, list, edit, and delete departments and roles, as well as assign them to employees.</p>
+
+<blockquote>
+<p><a href="https://morioh.com/p/b59f7df2e1f5">Source : </a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cFalsk%5cbuild-a-crud-web-app%5cpart-1.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

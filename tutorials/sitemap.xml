@@ -26,6 +26,14 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/71-python-code-snippet/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/81-pythoncodesnippets/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/e-book/automate-the-boring/</loc>
   </url>
   
@@ -38,11 +46,23 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/csv-and-text-file/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-1/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/html/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/</loc>
   </url>
   
   <url>
@@ -54,7 +74,27 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-1/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/primer-jinja-templating/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/create-progressive-web-app/</loc>
   </url>
   
   <url>
@@ -70,11 +110,35 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/start-django-framework/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/database/sqlite/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/database/sqlite/sqlite3-module/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/django/start-django-framework/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/table-of-contents/with-toc/</loc>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/variable/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/dictionary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/important-basic-syntax/</loc>
   </url>
   
   <url>
@@ -96,11 +160,15 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/</loc>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/database/</loc>
   </url>
   
   <url>
@@ -116,24 +184,31 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/html/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-dictionaries/</loc>
-    <lastmod>2020-01-05T10:42:26+06:00</lastmod>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-2/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/table-of-contents/without-toc/</loc>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/excel/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-a-crud-web-app/part-3/</loc>
   </url>
   
   <url>
@@ -142,6 +217,10 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/1_io/clipboard/</loc>
   </url>
   
   <url>
@@ -161,11 +240,11 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/django/</loc>
   </url>
   
   <url>
@@ -195,7 +274,23 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/table-of-contents/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-10/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/git/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/vue/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/</loc>
   </url>
   
   <url>
@@ -231,6 +326,42 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-17/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-18/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-19/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/2nd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-20/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-21/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/learning-flask/ep-22/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</loc>
     <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
@@ -261,11 +392,6 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/</loc>
-    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/exploration-stock-index/</loc>
     <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
@@ -287,6 +413,11 @@
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</loc>
+    <lastmod>2020-01-18T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/</loc>
     <lastmod>2020-01-18T10:42:26+06:00</lastmod>
   </url>
   
@@ -371,6 +502,26 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/python-dictionaries/</loc>
+    <lastmod>2020-01-05T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/</loc>
+    <lastmod>2020-01-05T10:42:26+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/functions/</loc>
+    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/functions/newfunction/</loc>
+    <lastmod>2019-11-26T17:04:13+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/posts/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
@@ -386,11 +537,144 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/10-knowledge-javascript/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/2nd/3rd/4th/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/2nd/3rd/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/example/hidden/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/buttons/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/columns/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/expand/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/hints/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/katex/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/mermaid/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/backup/shortcodes/tabs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/10-knowledge-javascript/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-13/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/chapter-14/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/tile-layout-using-inline-block/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/5-web-download-css/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/not-selector/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/all_equal/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/all_unique/</loc>
   </url>
   
   <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/automate-the-boring-stuff/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/average/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/average_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/bifurcate/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/bifurcate_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/book/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/bootstrap/boostrap-4-flex-grid/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/border-with-top-triangle/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/bouncing-loader/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/box-sizing-reset/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/vue/build-web-app-with-vue/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/beautiful-soup-web-scraper/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/build-web-app-using-flask/</loc>
   </url>
   
   <url>
@@ -402,23 +686,127 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/circle-progress/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/button-border-animation/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/html/creating-the-layout/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/byte_size/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-1/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/calc/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-2/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/cal-stock-return/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/css/guide-to-css-animation-part-3/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/camel/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/capitalize/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/capitalize_every_word/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/cast_list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/check_prop/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/chunk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/circle/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/circle-progress/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/clamp_number/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/clearfix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compose/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/compose_right/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/constant-width-to-height-ratio/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-groupby-tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/count_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/count_occurences/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/counter/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/html/creating-the-layout/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/curry/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-scrollbar/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-text-selection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/custom-variables/</loc>
   </url>
   
   <url>
@@ -426,7 +814,199 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime-tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/datetime-timedelta-strftime/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/dateutil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/decapitalize/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/deep_flatten/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/degrees_to_rads/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/delay/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/dictionary-beginners-tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/difference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/difference_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/digitize/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/disable-selection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/display-table-centering/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/donut-spinner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/drop-cap/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/dynamic-shadow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/easing-variables/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/etched-text/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/evenly-distributed-children/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/every/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/every_nth/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/pandas-explore-dataset/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/factorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/fibonacci/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/filter_non_unique/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/filter_unique/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/find_parity_outliers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/fit-image-in-container/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/flatten/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/flexbox-centering/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/focus-within/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/string-format/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/fullscreen/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/gcd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/ghost-trick/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/gradient-text/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/grid-centering/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/group_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hairline-border/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hamburger-button/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/has_duplicates/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/head/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/height-transition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hover-shadow-box-animation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/hover-underline-animation/</loc>
   </url>
   
   <url>
@@ -434,7 +1014,227 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/html/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/in_range/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_2d_list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_list_with_range/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/initialize_list_with_values/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/intersection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/intersection_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/intro-stock-analysis-pandas/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_anagram/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_divisible/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_even/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/is_odd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/kebab/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/keys_only/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/last/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/last-item-with-remaining-available-height/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/lcm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/html/learning-web-development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/lobotomizedowlselector/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/longest_item/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/map_values/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/masonry-layout/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_element_index/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/max_n/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/median/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/dictionary/merge-two-dictionaries/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/merge_two_dictionaries/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/min_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/min_n/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/most_frequent/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/mouse-cursor-gradient-tracking/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/n_times_string/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/navigation-list-item-hover-and-focus-effect/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/none/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/offscreen/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/offset/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/overflow-scroll-gradient/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/palindrome/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/part-3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/popout-menu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-python/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/portfolio-optimization-methods/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/pretty-text-underline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/pulse-loader/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-date-and-time/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/python/python-101-for-beginner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/python-heapq-for-beginners/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/rads_to_degrees/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/pandas/read-and-write-files/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/python-regular-expressions/</loc>
   </url>
   
   <url>
@@ -442,7 +1242,55 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/django/django-rest-framework/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/reset-all-styles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/reverse_string/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/sample/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/shape-separator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/shuffle/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/sibling-fade/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/similarity/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/snake/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/some/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/split_lines/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/spread/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/django/django-rest-framework/</loc>
   </url>
   
   <url>
@@ -450,7 +1298,87 @@
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/javascript-use-map/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/sum_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/symmetric_difference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/symmetric_difference_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/system-font-stack/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/tail/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/toggle-switch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/transform-detransform/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/transform-centering/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/transpose/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/triangle/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/truncate-text/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/truncate-text-multiline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/list/tutorial-for-python-lists/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/unfold/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/union/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/union_by/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/unique_elements/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/javascript-use-map/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/flask/flask-blueprint/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/values_only/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/falsk/web_applications_with_flask/</loc>
   </url>
   
   <url>
@@ -458,11 +1386,55 @@
   </url>
   
   <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-and-beautifulsoup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-craigslist/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-nba-stats/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/web-scraping-using-beautifulsoup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/when/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/missing_data/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/git/what-git/</loc>
+  </url>
+  
+  <url>
     <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/finance/yahoo-finance-api_1/</loc>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/website/javascript/api-for-javascript/</loc>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/front-end/css/snippets/zebra-striped-list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/snippets/zip/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/python/beginer/date-and-time/python-datetime/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/web-scraping/equinox-blog-web-scraping/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/api-for-javascript/</loc>
   </url>
   
 </urlset>

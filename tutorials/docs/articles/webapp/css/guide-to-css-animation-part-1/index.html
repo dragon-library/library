@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CSS Animation — Part 1"><meta property="og:title" content="CSS Animation — Part 1" />
+<meta property="og:description" content="A Guide to CSS Animation — Part 1 This post assumes you’ve never created a CSS animation before. But even if you have, there may be things you were not aware of. It does assume you have some familiarity with HTML and CSS. We’ll explore creating your first animation through to things like chaining animations.
+CSS animation can be a quick concept to grasp but a big topic to cover once we really dig in." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-1/" />
+
+<title>CSS Animation — Part 1 | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/css/5-web-download-css/" >
+      5 แหล่งดาวน์โหลด CSS สวย ๆ
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-1/"  class="active">
+      CSS Animation — Part 1
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-2/" >
+      CSS Animation — Part 2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/css/guide-to-css-animation-part-3/" >
+      CSS Animation — Part 3
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>CSS Animation — Part 1</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="a-guide-to-css-animation-part-1">A Guide to CSS Animation — Part 1</h1>
+
+<p><img src="https://miro.medium.com/max/4752/1*8VI1jY60cMT8ij5lHr6Ydw.jpeg" alt="enter image description here" />
+This post assumes you’ve never created a  <code>CSS</code>  animation before. But even if you have, there may be things you were not aware of. It does assume you have some familiarity with  <code>HTML</code>  and  <code>CSS</code>. We’ll explore creating your first animation through to things like chaining animations.</p>
+
+<p><img src="https://miro.medium.com/max/480/1*YMIFMQyYdSkmGAus_VZiPw.gif" alt="" /></p>
+
+<p>CSS animation can be a quick concept to grasp but a big topic to cover once we really dig in. Therefore, this post is split over parts.</p>
+
+<ul>
+<li>Part 1: Introduces CSS animation looking at things like performance and how to inspect animations. We will also create a basic animation and look at  <code>@keyframes</code>  composition.</li>
+
+<li><p><a href="https://medium.com/@jh3y/a-guide-to-css-animation-part-2-2cd422f78567">Part 2</a>: With the basics grasped, we dig into the different things we can do with the  <code>animation</code>  properties. This includes tips on things like using  <code>fill-mode</code>  and chaining animations.</p></li>
+
+<li><p><a href="https://medium.com/@jh3y/a-guide-to-css-animation-part-3-2e497110119">Part 3</a>: We wrap things up with some bonus topics like using CSS variables and hooking in from JavaScript. We also discuss whether you should even use CSS animation at all. That’s right, it’s not always the best option. But there’s benefit to understanding the foundations and alternatives.</p></li>
+</ul>
+
+<p>This enables you to edit and fork live examples 👍</p>
+
+<p>You can also grab the code on GitHub <a href="https://github.com/jh3y/a-guide-to-css-animation">Demo code for &ldquo;A Guide to CSS Animation&rdquo;
+</a></p>
+
+<p>For all animations we are using a single  <code>div</code>  element unless stated otherwise. The basic markup comprises of something like the following</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*_BxwSkXqsnUwho1e9d9-bw.png" alt="" /></p>
+
+<p>The goal of this guide is to make you comfortable with creating your own CSS animations from scratch! 💪</p>
+
+<hr />
+
+<h1 id="so-why-animate">So, why animate?</h1>
+
+<p>To improve usability and general user experience. But that does not mean animation should be everywhere in your sites. There’s a time and a place.</p>
+
+<p><img src="https://miro.medium.com/max/550/1*sKmOshEF6lerZsOJuYVAew.gif" alt="" /></p>
+
+<p>With animation, we can do things such as draw a users attention to something or direct them through a flow. Consider loading animations or page transition effects for example.</p>
+
+<h1 id="what-can-we-animate">What can we animate?</h1>
+
+<p>Before we start creating animations, we need to know which properties we can animate. We can’t animate every property. The following MDN article lists properties that we can animate.
+<blockquote class="book-hint danger">
+  <h2 id="animatable-css-properties-https-developer-mozilla-org-en-us-docs-web-css-css-animated-properties">- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">Animatable CSS properties</a></h2>
+
+<h2 id="animatable-one-property-two-values-endless-possibilities-http-leaverou-github-io-animatable">- <a href="http://leaverou.github.io/animatable/">Animatable: One property, two values, endless possibilities</a></h2>
+</blockquote>
+</p>
+
+<h2 id="property-performance">Property performance</h2>
+
+<p>Of the properties we can animate we may choose to animate some over others due to performance.</p>
+
+<p>For example, animating element position will be better handled using  <code>transform</code>. This is because the GPU can handle the heavy lifting when animating that property. Animating some properties will trigger layouts to take place 👎</p>
+
+<p>The following article is great for understanding animation performance 👍
+<blockquote class="book-hint danger">
+  <h2 id="high-performance-animations-html5-rocks-https-www-html5rocks-com-en-tutorials-speed-high-performance-animations"><a href="https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/">High Performance Animations - HTML5 Rocks</a></h2>
+</blockquote>
+</p>
+
+<p>With all that out of the way, let’s get started 💪</p>
+
+<h1 id="our-first-animation">Our first animation</h1>
+
+<p>Let’s dig right in and create our first animation ⛏</p>
+
+<p>For this animation we will make an element spin 360 degrees. Riveting stuff I know 😅 But we need to start somewhere!</p>
+
+<p><img src="https://miro.medium.com/max/480/1*-Ip2pjgEccC_u8_jszRNSw.gif" alt="" /></p>
+
+<p>First, we create our animation using the  <code>@keyframes</code>  rule. The  <code>@keyframes</code>  rule takes the following structure.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*U6tWmRm-iSDgXzIvX-VN2w.png" alt="" /></p>
+
+<p><code>animation-name</code>  is the name we give to our animation. You can have one or many keyframe selectors 👍</p>
+
+<p>We will name our animation  <code>spin</code>. To spin our element we can use the  <code>transform</code>  property and rotate from  <code>0deg</code>  to  <code>360deg</code>. We use two keyframe selectors. One to define the start of our animation(<code>from</code>) and one for the end of our animation(<code>to</code>).  <code>from</code>  and  <code>to</code>  keywords are equivalent to  <code>0%</code>  and  <code>100%</code>.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*DxclFb7IjyLy1wVcPmGQcQ.png" alt="" /></p>
+
+<p>We can take this a little further. The styles under the  <code>from</code>  keyframe selector don’t make any difference to our element. So, the  <code>from</code>  keyframe selector is redundant. We can remove it.</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*786ISbKk_kNftOSkV9FRTw.png" alt="" /></p>
+
+<p>Now, we need to apply that animation to our element. We use the  <code>animation-name</code>  and  <code>animation-duration</code>  properties 👍</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*v7XXPw-IVyxsawCje4YDUQ.png" alt="" /></p>
+
+<p>Here we are telling our element to use the animation  <code>spin</code>  with a duration of 2 seconds. Duration can be set in either milliseconds(<code>ms</code>) or seconds(<code>s</code>).</p>
+
+<p>Loading that up in a browser should give us something like</p>
+
+<p>Our first animation 🎉</p>
+
+<p>From that first animation, you have enough to go off and start creating cool animations 😎 But stick around and we will get a full grasp of what we can achieve.</p>
+
+<hr />
+
+<h1 id="animations-inspector">Animations inspector</h1>
+
+<p>We have created our first animation. Now seems like a great time to introduce the  <code>Animations</code>  inspector in  <code>Google Chrome</code>.</p>
+
+<p>Open up your animation in  <code>Google Chrome</code>  and open up the  <code>Developer Tools</code>. Open up the  <code>Animations</code>  panel by going into  <code>More Tools</code>. If the  <code>Animations</code>  panel says “Listening for animations…”, refresh the page.</p>
+
+<p>After refreshing, you should see something in the  <code>Animations</code>  panel, that’s our animation!</p>
+
+<p><img src="https://miro.medium.com/max/342/1*258LLOfuE6bMFdpVRj8rIQ.png" alt="" /></p>
+
+<p>Click the animation and we are able to inspect it. Now as our animation isn’t particularly complex, there isn’t much to inspect. But with the  <code>Animations</code>  inspector we can do various things. We can experiment with durations and delays as well as altering playback speed. Most importantly, we can replay our animations without having to refresh the entire page 😅</p>
+
+<p><img src="https://miro.medium.com/max/614/1*XpYJ66aZW4R4MO9zr4NQIg.gif" alt="" /></p>
+
+<p>This becomes particularly useful when we have many animations. Whether it be for different elements or on one element.</p>
+
+<p>You can read more about the  <code>Animations</code>  inspector in the following article.
+<blockquote class="book-hint danger">
+  <h2 id="inspect-animations-tools-for-web-developers-google-developers-https-developers-google-com-web-tools-chrome-devtools-inspect-styles-animations"><a href="https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations">Inspect animations | Tools for Web Developers | Google Developers</a></h2>
+</blockquote>
+</p>
+
+<p>Throughout this guide I recommend using the inspector when checking out the  <a href="https://codepen.io/collection/nMpBQm/">demos</a>. This will allow you to replay animations and tweak them without having the reload the page 👍</p>
+
+<hr />
+
+<h1 id="keyframes">@keyframes</h1>
+
+<p>We put together our first  <code>@keyframes</code>  rule in our  <code>spin</code>  animation.</p>
+
+<p>There isn’t much to  <code>@keyframes</code>. After specifying an animation name, we specify animation within keyframe selectors. The keyframe selector specifies a percentage of the animation duration. Or, as mentioned before, we can use the from and to keywords that are the equal to  <code>0%</code>  and  <code>100%</code>.</p>
+
+<p>Each selector defines styles that should apply at that point of the animation. If we have selectors that specify the same CSS styles, we can group them together.</p>
+
+<p>Let’s start with a simple example. Consider the effect of an element moving around the path of a square.</p>
+
+<p><img src="https://miro.medium.com/max/480/1*DStBjpP9QnRY8dVVzFP8xA.gif" alt="" /></p>
+
+<p>We will call our animation  <code>squarePath</code>, very creative I know 😅</p>
+
+<p>For this example, there will be four positions for our element. For every side of the square, we use a quarter of the animation. Because our start and finish position will be the same, we can group those keyframe selectors 👍</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*Z7fsLiMxqKll1vIz7WaQng.png" alt="" /></p>
+
+<p>Apply the animation and a duration to our element 🎉</p>
+
+<p><img src="https://miro.medium.com/max/1448/1*3QVHBhCfpYuC4YauQ9umOQ.png" alt="" /></p>
+
+<p>And that’s it! We have an element moving along the path of a square 🎉</p>
+
+<hr />
+
+<h1 id="that-s-it-for-part-1">That’s it for Part 1 🤓</h1>
+
+<p>We’ve taken a look at the basics of creating and applying animations to our elements. Also we can inspect our animations and tweak them in the browser 💪</p>
+
+<p>Although that will be enough to get you up and running with CSS animation, there’s a lot more to it! I hope you’ll join me in  <a href="https://medium.com/@jh3y/a-guide-to-css-animation-part-2-2cd422f78567">Part 2</a>  where we dig deeper into applying animations and the associated tips and tricks.</p>
+
+<blockquote>
+<p>Written with <a href="https://codeburst.io/a-guide-to-css-animation-part-1-8777f5beb1f8">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cCSS%5cguide-to-css-animation-part-1.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#a-guide-to-css-animation-part-1">A Guide to CSS Animation — Part 1</a></li>
+<li><a href="#so-why-animate">So, why animate?</a></li>
+<li><a href="#what-can-we-animate">What can we animate?</a>
+<ul>
+<li><a href="#property-performance">Property performance</a></li>
+</ul></li>
+<li><a href="#our-first-animation">Our first animation</a></li>
+<li><a href="#animations-inspector">Animations inspector</a></li>
+<li><a href="#keyframes">@keyframes</a></li>
+<li><a href="#that-s-it-for-part-1">That’s it for Part 1 🤓</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

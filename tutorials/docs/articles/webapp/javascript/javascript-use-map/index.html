@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Use .map(), .reduce(), and .filter()"><meta property="og:title" content="Use .map(), .reduce(), and .filter()" />
+<meta property="og:description" content="Simplify your JavaScript – Use .map(), .reduce(), and .filter() Jan 29, 2018 · 7 min read
+If you’re starting in JavaScript, maybe you haven’t heard of .map(), .reduce(), and .filter(). For me, it took a while as I had to support Internet Explorer 8 until a couple years ago. But if you don’t need to be compatible with this very old browser, you have to become familiar with those methods." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dragon-library.github.io/library/tutorials/docs/articles/webapp/javascript/javascript-use-map/" />
+
+<title>Use .map(), .reduce(), and .filter() | Tutorials</title>
+<link rel="icon" href="/library/tutorials/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/library/tutorials/book.min.47182b9e4e24c896682aed975b295d906b0f9c78590335fc280e08fe01949ee2.css" integrity="sha256-Rxgrnk4kyJZoKu2XWyldkGsPnHhZAzX8KA4I/gGUnuI=">
+
+
+<script defer src="/library/tutorials/en.search.min.26cb3d9204a66106df001cab84be01af525d3219b3578836137d655235f579a9.js" integrity="sha256-Jss9kgSmYQbfAByrhL4Br1JdMhmzV4g2E31lUjX1eak="></script>
+<!-- highlight -->
+  <link rel="stylesheet" href="https://dragon-library.github.io/library/tutorials/plugins/highlight/hybrid.css">
+
+
+<!-- match-height JS -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+<!-- highlight -->
+<script src="https://dragon-library.github.io/library/tutorials/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://dragon-library.github.io/library/tutorials/"><span>Tutorials</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+    
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/database/" >
+      Database
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/backup/" >
+      Backup
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/" >
+      Articles
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/python/" >
+      Python
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/data-science/" >
+      Data Sciene
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/" >
+      WebApp
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/html/" >
+      HTML
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/css/" >
+      CSS
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/" >
+      JavaScript
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/create-progressive-web-app/" >
+      Progressive Web App คืออะไร
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/10-knowledge-javascript/" >
+      10 เรื่องน่ารู้ตอบข้อสงสัย JavaScript
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/circle-progress/" >
+      Circle Progress
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/javascript-use-map/"  class="active">
+      Use .map(), .reduce(), and .filter()
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/library/tutorials/docs/articles/webapp/javascript/api-for-javascript/" >
+      รวม API สำหรับ Javascript ที่น่าสนใจในปี 2020
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/django/" >
+      Django
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/vue/" >
+      Vue
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/webapp/falsk/" >
+      Flask
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/articles/git/" >
+      Git
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/book/" >
+      Book
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/library/tutorials/docs/front-end/" >
+      Front-End
+  </a>
+
+
+    
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/library/tutorials/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Use .map(), .reduce(), and .filter()</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="simplify-your-javascript-use-map-reduce-and-filter">Simplify your JavaScript – Use .map(), .reduce(), and .filter()</h1>
+
+<p><img src="https://miro.medium.com/max/2401/1*mG4yPf0dVoBk0R6csThChQ.png" alt="enter image description here" /></p>
+
+<p><a href="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d?source=post_page-----bd02c593cc2d----------------------">Jan 29, 2018</a>  ·  7  min read</p>
+
+<p>If you’re starting in JavaScript, maybe you haven’t heard of  <code>.map()</code>,  <code>.reduce()</code>, and  <code>.filter()</code>. For me, it took a while as I had to support Internet Explorer 8 until a couple years ago. But if you don’t need to be compatible with this very old browser, you have to become familiar with those methods.</p>
+
+<p><em>Take note that this article most likely applies to whatever other programming language you might be using, as these are concepts that exist in many other languages.</em></p>
+
+<h1 id="map">.map()</h1>
+
+<p>Let me explain how it works with a simple example. Say you have received an array containing multiple objects – each one representing a person. The thing you really need in the end, though, is an array containing only the id of each person.</p>
+
+<pre><code class="language-js">// What you have  
+var officers = [  
+  { id: 20, name: 'Captain Piett' },  
+  { id: 24, name: 'General Veers' },  
+  { id: 56, name: 'Admiral Ozzel' },  
+  { id: 88, name: 'Commander Jerjerrod' }  
+];
+</code></pre>
+
+<pre><code>// What you need  
+[20, 24, 56, 88]
+</code></pre>
+
+<p>There are multiple ways to achieve this. You might want to do it by creating an empty array, then using  <code>.forEach()</code>,  <code>.for(...of)</code>, or a simple  <code>.for()</code>  to meet your goal.</p>
+
+<p>Let’s compare!</p>
+
+<p>Using  <code>.forEach()</code>:</p>
+
+<pre><code class="language-js">var officersIds = [];officers.forEach(function (officer) {  
+  officersIds.push(officer.id);  
+});
+</code></pre>
+
+<p>Notice how you have to create an empty array beforehand? Let’s see what it looks like when using  <code>.map()</code>:</p>
+
+<pre><code class="language-js">var officersIds = officers.map(function (officer) {  
+  return officer.id  
+});
+</code></pre>
+
+<p>We can even be more concise with arrow functions (requires ES6 support, Babel or TypeScript)</p>
+
+<pre><code class="language-js">const officersIds = officers.map(officer =&gt; officer.id);
+</code></pre>
+
+<p>So how does  <code>.map()</code>  work? Basically is takes 2 arguments, a callback and an optional context (will be considered as  <code>this</code>  in the callback) which I did not use in the previous example. The callback runs for  <strong>each value in the array</strong> and  <strong>returns each new value</strong>  in the resulting array.</p>
+
+<p>Keep in mind that the resulting array will always be the same length as the original array.</p>
+
+<h1 id="reduce">.reduce()</h1>
+
+<p>Just like  <code>.map()</code>,  <code>.reduce()</code>  also runs a callback for each element of an array. What’s different here is that reduce passes the result of this callback (the accumulator) from one array element to the other.</p>
+
+<p>The accumulator can be pretty much anything (integer, string, object, etc.) and must be instantiated or passed when calling  <code>.reduce()</code>.</p>
+
+<p>Time for an example! Say you have an array with these pilots and their respective years of experience:</p>
+
+<pre><code class="language-js">var pilots = [  
+  {  
+    id: 10,  
+    name: &quot;Poe Dameron&quot;,  
+    years: 14,  
+  },  
+  {  
+    id: 2,  
+    name: &quot;Temmin 'Snap' Wexley&quot;,  
+    years: 30,  
+  },  
+  {  
+    id: 41,  
+    name: &quot;Tallissan Lintra&quot;,  
+    years: 16,  
+  },  
+  {  
+    id: 99,  
+    name: &quot;Ello Asty&quot;,  
+    years: 22,  
+  }  
+];
+</code></pre>
+
+<p>We need to know the total years of experience of all of them. With  <code>.reduce()</code>, it’s pretty straightforward:</p>
+
+<p>var totalYears = pilots.reduce(function (accumulator, pilot) {<br />
+  return accumulator + pilot.years;<br />
+}, 0);</p>
+
+<p>Notice that I’ve set the starting value as 0. I could have also used an existing variable if necessary. After running the callback for each element of the array, reduce will return the final value of our accumulator (in our case:  <code>82</code>).</p>
+
+<p>Let’s see how this can be shortened with ES6’s arrow functions:</p>
+
+<p>const totalYears = pilots.reduce((acc, pilot) =&gt; acc + pilot.years, 0);</p>
+
+<p>Now let’s say I want to find which pilot is the most experienced one. For that, I can use reduce as well:</p>
+
+<p>var mostExpPilot = pilots.reduce(function (oldest, pilot) {<br />
+  return (oldest.years || 0) &gt; pilot.years ? oldest : pilot;<br />
+}, {});</p>
+
+<p>I named my accumulator  <code>oldest</code>. My callback compares the accumulator to each pilot. If a pilot has more years of experience than  <code>oldest</code>, then that pilot becomes the new  <code>oldest</code>  so that’s the one I return.</p>
+
+<p>As you can see, using  <code>.reduce()</code>  is an easy way to generate a single value or object from an array.</p>
+
+<h1 id="filter">.filter()</h1>
+
+<p>What if you have an array, but only want some of the elements in it? That’s where  <code>.filter()</code>  comes in!</p>
+
+<p>Here’s our data:</p>
+
+<pre><code class="language-js">var pilots = [  
+  {  
+    id: 2,  
+    name: &quot;Wedge Antilles&quot;,  
+    faction: &quot;Rebels&quot;,  
+  },  
+  {  
+    id: 8,  
+    name: &quot;Ciena Ree&quot;,  
+    faction: &quot;Empire&quot;,  
+  },  
+  {  
+    id: 40,  
+    name: &quot;Iden Versio&quot;,  
+    faction: &quot;Empire&quot;,  
+  },  
+  {  
+    id: 66,  
+    name: &quot;Thane Kyrell&quot;,  
+    faction: &quot;Rebels&quot;,  
+  }  
+];
+</code></pre>
+
+<p>Say we want two arrays now: one for rebel pilots, the other one for imperials. With  <code>.filter()</code>  it couldn’t be easier!</p>
+
+<pre><code class="language-js">var rebels = pilots.filter(function (pilot) {  
+  return pilot.faction === &quot;Rebels&quot;;  
+});var empire = pilots.filter(function (pilot) {  
+  return pilot.faction === &quot;Empire&quot;;  
+});
+</code></pre>
+
+<p>That’s it! And it’s even shorter with arrow functions:</p>
+
+<pre><code class="language-js">const rebels = pilots.filter(pilot =&gt; pilot.faction === &quot;Rebels&quot;);  
+const empire = pilots.filter(pilot =&gt; pilot.faction === &quot;Empire&quot;);
+</code></pre>
+
+<p>Basically, if the callback function <strong>returns true</strong>, the current element <strong>will be in the resulting array</strong>. If it returns false, it won’t be.</p>
+
+<h1 id="combining-map-reduce-and-filter">Combining .map(), .reduce(), and .filter()</h1>
+
+<p>Since all three are called on arrays and since  <code>.map()</code>  and  <code>.filter()</code>  both return arrays, we can easily chain our calls.</p>
+
+<p>Let’s check out another example. Here’s our data:</p>
+
+<pre><code class="language-js">var personnel = [  
+  {  
+    id: 5,  
+    name: &quot;Luke Skywalker&quot;,  
+    pilotingScore: 98,  
+    shootingScore: 56,  
+    isForceUser: true,  
+  },  
+  {  
+    id: 82,  
+    name: &quot;Sabine Wren&quot;,  
+    pilotingScore: 73,  
+    shootingScore: 99,  
+    isForceUser: false,  
+  },  
+  {  
+    id: 22,  
+    name: &quot;Zeb Orellios&quot;,  
+    pilotingScore: 20,  
+    shootingScore: 59,  
+    isForceUser: false,  
+  },  
+  {  
+    id: 15,  
+    name: &quot;Ezra Bridger&quot;,  
+    pilotingScore: 43,  
+    shootingScore: 67,  
+    isForceUser: true,  
+  },  
+  {  
+    id: 11,  
+    name: &quot;Caleb Dume&quot;,  
+    pilotingScore: 71,  
+    shootingScore: 85,  
+    isForceUser: true,  
+  },  
+];
+</code></pre>
+
+<p>Our objective: get the total score of force users only. Let’s do it step by step!</p>
+
+<p>First, we need to filter out the personnel who can’t use the force:</p>
+
+<p>var jediPersonnel = personnel.filter(function (person) {<br />
+  return person.isForceUser;<br />
+});// Result: <a href="Luke, Ezra and Caleb">{&hellip;}, {&hellip;}, {&hellip;}</a></p>
+
+<p>With that we have 3 elements left in our resulting array. We now need to create an array containing the total score of each Jedi.</p>
+
+<pre><code class="language-js">var jediScores = jediPersonnel.map(function (jedi) {  
+  return jedi.pilotingScore + jedi.shootingScore;  
+});// Result: [154, 110, 156]
+</code></pre>
+
+<p>And let’s use reduce to get the total:</p>
+
+<pre><code class="language-js">var totalJediScore = jediScores.reduce(function (acc, score) {  
+  return acc + score;  
+}, 0);// Result: 420
+</code></pre>
+
+<p>And now here’s the fun part… we can chain all of this to get what we want in a single line:</p>
+
+<pre><code class="language-js">var totalJediScore = personnel  
+  .filter(function (person) {  
+    return person.isForceUser;  
+  })  
+  .map(function (jedi) {  
+    return jedi.pilotingScore + jedi.shootingScore;  
+  })  
+  .reduce(function (acc, score) {  
+    return acc + score;  
+  }, 0);
+</code></pre>
+
+<p>And look how pretty it is with arrow functions:</p>
+
+<pre><code class="language-js">const totalJediScore = personnel  
+  .filter(person =&gt; person.isForceUser)  
+  .map(jedi =&gt; jedi.pilotingScore + jedi.shootingScore)  
+  .reduce((acc, score) =&gt; acc + score, 0);
+</code></pre>
+
+<p>Boom! 💥</p>
+
+<p><em>Note: In my previous example,</em> <code>_.map()_</code> <em>and</em> <code>_.filter()_</code> <em>weren’t even necessary. We could easily achieve the same result with only</em> <code>_.reduce()_</code><em>. I left them in there for the sake of this example. Can you guess how we could only keep</em> <code>_.reduce()_</code> <em>and get the same result with one line of code?</em> <a href="https://codepen.io/etiennetalbot/pen/EozzeZ?editors=0011"><em>See the solution on CodePen</em></a></p>
+
+<h1 id="why-not-use-foreach">Why not use .forEach()?</h1>
+
+<p>I used to use  <code>for</code>  loops everywhere instead of  <code>.map()</code>,  <code>.reduce()</code>, and  <code>.filter()</code>. But a couple of years ago I started working a lot more with data that came from an API. That’s where I began to see the advantages of leaving  <code>.forEach</code>  behind.</p>
+
+<h2 id="formatting">Formatting</h2>
+
+<p>Say you need to display a list of people, with their name and job title.</p>
+
+<pre><code class="language-js">var data = [  
+  {  
+    name: &quot;Jan Dodonna&quot;,  
+    title: &quot;General&quot;,  
+  },  
+  {  
+    name: &quot;Gial Ackbar&quot;,  
+    title: &quot;Admiral&quot;,  
+  },  
+]
+</code></pre>
+
+<p>The API gives you the above data, but you only need the title and the last name of each person… You need to format the data. However, your app also needs to have a single view for each person, so you must write a data formatting function that both works in a list view and in a single view.</p>
+
+<p>That means you can’t have the  <code>.forEach</code>  loop inside of your formatting function, or else you would have to wrap your single element in an array before you pass it to the function just to make it work, like so:</p>
+
+<pre><code class="language-js">var result = formatElement([element])[0];  
+// Yeah... that's not right at all
+</code></pre>
+
+<p>So your loop has to wrap the call of the function, like this:</p>
+
+<pre><code class="language-js">data.forEach(function (element) {  
+  var formatted = formatElement(element);  
+  // But what then....  
+});
+</code></pre>
+
+<p>But  <code>.forEach()</code>  doesn’t return anything. It can’t. That means you have to push the results inside a predetermined array.</p>
+
+<pre><code class="language-js">var results = [];data.forEach(function (element) {  
+  var formatted = formatElement(element);  
+  results.push(formatted);  
+});
+</code></pre>
+
+<p>As a result, you have 2 functions: your  <code>formatElement()</code>  function and your function that pushes the results in your array.</p>
+
+<p>Why have 2 functions when you can have just one?</p>
+
+<p>var results = data.map(formatElement);</p>
+
+<h2 id="testing-is-easier">Testing is easier</h2>
+
+<p>If you write unit tests for your code, you’ll find it simpler to test the functions you call with  <code>.map()</code>,  <code>.reduce()</code>, or  <code>.filter()</code>.</p>
+
+<p>All you have to do is provide inbound data for the function and expect a result to come out. Basically “what comes out if  <strong>this</strong>  is passed?”. Less manipulation, less  <code>beforeEach()</code>s and  <code>afterEach()</code>s. It’s straightforward, simple testing.</p>
+
+<h1 id="try-it">Try it!</h1>
+
+<p>Try to replace some of your  <code>for</code>  loops with  <code>.map()</code>,  <code>.reduce()</code>,  <code>.filter()</code>  where it seems to fit. I guarantee your code will be way less clunky and much easier to read.</p>
+
+<p>If you liked that article and want to learn more array methods, check out my article on  <a href="https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd">how to use</a> <code>[.some()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)</code> <a href="https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd">and</a> <code>[.find()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)</code> <a href="https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd">in JavaScript</a>.</p>
+
+<p>Keep coding!</p>
+
+<p>[](<a href="https://medium.com/poka-techblog?source=post_sidebar--------------------------post_sidebar-">https://medium.com/poka-techblog?source=post_sidebar--------------------------post_sidebar-</a>)</p>
+
+<blockquote>
+<p>Written with <a href="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d">StackEdit</a>.</p>
+</blockquote>
+</article>
+
+      <div class="book-footer justify-between">
+  
+
+  
+
+  
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/master/exampleSite/content/docs%5cArticles%5cWebApp%5cJavaScript%5cjavascript-use-map.md" target="_blank">
+      <img src="/library/tutorials/svg/edit.svg" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+  
+
+</div>
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc levels-true fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#simplify-your-javascript-use-map-reduce-and-filter">Simplify your JavaScript – Use .map(), .reduce(), and .filter()</a></li>
+<li><a href="#map">.map()</a></li>
+<li><a href="#reduce">.reduce()</a></li>
+<li><a href="#filter">.filter()</a></li>
+<li><a href="#combining-map-reduce-and-filter">Combining .map(), .reduce(), and .filter()</a></li>
+<li><a href="#why-not-use-foreach">Why not use .forEach()?</a>
+<ul>
+<li><a href="#formatting">Formatting</a></li>
+<li><a href="#testing-is-easier">Testing is easier</a></li>
+</ul></li>
+<li><a href="#try-it">Try it!</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+</body>
+
+</html>

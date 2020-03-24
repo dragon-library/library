@@ -32,6 +32,19 @@ import pandas as pd def color_negative_red(val): color = &#39;red&#39; if val &a
     </item>
     
     <item>
+      <title>Pandas User Guide</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/user_guide/</guid>
+      <description>User Guide  Source : Pandas Document : .
+ The User Guide covers all of pandas by topic area. Each of the subsections introduces a topic (such as “working with missing data”), and discusses how pandas approaches the problem, with many examples throughout.
+Users brand-new to pandas should start with 10 minutes to pandas.
+Further information on any specific method can be obtained in the API reference.
+ IO tools (text, CSV, HDF5, …)  CSV &amp;amp; text files JSON HTML Excel files OpenDocument Spreadsheets Binary Excel (.</description>
+    </item>
+    
+    <item>
       <title>21 Pandas operations</title>
       <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/21-pandas-operations/</link>
       <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
@@ -61,7 +74,7 @@ Since I get the data, buying a house in Munich is out the question, I don’t (a
       <pubDate>Sat, 18 Jan 2020 10:42:26 +0600</pubDate>
       
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/pandas-house-market-analysis-1/</guid>
-      <description>Python Pandas : House Market Analysis – Munich (2016-2017) (1&amp;frasl;2) Source
+      <description>Python Pandas : House Market Analysis – Munich (2016-2017) (1/.2) Source
 I started to use python for other things than Data Analysis at the beginning. I was a technical SEO consultant and wanted to use a crawler (or built one) and not knowing any programming language, python looked as the perfect language to start with…
 Flash forward to nowadays, I am even more fan of python now because of its versatility to do what I just mentioned and also to realize data analysis easily.</description>
     </item>
@@ -89,6 +102,17 @@ Flash forward to nowadays, I am even more fan of python now because of its versa
       <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/selecting-subsets-pandas-1/</guid>
       <description>Selecting Subsets of Data in Pandas Part 1  Source  This article is available as a Jupyter Notebook complete with exercises at the bottom to practice and detailed solutions in another notebook.
 Become an Expert  My book Master Data Analysis with Python is the most comprehensive text on the market to learn data analysis using Python and comes with 300+ exercises and projects. Sign-up for the FREE Intro to Pandas class Follow me on Twitter @TedPetrou for my daily data science tricks  Part 1: Selection with [ ], .</description>
+    </item>
+    
+    <item>
+      <title>Working with missing data</title>
+      <link>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/missing_data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/library/tutorials/docs/articles/data-science/pandas/missing_data/</guid>
+      <description>Working with missing data In this section, we will discuss missing (also referred to as NA) values in pandas.
+ Note The choice of using NaN internally to denote missing data was largely for simplicity and performance reasons. Starting from pandas 1.0, some optional data types start experimenting with a native NA scalar using a mask-based approach. See here for more.
+ See the cookbook for some advanced strategies.</description>
     </item>
     
   </channel>
